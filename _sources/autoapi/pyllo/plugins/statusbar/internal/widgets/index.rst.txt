@@ -1,0 +1,156 @@
+:py:mod:`pyllo.plugins.statusbar.internal.widgets`
+==================================================
+
+.. py:module:: pyllo.plugins.statusbar.internal.widgets
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MemoryStatus <pyllo.plugins.statusbar.internal.widgets.MemoryStatus>`
+     - Status bar widget for system memory usage.
+   * - :py:obj:`CPUStatus <pyllo.plugins.statusbar.internal.widgets.CPUStatus>`
+     - Status bar widget for system cpu usage.
+   * - :py:obj:`ClockStatus <pyllo.plugins.statusbar.internal.widgets.ClockStatus>`
+     - "Add clock to statusbar in a fullscreen mode.
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`main <pyllo.plugins.statusbar.internal.widgets.main>`\ ()
+     - \-
+
+
+
+.. py:class:: MemoryStatus(parent=None)
+
+   Bases: :py:obj:`pyllo.plugins.statusbar.widgets.BaseTimerStatus`
+
+   Status bar widget for system memory usage.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getText <pyllo.plugins.statusbar.internal.widgets.MemoryStatus.getText>`\ ()
+        - Return memory usage.
+      * - :py:obj:`getToolTip <pyllo.plugins.statusbar.internal.widgets.MemoryStatus.getToolTip>`\ ()
+        - Return the widget tooltip text.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getText()
+
+      Return memory usage.
+
+
+   .. py:method:: getToolTip()
+
+      Return the widget tooltip text.
+
+
+
+
+
+.. py:class:: CPUStatus(parent=None)
+
+   Bases: :py:obj:`pyllo.plugins.statusbar.widgets.BaseTimerStatus`
+
+   Status bar widget for system cpu usage.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getText <pyllo.plugins.statusbar.internal.widgets.CPUStatus.getText>`\ ()
+        - Return CPU usage.
+      * - :py:obj:`getToolTip <pyllo.plugins.statusbar.internal.widgets.CPUStatus.getToolTip>`\ ()
+        - Return the widget tooltip text.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getText()
+
+      Return CPU usage.
+
+
+   .. py:method:: getToolTip()
+
+      Return the widget tooltip text.
+
+
+
+
+
+.. py:class:: ClockStatus(parent=None)
+
+   Bases: :py:obj:`pyllo.plugins.statusbar.widgets.BaseTimerStatus`
+
+   "Add clock to statusbar in a fullscreen mode.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getText <pyllo.plugins.statusbar.internal.widgets.ClockStatus.getText>`\ ()
+        - Return the time.
+      * - :py:obj:`getToolTip <pyllo.plugins.statusbar.internal.widgets.ClockStatus.getToolTip>`\ ()
+        - Return the widget tooltip text.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getText()
+
+      Return the time.
+
+
+   .. py:method:: getToolTip()
+
+      Return the widget tooltip text.
+
+
+
+
+
+.. py:function:: main()
+
+

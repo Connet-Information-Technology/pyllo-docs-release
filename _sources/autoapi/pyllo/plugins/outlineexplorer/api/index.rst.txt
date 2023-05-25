@@ -1,0 +1,376 @@
+:py:mod:`pyllo.plugins.outlineexplorer.api`
+===========================================
+
+.. py:module:: pyllo.plugins.outlineexplorer.api
+
+.. autoapi-nested-parse::
+
+   Outline explorer API.
+
+   You need to declare a OutlineExplorerProxy, and a function for handle the
+   edit_goto Signal.
+
+   class OutlineExplorerProxyCustom(OutlineExplorerProxy):
+       ...
+
+
+   def handle_go_to(name, line, text):
+       ...
+
+   outlineexplorer = OutlineExplorerWidget(None)
+   oe_proxy = OutlineExplorerProxyCustom(name)
+   outlineexplorer.set_current_editor(oe_proxy, update=True, clear=False)
+
+   outlineexplorer.edit_goto.connect(handle_go_to)
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`OutlineExplorerProxy <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy>`
+     - Proxy class between editors and OutlineExplorerWidget.
+   * - :py:obj:`OutlineExplorerData <pyllo.plugins.outlineexplorer.api.OutlineExplorerData>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`documentCells <pyllo.plugins.outlineexplorer.api.documentCells>`\ (block, forward, cellList)
+     - Get cells oedata before or after block in the document.
+   * - :py:obj:`isCellHeader <pyllo.plugins.outlineexplorer.api.isCellHeader>`\ (block)
+     - Check if the given block is a cell header.
+   * - :py:obj:`cellIndex <pyllo.plugins.outlineexplorer.api.cellIndex>`\ (block)
+     - Get the cell index of the given block.
+   * - :py:obj:`cellName <pyllo.plugins.outlineexplorer.api.cellName>`\ (block)
+     - Get the cell name the block is in.
+
+
+
+.. py:function:: documentCells(block, forward=True, cellList=None)
+
+   Get cells oedata before or after block in the document.
+
+   Parameters
+   ----------
+   forward : bool, optional
+       Whether to iterate forward or backward from the current block.
+   cellList: list of tuple containing (block_number, oedata)
+       This is the list of all cells in a file to avoid having to parse
+       the file every time.
+
+
+.. py:function:: isCellHeader(block)
+
+   Check if the given block is a cell header.
+
+
+.. py:function:: cellIndex(block)
+
+   Get the cell index of the given block.
+
+
+.. py:function:: cellName(block)
+
+   Get the cell name the block is in.
+
+   If the cell is unnamed, return the cell index instead.
+
+
+.. py:class:: OutlineExplorerProxy
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   Proxy class between editors and OutlineExplorerWidget.
+
+   ..    ..    .. .. py:property:: isCloned
+
+      Check if the associated editor is cloned.
+
+
+   ..    ..    .. .. py:attribute:: sigCursorPositionChanged
+
+      
+
+   ..    .. .. py:attribute:: sigOutlineExplorerDataChanged
+
+      
+
+   ..    .. .. py:attribute:: sigStartOutlineSpinner
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigCursorPositionChanged <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.sigCursorPositionChanged>`
+        - \-
+      * - :py:obj:`sigOutlineExplorerDataChanged <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.sigOutlineExplorerDataChanged>`
+        - \-
+      * - :py:obj:`sigStartOutlineSpinner <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.sigStartOutlineSpinner>`
+        - \-
+
+
+   .. list-table:: Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`isCloned <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.isCloned>`
+        - Check if the associated editor is cloned.
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`isPython <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.isPython>`\ ()
+        - :summarylabel:`abc` Return whether the editor is a python file or not.
+      * - :py:obj:`getId <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.getId>`\ ()
+        - :summarylabel:`abc` Return an unique id, used for identify objects in a dict
+      * - :py:obj:`giveFocus <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.giveFocus>`\ ()
+        - :summarylabel:`abc` Give focus to the editor, called when toogling visibility of
+      * - :py:obj:`getLineCount <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.getLineCount>`\ ()
+        - :summarylabel:`abc` Return the number of lines of the editor (int).
+      * - :py:obj:`parent <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.parent>`\ ()
+        - This is used for diferenciate editors in multi-window mode.
+      * - :py:obj:`getCursorLineNumber <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.getCursorLineNumber>`\ ()
+        - :summarylabel:`abc` Return the cursor line number.
+      * - :py:obj:`outLineExplorerDataList <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.outLineExplorerDataList>`\ ()
+        - :summarylabel:`abc` Returns a list of outline explorer data.
+      * - :py:obj:`requestSymbols <pyllo.plugins.outlineexplorer.api.OutlineExplorerProxy.requestSymbols>`\ ()
+        - :summarylabel:`abc` Request current editor symbols.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigCursorPositionChanged
+
+      
+
+   .. py:attribute:: sigOutlineExplorerDataChanged
+
+      
+
+   .. py:attribute:: sigStartOutlineSpinner
+
+      
+
+
+   .. rubric:: Properties
+   .. py:property:: isCloned
+
+      Check if the associated editor is cloned.
+
+
+
+   .. rubric:: Methods
+   .. py:method:: isPython()
+      :abstractmethod:
+
+      Return whether the editor is a python file or not.
+
+
+   .. py:method:: getId()
+      :abstractmethod:
+
+      Return an unique id, used for identify objects in a dict
+
+
+   .. py:method:: giveFocus()
+      :abstractmethod:
+
+      Give focus to the editor, called when toogling visibility of
+      OutlineExplorerWidget.
+
+
+   .. py:method:: getLineCount()
+      :abstractmethod:
+
+      Return the number of lines of the editor (int).
+
+
+   .. py:method:: parent()
+
+      This is used for diferenciate editors in multi-window mode.
+
+
+   .. py:method:: getCursorLineNumber()
+      :abstractmethod:
+
+      Return the cursor line number.
+
+
+   .. py:method:: outLineExplorerDataList()
+      :abstractmethod:
+
+      Returns a list of outline explorer data.
+
+
+   .. py:method:: requestSymbols()
+      :abstractmethod:
+
+      Request current editor symbols.
+
+
+
+
+
+.. py:class:: OutlineExplorerData(block, text=None, foldLevel=None, defType=None, defName=None, color=None)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   ..    ..    .. .. py:property:: defName
+
+      Get the cell name.
+
+
+   ..    ..    .. .. py:attribute:: FUNCTION_TOKEN
+      :value: 'def'
+
+      
+
+   ..    .. .. py:attribute:: CLASS_TOKEN
+      :value: 'class'
+
+      
+
+   ..    .. .. py:attribute:: sigUpdate
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`FUNCTION_TOKEN <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.FUNCTION_TOKEN>`
+        - \-
+      * - :py:obj:`CLASS_TOKEN <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.CLASS_TOKEN>`
+        - \-
+      * - :py:obj:`sigUpdate <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.sigUpdate>`
+        - \-
+
+
+   .. list-table:: Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`defName <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.defName>`
+        - Get the cell name.
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`isNotClassNorFunction <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.isNotClassNorFunction>`\ ()
+        - \-
+      * - :py:obj:`isClassOrFunction <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.isClassOrFunction>`\ ()
+        - \-
+      * - :py:obj:`isComment <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.isComment>`\ ()
+        - \-
+      * - :py:obj:`getClassName <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.getClassName>`\ ()
+        - \-
+      * - :py:obj:`getFunctionName <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.getFunctionName>`\ ()
+        - \-
+      * - :py:obj:`getToken <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.getToken>`\ ()
+        - \-
+      * - :py:obj:`update <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.update>`\ (other)
+        - Try to update to avoid reloading everything.
+      * - :py:obj:`isValid <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.isValid>`\ ()
+        - Check if the oedata has a valid block attached.
+      * - :py:obj:`hasName <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.hasName>`\ ()
+        - Check if cell has a name.
+      * - :py:obj:`getBlockNumber <pyllo.plugins.outlineexplorer.api.OutlineExplorerData.getBlockNumber>`\ ()
+        - Get the block number.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: FUNCTION_TOKEN
+      :value: 'def'
+
+      
+
+   .. py:attribute:: CLASS_TOKEN
+      :value: 'class'
+
+      
+
+   .. py:attribute:: sigUpdate
+
+      
+
+
+   .. rubric:: Properties
+   .. py:property:: defName
+
+      Get the cell name.
+
+
+
+   .. rubric:: Methods
+   .. py:method:: isNotClassNorFunction()
+
+
+   .. py:method:: isClassOrFunction()
+
+
+   .. py:method:: isComment()
+
+
+   .. py:method:: getClassName()
+
+
+   .. py:method:: getFunctionName()
+
+
+   .. py:method:: getToken()
+
+
+   .. py:method:: update(other)
+
+      Try to update to avoid reloading everything.
+
+
+   .. py:method:: isValid()
+
+      Check if the oedata has a valid block attached.
+
+
+   .. py:method:: hasName()
+
+      Check if cell has a name.
+
+
+   .. py:method:: getBlockNumber()
+
+      Get the block number.
+
+
+
+
+

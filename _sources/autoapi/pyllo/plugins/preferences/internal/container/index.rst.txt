@@ -1,0 +1,223 @@
+:py:mod:`pyllo.plugins.preferences.internal.container`
+======================================================
+
+.. py:module:: pyllo.plugins.preferences.internal.container
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PreferencesActions <pyllo.plugins.preferences.internal.container.PreferencesActions>`
+     - \-
+   * - :py:obj:`PreferencesContainer <pyllo.plugins.preferences.internal.container.PreferencesContainer>`
+     - Pyllo plugin main container class.
+   * - :py:obj:`ConfigAccessMixin <pyllo.plugins.preferences.internal.container.ConfigAccessMixin>`
+     - Namespace for methods that access config storage
+
+
+
+
+.. py:class:: PreferencesActions
+
+   ..    ..    ..    .. .. py:attribute:: Show
+      :value: 'show_action'
+
+      
+
+   ..    .. .. py:attribute:: Reset
+      :value: 'reset_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Show <pyllo.plugins.preferences.internal.container.PreferencesActions.Show>`
+        - \-
+      * - :py:obj:`Reset <pyllo.plugins.preferences.internal.container.PreferencesActions.Reset>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Show
+      :value: 'show_action'
+
+      
+
+   .. py:attribute:: Reset
+      :value: 'reset_action'
+
+      
+
+
+
+
+
+
+.. py:class:: PreferencesContainer(*args, **kwargs)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainContainer`
+
+   Pyllo plugin main container class.
+
+   This class handles a non-dockable widget to be able to contain, parent and
+   store references to other widget, like status bar widget, toolbars,
+   context menus, etc.
+
+   Notes
+   -----
+   All Pyllo non dockable plugins can define a plugin container that must
+   subclass this.
+
+   PylloPlugin plugins must provide a CONTAINER_CLASS attribute that is a
+   subclass of PluginMainContainer, if they provide additional widget like
+   status bar widget or toolbars.
+
+   ..    ..    ..    .. .. py:attribute:: sigResetPreferencesRequested
+
+      Request a reset of preferences.
+
+
+   ..    .. .. py:attribute:: sigShowPreferencesRequested
+
+      Request showing preferences.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigResetPreferencesRequested <pyllo.plugins.preferences.internal.container.PreferencesContainer.sigResetPreferencesRequested>`
+        - Request a reset of preferences.
+      * - :py:obj:`sigShowPreferencesRequested <pyllo.plugins.preferences.internal.container.PreferencesContainer.sigShowPreferencesRequested>`
+        - Request showing preferences.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`createDialog <pyllo.plugins.preferences.internal.container.PreferencesContainer.createDialog>`\ (configPages, configTabs)
+        - \-
+      * - :py:obj:`isDialogOpen <pyllo.plugins.preferences.internal.container.PreferencesContainer.isDialogOpen>`\ ()
+        - \-
+      * - :py:obj:`showPreferences <pyllo.plugins.preferences.internal.container.PreferencesContainer.showPreferences>`\ ()
+        - Show preferences.
+      * - :py:obj:`setup <pyllo.plugins.preferences.internal.container.PreferencesContainer.setup>`\ ()
+        - Create actions, widget, add to menu and other setup requirements.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigResetPreferencesRequested
+
+      Request a reset of preferences.
+
+
+   .. py:attribute:: sigShowPreferencesRequested
+
+      Request showing preferences.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: createDialog(configPages, configTabs)
+
+
+   .. py:method:: isDialogOpen()
+
+
+   .. py:method:: showPreferences()
+
+      Show preferences.
+
+
+   .. py:method:: setup()
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+
+
+
+.. py:class:: ConfigAccessMixin
+
+   Bases: :py:obj:`object`
+
+   Namespace for methods that access config storage
+
+   ..    ..    ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.preferences.internal.container.ConfigAccessMixin.CONF_SECTION>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setOption <pyllo.plugins.preferences.internal.container.ConfigAccessMixin.setOption>`\ (option, value, section, recursiveNotification)
+        - \-
+      * - :py:obj:`getOption <pyllo.plugins.preferences.internal.container.ConfigAccessMixin.getOption>`\ (option, default, section)
+        - \-
+      * - :py:obj:`removeOption <pyllo.plugins.preferences.internal.container.ConfigAccessMixin.removeOption>`\ (option, section)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_SECTION
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setOption(option, value, section=None, recursiveNotification=False)
+
+
+   .. py:method:: getOption(option, default=NoDefault, section=None)
+
+
+   .. py:method:: removeOption(option, section=None)
+
+
+
+
+

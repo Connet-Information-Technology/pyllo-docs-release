@@ -1,0 +1,101 @@
+:py:mod:`pyllo.bootstrap`
+=========================
+
+.. py:module:: pyllo.bootstrap
+
+.. autoapi-nested-parse::
+
+   Bootstrap settings of pyllo.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+
+.. py:data:: MODULE_PATH
+
+   
+
+.. py:data:: SETUP_PATH
+
+   
+
+.. py:data:: TRANSLATIONS_PATH
+
+   
+
+.. py:data:: MAC_STYLESHEET_PATH
+
+   
+
+.. py:data:: IMAGE_PATH
+
+   
+
+.. py:data:: setupModule
+
+   
+
+.. py:data:: DEV
+
+   
+
+.. py:data:: INTERNAL_CONSOLE
+
+   
+
+.. py:data:: CLEAN_DIR_ID
+
+   
+
+.. py:data:: LOG_LEVEL
+
+   
+
+.. py:data:: STDOUT
+
+   
+
+.. py:data:: STDERR
+
+   
+
+.. py:data:: REDIRECTSTDIO
+
+   
+
+.. py:data:: SAFE_MODE
+
+   
+
+.. py:data:: TEST_MODE
+
+   
+
+.. py:data:: XDG_CONFIG_HOME
+
+   
+
+.. py:data:: CONDA_PREFIX
+
+   
+
+.. py:data:: CHECK_ALL
+   :value: False
+
+   
+
+.. py:data:: EXCLUDED_NAMES
+   :value: ['nan', 'inf', 'infty', 'little_endian', 'colorbar_doc', 'typecodes', '__builtins__',...
+
+   
+
+.. py:data:: SAVED_CONFIG_FILES
+   :value: ('help', 'onlinehelp', 'path', 'pylint.results', 'pyllo.ini', 'temp.py', 'temp.spydata',...
+
+   
+

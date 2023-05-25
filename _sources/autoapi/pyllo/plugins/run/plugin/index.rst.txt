@@ -1,0 +1,207 @@
+:py:mod:`pyllo.plugins.run.plugin`
+==================================
+
+.. py:module:: pyllo.plugins.run.plugin
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Run <pyllo.plugins.run.plugin.Run>`
+     - Run Dockwidget
+
+
+
+
+.. py:class:: Run(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloDockablePlugin`
+
+   Run Dockwidget
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'run'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.run.plugin.Run.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.run.plugin.Run.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.run.plugin.Run.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.run.plugin.Run.OPTIONAL>`
+        - \-
+      * - :py:obj:`WIDGET_CLASS <pyllo.plugins.run.plugin.Run.WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.run.plugin.Run.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.run.plugin.Run.CONF_FILE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.run.plugin.Run.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.run.plugin.Run.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.run.plugin.Run.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.run.plugin.Run.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`subprocessRunner <pyllo.plugins.run.plugin.Run.subprocessRunner>`\ (configuration)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'run'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName() -> pyllo.core.dtype.Text
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> pyllo.core.dtype.Text
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon() -> qtpy.QtGui.QIcon
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: subprocessRunner(configuration: pyllo.plugins.run.api.RunConfiguration) -> pyllo.plugins.run.api.IRunner
+
+
+
+
+

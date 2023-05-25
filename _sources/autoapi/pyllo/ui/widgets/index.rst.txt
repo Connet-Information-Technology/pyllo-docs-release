@@ -1,0 +1,22 @@
+:py:mod:`pyllo.ui.widgets`
+==========================
+
+.. py:module:: pyllo.ui.widgets
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   colorpicker/index.rst
+   combobox/index.rst
+   line/index.rst
+   lineedit/index.rst
+   messagebox/index.rst
+   progressindicator/index.rst
+   styleditemdelegate/index.rst
+   textconsole/index.rst
+
+

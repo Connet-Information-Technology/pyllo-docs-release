@@ -1,0 +1,23 @@
+:py:mod:`pyllo.setup`
+=====================
+
+.. py:module:: pyllo.setup
+
+.. autoapi-nested-parse::
+
+   Enable plugins which will be used at Pyllo launch.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+
+.. py:data:: PLUGINS_ENTRY_POINTS
+   :value: ['mainmenu = pyllo.plugins.mainmenu.plugin:MainMenu', 'toolbar =...
+
+   
+

@@ -1,0 +1,57 @@
+:py:mod:`pyllo.plugins.ipythonconsole.core.pyenv`
+=================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.core.pyenv
+
+.. autoapi-nested-parse::
+
+   Pyenv utilities
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`getPyenvPath <pyllo.plugins.ipythonconsole.core.pyenv.getPyenvPath>`\ (name)
+     - Return the complete path of the pyenv.
+   * - :py:obj:`getListPyenvEnvs <pyllo.plugins.ipythonconsole.core.pyenv.getListPyenvEnvs>`\ ()
+     - Return the list of all pyenv envs found in the system.
+   * - :py:obj:`getListPyenvEnvsCache <pyllo.plugins.ipythonconsole.core.pyenv.getListPyenvEnvsCache>`\ ()
+     - Return a cache of envs to avoid computing them again.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PYENV_ENV_LIST_CACHE <pyllo.plugins.ipythonconsole.core.pyenv.PYENV_ENV_LIST_CACHE>`
+     - \-
+
+
+.. py:data:: PYENV_ENV_LIST_CACHE
+
+   
+
+.. py:function:: getPyenvPath(name)
+
+   Return the complete path of the pyenv.
+
+
+.. py:function:: getListPyenvEnvs()
+
+   Return the list of all pyenv envs found in the system.
+
+
+.. py:function:: getListPyenvEnvsCache()
+
+   Return a cache of envs to avoid computing them again.
+
+

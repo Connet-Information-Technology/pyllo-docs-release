@@ -1,0 +1,307 @@
+:py:mod:`pyllo.plugins.debug.plugin`
+====================================
+
+.. py:module:: pyllo.plugins.debug.plugin
+
+.. autoapi-nested-parse::
+
+   Debug Plugin
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Debug <pyllo.plugins.debug.plugin.Debug>`
+     - File and Directories Explorer DockWidget.
+
+
+
+
+.. py:class:: Debug(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloDockablePlugin`
+
+   File and Directories Explorer DockWidget.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'debug'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.debug.plugin.Debug.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.debug.plugin.Debug.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.debug.plugin.Debug.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.debug.plugin.Debug.OPTIONAL>`
+        - \-
+      * - :py:obj:`WIDGET_CLASS <pyllo.plugins.debug.plugin.Debug.WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.debug.plugin.Debug.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_WIDGET_CLASS <pyllo.plugins.debug.plugin.Debug.CONF_WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.debug.plugin.Debug.CONF_FILE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.debug.plugin.Debug.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getIcon <pyllo.plugins.debug.plugin.Debug.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`getDescription <pyllo.plugins.debug.plugin.Debug.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`onInitialize <pyllo.plugins.debug.plugin.Debug.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onToolBarAvailable <pyllo.plugins.debug.plugin.Debug.onToolBarAvailable>`\ ()
+        - add debug toolbox to application toolbar
+      * - :py:obj:`onMainMenuAvailable <pyllo.plugins.debug.plugin.Debug.onMainMenuAvailable>`\ ()
+        - add actions to main menu
+      * - :py:obj:`onCodeEditorV2Available <pyllo.plugins.debug.plugin.Debug.onCodeEditorV2Available>`\ ()
+        - \-
+      * - :py:obj:`onBreakpointsAvailable <pyllo.plugins.debug.plugin.Debug.onBreakpointsAvailable>`\ ()
+        - \-
+      * - :py:obj:`beforeMainwindowVisible <pyllo.plugins.debug.plugin.Debug.beforeMainwindowVisible>`\ ()
+        - Actions to be performed after setup but before the main window's has
+      * - :py:obj:`onDebugGotoRequest <pyllo.plugins.debug.plugin.Debug.onDebugGotoRequest>`\ (source, lineno, columno, setFocus)
+        - when debug view emit `goto` request
+      * - :py:obj:`onDebugGotoClearRequest <pyllo.plugins.debug.plugin.Debug.onDebugGotoClearRequest>`\ ()
+        - clear debug highlight in each code editor
+      * - :py:obj:`onSessionConfigurationDoneRequired <pyllo.plugins.debug.plugin.Debug.onSessionConfigurationDoneRequired>`\ (debugConsole)
+        - \-
+      * - :py:obj:`resetBreakpointsOnSource <pyllo.plugins.debug.plugin.Debug.resetBreakpointsOnSource>`\ (debugConsole, source)
+        - read breakpoints of source from breakpoints plugin and resets them into debug adapter
+      * - :py:obj:`openConfigurationFileEditorInEditorStack <pyllo.plugins.debug.plugin.Debug.openConfigurationFileEditorInEditorStack>`\ ()
+        - \-
+      * - :py:obj:`addDefaultDebugTypeConfiguration <pyllo.plugins.debug.plugin.Debug.addDefaultDebugTypeConfiguration>`\ (debugType)
+        - \-
+      * - :py:obj:`runTask <pyllo.plugins.debug.plugin.Debug.runTask>`\ (taskConfiguration)
+        - \-
+      * - :py:obj:`substituteVariables <pyllo.plugins.debug.plugin.Debug.substituteVariables>`\ ()
+        - \-
+      * - :py:obj:`registerDebugger <pyllo.plugins.debug.plugin.Debug.registerDebugger>`\ (descriptor)
+        - \-
+      * - :py:obj:`getDebugTypes <pyllo.plugins.debug.plugin.Debug.getDebugTypes>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'debug'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName() -> pyllo.core.dtype.Text
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon() -> qtpy.QtGui.QIcon
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> pyllo.core.dtype.Text
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onToolBarAvailable()
+
+      add debug toolbox to application toolbar
+
+
+   .. py:method:: onMainMenuAvailable()
+
+      add actions to main menu
+
+
+   .. py:method:: onCodeEditorV2Available()
+
+
+   .. py:method:: onBreakpointsAvailable()
+
+
+   .. py:method:: beforeMainwindowVisible()
+
+      Actions to be performed after setup but before the main window's has
+      been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onDebugGotoRequest(source: pyllo.core.dtype.FilePath, lineno: pyllo.core.dtype.LineNumber, columno: pyllo.core.dtype.ColumnNumber, setFocus: bool)
+
+      when debug view emit `goto` request
+
+
+   .. py:method:: onDebugGotoClearRequest()
+
+      clear debug highlight in each code editor
+
+
+   .. py:method:: onSessionConfigurationDoneRequired(debugConsole: pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole)
+
+
+   .. py:method:: resetBreakpointsOnSource(debugConsole: pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole, source: pyllo.core.dtype.FilePath)
+
+      read breakpoints of source from breakpoints plugin and resets them into debug adapter
+
+
+   .. py:method:: openConfigurationFileEditorInEditorStack() -> Optional[IEditor]
+
+
+   .. py:method:: addDefaultDebugTypeConfiguration(debugType: pyllo.core.dtype.Identity)
+
+
+   .. py:method:: runTask(taskConfiguration: pyllo.plugins.debug.api.TaskConfiguration)
+
+
+   .. py:method:: substituteVariables() -> Dict[pyllo.core.dtype.Text, pyllo.core.dtype.Text]
+
+
+   .. py:method:: registerDebugger(descriptor: pyllo.plugins.debug.api.IDebuggerDescriptor)
+
+
+   .. py:method:: getDebugTypes() -> List[pyllo.core.dtype.Identity]
+
+
+
+
+

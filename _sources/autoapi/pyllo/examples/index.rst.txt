@@ -1,0 +1,25 @@
+:py:mod:`pyllo.examples`
+========================
+
+.. py:module:: pyllo.examples
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   uidemo/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   example_edit/index.rst
+   ui/index.rst
+
+

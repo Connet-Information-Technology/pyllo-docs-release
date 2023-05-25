@@ -1,0 +1,38 @@
+:py:mod:`pyllo.config.fonts`
+============================
+
+.. py:module:: pyllo.config.fonts
+
+.. autoapi-nested-parse::
+
+   Pyllo font variables
+
+
+
+Module Contents
+---------------
+
+
+
+.. py:data:: SANS_SERIF
+   :value: ['Sans Serif', 'DejaVu Sans', 'Bitstream Vera Sans', 'Bitstream Charter', 'Lucida Grande', 'MS...
+
+   
+
+.. py:data:: MONOSPACE
+   :value: ['Monospace', 'DejaVu Sans Mono', 'Consolas', 'Bitstream Vera Sans Mono', 'Andale Mono',...
+
+   
+
+.. py:data:: MONOSPACE
+
+   
+
+.. py:data:: DEFAULT_SMALL_DELTA
+
+   
+
+.. py:data:: DEFAULT_LARGE_DELTA
+
+   
+

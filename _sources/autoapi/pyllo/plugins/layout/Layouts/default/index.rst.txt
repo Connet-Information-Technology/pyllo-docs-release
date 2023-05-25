@@ -1,0 +1,73 @@
+:py:mod:`pyllo.plugins.layout.layouts.default`
+==============================================
+
+.. py:module:: pyllo.plugins.layout.layouts.default
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DefaultLayout <pyllo.plugins.layout.layouts.default.DefaultLayout>`
+     - A Pyllo layout stub class to extend pyllo layouts to layout your own plugin windows.
+
+
+
+
+.. py:class:: DefaultLayout
+
+   Bases: :py:obj:`pyllo.plugins.layout.api.Layout`
+
+   A Pyllo layout stub class to extend pyllo layouts to layout your own plugin windows.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'Default'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.layout.layouts.default.DefaultLayout.NAME>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.layout.layouts.default.DefaultLayout.setup>`\ ()
+        - Setup layout of all plugin windows
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'Default'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Setup layout of all plugin windows
+
+
+
+
+

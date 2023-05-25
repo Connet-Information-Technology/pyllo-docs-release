@@ -1,0 +1,696 @@
+:py:mod:`pyllo.plugins.mainmenu.api`
+====================================
+
+.. py:module:: pyllo.plugins.mainmenu.api
+
+.. autoapi-nested-parse::
+
+   Pyllo application menu constants.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ApplicationContextMenu <pyllo.plugins.mainmenu.api.ApplicationContextMenu>`
+     - \-
+   * - :py:obj:`ApplicationMenus <pyllo.plugins.mainmenu.api.ApplicationMenus>`
+     - \-
+   * - :py:obj:`WindowMenuSections <pyllo.plugins.mainmenu.api.WindowMenuSections>`
+     - \-
+   * - :py:obj:`RunMenuSections <pyllo.plugins.mainmenu.api.RunMenuSections>`
+     - \-
+   * - :py:obj:`FileMenuSections <pyllo.plugins.mainmenu.api.FileMenuSections>`
+     - \-
+   * - :py:obj:`EditMenuSections <pyllo.plugins.mainmenu.api.EditMenuSections>`
+     - \-
+   * - :py:obj:`ToolsMenuSections <pyllo.plugins.mainmenu.api.ToolsMenuSections>`
+     - \-
+   * - :py:obj:`ViewMenuSections <pyllo.plugins.mainmenu.api.ViewMenuSections>`
+     - \-
+   * - :py:obj:`HelpMenuSections <pyllo.plugins.mainmenu.api.HelpMenuSections>`
+     - \-
+
+
+
+
+.. py:class:: ApplicationContextMenu
+
+   ..    ..    ..    .. .. py:attribute:: Documentation
+      :value: 'context_documentation_section'
+
+      
+
+   ..    .. .. py:attribute:: About
+      :value: 'context_about_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Documentation <pyllo.plugins.mainmenu.api.ApplicationContextMenu.Documentation>`
+        - \-
+      * - :py:obj:`About <pyllo.plugins.mainmenu.api.ApplicationContextMenu.About>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Documentation
+      :value: 'context_documentation_section'
+
+      
+
+   .. py:attribute:: About
+      :value: 'context_about_section'
+
+      
+
+
+
+
+
+
+.. py:class:: ApplicationMenus
+
+   ..    ..    ..    .. .. py:attribute:: File
+      :value: 'file_menu'
+
+      
+
+   ..    .. .. py:attribute:: Edit
+      :value: 'edit_menu'
+
+      
+
+   ..    .. .. py:attribute:: View
+      :value: 'view_menu'
+
+      
+
+   ..    .. .. py:attribute:: Code
+      :value: 'code_menu'
+
+      
+
+   ..    .. .. py:attribute:: Run
+      :value: 'run_menu'
+
+      
+
+   ..    .. .. py:attribute:: Tools
+      :value: 'tools_menu'
+
+      
+
+   ..    .. .. py:attribute:: Window
+      :value: 'window_menu'
+
+      
+
+   ..    .. .. py:attribute:: Help
+      :value: 'help_menu'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`File <pyllo.plugins.mainmenu.api.ApplicationMenus.File>`
+        - \-
+      * - :py:obj:`Edit <pyllo.plugins.mainmenu.api.ApplicationMenus.Edit>`
+        - \-
+      * - :py:obj:`View <pyllo.plugins.mainmenu.api.ApplicationMenus.View>`
+        - \-
+      * - :py:obj:`Code <pyllo.plugins.mainmenu.api.ApplicationMenus.Code>`
+        - \-
+      * - :py:obj:`Run <pyllo.plugins.mainmenu.api.ApplicationMenus.Run>`
+        - \-
+      * - :py:obj:`Tools <pyllo.plugins.mainmenu.api.ApplicationMenus.Tools>`
+        - \-
+      * - :py:obj:`Window <pyllo.plugins.mainmenu.api.ApplicationMenus.Window>`
+        - \-
+      * - :py:obj:`Help <pyllo.plugins.mainmenu.api.ApplicationMenus.Help>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: File
+      :value: 'file_menu'
+
+      
+
+   .. py:attribute:: Edit
+      :value: 'edit_menu'
+
+      
+
+   .. py:attribute:: View
+      :value: 'view_menu'
+
+      
+
+   .. py:attribute:: Code
+      :value: 'code_menu'
+
+      
+
+   .. py:attribute:: Run
+      :value: 'run_menu'
+
+      
+
+   .. py:attribute:: Tools
+      :value: 'tools_menu'
+
+      
+
+   .. py:attribute:: Window
+      :value: 'window_menu'
+
+      
+
+   .. py:attribute:: Help
+      :value: 'help_menu'
+
+      
+
+
+
+
+
+
+.. py:class:: WindowMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   ..    .. .. py:attribute:: Panel
+      :value: 'panel_section'
+
+      
+
+   ..    .. .. py:attribute:: Toolbar
+      :value: 'toolbar_section'
+
+      
+
+   ..    .. .. py:attribute:: Layout
+      :value: 'layout_section'
+
+      
+
+   ..    .. .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Top <pyllo.plugins.mainmenu.api.WindowMenuSections.Top>`
+        - \-
+      * - :py:obj:`Panel <pyllo.plugins.mainmenu.api.WindowMenuSections.Panel>`
+        - \-
+      * - :py:obj:`Toolbar <pyllo.plugins.mainmenu.api.WindowMenuSections.Toolbar>`
+        - \-
+      * - :py:obj:`Layout <pyllo.plugins.mainmenu.api.WindowMenuSections.Layout>`
+        - \-
+      * - :py:obj:`Bottom <pyllo.plugins.mainmenu.api.WindowMenuSections.Bottom>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   .. py:attribute:: Panel
+      :value: 'panel_section'
+
+      
+
+   .. py:attribute:: Toolbar
+      :value: 'toolbar_section'
+
+      
+
+   .. py:attribute:: Layout
+      :value: 'layout_section'
+
+      
+
+   .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+
+
+
+
+
+.. py:class:: RunMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Run
+      :value: 'run_section'
+
+      
+
+   ..    .. .. py:attribute:: Configuration
+      :value: 'configuration_section'
+
+      
+
+   ..    .. .. py:attribute:: DebuggingActions
+      :value: 'debugging_actions_section'
+
+      
+
+   ..    .. .. py:attribute:: Breakpoints
+      :value: 'breakpoints_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Run <pyllo.plugins.mainmenu.api.RunMenuSections.Run>`
+        - \-
+      * - :py:obj:`Configuration <pyllo.plugins.mainmenu.api.RunMenuSections.Configuration>`
+        - \-
+      * - :py:obj:`DebuggingActions <pyllo.plugins.mainmenu.api.RunMenuSections.DebuggingActions>`
+        - \-
+      * - :py:obj:`Breakpoints <pyllo.plugins.mainmenu.api.RunMenuSections.Breakpoints>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Run
+      :value: 'run_section'
+
+      
+
+   .. py:attribute:: Configuration
+      :value: 'configuration_section'
+
+      
+
+   .. py:attribute:: DebuggingActions
+      :value: 'debugging_actions_section'
+
+      
+
+   .. py:attribute:: Breakpoints
+      :value: 'breakpoints_section'
+
+      
+
+
+
+
+
+
+.. py:class:: FileMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   ..    .. .. py:attribute:: Save
+      :value: 'save_section'
+
+      
+
+   ..    .. .. py:attribute:: Close
+      :value: 'close_section'
+
+      
+
+   ..    .. .. py:attribute:: Exit
+      :value: 'exit_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Top <pyllo.plugins.mainmenu.api.FileMenuSections.Top>`
+        - \-
+      * - :py:obj:`Save <pyllo.plugins.mainmenu.api.FileMenuSections.Save>`
+        - \-
+      * - :py:obj:`Close <pyllo.plugins.mainmenu.api.FileMenuSections.Close>`
+        - \-
+      * - :py:obj:`Exit <pyllo.plugins.mainmenu.api.FileMenuSections.Exit>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   .. py:attribute:: Save
+      :value: 'save_section'
+
+      
+
+   .. py:attribute:: Close
+      :value: 'close_section'
+
+      
+
+   .. py:attribute:: Exit
+      :value: 'exit_section'
+
+      
+
+
+
+
+
+
+.. py:class:: EditMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: UndoRedo
+      :value: 'undoredo_section'
+
+      
+
+   ..    .. .. py:attribute:: Copy
+      :value: 'copy_section'
+
+      
+
+   ..    .. .. py:attribute:: Editor
+      :value: 'editor_section'
+
+      
+
+   ..    .. .. py:attribute:: Find
+      :value: 'find_section'
+
+      
+
+   ..    .. .. py:attribute:: Select
+      :value: 'select_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`UndoRedo <pyllo.plugins.mainmenu.api.EditMenuSections.UndoRedo>`
+        - \-
+      * - :py:obj:`Copy <pyllo.plugins.mainmenu.api.EditMenuSections.Copy>`
+        - \-
+      * - :py:obj:`Editor <pyllo.plugins.mainmenu.api.EditMenuSections.Editor>`
+        - \-
+      * - :py:obj:`Find <pyllo.plugins.mainmenu.api.EditMenuSections.Find>`
+        - \-
+      * - :py:obj:`Select <pyllo.plugins.mainmenu.api.EditMenuSections.Select>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: UndoRedo
+      :value: 'undoredo_section'
+
+      
+
+   .. py:attribute:: Copy
+      :value: 'copy_section'
+
+      
+
+   .. py:attribute:: Editor
+      :value: 'editor_section'
+
+      
+
+   .. py:attribute:: Find
+      :value: 'find_section'
+
+      
+
+   .. py:attribute:: Select
+      :value: 'select_section'
+
+      
+
+
+
+
+
+
+.. py:class:: ToolsMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Tools
+      :value: 'tools_section'
+
+      
+
+   ..    .. .. py:attribute:: External
+      :value: 'external_section'
+
+      
+
+   ..    .. .. py:attribute:: Extras
+      :value: 'extras_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Tools <pyllo.plugins.mainmenu.api.ToolsMenuSections.Tools>`
+        - \-
+      * - :py:obj:`External <pyllo.plugins.mainmenu.api.ToolsMenuSections.External>`
+        - \-
+      * - :py:obj:`Extras <pyllo.plugins.mainmenu.api.ToolsMenuSections.Extras>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Tools
+      :value: 'tools_section'
+
+      
+
+   .. py:attribute:: External
+      :value: 'external_section'
+
+      
+
+   .. py:attribute:: Extras
+      :value: 'extras_section'
+
+      
+
+
+
+
+
+
+.. py:class:: ViewMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   ..    .. .. py:attribute:: Editor
+      :value: 'editor_section'
+
+      
+
+   ..    .. .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Top <pyllo.plugins.mainmenu.api.ViewMenuSections.Top>`
+        - \-
+      * - :py:obj:`Editor <pyllo.plugins.mainmenu.api.ViewMenuSections.Editor>`
+        - \-
+      * - :py:obj:`Bottom <pyllo.plugins.mainmenu.api.ViewMenuSections.Bottom>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   .. py:attribute:: Editor
+      :value: 'editor_section'
+
+      
+
+   .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+
+
+
+
+
+.. py:class:: HelpMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Documentation
+      :value: 'documentation_section'
+
+      
+
+   ..    .. .. py:attribute:: Support
+      :value: 'support_section'
+
+      
+
+   ..    .. .. py:attribute:: About
+      :value: 'about_section'
+
+      
+
+   ..    .. .. py:attribute:: Register
+      :value: 'register_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Documentation <pyllo.plugins.mainmenu.api.HelpMenuSections.Documentation>`
+        - \-
+      * - :py:obj:`Support <pyllo.plugins.mainmenu.api.HelpMenuSections.Support>`
+        - \-
+      * - :py:obj:`About <pyllo.plugins.mainmenu.api.HelpMenuSections.About>`
+        - \-
+      * - :py:obj:`Register <pyllo.plugins.mainmenu.api.HelpMenuSections.Register>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Documentation
+      :value: 'documentation_section'
+
+      
+
+   .. py:attribute:: Support
+      :value: 'support_section'
+
+      
+
+   .. py:attribute:: About
+      :value: 'about_section'
+
+      
+
+   .. py:attribute:: Register
+      :value: 'register_section'
+
+      
+
+
+
+
+
+

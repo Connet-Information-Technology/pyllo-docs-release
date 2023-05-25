@@ -1,0 +1,6 @@
+:py:mod:`pyllo.ui.tests.test_tabs`
+==================================
+
+.. py:module:: pyllo.ui.tests.test_tabs
+
+

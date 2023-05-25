@@ -1,0 +1,394 @@
+:py:mod:`pyllo.ui.toolbar`
+==========================
+
+.. py:module:: pyllo.ui.toolbar
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ToolTipFilter <pyllo.ui.toolbar.ToolTipFilter>`
+     - Filter tool tip events on tool buttons.
+   * - :py:obj:`ToolbarStyle <pyllo.ui.toolbar.ToolbarStyle>`
+     - \-
+   * - :py:obj:`PylloToolbar <pyllo.ui.toolbar.PylloToolbar>`
+     - Pyllo Toolbar.
+   * - :py:obj:`ApplicationToolbar <pyllo.ui.toolbar.ApplicationToolbar>`
+     - Pyllo Main application Toolbar.
+   * - :py:obj:`MainWidgetToolbar <pyllo.ui.toolbar.MainWidgetToolbar>`
+     - Pyllo Widget toolbar class.
+   * - :py:obj:`WidgetToolbar <pyllo.ui.toolbar.WidgetToolbar>`
+     - Pyllo Widget toolbar class.
+   * - :py:obj:`PylloToolbarMixin <pyllo.ui.toolbar.PylloToolbarMixin>`
+     - Provide methods to create, add and get toolbars.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ToolbarItem <pyllo.ui.toolbar.ToolbarItem>`
+     - \-
+   * - :py:obj:`ToolbarItemName <pyllo.ui.toolbar.ToolbarItemName>`
+     - \-
+   * - :py:obj:`ToolbarSectionName <pyllo.ui.toolbar.ToolbarSectionName>`
+     - \-
+   * - :py:obj:`ToolbarItemEntry <pyllo.ui.toolbar.ToolbarItemEntry>`
+     - \-
+   * - :py:obj:`ToolbarStyleType <pyllo.ui.toolbar.ToolbarStyleType>`
+     - \-
+
+
+.. py:data:: ToolbarItem
+
+   
+
+.. py:data:: ToolbarItemName
+
+   
+
+.. py:data:: ToolbarSectionName
+
+   
+
+.. py:data:: ToolbarItemEntry
+
+   
+
+.. py:data:: ToolbarStyleType
+
+   
+
+.. py:class:: ToolTipFilter
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   Filter tool tip events on tool buttons.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`eventFilter <pyllo.ui.toolbar.ToolTipFilter.eventFilter>`\ (obj, event)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: eventFilter(obj, event)
+
+
+
+
+
+.. py:class:: ToolbarStyle
+
+   Bases: :py:obj:`qtpy.QtWidgets.QProxyStyle`
+
+   ..    ..    ..    .. .. py:attribute:: TYPE
+      :type: ToolbarStyleType
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`TYPE <pyllo.ui.toolbar.ToolbarStyle.TYPE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`pixelMetric <pyllo.ui.toolbar.ToolbarStyle.pixelMetric>`\ (metric, option, widget)
+        - Adjust size of toolbar extension button (in pixels).
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: TYPE
+      :type: ToolbarStyleType
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: pixelMetric(metric: qtpy.QtWidgets.QStyle.PixelMetric, option: Optional[QStyleOption] = ..., widget: Optional[qtpy.QtWidgets.QWidget] = ...) -> int
+
+      Adjust size of toolbar extension button (in pixels).
+
+      From https://stackoverflow.com/a/27042352/438386
+
+
+
+
+
+.. py:class:: PylloToolbar(parent: qtpy.QtWidgets.QWidget = None, name: pyllo.core.dtype.Identity = None, title: pyllo.core.dtype.Text = '')
+
+   Bases: :py:obj:`qtpy.QtWidgets.QToolBar`
+
+   Pyllo Toolbar.
+
+   This class provides toolbars with some predefined functionality.
+
+   .. attention:
+       You should not create this by directly instantiate it.
+
+   ..    ..    ..    .. .. py:attribute:: DefaultSection
+      :value: '__default__'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`DefaultSection <pyllo.ui.toolbar.PylloToolbar.DefaultSection>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`addItem <pyllo.ui.toolbar.PylloToolbar.addItem>`\ (item, section, before, beforeSection)
+        - Add action or widget item to given toolbar `section`.
+      * - :py:obj:`removeItem <pyllo.ui.toolbar.PylloToolbar.removeItem>`\ (name)
+        - Remove action or widget from toolbar by id.
+      * - :py:obj:`refresh <pyllo.ui.toolbar.PylloToolbar.refresh>`\ ()
+        - Create the toolbar taking into account sections and locations.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: DefaultSection
+      :value: '__default__'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: addItem(item: ToolbarItem, section: Optional[ToolbarSectionName] = None, before: Optional[ToolbarItemName] = None, beforeSection: Optional[ToolbarSectionName] = None)
+
+      Add action or widget item to given toolbar `section`.
+
+      Parameters
+      ----------
+      item: PylloAction or QWidget
+          The item to add to the `toolbar`.
+      section: ToolbarSectionName | None
+          The section id in which to insert the `item` on the `toolbar`.
+      before: ToolbarItemId | None
+          Make the item appear before another given item.
+      beforeSection: ToolbarSectionName | None
+          Make the item defined section appear before another given section
+          (must be already defined).
+
+      Notes
+      -----
+      When you add an item with non-exists `before` item, it will become `pending` and queued in line until the
+      specific `before` item has been added, it will then be pull out of queue and added to toolbar afterwards.
+      But there is a HUGE CAUTION here, if the `before` item never been added to toolbar, the item will never be
+      added too. So please be aware of that.
+
+
+   .. py:method:: removeItem(name: pyllo.core.dtype.Identity)
+
+      Remove action or widget from toolbar by id.
+
+
+   .. py:method:: refresh()
+
+      Create the toolbar taking into account sections and locations.
+
+      This method is called once on widget setup.
+
+
+
+
+
+.. py:class:: ApplicationToolbar(parent: qtpy.QtWidgets.QWidget = None, name: pyllo.core.dtype.Identity = None, title: pyllo.core.dtype.Text = '')
+
+   Bases: :py:obj:`PylloToolbar`
+
+   Pyllo Main application Toolbar.
+
+   .. attention:
+       You should not create this by directly instantiate it. It should be created using Toolbar's api.
+
+   ..    ..    .. 
+
+
+.. py:class:: MainWidgetToolbar(parent: qtpy.QtWidgets.QWidget = None, name: pyllo.core.dtype.Identity = None, title: pyllo.core.dtype.Text = '')
+
+   Bases: :py:obj:`PylloToolbar`
+
+   Pyllo Widget toolbar class.
+
+   A toolbar used in Pyllo dockable plugins to add internal toolbars
+   to their interface.
+
+   .. attention:
+       You should not create this by directly instantiate it. It should be created using PluginMainWidget's api.
+
+   ..    ..    .. 
+
+
+.. py:class:: WidgetToolbar(parent: qtpy.QtWidgets.QWidget = None, name: pyllo.core.dtype.Identity = None, title: pyllo.core.dtype.Text = '')
+
+   Bases: :py:obj:`MainWidgetToolbar`
+
+   Pyllo Widget toolbar class.
+
+   A toolbar used in Pyllo dockable plugins to add internal toolbars
+   to their interface.
+
+   .. attention:
+       You should not create this by directly instantiate it. It should be created using PluginMainWidget's api.
+
+   ..    ..    .. 
+
+
+.. py:class:: PylloToolbarMixin
+
+   Bases: :py:obj:`pyllo.ui.api.IMixin`
+
+   Provide methods to create, add and get toolbars.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`checkCompatibility <pyllo.ui.toolbar.PylloToolbarMixin.checkCompatibility>`\ (targetObject)
+        - :summarylabel:`static` .. versionadded:: 1.0.0
+      * - :py:obj:`addItemToToolbar <pyllo.ui.toolbar.PylloToolbarMixin.addItemToToolbar>`\ (item, toolbar, section, before, beforeSection)
+        - If you provide a `before` action, the action will be placed before this
+      * - :py:obj:`createStretcher <pyllo.ui.toolbar.PylloToolbarMixin.createStretcher>`\ (name)
+        - Create a stretcher widget to be used in a Qt toolbar.
+      * - :py:obj:`createToolbar <pyllo.ui.toolbar.PylloToolbarMixin.createToolbar>`\ (name, namespace)
+        - Create a Pyllo toolbar.
+      * - :py:obj:`getToolbar <pyllo.ui.toolbar.PylloToolbarMixin.getToolbar>`\ (name, plugin, namespace)
+        - Return toolbar by name, plugin and namespace.
+      * - :py:obj:`getToolbars <pyllo.ui.toolbar.PylloToolbarMixin.getToolbars>`\ (plugin, namespace)
+        - Return all toolbars defined by a namespace on a given plugin.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: checkCompatibility(targetObject) -> bool
+      :staticmethod:
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: addItemToToolbar(item: ToolbarItem, toolbar: PylloToolbar, section: Optional[ToolbarSectionName] = None, before: Optional[ToolbarItemName] = None, beforeSection: Optional[ToolbarSectionName] = None)
+
+      If you provide a `before` action, the action will be placed before this
+      one, so the section option will be ignored, since the action will now
+      be placed in the same section as the `before` action.
+
+
+   .. py:method:: createStretcher(name: pyllo.core.dtype.Identity = None)
+
+      Create a stretcher widget to be used in a Qt toolbar.
+
+
+   .. py:method:: createToolbar(name: pyllo.core.dtype.Identity, namespace: pyllo.core.dtype.Registry2ndNamespace = None) -> PylloToolbar
+
+      Create a Pyllo toolbar.
+
+
+   .. py:method:: getToolbar(name: pyllo.core.dtype.Identity, plugin: Optional[pyllo.core.dtype.PluginName] = None, namespace: Optional[pyllo.core.dtype.Registry2ndNamespace] = None) -> PylloToolbar
+
+      Return toolbar by name, plugin and namespace.
+
+      Parameters
+      ----------
+      name: str
+          Name of the toolbar to retrieve.
+      namespace: Optional[str]
+          Widget or plugin namespace identifier under which the toolbar was stored.
+          If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the toolbar was defined. If None, then
+          `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      toolbar: QToolBar
+          The corresponding toolbar stored under the given `name`, `namespace`
+          and `plugin`.
+
+      Raises
+      ------
+      KeyError
+          If either of `name`, `namespace` or `plugin` keys do not exist in the
+          toolbar registry.
+
+
+   .. py:method:: getToolbars(plugin: Optional[pyllo.core.dtype.PluginName] = None, namespace: Optional[pyllo.core.dtype.Registry2ndNamespace] = None) -> Dict[pyllo.core.dtype.Identity, PylloToolbar]
+
+      Return all toolbars defined by a namespace on a given plugin.
+
+      Parameters
+      ----------
+      namespace: Optional[str]
+          Widget or Plugin namespace identifier under which the toolbars were stored.
+          If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the toolbars were defined. If None, then
+          `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      toolbars: Dict[str, PylloToolbar]
+          A dictionary that maps string keys to their corresponding toolbars.
+
+
+
+
+

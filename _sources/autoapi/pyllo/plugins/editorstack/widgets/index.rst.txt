@@ -1,0 +1,165 @@
+:py:mod:`pyllo.plugins.editorstack.widgets`
+===========================================
+
+.. py:module:: pyllo.plugins.editorstack.widgets
+
+.. autoapi-nested-parse::
+
+   Editor Stack widgets.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PlainTextEditor <pyllo.plugins.editorstack.widgets.PlainTextEditor>`
+     - Interface of editors
+
+
+
+
+.. py:class:: PlainTextEditor(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QPlainTextEdit`, :py:obj:`pyllo.plugins.editorstack.api.IEditor`, :py:obj:`pyllo.core.api.IUndoable`
+
+   Interface of editors
+
+   ..    ..    ..    .. .. py:attribute:: sigModificationChanged
+
+      
+
+   ..    .. .. py:attribute:: instances
+      :value: []
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigModificationChanged <pyllo.plugins.editorstack.widgets.PlainTextEditor.sigModificationChanged>`
+        - \-
+      * - :py:obj:`instances <pyllo.plugins.editorstack.widgets.PlainTextEditor.instances>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`doSave <pyllo.plugins.editorstack.widgets.PlainTextEditor.doSave>`\ ()
+        - Save the contents of this editor.
+      * - :py:obj:`doSaveAs <pyllo.plugins.editorstack.widgets.PlainTextEditor.doSaveAs>`\ (filepath)
+        - Save the contents of this editor to another object.
+      * - :py:obj:`close <pyllo.plugins.editorstack.widgets.PlainTextEditor.close>`\ ()
+        - Close editor.
+      * - :py:obj:`getEditorInput <pyllo.plugins.editorstack.widgets.PlainTextEditor.getEditorInput>`\ ()
+        - Returns the input for this editor.
+      * - :py:obj:`setInput <pyllo.plugins.editorstack.widgets.PlainTextEditor.setInput>`\ (input_)
+        - \-
+      * - :py:obj:`isModified <pyllo.plugins.editorstack.widgets.PlainTextEditor.isModified>`\ ()
+        - Returns whether the contents of this editor have changed since the
+      * - :py:obj:`isSaveAsAllowed <pyllo.plugins.editorstack.widgets.PlainTextEditor.isSaveAsAllowed>`\ ()
+        - Returns whether the "save as" operation is supported by this
+      * - :py:obj:`isSaveOnCloseNeeded <pyllo.plugins.editorstack.widgets.PlainTextEditor.isSaveOnCloseNeeded>`\ ()
+        - Returns whether the contents of this editor should be saved when
+      * - :py:obj:`isRedoAvailable <pyllo.plugins.editorstack.widgets.PlainTextEditor.isRedoAvailable>`\ ()
+        - Return ture if redo is availbale.
+      * - :py:obj:`isUndoAvailable <pyllo.plugins.editorstack.widgets.PlainTextEditor.isUndoAvailable>`\ ()
+        - Return ture if undo is availbale.
+      * - :py:obj:`clearUndo <pyllo.plugins.editorstack.widgets.PlainTextEditor.clearUndo>`\ ()
+        - Clear undo.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigModificationChanged
+
+      
+
+   .. py:attribute:: instances
+      :value: []
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: doSave()
+
+      Save the contents of this editor.
+
+
+   .. py:method:: doSaveAs(filepath: str)
+
+      Save the contents of this editor to another object.
+
+
+   .. py:method:: close()
+
+      Close editor.
+
+
+   .. py:method:: getEditorInput() -> pyllo.plugins.editorstack.api.TextEditorInput
+
+      Returns the input for this editor.
+
+
+   .. py:method:: setInput(input_: pyllo.plugins.editorstack.api.TextEditorInput) -> bool
+
+
+   .. py:method:: isModified() -> bool
+
+      Returns whether the contents of this editor have changed since the
+      last operation.
+
+
+   .. py:method:: isSaveAsAllowed() -> bool
+
+      Returns whether the "save as" operation is supported by this
+      editor.
+
+
+   .. py:method:: isSaveOnCloseNeeded() -> bool
+
+      Returns whether the contents of this editor should be saved when
+      the editor is closed.
+
+
+   .. py:method:: isRedoAvailable()
+
+      Return ture if redo is availbale.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: isUndoAvailable()
+
+      Return ture if undo is availbale.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: clearUndo()
+
+      Clear undo.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+

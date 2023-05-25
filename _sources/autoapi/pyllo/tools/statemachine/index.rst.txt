@@ -1,0 +1,88 @@
+:py:mod:`pyllo.tools.statemachine`
+==================================
+
+.. py:module:: pyllo.tools.statemachine
+
+.. autoapi-nested-parse::
+
+   Statemachine
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`StateMachine <pyllo.tools.statemachine.StateMachine>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`stateguard <pyllo.tools.statemachine.stateguard>`\ (\*states)
+     - \-
+
+
+
+.. py:function:: stateguard(*states)
+
+
+.. py:class:: StateMachine(initialState)
+
+   ..    ..    ..    .. .. py:attribute:: STATES
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`STATES <pyllo.tools.statemachine.StateMachine.STATES>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`isState <pyllo.tools.statemachine.StateMachine.isState>`\ (state)
+        - \-
+      * - :py:obj:`state <pyllo.tools.statemachine.StateMachine.state>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: STATES
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: isState(state) -> bool
+
+
+   .. py:method:: state()
+
+
+
+
+

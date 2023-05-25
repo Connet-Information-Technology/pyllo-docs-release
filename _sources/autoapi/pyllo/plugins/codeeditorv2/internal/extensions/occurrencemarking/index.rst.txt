@@ -1,0 +1,135 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking`
+==========================================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking
+
+.. autoapi-nested-parse::
+
+   Occurrence marking extension.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`OccurrenceMarking <pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking.OccurrenceMarking>`
+     - \-
+
+
+
+
+.. py:class:: OccurrenceMarking(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.CodeEditorExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'OccurrenceMarking'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   ..    .. .. py:attribute:: UPDATE_TIMEOUT
+      :value: 50
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking.OccurrenceMarking.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking.OccurrenceMarking.VERSION>`
+        - \-
+      * - :py:obj:`UPDATE_TIMEOUT <pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking.OccurrenceMarking.UPDATE_TIMEOUT>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking.OccurrenceMarking.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`beforeEditorVisible <pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking.OccurrenceMarking.beforeEditorVisible>`\ ()
+        - This method is called by editor extension framework just before editor is visible.
+      * - :py:obj:`update <pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking.OccurrenceMarking.update>`\ ()
+        - \-
+      * - :py:obj:`getOccurrences <pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking.OccurrenceMarking.getOccurrences>`\ (text, limits)
+        - Find first occurrence: scan whole document
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'OccurrenceMarking'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. py:attribute:: UPDATE_TIMEOUT
+      :value: 50
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: beforeEditorVisible()
+
+      This method is called by editor extension framework just before editor is visible.
+
+      Notes
+      -----
+      This is usually used for cross extensions features.
+      Which by means one extension's feature is dependent to another extension's feature.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: update()
+
+
+   .. py:method:: getOccurrences(text: str, limits: int = sys.maxsize)
+
+      Find first occurrence: scan whole document
+
+
+
+
+

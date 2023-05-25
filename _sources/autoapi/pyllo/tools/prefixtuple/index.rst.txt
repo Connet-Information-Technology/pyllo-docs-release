@@ -1,0 +1,71 @@
+:py:mod:`pyllo.tools.prefixtuple`
+=================================
+
+.. py:module:: pyllo.tools.prefixtuple
+
+.. autoapi-nested-parse::
+
+   Pyllo custom collections.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PrefixNode <pyllo.tools.prefixtuple.PrefixNode>`
+     - Utility class used to represent a prefixed string tuple.
+   * - :py:obj:`PrefixedTuple <pyllo.tools.prefixtuple.PrefixedTuple>`
+     - Utility class to store and iterate over prefixed string tuples.
+
+
+
+
+.. py:class:: PrefixNode(path=None)
+
+   Utility class used to represent a prefixed string tuple.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`addPath <pyllo.tools.prefixtuple.PrefixNode.addPath>`\ (path)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: addPath(path)
+
+
+
+
+
+.. py:class:: PrefixedTuple(path=None)
+
+   Bases: :py:obj:`PrefixNode`
+
+   Utility class to store and iterate over prefixed string tuples.
+
+   >>> section_prefix = PrefixedTuple()
+   >>> section_prefix.addPath(('provider_configuration', 'kite', 'values'))
+   >>> [prefix for prefix in section_prefix]
+   [('provider_configuration',), ('provider_configuration', 'kite'), ('provider_configuration', 'kite', 'values')]
+
+   ..    ..    .. 
+
+

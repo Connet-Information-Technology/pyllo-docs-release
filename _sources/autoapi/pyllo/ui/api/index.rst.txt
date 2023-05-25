@@ -1,0 +1,370 @@
+:py:mod:`pyllo.ui.api`
+======================
+
+.. py:module:: pyllo.ui.api
+
+.. autoapi-nested-parse::
+
+   Application programming interfaces for interaction with pyllo ui.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`IMixin <pyllo.ui.api.IMixin>`
+     - Mixin basic class.
+   * - :py:obj:`IActionMixin <pyllo.ui.api.IActionMixin>`
+     - Provide methods to create, add and get actions in a unified way.
+   * - :py:obj:`PylloUiPart <pyllo.ui.api.PylloUiPart>`
+     - Abstract interface of Action,Menu,Toolbar added in UI
+
+
+
+
+.. py:class:: IMixin
+
+   Mixin basic class.
+
+   TODO: move it to core base and make more mixin inherits this.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`checkCompatibility <pyllo.ui.api.IMixin.checkCompatibility>`\ (targetObject)
+        - :summarylabel:`abc` check compatibility
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: checkCompatibility(targetObject) -> bool
+      :staticmethod:
+      :abstractmethod:
+
+      check compatibility
+
+
+
+
+
+.. py:class:: IActionMixin
+
+   Bases: :py:obj:`IMixin`
+
+   Provide methods to create, add and get actions in a unified way.
+
+   This mixin uses a custom action object.
+
+   .. attention:: PylloActionMixin requires mixin target object be instnace
+       of QObject. Target object must have following attributes:
+       :attr:`CONF_SECTION` which specify configuration section. When creating
+           actions, you can also specify configuration option to synchronize
+           action state with config.
+       :attr:`PLUGIN_NAME` Plugin name which actions belongs.
+       :attr:`NAMESPACE` Context name to separate actions in groups within
+           plugin.
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`createAction <pyllo.ui.api.IActionMixin.createAction>`\ (name, text, parent, icon, iconText, tip, toggled, section, option, initial, triggered, registerShortcut, shortcutContext, shortcutNamespace, registerAction, overwrite, visiblePredicate, enabledPredicate, menuRole)
+        - name: str
+      * - :py:obj:`getAction <pyllo.ui.api.IActionMixin.getAction>`\ (name, namespace, plugin)
+        - Return an action by name, namespace and plugin.
+      * - :py:obj:`getActions <pyllo.ui.api.IActionMixin.getActions>`\ (namespace, plugin)
+        - Return all actions defined by a namespace on a given plugin.
+      * - :py:obj:`updateActions <pyllo.ui.api.IActionMixin.updateActions>`\ ()
+        - :summarylabel:`abc` Update the state of exposed actions.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: createAction(name: pyllo.core.dtype.Identity, text: pyllo.core.dtype.Text, parent: qtpy.QtWidgets.QWidget = None, icon: qtpy.QtGui.QIcon = None, iconText: pyllo.core.dtype.Text = '', tip: pyllo.core.dtype.Text = None, toggled: Callable[[bool], None] = None, section: pyllo.core.dtype.SectionName = None, option: pyllo.core.dtype.OptionName = None, initial: bool = None, triggered: Callable[[bool], None] = None, registerShortcut: bool = False, shortcutContext: qtpy.QtCore.Qt.ShortcutContext = Qt.ShortcutContext.WidgetShortcut, shortcutNamespace: pyllo.core.dtype.ShortcutNamespace = None, registerAction: bool = True, overwrite: bool = False, visiblePredicate: Callable[[], bool] = None, enabledPredicate: Callable[[], bool] = None, menuRole=None)
+
+      name: str
+          unique identifiable name for the action
+      text: str
+         Localized text for the action
+      parent: QWidget/QObject (None)
+         Define the parent of the widget. Use `self` if not provided.
+      icon: QIcon,
+          Icon for the action when applied to menu or tool button.
+      iconText: str
+          Icon for text in toolbars. If True, this will also disable
+          the tooltip on this tool button if part of a toolbar.
+      tip: str
+          Tooltip to define for action on menu or toolbar.
+      toggled: Optional[Union[Callable, bool]]
+          If True, then the action modifies the configuration option on the
+          section specified. Otherwise, it should be a callable to use
+          when toggling this action. If None, then the action does not
+          behave like a checkbox.
+      section: Optional[str]
+          Name of the configuration section whose option is going to be
+          modified. If None, and `option` is not None, then it defaults to
+          the class `CONF_SECTION` attribute.
+      option: ConfigurationKey
+          Name of the configuration option whose value is reflected and
+          affected by the action.
+      initial: object
+          Sets the initial state of a togglable action. This does not emit
+          the toggled signal.
+      triggered: callable
+          The callable to use when triggering this action.
+      registerShortcut: bool, optional
+          If True, main window will expose the shortcut in Preferences. And
+          read shortcut keysequence from config if set. If shortcut keysequene
+          is not set, then empty keysequence string will be written to pyllo.ini
+          and allow users to modify the shortcut keyboard binding.
+          The default value is `False`.
+      shortcutContext: Qt.ShortcutContext
+          Set the context for the shortcut.
+      shortcutNamespace: str
+          Shortcut namespace specified in configuration, e.g. "codeeditorv2/&cut": "CTRL+X",
+          "codeeditorv2" is namespace.
+      registerAction: bool, optional
+          If True, the action will be registered and searchable.
+          The default value is `True`.
+      overwrite: bool, optional
+          If True, in case of action overwriting no warning will be shown.
+          The default value is `False`
+      visiblePredicate: callable, optional
+          Predicate function returns boolean to inform that created action should be show/hide in context.
+      enabledPredicate: callable, optional
+          Predicate function returns boolean to inform that created action should be enabled in context.
+      menuRole: QAction.MenuRole, optional
+          Menu role for the action (it only has effect on macOS).
+
+      Notes
+      -----
+      If iconText is True, this will also disable the tooltip.
+
+      If a shortcut is found in the default config then it is assigned,
+      otherwise it's left blank for the user to define one for it.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getAction(name: pyllo.core.dtype.Identity, namespace: pyllo.core.dtype.Registry2ndNamespace = None, plugin: pyllo.core.dtype.PluginName = None) -> PylloAction
+
+      Return an action by name, namespace and plugin.
+
+      Parameters
+      ----------
+      name: str
+          Name of the action to retrieve.
+      namespace: Optional[str]
+          Widget or plugin namespace identifier under which the action was stored.
+          If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the action was defined. If None, then
+          `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      action: PylloAction
+          The corresponding action stored under the given `name`, `namespace`
+          and `plugin`.
+
+      Raises
+      ------
+      KeyError
+          If either of `name`, `namespace` or `plugin` keys do not exist in the
+          action registry.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getActions(namespace: pyllo.core.dtype.Registry2ndNamespace = None, plugin: pyllo.core.dtype.PluginName = None) -> Dict[pyllo.core.dtype.Identity, PylloAction]
+
+      Return all actions defined by a namespace on a given plugin.
+
+      Parameters
+      ----------
+      namespace: Optional[str]
+          Widget or Plugin namespace identifier under which the actions were stored.
+          If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the actions were defined. If None, then
+          `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      actions: Dict[str, PylloAction]
+          A dictionary that maps string keys to their corresponding actions.
+
+      Notes
+      -----
+      1. Actions should be created once. Creating new actions on menu popup
+         is *highly* discouraged.
+      2. Actions can be created directly on a PluginMainWidget or
+         PluginMainContainer subclass. Child widget can also create
+         actions, but they need to subclass PylloWidgetMixin.
+      3. PluginMainWidget or PluginMainContainer will collect any actions
+         defined in subwidgets (if defined) and expose them in the
+         getActions method at the plugin level.
+      4. Any action created this way is now exposed as a possible shortcut
+         automatically without manual shortcut registration.
+         If an option is found in the config system then it is assigned,
+         otherwise it's left with an empty shortcut.
+      5. There is no need to override this method.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: updateActions()
+      :abstractmethod:
+
+      Update the state of exposed actions.
+
+      Exposed actions are actions created by the `createAction` method.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: PylloUiPart(*args, name: pyllo.core.dtype.Identity = None, **kwargs)
+
+   Bases: :py:obj:`object`
+
+   Abstract interface of Action,Menu,Toolbar added in UI
+
+   ..    ..    ..    .. .. py:attribute:: itemCounts
+      :type: Dict[pyllo.core.dtype.Identity, int]
+
+      
+
+   ..    .. .. py:attribute:: uiPartRegistry
+      :type: weakref.WeakSet
+
+      
+
+   ..    .. .. py:attribute:: InInspectingMode
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`itemCounts <pyllo.ui.api.PylloUiPart.itemCounts>`
+        - \-
+      * - :py:obj:`uiPartRegistry <pyllo.ui.api.PylloUiPart.uiPartRegistry>`
+        - \-
+      * - :py:obj:`InInspectingMode <pyllo.ui.api.PylloUiPart.InInspectingMode>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`uiPath <pyllo.ui.api.PylloUiPart.uiPath>`\ ()
+        - Returns ui path
+      * - :py:obj:`atPath <pyllo.ui.api.PylloUiPart.atPath>`\ (uipath)
+        - :summarylabel:`static` Get widget at specific ui path
+      * - :py:obj:`setInspectingModeEnabled <pyllo.ui.api.PylloUiPart.setInspectingModeEnabled>`\ (enable)
+        - :summarylabel:`class` \-
+      * - :py:obj:`isInspectingModeEnabled <pyllo.ui.api.PylloUiPart.isInspectingModeEnabled>`\ ()
+        - :summarylabel:`class` \-
+      * - :py:obj:`enterEvent <pyllo.ui.api.PylloUiPart.enterEvent>`\ (event)
+        - \-
+      * - :py:obj:`leaveEvent <pyllo.ui.api.PylloUiPart.leaveEvent>`\ (event)
+        - \-
+      * - :py:obj:`paintEvent <pyllo.ui.api.PylloUiPart.paintEvent>`\ (event)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: itemCounts
+      :type: Dict[pyllo.core.dtype.Identity, int]
+
+      
+
+   .. py:attribute:: uiPartRegistry
+      :type: weakref.WeakSet
+
+      
+
+   .. py:attribute:: InInspectingMode
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: uiPath() -> pyllo.core.dtype.Identity
+
+      Returns ui path
+
+
+   .. py:method:: atPath(uipath: pyllo.core.dtype.Identity) -> Optional[PylloUiPart]
+      :staticmethod:
+
+      Get widget at specific ui path
+
+
+   .. py:method:: setInspectingModeEnabled(enable: bool)
+      :classmethod:
+
+
+   .. py:method:: isInspectingModeEnabled() -> bool
+      :classmethod:
+
+
+   .. py:method:: enterEvent(event)
+
+
+   .. py:method:: leaveEvent(event)
+
+
+   .. py:method:: paintEvent(event)
+
+
+
+
+

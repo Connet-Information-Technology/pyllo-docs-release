@@ -1,0 +1,52 @@
+:py:mod:`pyllo.main`
+====================
+
+.. py:module:: pyllo.main
+
+.. autoapi-nested-parse::
+
+   Pyllo main entry.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`createInternalConsole <pyllo.main.createInternalConsole>`\ (variables)
+     - \-
+   * - :py:obj:`main <pyllo.main.main>`\ ()
+     - Main entry.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`WEBENGINE <pyllo.main.WEBENGINE>`
+     - \-
+
+
+.. py:data:: WEBENGINE
+
+   
+
+.. py:function:: createInternalConsole(variables: Dict[str, Any] = {}) -> qtconsole.rich_jupyter_widget.RichJupyterWidget
+
+
+.. py:function:: main()
+
+   Main entry.
+
+   .. versionadded:: 1.0.0
+
+

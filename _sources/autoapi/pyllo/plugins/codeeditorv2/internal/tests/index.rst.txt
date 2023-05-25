@@ -1,0 +1,6 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.tests`
+===================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.tests
+
+

@@ -1,0 +1,16 @@
+:py:mod:`pyllo.ui.tests`
+========================
+
+.. py:module:: pyllo.ui.tests
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   test_tabs/index.rst
+   test_toolbar/index.rst
+
+

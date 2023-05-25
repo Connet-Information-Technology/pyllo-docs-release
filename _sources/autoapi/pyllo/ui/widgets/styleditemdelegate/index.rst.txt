@@ -1,0 +1,64 @@
+:py:mod:`pyllo.ui.widgets.styleditemdelegate`
+=============================================
+
+.. py:module:: pyllo.ui.widgets.styleditemdelegate
+
+.. autoapi-nested-parse::
+
+   HTML Delegate.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`HTMLDelegate <pyllo.ui.widgets.styleditemdelegate.HTMLDelegate>`
+     - With this delegate, a QListWidgetItem or a QTableItem can render HTML.
+
+
+
+
+.. py:class:: HTMLDelegate(parent, margin=0)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QStyledItemDelegate`
+
+   With this delegate, a QListWidgetItem or a QTableItem can render HTML.
+
+   Taken from https://stackoverflow.com/a/5443112/2399799
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`paint <pyllo.ui.widgets.styleditemdelegate.HTMLDelegate.paint>`\ (painter, option, index)
+        - \-
+      * - :py:obj:`sizeHint <pyllo.ui.widgets.styleditemdelegate.HTMLDelegate.sizeHint>`\ (option, index)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: paint(painter, option, index)
+
+
+   .. py:method:: sizeHint(option, index)
+
+
+
+
+

@@ -1,0 +1,215 @@
+:py:mod:`pyllo.config.tests.test_user`
+======================================
+
+.. py:module:: pyllo.config.tests.test_user
+
+.. autoapi-nested-parse::
+
+   Tests for config/user.py.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`TestUserConfigGet <pyllo.config.tests.test_user.TestUserConfigGet>`
+     - \-
+   * - :py:obj:`TestUserConfigSet <pyllo.config.tests.test_user.TestUserConfigSet>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`testDefaultConfigSet <pyllo.config.tests.test_user.testDefaultConfigSet>`\ (defaultConfig, capsys, testInput, expected)
+     - \-
+   * - :py:obj:`testDefaultConfigSaveWrite <pyllo.config.tests.test_user.testDefaultConfigSaveWrite>`\ (defaultConfig)
+     - \-
+   * - :py:obj:`testDefaultConfigSetDefaults <pyllo.config.tests.test_user.testDefaultConfigSetDefaults>`\ (defaultConfig)
+     - \-
+   * - :py:obj:`testUserConfigGetMinorVersion <pyllo.config.tests.test_user.testUserConfigGetMinorVersion>`\ (value, expected)
+     - \-
+   * - :py:obj:`testUserConfigGetMajorVersion <pyllo.config.tests.test_user.testUserConfigGetMajorVersion>`\ (value, expected)
+     - \-
+   * - :py:obj:`testUserConfigCheckVersion <pyllo.config.tests.test_user.testUserConfigCheckVersion>`\ (tmpdir, testVersion, userConfig)
+     - \-
+   * - :py:obj:`testUserConfigCheckDefaults <pyllo.config.tests.test_user.testUserConfigCheckDefaults>`\ (tmpdir, capsys)
+     - \-
+   * - :py:obj:`testUserConfigCheckSectionOption <pyllo.config.tests.test_user.testUserConfigCheckSectionOption>`\ (userConfig)
+     - \-
+   * - :py:obj:`testUserConfigLoadFromIni <pyllo.config.tests.test_user.testUserConfigLoadFromIni>`\ (tmpdir, capsys)
+     - \-
+   * - :py:obj:`testUserConfigGetVersion <pyllo.config.tests.test_user.testUserConfigGetVersion>`\ (userConfig)
+     - \-
+   * - :py:obj:`testUserConfigSetVersion <pyllo.config.tests.test_user.testUserConfigSetVersion>`\ (userConfig)
+     - \-
+   * - :py:obj:`testUserConfigResetToDefaults <pyllo.config.tests.test_user.testUserConfigResetToDefaults>`\ (tmpdir)
+     - \-
+   * - :py:obj:`testUserConfigSetAsDefaults <pyllo.config.tests.test_user.testUserConfigSetAsDefaults>`\ (tmpdir)
+     - \-
+   * - :py:obj:`testUserConfigGetDefault <pyllo.config.tests.test_user.testUserConfigGetDefault>`\ (userConfig)
+     - \-
+   * - :py:obj:`testUserConfigSetDefault <pyllo.config.tests.test_user.testUserConfigSetDefault>`\ (userConfig)
+     - \-
+   * - :py:obj:`testUserConfigRemoveSection <pyllo.config.tests.test_user.testUserConfigRemoveSection>`\ (userConfig)
+     - \-
+   * - :py:obj:`testUserConfigRemoveOption <pyllo.config.tests.test_user.testUserConfigRemoveOption>`\ (userConfig)
+     - \-
+   * - :py:obj:`testUserConfigCleanup <pyllo.config.tests.test_user.testUserConfigCleanup>`\ (userConfig)
+     - \-
+   * - :py:obj:`testUserConfigLiteralString <pyllo.config.tests.test_user.testUserConfigLiteralString>`\ (userConfig, value, expect)
+     - \-
+
+
+
+.. py:function:: testDefaultConfigSet(defaultConfig, capsys, testInput, expected)
+
+
+.. py:function:: testDefaultConfigSaveWrite(defaultConfig)
+
+
+.. py:function:: testDefaultConfigSetDefaults(defaultConfig)
+
+
+.. py:function:: testUserConfigGetMinorVersion(value, expected)
+
+
+.. py:function:: testUserConfigGetMajorVersion(value, expected)
+
+
+.. py:function:: testUserConfigCheckVersion(tmpdir, testVersion, userConfig)
+
+
+.. py:function:: testUserConfigCheckDefaults(tmpdir, capsys)
+
+
+.. py:function:: testUserConfigCheckSectionOption(userConfig)
+
+
+.. py:function:: testUserConfigLoadFromIni(tmpdir, capsys)
+
+
+.. py:function:: testUserConfigGetVersion(userConfig)
+
+
+.. py:function:: testUserConfigSetVersion(userConfig)
+
+
+.. py:function:: testUserConfigResetToDefaults(tmpdir)
+
+
+.. py:function:: testUserConfigSetAsDefaults(tmpdir)
+
+
+.. py:function:: testUserConfigGetDefault(userConfig)
+
+
+.. py:class:: TestUserConfigGet
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`testUserConfigGet <pyllo.config.tests.test_user.TestUserConfigGet.testUserConfigGet>`\ (defaults, value, tmpdir)
+        - \-
+      * - :py:obj:`testUserConfigGet2 <pyllo.config.tests.test_user.TestUserConfigGet.testUserConfigGet2>`\ (defaults, default, raises, tmpdir)
+        - \-
+      * - :py:obj:`testUserConfigGetStringFromIniFile <pyllo.config.tests.test_user.TestUserConfigGet.testUserConfigGetStringFromIniFile>`\ (userConfig)
+        - \-
+      * - :py:obj:`testUserConfigGetDoesNotEvalFunctions <pyllo.config.tests.test_user.TestUserConfigGet.testUserConfigGetDoesNotEvalFunctions>`\ (userConfig)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: testUserConfigGet(defaults, value, tmpdir)
+
+
+   .. py:method:: testUserConfigGet2(defaults, default, raises, tmpdir)
+
+
+   .. py:method:: testUserConfigGetStringFromIniFile(userConfig)
+
+
+   .. py:method:: testUserConfigGetDoesNotEvalFunctions(userConfig)
+
+
+
+
+
+.. py:function:: testUserConfigSetDefault(userConfig)
+
+
+.. py:class:: TestUserConfigSet
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`testUserConfigSetValid <pyllo.config.tests.test_user.TestUserConfigSet.testUserConfigSetValid>`\ (defaults, value, tmpdir)
+        - \-
+      * - :py:obj:`testUserConfigSetInvalid <pyllo.config.tests.test_user.TestUserConfigSet.testUserConfigSetInvalid>`\ (defaults, value, tmpdir)
+        - \-
+      * - :py:obj:`testUserConfigSetWithString <pyllo.config.tests.test_user.TestUserConfigSet.testUserConfigSetWithString>`\ (userConfig)
+        - \-
+      * - :py:obj:`testUserConfigSetPercentageString <pyllo.config.tests.test_user.TestUserConfigSet.testUserConfigSetPercentageString>`\ (userConfig)
+        - Test to set an option with a '%'.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: testUserConfigSetValid(defaults, value, tmpdir)
+
+
+   .. py:method:: testUserConfigSetInvalid(defaults, value, tmpdir)
+
+
+   .. py:method:: testUserConfigSetWithString(userConfig)
+
+
+   .. py:method:: testUserConfigSetPercentageString(userConfig)
+
+      Test to set an option with a '%'.
+
+
+
+
+
+.. py:function:: testUserConfigRemoveSection(userConfig)
+
+
+.. py:function:: testUserConfigRemoveOption(userConfig)
+
+
+.. py:function:: testUserConfigCleanup(userConfig)
+
+
+.. py:function:: testUserConfigLiteralString(userConfig, value, expect)
+
+

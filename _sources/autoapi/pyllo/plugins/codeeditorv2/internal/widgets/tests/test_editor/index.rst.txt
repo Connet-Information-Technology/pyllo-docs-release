@@ -1,0 +1,263 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor`
+=======================================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MockPylloConfigurationMixin <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.MockPylloConfigurationMixin>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`editorbot <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.editorbot>`\ (qtbot, monkeypatch, request)
+     - \-
+   * - :py:obj:`test_editor_getLineSeparator <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getLineSeparator>`\ (editorbot, linesep, expected)
+     - \-
+   * - :py:obj:`test_editor_getLineSeparator2 <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getLineSeparator2>`\ (editorbot, linesep, expected)
+     - \-
+   * - :py:obj:`test_editor_setLineSeparator <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_setLineSeparator>`\ (editorbot, linesep, expected)
+     - \-
+   * - :py:obj:`test_editor_getCursor <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getCursor>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_getCoordinates <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getCoordinates>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_isPointInsideWordRect <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_isPointInsideWordRect>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_isOnFirstLine <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_isOnFirstLine>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_isOnLastLine <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_isOnLastLine>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_isAtEnd <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_isAtEnd>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_isAtStart <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_isAtStart>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_select <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_select>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_toPlainTextWithLineSeperator <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_toPlainTextWithLineSeperator>`\ (editorbot, linesep, expected)
+     - \-
+   * - :py:obj:`test_editor_toPlainTextWithSeparator <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_toPlainTextWithSeparator>`\ (editorbot, linesep, expected)
+     - \-
+   * - :py:obj:`test_editor_getLine <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getLine>`\ (editorbot, linesep)
+     - \-
+   * - :py:obj:`test_editor_getText <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getText>`\ (editorbot, linesep)
+     - \-
+   * - :py:obj:`test_editor_getCharacter <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getCharacter>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_setText <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_setText>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_insertText <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_insertText>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_removeText <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_removeText>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_replaceText <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_replaceText>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_getTextIndentation <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getTextIndentation>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_getTextIndentation <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getTextIndentation>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_getCursorIndentation <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getCursorIndentation>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_getLineIndentation <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getLineIndentation>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_getSelectionBoundOfBlocks <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getSelectionBoundOfBlocks>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_getSelectionBoundOfPosition2 <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getSelectionBoundOfPosition2>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_getWordAt <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getWordAt>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_findText <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_findText>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_replaceWithPattern <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_replaceWithPattern>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_getMatchCount <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_getMatchCount>`\ (editorbot)
+     - \-
+   * - :py:obj:`test_editor_findOccurrences <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.test_editor_findOccurrences>`\ (editorbot)
+     - \-
+
+
+
+.. py:class:: MockPylloConfigurationMixin
+
+   ..    ..    ..    .. .. py:attribute:: CONF_SECTION
+      :value: 'codeeditorv2'
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: CONF_DEFAULTS
+
+      
+
+   ..    .. .. py:attribute:: CONF_NAME_MAP
+
+      
+
+   ..    .. .. py:attribute:: CONF_VERSION
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.MockPylloConfigurationMixin.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.MockPylloConfigurationMixin.CONF_FILE>`
+        - \-
+      * - :py:obj:`CONF_DEFAULTS <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.MockPylloConfigurationMixin.CONF_DEFAULTS>`
+        - \-
+      * - :py:obj:`CONF_NAME_MAP <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.MockPylloConfigurationMixin.CONF_NAME_MAP>`
+        - \-
+      * - :py:obj:`CONF_VERSION <pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor.MockPylloConfigurationMixin.CONF_VERSION>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_SECTION
+      :value: 'codeeditorv2'
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: True
+
+      
+
+   .. py:attribute:: CONF_DEFAULTS
+
+      
+
+   .. py:attribute:: CONF_NAME_MAP
+
+      
+
+   .. py:attribute:: CONF_VERSION
+
+      
+
+
+
+
+
+
+.. py:function:: editorbot(qtbot, monkeypatch, request)
+
+
+.. py:function:: test_editor_getLineSeparator(editorbot, linesep, expected)
+
+
+.. py:function:: test_editor_getLineSeparator2(editorbot, linesep, expected)
+
+
+.. py:function:: test_editor_setLineSeparator(editorbot, linesep, expected)
+
+
+.. py:function:: test_editor_getCursor(editorbot)
+
+
+.. py:function:: test_editor_getCoordinates(editorbot)
+
+
+.. py:function:: test_editor_isPointInsideWordRect(editorbot)
+
+
+.. py:function:: test_editor_isOnFirstLine(editorbot)
+
+
+.. py:function:: test_editor_isOnLastLine(editorbot)
+
+
+.. py:function:: test_editor_isAtEnd(editorbot)
+
+
+.. py:function:: test_editor_isAtStart(editorbot)
+
+
+.. py:function:: test_editor_select(editorbot)
+
+
+.. py:function:: test_editor_toPlainTextWithLineSeperator(editorbot, linesep, expected)
+
+
+.. py:function:: test_editor_toPlainTextWithSeparator(editorbot, linesep, expected)
+
+
+.. py:function:: test_editor_getLine(editorbot, linesep)
+
+
+.. py:function:: test_editor_getText(editorbot, linesep)
+
+
+.. py:function:: test_editor_getCharacter(editorbot)
+
+
+.. py:function:: test_editor_setText(editorbot)
+
+
+.. py:function:: test_editor_insertText(editorbot)
+
+
+.. py:function:: test_editor_removeText(editorbot)
+
+
+.. py:function:: test_editor_replaceText(editorbot)
+
+
+.. py:function:: test_editor_getTextIndentation(editorbot)
+
+
+.. py:function:: test_editor_getTextIndentation(editorbot)
+
+
+.. py:function:: test_editor_getCursorIndentation(editorbot)
+
+
+.. py:function:: test_editor_getLineIndentation(editorbot)
+
+
+.. py:function:: test_editor_getSelectionBoundOfBlocks(editorbot)
+
+
+.. py:function:: test_editor_getSelectionBoundOfPosition2(editorbot)
+
+
+.. py:function:: test_editor_getWordAt(editorbot)
+
+
+.. py:function:: test_editor_findText(editorbot)
+
+
+.. py:function:: test_editor_replaceWithPattern(editorbot)
+
+
+.. py:function:: test_editor_getMatchCount(editorbot)
+
+
+.. py:function:: test_editor_findOccurrences(editorbot)
+
+

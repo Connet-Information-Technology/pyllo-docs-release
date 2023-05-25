@@ -1,0 +1,153 @@
+:py:mod:`pyllo.tools.encoding`
+==============================
+
+.. py:module:: pyllo.tools.encoding
+
+.. autoapi-nested-parse::
+
+   Functions for encoding and decoding bytes that come from the *file system*.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`transcode <pyllo.tools.encoding.transcode>`\ (text, input, output)
+     - Transcode a text string
+   * - :py:obj:`getFileSystemEncoding <pyllo.tools.encoding.getFileSystemEncoding>`\ ()
+     - Query the filesystem for the encoding used to encode filenames
+   * - :py:obj:`toUnicodeFromFs <pyllo.tools.encoding.toUnicodeFromFs>`\ (string)
+     - Return a unicode version of string decoded using the file system encoding.
+   * - :py:obj:`toFsFromUnicode <pyllo.tools.encoding.toFsFromUnicode>`\ (unicode)
+     - Return a byte string version of unicode encoded using the file
+   * - :py:obj:`getCoding <pyllo.tools.encoding.getCoding>`\ (text, forceChardet)
+     - Function to get the coding of a text.
+   * - :py:obj:`decode <pyllo.tools.encoding.decode>`\ (text)
+     - Function to decode a text.
+   * - :py:obj:`encode <pyllo.tools.encoding.encode>`\ (text, origCoding)
+     - Function to encode a text.
+   * - :py:obj:`isTextFile <pyllo.tools.encoding.isTextFile>`\ (filename)
+     - Test if the given path is a text-like file.
+   * - :py:obj:`qbytearrayToStr <pyllo.tools.encoding.qbytearrayToStr>`\ (qba)
+     - Convert QByteArray object to str in a way compatible with Python 2/3
+   * - :py:obj:`read <pyllo.tools.encoding.read>`\ (filename)
+     - Read text from file ('filename')
+   * - :py:obj:`readlines <pyllo.tools.encoding.readlines>`\ (filename, encoding)
+     - Read lines from file ('filename')
+   * - :py:obj:`write <pyllo.tools.encoding.write>`\ (text, filename, encoding, mode)
+     - Write 'text' to file ('filename') assuming 'encoding' in an atomic way
+   * - :py:obj:`writelines <pyllo.tools.encoding.writelines>`\ (lines, filename, encoding, mode)
+     - Write 'lines' to file ('filename') assuming 'encoding'
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PREFERRED_ENCODING <pyllo.tools.encoding.PREFERRED_ENCODING>`
+     - \-
+   * - :py:obj:`CODING_RE <pyllo.tools.encoding.CODING_RE>`
+     - \-
+   * - :py:obj:`CODECS <pyllo.tools.encoding.CODECS>`
+     - \-
+
+
+.. py:data:: PREFERRED_ENCODING
+
+   
+
+.. py:function:: transcode(text, input=PREFERRED_ENCODING, output=PREFERRED_ENCODING)
+
+   Transcode a text string
+
+
+.. py:function:: getFileSystemEncoding()
+
+   Query the filesystem for the encoding used to encode filenames
+   and environment variables.
+
+
+.. py:function:: toUnicodeFromFs(string)
+
+   Return a unicode version of string decoded using the file system encoding.
+
+
+.. py:function:: toFsFromUnicode(unicode)
+
+   Return a byte string version of unicode encoded using the file
+   system encoding.
+
+
+.. py:data:: CODING_RE
+
+   
+
+.. py:data:: CODECS
+   :value: ['utf-8', 'iso8859-1', 'iso8859-15', 'ascii', 'koi8-r', 'cp1251', 'koi8-u', 'iso8859-2',...
+
+   
+
+.. py:function:: getCoding(text, forceChardet=False)
+
+   Function to get the coding of a text.
+   @param text text to inspect (string)
+   @return coding string
+
+
+.. py:function:: decode(text)
+
+   Function to decode a text.
+   @param text text to decode (string)
+   @return decoded text and encoding
+
+
+.. py:function:: encode(text, origCoding)
+
+   Function to encode a text.
+   @param text text to encode (string)
+   @param origCoding type of the original coding (string)
+   @return encoded text and encoding
+
+
+.. py:function:: isTextFile(filename)
+
+   Test if the given path is a text-like file.
+
+
+.. py:function:: qbytearrayToStr(qba)
+
+   Convert QByteArray object to str in a way compatible with Python 2/3
+
+
+.. py:function:: read(filename)
+
+   Read text from file ('filename')
+   Return text and encoding
+
+
+.. py:function:: readlines(filename, encoding='utf-8')
+
+   Read lines from file ('filename')
+   Return lines and encoding
+
+
+.. py:function:: write(text, filename, encoding='utf-8', mode='wb')
+
+   Write 'text' to file ('filename') assuming 'encoding' in an atomic way
+   Return (eventually new) encoding
+
+
+.. py:function:: writelines(lines, filename, encoding='utf-8', mode='wb')
+
+   Write 'lines' to file ('filename') assuming 'encoding'
+   Return (eventually new) encoding
+
+

@@ -1,0 +1,127 @@
+:py:mod:`pyllo.config.gui`
+==========================
+
+.. py:module:: pyllo.config.gui
+
+.. autoapi-nested-parse::
+
+   Pyllo GUI-related configuration management
+
+   Important note regarding shortcuts:
+       For compatibility with QWERTZ keyboards, one must avoid using the following
+       shortcuts:
+           Ctrl + Alt + Q, W, F, G, Y, X, C, V, B, N
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`fontIsInstalled <pyllo.config.gui.fontIsInstalled>`\ (font)
+     - Check if font is installed
+   * - :py:obj:`getFamily <pyllo.config.gui.getFamily>`\ (families)
+     - Return the first installed font family in family list
+   * - :py:obj:`getFont <pyllo.config.gui.getFont>`\ (section, option, fontSizeDelta, bold, italic)
+     - Get console font properties depending on OS and user options
+   * - :py:obj:`setFont <pyllo.config.gui.setFont>`\ (font, section, option)
+     - Set font
+   * - :py:obj:`getColorScheme <pyllo.config.gui.getColorScheme>`\ (name)
+     - Get syntax color scheme
+   * - :py:obj:`setColorScheme <pyllo.config.gui.setColorScheme>`\ (name, colorScheme, replace)
+     - Set syntax color scheme
+   * - :py:obj:`setDefaultColorScheme <pyllo.config.gui.setDefaultColorScheme>`\ (name, replace)
+     - Reset color scheme to default values
+   * - :py:obj:`isDarkFontColor <pyllo.config.gui.isDarkFontColor>`\ (colorScheme)
+     - Check if the font color used in the color scheme is dark.
+   * - :py:obj:`isDarkInterface <pyllo.config.gui.isDarkInterface>`\ ()
+     - \-
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`STYLE_BUTTON_CSS <pyllo.config.gui.STYLE_BUTTON_CSS>`
+     - \-
+   * - :py:obj:`OLD_PYQT <pyllo.config.gui.OLD_PYQT>`
+     - \-
+   * - :py:obj:`FONT_CACHE <pyllo.config.gui.FONT_CACHE>`
+     - \-
+   * - :py:obj:`COLOR_SCHEME_KEYS <pyllo.config.gui.COLOR_SCHEME_KEYS>`
+     - \-
+   * - :py:obj:`COLOR_SCHEME_NAMES <pyllo.config.gui.COLOR_SCHEME_NAMES>`
+     - \-
+
+
+.. py:data:: STYLE_BUTTON_CSS
+   :value: 'QToolButton::menu-indicator{image: none;}'
+
+   
+
+.. py:data:: OLD_PYQT
+
+   
+
+.. py:function:: fontIsInstalled(font)
+
+   Check if font is installed
+
+
+.. py:function:: getFamily(families)
+
+   Return the first installed font family in family list
+
+
+.. py:data:: FONT_CACHE
+
+   
+
+.. py:function:: getFont(section='appearance', option='font', fontSizeDelta=0, bold=False, italic=False)
+
+   Get console font properties depending on OS and user options
+
+
+.. py:function:: setFont(font, section='appearance', option='font')
+
+   Set font
+
+
+.. py:data:: COLOR_SCHEME_KEYS
+
+   
+
+.. py:data:: COLOR_SCHEME_NAMES
+
+   
+
+.. py:function:: getColorScheme(name)
+
+   Get syntax color scheme
+
+
+.. py:function:: setColorScheme(name, colorScheme, replace=True)
+
+   Set syntax color scheme
+
+
+.. py:function:: setDefaultColorScheme(name, replace=True)
+
+   Reset color scheme to default values
+
+
+.. py:function:: isDarkFontColor(colorScheme)
+
+   Check if the font color used in the color scheme is dark.
+
+
+.. py:function:: isDarkInterface()
+
+

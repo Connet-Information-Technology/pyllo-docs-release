@@ -1,0 +1,1601 @@
+:py:mod:`pyllo.ui.plugin`
+=========================
+
+.. py:module:: pyllo.ui.plugin
+
+.. autoapi-nested-parse::
+
+   Pyllo plugin widgets
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PluginMainWidgetMenus <pyllo.ui.plugin.PluginMainWidgetMenus>`
+     - \-
+   * - :py:obj:`OptionsMenuSections <pyllo.ui.plugin.OptionsMenuSections>`
+     - \-
+   * - :py:obj:`PylloToolButtonMixin <pyllo.ui.plugin.PylloToolButtonMixin>`
+     - Provide methods to create, add and get tool buttons.
+   * - :py:obj:`PylloActionMixin <pyllo.ui.plugin.PylloActionMixin>`
+     - Provide methods to create, add and get actions in a unified way.
+   * - :py:obj:`PylloWidgetMixin <pyllo.ui.plugin.PylloWidgetMixin>`
+     - Basic functionality for all Pyllo widget and Qt items.
+   * - :py:obj:`PluginMainContainer <pyllo.ui.plugin.PluginMainContainer>`
+     - Pyllo plugin main container class.
+   * - :py:obj:`PylloWindowWidget <pyllo.ui.plugin.PylloWindowWidget>`
+     - MainWindow subclass that contains a Pyllo Plugin.
+   * - :py:obj:`PluginMainWidgetWidgets <pyllo.ui.plugin.PluginMainWidgetWidgets>`
+     - \-
+   * - :py:obj:`PluginMainWidgetActions <pyllo.ui.plugin.PluginMainWidgetActions>`
+     - \-
+   * - :py:obj:`PluginMainWidget <pyllo.ui.plugin.PluginMainWidget>`
+     - Pyllo plugin main widget class.
+   * - :py:obj:`MainCornerWidget <pyllo.ui.plugin.MainCornerWidget>`
+     - Corner widget to hold options menu, spinner and additional options.
+   * - :py:obj:`MainWidgetMenu <pyllo.ui.plugin.MainWidgetMenu>`
+     - This menu fixes the bottom section of the options menu.
+
+
+
+
+.. py:class:: PluginMainWidgetMenus
+
+   ..    ..    ..    .. .. py:attribute:: Context
+      :value: 'context_menu'
+
+      
+
+   ..    .. .. py:attribute:: Options
+      :value: 'options_menu'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Context <pyllo.ui.plugin.PluginMainWidgetMenus.Context>`
+        - \-
+      * - :py:obj:`Options <pyllo.ui.plugin.PluginMainWidgetMenus.Options>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Context
+      :value: 'context_menu'
+
+      
+
+   .. py:attribute:: Options
+      :value: 'options_menu'
+
+      
+
+
+
+
+
+
+.. py:class:: OptionsMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   ..    .. .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Top <pyllo.ui.plugin.OptionsMenuSections.Top>`
+        - \-
+      * - :py:obj:`Bottom <pyllo.ui.plugin.OptionsMenuSections.Bottom>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+
+
+
+
+
+.. py:class:: PylloToolButtonMixin
+
+   Bases: :py:obj:`pyllo.ui.api.IMixin`
+
+   Provide methods to create, add and get tool buttons.
+
+   .. attention:: PylloToolButtonMixin requires mixin target object be instnace
+       of QWidget. Target object must have following attributes:
+       :attr:`CONF_SECTION` which specify configuration section. When creating
+           actions, you can also specify configuration option to synchronize
+           action state with config.
+       :attr:`PLUGIN_NAME` Plugin name which actions belongs.
+       :attr:`NAMESPACE` Context name to separate actions in groups within
+           plugin.
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`checkCompatibility <pyllo.ui.plugin.PylloToolButtonMixin.checkCompatibility>`\ (targetObject)
+        - :summarylabel:`static` .. versionadded:: 1.0.0
+      * - :py:obj:`createToolButton <pyllo.ui.plugin.PylloToolButtonMixin.createToolButton>`\ (name, text, icon, tip, toggled, triggered, autoRaise, textBesideIcon, section, option)
+        - Create a Pyllo tool button.
+      * - :py:obj:`getToolButton <pyllo.ui.plugin.PylloToolButtonMixin.getToolButton>`\ (name, namespace, plugin)
+        - Return tool button by name, plugin and namespace.
+      * - :py:obj:`getToolButtons <pyllo.ui.plugin.PylloToolButtonMixin.getToolButtons>`\ (namespace, plugin)
+        - Return all tool buttons defined by a namespace on a given plugin.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: checkCompatibility(targetObject) -> bool
+      :staticmethod:
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: createToolButton(name: pyllo.core.dtype.Identity, text: Optional[str] = None, icon: Optional[qtpy.QtGui.QIcon] = None, tip: Optional[str] = None, toggled: Optional[Callable] = None, triggered: Optional[Callable] = None, autoRaise=True, textBesideIcon=False, section: Optional[str] = None, option: Optional[str] = None)
+
+      Create a Pyllo tool button.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getToolButton(name: str, namespace: Optional[str] = None, plugin: Optional[str] = None) -> qtpy.QtWidgets.QToolButton
+
+      Return tool button by name, plugin and namespace.
+
+      Parameters
+      ----------
+      name: str
+          Name of the tool button to retrieve.
+      namespace: Optional[str]
+          Widget or Plugin namespace identifier under which the tool button was stored.
+          If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the tool button was defined. If None, then
+          `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      tool button: QToolButton
+          The corresponding tool button stored under the given `name`,
+          `namespace` and `plugin`.
+
+      Raises
+      ------
+      KeyError
+          If either of `name`, `namespace` or `plugin` keys do not exist in the
+          tool button registry.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getToolButtons(namespace: Optional[str] = None, plugin: Optional[str] = None) -> Dict[str, qtpy.QtWidgets.QToolButton]
+
+      Return all tool buttons defined by a namespace on a given plugin.
+
+      Parameters
+      ----------
+      namespace: Optional[str]
+          Widget or Plugin namespace identifier under which the tool buttons were
+          stored. If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the tool buttons were defined.
+          If None, then `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      tool buttons: Dict[str, QToolButton]
+          A dictionary that maps string keys to their corresponding
+          tool buttons.
+
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: PylloActionMixin
+
+   Bases: :py:obj:`pyllo.ui.api.IActionMixin`
+
+   Provide methods to create, add and get actions in a unified way.
+
+   This mixin uses a custom action object.
+
+   .. attention:: PylloActionMixin requires mixin target object be instnace
+       of QObject. Target object must have following attributes:
+       :attr:`CONF_SECTION` which specify configuration section. When creating
+           actions, you can also specify configuration option to synchronize
+           action state with config.
+       :attr:`PLUGIN_NAME` Plugin name which actions belongs.
+       :attr:`NAMESPACE` Context name to separate actions in groups within
+           plugin.
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`checkCompatibility <pyllo.ui.plugin.PylloActionMixin.checkCompatibility>`\ (targetObject)
+        - :summarylabel:`static` check compatibility
+      * - :py:obj:`createAction <pyllo.ui.plugin.PylloActionMixin.createAction>`\ (name, text, parent, icon, iconText, tip, toggled, section, option, initial, triggered, registerShortcut, shortcutContext, shortcutNamespace, registerAction, overwrite, visiblePredicate, enabledPredicate, menuRole)
+        - name: str
+      * - :py:obj:`getAction <pyllo.ui.plugin.PylloActionMixin.getAction>`\ (name, namespace, plugin)
+        - Return an action by name, context and plugin.
+      * - :py:obj:`getActions <pyllo.ui.plugin.PylloActionMixin.getActions>`\ (namespace, plugin)
+        - Return all actions defined by a namespace on a given plugin.
+      * - :py:obj:`updateActions <pyllo.ui.plugin.PylloActionMixin.updateActions>`\ ()
+        - Update the state of exposed actions.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: checkCompatibility(targetObject) -> bool
+      :staticmethod:
+
+      check compatibility
+
+
+   .. py:method:: createAction(name: pyllo.core.dtype.Identity, text: pyllo.core.dtype.Text, parent: qtpy.QtWidgets.QWidget = None, icon: qtpy.QtGui.QIcon = None, iconText: pyllo.core.dtype.Text = '', tip: pyllo.core.dtype.Text = None, toggled: Union[Callable[[bool], None], bool] = None, section: pyllo.core.dtype.SectionName = None, option: pyllo.core.dtype.OptionName = None, initial: bool = None, triggered: Callable[[], None] = None, registerShortcut: bool = False, shortcutContext: qtpy.QtCore.Qt.ShortcutContext = Qt.ShortcutContext.WidgetShortcut, shortcutNamespace: pyllo.core.dtype.ShortcutNamespace = None, registerAction: bool = True, overwrite: bool = False, visiblePredicate: Callable[[], bool] = None, enabledPredicate: Callable[[], bool] = None, menuRole=None) -> pyllo.ui.qt.PylloAction
+
+      name: str
+          unique identifiable name for the action
+      text: str
+         Localized text for the action
+      parent: QWidget/QObject (None)
+         Define the parent of the widget. Use `self` if not provided.
+      icon: QIcon,
+          Icon for the action when applied to menu or tool button.
+      iconText: str
+          Icon for text in toolbars. If True, this will also disable
+          the tooltip on this tool button if part of a toolbar.
+      tip: str
+          Tooltip to define for action on menu or toolbar.
+      toggled: Optional[Union[Callable, bool]]
+          If True, then the action modifies the configuration option on the
+          section specified. Otherwise, it should be a callable to use
+          when toggling this action. If None, then the action does not
+          behave like a checkbox.
+      section: Optional[str]
+          Name of the configuration section whose option is going to be
+          modified. If None, and `option` is not None, then it defaults to
+          the class `CONF_SECTION` attribute.
+      option: ConfigurationKey
+          Name of the configuration option whose value is reflected and
+          affected by the action.
+      initial: object
+          Sets the initial state of a togglable action. This does not emit
+          the toggled signal.
+      triggered: callable
+          The callable to use when triggering this action.
+      registerShortcut: bool, optional
+          If True, main window will expose the shortcut in Preferences. And
+          read shortcut keysequence from config if set. If shortcut keysequene
+          is not set, then empty keysequence string will be written to pyllo.ini
+          and allow users to modify the shortcut keyboard binding.
+          The default value is `False`.
+      shortcutContext: Qt.ShortcutContext
+          Set the context for the shortcut.
+      shortcutNamespace: str
+          Shortcut namespace specified in configuration, e.g. "codeeditorv2/&cut": "CTRL+X",
+          "codeeditorv2" is namespace.
+      registerAction: bool, optional
+          If True, the action will be registered and searchable.
+          The default value is `True`.
+      overwrite: bool, optional
+          If True, in case of action overwriting no warning will be shown.
+          The default value is `False`
+      visiblePredicate: callable, optional
+          Predicate function returns boolean to inform that created action should be show/hide in context.
+      enabledPredicate: callable, optional
+          Predicate function returns boolean to inform that created action should be enabled in context.
+      menuRole: QAction.MenuRole, optional
+          Menu role for the action (it only has effect on macOS).
+
+      Notes
+      -----
+      If iconText is True, this will also disable the tooltip.
+
+      If a shortcut is found in the default config then it is assigned,
+      otherwise it's left blank for the user to define one for it.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getAction(name: pyllo.core.dtype.Identity, namespace: Optional[pyllo.core.dtype.Registry2ndNamespace] = None, plugin: Optional[pyllo.core.dtype.PluginName] = None) -> pyllo.ui.qt.PylloAction
+
+      Return an action by name, context and plugin.
+
+      Parameters
+      ----------
+      name: str
+          Name of the action to retrieve.
+      namespace: Optional[str]
+          Widget or Plugin namespace identifier under which the action was stored.
+          If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the action was defined. If None, then
+          `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      action: PylloAction
+          The corresponding action stored under the given `name`, `context`
+          and `plugin`.
+
+      Raises
+      ------
+      KeyError
+          If either of `name`, `context` or `plugin` keys do not exist in the
+          action registry.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getActions(namespace: pyllo.core.dtype.Registry2ndNamespace = None, plugin: pyllo.core.dtype.PluginName = None) -> Dict[pyllo.core.dtype.Identity, pyllo.ui.qt.PylloAction]
+
+      Return all actions defined by a namespace on a given plugin.
+
+      Parameters
+      ----------
+      namespace: Optional[str]
+          Widget or Plugin namespace identifier under which the actions were stored.
+          If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the actions were defined. If None, then
+          `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      actions: Dict[str, PylloAction]
+          A dictionary that maps string keys to their corresponding actions.
+
+      Notes
+      -----
+      1. Actions should be created once. Creating new actions on menu popup
+         is *highly* discouraged.
+      2. Actions can be created directly on a PluginMainWidget or
+         PluginMainContainer subclass. Child widget can also create
+         actions, but they need to subclass PylloWidgetMixin.
+      3. PluginMainWidget or PluginMainContainer will collect any actions
+         defined in subwidgets (if defined) and expose them in the
+         getActions method at the plugin level.
+      4. Any action created this way is now exposed as a possible shortcut
+         automatically without manual shortcut registration.
+         If an option is found in the config system then it is assigned,
+         otherwise it's left with an empty shortcut.
+      5. There is no need to override this method.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: updateActions()
+
+      Update the state of exposed actions.
+
+      Exposed actions are actions created by the `createAction` method.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: PylloWidgetMixin(classParent=None)
+
+   Bases: :py:obj:`PylloActionMixin`, :py:obj:`pyllo.ui.menu.PylloMenuMixin`, :py:obj:`pyllo.core.runtime.preferences.PylloConfigurationObserver`, :py:obj:`pyllo.core.runtime.preferences.PylloConfigurationAccessor`, :py:obj:`PylloToolButtonMixin`
+
+   Basic functionality for all Pyllo widget and Qt items.
+
+   This mixin does not include toolbar handling as that is limited to the
+   application with the core ui plugin or the PluginMainWidget for dockable
+   plugins.
+
+   This provides a simple management of widget options, as well as Qt helpers
+   for defining the actions a widget provides.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: PLUGIN_NAME
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: NAMESPACE
+
+      
+
+   ..    .. .. py:attribute:: PREFAB
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PLUGIN_NAME <pyllo.ui.plugin.PylloWidgetMixin.PLUGIN_NAME>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.ui.plugin.PylloWidgetMixin.CONF_SECTION>`
+        - \-
+      * - :py:obj:`NAMESPACE <pyllo.ui.plugin.PylloWidgetMixin.NAMESPACE>`
+        - \-
+      * - :py:obj:`PREFAB <pyllo.ui.plugin.PylloWidgetMixin.PREFAB>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`createIcon <pyllo.ui.plugin.PylloWidgetMixin.createIcon>`\ (name)
+        - :summarylabel:`static` Create an icon by name.
+      * - :py:obj:`updateStyle <pyllo.ui.plugin.PylloWidgetMixin.updateStyle>`\ ()
+        - Update stylesheet and style of the widget.
+      * - :py:obj:`updateTranslation <pyllo.ui.plugin.PylloWidgetMixin.updateTranslation>`\ ()
+        - Update localization of the widget.
+      * - :py:obj:`createMenu <pyllo.ui.plugin.PylloWidgetMixin.createMenu>`\ (name, text, icon, visiblePredicate, enabledPredicate)
+        - Create a menu.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PLUGIN_NAME
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: NAMESPACE
+
+      
+
+   .. py:attribute:: PREFAB
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: createIcon(name: str)
+      :staticmethod:
+
+      Create an icon by name.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: updateStyle()
+
+      Update stylesheet and style of the widget.
+
+      This method will be called recursively on all widgets on theme change.
+
+
+      .. attention:: This method is reserved for later usage.
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: updateTranslation()
+
+      Update localization of the widget.
+
+      This method will be called recursively on all widgets on language
+      change.
+
+
+      .. attention:: This method is reserved for later usage.
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: createMenu(name: pyllo.core.dtype.Identity, text: pyllo.core.dtype.Text = None, icon: qtpy.QtGui.QIcon = None, visiblePredicate=None, enabledPredicate=None)
+
+      Create a menu.
+
+      Parameters
+      ----------
+      name: str
+          Unique str identifier.
+      text: str or None
+          Localized text string.
+      icon: QIcon or None
+          Icon to use for the menu.
+
+      Return: QMenu
+          Return the created menu.
+
+
+
+
+
+.. py:class:: PluginMainContainer(name, plugin, parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`PylloWidgetMixin`, :py:obj:`pyllo.ui.toolbar.PylloToolbarMixin`
+
+   Pyllo plugin main container class.
+
+   This class handles a non-dockable widget to be able to contain, parent and
+   store references to other widget, like status bar widget, toolbars,
+   context menus, etc.
+
+   Notes
+   -----
+   All Pyllo non dockable plugins can define a plugin container that must
+   subclass this.
+
+   PylloPlugin plugins must provide a CONTAINER_CLASS attribute that is a
+   subclass of PluginMainContainer, if they provide additional widget like
+   status bar widget or toolbars.
+
+   ..    ..    ..    .. .. py:attribute:: NAMESPACE
+
+      This optional attribute defines the namespace (context name) under which actions,
+      toolbars, tool buttons and menus should be registered on the
+      Pyllo global registry.
+
+      If actions, toolbars, tool buttons or menus belong to the global scope of
+      the plugin, then this attribute should have a `None` value.
+
+
+   ..    .. .. py:attribute:: sigFreeMemoryRequested
+
+      This signal can be emitted to request the main application to garbage
+      collect deleted objects.
+
+
+   ..    .. .. py:attribute:: sigQuitRequested
+
+      This signal can be emitted to request the main application to quit.
+
+
+   ..    .. .. py:attribute:: sigRestartRequested
+
+      This signal can be emitted to request the main application to restart.
+
+
+   ..    .. .. py:attribute:: sigExceptionOccurred
+
+      This signal can be emitted to report an exception handled by this widget.
+
+      Parameters
+      ----------
+      error_data: dict
+          The dictionary containing error data. The expected keys are:
+          >>> error_data= {
+              "text": str,
+              "isTraceback": bool,
+              "repo": str,
+              "title": str,
+              "label": str,
+              "steps": str,
+          }
+
+      Notes
+      -----
+      The `isTraceback` key indicates if `text` contains plain text or a
+      Python error traceback.
+
+      The `title` and `repo` keys indicate how the error data should
+      customize the report dialog and Github error submission.
+
+      The `label` and `steps` keys allow customizing the content of the
+      error dialog.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAMESPACE <pyllo.ui.plugin.PluginMainContainer.NAMESPACE>`
+        - This optional attribute defines the namespace (context name) under which actions,
+      * - :py:obj:`sigFreeMemoryRequested <pyllo.ui.plugin.PluginMainContainer.sigFreeMemoryRequested>`
+        - This signal can be emitted to request the main application to garbage
+      * - :py:obj:`sigQuitRequested <pyllo.ui.plugin.PluginMainContainer.sigQuitRequested>`
+        - This signal can be emitted to request the main application to quit.
+      * - :py:obj:`sigRestartRequested <pyllo.ui.plugin.PluginMainContainer.sigRestartRequested>`
+        - This signal can be emitted to request the main application to restart.
+      * - :py:obj:`sigExceptionOccurred <pyllo.ui.plugin.PluginMainContainer.sigExceptionOccurred>`
+        - This signal can be emitted to report an exception handled by this widget.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.ui.plugin.PluginMainContainer.getName>`\ ()
+        - \-
+      * - :py:obj:`setup <pyllo.ui.plugin.PluginMainContainer.setup>`\ ()
+        - :summarylabel:`abc` Create actions, widget, add to menu and other setup requirements.
+      * - :py:obj:`getPlugin <pyllo.ui.plugin.PluginMainContainer.getPlugin>`\ ()
+        - Return the parent plugin.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAMESPACE
+
+      This optional attribute defines the namespace (context name) under which actions,
+      toolbars, tool buttons and menus should be registered on the
+      Pyllo global registry.
+
+      If actions, toolbars, tool buttons or menus belong to the global scope of
+      the plugin, then this attribute should have a `None` value.
+
+
+   .. py:attribute:: sigFreeMemoryRequested
+
+      This signal can be emitted to request the main application to garbage
+      collect deleted objects.
+
+
+   .. py:attribute:: sigQuitRequested
+
+      This signal can be emitted to request the main application to quit.
+
+
+   .. py:attribute:: sigRestartRequested
+
+      This signal can be emitted to request the main application to restart.
+
+
+   .. py:attribute:: sigExceptionOccurred
+
+      This signal can be emitted to report an exception handled by this widget.
+
+      Parameters
+      ----------
+      error_data: dict
+          The dictionary containing error data. The expected keys are:
+          >>> error_data= {
+              "text": str,
+              "isTraceback": bool,
+              "repo": str,
+              "title": str,
+              "label": str,
+              "steps": str,
+          }
+
+      Notes
+      -----
+      The `isTraceback` key indicates if `text` contains plain text or a
+      Python error traceback.
+
+      The `title` and `repo` keys indicate how the error data should
+      customize the report dialog and Github error submission.
+
+      The `label` and `steps` keys allow customizing the content of the
+      error dialog.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName() -> str
+
+
+   .. py:method:: setup()
+      :abstractmethod:
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+   .. py:method:: getPlugin() -> pyllo.core.api.IPlugin
+
+      Return the parent plugin.
+
+
+
+
+
+.. py:class:: PylloWindowWidget(widget)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QMainWindow`
+
+   MainWindow subclass that contains a Pyllo Plugin.
+
+   ..    ..    ..    .. .. py:attribute:: sigClosed
+
+      This signal is emitted when the close event is fired.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigClosed <pyllo.ui.plugin.PylloWindowWidget.sigClosed>`
+        - This signal is emitted when the close event is fired.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`closeEvent <pyllo.ui.plugin.PylloWindowWidget.closeEvent>`\ (event)
+        - Override Qt method to emit a custom `sig_close` signal.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigClosed
+
+      This signal is emitted when the close event is fired.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: closeEvent(event)
+
+      Override Qt method to emit a custom `sig_close` signal.
+
+
+
+
+
+.. py:class:: PluginMainWidgetWidgets
+
+   ..    ..    ..    .. .. py:attribute:: CornerWidget
+      :value: 'corner_widget'
+
+      
+
+   ..    .. .. py:attribute:: MainToolbar
+      :value: 'main_toolbar_widget'
+
+      
+
+   ..    .. .. py:attribute:: OptionsToolButton
+      :value: 'options_button_widget'
+
+      
+
+   ..    .. .. py:attribute:: Spinner
+      :value: 'spinner_widget'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CornerWidget <pyllo.ui.plugin.PluginMainWidgetWidgets.CornerWidget>`
+        - \-
+      * - :py:obj:`MainToolbar <pyllo.ui.plugin.PluginMainWidgetWidgets.MainToolbar>`
+        - \-
+      * - :py:obj:`OptionsToolButton <pyllo.ui.plugin.PluginMainWidgetWidgets.OptionsToolButton>`
+        - \-
+      * - :py:obj:`Spinner <pyllo.ui.plugin.PluginMainWidgetWidgets.Spinner>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CornerWidget
+      :value: 'corner_widget'
+
+      
+
+   .. py:attribute:: MainToolbar
+      :value: 'main_toolbar_widget'
+
+      
+
+   .. py:attribute:: OptionsToolButton
+      :value: 'options_button_widget'
+
+      
+
+   .. py:attribute:: Spinner
+      :value: 'spinner_widget'
+
+      
+
+
+
+
+
+
+.. py:class:: PluginMainWidgetActions
+
+   ..    ..    ..    .. .. py:attribute:: ClosePane
+      :value: 'close_pane'
+
+      
+
+   ..    .. .. py:attribute:: DockPane
+      :value: 'dock_pane'
+
+      
+
+   ..    .. .. py:attribute:: UndockPane
+      :value: 'undock_pane'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ClosePane <pyllo.ui.plugin.PluginMainWidgetActions.ClosePane>`
+        - \-
+      * - :py:obj:`DockPane <pyllo.ui.plugin.PluginMainWidgetActions.DockPane>`
+        - \-
+      * - :py:obj:`UndockPane <pyllo.ui.plugin.PluginMainWidgetActions.UndockPane>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ClosePane
+      :value: 'close_pane'
+
+      
+
+   .. py:attribute:: DockPane
+      :value: 'dock_pane'
+
+      
+
+   .. py:attribute:: UndockPane
+      :value: 'undock_pane'
+
+      
+
+
+
+
+
+
+.. py:class:: PluginMainWidget(name, plugin, parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`PylloWidgetMixin`, :py:obj:`pyllo.ui.toolbar.PylloToolbarMixin`
+
+   Pyllo plugin main widget class.
+
+   This class handles both a dock widget pane and a floating window widget
+   (undocked pane).
+
+   Notes
+   -----
+   All Pyllo dockable plugins define a main widget that must subclass this.
+
+   PylloDockablePlugin plugins must provide a WIDGET_CLASS attribute that is a
+   subclass of PluginMainWidget.
+
+   This widget is a subclass of QMainWindow that consists of a single,
+   central widget and a set of toolbars that are stacked above or below
+   that widget.
+
+   The toolbars are not movable nor floatable and must occupy the entire
+   horizontal space available for the plugin. This mean that toolbars must be
+   stacked vertically and cannot be placed horizontally next to each other.
+
+   ..    ..    ..    .. .. py:attribute:: ENABLE_SPINNER
+      :value: False
+
+      This attribute enables/disables showing a spinner on the top right to the
+      left of the corner menu widget (Hamburger menu).
+
+      Plugins that provide actions that take time should make this `True` and
+      use accordingly with the `startSpinner`/`stopSpinner` methods.
+
+      The Find in files plugin is an example of a core plugin that uses it.
+
+      Parameters
+      ----------
+      ENABLE_SPINNER: bool
+          If `True` an extra space will be added to the toolbar (even if the
+          spinner is not moving) to avoid items jumping to the left/right when
+          the spinner appears. If `False` no extra space will be added. Default
+          is False.
+
+
+   ..    .. .. py:attribute:: NAMESPACE
+
+      This optional attribute defines the namespace name under which actions,
+      toolbars, tool buttons and menus should be registered on the
+      Pyllo global registry.
+
+      If actions, toolbars, tool buttons or menus belong to the global scope of
+      the plugin, then this attribute should have a `None` value.
+
+
+   ..    .. .. py:attribute:: sigFreeMemoryRequested
+
+      This signal can be emitted to request the main application to garbage
+      collect deleted objects.
+
+
+   ..    .. .. py:attribute:: sigQuitRequested
+
+      This signal can be emitted to request the main application to quit.
+
+
+   ..    .. .. py:attribute:: sigRestartRequested
+
+      This signal can be emitted to request the main application to restart.
+
+
+   ..    .. .. py:attribute:: sigExceptionOccurred
+
+      This signal can be emitted to report an exception handled by this widget.
+
+      Parameters
+      ----------
+      error_data: dict
+          The dictionary containing error data. The expected keys are:
+          >>> error_data= {
+              "text": str,
+              "isTraceback": bool,
+              "repo": str,
+              "title": str,
+              "label": str,
+              "steps": str,
+          }
+
+      Notes
+      -----
+      The `isTraceback` key indicates if `text` contains plain text or a
+      Python error traceback.
+
+      The `title` and `repo` keys indicate how the error data should
+      customize the report dialog and Github error submission.
+
+      The `label` and `steps` keys allow customizing the content of the
+      error dialog.
+
+
+   ..    .. .. py:attribute:: sigToggleViewChanged
+
+      This action is emitted to inform the visibility of a dockable plugin
+      has changed.
+
+      This is triggered by checking/unchecking the entry for a pane in the
+      `View > Panes` menu.
+
+      Parameters
+      ----------
+      visible: bool
+          New visibility of the dock widget.
+
+
+   ..    .. .. py:attribute:: sigUpdateAncestorRequested
+
+      This signal is emitted to inform the main window that a child widget
+      needs its ancestor to be updated.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ENABLE_SPINNER <pyllo.ui.plugin.PluginMainWidget.ENABLE_SPINNER>`
+        - This attribute enables/disables showing a spinner on the top right to the
+      * - :py:obj:`NAMESPACE <pyllo.ui.plugin.PluginMainWidget.NAMESPACE>`
+        - This optional attribute defines the namespace name under which actions,
+      * - :py:obj:`sigFreeMemoryRequested <pyllo.ui.plugin.PluginMainWidget.sigFreeMemoryRequested>`
+        - This signal can be emitted to request the main application to garbage
+      * - :py:obj:`sigQuitRequested <pyllo.ui.plugin.PluginMainWidget.sigQuitRequested>`
+        - This signal can be emitted to request the main application to quit.
+      * - :py:obj:`sigRestartRequested <pyllo.ui.plugin.PluginMainWidget.sigRestartRequested>`
+        - This signal can be emitted to request the main application to restart.
+      * - :py:obj:`sigExceptionOccurred <pyllo.ui.plugin.PluginMainWidget.sigExceptionOccurred>`
+        - This signal can be emitted to report an exception handled by this widget.
+      * - :py:obj:`sigToggleViewChanged <pyllo.ui.plugin.PluginMainWidget.sigToggleViewChanged>`
+        - This action is emitted to inform the visibility of a dockable plugin
+      * - :py:obj:`sigUpdateAncestorRequested <pyllo.ui.plugin.PluginMainWidget.sigUpdateAncestorRequested>`
+        - This signal is emitted to inform the main window that a child widget
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setLayout <pyllo.ui.plugin.PluginMainWidget.setLayout>`\ (layout)
+        - Override default Qt setLayout..
+      * - :py:obj:`getPlugin <pyllo.ui.plugin.PluginMainWidget.getPlugin>`\ ()
+        - Return the parent plugin.
+      * - :py:obj:`getAction <pyllo.ui.plugin.PluginMainWidget.getAction>`\ (name, namespace, plugin)
+        - Return action by name.
+      * - :py:obj:`addCornerWidget <pyllo.ui.plugin.PluginMainWidget.addCornerWidget>`\ (widget, before)
+        - Add widget to corner, that is to the left of the last added widget.
+      * - :py:obj:`getCornerWidget <pyllo.ui.plugin.PluginMainWidget.getCornerWidget>`\ (widgetId)
+        - Return the a widget inside the corner widget by name.
+      * - :py:obj:`addCornerAction <pyllo.ui.plugin.PluginMainWidget.addCornerAction>`\ (action, before)
+        - Add action to corner widget.
+      * - :py:obj:`startSpinner <pyllo.ui.plugin.PluginMainWidget.startSpinner>`\ ()
+        - Start default status spinner.
+      * - :py:obj:`stopSpinner <pyllo.ui.plugin.PluginMainWidget.stopSpinner>`\ ()
+        - Stop default status spinner.
+      * - :py:obj:`createToolbar <pyllo.ui.plugin.PluginMainWidget.createToolbar>`\ (name)
+        - Create and add an auxiliary toolbar to the top of the plugin.
+      * - :py:obj:`createMenu <pyllo.ui.plugin.PluginMainWidget.createMenu>`\ (name, title, icon, visiblePredicate)
+        - Override PylloMenuMixin method to use a different menu class.
+      * - :py:obj:`getOptionsMenu <pyllo.ui.plugin.PluginMainWidget.getOptionsMenu>`\ ()
+        - Return the main options menu of the widget.
+      * - :py:obj:`getOptionsMenuButton <pyllo.ui.plugin.PluginMainWidget.getOptionsMenuButton>`\ ()
+        - Return the main options menu button of the widget.
+      * - :py:obj:`getMainToolbar <pyllo.ui.plugin.PluginMainWidget.getMainToolbar>`\ ()
+        - Return the main toolbar of the plugin.
+      * - :py:obj:`getAuxiliaryToolbars <pyllo.ui.plugin.PluginMainWidget.getAuxiliaryToolbars>`\ ()
+        - Return the auxiliary toolbars of the plugin.
+      * - :py:obj:`showStatusMessage <pyllo.ui.plugin.PluginMainWidget.showStatusMessage>`\ (message, timeout)
+        - Show a status message in the Pyllo widget.
+      * - :py:obj:`getFocusWidget <pyllo.ui.plugin.PluginMainWidget.getFocusWidget>`\ ()
+        - Get the widget to give focus to.
+      * - :py:obj:`updateMargins <pyllo.ui.plugin.PluginMainWidget.updateMargins>`\ (margin)
+        - Update central widget margins.
+      * - :py:obj:`setName <pyllo.ui.plugin.PluginMainWidget.setName>`\ (name)
+        - Set widget name (plugin.NAME).
+      * - :py:obj:`getName <pyllo.ui.plugin.PluginMainWidget.getName>`\ ()
+        - Return widget name (plugin.NAME).
+      * - :py:obj:`setIcon <pyllo.ui.plugin.PluginMainWidget.setIcon>`\ (icon)
+        - Set widget icon.
+      * - :py:obj:`getIcon <pyllo.ui.plugin.PluginMainWidget.getIcon>`\ ()
+        - Return widget icon.
+      * - :py:obj:`refreshToolbars <pyllo.ui.plugin.PluginMainWidget.refreshToolbars>`\ ()
+        - refresh all the toolbars of the widget.
+      * - :py:obj:`createWindow <pyllo.ui.plugin.PluginMainWidget.createWindow>`\ ()
+        - Create a QMainWindow instance containing this PylloWidget.
+      * - :py:obj:`closeWindow <pyllo.ui.plugin.PluginMainWidget.closeWindow>`\ ()
+        - Close QMainWindow instance that contains this PylloWidget.
+      * - :py:obj:`changeVisibility <pyllo.ui.plugin.PluginMainWidget.changeVisibility>`\ (state, forceFocus)
+        - Dock widget visibility has changed.
+      * - :py:obj:`toggleView <pyllo.ui.plugin.PluginMainWidget.toggleView>`\ (visible)
+        - Toggle dock widget's visibility when its entry is selected in
+      * - :py:obj:`createDockWidget <pyllo.ui.plugin.PluginMainWidget.createDockWidget>`\ (mainwindow)
+        - Add to parent QMainWindow as a dock widget.
+      * - :py:obj:`closeDock <pyllo.ui.plugin.PluginMainWidget.closeDock>`\ ()
+        - Close the dock widget.
+      * - :py:obj:`getTitle <pyllo.ui.plugin.PluginMainWidget.getTitle>`\ ()
+        - :summarylabel:`abc` Return the title that will be displayed on dock widget or window title.
+      * - :py:obj:`setAncestor <pyllo.ui.plugin.PluginMainWidget.setAncestor>`\ (ancestor)
+        - Needed to update the ancestor/parent of child widget when undocking.
+      * - :py:obj:`setup <pyllo.ui.plugin.PluginMainWidget.setup>`\ ()
+        - :summarylabel:`abc` Create widget actions, add to menu and other setup requirements.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ENABLE_SPINNER
+      :value: False
+
+      This attribute enables/disables showing a spinner on the top right to the
+      left of the corner menu widget (Hamburger menu).
+
+      Plugins that provide actions that take time should make this `True` and
+      use accordingly with the `startSpinner`/`stopSpinner` methods.
+
+      The Find in files plugin is an example of a core plugin that uses it.
+
+      Parameters
+      ----------
+      ENABLE_SPINNER: bool
+          If `True` an extra space will be added to the toolbar (even if the
+          spinner is not moving) to avoid items jumping to the left/right when
+          the spinner appears. If `False` no extra space will be added. Default
+          is False.
+
+
+   .. py:attribute:: NAMESPACE
+
+      This optional attribute defines the namespace name under which actions,
+      toolbars, tool buttons and menus should be registered on the
+      Pyllo global registry.
+
+      If actions, toolbars, tool buttons or menus belong to the global scope of
+      the plugin, then this attribute should have a `None` value.
+
+
+   .. py:attribute:: sigFreeMemoryRequested
+
+      This signal can be emitted to request the main application to garbage
+      collect deleted objects.
+
+
+   .. py:attribute:: sigQuitRequested
+
+      This signal can be emitted to request the main application to quit.
+
+
+   .. py:attribute:: sigRestartRequested
+
+      This signal can be emitted to request the main application to restart.
+
+
+   .. py:attribute:: sigExceptionOccurred
+
+      This signal can be emitted to report an exception handled by this widget.
+
+      Parameters
+      ----------
+      error_data: dict
+          The dictionary containing error data. The expected keys are:
+          >>> error_data= {
+              "text": str,
+              "isTraceback": bool,
+              "repo": str,
+              "title": str,
+              "label": str,
+              "steps": str,
+          }
+
+      Notes
+      -----
+      The `isTraceback` key indicates if `text` contains plain text or a
+      Python error traceback.
+
+      The `title` and `repo` keys indicate how the error data should
+      customize the report dialog and Github error submission.
+
+      The `label` and `steps` keys allow customizing the content of the
+      error dialog.
+
+
+   .. py:attribute:: sigToggleViewChanged
+
+      This action is emitted to inform the visibility of a dockable plugin
+      has changed.
+
+      This is triggered by checking/unchecking the entry for a pane in the
+      `View > Panes` menu.
+
+      Parameters
+      ----------
+      visible: bool
+          New visibility of the dock widget.
+
+
+   .. py:attribute:: sigUpdateAncestorRequested
+
+      This signal is emitted to inform the main window that a child widget
+      needs its ancestor to be updated.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setLayout(layout: qtpy.QtWidgets.QLayout)
+
+      Override default Qt setLayout..
+
+      Set layout of the main widget of this plugin.
+
+
+   .. py:method:: getPlugin() -> pyllo.core.api.IDockablePlugin
+
+      Return the parent plugin.
+
+
+   .. py:method:: getAction(name: pyllo.core.dtype.Identity, namespace: Optional[pyllo.core.dtype.Registry2ndNamespace] = None, plugin: Optional[pyllo.core.dtype.PluginName] = None) -> pyllo.ui.qt.PylloAction
+
+      Return action by name.
+
+
+   .. py:method:: addCornerWidget(widget: qtpy.QtWidgets.QWidget, before: pyllo.core.dtype.Identity = None)
+
+      Add widget to corner, that is to the left of the last added widget.
+
+      Parameters
+      ----------
+      widget: QWidget
+          Any QWidget to add in the corner widget.
+      before: str
+          Unique name of the widget to be inserted before.
+
+      Notes
+      -----
+      By default widget are added to the left of the last corner widget.
+
+      The central widget provides an options menu button and a spinner so any
+      additional widget will be placed to the left of the spinner,
+      if visible.
+
+
+   .. py:method:: getCornerWidget(widgetId)
+
+      Return the a widget inside the corner widget by name.
+
+      Parameters
+      ----------
+      widgetId: str
+          Identifier of the widget.
+
+
+   .. py:method:: addCornerAction(action: pyllo.ui.qt.PylloAction, before: Optional[str] = None)
+
+      Add action to corner widget.
+
+      Parameters
+      ----------
+      action: PylloAction
+          Action.
+      before: Optional[str]
+          Identifier of widget or action to insert before.
+
+
+   .. py:method:: startSpinner()
+
+      Start default status spinner.
+
+
+   .. py:method:: stopSpinner()
+
+      Stop default status spinner.
+
+
+   .. py:method:: createToolbar(name: pyllo.core.dtype.Identity)
+
+      Create and add an auxiliary toolbar to the top of the plugin.
+
+      Parameters
+      ----------
+      name: str
+          Unique toolbar string identifier.
+
+      Returns
+      -------
+      PylloPluginToolbar
+          The auxiliary toolbar that was created and added to the plugin
+          interface.
+
+
+   .. py:method:: createMenu(name, title='', icon=None, visiblePredicate=None)
+
+      Override PylloMenuMixin method to use a different menu class.
+
+      Parameters
+      ----------
+      name: str
+          Unique toolbar string identifier.
+      title: str
+          Toolbar localized title.
+      icon: QIcon or None
+          Icon to use for the menu.
+
+      Returns
+      -------
+      MainWidgetMenu
+          The main widget menu.
+
+
+   .. py:method:: getOptionsMenu()
+
+      Return the main options menu of the widget.
+
+
+   .. py:method:: getOptionsMenuButton()
+
+      Return the main options menu button of the widget.
+
+
+   .. py:method:: getMainToolbar()
+
+      Return the main toolbar of the plugin.
+
+      Returns
+      -------
+      QToolBar
+          The main toolbar of the widget that contains the options button.
+
+
+   .. py:method:: getAuxiliaryToolbars()
+
+      Return the auxiliary toolbars of the plugin.
+
+      Returns
+      -------
+      OrderedDict
+          A dictionary of wire toolbar IDs as keys and auxiliary toolbars as
+          values.
+
+
+   .. py:method:: showStatusMessage(message, timeout)
+
+      Show a status message in the Pyllo widget.
+
+
+   .. py:method:: getFocusWidget()
+
+      Get the widget to give focus to.
+
+      Returns
+      -------
+      QWidget
+          QWidget to give focus to.
+
+      Notes
+      -----
+      This is applied when the plugin's dock widget is raised to the top.
+
+
+   .. py:method:: updateMargins(margin: int = None)
+
+      Update central widget margins.
+
+
+   .. py:method:: setName(name)
+
+      Set widget name (plugin.NAME).
+
+
+   .. py:method:: getName()
+
+      Return widget name (plugin.NAME).
+
+
+   .. py:method:: setIcon(icon)
+
+      Set widget icon.
+
+
+   .. py:method:: getIcon() -> qtpy.QtGui.QIcon
+
+      Return widget icon.
+
+
+   .. py:method:: refreshToolbars()
+
+      refresh all the toolbars of the widget.
+
+
+   .. py:method:: createWindow()
+
+      Create a QMainWindow instance containing this PylloWidget.
+
+
+   .. py:method:: closeWindow()
+
+      Close QMainWindow instance that contains this PylloWidget.
+
+
+   .. py:method:: changeVisibility(state: bool, forceFocus=None)
+
+      Dock widget visibility has changed.
+
+
+   .. py:method:: toggleView(visible: bool)
+
+      Toggle dock widget's visibility when its entry is selected in
+      the menu `View > Panes`.
+
+      Parameters
+      ----------
+      visible: bool
+          Set view visible or not.
+
+      Notes
+      -----
+      If you need to attach some functionality when this changes, use
+      sigToggleViewChanged.
+
+
+   .. py:method:: createDockWidget(mainwindow)
+
+      Add to parent QMainWindow as a dock widget.
+
+
+   .. py:method:: closeDock()
+
+      Close the dock widget.
+
+
+   .. py:method:: getTitle() -> pyllo.core.dtype.Text
+      :abstractmethod:
+
+      Return the title that will be displayed on dock widget or window title.
+
+
+   .. py:method:: setAncestor(ancestor)
+
+      Needed to update the ancestor/parent of child widget when undocking.
+
+
+   .. py:method:: setup()
+      :abstractmethod:
+
+      Create widget actions, add to menu and other setup requirements.
+
+
+
+
+
+.. py:class:: MainCornerWidget(parent: qtpy.QtWidgets.QWidget, name: pyllo.core.dtype.Identity = '')
+
+   Bases: :py:obj:`qtpy.QtWidgets.QToolBar`
+
+   Corner widget to hold options menu, spinner and additional options.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`addToolWidget <pyllo.ui.plugin.MainCornerWidget.addToolWidget>`\ (widget, before)
+        - Add a widget to the right of the last widget added to the corner.
+      * - :py:obj:`getWidget <pyllo.ui.plugin.MainCornerWidget.getWidget>`\ (widgetId)
+        - Return a widget by unique id..
+      * - :py:obj:`addAction <pyllo.ui.plugin.MainCornerWidget.addAction>`\ (action, before)
+        - Override addAction of QToolBar.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: addToolWidget(widget: qtpy.QtWidgets.QWidget, before: pyllo.core.dtype.Identity = None)
+
+      Add a widget to the right of the last widget added to the corner.
+      If invoked with beforeId, the widget would be added to the left of the target widget(id equals to beforeId).
+
+
+   .. py:method:: getWidget(widgetId)
+
+      Return a widget by unique id..
+
+
+   .. py:method:: addAction(action: pyllo.ui.qt.PylloAction, before=None)
+
+      Override addAction of QToolBar.
+
+      Add action to corner widget.
+
+
+
+
+
+.. py:class:: MainWidgetMenu(parent: qtpy.QtWidgets.QWidget = None, name: MenuItemName = None, title: pyllo.core.dtype.Text = None, visiblePredicate: Callable[[], bool] = None, enabledPredicate: Callable[[], bool] = None, *args, **kwargs)
+
+   Bases: :py:obj:`pyllo.ui.menu.PylloMenu`
+
+   This menu fixes the bottom section of the options menu.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`refresh <pyllo.ui.plugin.MainWidgetMenu.refresh>`\ ()
+        - Create the menu prior to showing it. This takes into account sections
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: refresh()
+
+      Create the menu prior to showing it. This takes into account sections
+      and location of menus. It also hides consecutive separators if found.
+
+
+
+
+

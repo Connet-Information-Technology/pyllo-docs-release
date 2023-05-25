@@ -1,0 +1,144 @@
+:py:mod:`pyllo.plugins.output.internal.mainwidget`
+==================================================
+
+.. py:module:: pyllo.plugins.output.internal.mainwidget
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`NewConsoleDialog <pyllo.plugins.output.internal.mainwidget.NewConsoleDialog>`
+     - \-
+   * - :py:obj:`OutputMainWidget <pyllo.plugins.output.internal.mainwidget.OutputMainWidget>`
+     - Main widget of console.
+
+
+
+
+.. py:class:: NewConsoleDialog(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QDialog`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`userData <pyllo.plugins.output.internal.mainwidget.NewConsoleDialog.userData>`\ ()
+        - \-
+      * - :py:obj:`initLogSettingsPanel <pyllo.plugins.output.internal.mainwidget.NewConsoleDialog.initLogSettingsPanel>`\ ()
+        - \-
+      * - :py:obj:`initInternalLogSettingsPanel <pyllo.plugins.output.internal.mainwidget.NewConsoleDialog.initInternalLogSettingsPanel>`\ ()
+        - \-
+      * - :py:obj:`onAccepted <pyllo.plugins.output.internal.mainwidget.NewConsoleDialog.onAccepted>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: userData()
+
+
+   .. py:method:: initLogSettingsPanel()
+
+
+   .. py:method:: initInternalLogSettingsPanel()
+
+
+   .. py:method:: onAccepted()
+
+
+
+
+
+.. py:class:: OutputMainWidget(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainWidget`
+
+   Main widget of console.
+
+   ===================================
+   |T_|TAB|__________________________|
+   |                                 |
+   | Console                         |
+   | ...                             |
+   ===================================
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.output.internal.mainwidget.OutputMainWidget.setup>`\ ()
+        - Create widget actions, add to menu and other setup requirements.
+      * - :py:obj:`createNewConsole <pyllo.plugins.output.internal.mainwidget.OutputMainWidget.createNewConsole>`\ ()
+        - \-
+      * - :py:obj:`newOutputTab <pyllo.plugins.output.internal.mainwidget.OutputMainWidget.newOutputTab>`\ (title, writer, setCurrent, closeable)
+        - \-
+      * - :py:obj:`newLoggerTab <pyllo.plugins.output.internal.mainwidget.OutputMainWidget.newLoggerTab>`\ (title, logger, setCurrent, closeable)
+        - \-
+      * - :py:obj:`closeOutputTab <pyllo.plugins.output.internal.mainwidget.OutputMainWidget.closeOutputTab>`\ (title)
+        - \-
+      * - :py:obj:`closeLoggerTab <pyllo.plugins.output.internal.mainwidget.OutputMainWidget.closeLoggerTab>`\ (title)
+        - \-
+      * - :py:obj:`closeTab <pyllo.plugins.output.internal.mainwidget.OutputMainWidget.closeTab>`\ (title, type_)
+        - \-
+      * - :py:obj:`getTitle <pyllo.plugins.output.internal.mainwidget.OutputMainWidget.getTitle>`\ ()
+        - Return the title that will be displayed on dock widget or window title.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create widget actions, add to menu and other setup requirements.
+
+
+   .. py:method:: createNewConsole()
+
+
+   .. py:method:: newOutputTab(title: str, writer: pyllo.plugins.output.api.OutputWriter, setCurrent=False, closeable=True)
+
+
+   .. py:method:: newLoggerTab(title: str, logger: logging.Logger, setCurrent=False, closeable=True)
+
+
+   .. py:method:: closeOutputTab(title: str)
+
+
+   .. py:method:: closeLoggerTab(title: str)
+
+
+   .. py:method:: closeTab(title: str, type_: pyllo.plugins.output.api.OutputType)
+
+
+   .. py:method:: getTitle()
+
+      Return the title that will be displayed on dock widget or window title.
+
+
+
+
+

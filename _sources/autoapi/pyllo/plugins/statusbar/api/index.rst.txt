@@ -1,0 +1,79 @@
+:py:mod:`pyllo.plugins.statusbar.api`
+=====================================
+
+.. py:module:: pyllo.plugins.statusbar.api
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`StatusBarWidgets <pyllo.plugins.statusbar.api.StatusBarWidgets>`
+     - \-
+
+
+
+
+.. py:class:: StatusBarWidgets
+
+   ..    ..    ..    .. .. py:attribute:: MemoryStatus
+      :value: 'memory_status'
+
+      
+
+   ..    .. .. py:attribute:: CPUStatus
+      :value: 'cpu_status'
+
+      
+
+   ..    .. .. py:attribute:: ClockStatus
+      :value: 'clock_status'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`MemoryStatus <pyllo.plugins.statusbar.api.StatusBarWidgets.MemoryStatus>`
+        - \-
+      * - :py:obj:`CPUStatus <pyllo.plugins.statusbar.api.StatusBarWidgets.CPUStatus>`
+        - \-
+      * - :py:obj:`ClockStatus <pyllo.plugins.statusbar.api.StatusBarWidgets.ClockStatus>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: MemoryStatus
+      :value: 'memory_status'
+
+      
+
+   .. py:attribute:: CPUStatus
+      :value: 'cpu_status'
+
+      
+
+   .. py:attribute:: ClockStatus
+      :value: 'clock_status'
+
+      
+
+
+
+
+
+

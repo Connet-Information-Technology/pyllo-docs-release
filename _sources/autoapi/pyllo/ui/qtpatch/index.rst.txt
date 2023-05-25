@@ -1,0 +1,40 @@
+:py:mod:`pyllo.ui.qtpatch`
+==========================
+
+.. py:module:: pyllo.ui.qtpatch
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`apply <pyllo.ui.qtpatch.apply>`\ ()
+     - This method replace Qt widget classes with ours,
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`QT_PATCHED <pyllo.ui.qtpatch.QT_PATCHED>`
+     - \-
+
+
+.. py:data:: QT_PATCHED
+   :value: False
+
+   
+
+.. py:function:: apply()
+
+   This method replace Qt widget classes with ours,
+   and must be called before any qt widgets are imported from qtpy.
+
+

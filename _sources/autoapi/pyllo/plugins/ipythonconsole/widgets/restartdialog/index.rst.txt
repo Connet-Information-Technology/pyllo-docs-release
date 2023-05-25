@@ -1,0 +1,111 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.restartdialog`
+============================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.restartdialog
+
+.. autoapi-nested-parse::
+
+   IPython Console restart dialog for preferences.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ConsoleRestartDialog <pyllo.plugins.ipythonconsole.widgets.restartdialog.ConsoleRestartDialog>`
+     - Dialog to apply preferences that need a restart of the console kernel.
+
+
+
+
+.. py:class:: ConsoleRestartDialog(parent)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QDialog`
+
+   Dialog to apply preferences that need a restart of the console kernel.
+
+   ..    ..    ..    .. .. py:attribute:: NO_RESTART
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: RESTART_CURRENT
+      :value: 2
+
+      
+
+   ..    .. .. py:attribute:: RESTART_ALL
+      :value: 3
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NO_RESTART <pyllo.plugins.ipythonconsole.widgets.restartdialog.ConsoleRestartDialog.NO_RESTART>`
+        - \-
+      * - :py:obj:`RESTART_CURRENT <pyllo.plugins.ipythonconsole.widgets.restartdialog.ConsoleRestartDialog.RESTART_CURRENT>`
+        - \-
+      * - :py:obj:`RESTART_ALL <pyllo.plugins.ipythonconsole.widgets.restartdialog.ConsoleRestartDialog.RESTART_ALL>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`updateActionButtonText <pyllo.plugins.ipythonconsole.widgets.restartdialog.ConsoleRestartDialog.updateActionButtonText>`\ (checkbox, isChecked)
+        - Update action button text.
+      * - :py:obj:`getActionValue <pyllo.plugins.ipythonconsole.widgets.restartdialog.ConsoleRestartDialog.getActionValue>`\ ()
+        - Return tuple indicating True or False for the available actions.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NO_RESTART
+      :value: 1
+
+      
+
+   .. py:attribute:: RESTART_CURRENT
+      :value: 2
+
+      
+
+   .. py:attribute:: RESTART_ALL
+      :value: 3
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: updateActionButtonText(checkbox, isChecked)
+
+      Update action button text.
+
+      Takes into account the given checkbox to update the text.
+
+
+   .. py:method:: getActionValue()
+
+      Return tuple indicating True or False for the available actions.
+
+
+
+
+

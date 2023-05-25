@@ -1,0 +1,16 @@
+:py:mod:`pyllo.plugins.shortcuts.internal`
+==========================================
+
+.. py:module:: pyllo.plugins.shortcuts.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   confpage/index.rst
+   widgets/index.rst
+
+

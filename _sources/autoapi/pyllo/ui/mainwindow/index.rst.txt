@@ -1,0 +1,289 @@
+:py:mod:`pyllo.ui.mainwindow`
+=============================
+
+.. py:module:: pyllo.ui.mainwindow
+
+.. autoapi-nested-parse::
+
+   Pyllo, the Meta-IDE
+   =====================================================
+
+   Developed and maintained by the Pyllo Project
+   Contributors @Connet Information Technology Company, Shanghai.
+
+   Last reviewed by ZJJ on 2022/2/9
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MainWindow <pyllo.ui.mainwindow.MainWindow>`
+     - Pyllo main window
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`setAttachedConsoleVisible <pyllo.ui.mainwindow.setAttachedConsoleVisible>`
+     - \-
+   * - :py:obj:`isAttachedConsoleVisible <pyllo.ui.mainwindow.isAttachedConsoleVisible>`
+     - \-
+   * - :py:obj:`setWindowsAppUserModelId <pyllo.ui.mainwindow.setWindowsAppUserModelId>`
+     - \-
+   * - :py:obj:`logger <pyllo.ui.mainwindow.logger>`
+     - \-
+   * - :py:obj:`ORIGINAL_SYS_EXIT <pyllo.ui.mainwindow.ORIGINAL_SYS_EXIT>`
+     - \-
+
+
+.. py:data:: setAttachedConsoleVisible
+
+   
+
+.. py:data:: isAttachedConsoleVisible
+
+   
+
+.. py:data:: setWindowsAppUserModelId
+
+   
+
+.. py:data:: logger
+
+   
+
+.. py:data:: ORIGINAL_SYS_EXIT
+
+   
+
+.. py:class:: MainWindow(app: PylloApp)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QMainWindow`, :py:obj:`pyllo.ui.api.PylloUiPart`
+
+   Pyllo main window
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: DOCK_OPTIONS
+
+      
+
+   ..    .. .. py:attribute:: sigOpenExternalFile
+
+      Reserved for opening external file
+
+
+   ..    .. .. py:attribute:: sigResized
+
+      Same as QMainWindow.resized signal
+
+
+   ..    .. .. py:attribute:: sigMoved
+
+      Same as QMainWindow.moved signal
+
+
+   ..    .. .. py:attribute:: sigQuitRequested
+
+      Notify mainframe about to quit
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`DOCK_OPTIONS <pyllo.ui.mainwindow.MainWindow.DOCK_OPTIONS>`
+        - \-
+      * - :py:obj:`sigOpenExternalFile <pyllo.ui.mainwindow.MainWindow.sigOpenExternalFile>`
+        - Reserved for opening external file
+      * - :py:obj:`sigResized <pyllo.ui.mainwindow.MainWindow.sigResized>`
+        - Same as QMainWindow.resized signal
+      * - :py:obj:`sigMoved <pyllo.ui.mainwindow.MainWindow.sigMoved>`
+        - Same as QMainWindow.moved signal
+      * - :py:obj:`sigQuitRequested <pyllo.ui.mainwindow.MainWindow.sigQuitRequested>`
+        - Notify mainframe about to quit
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getApp <pyllo.ui.mainwindow.MainWindow.getApp>`\ ()
+        - Get Mainframe object
+      * - :py:obj:`showStatusMessage <pyllo.ui.mainwindow.MainWindow.showStatusMessage>`\ (message, timeout)
+        - Show a status message in Pyllo Main Window.
+      * - :py:obj:`showPluginCompatibilityMessage <pyllo.ui.mainwindow.MainWindow.showPluginCompatibilityMessage>`\ (message)
+        - Show a compatibility message.
+      * - :py:obj:`raisePane <pyllo.ui.mainwindow.MainWindow.raisePane>`\ (plugin, focus)
+        - @Slot(object, bool)
+      * - :py:obj:`addMainDockWidget <pyllo.ui.mainwindow.MainWindow.addMainDockWidget>`\ (plugin)
+        - Add a plugin QDockWidget to the main window.
+      * - :py:obj:`removeMainDockWidget <pyllo.ui.mainwindow.MainWindow.removeMainDockWidget>`\ (plugin)
+        - Remove a plugin QDockWidget from the main window.
+      * - :py:obj:`createPopupMenu <pyllo.ui.mainwindow.MainWindow.createPopupMenu>`\ ()
+        - Qt createPopupMenu reimplementation
+      * - :py:obj:`closeEvent <pyllo.ui.mainwindow.MainWindow.closeEvent>`\ (event)
+        - Reimplement Qt method
+      * - :py:obj:`resizeEvent <pyllo.ui.mainwindow.MainWindow.resizeEvent>`\ (event)
+        - Reimplement Qt method
+      * - :py:obj:`moveEvent <pyllo.ui.mainwindow.MainWindow.moveEvent>`\ (event)
+        - Reimplement Qt method
+      * - :py:obj:`hideEvent <pyllo.ui.mainwindow.MainWindow.hideEvent>`\ (event)
+        - Reimplement Qt method
+      * - :py:obj:`openClosingPrompt <pyllo.ui.mainwindow.MainWindow.openClosingPrompt>`\ ()
+        - Open closing prompt and return true if reply ok, false if reply cancel.
+      * - :py:obj:`applySettings <pyllo.ui.mainwindow.MainWindow.applySettings>`\ ()
+        - Apply main window settings.
+      * - :py:obj:`applyPanesSettings <pyllo.ui.mainwindow.MainWindow.applyPanesSettings>`\ ()
+        - Update dockWidgets features settings.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: DOCK_OPTIONS
+
+      
+
+   .. py:attribute:: sigOpenExternalFile
+
+      Reserved for opening external file
+
+
+   .. py:attribute:: sigResized
+
+      Same as QMainWindow.resized signal
+
+
+   .. py:attribute:: sigMoved
+
+      Same as QMainWindow.moved signal
+
+
+   .. py:attribute:: sigQuitRequested
+
+      Notify mainframe about to quit
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getApp() -> PylloApp
+
+      Get Mainframe object
+
+
+   .. py:method:: showStatusMessage(message: str, timeout: int)
+
+      Show a status message in Pyllo Main Window.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: showPluginCompatibilityMessage(message: str)
+
+      Show a compatibility message.
+
+
+   .. py:method:: raisePane(plugin: pyllo.core.runtime.spi.PylloDockablePlugin, focus=True)
+
+      @Slot(object, bool)
+
+      Raises this plugin to view (if it's hidden) and gives it focus (if
+      possible).
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: addMainDockWidget(plugin: pyllo.core.runtime.spi.PylloDockablePlugin)
+
+      Add a plugin QDockWidget to the main window.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: removeMainDockWidget(plugin: pyllo.core.runtime.spi.PylloDockablePlugin)
+
+      Remove a plugin QDockWidget from the main window.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: createPopupMenu()
+
+      Qt createPopupMenu reimplementation
+      Let's skip contextMenu of MainWindow for now
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: closeEvent(event)
+
+      Reimplement Qt method
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: resizeEvent(event)
+
+      Reimplement Qt method
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: moveEvent(event)
+
+      Reimplement Qt method
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: hideEvent(event)
+
+      Reimplement Qt method
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: openClosingPrompt()
+
+      Open closing prompt and return true if reply ok, false if reply cancel.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: applySettings()
+
+      Apply main window settings.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: applyPanesSettings()
+
+      Update dockWidgets features settings.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+

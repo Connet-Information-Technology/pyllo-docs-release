@@ -1,0 +1,21 @@
+:py:mod:`pyllo.plugins.mainmenu`
+================================
+
+.. py:module:: pyllo.plugins.mainmenu
+
+.. autoapi-nested-parse::
+
+   Main Menu Plugin.
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   api/index.rst
+   plugin/index.rst
+
+

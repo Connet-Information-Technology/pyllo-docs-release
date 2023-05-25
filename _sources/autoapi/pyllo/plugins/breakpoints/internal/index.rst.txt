@@ -1,0 +1,16 @@
+:py:mod:`pyllo.plugins.breakpoints.internal`
+============================================
+
+.. py:module:: pyllo.plugins.breakpoints.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   breakpointspanel/index.rst
+   mainwidget/index.rst
+
+

@@ -1,0 +1,35 @@
+:py:mod:`pyllo.plugins.ipythonconsole`
+======================================
+
+.. py:module:: pyllo.plugins.ipythonconsole
+
+.. autoapi-nested-parse::
+
+   plugins.ipythonconsole
+   ======================
+
+   IPython Console Plugin.
+
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   api/index.rst
+   core/index.rst
+   widgets/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   confpage/index.rst
+   plugin/index.rst
+
+

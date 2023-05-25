@@ -1,0 +1,293 @@
+:py:mod:`pyllo.plugins.languageserver.internal.lspsession`
+==========================================================
+
+.. py:module:: pyllo.plugins.languageserver.internal.lspsession
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LSPSessionStates <pyllo.plugins.languageserver.internal.lspsession.LSPSessionStates>`
+     - Generic enumeration.
+   * - :py:obj:`LSPSession <pyllo.plugins.languageserver.internal.lspsession.LSPSession>`
+     - LSPSession is a higher-level software component that provides an abstraction over a lower-level JSON-RPC 2.0
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`stripNoneValuesDeep <pyllo.plugins.languageserver.internal.lspsession.stripNoneValuesDeep>`\ (d)
+     - Python function that takes in a dictionary object and recursively removes any key-value pairs where the value is
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.languageserver.internal.lspsession.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:function:: stripNoneValuesDeep(d: dict)
+
+   Python function that takes in a dictionary object and recursively removes any key-value pairs where the value is
+   None
+
+
+.. py:class:: LSPSessionStates
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: Inactive
+      :value: 'Inactive'
+
+      
+
+   ..    .. .. py:attribute:: Initializing
+      :value: 'Initializing'
+
+      
+
+   ..    .. .. py:attribute:: Running
+      :value: 'Running'
+
+      
+
+   ..    .. .. py:attribute:: Terminated
+      :value: 'Terminated'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Inactive <pyllo.plugins.languageserver.internal.lspsession.LSPSessionStates.Inactive>`
+        - \-
+      * - :py:obj:`Initializing <pyllo.plugins.languageserver.internal.lspsession.LSPSessionStates.Initializing>`
+        - \-
+      * - :py:obj:`Running <pyllo.plugins.languageserver.internal.lspsession.LSPSessionStates.Running>`
+        - \-
+      * - :py:obj:`Terminated <pyllo.plugins.languageserver.internal.lspsession.LSPSessionStates.Terminated>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Inactive
+      :value: 'Inactive'
+
+      
+
+   .. py:attribute:: Initializing
+      :value: 'Initializing'
+
+      
+
+   .. py:attribute:: Running
+      :value: 'Running'
+
+      
+
+   .. py:attribute:: Terminated
+      :value: 'Terminated'
+
+      
+
+
+
+
+
+
+.. py:class:: LSPSession(adapterForger: pyllo.core.dtype.Forger[pyllo.plugins.languageserver.api.ILanguageServerAdapter])
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`, :py:obj:`pyllo.tools.statemachine.StateMachine`
+
+   LSPSession is a higher-level software component that provides an abstraction over a lower-level JSON-RPC 2.0
+   protocol that communicates with a language server using a LS adapter.
+
+   ..    ..    ..    .. .. py:attribute:: STATES
+
+      
+
+   ..    .. .. py:attribute:: sigStateChanged
+
+      State has changed event
+
+
+   ..    .. .. py:attribute:: sigPublishDiagnosticsNotification
+
+      
+
+   ..    .. .. py:attribute:: sigCompletionResponse
+
+      
+
+   ..    .. .. py:attribute:: sigDefinitionResponse
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`STATES <pyllo.plugins.languageserver.internal.lspsession.LSPSession.STATES>`
+        - \-
+      * - :py:obj:`sigStateChanged <pyllo.plugins.languageserver.internal.lspsession.LSPSession.sigStateChanged>`
+        - State has changed event
+      * - :py:obj:`sigPublishDiagnosticsNotification <pyllo.plugins.languageserver.internal.lspsession.LSPSession.sigPublishDiagnosticsNotification>`
+        - \-
+      * - :py:obj:`sigCompletionResponse <pyllo.plugins.languageserver.internal.lspsession.LSPSession.sigCompletionResponse>`
+        - \-
+      * - :py:obj:`sigDefinitionResponse <pyllo.plugins.languageserver.internal.lspsession.LSPSession.sigDefinitionResponse>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`id <pyllo.plugins.languageserver.internal.lspsession.LSPSession.id>`\ ()
+        - \-
+      * - :py:obj:`exitCode <pyllo.plugins.languageserver.internal.lspsession.LSPSession.exitCode>`\ ()
+        - \-
+      * - :py:obj:`clientCapabilities <pyllo.plugins.languageserver.internal.lspsession.LSPSession.clientCapabilities>`\ ()
+        - :summarylabel:`static` \-
+      * - :py:obj:`serverCapabilities <pyllo.plugins.languageserver.internal.lspsession.LSPSession.serverCapabilities>`\ ()
+        - \-
+      * - :py:obj:`initialize <pyllo.plugins.languageserver.internal.lspsession.LSPSession.initialize>`\ ()
+        - initialize
+      * - :py:obj:`terminate <pyllo.plugins.languageserver.internal.lspsession.LSPSession.terminate>`\ ()
+        - \-
+      * - :py:obj:`completion <pyllo.plugins.languageserver.internal.lspsession.LSPSession.completion>`\ (reqId, params)
+        - Send completion request to lsp server
+      * - :py:obj:`handleCompletionResponse <pyllo.plugins.languageserver.internal.lspsession.LSPSession.handleCompletionResponse>`\ (reqId, response)
+        - Handle completion response from lsp server
+      * - :py:obj:`gotoDefinition <pyllo.plugins.languageserver.internal.lspsession.LSPSession.gotoDefinition>`\ (reqId, params)
+        - Send goto definition request to lsp server
+      * - :py:obj:`handleGotoDefinitionResponse <pyllo.plugins.languageserver.internal.lspsession.LSPSession.handleGotoDefinitionResponse>`\ (reqId, response)
+        - Handle goto definition response from lsp server
+      * - :py:obj:`didOpenTextDocument <pyllo.plugins.languageserver.internal.lspsession.LSPSession.didOpenTextDocument>`\ (params)
+        - Send did open notification to lsp server
+      * - :py:obj:`didChangeTextDocument <pyllo.plugins.languageserver.internal.lspsession.LSPSession.didChangeTextDocument>`\ (params)
+        - Send did change notification to lsp server
+      * - :py:obj:`didCloseTextDocument <pyllo.plugins.languageserver.internal.lspsession.LSPSession.didCloseTextDocument>`\ (params)
+        - Send did close notification to lsp server
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: STATES
+
+      
+
+   .. py:attribute:: sigStateChanged
+
+      State has changed event
+
+
+   .. py:attribute:: sigPublishDiagnosticsNotification
+
+      
+
+   .. py:attribute:: sigCompletionResponse
+
+      
+
+   .. py:attribute:: sigDefinitionResponse
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: id()
+
+
+   .. py:method:: exitCode() -> int
+
+
+   .. py:method:: clientCapabilities() -> pyllo.plugins.languageserver.protocol.ClientCapabilities
+      :staticmethod:
+
+
+   .. py:method:: serverCapabilities() -> pyllo.plugins.languageserver.protocol.ServerCapabilities
+
+
+   .. py:method:: initialize()
+
+      initialize
+
+
+   .. py:method:: terminate()
+
+
+   .. py:method:: completion(reqId: uuid.UUID, params: pyllo.plugins.languageserver.protocol.CompletionParams)
+
+      Send completion request to lsp server
+
+
+   .. py:method:: handleCompletionResponse(reqId: uuid.UUID, response: Union[List[pyllo.plugins.languageserver.protocol.CompletionItem], pyllo.plugins.languageserver.protocol.CompletionList])
+
+      Handle completion response from lsp server
+
+
+   .. py:method:: gotoDefinition(reqId: uuid.UUID, params: pyllo.plugins.languageserver.protocol.DefinitionParams)
+
+      Send goto definition request to lsp server
+
+
+   .. py:method:: handleGotoDefinitionResponse(reqId: uuid.UUID, response: Union[List[pyllo.plugins.languageserver.protocol.Location], pyllo.plugins.languageserver.protocol.Location])
+
+      Handle goto definition response from lsp server
+
+
+   .. py:method:: didOpenTextDocument(params: pyllo.plugins.languageserver.protocol.DidOpenTextDocumentParams)
+
+      Send did open notification to lsp server
+
+
+   .. py:method:: didChangeTextDocument(params: pyllo.plugins.languageserver.protocol.DidChangeTextDocumentParams)
+
+      Send did change notification to lsp server
+
+
+   .. py:method:: didCloseTextDocument(params: pyllo.plugins.languageserver.protocol.DidChangeTextDocumentParams)
+
+      Send did close notification to lsp server
+
+
+
+
+

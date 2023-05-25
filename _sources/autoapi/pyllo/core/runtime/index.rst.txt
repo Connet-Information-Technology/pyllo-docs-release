@@ -1,0 +1,30 @@
+:py:mod:`pyllo.core.runtime`
+============================
+
+.. py:module:: pyllo.core.runtime
+
+.. autoapi-nested-parse::
+
+   Pyllo core runtime environment.
+
+   .. versionadded:: 1.0.0
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   app/index.rst
+   datastore/index.rst
+   environ/index.rst
+   filesystem/index.rst
+   i18n/index.rst
+   preferences/index.rst
+   programs/index.rst
+   registries/index.rst
+   spi/index.rst
+
+

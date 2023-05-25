@@ -1,0 +1,372 @@
+:py:mod:`pyllo.plugins.layout.plugin`
+=====================================
+
+.. py:module:: pyllo.plugins.layout.plugin
+
+.. autoapi-nested-parse::
+
+   Layout Plugin.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Layout <pyllo.plugins.layout.plugin.Layout>`
+     - Layout manager plugin.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.layout.plugin.logger>`
+     - \-
+   * - :py:obj:`WINDOW_STATE_VERSION <pyllo.plugins.layout.plugin.WINDOW_STATE_VERSION>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:data:: WINDOW_STATE_VERSION
+   :value: 1
+
+   
+
+.. py:class:: Layout(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   Layout manager plugin.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'layout'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+      :value: 'quick_layouts'
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.layout.plugin.Layout.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.layout.plugin.Layout.VERSION>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.layout.plugin.Layout.CONF_SECTION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.layout.plugin.Layout.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.layout.plugin.Layout.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.layout.plugin.Layout.CONF_FILE>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.plugins.layout.plugin.Layout.CONTAINER_CLASS>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.layout.plugin.Layout.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.layout.plugin.Layout.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.layout.plugin.Layout.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.layout.plugin.Layout.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onMainMenuAvailable <pyllo.plugins.layout.plugin.Layout.onMainMenuAvailable>`\ ()
+        - Add actions to Window menu.
+      * - :py:obj:`onToolbarAvailable <pyllo.plugins.layout.plugin.Layout.onToolbarAvailable>`\ ()
+        - \-
+      * - :py:obj:`beforeMainwindowVisible <pyllo.plugins.layout.plugin.Layout.beforeMainwindowVisible>`\ ()
+        - Actions to be performed after setup but before the main window's has
+      * - :py:obj:`onTearDown <pyllo.plugins.layout.plugin.Layout.onTearDown>`\ (cancelable)
+        - Perform actions before the main window is closed.
+      * - :py:obj:`onMainwindowVisible <pyllo.plugins.layout.plugin.Layout.onMainwindowVisible>`\ ()
+        - Actions to be performed after the main window's has been shown.
+      * - :py:obj:`applySettings <pyllo.plugins.layout.plugin.Layout.applySettings>`\ (default)
+        - Setup layout programmatically
+      * - :py:obj:`saveCurrentLayoutSettings <pyllo.plugins.layout.plugin.Layout.saveCurrentLayoutSettings>`\ (prefix, section)
+        - Save current window settings.
+      * - :py:obj:`loadLayoutSettings <pyllo.plugins.layout.plugin.Layout.loadLayoutSettings>`\ (prefix, default, section)
+        - Load window layout settings from userconfig-based configuration with
+      * - :py:obj:`applyLayoutSettings <pyllo.plugins.layout.plugin.Layout.applyLayoutSettings>`\ (hexstate, windowSize, pos, isMaximized, isFullscreen)
+        - Set window settings.
+      * - :py:obj:`setWindowMaximized <pyllo.plugins.layout.plugin.Layout.setWindowMaximized>`\ (value)
+        - Set main window to maximimum and cover desktop.
+      * - :py:obj:`setFullscreen <pyllo.plugins.layout.plugin.Layout.setFullscreen>`\ (value)
+        - Set main window to fullscreen and raise to top.
+      * - :py:obj:`splitPluginsVertical <pyllo.plugins.layout.plugin.Layout.splitPluginsVertical>`\ (first, second)
+        - Split plugin dockwidgets vertically
+      * - :py:obj:`splitPluginsHorizontal <pyllo.plugins.layout.plugin.Layout.splitPluginsHorizontal>`\ (first, second)
+        - Split plugin dockwidgets horizontally
+      * - :py:obj:`resizePluginsVertical <pyllo.plugins.layout.plugin.Layout.resizePluginsVertical>`\ (plugins, sizes)
+        - Resize plugin dockwidgets vertically
+      * - :py:obj:`resizePluginsHorizontal <pyllo.plugins.layout.plugin.Layout.resizePluginsHorizontal>`\ (plugins, sizes)
+        - Resize plugin dockwidgets horizontally
+      * - :py:obj:`tabifyPlugins <pyllo.plugins.layout.plugin.Layout.tabifyPlugins>`\ (first, second)
+        - Tabify plugin dock widget.
+      * - :py:obj:`toggleFullscreen <pyllo.plugins.layout.plugin.Layout.toggleFullscreen>`\ ()
+        - Toggle option to show the mainwindow in fullscreen or windowed.
+      * - :py:obj:`toggleLock <pyllo.plugins.layout.plugin.Layout.toggleLock>`\ (value)
+        - Lock/Unlock dockwidgets and toolbars.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'layout'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: CONF_SECTION
+      :value: 'quick_layouts'
+
+      
+
+   .. py:attribute:: REQUIRES
+
+      
+
+   .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainMenuAvailable()
+
+      Add actions to Window menu.
+
+
+   .. py:method:: onToolbarAvailable()
+
+
+   .. py:method:: beforeMainwindowVisible()
+
+      Actions to be performed after setup but before the main window's has
+      been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onTearDown(cancelable=False)
+
+      Perform actions before the main window is closed.
+
+      Returns
+      -------
+      bool
+          Whether the plugin may be closed immediately or not.
+
+      Notes
+      -----
+      The returned value is ignored if *cancelable* is False.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainwindowVisible()
+
+      Actions to be performed after the main window's has been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: applySettings(default=False)
+
+      Setup layout programmatically
+
+
+   .. py:method:: saveCurrentLayoutSettings(prefix, section='main')
+
+      Save current window settings.
+
+      It saves config with *prefix* in the userconfig-based,
+      configuration under *section*.
+
+
+   .. py:method:: loadLayoutSettings(prefix, default=False, section='main')
+
+      Load window layout settings from userconfig-based configuration with
+      *prefix*, under *section*.
+
+
+   .. py:method:: applyLayoutSettings(hexstate, windowSize, pos, isMaximized, isFullscreen)
+
+      Set window settings.
+
+
+   .. py:method:: setWindowMaximized(value=True)
+
+      Set main window to maximimum and cover desktop.
+
+
+   .. py:method:: setFullscreen(value=True)
+
+      Set main window to fullscreen and raise to top.
+      (no destkop toolbar can be seen)
+
+
+   .. py:method:: splitPluginsVertical(first, second)
+
+      Split plugin dockwidgets vertically
+
+
+   .. py:method:: splitPluginsHorizontal(first, second)
+
+      Split plugin dockwidgets horizontally
+
+
+   .. py:method:: resizePluginsVertical(plugins, sizes)
+
+      Resize plugin dockwidgets vertically
+
+
+   .. py:method:: resizePluginsHorizontal(plugins, sizes)
+
+      Resize plugin dockwidgets horizontally
+
+
+   .. py:method:: tabifyPlugins(first, second)
+
+      Tabify plugin dock widget.
+
+
+   .. py:method:: toggleFullscreen()
+
+      Toggle option to show the mainwindow in fullscreen or windowed.
+
+
+   .. py:method:: toggleLock(value=None)
+
+      Lock/Unlock dockwidgets and toolbars.
+
+
+
+
+

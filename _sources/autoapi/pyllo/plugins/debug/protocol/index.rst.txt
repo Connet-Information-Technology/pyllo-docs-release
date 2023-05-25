@@ -1,0 +1,4009 @@
+:py:mod:`pyllo.plugins.debug.protocol`
+======================================
+
+.. py:module:: pyllo.plugins.debug.protocol
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ClientCapabilities <pyllo.plugins.debug.protocol.ClientCapabilities>`
+     - \-
+   * - :py:obj:`ExceptionBreakpointsFilter <pyllo.plugins.debug.protocol.ExceptionBreakpointsFilter>`
+     - \-
+   * - :py:obj:`AdapterCapabilities <pyllo.plugins.debug.protocol.AdapterCapabilities>`
+     - \-
+   * - :py:obj:`ExceptionFilterOptions <pyllo.plugins.debug.protocol.ExceptionFilterOptions>`
+     - \-
+   * - :py:obj:`ExceptionPathSegment <pyllo.plugins.debug.protocol.ExceptionPathSegment>`
+     - \-
+   * - :py:obj:`ExceptionOptions <pyllo.plugins.debug.protocol.ExceptionOptions>`
+     - \-
+   * - :py:obj:`SetExceptionBreakpointsArguments <pyllo.plugins.debug.protocol.SetExceptionBreakpointsArguments>`
+     - \-
+   * - :py:obj:`ProcessEventBody <pyllo.plugins.debug.protocol.ProcessEventBody>`
+     - \-
+   * - :py:obj:`ProcessEventBody <pyllo.plugins.debug.protocol.ProcessEventBody>`
+     - \-
+   * - :py:obj:`ThreadEventBody <pyllo.plugins.debug.protocol.ThreadEventBody>`
+     - \-
+   * - :py:obj:`Source <pyllo.plugins.debug.protocol.Source>`
+     - \-
+   * - :py:obj:`OutputEventBody <pyllo.plugins.debug.protocol.OutputEventBody>`
+     - \-
+   * - :py:obj:`ExitedEventBody <pyllo.plugins.debug.protocol.ExitedEventBody>`
+     - \-
+   * - :py:obj:`SetBreakpointsArguments <pyllo.plugins.debug.protocol.SetBreakpointsArguments>`
+     - \-
+   * - :py:obj:`LoadedSourceEventBody <pyllo.plugins.debug.protocol.LoadedSourceEventBody>`
+     - \-
+   * - :py:obj:`SourceBreakpoint <pyllo.plugins.debug.protocol.SourceBreakpoint>`
+     - \-
+   * - :py:obj:`Thread <pyllo.plugins.debug.protocol.Thread>`
+     - \-
+   * - :py:obj:`ThreadsResponseBody <pyllo.plugins.debug.protocol.ThreadsResponseBody>`
+     - \-
+   * - :py:obj:`StackFrameFormat <pyllo.plugins.debug.protocol.StackFrameFormat>`
+     - \-
+   * - :py:obj:`StackTraceArguments <pyllo.plugins.debug.protocol.StackTraceArguments>`
+     - \-
+   * - :py:obj:`SetBreakpointsArguments <pyllo.plugins.debug.protocol.SetBreakpointsArguments>`
+     - \-
+   * - :py:obj:`Breakpoint <pyllo.plugins.debug.protocol.Breakpoint>`
+     - \-
+   * - :py:obj:`SetBreakpointsResponseBody <pyllo.plugins.debug.protocol.SetBreakpointsResponseBody>`
+     - \-
+   * - :py:obj:`StackFrame <pyllo.plugins.debug.protocol.StackFrame>`
+     - \-
+   * - :py:obj:`StackTraceResponseBody <pyllo.plugins.debug.protocol.StackTraceResponseBody>`
+     - \-
+   * - :py:obj:`PauseArguments <pyllo.plugins.debug.protocol.PauseArguments>`
+     - \-
+   * - :py:obj:`ContinueArguments <pyllo.plugins.debug.protocol.ContinueArguments>`
+     - \-
+   * - :py:obj:`ContinueResponseBody <pyllo.plugins.debug.protocol.ContinueResponseBody>`
+     - \-
+   * - :py:obj:`NextArguments <pyllo.plugins.debug.protocol.NextArguments>`
+     - \-
+   * - :py:obj:`StepInArguments <pyllo.plugins.debug.protocol.StepInArguments>`
+     - \-
+   * - :py:obj:`StepOutArguments <pyllo.plugins.debug.protocol.StepOutArguments>`
+     - \-
+   * - :py:obj:`StoppedEventBody <pyllo.plugins.debug.protocol.StoppedEventBody>`
+     - \-
+   * - :py:obj:`ContinuedEventBody <pyllo.plugins.debug.protocol.ContinuedEventBody>`
+     - \-
+   * - :py:obj:`ScopesArguments <pyllo.plugins.debug.protocol.ScopesArguments>`
+     - \-
+   * - :py:obj:`Scope <pyllo.plugins.debug.protocol.Scope>`
+     - \-
+   * - :py:obj:`ScopesArguments <pyllo.plugins.debug.protocol.ScopesArguments>`
+     - \-
+   * - :py:obj:`ValueFormat <pyllo.plugins.debug.protocol.ValueFormat>`
+     - \-
+   * - :py:obj:`VariablesArguments <pyllo.plugins.debug.protocol.VariablesArguments>`
+     - \-
+   * - :py:obj:`VariablePresentationHint <pyllo.plugins.debug.protocol.VariablePresentationHint>`
+     - \-
+   * - :py:obj:`Variable <pyllo.plugins.debug.protocol.Variable>`
+     - \-
+   * - :py:obj:`VariablesResponseBody <pyllo.plugins.debug.protocol.VariablesResponseBody>`
+     - \-
+   * - :py:obj:`ScopesResponseBody <pyllo.plugins.debug.protocol.ScopesResponseBody>`
+     - \-
+   * - :py:obj:`Breakpoint <pyllo.plugins.debug.protocol.Breakpoint>`
+     - \-
+   * - :py:obj:`SetBreakpointsResponseBody <pyllo.plugins.debug.protocol.SetBreakpointsResponseBody>`
+     - \-
+   * - :py:obj:`SetExceptionBreakpointsResponseBody <pyllo.plugins.debug.protocol.SetExceptionBreakpointsResponseBody>`
+     - \-
+   * - :py:obj:`EvaluateArguments <pyllo.plugins.debug.protocol.EvaluateArguments>`
+     - \-
+   * - :py:obj:`EvaluateResponseBody <pyllo.plugins.debug.protocol.EvaluateResponseBody>`
+     - \-
+   * - :py:obj:`CompletionItem <pyllo.plugins.debug.protocol.CompletionItem>`
+     - \-
+   * - :py:obj:`CompletionsArguments <pyllo.plugins.debug.protocol.CompletionsArguments>`
+     - \-
+   * - :py:obj:`CompletionsResponseBody <pyllo.plugins.debug.protocol.CompletionsResponseBody>`
+     - \-
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ExceptionBreakMode <pyllo.plugins.debug.protocol.ExceptionBreakMode>`
+     - \-
+   * - :py:obj:`SteppingGranularity <pyllo.plugins.debug.protocol.SteppingGranularity>`
+     - \-
+   * - :py:obj:`CompletionItemType <pyllo.plugins.debug.protocol.CompletionItemType>`
+     - \-
+
+
+.. py:class:: ClientCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: supportsVariableType
+      :type: bool
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: supportsVariablePaging
+      :type: bool
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: supportsRunInTerminalRequest
+      :type: bool
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: supportsMemoryReferences
+      :type: bool
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: supportsProgressReporting
+      :type: bool
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: supportsInvalidatedEvent
+      :type: bool
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: supportsMemoryEvent
+      :type: bool
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: supportsArgsCanBeInterpretedByShell
+      :type: bool
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: supportsStartDebuggingRequest
+      :type: bool
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`supportsVariableType <pyllo.plugins.debug.protocol.ClientCapabilities.supportsVariableType>`
+        - \-
+      * - :py:obj:`supportsVariablePaging <pyllo.plugins.debug.protocol.ClientCapabilities.supportsVariablePaging>`
+        - \-
+      * - :py:obj:`supportsRunInTerminalRequest <pyllo.plugins.debug.protocol.ClientCapabilities.supportsRunInTerminalRequest>`
+        - \-
+      * - :py:obj:`supportsMemoryReferences <pyllo.plugins.debug.protocol.ClientCapabilities.supportsMemoryReferences>`
+        - \-
+      * - :py:obj:`supportsProgressReporting <pyllo.plugins.debug.protocol.ClientCapabilities.supportsProgressReporting>`
+        - \-
+      * - :py:obj:`supportsInvalidatedEvent <pyllo.plugins.debug.protocol.ClientCapabilities.supportsInvalidatedEvent>`
+        - \-
+      * - :py:obj:`supportsMemoryEvent <pyllo.plugins.debug.protocol.ClientCapabilities.supportsMemoryEvent>`
+        - \-
+      * - :py:obj:`supportsArgsCanBeInterpretedByShell <pyllo.plugins.debug.protocol.ClientCapabilities.supportsArgsCanBeInterpretedByShell>`
+        - \-
+      * - :py:obj:`supportsStartDebuggingRequest <pyllo.plugins.debug.protocol.ClientCapabilities.supportsStartDebuggingRequest>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: supportsVariableType
+      :type: bool
+      :value: False
+
+      
+
+   .. py:attribute:: supportsVariablePaging
+      :type: bool
+      :value: False
+
+      
+
+   .. py:attribute:: supportsRunInTerminalRequest
+      :type: bool
+      :value: False
+
+      
+
+   .. py:attribute:: supportsMemoryReferences
+      :type: bool
+      :value: False
+
+      
+
+   .. py:attribute:: supportsProgressReporting
+      :type: bool
+      :value: False
+
+      
+
+   .. py:attribute:: supportsInvalidatedEvent
+      :type: bool
+      :value: False
+
+      
+
+   .. py:attribute:: supportsMemoryEvent
+      :type: bool
+      :value: False
+
+      
+
+   .. py:attribute:: supportsArgsCanBeInterpretedByShell
+      :type: bool
+      :value: False
+
+      
+
+   .. py:attribute:: supportsStartDebuggingRequest
+      :type: bool
+      :value: False
+
+      
+
+
+
+
+
+
+.. py:class:: ExceptionBreakpointsFilter
+
+   ..    ..    ..    .. .. py:attribute:: filter
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: label
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: description
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: default
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsCondition
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: conditionDescription
+      :type: Optional[str]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`filter <pyllo.plugins.debug.protocol.ExceptionBreakpointsFilter.filter>`
+        - \-
+      * - :py:obj:`label <pyllo.plugins.debug.protocol.ExceptionBreakpointsFilter.label>`
+        - \-
+      * - :py:obj:`description <pyllo.plugins.debug.protocol.ExceptionBreakpointsFilter.description>`
+        - \-
+      * - :py:obj:`default <pyllo.plugins.debug.protocol.ExceptionBreakpointsFilter.default>`
+        - \-
+      * - :py:obj:`supportsCondition <pyllo.plugins.debug.protocol.ExceptionBreakpointsFilter.supportsCondition>`
+        - \-
+      * - :py:obj:`conditionDescription <pyllo.plugins.debug.protocol.ExceptionBreakpointsFilter.conditionDescription>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: filter
+      :type: str
+
+      
+
+   .. py:attribute:: label
+      :type: str
+
+      
+
+   .. py:attribute:: description
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: default
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsCondition
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: conditionDescription
+      :type: Optional[str]
+
+      
+
+
+
+
+
+
+.. py:class:: AdapterCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: extra
+      :type: dataclasses_json.CatchAll
+
+      
+
+   ..    .. .. py:attribute:: supportsConfigurationDoneRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsFunctionBreakpoints
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsConditionalBreakpoints
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsHitConditionalBreakpoints
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsEvaluateForHovers
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: exceptionBreakpointFilters
+      :type: Optional[List[ExceptionBreakpointsFilter]]
+
+      
+
+   ..    .. .. py:attribute:: supportsStepBack
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsSetVariable
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsRestartFrame
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsGotoTargetsRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsStepInTargetsRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsCompletionsRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: completionTriggerCharacters
+      :type: Optional[List[str]]
+
+      
+
+   ..    .. .. py:attribute:: supportsModulesRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: additionalModuleColumns
+      :type: Optional[List[str]]
+
+      
+
+   ..    .. .. py:attribute:: supportedChecksumAlgorithms
+      :type: Optional[List[str]]
+
+      
+
+   ..    .. .. py:attribute:: supportsRestartRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsExceptionOptions
+      :type: Optional[Optional[bool]]
+
+      
+
+   ..    .. .. py:attribute:: supportsValueFormattingOptions
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsExceptionInfoRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportTerminateDebuggee
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportSuspendDebuggee
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsDelayedStackTraceLoading
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsLoadedSourcesRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsLogPoints
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsTerminateThreadsRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsSetExpression
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsTerminateRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsDataBreakpoints
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsReadMemoryRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsWriteMemoryRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsDisassembleRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsCancelRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsBreakpointLocationsRequest
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsClipboardContext
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsSteppingGranularity
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsInstructionBreakpoints
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsExceptionFilterOptions
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: supportsSingleThreadExecutionRequests
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`extra <pyllo.plugins.debug.protocol.AdapterCapabilities.extra>`
+        - \-
+      * - :py:obj:`supportsConfigurationDoneRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsConfigurationDoneRequest>`
+        - \-
+      * - :py:obj:`supportsFunctionBreakpoints <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsFunctionBreakpoints>`
+        - \-
+      * - :py:obj:`supportsConditionalBreakpoints <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsConditionalBreakpoints>`
+        - \-
+      * - :py:obj:`supportsHitConditionalBreakpoints <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsHitConditionalBreakpoints>`
+        - \-
+      * - :py:obj:`supportsEvaluateForHovers <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsEvaluateForHovers>`
+        - \-
+      * - :py:obj:`exceptionBreakpointFilters <pyllo.plugins.debug.protocol.AdapterCapabilities.exceptionBreakpointFilters>`
+        - \-
+      * - :py:obj:`supportsStepBack <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsStepBack>`
+        - \-
+      * - :py:obj:`supportsSetVariable <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsSetVariable>`
+        - \-
+      * - :py:obj:`supportsRestartFrame <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsRestartFrame>`
+        - \-
+      * - :py:obj:`supportsGotoTargetsRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsGotoTargetsRequest>`
+        - \-
+      * - :py:obj:`supportsStepInTargetsRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsStepInTargetsRequest>`
+        - \-
+      * - :py:obj:`supportsCompletionsRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsCompletionsRequest>`
+        - \-
+      * - :py:obj:`completionTriggerCharacters <pyllo.plugins.debug.protocol.AdapterCapabilities.completionTriggerCharacters>`
+        - \-
+      * - :py:obj:`supportsModulesRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsModulesRequest>`
+        - \-
+      * - :py:obj:`additionalModuleColumns <pyllo.plugins.debug.protocol.AdapterCapabilities.additionalModuleColumns>`
+        - \-
+      * - :py:obj:`supportedChecksumAlgorithms <pyllo.plugins.debug.protocol.AdapterCapabilities.supportedChecksumAlgorithms>`
+        - \-
+      * - :py:obj:`supportsRestartRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsRestartRequest>`
+        - \-
+      * - :py:obj:`supportsExceptionOptions <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsExceptionOptions>`
+        - \-
+      * - :py:obj:`supportsValueFormattingOptions <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsValueFormattingOptions>`
+        - \-
+      * - :py:obj:`supportsExceptionInfoRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsExceptionInfoRequest>`
+        - \-
+      * - :py:obj:`supportTerminateDebuggee <pyllo.plugins.debug.protocol.AdapterCapabilities.supportTerminateDebuggee>`
+        - \-
+      * - :py:obj:`supportSuspendDebuggee <pyllo.plugins.debug.protocol.AdapterCapabilities.supportSuspendDebuggee>`
+        - \-
+      * - :py:obj:`supportsDelayedStackTraceLoading <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsDelayedStackTraceLoading>`
+        - \-
+      * - :py:obj:`supportsLoadedSourcesRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsLoadedSourcesRequest>`
+        - \-
+      * - :py:obj:`supportsLogPoints <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsLogPoints>`
+        - \-
+      * - :py:obj:`supportsTerminateThreadsRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsTerminateThreadsRequest>`
+        - \-
+      * - :py:obj:`supportsSetExpression <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsSetExpression>`
+        - \-
+      * - :py:obj:`supportsTerminateRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsTerminateRequest>`
+        - \-
+      * - :py:obj:`supportsDataBreakpoints <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsDataBreakpoints>`
+        - \-
+      * - :py:obj:`supportsReadMemoryRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsReadMemoryRequest>`
+        - \-
+      * - :py:obj:`supportsWriteMemoryRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsWriteMemoryRequest>`
+        - \-
+      * - :py:obj:`supportsDisassembleRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsDisassembleRequest>`
+        - \-
+      * - :py:obj:`supportsCancelRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsCancelRequest>`
+        - \-
+      * - :py:obj:`supportsBreakpointLocationsRequest <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsBreakpointLocationsRequest>`
+        - \-
+      * - :py:obj:`supportsClipboardContext <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsClipboardContext>`
+        - \-
+      * - :py:obj:`supportsSteppingGranularity <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsSteppingGranularity>`
+        - \-
+      * - :py:obj:`supportsInstructionBreakpoints <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsInstructionBreakpoints>`
+        - \-
+      * - :py:obj:`supportsExceptionFilterOptions <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsExceptionFilterOptions>`
+        - \-
+      * - :py:obj:`supportsSingleThreadExecutionRequests <pyllo.plugins.debug.protocol.AdapterCapabilities.supportsSingleThreadExecutionRequests>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: extra
+      :type: dataclasses_json.CatchAll
+
+      
+
+   .. py:attribute:: supportsConfigurationDoneRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsFunctionBreakpoints
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsConditionalBreakpoints
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsHitConditionalBreakpoints
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsEvaluateForHovers
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: exceptionBreakpointFilters
+      :type: Optional[List[ExceptionBreakpointsFilter]]
+
+      
+
+   .. py:attribute:: supportsStepBack
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsSetVariable
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsRestartFrame
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsGotoTargetsRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsStepInTargetsRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsCompletionsRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: completionTriggerCharacters
+      :type: Optional[List[str]]
+
+      
+
+   .. py:attribute:: supportsModulesRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: additionalModuleColumns
+      :type: Optional[List[str]]
+
+      
+
+   .. py:attribute:: supportedChecksumAlgorithms
+      :type: Optional[List[str]]
+
+      
+
+   .. py:attribute:: supportsRestartRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsExceptionOptions
+      :type: Optional[Optional[bool]]
+
+      
+
+   .. py:attribute:: supportsValueFormattingOptions
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsExceptionInfoRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportTerminateDebuggee
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportSuspendDebuggee
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsDelayedStackTraceLoading
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsLoadedSourcesRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsLogPoints
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsTerminateThreadsRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsSetExpression
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsTerminateRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsDataBreakpoints
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsReadMemoryRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsWriteMemoryRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsDisassembleRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsCancelRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsBreakpointLocationsRequest
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsClipboardContext
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsSteppingGranularity
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsInstructionBreakpoints
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsExceptionFilterOptions
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: supportsSingleThreadExecutionRequests
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: ExceptionFilterOptions
+
+   ..    ..    ..    .. .. py:attribute:: filterId
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: condition
+      :type: Optional[str]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`filterId <pyllo.plugins.debug.protocol.ExceptionFilterOptions.filterId>`
+        - \-
+      * - :py:obj:`condition <pyllo.plugins.debug.protocol.ExceptionFilterOptions.condition>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: filterId
+      :type: str
+
+      
+
+   .. py:attribute:: condition
+      :type: Optional[str]
+
+      
+
+
+
+
+
+
+.. py:data:: ExceptionBreakMode
+
+   
+
+.. py:class:: ExceptionPathSegment
+
+   ..    ..    ..    .. .. py:attribute:: names
+      :type: List[str]
+
+      
+
+   ..    .. .. py:attribute:: negate
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`names <pyllo.plugins.debug.protocol.ExceptionPathSegment.names>`
+        - \-
+      * - :py:obj:`negate <pyllo.plugins.debug.protocol.ExceptionPathSegment.negate>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: names
+      :type: List[str]
+
+      
+
+   .. py:attribute:: negate
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: ExceptionOptions
+
+   ..    ..    ..    .. .. py:attribute:: breakMode
+      :type: ExceptionBreakMode
+
+      
+
+   ..    .. .. py:attribute:: path
+      :type: Optional[List[ExceptionPathSegment]]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`breakMode <pyllo.plugins.debug.protocol.ExceptionOptions.breakMode>`
+        - \-
+      * - :py:obj:`path <pyllo.plugins.debug.protocol.ExceptionOptions.path>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: breakMode
+      :type: ExceptionBreakMode
+
+      
+
+   .. py:attribute:: path
+      :type: Optional[List[ExceptionPathSegment]]
+
+      
+
+
+
+
+
+
+.. py:class:: SetExceptionBreakpointsArguments
+
+   ..    ..    ..    .. .. py:attribute:: filters
+      :type: List[str]
+
+      
+
+   ..    .. .. py:attribute:: filterOptions
+      :type: Optional[List[ExceptionFilterOptions]]
+
+      
+
+   ..    .. .. py:attribute:: exceptionOptions
+      :type: Optional[List[ExceptionOptions]]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`filters <pyllo.plugins.debug.protocol.SetExceptionBreakpointsArguments.filters>`
+        - \-
+      * - :py:obj:`filterOptions <pyllo.plugins.debug.protocol.SetExceptionBreakpointsArguments.filterOptions>`
+        - \-
+      * - :py:obj:`exceptionOptions <pyllo.plugins.debug.protocol.SetExceptionBreakpointsArguments.exceptionOptions>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: filters
+      :type: List[str]
+
+      
+
+   .. py:attribute:: filterOptions
+      :type: Optional[List[ExceptionFilterOptions]]
+
+      
+
+   .. py:attribute:: exceptionOptions
+      :type: Optional[List[ExceptionOptions]]
+
+      
+
+
+
+
+
+
+.. py:class:: ProcessEventBody
+
+   ..    ..    ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: systemProcessId
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: isLocalProcess
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: startMethod
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: pointerSize
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`name <pyllo.plugins.debug.protocol.ProcessEventBody.name>`
+        - \-
+      * - :py:obj:`systemProcessId <pyllo.plugins.debug.protocol.ProcessEventBody.systemProcessId>`
+        - \-
+      * - :py:obj:`isLocalProcess <pyllo.plugins.debug.protocol.ProcessEventBody.isLocalProcess>`
+        - \-
+      * - :py:obj:`startMethod <pyllo.plugins.debug.protocol.ProcessEventBody.startMethod>`
+        - \-
+      * - :py:obj:`pointerSize <pyllo.plugins.debug.protocol.ProcessEventBody.pointerSize>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: systemProcessId
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: isLocalProcess
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: startMethod
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: pointerSize
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: ProcessEventBody
+
+   ..    ..    ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: systemProcessId
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: isLocalProcess
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: startMethod
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: pointerSize
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`name <pyllo.plugins.debug.protocol.ProcessEventBody.name>`
+        - \-
+      * - :py:obj:`systemProcessId <pyllo.plugins.debug.protocol.ProcessEventBody.systemProcessId>`
+        - \-
+      * - :py:obj:`isLocalProcess <pyllo.plugins.debug.protocol.ProcessEventBody.isLocalProcess>`
+        - \-
+      * - :py:obj:`startMethod <pyllo.plugins.debug.protocol.ProcessEventBody.startMethod>`
+        - \-
+      * - :py:obj:`pointerSize <pyllo.plugins.debug.protocol.ProcessEventBody.pointerSize>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: systemProcessId
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: isLocalProcess
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: startMethod
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: pointerSize
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: ThreadEventBody
+
+   ..    ..    ..    .. .. py:attribute:: reason
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: threadId
+      :type: int
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`reason <pyllo.plugins.debug.protocol.ThreadEventBody.reason>`
+        - \-
+      * - :py:obj:`threadId <pyllo.plugins.debug.protocol.ThreadEventBody.threadId>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: reason
+      :type: str
+
+      
+
+   .. py:attribute:: threadId
+      :type: int
+
+      
+
+
+
+
+
+
+.. py:class:: Source
+
+   ..    ..    ..    .. .. py:attribute:: name
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: path
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: sourceReference
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: presentationHint
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: sources
+      :type: Optional[List[Source]]
+
+      
+
+   ..    .. .. py:attribute:: adapterData
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: checksums
+      :type: Optional[Any]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`name <pyllo.plugins.debug.protocol.Source.name>`
+        - \-
+      * - :py:obj:`path <pyllo.plugins.debug.protocol.Source.path>`
+        - \-
+      * - :py:obj:`sourceReference <pyllo.plugins.debug.protocol.Source.sourceReference>`
+        - \-
+      * - :py:obj:`presentationHint <pyllo.plugins.debug.protocol.Source.presentationHint>`
+        - \-
+      * - :py:obj:`sources <pyllo.plugins.debug.protocol.Source.sources>`
+        - \-
+      * - :py:obj:`adapterData <pyllo.plugins.debug.protocol.Source.adapterData>`
+        - \-
+      * - :py:obj:`checksums <pyllo.plugins.debug.protocol.Source.checksums>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: name
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: path
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: sourceReference
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: presentationHint
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: sources
+      :type: Optional[List[Source]]
+
+      
+
+   .. py:attribute:: adapterData
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: checksums
+      :type: Optional[Any]
+
+      
+
+
+
+
+
+
+.. py:class:: OutputEventBody
+
+   ..    ..    ..    .. .. py:attribute:: output
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: category
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: group
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: variablesReference
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: source
+      :type: Optional[Source]
+
+      
+
+   ..    .. .. py:attribute:: line
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: column
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: data
+      :type: Optional[Any]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`output <pyllo.plugins.debug.protocol.OutputEventBody.output>`
+        - \-
+      * - :py:obj:`category <pyllo.plugins.debug.protocol.OutputEventBody.category>`
+        - \-
+      * - :py:obj:`group <pyllo.plugins.debug.protocol.OutputEventBody.group>`
+        - \-
+      * - :py:obj:`variablesReference <pyllo.plugins.debug.protocol.OutputEventBody.variablesReference>`
+        - \-
+      * - :py:obj:`source <pyllo.plugins.debug.protocol.OutputEventBody.source>`
+        - \-
+      * - :py:obj:`line <pyllo.plugins.debug.protocol.OutputEventBody.line>`
+        - \-
+      * - :py:obj:`column <pyllo.plugins.debug.protocol.OutputEventBody.column>`
+        - \-
+      * - :py:obj:`data <pyllo.plugins.debug.protocol.OutputEventBody.data>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: output
+      :type: str
+
+      
+
+   .. py:attribute:: category
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: group
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: variablesReference
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: source
+      :type: Optional[Source]
+
+      
+
+   .. py:attribute:: line
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: column
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: data
+      :type: Optional[Any]
+
+      
+
+
+
+
+
+
+.. py:class:: ExitedEventBody
+
+   ..    ..    ..    .. .. py:attribute:: exitCode
+      :type: int
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`exitCode <pyllo.plugins.debug.protocol.ExitedEventBody.exitCode>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: exitCode
+      :type: int
+
+      
+
+
+
+
+
+
+.. py:class:: SetBreakpointsArguments
+
+   ..    ..    ..    .. .. py:attribute:: source
+      :type: Source
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`source <pyllo.plugins.debug.protocol.SetBreakpointsArguments.source>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: source
+      :type: Source
+
+      
+
+
+
+
+
+
+.. py:class:: LoadedSourceEventBody
+
+   ..    ..    ..    .. .. py:attribute:: reason
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: source
+      :type: Source
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`reason <pyllo.plugins.debug.protocol.LoadedSourceEventBody.reason>`
+        - \-
+      * - :py:obj:`source <pyllo.plugins.debug.protocol.LoadedSourceEventBody.source>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: reason
+      :type: str
+
+      
+
+   .. py:attribute:: source
+      :type: Source
+
+      
+
+
+
+
+
+
+.. py:class:: SourceBreakpoint
+
+   ..    ..    ..    .. .. py:attribute:: line
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: column
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: condition
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: hitCondition
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: logMessage
+      :type: Optional[str]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`line <pyllo.plugins.debug.protocol.SourceBreakpoint.line>`
+        - \-
+      * - :py:obj:`column <pyllo.plugins.debug.protocol.SourceBreakpoint.column>`
+        - \-
+      * - :py:obj:`condition <pyllo.plugins.debug.protocol.SourceBreakpoint.condition>`
+        - \-
+      * - :py:obj:`hitCondition <pyllo.plugins.debug.protocol.SourceBreakpoint.hitCondition>`
+        - \-
+      * - :py:obj:`logMessage <pyllo.plugins.debug.protocol.SourceBreakpoint.logMessage>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: line
+      :type: int
+
+      
+
+   .. py:attribute:: column
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: condition
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: hitCondition
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: logMessage
+      :type: Optional[str]
+
+      
+
+
+
+
+
+
+.. py:class:: Thread
+
+   ..    ..    ..    .. .. py:attribute:: id
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`id <pyllo.plugins.debug.protocol.Thread.id>`
+        - \-
+      * - :py:obj:`name <pyllo.plugins.debug.protocol.Thread.name>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: id
+      :type: int
+
+      
+
+   .. py:attribute:: name
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: ThreadsResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: threads
+      :type: List[Thread]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`threads <pyllo.plugins.debug.protocol.ThreadsResponseBody.threads>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: threads
+      :type: List[Thread]
+
+      
+
+
+
+
+
+
+.. py:class:: StackFrameFormat
+
+   ..    ..    ..    .. .. py:attribute:: parameters
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: parameterTypes
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: parameterNames
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: parameterValues
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: line
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: module
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: includeAll
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`parameters <pyllo.plugins.debug.protocol.StackFrameFormat.parameters>`
+        - \-
+      * - :py:obj:`parameterTypes <pyllo.plugins.debug.protocol.StackFrameFormat.parameterTypes>`
+        - \-
+      * - :py:obj:`parameterNames <pyllo.plugins.debug.protocol.StackFrameFormat.parameterNames>`
+        - \-
+      * - :py:obj:`parameterValues <pyllo.plugins.debug.protocol.StackFrameFormat.parameterValues>`
+        - \-
+      * - :py:obj:`line <pyllo.plugins.debug.protocol.StackFrameFormat.line>`
+        - \-
+      * - :py:obj:`module <pyllo.plugins.debug.protocol.StackFrameFormat.module>`
+        - \-
+      * - :py:obj:`includeAll <pyllo.plugins.debug.protocol.StackFrameFormat.includeAll>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: parameters
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: parameterTypes
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: parameterNames
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: parameterValues
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: line
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: module
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: includeAll
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: StackTraceArguments
+
+   ..    ..    ..    .. .. py:attribute:: threadId
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: startFrame
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: levels
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: format
+      :type: Optional[StackFrameFormat]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`threadId <pyllo.plugins.debug.protocol.StackTraceArguments.threadId>`
+        - \-
+      * - :py:obj:`startFrame <pyllo.plugins.debug.protocol.StackTraceArguments.startFrame>`
+        - \-
+      * - :py:obj:`levels <pyllo.plugins.debug.protocol.StackTraceArguments.levels>`
+        - \-
+      * - :py:obj:`format <pyllo.plugins.debug.protocol.StackTraceArguments.format>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: threadId
+      :type: int
+
+      
+
+   .. py:attribute:: startFrame
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: levels
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: format
+      :type: Optional[StackFrameFormat]
+
+      
+
+
+
+
+
+
+.. py:class:: SetBreakpointsArguments
+
+   ..    ..    ..    .. .. py:attribute:: source
+      :type: Source
+
+      
+
+   ..    .. .. py:attribute:: breakpoints
+      :type: Optional[List[SourceBreakpoint]]
+
+      
+
+   ..    .. .. py:attribute:: lines
+      :type: Optional[List[int]]
+
+      
+
+   ..    .. .. py:attribute:: sourceModified
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`source <pyllo.plugins.debug.protocol.SetBreakpointsArguments.source>`
+        - \-
+      * - :py:obj:`breakpoints <pyllo.plugins.debug.protocol.SetBreakpointsArguments.breakpoints>`
+        - \-
+      * - :py:obj:`lines <pyllo.plugins.debug.protocol.SetBreakpointsArguments.lines>`
+        - \-
+      * - :py:obj:`sourceModified <pyllo.plugins.debug.protocol.SetBreakpointsArguments.sourceModified>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: source
+      :type: Source
+
+      
+
+   .. py:attribute:: breakpoints
+      :type: Optional[List[SourceBreakpoint]]
+
+      
+
+   .. py:attribute:: lines
+      :type: Optional[List[int]]
+
+      
+
+   .. py:attribute:: sourceModified
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: Breakpoint
+
+   ..    ..    ..    .. .. py:attribute:: verified
+      :type: bool
+
+      
+
+   ..    .. .. py:attribute:: id
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: message
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: source
+      :type: Optional[Source]
+
+      
+
+   ..    .. .. py:attribute:: line
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: column
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: endLine
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: endColumn
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: instructionReference
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: offset
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`verified <pyllo.plugins.debug.protocol.Breakpoint.verified>`
+        - \-
+      * - :py:obj:`id <pyllo.plugins.debug.protocol.Breakpoint.id>`
+        - \-
+      * - :py:obj:`message <pyllo.plugins.debug.protocol.Breakpoint.message>`
+        - \-
+      * - :py:obj:`source <pyllo.plugins.debug.protocol.Breakpoint.source>`
+        - \-
+      * - :py:obj:`line <pyllo.plugins.debug.protocol.Breakpoint.line>`
+        - \-
+      * - :py:obj:`column <pyllo.plugins.debug.protocol.Breakpoint.column>`
+        - \-
+      * - :py:obj:`endLine <pyllo.plugins.debug.protocol.Breakpoint.endLine>`
+        - \-
+      * - :py:obj:`endColumn <pyllo.plugins.debug.protocol.Breakpoint.endColumn>`
+        - \-
+      * - :py:obj:`instructionReference <pyllo.plugins.debug.protocol.Breakpoint.instructionReference>`
+        - \-
+      * - :py:obj:`offset <pyllo.plugins.debug.protocol.Breakpoint.offset>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: verified
+      :type: bool
+
+      
+
+   .. py:attribute:: id
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: message
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: source
+      :type: Optional[Source]
+
+      
+
+   .. py:attribute:: line
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: column
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: endLine
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: endColumn
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: instructionReference
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: offset
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: SetBreakpointsResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: breakpoints
+      :type: List[Breakpoint]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`breakpoints <pyllo.plugins.debug.protocol.SetBreakpointsResponseBody.breakpoints>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: breakpoints
+      :type: List[Breakpoint]
+
+      
+
+
+
+
+
+
+.. py:class:: StackFrame
+
+   ..    ..    ..    .. .. py:attribute:: id
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: line
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: column
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: source
+      :type: Optional[Source]
+
+      
+
+   ..    .. .. py:attribute:: endLine
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: endColumn
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: canRestart
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: instructionPointerReference
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: moduleId
+      :type: Optional[Union[int, str]]
+
+      
+
+   ..    .. .. py:attribute:: presentationHint
+      :type: Optional[str]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`id <pyllo.plugins.debug.protocol.StackFrame.id>`
+        - \-
+      * - :py:obj:`name <pyllo.plugins.debug.protocol.StackFrame.name>`
+        - \-
+      * - :py:obj:`line <pyllo.plugins.debug.protocol.StackFrame.line>`
+        - \-
+      * - :py:obj:`column <pyllo.plugins.debug.protocol.StackFrame.column>`
+        - \-
+      * - :py:obj:`source <pyllo.plugins.debug.protocol.StackFrame.source>`
+        - \-
+      * - :py:obj:`endLine <pyllo.plugins.debug.protocol.StackFrame.endLine>`
+        - \-
+      * - :py:obj:`endColumn <pyllo.plugins.debug.protocol.StackFrame.endColumn>`
+        - \-
+      * - :py:obj:`canRestart <pyllo.plugins.debug.protocol.StackFrame.canRestart>`
+        - \-
+      * - :py:obj:`instructionPointerReference <pyllo.plugins.debug.protocol.StackFrame.instructionPointerReference>`
+        - \-
+      * - :py:obj:`moduleId <pyllo.plugins.debug.protocol.StackFrame.moduleId>`
+        - \-
+      * - :py:obj:`presentationHint <pyllo.plugins.debug.protocol.StackFrame.presentationHint>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: id
+      :type: int
+
+      
+
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: line
+      :type: int
+
+      
+
+   .. py:attribute:: column
+      :type: int
+
+      
+
+   .. py:attribute:: source
+      :type: Optional[Source]
+
+      
+
+   .. py:attribute:: endLine
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: endColumn
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: canRestart
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: instructionPointerReference
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: moduleId
+      :type: Optional[Union[int, str]]
+
+      
+
+   .. py:attribute:: presentationHint
+      :type: Optional[str]
+
+      
+
+
+
+
+
+
+.. py:class:: StackTraceResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: stackFrames
+      :type: List[StackFrame]
+
+      
+
+   ..    .. .. py:attribute:: totalFrames
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`stackFrames <pyllo.plugins.debug.protocol.StackTraceResponseBody.stackFrames>`
+        - \-
+      * - :py:obj:`totalFrames <pyllo.plugins.debug.protocol.StackTraceResponseBody.totalFrames>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: stackFrames
+      :type: List[StackFrame]
+
+      
+
+   .. py:attribute:: totalFrames
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: PauseArguments
+
+   ..    ..    ..    .. .. py:attribute:: threadId
+      :type: int
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`threadId <pyllo.plugins.debug.protocol.PauseArguments.threadId>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: threadId
+      :type: int
+
+      
+
+
+
+
+
+
+.. py:class:: ContinueArguments
+
+   ..    ..    ..    .. .. py:attribute:: threadId
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: singleThread
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`threadId <pyllo.plugins.debug.protocol.ContinueArguments.threadId>`
+        - \-
+      * - :py:obj:`singleThread <pyllo.plugins.debug.protocol.ContinueArguments.singleThread>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: threadId
+      :type: int
+
+      
+
+   .. py:attribute:: singleThread
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: ContinueResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: allThreadsContinued
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`allThreadsContinued <pyllo.plugins.debug.protocol.ContinueResponseBody.allThreadsContinued>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: allThreadsContinued
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:data:: SteppingGranularity
+
+   
+
+.. py:class:: NextArguments
+
+   ..    ..    ..    .. .. py:attribute:: threadId
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: singleThread
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: granularity
+      :type: Optional[SteppingGranularity]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`threadId <pyllo.plugins.debug.protocol.NextArguments.threadId>`
+        - \-
+      * - :py:obj:`singleThread <pyllo.plugins.debug.protocol.NextArguments.singleThread>`
+        - \-
+      * - :py:obj:`granularity <pyllo.plugins.debug.protocol.NextArguments.granularity>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: threadId
+      :type: int
+
+      
+
+   .. py:attribute:: singleThread
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: granularity
+      :type: Optional[SteppingGranularity]
+
+      
+
+
+
+
+
+
+.. py:class:: StepInArguments
+
+   ..    ..    ..    .. .. py:attribute:: threadId
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: singleThread
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: targetId
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: granularity
+      :type: Optional[SteppingGranularity]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`threadId <pyllo.plugins.debug.protocol.StepInArguments.threadId>`
+        - \-
+      * - :py:obj:`singleThread <pyllo.plugins.debug.protocol.StepInArguments.singleThread>`
+        - \-
+      * - :py:obj:`targetId <pyllo.plugins.debug.protocol.StepInArguments.targetId>`
+        - \-
+      * - :py:obj:`granularity <pyllo.plugins.debug.protocol.StepInArguments.granularity>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: threadId
+      :type: int
+
+      
+
+   .. py:attribute:: singleThread
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: targetId
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: granularity
+      :type: Optional[SteppingGranularity]
+
+      
+
+
+
+
+
+
+.. py:class:: StepOutArguments
+
+   ..    ..    ..    .. .. py:attribute:: threadId
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: singleThread
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: granularity
+      :type: Optional[SteppingGranularity]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`threadId <pyllo.plugins.debug.protocol.StepOutArguments.threadId>`
+        - \-
+      * - :py:obj:`singleThread <pyllo.plugins.debug.protocol.StepOutArguments.singleThread>`
+        - \-
+      * - :py:obj:`granularity <pyllo.plugins.debug.protocol.StepOutArguments.granularity>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: threadId
+      :type: int
+
+      
+
+   .. py:attribute:: singleThread
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: granularity
+      :type: Optional[SteppingGranularity]
+
+      
+
+
+
+
+
+
+.. py:class:: StoppedEventBody
+
+   ..    ..    ..    .. .. py:attribute:: reason
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: description
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: threadId
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: preserveFocusHint
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: text
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: allThreadsStopped
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: hitBreakpointIds
+      :type: Optional[List[int]]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`reason <pyllo.plugins.debug.protocol.StoppedEventBody.reason>`
+        - \-
+      * - :py:obj:`description <pyllo.plugins.debug.protocol.StoppedEventBody.description>`
+        - \-
+      * - :py:obj:`threadId <pyllo.plugins.debug.protocol.StoppedEventBody.threadId>`
+        - \-
+      * - :py:obj:`preserveFocusHint <pyllo.plugins.debug.protocol.StoppedEventBody.preserveFocusHint>`
+        - \-
+      * - :py:obj:`text <pyllo.plugins.debug.protocol.StoppedEventBody.text>`
+        - \-
+      * - :py:obj:`allThreadsStopped <pyllo.plugins.debug.protocol.StoppedEventBody.allThreadsStopped>`
+        - \-
+      * - :py:obj:`hitBreakpointIds <pyllo.plugins.debug.protocol.StoppedEventBody.hitBreakpointIds>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: reason
+      :type: str
+
+      
+
+   .. py:attribute:: description
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: threadId
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: preserveFocusHint
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: text
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: allThreadsStopped
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: hitBreakpointIds
+      :type: Optional[List[int]]
+
+      
+
+
+
+
+
+
+.. py:class:: ContinuedEventBody
+
+   ..    ..    ..    .. .. py:attribute:: threadId
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: allThreadsContinued
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`threadId <pyllo.plugins.debug.protocol.ContinuedEventBody.threadId>`
+        - \-
+      * - :py:obj:`allThreadsContinued <pyllo.plugins.debug.protocol.ContinuedEventBody.allThreadsContinued>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: threadId
+      :type: int
+
+      
+
+   .. py:attribute:: allThreadsContinued
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: ScopesArguments
+
+   ..    ..    ..    .. .. py:attribute:: frameId
+      :type: int
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`frameId <pyllo.plugins.debug.protocol.ScopesArguments.frameId>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: frameId
+      :type: int
+
+      
+
+
+
+
+
+
+.. py:class:: Scope
+
+   ..    ..    ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: variablesReference
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: presentationHint
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: namedVariables
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`name <pyllo.plugins.debug.protocol.Scope.name>`
+        - \-
+      * - :py:obj:`variablesReference <pyllo.plugins.debug.protocol.Scope.variablesReference>`
+        - \-
+      * - :py:obj:`presentationHint <pyllo.plugins.debug.protocol.Scope.presentationHint>`
+        - \-
+      * - :py:obj:`namedVariables <pyllo.plugins.debug.protocol.Scope.namedVariables>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: variablesReference
+      :type: int
+
+      
+
+   .. py:attribute:: presentationHint
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: namedVariables
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: ScopesArguments
+
+   ..    ..    ..    .. .. py:attribute:: frameId
+      :type: int
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`frameId <pyllo.plugins.debug.protocol.ScopesArguments.frameId>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: frameId
+      :type: int
+
+      
+
+
+
+
+
+
+.. py:class:: ValueFormat
+
+   ..    ..    ..    .. .. py:attribute:: hex
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`hex <pyllo.plugins.debug.protocol.ValueFormat.hex>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: hex
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: VariablesArguments
+
+   ..    ..    ..    .. .. py:attribute:: variablesReference
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: filter
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: start
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: count
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: format
+      :type: Optional[ValueFormat]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`variablesReference <pyllo.plugins.debug.protocol.VariablesArguments.variablesReference>`
+        - \-
+      * - :py:obj:`filter <pyllo.plugins.debug.protocol.VariablesArguments.filter>`
+        - \-
+      * - :py:obj:`start <pyllo.plugins.debug.protocol.VariablesArguments.start>`
+        - \-
+      * - :py:obj:`count <pyllo.plugins.debug.protocol.VariablesArguments.count>`
+        - \-
+      * - :py:obj:`format <pyllo.plugins.debug.protocol.VariablesArguments.format>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: variablesReference
+      :type: int
+
+      
+
+   .. py:attribute:: filter
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: start
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: count
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: format
+      :type: Optional[ValueFormat]
+
+      
+
+
+
+
+
+
+.. py:class:: VariablePresentationHint
+
+   ..    ..    ..    .. .. py:attribute:: kind
+      :type: Optional[Union[Literal[property, method, class, data, event, baseClass, innerClass, interface, mostDerivedClass, virtual,  dataBreakpoint], str]]
+
+      
+
+   ..    .. .. py:attribute:: attributes
+      :type: Optional[List[Union[Literal[static, constant, readOnly, rawString, hasObjectId, canHaveObjectId, hasSideEffects, hasDataBreakpoint], str]]]
+
+      
+
+   ..    .. .. py:attribute:: visibility
+      :type: Optional[Union[Literal[public, private, protected, internal, final], str]]
+
+      
+
+   ..    .. .. py:attribute:: lazy
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`kind <pyllo.plugins.debug.protocol.VariablePresentationHint.kind>`
+        - \-
+      * - :py:obj:`attributes <pyllo.plugins.debug.protocol.VariablePresentationHint.attributes>`
+        - \-
+      * - :py:obj:`visibility <pyllo.plugins.debug.protocol.VariablePresentationHint.visibility>`
+        - \-
+      * - :py:obj:`lazy <pyllo.plugins.debug.protocol.VariablePresentationHint.lazy>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: kind
+      :type: Optional[Union[Literal[property, method, class, data, event, baseClass, innerClass, interface, mostDerivedClass, virtual,  dataBreakpoint], str]]
+
+      
+
+   .. py:attribute:: attributes
+      :type: Optional[List[Union[Literal[static, constant, readOnly, rawString, hasObjectId, canHaveObjectId, hasSideEffects, hasDataBreakpoint], str]]]
+
+      
+
+   .. py:attribute:: visibility
+      :type: Optional[Union[Literal[public, private, protected, internal, final], str]]
+
+      
+
+   .. py:attribute:: lazy
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: Variable
+
+   ..    ..    ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: value
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: variablesReference
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: type
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: presentationHint
+      :type: Optional[VariablePresentationHint]
+
+      
+
+   ..    .. .. py:attribute:: evaluateName
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: namedVariables
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: indexedVariables
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: memoryReference
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`name <pyllo.plugins.debug.protocol.Variable.name>`
+        - \-
+      * - :py:obj:`value <pyllo.plugins.debug.protocol.Variable.value>`
+        - \-
+      * - :py:obj:`variablesReference <pyllo.plugins.debug.protocol.Variable.variablesReference>`
+        - \-
+      * - :py:obj:`type <pyllo.plugins.debug.protocol.Variable.type>`
+        - \-
+      * - :py:obj:`presentationHint <pyllo.plugins.debug.protocol.Variable.presentationHint>`
+        - \-
+      * - :py:obj:`evaluateName <pyllo.plugins.debug.protocol.Variable.evaluateName>`
+        - \-
+      * - :py:obj:`namedVariables <pyllo.plugins.debug.protocol.Variable.namedVariables>`
+        - \-
+      * - :py:obj:`indexedVariables <pyllo.plugins.debug.protocol.Variable.indexedVariables>`
+        - \-
+      * - :py:obj:`memoryReference <pyllo.plugins.debug.protocol.Variable.memoryReference>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: value
+      :type: str
+
+      
+
+   .. py:attribute:: variablesReference
+      :type: int
+
+      
+
+   .. py:attribute:: type
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: presentationHint
+      :type: Optional[VariablePresentationHint]
+
+      
+
+   .. py:attribute:: evaluateName
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: namedVariables
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: indexedVariables
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: memoryReference
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: VariablesResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: variables
+      :type: List[Variable]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`variables <pyllo.plugins.debug.protocol.VariablesResponseBody.variables>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: variables
+      :type: List[Variable]
+
+      
+
+
+
+
+
+
+.. py:class:: ScopesResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: scopes
+      :type: List[Scope]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`scopes <pyllo.plugins.debug.protocol.ScopesResponseBody.scopes>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: scopes
+      :type: List[Scope]
+
+      
+
+
+
+
+
+
+.. py:class:: Breakpoint
+
+   ..    ..    ..    .. .. py:attribute:: verified
+      :type: bool
+
+      
+
+   ..    .. .. py:attribute:: id
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: message
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: source
+      :type: Optional[Source]
+
+      
+
+   ..    .. .. py:attribute:: line
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: column
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: endLine
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: endColumn
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: instructionReference
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: offset
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`verified <pyllo.plugins.debug.protocol.Breakpoint.verified>`
+        - \-
+      * - :py:obj:`id <pyllo.plugins.debug.protocol.Breakpoint.id>`
+        - \-
+      * - :py:obj:`message <pyllo.plugins.debug.protocol.Breakpoint.message>`
+        - \-
+      * - :py:obj:`source <pyllo.plugins.debug.protocol.Breakpoint.source>`
+        - \-
+      * - :py:obj:`line <pyllo.plugins.debug.protocol.Breakpoint.line>`
+        - \-
+      * - :py:obj:`column <pyllo.plugins.debug.protocol.Breakpoint.column>`
+        - \-
+      * - :py:obj:`endLine <pyllo.plugins.debug.protocol.Breakpoint.endLine>`
+        - \-
+      * - :py:obj:`endColumn <pyllo.plugins.debug.protocol.Breakpoint.endColumn>`
+        - \-
+      * - :py:obj:`instructionReference <pyllo.plugins.debug.protocol.Breakpoint.instructionReference>`
+        - \-
+      * - :py:obj:`offset <pyllo.plugins.debug.protocol.Breakpoint.offset>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: verified
+      :type: bool
+
+      
+
+   .. py:attribute:: id
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: message
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: source
+      :type: Optional[Source]
+
+      
+
+   .. py:attribute:: line
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: column
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: endLine
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: endColumn
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: instructionReference
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: offset
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: SetBreakpointsResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: breakpoints
+      :type: List[Breakpoint]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`breakpoints <pyllo.plugins.debug.protocol.SetBreakpointsResponseBody.breakpoints>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: breakpoints
+      :type: List[Breakpoint]
+
+      
+
+
+
+
+
+
+.. py:class:: SetExceptionBreakpointsResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: breakpoints
+      :type: Optional[List[Breakpoint]]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`breakpoints <pyllo.plugins.debug.protocol.SetExceptionBreakpointsResponseBody.breakpoints>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: breakpoints
+      :type: Optional[List[Breakpoint]]
+
+      
+
+
+
+
+
+
+.. py:class:: EvaluateArguments
+
+   ..    ..    ..    .. .. py:attribute:: expression
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: frameId
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: context
+      :type: Optional[Union[Literal[watch, repl, hover, clipboard, variables], str]]
+
+      
+
+   ..    .. .. py:attribute:: format
+      :type: Optional[ValueFormat]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`expression <pyllo.plugins.debug.protocol.EvaluateArguments.expression>`
+        - \-
+      * - :py:obj:`frameId <pyllo.plugins.debug.protocol.EvaluateArguments.frameId>`
+        - \-
+      * - :py:obj:`context <pyllo.plugins.debug.protocol.EvaluateArguments.context>`
+        - \-
+      * - :py:obj:`format <pyllo.plugins.debug.protocol.EvaluateArguments.format>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: expression
+      :type: str
+
+      
+
+   .. py:attribute:: frameId
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: context
+      :type: Optional[Union[Literal[watch, repl, hover, clipboard, variables], str]]
+
+      
+
+   .. py:attribute:: format
+      :type: Optional[ValueFormat]
+
+      
+
+
+
+
+
+
+.. py:class:: EvaluateResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: result
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: variablesReference
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: type
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: presentationHint
+      :type: Optional[VariablePresentationHint]
+
+      
+
+   ..    .. .. py:attribute:: namedVariables
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: indexedVariables
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: memoryReference
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`result <pyllo.plugins.debug.protocol.EvaluateResponseBody.result>`
+        - \-
+      * - :py:obj:`variablesReference <pyllo.plugins.debug.protocol.EvaluateResponseBody.variablesReference>`
+        - \-
+      * - :py:obj:`type <pyllo.plugins.debug.protocol.EvaluateResponseBody.type>`
+        - \-
+      * - :py:obj:`presentationHint <pyllo.plugins.debug.protocol.EvaluateResponseBody.presentationHint>`
+        - \-
+      * - :py:obj:`namedVariables <pyllo.plugins.debug.protocol.EvaluateResponseBody.namedVariables>`
+        - \-
+      * - :py:obj:`indexedVariables <pyllo.plugins.debug.protocol.EvaluateResponseBody.indexedVariables>`
+        - \-
+      * - :py:obj:`memoryReference <pyllo.plugins.debug.protocol.EvaluateResponseBody.memoryReference>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: result
+      :type: str
+
+      
+
+   .. py:attribute:: variablesReference
+      :type: int
+
+      
+
+   .. py:attribute:: type
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: presentationHint
+      :type: Optional[VariablePresentationHint]
+
+      
+
+   .. py:attribute:: namedVariables
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: indexedVariables
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: memoryReference
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:data:: CompletionItemType
+
+   
+
+.. py:class:: CompletionItem
+
+   ..    ..    ..    .. .. py:attribute:: label
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: text
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: sortText
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: detail
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: type
+      :type: Optional[CompletionItemType]
+
+      
+
+   ..    .. .. py:attribute:: start
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: length
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: selectionStart
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: selectionLength
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`label <pyllo.plugins.debug.protocol.CompletionItem.label>`
+        - \-
+      * - :py:obj:`text <pyllo.plugins.debug.protocol.CompletionItem.text>`
+        - \-
+      * - :py:obj:`sortText <pyllo.plugins.debug.protocol.CompletionItem.sortText>`
+        - \-
+      * - :py:obj:`detail <pyllo.plugins.debug.protocol.CompletionItem.detail>`
+        - \-
+      * - :py:obj:`type <pyllo.plugins.debug.protocol.CompletionItem.type>`
+        - \-
+      * - :py:obj:`start <pyllo.plugins.debug.protocol.CompletionItem.start>`
+        - \-
+      * - :py:obj:`length <pyllo.plugins.debug.protocol.CompletionItem.length>`
+        - \-
+      * - :py:obj:`selectionStart <pyllo.plugins.debug.protocol.CompletionItem.selectionStart>`
+        - \-
+      * - :py:obj:`selectionLength <pyllo.plugins.debug.protocol.CompletionItem.selectionLength>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: label
+      :type: str
+
+      
+
+   .. py:attribute:: text
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: sortText
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: detail
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: type
+      :type: Optional[CompletionItemType]
+
+      
+
+   .. py:attribute:: start
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: length
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: selectionStart
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: selectionLength
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionsArguments
+
+   ..    ..    ..    .. .. py:attribute:: text
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: column
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: line
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: frameId
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`text <pyllo.plugins.debug.protocol.CompletionsArguments.text>`
+        - \-
+      * - :py:obj:`column <pyllo.plugins.debug.protocol.CompletionsArguments.column>`
+        - \-
+      * - :py:obj:`line <pyllo.plugins.debug.protocol.CompletionsArguments.line>`
+        - \-
+      * - :py:obj:`frameId <pyllo.plugins.debug.protocol.CompletionsArguments.frameId>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: text
+      :type: str
+
+      
+
+   .. py:attribute:: column
+      :type: int
+
+      
+
+   .. py:attribute:: line
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: frameId
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionsResponseBody
+
+   ..    ..    ..    .. .. py:attribute:: targets
+      :type: List[CompletionItem]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`targets <pyllo.plugins.debug.protocol.CompletionsResponseBody.targets>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: targets
+      :type: List[CompletionItem]
+
+      
+
+
+
+
+
+

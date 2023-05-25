@@ -1,0 +1,227 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.langexts.markdown`
+===============================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.langexts.markdown
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MarkdownSH <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkdownSH>`
+     - Markdown Syntax Highlighter
+   * - :py:obj:`MarkDownExtension <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkDownExtension>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`makeMdPatterns <pyllo.plugins.codeeditorv2.internal.langexts.markdown.makeMdPatterns>`\ ()
+     - \-
+
+
+
+.. py:function:: makeMdPatterns()
+
+
+.. py:class:: MarkdownSH(parent, font, colorScheme='pyllo/dark')
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH`
+
+   Markdown Syntax Highlighter
+
+   ..    ..    ..    .. .. py:attribute:: PROG
+
+      
+
+   ..    .. .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+   ..    .. .. py:attribute:: CODE
+      :value: 1
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PROG <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkdownSH.PROG>`
+        - \-
+      * - :py:obj:`NORMAL <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkdownSH.NORMAL>`
+        - \-
+      * - :py:obj:`CODE <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkdownSH.CODE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highlightBlock <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkdownSH.highlightBlock>`\ (text)
+        - Highlights a block of text.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PROG
+
+      
+
+   .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+   .. py:attribute:: CODE
+      :value: 1
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: highlightBlock(text)
+
+      Highlights a block of text.
+      :param text: text to highlight.
+
+
+
+
+
+.. py:class:: MarkDownExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.LanguageExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'markdown'
+
+      
+
+   ..    .. .. py:attribute:: NAME_FILTERS
+      :value: ['*.md']
+
+      
+
+   ..    .. .. py:attribute:: ALIASES
+      :value: ['MD', 'md']
+
+      
+
+   ..    .. .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   ..    .. .. py:attribute:: CONFIGURATION
+
+      
+
+   ..    .. .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkDownExtension.NAME>`
+        - \-
+      * - :py:obj:`NAME_FILTERS <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkDownExtension.NAME_FILTERS>`
+        - \-
+      * - :py:obj:`ALIASES <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkDownExtension.ALIASES>`
+        - \-
+      * - :py:obj:`FILE_NAMES <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkDownExtension.FILE_NAMES>`
+        - \-
+      * - :py:obj:`FIRST_LINE <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkDownExtension.FIRST_LINE>`
+        - \-
+      * - :py:obj:`CONFIGURATION <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkDownExtension.CONFIGURATION>`
+        - \-
+      * - :py:obj:`SYNTAX_HIGHLIGHTER <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkDownExtension.SYNTAX_HIGHLIGHTER>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.langexts.markdown.MarkDownExtension.onInitialize>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'markdown'
+
+      
+
+   .. py:attribute:: NAME_FILTERS
+      :value: ['*.md']
+
+      
+
+   .. py:attribute:: ALIASES
+      :value: ['MD', 'md']
+
+      
+
+   .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   .. py:attribute:: CONFIGURATION
+
+      
+
+   .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+              
+
+
+
+
+

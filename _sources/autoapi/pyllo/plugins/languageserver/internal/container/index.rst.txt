@@ -1,0 +1,247 @@
+:py:mod:`pyllo.plugins.languageserver.internal.container`
+=========================================================
+
+.. py:module:: pyllo.plugins.languageserver.internal.container
+
+.. autoapi-nested-parse::
+
+   Language Server Plugin implements UX in LSP
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LanguageServerActions <pyllo.plugins.languageserver.internal.container.LanguageServerActions>`
+     - \-
+   * - :py:obj:`LanguageServerContainer <pyllo.plugins.languageserver.internal.container.LanguageServerContainer>`
+     - Container for language server.
+
+
+
+
+.. py:class:: LanguageServerActions
+
+   ..    ..    ..    .. .. py:attribute:: Restart
+      :value: 'restart'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Restart <pyllo.plugins.languageserver.internal.container.LanguageServerActions.Restart>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Restart
+      :value: 'restart'
+
+      
+
+
+
+
+
+
+.. py:class:: LanguageServerContainer(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainContainer`
+
+   Container for language server.
+
+   ..    ..    ..    .. .. py:attribute:: DEFAULT_STATUSWIDGET_TEXT
+
+      
+
+   ..    .. .. py:attribute:: sigPublishDiagnosticsNotification
+
+      
+
+   ..    .. .. py:attribute:: sigInsertCompletion
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`DEFAULT_STATUSWIDGET_TEXT <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.DEFAULT_STATUSWIDGET_TEXT>`
+        - \-
+      * - :py:obj:`sigPublishDiagnosticsNotification <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.sigPublishDiagnosticsNotification>`
+        - \-
+      * - :py:obj:`sigInsertCompletion <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.sigInsertCompletion>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.setup>`\ ()
+        - Create actions, widget, add to menu and other setup requirements.
+      * - :py:obj:`restartCurrentSession <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.restartCurrentSession>`\ ()
+        - restart current session
+      * - :py:obj:`updateActions <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.updateActions>`\ ()
+        - Update the state of exposed actions.
+      * - :py:obj:`openLSPMenu <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.openLSPMenu>`\ ()
+        - Open LSP menu
+      * - :py:obj:`registerLanguageServer <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.registerLanguageServer>`\ (descriptor)
+        - register language server descriptors
+      * - :py:obj:`getLspSession <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.getLspSession>`\ (language)
+        - returns LSP session or create if not exits
+      * - :py:obj:`createCompletionExt <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.createCompletionExt>`\ (editor)
+        - \-
+      * - :py:obj:`createGotoDefinitionExt <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.createGotoDefinitionExt>`\ (editor)
+        - \-
+      * - :py:obj:`onCompletionActivate <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onCompletionActivate>`\ ()
+        - \-
+      * - :py:obj:`onCompletionTeardown <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onCompletionTeardown>`\ ()
+        - \-
+      * - :py:obj:`onCurrentEditorChanged <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onCurrentEditorChanged>`\ (editor)
+        - Current editor changed
+      * - :py:obj:`onSessionStateChanged <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onSessionStateChanged>`\ (state)
+        - \-
+      * - :py:obj:`onDocumentOpened <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onDocumentOpened>`\ (filePath, language, doc)
+        - \-
+      * - :py:obj:`onDocumentChanged <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onDocumentChanged>`\ (filePath, doc)
+        - \-
+      * - :py:obj:`onDocumentClosed <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onDocumentClosed>`\ (filePath)
+        - \-
+      * - :py:obj:`onCompletionRequest <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onCompletionRequest>`\ (filePath, language, lineno, columno)
+        - \-
+      * - :py:obj:`onCompletionResponse <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onCompletionResponse>`\ (reqId, items)
+        - \-
+      * - :py:obj:`onCompletionKeyPressed <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onCompletionKeyPressed>`\ (event)
+        - Override Qt method to process keypress.
+      * - :py:obj:`onDefinitionRequest <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onDefinitionRequest>`\ (filePath, lineno, columno)
+        - \-
+      * - :py:obj:`onDefinitionResponse <pyllo.plugins.languageserver.internal.container.LanguageServerContainer.onDefinitionResponse>`\ (reqId, filePath, lineNo, colNo)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: DEFAULT_STATUSWIDGET_TEXT
+
+      
+
+   .. py:attribute:: sigPublishDiagnosticsNotification
+
+      
+
+   .. py:attribute:: sigInsertCompletion
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+   .. py:method:: restartCurrentSession()
+
+      restart current session
+
+
+   .. py:method:: updateActions()
+
+      Update the state of exposed actions.
+
+      Exposed actions are actions created by the `createAction` method.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: openLSPMenu()
+
+      Open LSP menu
+
+
+   .. py:method:: registerLanguageServer(descriptor: pyllo.plugins.languageserver.api.ILanguageServerDescriptor)
+
+      register language server descriptors
+
+
+   .. py:method:: getLspSession(language: str) -> Optional[pyllo.plugins.languageserver.internal.lspsession.LSPSession]
+
+      returns LSP session or create if not exits
+
+
+   .. py:method:: createCompletionExt(editor: pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor) -> pyllo.plugins.languageserver.internal.codeeditorextensions.Completion
+
+
+   .. py:method:: createGotoDefinitionExt(editor: pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor) -> pyllo.plugins.languageserver.internal.codeeditorextensions.GotoDefinition
+
+
+   .. py:method:: onCompletionActivate()
+
+
+   .. py:method:: onCompletionTeardown()
+
+
+   .. py:method:: onCurrentEditorChanged(editor: Optional[pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor])
+
+      Current editor changed
+
+
+   .. py:method:: onSessionStateChanged(state)
+
+
+   .. py:method:: onDocumentOpened(filePath: pyllo.core.dtype.FilePath, language: pyllo.core.dtype.Language, doc: qtpy.QtGui.QTextDocument)
+
+
+   .. py:method:: onDocumentChanged(filePath: pyllo.core.dtype.FilePath, doc: qtpy.QtGui.QTextDocument)
+
+
+   .. py:method:: onDocumentClosed(filePath: pyllo.core.dtype.FilePath)
+
+
+   .. py:method:: onCompletionRequest(filePath: pyllo.core.dtype.FilePath, language: pyllo.core.dtype.Language, lineno: pyllo.core.dtype.LineNumber, columno: pyllo.core.dtype.ColumnNumber)
+
+
+   .. py:method:: onCompletionResponse(reqId: uuid.UUID, items: List)
+
+
+   .. py:method:: onCompletionKeyPressed(event)
+
+      Override Qt method to process keypress.
+
+
+   .. py:method:: onDefinitionRequest(filePath: pyllo.core.dtype.FilePath, lineno: pyllo.core.dtype.LineNumber, columno: pyllo.core.dtype.ColumnNumber)
+
+
+   .. py:method:: onDefinitionResponse(reqId: uuid.UUID, filePath: pyllo.core.dtype.FilePath, lineNo: int, colNo: int)
+
+
+
+
+

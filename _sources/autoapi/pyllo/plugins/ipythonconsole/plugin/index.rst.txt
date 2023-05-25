@@ -1,0 +1,493 @@
+:py:mod:`pyllo.plugins.ipythonconsole.plugin`
+=============================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.plugin
+
+.. autoapi-nested-parse::
+
+   IPython Console Plugin.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`IPythonConsole <pyllo.plugins.ipythonconsole.plugin.IPythonConsole>`
+     - Console widget
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.ipythonconsole.plugin.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: IPythonConsole(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloDockablePlugin`
+
+   Console widget
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'ipythonconsole'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+      :value: 'ipython_console'
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: sigEditGotoRequested
+
+      This signal will request to open a file in a given row and column
+      using a code editor.
+
+      Parameters
+      ----------
+      path: str
+          Path to file.
+      row: int
+          Cursor starting row position.
+      word: str
+          Word to select on given row.
+
+
+   ..    .. .. py:attribute:: sigRefreshed
+
+      This signal is emitted when the interpreter buffer is flushed.
+
+
+   ..    .. .. py:attribute:: sigHelpRequested
+
+      This signal is emitted to request help on a given object `name`.
+
+      Parameters
+      ----------
+      help_data: dict
+          Example `{'name': str, 'ignore_unknown': bool}`.
+
+
+   ..    .. .. py:attribute:: sigPdbStateChanged
+
+      This signal is emitted when the debugging state changes.
+
+      Parameters
+      ----------
+      waiting_pdb_input: bool
+          If the debugging session is waiting for input.
+      pdb_last_step: dict
+          Dictionary with the information of the last step done
+          in the debugging session.
+
+
+   ..    .. .. py:attribute:: sigShellWidgetCreated
+
+      This signal is emitted when a shellWidget is connected to
+      a kernel.
+
+      Parameters
+      ----------
+      shellWidget: The shellWidget.
+
+
+   ..    .. .. py:attribute:: sigShellWidgetDeleted
+
+      This signal is emitted when a shellWidget is disconnected from
+      a kernel.
+
+      Parameters
+      ----------
+      shellWidget: The shellWidget.
+
+
+   ..    .. .. py:attribute:: sigShellWidgetChanged
+
+      This signal is emitted when the current shellWidget changes.
+
+      Parameters
+      ----------
+      shellWidget: The shellWidget.
+
+
+   ..    .. .. py:attribute:: sigCurrentDirectoryChanged
+
+      This signal is emitted when the current directory of the active shell
+      widget has changed.
+
+      Parameters
+      ----------
+      working_directory: str
+          The new working directory path.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.VERSION>`
+        - \-
+      * - :py:obj:`WIDGET_CLASS <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.CONF_FILE>`
+        - \-
+      * - :py:obj:`sigEditGotoRequested <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.sigEditGotoRequested>`
+        - This signal will request to open a file in a given row and column
+      * - :py:obj:`sigRefreshed <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.sigRefreshed>`
+        - This signal is emitted when the interpreter buffer is flushed.
+      * - :py:obj:`sigHelpRequested <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.sigHelpRequested>`
+        - This signal is emitted to request help on a given object `name`.
+      * - :py:obj:`sigPdbStateChanged <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.sigPdbStateChanged>`
+        - This signal is emitted when the debugging state changes.
+      * - :py:obj:`sigShellWidgetCreated <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.sigShellWidgetCreated>`
+        - This signal is emitted when a shellWidget is connected to
+      * - :py:obj:`sigShellWidgetDeleted <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.sigShellWidgetDeleted>`
+        - This signal is emitted when a shellWidget is disconnected from
+      * - :py:obj:`sigShellWidgetChanged <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.sigShellWidgetChanged>`
+        - This signal is emitted when the current shellWidget changes.
+      * - :py:obj:`sigCurrentDirectoryChanged <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.sigCurrentDirectoryChanged>`
+        - This signal is emitted when the current directory of the active shell
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getIcon <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`getDescription <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`onInitialize <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onTearDown <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.onTearDown>`\ (cancelable)
+        - Perform actions before the main window is closed.
+      * - :py:obj:`onMainwindowVisible <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.onMainwindowVisible>`\ ()
+        - Actions to be performed after the main window's has been shown.
+      * - :py:obj:`saveAll <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.saveAll>`\ ()
+        - Save all opened editor modification immediately.
+      * - :py:obj:`getCurrentFilename <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.getCurrentFilename>`\ ()
+        - Get current editor filename.
+      * - :py:obj:`getEditor <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.getEditor>`\ (filename)
+        - Get editor for filename.
+      * - :py:obj:`getCurrentShellWidget <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.getCurrentShellWidget>`\ ()
+        - Return the shellWidget of the current client
+      * - :py:obj:`getPdbState <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.getPdbState>`\ ()
+        - Get debugging state of the current console.
+      * - :py:obj:`getPdbLastStep <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.getPdbLastStep>`\ ()
+        - Get last pdb step of the current console.
+      * - :py:obj:`runScript <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.runScript>`\ (filename, wdir, args, debug, postMortem, currentClient, clearVariables, consoleNamespace)
+        - \-
+      * - :py:obj:`reportIssue <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.reportIssue>`\ ()
+        - Report an issue with the PylloErrorDialog.
+      * - :py:obj:`exitInterpreter <pyllo.plugins.ipythonconsole.plugin.IPythonConsole.exitInterpreter>`\ ()
+        - Exit the internal console interpreter.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'ipythonconsole'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: WIDGET_CLASS
+
+      
+
+   .. py:attribute:: REQUIRES
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: CONF_SECTION
+      :value: 'ipython_console'
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: sigEditGotoRequested
+
+      This signal will request to open a file in a given row and column
+      using a code editor.
+
+      Parameters
+      ----------
+      path: str
+          Path to file.
+      row: int
+          Cursor starting row position.
+      word: str
+          Word to select on given row.
+
+
+   .. py:attribute:: sigRefreshed
+
+      This signal is emitted when the interpreter buffer is flushed.
+
+
+   .. py:attribute:: sigHelpRequested
+
+      This signal is emitted to request help on a given object `name`.
+
+      Parameters
+      ----------
+      help_data: dict
+          Example `{'name': str, 'ignore_unknown': bool}`.
+
+
+   .. py:attribute:: sigPdbStateChanged
+
+      This signal is emitted when the debugging state changes.
+
+      Parameters
+      ----------
+      waiting_pdb_input: bool
+          If the debugging session is waiting for input.
+      pdb_last_step: dict
+          Dictionary with the information of the last step done
+          in the debugging session.
+
+
+   .. py:attribute:: sigShellWidgetCreated
+
+      This signal is emitted when a shellWidget is connected to
+      a kernel.
+
+      Parameters
+      ----------
+      shellWidget: The shellWidget.
+
+
+   .. py:attribute:: sigShellWidgetDeleted
+
+      This signal is emitted when a shellWidget is disconnected from
+      a kernel.
+
+      Parameters
+      ----------
+      shellWidget: The shellWidget.
+
+
+   .. py:attribute:: sigShellWidgetChanged
+
+      This signal is emitted when the current shellWidget changes.
+
+      Parameters
+      ----------
+      shellWidget: The shellWidget.
+
+
+   .. py:attribute:: sigCurrentDirectoryChanged
+
+      This signal is emitted when the current directory of the active shell
+      widget has changed.
+
+      Parameters
+      ----------
+      working_directory: str
+          The new working directory path.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onTearDown(cancelable=False)
+
+      Perform actions before the main window is closed.
+
+      Returns
+      -------
+      bool
+          Whether the plugin may be closed immediately or not.
+
+      Notes
+      -----
+      The returned value is ignored if *cancelable* is False.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainwindowVisible()
+
+      Actions to be performed after the main window's has been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: saveAll()
+
+      Save all opened editor modification immediately.
+
+      TODO: this method is not implemented carefully, because in pyllo we can now have
+          editors other than code editor.
+
+
+   .. py:method:: getCurrentFilename()
+
+      Get current editor filename.
+
+
+   .. py:method:: getEditor(filename: str) -> Optional[IEditor]
+
+      Get editor for filename.
+
+
+   .. py:method:: getCurrentShellWidget()
+
+      Return the shellWidget of the current client
+
+
+   .. py:method:: getPdbState()
+
+      Get debugging state of the current console.
+
+
+   .. py:method:: getPdbLastStep()
+
+      Get last pdb step of the current console.
+
+
+   .. py:method:: runScript(filename, wdir, args='', debug=False, postMortem=False, currentClient=True, clearVariables=False, consoleNamespace=False)
+
+
+   .. py:method:: reportIssue()
+
+      Report an issue with the PylloErrorDialog.
+
+
+   .. py:method:: exitInterpreter()
+
+      Exit the internal console interpreter.
+
+      This is equivalent to requesting the main application to quit.
+
+
+
+
+

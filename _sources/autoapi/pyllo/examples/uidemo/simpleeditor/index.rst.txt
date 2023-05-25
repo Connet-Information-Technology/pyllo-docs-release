@@ -1,0 +1,28 @@
+:py:mod:`pyllo.examples.uidemo.simpleeditor`
+============================================
+
+.. py:module:: pyllo.examples.uidemo.simpleeditor
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`SimpleEditorDemo <pyllo.examples.uidemo.simpleeditor.SimpleEditorDemo>`
+     - \-
+
+
+
+
+.. py:class:: SimpleEditorDemo(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QScrollArea`
+
+   ..    ..    .. 
+
+

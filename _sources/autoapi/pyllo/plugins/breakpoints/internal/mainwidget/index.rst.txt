@@ -1,0 +1,220 @@
+:py:mod:`pyllo.plugins.breakpoints.internal.mainwidget`
+=======================================================
+
+.. py:module:: pyllo.plugins.breakpoints.internal.mainwidget
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`BreakpointsWidget <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget>`
+     - Main widget for breakpoints
+   * - :py:obj:`BreakpointsModel <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsModel>`
+     - Breakpoint listview model whose data source is Pony SQLite database
+
+
+
+
+.. py:class:: BreakpointsWidget(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainWidget`
+
+   Main widget for breakpoints
+
+   ..    ..    ..    .. .. py:attribute:: sigEditGotoRequested
+
+      Request for opening editor and goto specific line and column and set focus or not
+
+
+   ..    .. .. py:attribute:: sigBreakpointAdded
+
+      breakpoint added
+
+
+   ..    .. .. py:attribute:: sigBreakpointChanged
+
+      breakpoint changed signal which first param is new, second one is old
+
+
+   ..    .. .. py:attribute:: sigBreakpointRemoved
+
+      breakpoint removed
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigEditGotoRequested <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.sigEditGotoRequested>`
+        - Request for opening editor and goto specific line and column and set focus or not
+      * - :py:obj:`sigBreakpointAdded <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.sigBreakpointAdded>`
+        - breakpoint added
+      * - :py:obj:`sigBreakpointChanged <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.sigBreakpointChanged>`
+        - breakpoint changed signal which first param is new, second one is old
+      * - :py:obj:`sigBreakpointRemoved <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.sigBreakpointRemoved>`
+        - breakpoint removed
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getTitle <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.getTitle>`\ ()
+        - Return the title that will be displayed on dock widget or window title.
+      * - :py:obj:`setup <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.setup>`\ ()
+        - setup actions, menu, toolbar
+      * - :py:obj:`breakpoints <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.breakpoints>`\ (source)
+        - get breakpoints of specific source file, otherwise all breakpoints will be returned
+      * - :py:obj:`muteAll <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.muteAll>`\ ()
+        - unmute all breakpoints
+      * - :py:obj:`unmuteAll <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.unmuteAll>`\ ()
+        - unmute all breakpoints
+      * - :py:obj:`setBreakpointsMuted <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.setBreakpointsMuted>`\ (ids, mute)
+        - \-
+      * - :py:obj:`removeAll <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.removeAll>`\ ()
+        - remove all breakpoints
+      * - :py:obj:`toggleAll <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.toggleAll>`\ ()
+        - set all breakpoints enabled(all disabled) or disabled(any of them is enabled)
+      * - :py:obj:`updateUiParts <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.updateUiParts>`\ ()
+        - update ui parts
+      * - :py:obj:`createBreakpointPanel <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.createBreakpointPanel>`\ (editor)
+        - create breakpoint panel from this plugin
+      * - :py:obj:`deleteBreakpointPanel <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsWidget.deleteBreakpointPanel>`\ (panel)
+        - delete breakpoint created by this plugin
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigEditGotoRequested
+
+      Request for opening editor and goto specific line and column and set focus or not
+
+
+   .. py:attribute:: sigBreakpointAdded
+
+      breakpoint added
+
+
+   .. py:attribute:: sigBreakpointChanged
+
+      breakpoint changed signal which first param is new, second one is old
+
+
+   .. py:attribute:: sigBreakpointRemoved
+
+      breakpoint removed
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getTitle()
+
+      Return the title that will be displayed on dock widget or window title.
+
+
+   .. py:method:: setup()
+
+      setup actions, menu, toolbar
+
+
+   .. py:method:: breakpoints(source: pyllo.core.dtype.FilePath = None) -> List[pyllo.plugins.breakpoints.api.Breakpoint]
+
+      get breakpoints of specific source file, otherwise all breakpoints will be returned
+
+
+   .. py:method:: muteAll()
+
+      unmute all breakpoints
+
+
+   .. py:method:: unmuteAll()
+
+      unmute all breakpoints
+
+
+   .. py:method:: setBreakpointsMuted(ids: List[pyllo.core.dtype.Index], mute=True)
+
+
+   .. py:method:: removeAll()
+
+      remove all breakpoints
+
+
+   .. py:method:: toggleAll()
+
+      set all breakpoints enabled(all disabled) or disabled(any of them is enabled)
+
+
+   .. py:method:: updateUiParts()
+
+      update ui parts
+
+
+   .. py:method:: createBreakpointPanel(editor: pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor) -> pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel
+
+      create breakpoint panel from this plugin
+
+
+   .. py:method:: deleteBreakpointPanel(panel: pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel)
+
+      delete breakpoint created by this plugin
+
+
+
+
+
+.. py:class:: BreakpointsModel(parent=None)
+
+   Bases: :py:obj:`qtpy.QtCore.QAbstractListModel`
+
+   Breakpoint listview model whose data source is Pony SQLite database
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`update <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsModel.update>`\ ()
+        - \-
+      * - :py:obj:`rowCount <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsModel.rowCount>`\ (parent, \*args, \*\*kwargs)
+        - \-
+      * - :py:obj:`data <pyllo.plugins.breakpoints.internal.mainwidget.BreakpointsModel.data>`\ (index, role)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: update()
+
+
+   .. py:method:: rowCount(parent=None, *args, **kwargs)
+
+
+   .. py:method:: data(index: qtpy.QtCore.QModelIndex, role=Qt.ItemDataRole.DisplayRole)
+
+
+
+
+

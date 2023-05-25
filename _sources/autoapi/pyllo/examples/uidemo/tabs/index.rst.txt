@@ -1,0 +1,50 @@
+:py:mod:`pyllo.examples.uidemo.tabs`
+====================================
+
+.. py:module:: pyllo.examples.uidemo.tabs
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`TabsDemo <pyllo.examples.uidemo.tabs.TabsDemo>`
+     - \-
+
+
+
+
+.. py:class:: TabsDemo(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QScrollArea`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`dragDropTab <pyllo.examples.uidemo.tabs.TabsDemo.dragDropTab>`\ (sid, did, srcIndex, dstIndex)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: dragDropTab(sid: pyllo.core.dtype.Identity, did: pyllo.core.dtype.Identity, srcIndex: pyllo.core.dtype.Index, dstIndex: pyllo.core.dtype.Index)
+
+
+
+
+

@@ -1,0 +1,248 @@
+:py:mod:`pyllo.ui.editor.simplecodeeditor`
+==========================================
+
+.. py:module:: pyllo.ui.editor.simplecodeeditor
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LineNumberArea <pyllo.ui.editor.simplecodeeditor.LineNumberArea>`
+     - Adapted from:
+   * - :py:obj:`SimpleCodeEditor <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor>`
+     - Simple editor with coding features.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.ui.editor.simplecodeeditor.logger>`
+     - \-
+   * - :py:obj:`LANGUAGE_EXTENSIONS <pyllo.ui.editor.simplecodeeditor.LANGUAGE_EXTENSIONS>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:data:: LANGUAGE_EXTENSIONS
+
+   
+
+.. py:class:: LineNumberArea(codeEditor=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`
+
+   Adapted from:
+   https://doc.qt.io/qt-5/qtwidgets-widgets-codeeditor-example.html
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sizeHint <pyllo.ui.editor.simplecodeeditor.LineNumberArea.sizeHint>`\ ()
+        - \-
+      * - :py:obj:`paintEvent <pyllo.ui.editor.simplecodeeditor.LineNumberArea.paintEvent>`\ (event)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: sizeHint()
+
+
+   .. py:method:: paintEvent(event)
+
+
+
+
+
+.. py:class:: SimpleCodeEditor(parent=None, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QPlainTextEdit`, :py:obj:`pyllo.ui.editor.textedits.BaseEditMixin`
+
+   Simple editor with coding features.
+
+   1. Highlight.
+   2. New line with automatic indentation.
+   3. Line number.
+   4. Fold code block.
+   5. Wrap.
+
+   ..    ..    ..    .. .. py:attribute:: LANGUAGE_HIGHLIGHTERS
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`LANGUAGE_HIGHLIGHTERS <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.LANGUAGE_HIGHLIGHTERS>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`contentMarginHint <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.contentMarginHint>`\ ()
+        - Add offset to a coordinates map from document position to
+      * - :py:obj:`documentDidChange <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.documentDidChange>`\ (text)
+        - \-
+      * - :py:obj:`getSupportedLanguage <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.getSupportedLanguage>`\ (ext)
+        - Get supported langauge.
+      * - :py:obj:`setLanguage <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.setLanguage>`\ (language)
+        - Set highlight language
+      * - :py:obj:`rehighlight <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.rehighlight>`\ ()
+        - Reapply syntax highligthing to the document.
+      * - :py:obj:`getLineNumberAreaWidth <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.getLineNumberAreaWidth>`\ ()
+        - Return the line number area width.
+      * - :py:obj:`adjustViewPortSize <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.adjustViewPortSize>`\ ()
+        - Update the line number area width based on the number of blocks in
+      * - :py:obj:`resizeEvent <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.resizeEvent>`\ (event)
+        - \-
+      * - :py:obj:`drawLineNumberArea <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.drawLineNumberArea>`\ (event)
+        - Paint the line number area.
+      * - :py:obj:`updateLineNumberArea <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.updateLineNumberArea>`\ (rect, dy)
+        - Update scroll position of line number area.
+      * - :py:obj:`setText <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.setText>`\ (text)
+        - Set text operation
+      * - :py:obj:`append <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.append>`\ (text, newLine)
+        - \-
+      * - :py:obj:`setFont <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.setFont>`\ (font)
+        - \-
+      * - :py:obj:`setColorScheme <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.setColorScheme>`\ (scheme)
+        - \-
+      * - :py:obj:`setLineNumberVisible <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.setLineNumberVisible>`\ (b)
+        - \-
+      * - :py:obj:`setBlanksVisible <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.setBlanksVisible>`\ (b)
+        - Show blank spaces.
+      * - :py:obj:`setWrapEnabled <pyllo.ui.editor.simplecodeeditor.SimpleCodeEditor.setWrapEnabled>`\ (b)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: LANGUAGE_HIGHLIGHTERS
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: contentMarginHint() -> (int, int, int, int)
+
+      Add offset to a coordinates map from document position to
+      global position, e.g. to take into account the editor panels.
+
+
+   .. py:method:: documentDidChange(text=None)
+
+
+   .. py:method:: getSupportedLanguage(ext: str) -> Optional[str]
+
+      Get supported langauge.
+      Or None if not found.
+
+
+   .. py:method:: setLanguage(language: str)
+
+      Set highlight language
+
+
+   .. py:method:: rehighlight()
+
+      Reapply syntax highligthing to the document.
+
+
+   .. py:method:: getLineNumberAreaWidth()
+
+      Return the line number area width.
+
+      Returns
+      -------
+      int
+          Line number area width in pixels.
+
+      ... notes: Return 0 if line number area hidden.
+
+
+   .. py:method:: adjustViewPortSize()
+
+      Update the line number area width based on the number of blocks in
+      the document.
+
+
+   .. py:method:: resizeEvent(event)
+
+
+   .. py:method:: drawLineNumberArea(event)
+
+      Paint the line number area.
+
+
+   .. py:method:: updateLineNumberArea(rect, dy)
+
+      Update scroll position of line number area.
+
+
+   .. py:method:: setText(text: str)
+
+      Set text operation
+              
+
+
+   .. py:method:: append(text: str, newLine=False)
+
+
+   .. py:method:: setFont(font: qtpy.QtGui.QFont)
+
+
+   .. py:method:: setColorScheme(scheme: str)
+
+
+   .. py:method:: setLineNumberVisible(b: bool)
+
+
+   .. py:method:: setBlanksVisible(b: bool)
+
+      Show blank spaces.
+
+      Parameters
+      ----------
+      state: bool
+          Blank spaces visibility.
+
+
+   .. py:method:: setWrapEnabled(b: bool)
+
+
+
+
+

@@ -1,0 +1,203 @@
+:py:mod:`pyllo.plugins.layout.internal.container`
+=================================================
+
+.. py:module:: pyllo.plugins.layout.internal.container
+
+.. autoapi-nested-parse::
+
+   Layout container.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LayoutMenus <pyllo.plugins.layout.internal.container.LayoutMenus>`
+     - \-
+   * - :py:obj:`LayoutContainerActions <pyllo.plugins.layout.internal.container.LayoutContainerActions>`
+     - \-
+   * - :py:obj:`LayoutContainer <pyllo.plugins.layout.internal.container.LayoutContainer>`
+     - Plugin container class that handles the Pyllo quick layouts functionality.
+
+
+
+
+.. py:class:: LayoutMenus
+
+   ..    ..    ..    .. .. py:attribute:: ToolWindows
+      :value: 'tool_windows_menu'
+
+      
+
+   ..    .. .. py:attribute:: Layouts
+      :value: 'layouts_menu'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ToolWindows <pyllo.plugins.layout.internal.container.LayoutMenus.ToolWindows>`
+        - \-
+      * - :py:obj:`Layouts <pyllo.plugins.layout.internal.container.LayoutMenus.Layouts>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ToolWindows
+      :value: 'tool_windows_menu'
+
+      
+
+   .. py:attribute:: Layouts
+      :value: 'layouts_menu'
+
+      
+
+
+
+
+
+
+.. py:class:: LayoutContainerActions
+
+   ..    ..    ..    .. .. py:attribute:: DefaultLayout
+      :value: 'default_layout_action'
+
+      
+
+   ..    .. .. py:attribute:: SaveLayoutAction
+      :value: 'save_layout_action'
+
+      
+
+   ..    .. .. py:attribute:: MaximizeCurrentDockwidget
+      :value: 'maximize_plugin_window_action'
+
+      
+
+   ..    .. .. py:attribute:: Fullscreen
+      :value: 'fullscreen'
+
+      
+
+   ..    .. .. py:attribute:: LockInterface
+      :value: 'lock interface'
+
+      
+
+   ..    .. .. py:attribute:: RestoreDefault
+      :value: 'restore to default layout'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`DefaultLayout <pyllo.plugins.layout.internal.container.LayoutContainerActions.DefaultLayout>`
+        - \-
+      * - :py:obj:`SaveLayoutAction <pyllo.plugins.layout.internal.container.LayoutContainerActions.SaveLayoutAction>`
+        - \-
+      * - :py:obj:`MaximizeCurrentDockwidget <pyllo.plugins.layout.internal.container.LayoutContainerActions.MaximizeCurrentDockwidget>`
+        - \-
+      * - :py:obj:`Fullscreen <pyllo.plugins.layout.internal.container.LayoutContainerActions.Fullscreen>`
+        - \-
+      * - :py:obj:`LockInterface <pyllo.plugins.layout.internal.container.LayoutContainerActions.LockInterface>`
+        - \-
+      * - :py:obj:`RestoreDefault <pyllo.plugins.layout.internal.container.LayoutContainerActions.RestoreDefault>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: DefaultLayout
+      :value: 'default_layout_action'
+
+      
+
+   .. py:attribute:: SaveLayoutAction
+      :value: 'save_layout_action'
+
+      
+
+   .. py:attribute:: MaximizeCurrentDockwidget
+      :value: 'maximize_plugin_window_action'
+
+      
+
+   .. py:attribute:: Fullscreen
+      :value: 'fullscreen'
+
+      
+
+   .. py:attribute:: LockInterface
+      :value: 'lock interface'
+
+      
+
+   .. py:attribute:: RestoreDefault
+      :value: 'restore to default layout'
+
+      
+
+
+
+
+
+
+.. py:class:: LayoutContainer(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainContainer`
+
+   Plugin container class that handles the Pyllo quick layouts functionality.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.layout.internal.container.LayoutContainer.setup>`\ ()
+        - Create actions, widget, add to menu and other setup requirements.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+
+
+

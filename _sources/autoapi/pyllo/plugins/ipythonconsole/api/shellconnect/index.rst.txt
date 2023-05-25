@@ -1,0 +1,263 @@
+:py:mod:`pyllo.plugins.ipythonconsole.api.shellconnect`
+=======================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.api.shellconnect
+
+.. autoapi-nested-parse::
+
+   Main widget to use in plugins that show content that comes from the IPython
+   console, such as the Variable Explorer or Plots.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ShellConnectMixin <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMixin>`
+     - Mixin to connect a plugin composed of stacked widgets to the shell
+   * - :py:obj:`ShellConnectMainWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget>`
+     - Main widget to use in a plugin that shows console-specific content.
+
+
+
+
+.. py:class:: ShellConnectMixin
+
+   Mixin to connect a plugin composed of stacked widgets to the shell
+   widgets in the IPython console.
+
+   It is assumed that self.getWidget() returns an instance of
+   ShellConnectMainWidget
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onIpythonConsoleAvailable <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMixin.onIpythonConsoleAvailable>`\ ()
+        - Connect to the IPython console.
+      * - :py:obj:`setShellWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMixin.setShellWidget>`\ (shellWidget)
+        - Update the current shellwidget.
+      * - :py:obj:`addShellWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMixin.addShellWidget>`\ (shellWidget)
+        - Add a new shellwidget to be registered.
+      * - :py:obj:`removeShellWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMixin.removeShellWidget>`\ (shellWidget)
+        - Remove the registered shellwidget.
+      * - :py:obj:`onConnectionToExternalSpyderKernel <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMixin.onConnectionToExternalSpyderKernel>`\ (shellWidget)
+        - Actions to take when the IPython console connects to an
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onIpythonConsoleAvailable()
+
+      Connect to the IPython console.
+
+
+   .. py:method:: setShellWidget(shellWidget)
+
+      Update the current shellwidget.
+
+      Parameters
+      ----------
+      shellWidget: plugins.ipyconsole.widgets.shell.ShellWidget
+          The shell widget.
+
+
+   .. py:method:: addShellWidget(shellWidget)
+
+      Add a new shellwidget to be registered.
+
+      This function registers a new widget to display content that
+      comes from shellwidget.
+
+      Parameters
+      ----------
+      shellWidget: plugins.ipyconsole.widgets.shell.ShellWidget
+          The shell widget.
+
+
+   .. py:method:: removeShellWidget(shellWidget)
+
+      Remove the registered shellwidget.
+
+      Parameters
+      ----------
+      shellWidget: plugins.ipyconsole.widgets.shell.ShellWidget
+          The shell widget.
+
+
+   .. py:method:: onConnectionToExternalSpyderKernel(shellWidget)
+
+      Actions to take when the IPython console connects to an
+      external Spyder kernel.
+
+      Parameters
+      ----------
+      shellWidget: plugins.ipyconsole.widgets.shell.ShellWidget
+          The shell widget that was connected to the external Spyder
+          kernel.
+
+
+
+
+
+.. py:class:: ShellConnectMainWidget(*args, **kwargs)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainWidget`
+
+   Main widget to use in a plugin that shows console-specific content.
+
+   Notes
+   -----
+   * This is composed of a QStackedWidget to stack widgets associated to each
+     shell widget in the console and only show one of them at a time.
+   * The current widget in the stack will display the content associated to
+     the console with focus.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`updateStyle <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.updateStyle>`\ ()
+        - Update stylesheet and style of the widget.
+      * - :py:obj:`count <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.count>`\ ()
+        - Return the number of widgets in the stack.
+      * - :py:obj:`currentWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.currentWidget>`\ ()
+        - Return the current figure browser widget in the stack.
+      * - :py:obj:`getFocusWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.getFocusWidget>`\ ()
+        - Get the widget to give focus to.
+      * - :py:obj:`addShellWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.addShellWidget>`\ (shellWidget)
+        - Create a new widget in the stack and associate it to
+      * - :py:obj:`removeShellWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.removeShellWidget>`\ (shellWidget)
+        - Remove widget associated to shellwidget.
+      * - :py:obj:`setShellWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.setShellWidget>`\ (shellWidget)
+        - Set widget associated with shellwidget as the current widget.
+      * - :py:obj:`createNewWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.createNewWidget>`\ (shellWidget)
+        - :summarylabel:`abc` Create a widget to communicate with shellwidget.
+      * - :py:obj:`closeWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.closeWidget>`\ (widget)
+        - :summarylabel:`abc` Close the widget.
+      * - :py:obj:`switchWidget <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.switchWidget>`\ (widget, oldWidget)
+        - :summarylabel:`abc` Switch the current widget.
+      * - :py:obj:`refresh <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.refresh>`\ ()
+        - Refresh widgets.
+      * - :py:obj:`updateActions <pyllo.plugins.ipythonconsole.api.shellconnect.ShellConnectMainWidget.updateActions>`\ ()
+        - Update the actions.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: updateStyle()
+
+      Update stylesheet and style of the widget.
+
+      This method will be called recursively on all widgets on theme change.
+
+
+      .. attention:: This method is reserved for later usage.
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: count()
+
+      Return the number of widgets in the stack.
+
+      Returns
+      -------
+      int
+          The number of widgets in the stack.
+
+
+   .. py:method:: currentWidget()
+
+      Return the current figure browser widget in the stack.
+
+      Returns
+      -------
+      QWidget
+          The current widget.
+
+
+   .. py:method:: getFocusWidget()
+
+      Get the widget to give focus to.
+
+      Returns
+      -------
+      QWidget
+          QWidget to give focus to.
+
+      Notes
+      -----
+      This is applied when the plugin's dock widget is raised to the top.
+
+
+   .. py:method:: addShellWidget(shellWidget)
+
+      Create a new widget in the stack and associate it to
+      shellwidget.
+
+
+   .. py:method:: removeShellWidget(shellWidget)
+
+      Remove widget associated to shellwidget.
+
+
+   .. py:method:: setShellWidget(shellWidget)
+
+      Set widget associated with shellwidget as the current widget.
+
+
+   .. py:method:: createNewWidget(shellWidget)
+      :abstractmethod:
+
+      Create a widget to communicate with shellwidget.
+
+
+   .. py:method:: closeWidget(widget)
+      :abstractmethod:
+
+      Close the widget.
+
+
+   .. py:method:: switchWidget(widget, oldWidget)
+      :abstractmethod:
+
+      Switch the current widget.
+
+
+   .. py:method:: refresh()
+
+      Refresh widgets.
+
+
+   .. py:method:: updateActions()
+
+      Update the actions.
+
+
+
+
+

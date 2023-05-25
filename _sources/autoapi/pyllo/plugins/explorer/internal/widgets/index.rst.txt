@@ -1,0 +1,324 @@
+:py:mod:`pyllo.plugins.explorer.internal.widgets`
+=================================================
+
+.. py:module:: pyllo.plugins.explorer.internal.widgets
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ExplorerTreeWidget <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget>`
+     - File/directory explorer tree widget
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.explorer.internal.widgets.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: ExplorerTreeWidget(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QTreeView`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`, :py:obj:`pyllo.core.undoredo.UndoMixin`
+
+   File/directory explorer tree widget
+
+   ..    ..    ..    .. .. py:attribute:: sigDirOpened
+
+      This signal is emitted when the current directory of the explorer tree
+      has changed.
+
+      Parameters
+      ----------
+      newRootDirectory: str
+          The new root directory path.
+
+      Notes
+      -----
+      This happens when clicking (or double clicking depending on the option)
+      a folder, turning this folder in the new root parent of the tree.
+
+
+   ..    .. .. py:attribute:: sigOpenFileRequested
+
+      This signal is emitted to request opening a new file with Pyllo.
+
+      Parameters
+      ----------
+      path: str
+          File path to run.
+
+
+   ..    .. .. py:attribute:: sigCopyRequest
+
+      Copy request
+
+
+   ..    .. .. py:attribute:: sigPasteRequest
+
+      Paste request
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigDirOpened <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.sigDirOpened>`
+        - This signal is emitted when the current directory of the explorer tree
+      * - :py:obj:`sigOpenFileRequested <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.sigOpenFileRequested>`
+        - This signal is emitted to request opening a new file with Pyllo.
+      * - :py:obj:`sigCopyRequest <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.sigCopyRequest>`
+        - Copy request
+      * - :py:obj:`sigPasteRequest <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.sigPasteRequest>`
+        - Paste request
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onConfUpdate <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.onConfUpdate>`\ (option, value)
+        - \-
+      * - :py:obj:`gotoParentDirectory <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.gotoParentDirectory>`\ ()
+        - Go to parent directory
+      * - :py:obj:`gotoNextDirectory <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.gotoNextDirectory>`\ ()
+        - Go to next directory
+      * - :py:obj:`gotoPreviousDirectory <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.gotoPreviousDirectory>`\ ()
+        - Go to previous directory
+      * - :py:obj:`chdir <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.chdir>`\ (directory, emit)
+        - Set directory as working directory.
+      * - :py:obj:`clearNavigateHistory <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.clearNavigateHistory>`\ ()
+        - Clear navigation history
+      * - :py:obj:`checkpoint <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.checkpoint>`\ ()
+        - The object must support methods .checkpoint() and .restore(obj).
+      * - :py:obj:`restore <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.restore>`\ (checkpoint)
+        - The object must support methods .checkpoint() and .restore(obj).
+      * - :py:obj:`setCurrentFolder <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.setCurrentFolder>`\ (folder, expand)
+        - Set current folder and return associated model index
+      * - :py:obj:`getCurrentFolder <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.getCurrentFolder>`\ ()
+        - \-
+      * - :py:obj:`refresh <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.refresh>`\ ()
+        - Refresh widget ui by current states.
+      * - :py:obj:`directoryClicked <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.directoryClicked>`\ (dirname, index)
+        - \-
+      * - :py:obj:`mousePressEvent <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.mousePressEvent>`\ (event)
+        - Detect when a directory was expanded or collapsed by clicking
+      * - :py:obj:`mouseDoubleClickEvent <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.mouseDoubleClickEvent>`\ (event)
+        - Handle double clicks.
+      * - :py:obj:`clicked <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.clicked>`\ (index)
+        - Selected item was single/double-clocked or enter/return was pressed.
+      * - :py:obj:`keyPressEvent <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.keyPressEvent>`\ (event)
+        - Reimplement Qt method
+      * - :py:obj:`showHeaderMenu <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.showHeaderMenu>`\ (pos)
+        - Display header menu.
+      * - :py:obj:`getFilename <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.getFilename>`\ (index)
+        - Return filename associated with *index*
+      * - :py:obj:`getIndex <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.getIndex>`\ (filename)
+        - Return index associated with filename
+      * - :py:obj:`setCurrentIndex <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.setCurrentIndex>`\ (index)
+        - \-
+      * - :py:obj:`getSelectedFilenames <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.getSelectedFilenames>`\ ()
+        - Return selected filenames
+      * - :py:obj:`getDirname <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.getDirname>`\ (index)
+        - Return dirname associated with *index*
+      * - :py:obj:`copy <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.copy>`\ ()
+        - \-
+      * - :py:obj:`paste <pyllo.plugins.explorer.internal.widgets.ExplorerTreeWidget.paste>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigDirOpened
+
+      This signal is emitted when the current directory of the explorer tree
+      has changed.
+
+      Parameters
+      ----------
+      newRootDirectory: str
+          The new root directory path.
+
+      Notes
+      -----
+      This happens when clicking (or double clicking depending on the option)
+      a folder, turning this folder in the new root parent of the tree.
+
+
+   .. py:attribute:: sigOpenFileRequested
+
+      This signal is emitted to request opening a new file with Pyllo.
+
+      Parameters
+      ----------
+      path: str
+          File path to run.
+
+
+   .. py:attribute:: sigCopyRequest
+
+      Copy request
+
+
+   .. py:attribute:: sigPasteRequest
+
+      Paste request
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onConfUpdate(option, value)
+
+
+   .. py:method:: gotoParentDirectory()
+
+      Go to parent directory
+
+
+   .. py:method:: gotoNextDirectory()
+
+      Go to next directory
+
+
+   .. py:method:: gotoPreviousDirectory()
+
+      Go to previous directory
+
+
+   .. py:method:: chdir(directory=None, emit=True)
+
+      Set directory as working directory.
+
+      Parameters
+      ----------
+      directory: str
+          The new working directory.
+      emit: bool, optional
+          Emit a signal when changing the working directpory.
+          Default is True.
+
+
+   .. py:method:: clearNavigateHistory()
+
+      Clear navigation history
+
+
+   .. py:method:: checkpoint()
+
+      The object must support methods .checkpoint() and .restore(obj).
+          - checkpoint() returns a checkpoint of the object
+          - restore(obj) restores the calling object to the state of the
+              passed object
+
+
+   .. py:method:: restore(checkpoint)
+
+      The object must support methods .checkpoint() and .restore(obj).
+          - checkpoint() returns a checkpoint of the object
+          - restore(obj) restores the calling object to the state of the
+              passed object
+
+
+   .. py:method:: setCurrentFolder(folder, expand=True)
+
+      Set current folder and return associated model index
+
+      Parameters
+      ----------
+      folder: str
+          New path to the selected folder.
+
+
+   .. py:method:: getCurrentFolder() -> str
+
+
+   .. py:method:: refresh()
+
+      Refresh widget ui by current states.
+
+
+   .. py:method:: directoryClicked(dirname, index)
+
+
+   .. py:method:: mousePressEvent(event)
+
+      Detect when a directory was expanded or collapsed by clicking
+      on its arrow.
+
+      Taken from https://stackoverflow.com/a/13142586/438386
+
+
+   .. py:method:: mouseDoubleClickEvent(event)
+
+      Handle double clicks.
+
+
+   .. py:method:: clicked(index=None)
+
+      Selected item was single/double-clocked or enter/return was pressed.
+
+
+   .. py:method:: keyPressEvent(event)
+
+      Reimplement Qt method
+
+
+   .. py:method:: showHeaderMenu(pos)
+
+      Display header menu.
+
+
+   .. py:method:: getFilename(index)
+
+      Return filename associated with *index*
+
+
+   .. py:method:: getIndex(filename)
+
+      Return index associated with filename
+
+
+   .. py:method:: setCurrentIndex(index)
+
+
+   .. py:method:: getSelectedFilenames() -> List[str]
+
+      Return selected filenames
+
+
+   .. py:method:: getDirname(index)
+
+      Return dirname associated with *index*
+
+
+   .. py:method:: copy()
+
+
+   .. py:method:: paste()
+
+
+
+
+

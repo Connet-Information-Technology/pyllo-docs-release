@@ -1,0 +1,80 @@
+:py:mod:`pyllo.config.main`
+===========================
+
+.. py:module:: pyllo.config.main
+
+.. autoapi-nested-parse::
+
+   Pyllo configuration options.
+
+   Note: Leave this file free of Qt related imports, so that it can be used to
+   quickly load a user config file.
+
+
+
+Module Contents
+---------------
+
+
+
+.. py:data:: EXCLUDE_PATTERNS
+   :value: ['*.csv, *.dat, *.log, *.tmp, *.bak, *.orig']
+
+   
+
+.. py:data:: SHOW_EXT
+   :value: ['.py', '.pyllo']
+
+   
+
+.. py:data:: USEFUL_EXT
+
+   
+
+.. py:data:: NAME_FILTERS
+   :value: ['README', 'INSTALL', 'LICENSE', 'CHANGELOG']
+
+   
+
+.. py:data:: OPEN_FILES_PORT
+   :value: 21128
+
+   
+
+.. py:data:: WIN
+
+   
+
+.. py:data:: MAC
+
+   
+
+.. py:data:: LINUX
+
+   
+
+.. py:data:: CTRL
+
+   
+
+.. py:data:: TASKS_PATTERN
+   :value: '(^|#)[ ]*(TODO|FIXME|XXX|HINT|TIP|@todo|HACK|BUG|OPTIMIZE|!!!|\\?\\?\\?)([^#]*)'
+
+   
+
+.. py:data:: DEFAULTS
+   :type: pyllo.core.dtype.Configurations
+   :value: [('main',), ('plugin_registry',), ('preferences',), ('ipythonconsole',), ('toolbar',),...
+
+   
+
+.. py:data:: NAME_MAP
+   :type: pyllo.core.dtype.FileConfigNameMap
+
+   
+
+.. py:data:: CONF_VERSION
+   :value: '0.1.0'
+
+   
+

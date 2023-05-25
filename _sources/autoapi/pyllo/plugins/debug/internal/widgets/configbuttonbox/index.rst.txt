@@ -1,0 +1,95 @@
+:py:mod:`pyllo.plugins.debug.internal.widgets.configbuttonbox`
+==============================================================
+
+.. py:module:: pyllo.plugins.debug.internal.widgets.configbuttonbox
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DebugConfigButtonBox <pyllo.plugins.debug.internal.widgets.configbuttonbox.DebugConfigButtonBox>`
+     - Debug config tool button
+
+
+
+
+.. py:class:: DebugConfigButtonBox(parent, configurationManager: pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager, *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QToolButton`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`
+
+   Debug config tool button
+
+   ..    ..    ..    .. .. py:attribute:: DEFAULT_TEXT
+
+      
+
+   ..    .. .. py:attribute:: sigEditConfigurationsRequest
+
+      request for configuration editing
+
+
+   ..    .. .. py:attribute:: sigAddDefaultConfigurationRequest
+
+      request for default configuration of debug type addition to configuration file
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`DEFAULT_TEXT <pyllo.plugins.debug.internal.widgets.configbuttonbox.DebugConfigButtonBox.DEFAULT_TEXT>`
+        - \-
+      * - :py:obj:`sigEditConfigurationsRequest <pyllo.plugins.debug.internal.widgets.configbuttonbox.DebugConfigButtonBox.sigEditConfigurationsRequest>`
+        - request for configuration editing
+      * - :py:obj:`sigAddDefaultConfigurationRequest <pyllo.plugins.debug.internal.widgets.configbuttonbox.DebugConfigButtonBox.sigAddDefaultConfigurationRequest>`
+        - request for default configuration of debug type addition to configuration file
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`updateActions <pyllo.plugins.debug.internal.widgets.configbuttonbox.DebugConfigButtonBox.updateActions>`\ ()
+        - clear all actions and add actions of configuration again
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: DEFAULT_TEXT
+
+      
+
+   .. py:attribute:: sigEditConfigurationsRequest
+
+      request for configuration editing
+
+
+   .. py:attribute:: sigAddDefaultConfigurationRequest
+
+      request for default configuration of debug type addition to configuration file
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: updateActions()
+
+      clear all actions and add actions of configuration again
+
+
+
+
+

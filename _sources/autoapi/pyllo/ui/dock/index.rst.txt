@@ -1,0 +1,219 @@
+:py:mod:`pyllo.ui.dock`
+=======================
+
+.. py:module:: pyllo.ui.dock
+
+.. autoapi-nested-parse::
+
+   Dock widget for plugin panel displaying.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`TabFilter <pyllo.ui.dock.TabFilter>`
+     - Filter event attached to each DockWidget QTabBar.
+   * - :py:obj:`DockTitleBar <pyllo.ui.dock.DockTitleBar>`
+     - Custom title bar for our dock widget.
+   * - :py:obj:`PylloDockWidget <pyllo.ui.dock.PylloDockWidget>`
+     - Subclass to override needed methods
+
+
+
+
+.. py:class:: TabFilter(dockTabBar: qtpy.QtWidgets.QTabBar, mainWindow: qtpy.QtWidgets.QMainWindow)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   Filter event attached to each DockWidget QTabBar.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`eventFilter <pyllo.ui.dock.TabFilter.eventFilter>`\ (obj, event)
+        - Filter mouse press events.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: eventFilter(obj, event)
+
+      Filter mouse press events.
+
+      Events that are captured and not propagated return True. Events that
+      are not captured and are propagated return False.
+
+
+
+
+
+.. py:class:: DockTitleBar(parent)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`
+
+   Custom title bar for our dock widget.
+
+   Inspired from
+   https://stackoverflow.com/a/40894225/438386
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`mouseReleaseEvent <pyllo.ui.dock.DockTitleBar.mouseReleaseEvent>`\ (event)
+        - \-
+      * - :py:obj:`mousePressEvent <pyllo.ui.dock.DockTitleBar.mousePressEvent>`\ (event)
+        - \-
+      * - :py:obj:`mouseMoveEvent <pyllo.ui.dock.DockTitleBar.mouseMoveEvent>`\ (event)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: mouseReleaseEvent(event: qtpy.QtGui.QMouseEvent)
+
+
+   .. py:method:: mousePressEvent(event: qtpy.QtGui.QMouseEvent)
+
+
+   .. py:method:: mouseMoveEvent(event: qtpy.QtGui.QMouseEvent)
+
+
+
+
+
+.. py:class:: PylloDockWidget(title: pyllo.core.dtype.Text, mainWindow: qtpy.QtWidgets.QMainWindow)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QDockWidget`
+
+   Subclass to override needed methods
+
+   ..    ..    ..    .. .. py:attribute:: ALLOWED_AREAS
+      :type: qtpy.QtCore.Qt.DockWidgetAreas
+
+      
+
+   ..    .. .. py:attribute:: LOCATION
+      :type: qtpy.QtCore.Qt.DockWidgetAreas
+
+      
+
+   ..    .. .. py:attribute:: FEATURES
+      :type: qtpy.QtWidgets.QDockWidget.DockWidgetFeatures
+
+      
+
+   ..    .. .. py:attribute:: sigClosed
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ALLOWED_AREAS <pyllo.ui.dock.PylloDockWidget.ALLOWED_AREAS>`
+        - \-
+      * - :py:obj:`LOCATION <pyllo.ui.dock.PylloDockWidget.LOCATION>`
+        - \-
+      * - :py:obj:`FEATURES <pyllo.ui.dock.PylloDockWidget.FEATURES>`
+        - \-
+      * - :py:obj:`sigClosed <pyllo.ui.dock.PylloDockWidget.sigClosed>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`closeEvent <pyllo.ui.dock.PylloDockWidget.closeEvent>`\ (event)
+        - Reimplement Qt method to send a signal on close so that "Panes" main
+      * - :py:obj:`installTabEventFilter <pyllo.ui.dock.PylloDockWidget.installTabEventFilter>`\ ()
+        - Install an event filter to capture mouse events in the tabs of a
+      * - :py:obj:`hideTitleBar <pyllo.ui.dock.PylloDockWidget.hideTitleBar>`\ ()
+        - Set empty QWidget on title bar.
+      * - :py:obj:`showTitleBar <pyllo.ui.dock.PylloDockWidget.showTitleBar>`\ ()
+        - Set custom title bar.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ALLOWED_AREAS
+      :type: qtpy.QtCore.Qt.DockWidgetAreas
+
+      
+
+   .. py:attribute:: LOCATION
+      :type: qtpy.QtCore.Qt.DockWidgetAreas
+
+      
+
+   .. py:attribute:: FEATURES
+      :type: qtpy.QtWidgets.QDockWidget.DockWidgetFeatures
+
+      
+
+   .. py:attribute:: sigClosed
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: closeEvent(event)
+
+      Reimplement Qt method to send a signal on close so that "Panes" main
+      window menu can be updated correctly
+
+
+   .. py:method:: installTabEventFilter()
+
+      Install an event filter to capture mouse events in the tabs of a
+      QTabBar holding typified dock widget.
+
+
+   .. py:method:: hideTitleBar()
+
+      Set empty QWidget on title bar.
+
+
+   .. py:method:: showTitleBar()
+
+      Set custom title bar.
+
+
+
+
+

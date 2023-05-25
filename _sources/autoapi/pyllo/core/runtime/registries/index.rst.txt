@@ -1,0 +1,416 @@
+:py:mod:`pyllo.core.runtime.registries`
+=======================================
+
+.. py:module:: pyllo.core.runtime.registries
+
+.. autoapi-nested-parse::
+
+   Registries management in Pyllo.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloPluginRegistry <pyllo.core.runtime.registries.PylloPluginRegistry>`
+     - Global plugin registry.
+   * - :py:obj:`PylloRegistry <pyllo.core.runtime.registries.PylloRegistry>`
+     - General registry for global references (per plugin) in Pyllo.
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`getCaller <pyllo.core.runtime.registries.getCaller>`\ (funcName)
+     - Get file and line where the methods that create actions, tool buttons,
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DependencyType <pyllo.core.runtime.registries.DependencyType>`
+     - \-
+   * - :py:obj:`ACTION_REGISTRY <pyllo.core.runtime.registries.ACTION_REGISTRY>`
+     - \-
+   * - :py:obj:`TOOLBUTTON_REGISTRY <pyllo.core.runtime.registries.TOOLBUTTON_REGISTRY>`
+     - \-
+   * - :py:obj:`TOOLBAR_REGISTRY <pyllo.core.runtime.registries.TOOLBAR_REGISTRY>`
+     - \-
+   * - :py:obj:`MENU_REGISTRY <pyllo.core.runtime.registries.MENU_REGISTRY>`
+     - \-
+
+
+.. py:data:: DependencyType
+
+   
+
+.. py:function:: getCaller(funcName: str) -> pyllo.core.dtype.Text
+
+   Get file and line where the methods that create actions, tool buttons,
+   toolbars and menus are called.
+
+   Parameters
+   ----------
+   funcName: str
+       Name of function in stack frame.
+
+   Returns
+   -------
+   callerInfo: str
+       Callers information - resistent filename and line number.
+
+
+   .. code-block:: python
+      :name: Example
+      :linenos:
+
+      # main.py
+      def foo():
+          print("welcome")
+      foo()
+      foo()
+      getCaller('foo')
+      'main.py:3, main.py:4'
+
+
+   .. versionadded:: 1.0.0
+
+
+.. py:class:: PylloPluginRegistry(app: PylloApp)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   Global plugin registry.
+
+   This class handles a plugin initialization/teardown lifetime, including
+   notifications when a plugin is available or not.
+
+   This registry alleviates the limitations of a topological sort-based
+   plugin initialization by enabling plugins to have bidirectional
+   dependencies instead of unidirectional ones.
+
+   Notes
+   -----
+   1. This class should be instantiated as a singleton.
+   2. A plugin should not depend on other plugin to perform its
+      initialization since it could cause deadlocks.
+
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`initializePlugin <pyllo.core.runtime.registries.PylloPluginRegistry.initializePlugin>`\ (PluginClass, \*None, external)
+        - Instantiate and register a Pyllo plugin.
+      * - :py:obj:`deletePlugin <pyllo.core.runtime.registries.PylloPluginRegistry.deletePlugin>`\ (name, notifyOthers)
+        - Remove and delete a plugin from the registry by its name.
+      * - :py:obj:`deleteAllPlugins <pyllo.core.runtime.registries.PylloPluginRegistry.deleteAllPlugins>`\ ()
+        - Remove all plugins from the registry.
+      * - :py:obj:`getPlugin <pyllo.core.runtime.registries.PylloPluginRegistry.getPlugin>`\ (name)
+        - Get a reference to a plugin instance by its name.
+      * - :py:obj:`isPluginAvailable <pyllo.core.runtime.registries.PylloPluginRegistry.isPluginAvailable>`\ (name)
+        - Determine if a given plugin was loaded and is available.
+      * - :py:obj:`getInternalPlugins <pyllo.core.runtime.registries.PylloPluginRegistry.getInternalPlugins>`\ ()
+        - \-
+      * - :py:obj:`getExternalPlugins <pyllo.core.runtime.registries.PylloPluginRegistry.getExternalPlugins>`\ ()
+        - \-
+      * - :py:obj:`getPlugins <pyllo.core.runtime.registries.PylloPluginRegistry.getPlugins>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: initializePlugin(PluginClass: Type[pyllo.core.api.IPlugin], *, external: bool)
+
+      Instantiate and register a Pyllo plugin.
+
+
+   .. py:method:: deletePlugin(name: pyllo.core.dtype.PluginName, notifyOthers=True) -> bool
+
+      Remove and delete a plugin from the registry by its name.
+
+      Parameters
+      ----------
+      name: str
+          Name of the plugin to delete.
+
+      Returns
+      -------
+      plugin_deleted: bool
+          True if the registry was able to teardown and remove the plugin.
+          False otherwise.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: deleteAllPlugins()
+
+      Remove all plugins from the registry.
+
+      The teardown mechanism will remove external plugins first and then
+      internal ones, where the old plugins will be removed first and
+      then the new ones.
+
+      Parameters
+      ----------
+      excluding: Optional[Set[str]]
+          A set that lists plugins (by name) that will not be deleted.
+      closeImmediately: bool
+          If true, then the `can_close` status will be ignored.
+
+      Returns
+      -------
+      all_deleted: bool
+          True if all the plugins were closed and deleted. False otherwise.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getPlugin(name: pyllo.core.dtype.PluginName) -> pyllo.core.api.IPlugin
+
+      Get a reference to a plugin instance by its name.
+
+      Parameters
+      ----------
+      name: str
+          Name of the plugin to retrieve.
+
+      Returns
+      -------
+      plugin: PylloPlugin
+          The instance of the requested plugin.
+
+      Raises
+      ------
+      Exception
+          If the plugin name was not found in the registry.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: isPluginAvailable(name: pyllo.core.dtype.PluginName) -> bool
+
+      Determine if a given plugin was loaded and is available.
+
+      Parameters
+      ----------
+      name: str
+          Name of the plugin to query.
+
+      Returns
+      -------
+      pluginAvailable: bool
+          True if the plugin is available and False if not.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getInternalPlugins() -> List[pyllo.core.api.IPlugin]
+
+
+   .. py:method:: getExternalPlugins() -> List[pyllo.core.api.IPlugin]
+
+
+   .. py:method:: getPlugins() -> List[pyllo.core.api.IPlugin]
+
+
+
+
+
+.. py:class:: PylloRegistry(creationFunc: str, objType: str = '')
+
+   General registry for global references (per plugin) in Pyllo.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: Application
+      :value: '__app__'
+
+      
+
+   ..    .. .. py:attribute:: GlobalNamespace
+      :value: '__global__'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Application <pyllo.core.runtime.registries.PylloRegistry.Application>`
+        - \-
+      * - :py:obj:`GlobalNamespace <pyllo.core.runtime.registries.PylloRegistry.GlobalNamespace>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`registerReference <pyllo.core.runtime.registries.PylloRegistry.registerReference>`\ (obj, id_, plugin, namespace, overwrite)
+        - Register a reference `obj` for a given plugin name on a given namespace.
+      * - :py:obj:`getReference <pyllo.core.runtime.registries.PylloRegistry.getReference>`\ (id_, plugin, namespace)
+        - Retrieve a stored object reference under a given id of a specific
+      * - :py:obj:`getReferences <pyllo.core.runtime.registries.PylloRegistry.getReferences>`\ (plugin, namespace)
+        - Retrieve all stored object references under the namespace of a
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Application
+      :value: '__app__'
+
+      
+
+   .. py:attribute:: GlobalNamespace
+      :value: '__global__'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: registerReference(obj: Any, id_: pyllo.core.dtype.Identity, plugin: Optional[pyllo.core.dtype.PluginName] = None, namespace: Optional[pyllo.core.dtype.Registry2ndNamespace] = None, overwrite: Optional[bool] = False)
+
+      Register a reference `obj` for a given plugin name on a given namespace.
+
+      Parameters
+      ----------
+      obj: Any
+          Object to register as a reference.
+      id_: str
+          String identifier used to store the object reference.
+      plugin: Optional[Registry1stNamespace]
+          Plugin name used to store the reference. Should belong to
+          :class:`PylloPlugin`. If None, then the object will
+          be stored under the global namespace `__global__` key.
+      namespace: Optional[Registry2ndNamespace]
+          Additional key used to store and identify the object reference.
+          In any Pyllo plugin implementation, this namespace may refer to an
+          identifier of a widget. This namespace enables plugins to define
+          multiple actions with the same key that live on different widgets.
+          If None, this namespace will default to the special `__global__`
+          identifier.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getReference(id_: pyllo.core.dtype.Identity, plugin: Optional[pyllo.core.dtype.PluginName] = None, namespace: Optional[pyllo.core.dtype.Registry2ndNamespace] = None) -> Any
+
+      Retrieve a stored object reference under a given id of a specific
+      namespace of a given plugin name.
+
+      Parameters
+      ----------
+      id_: str
+          String identifier used to retrieve the object.
+      plugin: Optional[str]
+          Plugin name used to store the reference. Should belong to
+          :class:`PylloPlugin`. If None, then the object will
+          be retrieved from the global namespace `main` key.
+      namespace: Optional[str]
+          Additional key that was used to store the object reference.
+          In any Pyllo plugin implementation, this namespace may refer to an
+          identifier of a widget. This namespace enables plugins to define
+          multiple actions with the same key that live on different widgets.
+          If None, this namespace will default to the special `__global__`
+          identifier.
+
+      Returns
+      -------
+      obj: Any
+          The object that was stored under the given identifier.
+
+      Raises
+      ------
+      KeyError
+          If neither of `id_`, `plugin` or `namespace` were found in the
+          registry.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getReferences(plugin: Optional[pyllo.core.dtype.PluginName] = None, namespace: Optional[pyllo.core.dtype.Registry2ndNamespace] = None) -> Dict[pyllo.core.dtype.Identity, Any]
+
+      Retrieve all stored object references under the namespace of a
+      given plugin name.
+
+      Parameters
+      ----------
+      plugin: Optional[str]
+          Plugin name used to store the reference. Should belong to
+          :class:`PylloPlugin`. If None, then the object will
+          be retrieved from the global namespace `main` key.
+      namespace: Optional[str]
+          Additional key that was used to store the object reference.
+          In any Pyllo plugin implementation, this namespace may refer to an
+          identifier of a widget. This namespace enables plugins to define
+          multiple actions with the same key that live on different widgets.
+          If None, this namespace will default to the special `__global__`
+          identifier.
+
+      Returns
+      -------
+      objs: Dict[str, Any]
+          A dict that contains the actions mapped by their corresponding
+          identifiers.
+
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:data:: ACTION_REGISTRY
+
+   
+
+.. py:data:: TOOLBUTTON_REGISTRY
+
+   
+
+.. py:data:: TOOLBAR_REGISTRY
+
+   
+
+.. py:data:: MENU_REGISTRY
+
+   
+

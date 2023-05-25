@@ -1,0 +1,39 @@
+:py:mod:`pyllo.config.tests.conftest`
+=====================================
+
+.. py:module:: pyllo.config.tests.conftest
+
+.. autoapi-nested-parse::
+
+   Tests for the `core.config`.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`defaultConfig <pyllo.config.tests.conftest.defaultConfig>`\ (tmpdir, request)
+     - \-
+   * - :py:obj:`userConfig <pyllo.config.tests.conftest.userConfig>`\ (tmpdir, request)
+     - \-
+   * - :py:obj:`pylloConfig <pyllo.config.tests.conftest.pylloConfig>`\ (tmpdir, request)
+     - \-
+
+
+
+.. py:function:: defaultConfig(tmpdir, request)
+
+
+.. py:function:: userConfig(tmpdir, request)
+
+
+.. py:function:: pylloConfig(tmpdir, request)
+
+

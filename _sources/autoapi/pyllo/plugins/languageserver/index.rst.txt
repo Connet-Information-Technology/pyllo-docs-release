@@ -1,0 +1,27 @@
+:py:mod:`pyllo.plugins.languageserver`
+======================================
+
+.. py:module:: pyllo.plugins.languageserver
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   internal/index.rst
+   widget/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   api/index.rst
+   plugin/index.rst
+   protocol/index.rst
+
+

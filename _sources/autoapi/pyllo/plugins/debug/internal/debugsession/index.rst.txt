@@ -1,0 +1,224 @@
+:py:mod:`pyllo.plugins.debug.internal.debugsession`
+===================================================
+
+.. py:module:: pyllo.plugins.debug.internal.debugsession
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DebugSession <pyllo.plugins.debug.internal.debugsession.DebugSession>`
+     - DebugSession is a higher-level software component that provides an abstraction over a lower-level JSON-based
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`stripNoneValuesDeep <pyllo.plugins.debug.internal.debugsession.stripNoneValuesDeep>`\ (d)
+     - Python function that takes in a dictionary object and recursively removes any key-value pairs where the value is
+
+
+
+.. py:function:: stripNoneValuesDeep(d: dict)
+
+   Python function that takes in a dictionary object and recursively removes any key-value pairs where the value is
+   None
+
+
+.. py:class:: DebugSession(adapterForger: pyllo.core.dtype.Forger[pyllo.plugins.debug.internal.debugadapters.IDebugAdapter])
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`, :py:obj:`pyllo.tools.statemachine.StateMachine`
+
+   DebugSession is a higher-level software component that provides an abstraction over a lower-level JSON-based
+   protocol that communicates with a debugger using a debug adapter.
+
+   ..    ..    ..    .. .. py:attribute:: STATES
+
+      
+
+   ..    .. .. py:attribute:: sigStateChanged
+
+      State has changed event
+
+
+   ..    .. .. py:attribute:: sigOutputRequest
+
+      
+
+   ..    .. .. py:attribute:: sigStoppedEvent
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`STATES <pyllo.plugins.debug.internal.debugsession.DebugSession.STATES>`
+        - \-
+      * - :py:obj:`sigStateChanged <pyllo.plugins.debug.internal.debugsession.DebugSession.sigStateChanged>`
+        - State has changed event
+      * - :py:obj:`sigOutputRequest <pyllo.plugins.debug.internal.debugsession.DebugSession.sigOutputRequest>`
+        - \-
+      * - :py:obj:`sigStoppedEvent <pyllo.plugins.debug.internal.debugsession.DebugSession.sigStoppedEvent>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`id <pyllo.plugins.debug.internal.debugsession.DebugSession.id>`\ ()
+        - \-
+      * - :py:obj:`exitCode <pyllo.plugins.debug.internal.debugsession.DebugSession.exitCode>`\ ()
+        - \-
+      * - :py:obj:`clientCapabilities <pyllo.plugins.debug.internal.debugsession.DebugSession.clientCapabilities>`\ ()
+        - :summarylabel:`static` \-
+      * - :py:obj:`adapterCapabilities <pyllo.plugins.debug.internal.debugsession.DebugSession.adapterCapabilities>`\ ()
+        - \-
+      * - :py:obj:`initialize <pyllo.plugins.debug.internal.debugsession.DebugSession.initialize>`\ (debugType)
+        - initialize
+      * - :py:obj:`launchOrAttach <pyllo.plugins.debug.internal.debugsession.DebugSession.launchOrAttach>`\ (debugConfiguration)
+        - \-
+      * - :py:obj:`configurationDone <pyllo.plugins.debug.internal.debugsession.DebugSession.configurationDone>`\ ()
+        - \-
+      * - :py:obj:`terminate <pyllo.plugins.debug.internal.debugsession.DebugSession.terminate>`\ ()
+        - \-
+      * - :py:obj:`scopes <pyllo.plugins.debug.internal.debugsession.DebugSession.scopes>`\ (arguments)
+        - \-
+      * - :py:obj:`variables <pyllo.plugins.debug.internal.debugsession.DebugSession.variables>`\ (arguments)
+        - \-
+      * - :py:obj:`pause <pyllo.plugins.debug.internal.debugsession.DebugSession.pause>`\ (arguments)
+        - \-
+      * - :py:obj:`next <pyllo.plugins.debug.internal.debugsession.DebugSession.next>`\ (arguments)
+        - \-
+      * - :py:obj:`stepIn <pyllo.plugins.debug.internal.debugsession.DebugSession.stepIn>`\ (arguments)
+        - \-
+      * - :py:obj:`stepOut <pyllo.plugins.debug.internal.debugsession.DebugSession.stepOut>`\ (arguments)
+        - \-
+      * - :py:obj:`continue_ <pyllo.plugins.debug.internal.debugsession.DebugSession.continue_>`\ (arguments)
+        - \-
+      * - :py:obj:`setBreakpoints <pyllo.plugins.debug.internal.debugsession.DebugSession.setBreakpoints>`\ (arguments)
+        - \-
+      * - :py:obj:`setExceptionBreakpoints <pyllo.plugins.debug.internal.debugsession.DebugSession.setExceptionBreakpoints>`\ (arguments)
+        - \-
+      * - :py:obj:`threads <pyllo.plugins.debug.internal.debugsession.DebugSession.threads>`\ ()
+        - \-
+      * - :py:obj:`stackTrace <pyllo.plugins.debug.internal.debugsession.DebugSession.stackTrace>`\ (arguments)
+        - \-
+      * - :py:obj:`evaluate <pyllo.plugins.debug.internal.debugsession.DebugSession.evaluate>`\ (arguments)
+        - \-
+      * - :py:obj:`completions <pyllo.plugins.debug.internal.debugsession.DebugSession.completions>`\ (arguments)
+        - \-
+      * - :py:obj:`sendRequestAndParseResponse <pyllo.plugins.debug.internal.debugsession.DebugSession.sendRequestAndParseResponse>`\ (request, arguments, responseType)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: STATES
+
+      
+
+   .. py:attribute:: sigStateChanged
+
+      State has changed event
+
+
+   .. py:attribute:: sigOutputRequest
+
+      
+
+   .. py:attribute:: sigStoppedEvent
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: id()
+
+
+   .. py:method:: exitCode() -> int
+
+
+   .. py:method:: clientCapabilities() -> pyllo.plugins.debug.protocol.ClientCapabilities
+      :staticmethod:
+
+
+   .. py:method:: adapterCapabilities() -> pyllo.plugins.debug.protocol.AdapterCapabilities
+
+
+   .. py:method:: initialize(debugType: pyllo.core.dtype.Identity)
+
+      initialize
+
+
+   .. py:method:: launchOrAttach(debugConfiguration: pyllo.plugins.debug.api.DebugConfiguration)
+
+
+   .. py:method:: configurationDone()
+
+
+   .. py:method:: terminate()
+
+
+   .. py:method:: scopes(arguments: pyllo.plugins.debug.protocol.ScopesArguments) -> Optional[pyllo.plugins.debug.protocol.ScopesResponseBody]
+
+
+   .. py:method:: variables(arguments: pyllo.plugins.debug.protocol.VariablesArguments) -> Optional[pyllo.plugins.debug.protocol.VariablesResponseBody]
+
+
+   .. py:method:: pause(arguments: pyllo.plugins.debug.protocol.PauseArguments)
+
+
+   .. py:method:: next(arguments: pyllo.plugins.debug.protocol.NextArguments)
+
+
+   .. py:method:: stepIn(arguments: pyllo.plugins.debug.protocol.StepInArguments)
+
+
+   .. py:method:: stepOut(arguments: pyllo.plugins.debug.protocol.StepOutArguments)
+
+
+   .. py:method:: continue_(arguments: pyllo.plugins.debug.protocol.ContinueArguments) -> Optional[pyllo.plugins.debug.protocol.ContinueResponseBody]
+
+
+   .. py:method:: setBreakpoints(arguments: pyllo.plugins.debug.protocol.SetBreakpointsArguments) -> Optional[pyllo.plugins.debug.protocol.SetBreakpointsResponseBody]
+
+
+   .. py:method:: setExceptionBreakpoints(arguments: pyllo.plugins.debug.protocol.SetExceptionBreakpointsArguments) -> Optional[pyllo.plugins.debug.protocol.SetExceptionBreakpointsResponseBody]
+
+
+   .. py:method:: threads() -> Optional[pyllo.plugins.debug.protocol.ThreadsResponseBody]
+
+
+   .. py:method:: stackTrace(arguments: pyllo.plugins.debug.protocol.StackTraceArguments) -> Optional[pyllo.plugins.debug.protocol.StackTraceResponseBody]
+
+
+   .. py:method:: evaluate(arguments: pyllo.plugins.debug.protocol.EvaluateArguments) -> Optional[pyllo.plugins.debug.protocol.EvaluateResponseBody]
+
+
+   .. py:method:: completions(arguments: pyllo.plugins.debug.protocol.CompletionsArguments) -> Optional[pyllo.plugins.debug.protocol.CompletionsResponseBody]
+
+
+   .. py:method:: sendRequestAndParseResponse(request: str, arguments, responseType) -> Any
+
+
+
+
+

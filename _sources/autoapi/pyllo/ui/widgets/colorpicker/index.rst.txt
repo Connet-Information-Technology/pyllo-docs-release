@@ -1,0 +1,187 @@
+:py:mod:`pyllo.ui.widgets.colorpicker`
+======================================
+
+.. py:module:: pyllo.ui.widgets.colorpicker
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ColorButton <pyllo.ui.widgets.colorpicker.ColorButton>`
+     - Color choosing push button
+   * - :py:obj:`ColorPickerLayout <pyllo.ui.widgets.colorpicker.ColorPickerLayout>`
+     - Color-specialized QLineEdit layout
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`textToQColor <pyllo.ui.widgets.colorpicker.textToQColor>`\ (text)
+     - Create a QColor from specified string
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`app <pyllo.ui.widgets.colorpicker.app>`
+     - \-
+
+
+.. py:class:: ColorButton(parent: qtpy.QtWidgets.QWidget = None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QToolButton`
+
+   Color choosing push button
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: colorChanged
+
+      
+
+   ..    .. .. py:attribute:: color
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`colorChanged <pyllo.ui.widgets.colorpicker.ColorButton.colorChanged>`
+        - \-
+      * - :py:obj:`color <pyllo.ui.widgets.colorpicker.ColorButton.color>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`openColorDialog <pyllo.ui.widgets.colorpicker.ColorButton.openColorDialog>`\ ()
+        - Open color dialog to pick color
+      * - :py:obj:`getColor <pyllo.ui.widgets.colorpicker.ColorButton.getColor>`\ ()
+        - Get current color picked.
+      * - :py:obj:`setColor <pyllo.ui.widgets.colorpicker.ColorButton.setColor>`\ (color)
+        - Set color.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: colorChanged
+
+      
+
+   .. py:attribute:: color
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: openColorDialog()
+
+      Open color dialog to pick color
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getColor() -> qtpy.QtGui.QColor
+
+      Get current color picked.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: setColor(color: qtpy.QtGui.QColor)
+
+      Set color.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:function:: textToQColor(text: str)
+
+   Create a QColor from specified string
+   Avoid warning from Qt when an invalid QColor is instantiated
+
+   >>> textToQColor("red").getRgb()
+   (255, 0, 0, 255)
+   >>> textToQColor("#FF0000").getRgb()
+   (255, 0, 0, 255)
+
+   .. versionadded:: 1.0.0
+
+
+.. py:class:: ColorPickerLayout(color: qtpy.QtGui.QColor, parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QHBoxLayout`
+
+   Color-specialized QLineEdit layout
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`updateColor <pyllo.ui.widgets.colorpicker.ColorPickerLayout.updateColor>`\ (text)
+        - .. versionadded:: 1.0.0
+      * - :py:obj:`updateText <pyllo.ui.widgets.colorpicker.ColorPickerLayout.updateText>`\ (color)
+        - .. versionadded:: 1.0.0
+      * - :py:obj:`text <pyllo.ui.widgets.colorpicker.ColorPickerLayout.text>`\ ()
+        - .. versionadded:: 1.0.0
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: updateColor(text: str)
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: updateText(color: qtpy.QtGui.QColor)
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: text()
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:data:: app
+
+   
+

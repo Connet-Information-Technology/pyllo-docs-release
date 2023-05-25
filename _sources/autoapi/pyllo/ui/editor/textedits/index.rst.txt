@@ -1,0 +1,769 @@
+:py:mod:`pyllo.ui.editor.textedits`
+===================================
+
+.. py:module:: pyllo.ui.editor.textedits
+
+.. autoapi-nested-parse::
+
+   Edit features makes qt text editor smarter.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`TextCursor <pyllo.ui.editor.textedits.TextCursor>`
+     - \-
+   * - :py:obj:`BaseEditMixin <pyllo.ui.editor.textedits.BaseEditMixin>`
+     - Base edit mixin enhance editor with a lot of features.
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`getEolChars <pyllo.ui.editor.textedits.getEolChars>`\ (text)
+     - Get text EOL characters.
+   * - :py:obj:`getSpan <pyllo.ui.editor.textedits.getSpan>`\ (match, key)
+     - \-
+   * - :py:obj:`getMatchCount <pyllo.ui.editor.textedits.getMatchCount>`\ (pattern, sourceText, matchCase, matchWords, isRegex)
+     - Get the number of matches for the searched text.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Position2 <pyllo.ui.editor.textedits.Position2>`
+     - \-
+   * - :py:obj:`Bound <pyllo.ui.editor.textedits.Bound>`
+     - \-
+   * - :py:obj:`BoundF <pyllo.ui.editor.textedits.BoundF>`
+     - \-
+   * - :py:obj:`PositionType <pyllo.ui.editor.textedits.PositionType>`
+     - \-
+   * - :py:obj:`EOL_CHARS <pyllo.ui.editor.textedits.EOL_CHARS>`
+     - \-
+   * - :py:obj:`UNICODE_PARAGRAPH_SEPARATOR <pyllo.ui.editor.textedits.UNICODE_PARAGRAPH_SEPARATOR>`
+     - \-
+   * - :py:obj:`UNICODE_LINE_SEPARATOR <pyllo.ui.editor.textedits.UNICODE_LINE_SEPARATOR>`
+     - \-
+   * - :py:obj:`UNICODE_NEXTLINE_CHAR <pyllo.ui.editor.textedits.UNICODE_NEXTLINE_CHAR>`
+     - \-
+
+
+.. py:data:: Position2
+
+   
+
+.. py:data:: Bound
+
+   
+
+.. py:data:: BoundF
+
+   
+
+.. py:data:: PositionType
+
+   
+
+.. py:data:: EOL_CHARS
+   :value: (('\r\n', 'nt'), ('\n', 'posix'), ('\r', 'mac'))
+
+   
+
+.. py:data:: UNICODE_PARAGRAPH_SEPARATOR
+   :value: '\u2029'
+
+   
+
+.. py:data:: UNICODE_LINE_SEPARATOR
+   :value: '\u2028'
+
+   
+
+.. py:data:: UNICODE_NEXTLINE_CHAR
+   :value: '\x85'
+
+   
+
+.. py:function:: getEolChars(text) -> str
+
+   Get text EOL characters.
+
+   If None is found, return the eol based on the operatin system.
+
+
+.. py:function:: getSpan(match: re.Match, key=None)
+
+
+.. py:function:: getMatchCount(pattern: str, sourceText: str, matchCase=False, matchWords=False, isRegex=False)
+
+   Get the number of matches for the searched text.
+
+
+.. py:class:: TextCursor
+
+   Bases: :py:obj:`qtpy.QtGui.QTextCursor`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`createList <pyllo.ui.editor.textedits.TextCursor.createList>`\ (\*__args)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`insertText <pyllo.ui.editor.textedits.TextCursor.insertText>`\ (p_str, QTextCharFormat)
+        - \-
+      * - :py:obj:`insertTable <pyllo.ui.editor.textedits.TextCursor.insertTable>`\ (p_int, p_int_1, QTextTableFormat)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`insertImage <pyllo.ui.editor.textedits.TextCursor.insertImage>`\ (\*__args)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`insertHtml <pyllo.ui.editor.textedits.TextCursor.insertHtml>`\ (p_str)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`insertList <pyllo.ui.editor.textedits.TextCursor.insertList>`\ (\*__args)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`insertFragment <pyllo.ui.editor.textedits.TextCursor.insertFragment>`\ (QTextDocumentFragment)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`insertFrame <pyllo.ui.editor.textedits.TextCursor.insertFrame>`\ (QTextFrameFormat)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`insertBlock <pyllo.ui.editor.textedits.TextCursor.insertBlock>`\ (QTextBlockFormat, QTextCharFormat)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`removeSelectedText <pyllo.ui.editor.textedits.TextCursor.removeSelectedText>`\ ()
+        - \-
+      * - :py:obj:`deleteChar <pyllo.ui.editor.textedits.TextCursor.deleteChar>`\ ()
+        - \-
+      * - :py:obj:`deletePreviousChar <pyllo.ui.editor.textedits.TextCursor.deletePreviousChar>`\ ()
+        - \-
+      * - :py:obj:`atStart <pyllo.ui.editor.textedits.TextCursor.atStart>`\ ()
+        - \-
+      * - :py:obj:`atEnd <pyllo.ui.editor.textedits.TextCursor.atEnd>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: createList(*__args)
+      :abstractmethod:
+
+
+   .. py:method:: insertText(p_str, QTextCharFormat=None)
+
+
+   .. py:method:: insertTable(p_int, p_int_1, QTextTableFormat=None)
+      :abstractmethod:
+
+
+   .. py:method:: insertImage(*__args)
+      :abstractmethod:
+
+
+   .. py:method:: insertHtml(p_str)
+      :abstractmethod:
+
+
+   .. py:method:: insertList(*__args)
+      :abstractmethod:
+
+
+   .. py:method:: insertFragment(QTextDocumentFragment)
+      :abstractmethod:
+
+
+   .. py:method:: insertFrame(QTextFrameFormat)
+      :abstractmethod:
+
+
+   .. py:method:: insertBlock(QTextBlockFormat=None, QTextCharFormat=None)
+      :abstractmethod:
+
+
+   .. py:method:: removeSelectedText()
+
+
+   .. py:method:: deleteChar()
+
+
+   .. py:method:: deletePreviousChar()
+
+
+   .. py:method:: atStart()
+
+
+   .. py:method:: atEnd()
+
+
+
+
+
+.. py:class:: BaseEditMixin(*args, **kwargs)
+
+   Bases: :py:obj:`pyllo.ui.api.IMixin`
+
+   Base edit mixin enhance editor with a lot of features.
+
+   ..    .. .. py:class:: EditType
+
+      Bases: :py:obj:`enum.Enum`
+
+      Generic enumeration.
+
+      Derive from this class to define new enumerations.
+
+      ..    ..    ..    .. .. py:attribute:: Insert
+         :value: 1
+
+         
+
+      ..    .. .. py:attribute:: Remove
+         :value: 2
+
+         
+
+      .. 
+      .. rubric:: Overview
+
+      
+      .. list-table:: Attributes
+         :header-rows: 0
+         :widths: auto
+         :class: summarytable
+
+         * - :py:obj:`Insert <pyllo.ui.editor.textedits.BaseEditMixin.EditType.Insert>`
+           - \-
+         * - :py:obj:`Remove <pyllo.ui.editor.textedits.BaseEditMixin.EditType.Remove>`
+           - \-
+
+
+
+
+
+      .. rubric:: Attributes
+      .. py:attribute:: Insert
+         :value: 1
+
+         
+
+      .. py:attribute:: Remove
+         :value: 2
+
+         
+
+
+
+
+
+
+   ..    .. .. py:class:: Operation(type_: EditType, text: str, start: Position2, end: Position2)
+
+      ..    ..    .. 
+
+
+   ..    ..    ..    .. .. py:attribute:: sigLineSeparatorChanged
+
+      Line separator changed to
+
+
+   ..    .. .. py:attribute:: sigTextChangedIn1Operation
+
+      Emit when selection text was inserted.
+      Signal: Text start position(2D) and end position(2D)
+
+      Parameters:
+          List[Operation]
+
+      .. Notice:
+          Only text inserted by calling method will trigger this signal.
+          text that been inserted by QTextCursor will not trigger
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigLineSeparatorChanged <pyllo.ui.editor.textedits.BaseEditMixin.sigLineSeparatorChanged>`
+        - Line separator changed to
+      * - :py:obj:`sigTextChangedIn1Operation <pyllo.ui.editor.textedits.BaseEditMixin.sigTextChangedIn1Operation>`
+        - Emit when selection text was inserted.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`maskOutQtApi <pyllo.ui.editor.textedits.BaseEditMixin.maskOutQtApi>`\ ()
+        - \-
+      * - :py:obj:`checkCompatibility <pyllo.ui.editor.textedits.BaseEditMixin.checkCompatibility>`\ (targetObject)
+        - :summarylabel:`static` check compatibility
+      * - :py:obj:`contentMarginHint <pyllo.ui.editor.textedits.BaseEditMixin.contentMarginHint>`\ ()
+        - :summarylabel:`abc` Add offset to a coordinates map from document position to
+      * - :py:obj:`baseClass <pyllo.ui.editor.textedits.BaseEditMixin.baseClass>`\ ()
+        - \-
+      * - :py:obj:`getGlobalCoordinates <pyllo.ui.editor.textedits.BaseEditMixin.getGlobalCoordinates>`\ (arg1)
+        - Calculate a global coordinates position `QPoint(x, y)`, for a given
+      * - :py:obj:`setLineSeparator <pyllo.ui.editor.textedits.BaseEditMixin.setLineSeparator>`\ (linesep)
+        - Set widget end-of-line (EOL) characters from text (analyzes text)
+      * - :py:obj:`getLineSeparator <pyllo.ui.editor.textedits.BaseEditMixin.getLineSeparator>`\ ()
+        - Return line separator based on current EOL mode
+      * - :py:obj:`getCursor <pyllo.ui.editor.textedits.BaseEditMixin.getCursor>`\ (arg1, \*None, anchor)
+        - Parameters
+      * - :py:obj:`getCursorByBlockNumber <pyllo.ui.editor.textedits.BaseEditMixin.getCursorByBlockNumber>`\ (blockno)
+        - Convenient method
+      * - :py:obj:`getSelection <pyllo.ui.editor.textedits.BaseEditMixin.getSelection>`\ (arg1, arg2, \*None, anchor1, anchor2)
+        - Parameters
+      * - :py:obj:`getCoordinates <pyllo.ui.editor.textedits.BaseEditMixin.getCoordinates>`\ (arg1, \*None, anchor)
+        - Parameters
+      * - :py:obj:`isPointInsideWordRect <pyllo.ui.editor.textedits.BaseEditMixin.isPointInsideWordRect>`\ (coordinates)
+        - Check if the mouse is within the rect of the cursor current word.
+      * - :py:obj:`getWordStartCoordinates <pyllo.ui.editor.textedits.BaseEditMixin.getWordStartCoordinates>`\ (arg1)
+        - Find start coordinates (lower bottom) of a word being hovered by mouse.
+      * - :py:obj:`isOnFirstBlock <pyllo.ui.editor.textedits.BaseEditMixin.isOnFirstBlock>`\ (arg1)
+        - Return True if cursor is on the first line
+      * - :py:obj:`isOnLastLine <pyllo.ui.editor.textedits.BaseEditMixin.isOnLastLine>`\ (arg1)
+        - Return True if cursor is on the last line
+      * - :py:obj:`isAtEnd <pyllo.ui.editor.textedits.BaseEditMixin.isAtEnd>`\ (arg1)
+        - Return True if cursor is at the end of the text
+      * - :py:obj:`isAtStart <pyllo.ui.editor.textedits.BaseEditMixin.isAtStart>`\ (arg1)
+        - \-
+      * - :py:obj:`toPlainTextWithLineSeparator <pyllo.ui.editor.textedits.BaseEditMixin.toPlainTextWithLineSeparator>`\ ()
+        - Same as toPlainText but with defined line separator
+      * - :py:obj:`getLine <pyllo.ui.editor.textedits.BaseEditMixin.getLine>`\ (blockno)
+        - Return currrent line's text.
+      * - :py:obj:`getText <pyllo.ui.editor.textedits.BaseEditMixin.getText>`\ (arg1, arg2, \*None, anchor1, anchor2, removeNewlines)
+        - Returns text between *positionFrom* and *positionTo*.
+      * - :py:obj:`getCharacter <pyllo.ui.editor.textedits.BaseEditMixin.getCharacter>`\ (arg1, \*None, anchor, offset)
+        - Return character at *position* with the given offset.
+      * - :py:obj:`deletePreviousChar <pyllo.ui.editor.textedits.BaseEditMixin.deletePreviousChar>`\ (arg1, emitChange)
+        - \-
+      * - :py:obj:`setText <pyllo.ui.editor.textedits.BaseEditMixin.setText>`\ (text, emitChange)
+        - Set text operation
+      * - :py:obj:`insertText <pyllo.ui.editor.textedits.BaseEditMixin.insertText>`\ (text, arg1, \*None, anchor, format, emitChange)
+        - Insert text at cursor position
+      * - :py:obj:`removeText <pyllo.ui.editor.textedits.BaseEditMixin.removeText>`\ (arg1, arg2, \*None, anchor1, anchor2, emitChange)
+        - \-
+      * - :py:obj:`removeSelectedText <pyllo.ui.editor.textedits.BaseEditMixin.removeSelectedText>`\ (cursor, emitChange)
+        - \-
+      * - :py:obj:`replaceText <pyllo.ui.editor.textedits.BaseEditMixin.replaceText>`\ (text, arg1, arg2, \*None, anchor1, anchor2, pattern, emitChange)
+        - \-
+      * - :py:obj:`replaceTextAll <pyllo.ui.editor.textedits.BaseEditMixin.replaceTextAll>`\ (pattern, text, matchCase, matchWords, isRegex, emitChange)
+        - Replace text all occurrence in document
+      * - :py:obj:`findText <pyllo.ui.editor.textedits.BaseEditMixin.findText>`\ (text, textChanged, forward, matchCase, matchWords, isRegex)
+        - Find text and move cursor to found text, and return True if found.
+      * - :py:obj:`findOccurrences <pyllo.ui.editor.textedits.BaseEditMixin.findOccurrences>`\ (text, arg1, arg2, matchCase, matchWords, isRegex, \*None, anchor1, anchor2, limits)
+        - \-
+      * - :py:obj:`getWordAt <pyllo.ui.editor.textedits.BaseEditMixin.getWordAt>`\ (coordinates)
+        - Return word at *coordinates* (QPoint).
+      * - :py:obj:`getTabStopWidthSpaces <pyllo.ui.editor.textedits.BaseEditMixin.getTabStopWidthSpaces>`\ ()
+        - \-
+      * - :py:obj:`setTabStopWidthSpace <pyllo.ui.editor.textedits.BaseEditMixin.setTabStopWidthSpace>`\ (width)
+        - \-
+      * - :py:obj:`getTextIndentation <pyllo.ui.editor.textedits.BaseEditMixin.getTextIndentation>`\ (text)
+        - Get indentation for given text.
+      * - :py:obj:`getCursorIndentation <pyllo.ui.editor.textedits.BaseEditMixin.getCursorIndentation>`\ (cursor)
+        - Get indentation for given cursor
+      * - :py:obj:`getLineIndentation <pyllo.ui.editor.textedits.BaseEditMixin.getLineIndentation>`\ (blockno)
+        - Return line indentation (character number).
+      * - :py:obj:`getSelectionBoundOfBlocks <pyllo.ui.editor.textedits.BaseEditMixin.getSelectionBoundOfBlocks>`\ (cursor)
+        - Return selection bounds (block numbers).
+      * - :py:obj:`getSelectionBoundOfPosition2 <pyllo.ui.editor.textedits.BaseEditMixin.getSelectionBoundOfPosition2>`\ (cursor)
+        - Return selection start and end (line, column) positions.
+      * - :py:obj:`isTextSelected <pyllo.ui.editor.textedits.BaseEditMixin.isTextSelected>`\ (cursor)
+        - Returns True if some text is selected.
+      * - :py:obj:`getSelectedText <pyllo.ui.editor.textedits.BaseEditMixin.getSelectedText>`\ (cursor)
+        - \-
+      * - :py:obj:`getMatchCount <pyllo.ui.editor.textedits.BaseEditMixin.getMatchCount>`\ (pattern, matchCase, matchWords, isRegex, toCursor)
+        - Get the number of matches for the searched text.
+      * - :py:obj:`getBoundOfVisibleBlocks <pyllo.ui.editor.textedits.BaseEditMixin.getBoundOfVisibleBlocks>`\ ()
+        - Get the first and last visible block numbers.
+      * - :py:obj:`getVisibleBlocks <pyllo.ui.editor.textedits.BaseEditMixin.getVisibleBlocks>`\ ()
+        - Returns descending visible blocks in two elements tuple
+
+
+   .. rubric:: Member Classes
+   .. py:class:: EditType
+
+      Bases: :py:obj:`enum.Enum`
+
+      Generic enumeration.
+
+      Derive from this class to define new enumerations.
+
+      ..    ..    ..    .. .. py:attribute:: Insert
+         :value: 1
+
+         
+
+      ..    .. .. py:attribute:: Remove
+         :value: 2
+
+         
+
+      .. 
+      .. rubric:: Overview
+
+      
+      .. list-table:: Attributes
+         :header-rows: 0
+         :widths: auto
+         :class: summarytable
+
+         * - :py:obj:`Insert <pyllo.ui.editor.textedits.BaseEditMixin.EditType.Insert>`
+           - \-
+         * - :py:obj:`Remove <pyllo.ui.editor.textedits.BaseEditMixin.EditType.Remove>`
+           - \-
+
+
+
+
+
+      .. rubric:: Attributes
+      .. py:attribute:: Insert
+         :value: 1
+
+         
+
+      .. py:attribute:: Remove
+         :value: 2
+
+         
+
+
+
+
+
+
+   .. py:class:: Operation(type_: EditType, text: str, start: Position2, end: Position2)
+
+      ..    ..    .. 
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigLineSeparatorChanged
+
+      Line separator changed to
+
+
+   .. py:attribute:: sigTextChangedIn1Operation
+
+      Emit when selection text was inserted.
+      Signal: Text start position(2D) and end position(2D)
+
+      Parameters:
+          List[Operation]
+
+      .. Notice:
+          Only text inserted by calling method will trigger this signal.
+          text that been inserted by QTextCursor will not trigger
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: maskOutQtApi()
+
+
+   .. py:method:: checkCompatibility(targetObject) -> bool
+      :staticmethod:
+
+      check compatibility
+
+
+   .. py:method:: contentMarginHint() -> (int, int, int, int)
+      :abstractmethod:
+
+      Add offset to a coordinates map from document position to
+      global position, e.g. to take into account the editor panels.
+
+
+   .. py:method:: baseClass() -> Union[Type[qtpy.QtWidgets.QTextEdit], Type[qtpy.QtWidgets.QPlainTextEdit]]
+
+
+   .. py:method:: getGlobalCoordinates(arg1: Union[TextCursor, int, qtpy.QtCore.QPoint])
+
+      Calculate a global coordinates position `QPoint(x, y)`, for a given
+      line number, cursor, or local coordinates.
+
+
+   .. py:method:: setLineSeparator(linesep: str)
+
+              Set widget end-of-line (EOL) characters from text (analyzes text)
+
+              Parameters
+              ----------
+              linesep: str
+                  Line separator should be one of "
+      ", "
+      ", "
+      ".
+
+              Returns
+              -------
+              None
+
+              .. unittest: test_editor.test_editor_setLineSeparator
+              
+
+
+   .. py:method:: getLineSeparator()
+
+      Return line separator based on current EOL mode
+
+      .. unittest: test_editor.test_editor_getLineSeparator
+
+
+   .. py:method:: getCursor(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, *, anchor: TextCursor = None) -> TextCursor
+
+      Parameters
+      ----------
+      arg1:
+          Position / coordinates / line column Position2 / Cursor
+      anchor:
+          TextCursor.MoveOperation that cursor position respect to.
+
+      Returns
+      -------
+      TextCursor
+
+      .. unittest: test_editor.test_editor_getCursor
+
+
+   .. py:method:: getCursorByBlockNumber(blockno: int) -> TextCursor
+
+      Convenient method
+
+
+   .. py:method:: getSelection(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, arg2: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, *, anchor1: TextCursor = None, anchor2: TextCursor = None) -> TextCursor
+
+      Parameters
+      ----------
+      arg1:
+          From cursor Position / coordinates / line column Position2 / Cursor
+      arg2:
+          To cursor Position / coordinates / line column Position2 / Cursor
+      anchor1:
+          TextCursor.MoveOperation that from cursor position respect to.
+      anchor2:
+          TextCursor.MoveOperation that to cursor position respect to.
+
+
+
+   .. py:method:: getCoordinates(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, *, anchor: TextCursor = None) -> qtpy.QtCore.QPoint
+
+      Parameters
+      ----------
+      arg1:
+          Position / coordinates / line column Position2 / Cursor
+
+      Returns
+      -------
+      coordinates: QPoint
+
+
+   .. py:method:: isPointInsideWordRect(coordinates: qtpy.QtCore.QPoint) -> bool
+
+      Check if the mouse is within the rect of the cursor current word.
+
+
+   .. py:method:: getWordStartCoordinates(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None) -> qtpy.QtCore.QPoint
+
+      Find start coordinates (lower bottom) of a word being hovered by mouse.
+
+
+   .. py:method:: isOnFirstBlock(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None) -> bool
+
+      Return True if cursor is on the first line
+
+
+   .. py:method:: isOnLastLine(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None) -> bool
+
+      Return True if cursor is on the last line
+
+
+   .. py:method:: isAtEnd(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None) -> bool
+
+      Return True if cursor is at the end of the text
+
+
+   .. py:method:: isAtStart(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None) -> bool
+
+
+   .. py:method:: toPlainTextWithLineSeparator()
+
+      Same as toPlainText but with defined line separator
+
+
+   .. py:method:: getLine(blockno: int) -> str
+
+      Return currrent line's text.
+
+
+   .. py:method:: getText(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, arg2: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, *, anchor1: TextCursor = None, anchor2: TextCursor = None, removeNewlines=False) -> str
+
+      Returns text between *positionFrom* and *positionTo*.
+
+      Positions may be integers or 'sol', 'eol', 'sof', 'eof' or 'cursor'.
+
+      Unless positionFrom='sof' and positionTo='eof' any trailing newlines
+      in the string are removed.
+      The behaviour can be overridden by setting the optional parameter
+      *removeNewlines* to False.
+
+      TODO: Evaluate if this is still a problem and if the workaround can
+            be moved closer to where the problem occurs.
+
+
+   .. py:method:: getCharacter(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, *, anchor: TextCursor = None, offset=0) -> str
+
+      Return character at *position* with the given offset.
+
+
+   .. py:method:: deletePreviousChar(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, emitChange=False) -> List[Operation]
+
+              
+
+
+   .. py:method:: setText(text: str, emitChange=False) -> List[Operation]
+
+      Set text operation
+              
+
+
+   .. py:method:: insertText(text: str, arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, *, anchor: TextCursor = None, format: qtpy.QtGui.QTextCharFormat = None, emitChange=False) -> List[Operation]
+
+      Insert text at cursor position
+
+
+   .. py:method:: removeText(arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, arg2: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, *, anchor1: TextCursor = None, anchor2: TextCursor = None, emitChange=False) -> List[Operation]
+
+
+   .. py:method:: removeSelectedText(cursor: TextCursor, emitChange=False) -> List[Operation]
+
+
+   .. py:method:: replaceText(text: str, arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, arg2: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, *, anchor1: TextCursor = None, anchor2: TextCursor = None, pattern: str = None, emitChange=False) -> List[Operation]
+
+
+   .. py:method:: replaceTextAll(pattern: str, text: str, matchCase=False, matchWords=False, isRegex=False, emitChange=False) -> List[Operation]
+
+      Replace text all occurrence in document
+
+
+   .. py:method:: findText(text: str, textChanged=False, forward=True, matchCase=False, matchWords=False, isRegex=False) -> bool
+
+      Find text and move cursor to found text, and return True if found.
+
+      Parameters
+      ----------
+      text: str
+          Text to find.
+      textChanged: bool
+          If the search text changed, we need to move cursor "backward" a bit, and then continue
+          to use normal findText routine.
+      forward: bool
+          Find forward or backward.
+      matchCase: bool
+          Find text case sensitive or not.
+      matchWords: bool
+          Whole word match or not
+      isRegex: bool
+          Indicate text is pure text or regular expression text.
+
+
+   .. py:method:: findOccurrences(text: str, arg1: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, arg2: Union[int, qtpy.QtCore.QPoint, Position2, TextCursor] = None, matchCase=False, matchWords=False, isRegex=False, *, anchor1: TextCursor = None, anchor2: TextCursor = None, limits=None) -> List[TextCursor]
+
+
+   .. py:method:: getWordAt(coordinates: qtpy.QtCore.QPoint) -> str
+
+      Return word at *coordinates* (QPoint).
+
+
+   .. py:method:: getTabStopWidthSpaces() -> int
+
+
+   .. py:method:: setTabStopWidthSpace(width: int)
+
+
+   .. py:method:: getTextIndentation(text: str) -> int
+
+      Get indentation for given text.
+
+
+   .. py:method:: getCursorIndentation(cursor: TextCursor) -> int
+
+      Get indentation for given cursor
+      Example:
+          Character | represents cursor, character _ represents blank space
+          '____|Hello World'  : getCursorIndentation returns 4
+          '___|_Hello World'  : getCursorIndentation returns 3
+          '____Hell|o World'  : getCursorIndentation returns 4
+
+
+   .. py:method:: getLineIndentation(blockno: int) -> int
+
+      Return line indentation (character number).
+
+
+   .. py:method:: getSelectionBoundOfBlocks(cursor: TextCursor = None) -> Bound
+
+      Return selection bounds (block numbers).
+
+
+   .. py:method:: getSelectionBoundOfPosition2(cursor: TextCursor = None) -> Tuple[Position2, Position2]
+
+      Return selection start and end (line, column) positions.
+
+
+   .. py:method:: isTextSelected(cursor: TextCursor = None) -> bool
+
+      Returns True if some text is selected.
+
+
+   .. py:method:: getSelectedText(cursor: TextCursor = None) -> str
+
+
+   .. py:method:: getMatchCount(pattern: str, matchCase=False, matchWords=False, isRegex=False, toCursor: TextCursor = None) -> int
+
+      Get the number of matches for the searched text.
+
+
+   .. py:method:: getBoundOfVisibleBlocks() -> Bound
+
+      Get the first and last visible block numbers.
+
+
+   .. py:method:: getVisibleBlocks() -> List[Tuple[BoundF, qtpy.QtGui.QTextBlock]]
+
+      Returns descending visible blocks in two elements tuple
+
+      Tuple data:
+      1. "Top” value of position of text block
+      2.  TextBlock
+
+
+
+
+

@@ -1,0 +1,52 @@
+:py:mod:`pyllo.tools.watchdog`
+==============================
+
+.. py:module:: pyllo.tools.watchdog
+
+.. autoapi-nested-parse::
+
+   A watchdog process for debuggee processes spawned by tests.
+
+   Interacts with the main test runner process over stdio, and keeps track of running
+   debugpy processes. If the test runner process goes down, any debugpy test processes
+   are automatically killed.
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   worker/index.rst
+
+
+Package Contents
+----------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`start <pyllo.tools.watchdog.start>`\ ()
+     - \-
+   * - :py:obj:`register_spawn <pyllo.tools.watchdog.register_spawn>`\ (pid, name)
+     - \-
+   * - :py:obj:`unregister_spawn <pyllo.tools.watchdog.unregister_spawn>`\ (pid, name)
+     - \-
+
+
+
+.. py:function:: start()
+
+
+.. py:function:: register_spawn(pid, name)
+
+
+.. py:function:: unregister_spawn(pid, name)
+
+

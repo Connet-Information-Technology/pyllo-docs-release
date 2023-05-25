@@ -1,0 +1,90 @@
+:py:mod:`pyllo.examples.example_edit`
+=====================================
+
+.. py:module:: pyllo.examples.example_edit
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ConsoleWidget <pyllo.examples.example_edit.ConsoleWidget>`
+     - An JupyterWidget that supports rich text, including lists, images, and
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`app <pyllo.examples.example_edit.app>`
+     - \-
+
+
+.. py:class:: ConsoleWidget(customBanner=None, *args, **kwargs)
+
+   Bases: :py:obj:`qtconsole.rich_jupyter_widget.RichJupyterWidget`
+
+   An JupyterWidget that supports rich text, including lists, images, and
+   tables. Note that raw performance will be reduced compared to the plain
+   text version.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`push_vars <pyllo.examples.example_edit.ConsoleWidget.push_vars>`\ (variableDict)
+        - Given a dictionary containing name / value pairs, push those variables
+      * - :py:obj:`clear <pyllo.examples.example_edit.ConsoleWidget.clear>`\ ()
+        - Clears the terminal
+      * - :py:obj:`print_text <pyllo.examples.example_edit.ConsoleWidget.print_text>`\ (text)
+        - Prints some plain text to the console
+      * - :py:obj:`execute_command <pyllo.examples.example_edit.ConsoleWidget.execute_command>`\ (command)
+        - Execute a command in the frame of the console widget
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: push_vars(variableDict)
+
+      Given a dictionary containing name / value pairs, push those variables
+      to the Jupyter console widget
+
+
+   .. py:method:: clear()
+
+      Clears the terminal
+
+
+   .. py:method:: print_text(text)
+
+      Prints some plain text to the console
+
+
+   .. py:method:: execute_command(command)
+
+      Execute a command in the frame of the console widget
+
+
+
+
+
+.. py:data:: app
+
+   
+

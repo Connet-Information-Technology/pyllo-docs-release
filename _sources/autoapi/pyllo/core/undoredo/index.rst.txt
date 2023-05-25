@@ -1,0 +1,326 @@
+:py:mod:`pyllo.core.undoredo`
+=============================
+
+.. py:module:: pyllo.core.undoredo
+
+.. autoapi-nested-parse::
+
+   Module undoredo provides undo/redo functionality for arbitrary classes.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`UndoMixin <pyllo.core.undoredo.UndoMixin>`
+     - Class should subclass from this mixin to using redo undo.
+   * - :py:obj:`UndoManager <pyllo.core.undoredo.UndoManager>`
+     - class UndoManager manages a stack of Command objects for the purpose of
+   * - :py:obj:`Command <pyllo.core.undoredo.Command>`
+     - A Command wraps a method call in an object which can do() and undo(). It's
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`undoable <pyllo.core.undoredo.undoable>`\ (method)
+     - Decorator undoable allows an instance method to be undone.
+
+
+
+.. py:class:: UndoMixin
+
+   Bases: :py:obj:`pyllo.core.api.IUndoable`
+
+   Class should subclass from this mixin to using redo undo.
+   Any class that mixin this Undo feature class must use @undoable decorator
+   to decorate method that needs to add undo redo feature. And implement
+   :func:`checkpoint` and :func:`restore`.
+
+    The object must support methods .checkpoint() and .restore(obj).
+       - checkpoint() returns a checkpoint of the object
+       - restore(obj) restores the calling object to the state of the passed
+           object
+
+   Example:
+       >>> import copy
+       >>> class Foo(UndoMixin):
+       ...     def __init__(self):
+       ...         super().__init__() # don't forget to init super
+       ...         self.value = None
+       ...
+       ...     @undoable
+       ...     def setValue(self, value):
+       ...         self.value = value
+       ...
+       ...     def checkpoint(self):
+       ...         return copy.deepcopy(self) # python is reference assigned
+       ...
+       ...     def restore(self, obj):
+       ...         self.value = obj.value
+       >>> foo = Foo()
+       >>> foo.setValue(5)
+       >>> foo.value
+       5
+       >>> foo.undo()
+       >>> foo.value
+       >>> foo.redo()
+       >>> foo.value
+       5
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`isRedoAvailable <pyllo.core.undoredo.UndoMixin.isRedoAvailable>`\ ()
+        - Return ture if redo is availbale.
+      * - :py:obj:`isUndoAvailable <pyllo.core.undoredo.UndoMixin.isUndoAvailable>`\ ()
+        - Return ture if undo is availbale.
+      * - :py:obj:`redo <pyllo.core.undoredo.UndoMixin.redo>`\ ()
+        - Redo.
+      * - :py:obj:`undo <pyllo.core.undoredo.UndoMixin.undo>`\ ()
+        - Undo.
+      * - :py:obj:`do <pyllo.core.undoredo.UndoMixin.do>`\ (command)
+        - \-
+      * - :py:obj:`clearUndo <pyllo.core.undoredo.UndoMixin.clearUndo>`\ ()
+        - Clear undo.
+      * - :py:obj:`checkpoint <pyllo.core.undoredo.UndoMixin.checkpoint>`\ ()
+        - :summarylabel:`abc` The object must support methods .checkpoint() and .restore(obj).
+      * - :py:obj:`restore <pyllo.core.undoredo.UndoMixin.restore>`\ (obj)
+        - :summarylabel:`abc` The object must support methods .checkpoint() and .restore(obj).
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: isRedoAvailable()
+
+      Return ture if redo is availbale.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: isUndoAvailable()
+
+      Return ture if undo is availbale.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: redo()
+
+      Redo.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: undo()
+
+      Undo.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: do(command: Command)
+
+
+   .. py:method:: clearUndo()
+
+      Clear undo.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: checkpoint()
+      :abstractmethod:
+
+      The object must support methods .checkpoint() and .restore(obj).
+          - checkpoint() returns a checkpoint of the object
+          - restore(obj) restores the calling object to the state of the
+              passed object
+
+
+   .. py:method:: restore(obj)
+      :abstractmethod:
+
+      The object must support methods .checkpoint() and .restore(obj).
+          - checkpoint() returns a checkpoint of the object
+          - restore(obj) restores the calling object to the state of the
+              passed object
+
+
+
+
+
+.. py:class:: UndoManager
+
+   Bases: :py:obj:`object`
+
+   class UndoManager manages a stack of Command objects for the purpose of
+   implementing undo/redo functionality.
+
+   Usage:
+       undomgr = UndoManager()
+       undomgr.do(Command(params...))
+       if undomgr.can_undo():
+           undomgr.undo()
+       if undomgr.can_redo():
+           undomgr.redo()
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`clear <pyllo.core.undoredo.UndoManager.clear>`\ ()
+        - Clear undo/redo stack
+      * - :py:obj:`do <pyllo.core.undoredo.UndoManager.do>`\ (command)
+        - Do, and make it into undo stack.
+      * - :py:obj:`canUndo <pyllo.core.undoredo.UndoManager.canUndo>`\ ()
+        - Turn if can undo.
+      * - :py:obj:`canRedo <pyllo.core.undoredo.UndoManager.canRedo>`\ ()
+        - Turn if can redo.
+      * - :py:obj:`undo <pyllo.core.undoredo.UndoManager.undo>`\ ()
+        - Undo.
+      * - :py:obj:`redo <pyllo.core.undoredo.UndoManager.redo>`\ ()
+        - Redo.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: clear()
+
+      Clear undo/redo stack
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: do(command: Command)
+
+      Do, and make it into undo stack.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: canUndo() -> bool
+
+      Turn if can undo.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: canRedo() -> bool
+
+      Turn if can redo.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: undo()
+
+      Undo.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: redo()
+
+      Redo.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: Command(obj, doMethod, *args, **kwargs)
+
+   Bases: :py:obj:`object`
+
+    A Command wraps a method call in an object which can do() and undo(). It's
+    used with UndoManager.
+
+   .. versionadded:: 1.0.0
+    
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`do <pyllo.core.undoredo.Command.do>`\ ()
+        - Set a restore point (checkpoint the object), then call the method.
+      * - :py:obj:`undo <pyllo.core.undoredo.Command.undo>`\ ()
+        - Restore the object to the restore point created during do()
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: do()
+
+      Set a restore point (checkpoint the object), then call the method.
+      :return: obj.do_method(*args)
+
+
+   .. py:method:: undo()
+
+      Restore the object to the restore point created during do()
+      :return: obj.restore(restore_point)
+
+
+
+
+
+.. py:function:: undoable(method)
+
+   Decorator undoable allows an instance method to be undone.
+
+   It does this by wrapping the method call as a Command, then calling
+   self.do() on the command.
+
+   Classes which use this decorator should implement a do() method like such:
+
+       def do(self, command):
+           return self.undomgr.do(command)
+
+   .. versionadded:: 1.0.0
+
+

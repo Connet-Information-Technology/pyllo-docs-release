@@ -1,0 +1,344 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag`
+=========================================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ScrollFlagPanel <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel>`
+     - Base class for editor extensional panels
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`textDecorationFlag <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.textDecorationFlag>`\ (decoration)
+     - This function convert decoration into flag that `ScrollFlagPanel` can use.
+
+
+
+.. py:function:: textDecorationFlag(decoration: pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration) -> Optional[Tuple[qtpy.QtGui.QColor, int]]
+
+   This function convert decoration into flag that `ScrollFlagPanel` can use.
+   And this is, of course, decoration type dependent.
+
+
+.. py:class:: ScrollFlagPanel(codeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.PanelExtension`
+
+   Base class for editor extensional panels
+
+   A panel is a editor extension and a QWidget as well.
+
+   .. note:: Use enabled to disable panel actions and setVisible to change the
+       visibility of the panel.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'scrollflag'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   ..    .. .. py:attribute:: AREA
+
+      
+
+   ..    .. .. py:attribute:: AREA_GRAVITY
+      :value: 10
+
+      
+
+   ..    .. .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: SCROLLABLE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: UPDATE_TIMEOUT
+      :value: 1000
+
+      
+
+   ..    .. .. py:attribute:: FLAGS_WIDTH
+
+      
+
+   ..    .. .. py:attribute:: FLAGS_DX
+      :value: 4
+
+      
+
+   ..    .. .. py:attribute:: FLAGS_DY
+      :value: 2
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.VERSION>`
+        - \-
+      * - :py:obj:`AREA <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.AREA>`
+        - \-
+      * - :py:obj:`AREA_GRAVITY <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.AREA_GRAVITY>`
+        - \-
+      * - :py:obj:`DYNAMIC <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.DYNAMIC>`
+        - \-
+      * - :py:obj:`SCROLLABLE <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.SCROLLABLE>`
+        - \-
+      * - :py:obj:`UPDATE_TIMEOUT <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.UPDATE_TIMEOUT>`
+        - \-
+      * - :py:obj:`FLAGS_WIDTH <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.FLAGS_WIDTH>`
+        - \-
+      * - :py:obj:`FLAGS_DX <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.FLAGS_DX>`
+        - \-
+      * - :py:obj:`FLAGS_DY <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.FLAGS_DY>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`beforeEditorVisible <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.beforeEditorVisible>`\ ()
+        - This method is called by editor extension framework just before editor is visible.
+      * - :py:obj:`sizeHint <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.sizeHint>`\ ()
+        - Return the widget size hint, overriding the Qt method.
+      * - :py:obj:`onEnabled <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.onEnabled>`\ (enabled)
+        - Called when enable state is changed
+      * - :py:obj:`updateFlags <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.updateFlags>`\ ()
+        - This function is called every time a flag is changed.
+      * - :py:obj:`paintEvent <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.paintEvent>`\ (event)
+        - Overrider Qt method.
+      * - :py:obj:`enterEvent <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.enterEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`leaveEvent <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.leaveEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`mouseMoveEvent <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.mouseMoveEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`mousePressEvent <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.mousePressEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`mouseReleaseEvent <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.mouseReleaseEvent>`\ (event)
+        - \-
+      * - :py:obj:`wheelEvent <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.wheelEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`value2position <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.value2position>`\ (y, offset)
+        - Convert value to position in pixels
+      * - :py:obj:`position2value <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.position2value>`\ (yPos)
+        - Convert position in pixels to value
+      * - :py:obj:`makeSliderRange <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.makeSliderRange>`\ (cursorPos, offset)
+        - Return the slider x and y positions and the slider width and height.
+      * - :py:obj:`getScrollbarGrooveRect <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.getScrollbarGrooveRect>`\ ()
+        - Return the area in which the slider handle may move.
+      * - :py:obj:`getScrollbarValueHeight <pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag.ScrollFlagPanel.getScrollbarValueHeight>`\ ()
+        - Return the value span height of the scrollbar
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'scrollflag'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. py:attribute:: AREA
+
+      
+
+   .. py:attribute:: AREA_GRAVITY
+      :value: 10
+
+      
+
+   .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   .. py:attribute:: SCROLLABLE
+      :value: False
+
+      
+
+   .. py:attribute:: UPDATE_TIMEOUT
+      :value: 1000
+
+      
+
+   .. py:attribute:: FLAGS_WIDTH
+
+      
+
+   .. py:attribute:: FLAGS_DX
+      :value: 4
+
+      
+
+   .. py:attribute:: FLAGS_DY
+      :value: 2
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: beforeEditorVisible()
+
+      This method is called by editor extension framework just before editor is visible.
+
+      Notes
+      -----
+      This is usually used for cross extensions features.
+      Which by means one extension's feature is dependent to another extension's feature.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: sizeHint() -> qtpy.QtCore.QSize
+
+      Return the widget size hint, overriding the Qt method.
+
+      Notes
+      -----
+      * This size hint will define the QSize of the panel, i.e. it is
+        where its width and height are defined.
+      * If the size of your panel depends on displayed text, please
+        use the LineNumberArea one as reference on how to implement
+        this method.
+      * If the size is not dependent on displayed text, please use
+        the debugger panel as reference.
+      * If your panel is in a floating position, please use the
+        IndentationGuide one as reference.
+
+
+   .. py:method:: onEnabled(enabled)
+
+      Called when enable state is changed
+
+
+   .. py:method:: updateFlags()
+
+      This function is called every time a flag is changed.
+
+      This starts a timer to update decorations only after
+      UPDATE_TIMEOUT has passed. That avoids multiple calls to
+      _delayedUpdate in a very short amount of time.
+
+
+   .. py:method:: paintEvent(event)
+
+      Overrider Qt method.
+      Painting the scroll flag area
+
+      There is two cases:
+          - The scroll bar is moving, in which case paint all flags.
+          - The scroll bar is not moving, only paint flags corresponding
+            to visible lines.
+
+
+   .. py:method:: enterEvent(event)
+
+      Override Qt method
+
+
+   .. py:method:: leaveEvent(event)
+
+      Override Qt method
+
+
+   .. py:method:: mouseMoveEvent(event)
+
+      Override Qt method
+
+
+   .. py:method:: mousePressEvent(event)
+
+      Override Qt method
+
+
+   .. py:method:: mouseReleaseEvent(event)
+
+
+   .. py:method:: wheelEvent(event)
+
+      Override Qt method
+
+
+   .. py:method:: value2position(y: int, offset: int) -> float
+
+      Convert value to position in pixels
+
+
+   .. py:method:: position2value(yPos: float) -> int
+
+      Convert position in pixels to value
+
+
+   .. py:method:: makeSliderRange(cursorPos, offset) -> qtpy.QtCore.QRect
+
+      Return the slider x and y positions and the slider width and height.
+
+
+   .. py:method:: getScrollbarGrooveRect() -> qtpy.QtCore.QRect
+
+      Return the area in which the slider handle may move.
+
+
+   .. py:method:: getScrollbarValueHeight()
+
+      Return the value span height of the scrollbar
+
+
+
+
+

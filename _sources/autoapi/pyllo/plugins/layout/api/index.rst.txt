@@ -1,0 +1,150 @@
+:py:mod:`pyllo.plugins.layout.api`
+==================================
+
+.. py:module:: pyllo.plugins.layout.api
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Layout <pyllo.plugins.layout.api.Layout>`
+     - A Pyllo layout stub class to extend pyllo layouts to layout your own plugin windows.
+
+
+
+
+.. py:class:: Layout
+
+   A Pyllo layout stub class to extend pyllo layouts to layout your own plugin windows.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: ''
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.layout.api.Layout.NAME>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.layout.api.Layout.setup>`\ ()
+        - :summarylabel:`abc` Setup layout here
+      * - :py:obj:`getDockablePlugins <pyllo.plugins.layout.api.Layout.getDockablePlugins>`\ ()
+        - Returns dockable plugins within pyllo
+      * - :py:obj:`getMainWindow <pyllo.plugins.layout.api.Layout.getMainWindow>`\ ()
+        - Return main window instance
+      * - :py:obj:`getPlugin <pyllo.plugins.layout.api.Layout.getPlugin>`\ (pluginName)
+        - Return a plugin instance by providing the plugin's NAME.
+      * - :py:obj:`isPluginAvailable <pyllo.plugins.layout.api.Layout.isPluginAvailable>`\ (pluginName)
+        - Determine if a given plugin is available.
+      * - :py:obj:`setWindowMaximized <pyllo.plugins.layout.api.Layout.setWindowMaximized>`\ (value)
+        - Set main window to maximimum and cover desktop.
+      * - :py:obj:`setFullscreen <pyllo.plugins.layout.api.Layout.setFullscreen>`\ (value)
+        - Set main window to fullscreen and raise to top.
+      * - :py:obj:`splitPluginsVertical <pyllo.plugins.layout.api.Layout.splitPluginsVertical>`\ (first, second)
+        - Split plugin dockwidgets vertically
+      * - :py:obj:`splitPluginsHorizontal <pyllo.plugins.layout.api.Layout.splitPluginsHorizontal>`\ (first, second)
+        - Split plugin dockwidgets horizontally
+      * - :py:obj:`resizePluginsVertical <pyllo.plugins.layout.api.Layout.resizePluginsVertical>`\ (plugins, sizes)
+        - Resize plugin dockwidgets vertically
+      * - :py:obj:`resizePluginsHorizontal <pyllo.plugins.layout.api.Layout.resizePluginsHorizontal>`\ (plugins, sizes)
+        - Resize plugin dockwidgets horizontally
+      * - :py:obj:`tabifyPlugins <pyllo.plugins.layout.api.Layout.tabifyPlugins>`\ (first, second)
+        - Tabify plugin dock widget.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: ''
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+      :abstractmethod:
+
+      Setup layout here
+
+
+   .. py:method:: getDockablePlugins()
+
+      Returns dockable plugins within pyllo
+
+
+   .. py:method:: getMainWindow()
+
+      Return main window instance
+
+
+   .. py:method:: getPlugin(pluginName)
+
+      Return a plugin instance by providing the plugin's NAME.
+
+
+   .. py:method:: isPluginAvailable(pluginName)
+
+      Determine if a given plugin is available.
+
+
+   .. py:method:: setWindowMaximized(value=True)
+
+      Set main window to maximimum and cover desktop.
+
+
+   .. py:method:: setFullscreen(value=True)
+
+      Set main window to fullscreen and raise to top.
+      (no destkop toolbar can be seen)
+
+
+   .. py:method:: splitPluginsVertical(first, second)
+
+      Split plugin dockwidgets vertically
+
+
+   .. py:method:: splitPluginsHorizontal(first, second)
+
+      Split plugin dockwidgets horizontally
+
+
+   .. py:method:: resizePluginsVertical(plugins, sizes)
+
+      Resize plugin dockwidgets vertically
+
+
+   .. py:method:: resizePluginsHorizontal(plugins, sizes)
+
+      Resize plugin dockwidgets horizontally
+
+
+   .. py:method:: tabifyPlugins(first, second)
+
+      Tabify plugin dock widget.
+
+
+
+
+

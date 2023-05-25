@@ -1,0 +1,50 @@
+:py:mod:`pyllo.tools.binaryornot.check`
+=======================================
+
+.. py:module:: pyllo.tools.binaryornot.check
+
+.. autoapi-nested-parse::
+
+   binaryornot.check
+   -----------------
+
+   Main code for checking if a file is binary or text.
+
+   Adapted from binaryornot/check.py of
+   `BinaryOrNot <https://github.com/audreyr/binaryornot>`_.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`isBinary <pyllo.tools.binaryornot.check.isBinary>`\ (filename)
+     - :param filename: File to check.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.tools.binaryornot.check.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:function:: isBinary(filename)
+
+   :param filename: File to check.
+   :returns: True if it's a binary file, otherwise False.
+
+

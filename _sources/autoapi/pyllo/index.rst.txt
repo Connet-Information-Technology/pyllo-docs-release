@@ -1,0 +1,331 @@
+:py:mod:`pyllo`
+===============
+
+.. py:module:: pyllo
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   config/index.rst
+   core/index.rst
+   examples/index.rst
+   plugins/index.rst
+   resources/index.rst
+   tools/index.rst
+   ui/index.rst
+   utils/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   about/index.rst
+   bootstrap/index.rst
+   main/index.rst
+   setup/index.rst
+
+
+Package Contents
+----------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Plugins <pyllo.Plugins>`
+     - Convenience class for accessing Pyllo internal plugins.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`config <pyllo.config>`
+     - \-
+   * - :py:obj:`MAC_APP_NAME <pyllo.MAC_APP_NAME>`
+     - \-
+
+
+.. py:data:: config
+
+   
+
+.. py:data:: MAC_APP_NAME
+
+   
+
+.. py:class:: Plugins
+
+   Convenience class for accessing Pyllo internal plugins.
+
+   ..    ..    ..    .. .. py:attribute:: Application
+      :value: 'application'
+
+      
+
+   ..    .. .. py:attribute:: Breakpoints
+      :value: 'breakpoints'
+
+      
+
+   ..    .. .. py:attribute:: CodeEditorV2
+      :value: 'codeeditorv2'
+
+      
+
+   ..    .. .. py:attribute:: Completions
+      :value: 'completions'
+
+      
+
+   ..    .. .. py:attribute:: Debug
+      :value: 'debug'
+
+      
+
+   ..    .. .. py:attribute:: LanguageServer
+      :value: 'languageserver'
+
+      
+
+   ..    .. .. py:attribute:: EditorStack
+      :value: 'editorstack'
+
+      
+
+   ..    .. .. py:attribute:: Explorer
+      :value: 'explorer'
+
+      
+
+   ..    .. .. py:attribute:: IPythonConsole
+      :value: 'ipythonconsole'
+
+      
+
+   ..    .. .. py:attribute:: Layout
+      :value: 'layout'
+
+      
+
+   ..    .. .. py:attribute:: MainMenu
+      :value: 'mainmenu'
+
+      
+
+   ..    .. .. py:attribute:: OutlineExplorer
+      :value: 'outline_explorer'
+
+      
+
+   ..    .. .. py:attribute:: Output
+      :value: 'output'
+
+      
+
+   ..    .. .. py:attribute:: Preferences
+      :value: 'preferences'
+
+      
+
+   ..    .. .. py:attribute:: Run
+      :value: 'run'
+
+      
+
+   ..    .. .. py:attribute:: StatusBar
+      :value: 'statusbar'
+
+      
+
+   ..    .. .. py:attribute:: Terminal
+      :value: 'terminal'
+
+      
+
+   ..    .. .. py:attribute:: Toolbar
+      :value: 'toolbar'
+
+      
+
+   ..    .. .. py:attribute:: WebTerminal
+      :value: 'webterminal'
+
+      
+
+   ..    .. .. py:attribute:: WorkingDirectory
+      :value: 'workingdir'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Application <pyllo.Plugins.Application>`
+        - \-
+      * - :py:obj:`Breakpoints <pyllo.Plugins.Breakpoints>`
+        - \-
+      * - :py:obj:`CodeEditorV2 <pyllo.Plugins.CodeEditorV2>`
+        - \-
+      * - :py:obj:`Completions <pyllo.Plugins.Completions>`
+        - \-
+      * - :py:obj:`Debug <pyllo.Plugins.Debug>`
+        - \-
+      * - :py:obj:`LanguageServer <pyllo.Plugins.LanguageServer>`
+        - \-
+      * - :py:obj:`EditorStack <pyllo.Plugins.EditorStack>`
+        - \-
+      * - :py:obj:`Explorer <pyllo.Plugins.Explorer>`
+        - \-
+      * - :py:obj:`IPythonConsole <pyllo.Plugins.IPythonConsole>`
+        - \-
+      * - :py:obj:`Layout <pyllo.Plugins.Layout>`
+        - \-
+      * - :py:obj:`MainMenu <pyllo.Plugins.MainMenu>`
+        - \-
+      * - :py:obj:`OutlineExplorer <pyllo.Plugins.OutlineExplorer>`
+        - \-
+      * - :py:obj:`Output <pyllo.Plugins.Output>`
+        - \-
+      * - :py:obj:`Preferences <pyllo.Plugins.Preferences>`
+        - \-
+      * - :py:obj:`Run <pyllo.Plugins.Run>`
+        - \-
+      * - :py:obj:`StatusBar <pyllo.Plugins.StatusBar>`
+        - \-
+      * - :py:obj:`Terminal <pyllo.Plugins.Terminal>`
+        - \-
+      * - :py:obj:`Toolbar <pyllo.Plugins.Toolbar>`
+        - \-
+      * - :py:obj:`WebTerminal <pyllo.Plugins.WebTerminal>`
+        - \-
+      * - :py:obj:`WorkingDirectory <pyllo.Plugins.WorkingDirectory>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Application
+      :value: 'application'
+
+      
+
+   .. py:attribute:: Breakpoints
+      :value: 'breakpoints'
+
+      
+
+   .. py:attribute:: CodeEditorV2
+      :value: 'codeeditorv2'
+
+      
+
+   .. py:attribute:: Completions
+      :value: 'completions'
+
+      
+
+   .. py:attribute:: Debug
+      :value: 'debug'
+
+      
+
+   .. py:attribute:: LanguageServer
+      :value: 'languageserver'
+
+      
+
+   .. py:attribute:: EditorStack
+      :value: 'editorstack'
+
+      
+
+   .. py:attribute:: Explorer
+      :value: 'explorer'
+
+      
+
+   .. py:attribute:: IPythonConsole
+      :value: 'ipythonconsole'
+
+      
+
+   .. py:attribute:: Layout
+      :value: 'layout'
+
+      
+
+   .. py:attribute:: MainMenu
+      :value: 'mainmenu'
+
+      
+
+   .. py:attribute:: OutlineExplorer
+      :value: 'outline_explorer'
+
+      
+
+   .. py:attribute:: Output
+      :value: 'output'
+
+      
+
+   .. py:attribute:: Preferences
+      :value: 'preferences'
+
+      
+
+   .. py:attribute:: Run
+      :value: 'run'
+
+      
+
+   .. py:attribute:: StatusBar
+      :value: 'statusbar'
+
+      
+
+   .. py:attribute:: Terminal
+      :value: 'terminal'
+
+      
+
+   .. py:attribute:: Toolbar
+      :value: 'toolbar'
+
+      
+
+   .. py:attribute:: WebTerminal
+      :value: 'webterminal'
+
+      
+
+   .. py:attribute:: WorkingDirectory
+      :value: 'workingdir'
+
+      
+
+
+
+
+
+

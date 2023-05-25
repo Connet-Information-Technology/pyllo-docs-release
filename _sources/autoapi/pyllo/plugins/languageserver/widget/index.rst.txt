@@ -1,0 +1,15 @@
+:py:mod:`pyllo.plugins.languageserver.widget`
+=============================================
+
+.. py:module:: pyllo.plugins.languageserver.widget
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   completionlistwidget/index.rst
+
+

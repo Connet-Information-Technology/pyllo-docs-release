@@ -1,0 +1,28 @@
+:py:mod:`pyllo.examples.uidemo.webbrowser`
+==========================================
+
+.. py:module:: pyllo.examples.uidemo.webbrowser
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`WebBrowserDemo <pyllo.examples.uidemo.webbrowser.WebBrowserDemo>`
+     - \-
+
+
+
+
+.. py:class:: WebBrowserDemo(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QScrollArea`
+
+   ..    ..    .. 
+
+

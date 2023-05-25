@@ -1,0 +1,80 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.figurebrowser`
+============================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.figurebrowser
+
+.. autoapi-nested-parse::
+
+   Widget that handles communications between the IPython Console and
+   the Plots plugin
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`FigureBrowserWidget <pyllo.plugins.ipythonconsole.widgets.figurebrowser.FigureBrowserWidget>`
+     - Widget with the necessary attributes and methods to intercept the figures
+
+
+
+
+.. py:class:: FigureBrowserWidget(*args, **kw)
+
+   Bases: :py:obj:`qtconsole.rich_jupyter_widget.RichJupyterWidget`
+
+   Widget with the necessary attributes and methods to intercept the figures
+   sent by the kernel to the IPython Console and send it to the plots plugin.
+   This widget can also block the plotting of inline figures in the IPython
+   Console so that figures are only plotted in the plots plugin.
+
+   ..    ..    ..    .. .. py:attribute:: figurebrowser
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`figurebrowser <pyllo.plugins.ipythonconsole.widgets.figurebrowser.FigureBrowserWidget.figurebrowser>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`set_figurebrowser <pyllo.plugins.ipythonconsole.widgets.figurebrowser.FigureBrowserWidget.set_figurebrowser>`\ (figurebrowser)
+        - Set the namespace for the figurebrowser widget.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: figurebrowser
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: set_figurebrowser(figurebrowser)
+
+      Set the namespace for the figurebrowser widget.
+
+
+
+
+

@@ -1,0 +1,25 @@
+:py:mod:`pyllo.plugins.problems`
+================================
+
+.. py:module:: pyllo.plugins.problems
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   internal/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   api/index.rst
+   plugin/index.rst
+
+

@@ -1,0 +1,389 @@
+:py:mod:`pyllo.tools.jsonrpc2`
+==============================
+
+.. py:module:: pyllo.tools.jsonrpc2
+
+.. autoapi-nested-parse::
+
+   Json RPC 2.0 transport library.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`JsonIOStream <pyllo.tools.jsonrpc2.JsonIOStream>`
+     - Implements a JSON value stream over two byte streams (input and output).
+   * - :py:obj:`OutgoingRequest <pyllo.tools.jsonrpc2.OutgoingRequest>`
+     - Represents an outgoing request, for which it is possible to wait for a
+   * - :py:obj:`JsonRPCMessageChannel <pyllo.tools.jsonrpc2.JsonRPCMessageChannel>`
+     - Implements a JSON message channel on top of a raw JSON message stream, with
+
+
+
+
+.. py:exception:: JsonIOError(*args, **kwargs)
+
+   Bases: :py:obj:`OSError`
+
+   Indicates that a read or write operation on JsonIOStream has failed.
+
+   ..    ..    ..    .. .. py:attribute:: stream
+
+      The stream that couldn't be read or written.
+
+      Set by JsonIOStream.read_json() and JsonIOStream.write_json().
+
+      JsonMessageChannel relies on this value to decide whether a NoMoreMessages
+      instance that bubbles up to the message loop is related to that loop.
+
+
+   ..    .. .. py:attribute:: cause
+
+      The underlying exception, if any.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`stream <pyllo.tools.jsonrpc2.JsonIOError.stream>`
+        - The stream that couldn't be read or written.
+      * - :py:obj:`cause <pyllo.tools.jsonrpc2.JsonIOError.cause>`
+        - The underlying exception, if any.
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: stream
+
+      The stream that couldn't be read or written.
+
+      Set by JsonIOStream.read_json() and JsonIOStream.write_json().
+
+      JsonMessageChannel relies on this value to decide whether a NoMoreMessages
+      instance that bubbles up to the message loop is related to that loop.
+
+
+   .. py:attribute:: cause
+
+      The underlying exception, if any.
+
+
+
+
+
+
+
+.. py:exception:: NoMoreMessages(*args, **kwargs)
+
+   Bases: :py:obj:`JsonIOError`, :py:obj:`EOFError`
+
+   Indicates that there are no more messages that can be read from or written
+   to a stream.
+
+   ..    ..    .. 
+
+
+.. py:class:: JsonIOStream(reader, writer, name=None, cleanup=lambda: None)
+
+   Bases: :py:obj:`object`
+
+   Implements a JSON value stream over two byte streams (input and output).
+
+   Each value is encoded as a DAP packet, with metadata headers and a JSON payload.
+
+   ..    ..    ..    .. .. py:attribute:: MAX_BODY_SIZE
+      :value: 16777215
+
+      
+
+   ..    .. .. py:attribute:: json_decoder_factory
+
+      Used by read_json() when decoder is None.
+
+
+   ..    .. .. py:attribute:: json_encoder_factory
+
+      Used by write_json() when encoder is None.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`MAX_BODY_SIZE <pyllo.tools.jsonrpc2.JsonIOStream.MAX_BODY_SIZE>`
+        - \-
+      * - :py:obj:`json_decoder_factory <pyllo.tools.jsonrpc2.JsonIOStream.json_decoder_factory>`
+        - Used by read_json() when decoder is None.
+      * - :py:obj:`json_encoder_factory <pyllo.tools.jsonrpc2.JsonIOStream.json_encoder_factory>`
+        - Used by write_json() when encoder is None.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`from_stdio <pyllo.tools.jsonrpc2.JsonIOStream.from_stdio>`\ (name)
+        - :summarylabel:`class` Creates a new instance that receives messages from sys.stdin, and sends
+      * - :py:obj:`from_process <pyllo.tools.jsonrpc2.JsonIOStream.from_process>`\ (process, name)
+        - :summarylabel:`class` Creates a new instance that receives messages from process.stdin, and sends
+      * - :py:obj:`from_socket <pyllo.tools.jsonrpc2.JsonIOStream.from_socket>`\ (sock, name)
+        - Creates a new instance that sends and receives messages over a socket.
+      * - :py:obj:`close <pyllo.tools.jsonrpc2.JsonIOStream.close>`\ ()
+        - Closes the stream, the reader, and the writer.
+      * - :py:obj:`read_json <pyllo.tools.jsonrpc2.JsonIOStream.read_json>`\ (decoder)
+        - Read a single JSON value from reader.
+      * - :py:obj:`write_json <pyllo.tools.jsonrpc2.JsonIOStream.write_json>`\ (value, encoder)
+        - Write a single JSON value into writer.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: MAX_BODY_SIZE
+      :value: 16777215
+
+      
+
+   .. py:attribute:: json_decoder_factory
+
+      Used by read_json() when decoder is None.
+
+
+   .. py:attribute:: json_encoder_factory
+
+      Used by write_json() when encoder is None.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: from_stdio(name='stdio')
+      :classmethod:
+
+      Creates a new instance that receives messages from sys.stdin, and sends
+      them to sys.stdout.
+
+
+   .. py:method:: from_process(process, name='stdio')
+      :classmethod:
+
+      Creates a new instance that receives messages from process.stdin, and sends
+      them to process.stdout.
+
+
+   .. py:method:: from_socket(sock, name=None)
+
+      Creates a new instance that sends and receives messages over a socket.
+
+
+   .. py:method:: close()
+
+      Closes the stream, the reader, and the writer.
+
+
+   .. py:method:: read_json(decoder=None)
+
+      Read a single JSON value from reader.
+
+      Returns JSON value as parsed by decoder.decode(), or raises NoMoreMessages
+      if there are no more values to be read.
+
+
+   .. py:method:: write_json(value, encoder=None)
+
+      Write a single JSON value into writer.
+
+      Value is written as encoded by encoder.encode().
+
+
+
+
+
+.. py:class:: OutgoingRequest(channel, request: jsonrpc.jsonrpc2.JSONRPC20Request)
+
+   Bases: :py:obj:`jsonrpc.jsonrpc2.JSONRPC20Request`
+
+   Represents an outgoing request, for which it is possible to wait for a
+   response to be received, and register a response handler.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`wait_for_response <pyllo.tools.jsonrpc2.OutgoingRequest.wait_for_response>`\ (raise_if_failed)
+        - Waits until a response is received for this request, records the Response
+      * - :py:obj:`on_response <pyllo.tools.jsonrpc2.OutgoingRequest.on_response>`\ (response_handler)
+        - Registers a handler to invoke when a response is received for this request.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: wait_for_response(raise_if_failed=True)
+
+      Waits until a response is received for this request, records the Response
+      object for it in self.response, and returns response.body.
+
+      If no response was received from the other party before the channel closed,
+      self.response is a synthesized Response with body=NoMoreMessages().
+
+      If raise_if_failed=True and response.success is False, raises response.body
+      instead of returning.
+
+
+   .. py:method:: on_response(response_handler)
+
+      Registers a handler to invoke when a response is received for this request.
+      The handler is invoked with Response as its sole argument.
+
+      If response has already been received, invokes the handler immediately.
+
+      It is guaranteed that self.response is set before the handler is invoked.
+      If no response was received from the other party before the channel closed,
+      self.response is a dummy Response with body=NoMoreMessages().
+
+      The handler is always invoked asynchronously on an unspecified background
+      thread - thus, the caller of on_response() can never be blocked or deadlocked
+      by the handler.
+
+      No further incoming messages are processed until the handler returns, except for
+      responses to requests that have wait_for_response() invoked on them.
+
+
+
+
+
+.. py:class:: JsonRPCMessageChannel(stream, handlers=None, name=None)
+
+   Bases: :py:obj:`object`
+
+   Implements a JSON message channel on top of a raw JSON message stream, with
+   support for DAP requests, responses, and events.
+
+   The channel can be locked for exclusive use via the with-statement::
+
+       with channel:
+           channel.send_request(...)
+           # No interleaving messages can be sent here from other threads.
+           channel.send_event(...)
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`close <pyllo.tools.jsonrpc2.JsonRPCMessageChannel.close>`\ ()
+        - Closes the underlying stream.
+      * - :py:obj:`start <pyllo.tools.jsonrpc2.JsonRPCMessageChannel.start>`\ ()
+        - Starts a message loop which parses incoming messages and invokes handlers
+      * - :py:obj:`wait <pyllo.tools.jsonrpc2.JsonRPCMessageChannel.wait>`\ ()
+        - Waits for the message loop to terminate, and for all enqueued Response
+      * - :py:obj:`send_request <pyllo.tools.jsonrpc2.JsonRPCMessageChannel.send_request>`\ (method, params, on_before_send)
+        - Sends a new request, and returns the OutgoingRequest object for it.
+      * - :py:obj:`send_notification <pyllo.tools.jsonrpc2.JsonRPCMessageChannel.send_notification>`\ (method, params, on_before_send)
+        - Send notification (request that doesn't expect response)
+      * - :py:obj:`send_response <pyllo.tools.jsonrpc2.JsonRPCMessageChannel.send_response>`\ (_id, result, error, on_before_send)
+        - Send a new response to request that sent from server
+      * - :py:obj:`request <pyllo.tools.jsonrpc2.JsonRPCMessageChannel.request>`\ (\*args, \*\*kwargs)
+        - Same as send_request(...).wait_for_response()
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: close()
+
+      Closes the underlying stream.
+
+      This does not immediately terminate any handlers that are already executing,
+      but they will be unable to respond. No new request or event handlers will
+      execute after this method is called, even for messages that have already been
+      received. However, response handlers will continue to executed for any request
+      that is still pending, as will any handlers registered via on_response().
+
+
+   .. py:method:: start()
+
+      Starts a message loop which parses incoming messages and invokes handlers
+      for them on a background thread, until the channel is closed.
+
+      Incoming messages, including responses to requests, will not be processed at
+      all until this is invoked.
+
+
+   .. py:method:: wait()
+
+      Waits for the message loop to terminate, and for all enqueued Response
+      message handlers to finish executing.
+
+
+   .. py:method:: send_request(method, params=None, on_before_send=None)
+
+      Sends a new request, and returns the OutgoingRequest object for it.
+
+      If arguments is None or {}, "arguments" will be omitted in JSON.
+
+      If on_before_send is not None, invokes on_before_send() with the request
+      object as the sole argument, before the request actually gets sent.
+
+      Does not wait for response - use OutgoingRequest.wait_for_response().
+
+      Safe to call concurrently for the same channel from different threads.
+
+
+   .. py:method:: send_notification(method: str, params=None, on_before_send=None)
+
+      Send notification (request that doesn't expect response)
+
+
+   .. py:method:: send_response(_id, result=None, error=None, on_before_send=None)
+
+      Send a new response to request that sent from server
+
+
+   .. py:method:: request(*args, **kwargs)
+
+      Same as send_request(...).wait_for_response()
+
+
+
+
+

@@ -1,0 +1,37 @@
+:py:mod:`pyllo.tools.wildcard`
+==============================
+
+.. py:module:: pyllo.tools.wildcard
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`strrmatch <pyllo.tools.wildcard.strrmatch>`\ (strr, pattern)
+     - Parameters
+
+
+
+.. py:function:: strrmatch(strr, pattern)
+
+   Parameters
+   ----------
+   strr: str
+       String to match with
+   pattern: str
+       Pattern to match
+
+   Returns
+   -------
+   matched: bool
+
+   >>> assert True == strrmatch("setup.py", "*.py")
+
+

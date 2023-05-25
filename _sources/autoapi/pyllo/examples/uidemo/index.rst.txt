@@ -1,0 +1,21 @@
+:py:mod:`pyllo.examples.uidemo`
+===============================
+
+.. py:module:: pyllo.examples.uidemo
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   menu/index.rst
+   simpleeditor/index.rst
+   syntaxhighlighter/index.rst
+   tabs/index.rst
+   toolbar/index.rst
+   webbrowser/index.rst
+   widgets/index.rst
+
+

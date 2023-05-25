@@ -1,0 +1,853 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.widgets.editor`
+============================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.widgets.editor
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`BlockUserData <pyllo.plugins.codeeditorv2.internal.widgets.editor.BlockUserData>`
+     - \-
+   * - :py:obj:`TextBlockHelper <pyllo.plugins.codeeditorv2.internal.widgets.editor.TextBlockHelper>`
+     - Helps retrieving the various part of the user state bitmask.
+   * - :py:obj:`ColorSchemeMixin <pyllo.plugins.codeeditorv2.internal.widgets.editor.ColorSchemeMixin>`
+     - Mixin basic class.
+   * - :py:obj:`PanelsController <pyllo.plugins.codeeditorv2.internal.widgets.editor.PanelsController>`
+     - Manage the list of panels and draw them inside the margins of
+   * - :py:obj:`CodeEditor <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor>`
+     - CodeEditor widget
+   * - :py:obj:`CodeEditorDocumentLayout <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditorDocumentLayout>`
+     - Subclass QPlainTextDocumentLayout to provide own layout
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.codeeditorv2.internal.widgets.editor.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: BlockUserData
+
+   Bases: :py:obj:`qtpy.QtGui.QTextBlockUserData`
+
+   ..    ..    .. 
+
+
+.. py:class:: TextBlockHelper
+
+   Bases: :py:obj:`object`
+
+   Helps retrieving the various part of the user state bitmask.
+
+   This helper should be used to replace calls to
+   ``QTextBlock.setUserState``/``QTextBlock.getUserState`` as well as
+   ``QSyntaxHighlighter.setCurrentBlockState``/
+   ``QSyntaxHighlighter.currentBlockState`` and
+   ``QSyntaxHighlighter.previousBlockState``.
+
+   The bitmask is made up of the following fields:
+
+       - bit0 -> bit26: User state (for syntax highlighting)
+       - bit26: fold trigger state
+       - bit27-bit29: fold level (8 level max)
+       - bit30: fold trigger flag
+
+       - bit0 -> bit15: 16 bits for syntax highlighter user state (
+         for syntax highlighting)
+       - bit16-bit25: 10 bits for the fold level (1024 levels)
+       - bit26: 1 bit for the fold trigger flag (trigger or not trigger)
+       - bit27: 1 bit for the fold trigger state (expanded/collapsed)
+
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getState <pyllo.plugins.codeeditorv2.internal.widgets.editor.TextBlockHelper.getState>`\ (block)
+        - :summarylabel:`static` Gets the user state, generally used for syntax highlighting.
+      * - :py:obj:`setState <pyllo.plugins.codeeditorv2.internal.widgets.editor.TextBlockHelper.setState>`\ (block, state)
+        - :summarylabel:`static` Sets the user state, generally used for syntax highlighting.
+      * - :py:obj:`getFoldLvl <pyllo.plugins.codeeditorv2.internal.widgets.editor.TextBlockHelper.getFoldLvl>`\ (block)
+        - :summarylabel:`static` Gets the block fold level.
+      * - :py:obj:`setFoldLvl <pyllo.plugins.codeeditorv2.internal.widgets.editor.TextBlockHelper.setFoldLvl>`\ (block, val)
+        - :summarylabel:`static` Sets the block fold level.
+      * - :py:obj:`isFoldTrigger <pyllo.plugins.codeeditorv2.internal.widgets.editor.TextBlockHelper.isFoldTrigger>`\ (block)
+        - :summarylabel:`static` Checks if the block is a fold trigger.
+      * - :py:obj:`setFoldTrigger <pyllo.plugins.codeeditorv2.internal.widgets.editor.TextBlockHelper.setFoldTrigger>`\ (block, val)
+        - :summarylabel:`static` Set the block fold trigger flag (True means the block is a fold
+      * - :py:obj:`setCollapsed <pyllo.plugins.codeeditorv2.internal.widgets.editor.TextBlockHelper.setCollapsed>`\ (block, val)
+        - :summarylabel:`static` Sets the fold trigger state (collapsed or expanded).
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getState(block)
+      :staticmethod:
+
+      Gets the user state, generally used for syntax highlighting.
+      :param block: block to access
+      :return: The block state
+
+
+
+   .. py:method:: setState(block, state)
+      :staticmethod:
+
+      Sets the user state, generally used for syntax highlighting.
+
+      :param block: block to modify
+      :param state: new state value.
+      :return:
+
+
+   .. py:method:: getFoldLvl(block)
+      :staticmethod:
+
+      Gets the block fold level.
+
+      :param block: block to access.
+      :returns: The block fold level
+
+
+   .. py:method:: setFoldLvl(block, val)
+      :staticmethod:
+
+      Sets the block fold level.
+
+      :param block: block to modify
+      :param val: The new fold level [0-7]
+
+
+   .. py:method:: isFoldTrigger(block)
+      :staticmethod:
+
+      Checks if the block is a fold trigger.
+
+      :param block: block to check
+      :return: True if the block is a fold trigger (represented as a node in
+          the fold panel)
+
+
+   .. py:method:: setFoldTrigger(block, val)
+      :staticmethod:
+
+      Set the block fold trigger flag (True means the block is a fold
+      trigger).
+
+      :param block: block to set
+      :param val: value to set
+
+
+   .. py:method:: setCollapsed(block, val)
+      :staticmethod:
+
+      Sets the fold trigger state (collapsed or expanded).
+
+      :param block: The block to modify
+      :param val: The new trigger state (True=collapsed, False=expanded)
+
+
+
+
+
+.. py:class:: ColorSchemeMixin(*args, **kwargs)
+
+   Bases: :py:obj:`pyllo.ui.api.IMixin`
+
+   Mixin basic class.
+
+   TODO: move it to core base and make more mixin inherits this.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`checkCompatibility <pyllo.plugins.codeeditorv2.internal.widgets.editor.ColorSchemeMixin.checkCompatibility>`\ (targetObject)
+        - :summarylabel:`static` check compatibility
+      * - :py:obj:`getColorScheme <pyllo.plugins.codeeditorv2.internal.widgets.editor.ColorSchemeMixin.getColorScheme>`\ ()
+        - \-
+      * - :py:obj:`setColorScheme <pyllo.plugins.codeeditorv2.internal.widgets.editor.ColorSchemeMixin.setColorScheme>`\ (colorScheme)
+        - Set color scheme for syntax highlighting
+      * - :py:obj:`setHighlighter <pyllo.plugins.codeeditorv2.internal.widgets.editor.ColorSchemeMixin.setHighlighter>`\ (shClass, enableOnStart)
+        - This should be only called once
+      * - :py:obj:`getHighlighter <pyllo.plugins.codeeditorv2.internal.widgets.editor.ColorSchemeMixin.getHighlighter>`\ ()
+        - \-
+      * - :py:obj:`onFontChanged <pyllo.plugins.codeeditorv2.internal.widgets.editor.ColorSchemeMixin.onFontChanged>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: checkCompatibility(targetObject) -> bool
+      :staticmethod:
+
+      check compatibility
+
+
+   .. py:method:: getColorScheme()
+
+
+   .. py:method:: setColorScheme(colorScheme: str)
+
+      Set color scheme for syntax highlighting
+              
+
+
+   .. py:method:: setHighlighter(shClass: Type[BaseSH], enableOnStart=True)
+
+      This should be only called once
+
+
+   .. py:method:: getHighlighter() -> pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH
+
+
+   .. py:method:: onFontChanged()
+
+
+
+
+
+.. py:class:: PanelsController(editor: CodeEditor)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   Manage the list of panels and draw them inside the margins of
+   CodeEditor widgets.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`teardown <pyllo.plugins.codeeditorv2.internal.widgets.editor.PanelsController.teardown>`\ ()
+        - \-
+      * - :py:obj:`addPanel <pyllo.plugins.codeeditorv2.internal.widgets.editor.PanelsController.addPanel>`\ (panel, area)
+        - \-
+      * - :py:obj:`updatePanels <pyllo.plugins.codeeditorv2.internal.widgets.editor.PanelsController.updatePanels>`\ (rect, dy, forceUpdate)
+        - Update the editor panels (resize and update margins)
+      * - :py:obj:`updatePanelsGeometries <pyllo.plugins.codeeditorv2.internal.widgets.editor.PanelsController.updatePanelsGeometries>`\ ()
+        - Resize panels.
+      * - :py:obj:`updateFloatingPanelsGeometries <pyllo.plugins.codeeditorv2.internal.widgets.editor.PanelsController.updateFloatingPanelsGeometries>`\ ()
+        - \-
+      * - :py:obj:`viewportMargins <pyllo.plugins.codeeditorv2.internal.widgets.editor.PanelsController.viewportMargins>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: teardown()
+
+
+   .. py:method:: addPanel(panel: pyllo.plugins.codeeditorv2.api.PanelExtension, area=PanelExtension.Area.LEFT)
+
+
+   .. py:method:: updatePanels(rect: qtpy.QtCore.QRect = None, dy=0, forceUpdate=False)
+
+      Update the editor panels (resize and update margins)
+
+
+   .. py:method:: updatePanelsGeometries()
+
+      Resize panels.
+
+
+   .. py:method:: updateFloatingPanelsGeometries()
+
+
+   .. py:method:: viewportMargins() -> Tuple[int, int, int, int]
+
+
+
+
+
+.. py:class:: CodeEditor(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QPlainTextEdit`, :py:obj:`pyllo.ui.editor.textedits.BaseEditMixin`, :py:obj:`ColorSchemeMixin`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`, :py:obj:`pyllo.plugins.editorstack.api.IEditor`, :py:obj:`pyllo.core.api.IUndoable`, :py:obj:`pyllo.plugins.editorstack.api.IFindReplace`
+
+   CodeEditor widget
+
+   ..    ..    ..    .. .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: sigKeyPressed
+
+      Keyboard is pressed, this signal is only emitted by human user pressing keyboard. 
+
+
+   ..    .. .. py:attribute:: sigMouseMove
+
+      Mouse is pressed, this signal is only emitted by human user Moving mouse. 
+
+
+   ..    .. .. py:attribute:: sigMousePressed
+
+      Mouse is pressed, this signal is only emitted by human user Moving mouse. 
+
+
+   ..    .. .. py:attribute:: sigDocumentReplaced
+
+      New document object is set to this code editor.
+      .. Notice:
+          This signal is internal and only used for highlighting!
+
+
+   ..    .. .. py:attribute:: sigTextChanged
+
+      Text changed, this signal is alias of textChanged signal of QTextEdit/QPlainTextEdit
+
+
+   ..    .. .. py:attribute:: sigBlockCountChanged
+
+      This signal is emitted whenever the block count changes. The new block count is passed in newBlockCount.
+
+
+   ..    .. .. py:attribute:: sigContentScrolled
+
+      This signal is emitted when scroll bars are moved by dx, dy. changed when document displaying content changed
+
+
+   ..    .. .. py:attribute:: sigCursorPositionChanged
+
+      This signal is emitted whenever the position of the cursor changed. 
+
+
+   ..    .. .. py:attribute:: sigModificationChanged
+
+      Document modification state changed
+
+
+   ..    .. .. py:attribute:: sigDoSaved
+
+      Document do saved
+
+
+   ..    .. .. py:attribute:: sigDoSavedAs
+
+      Document do saved as
+
+
+   ..    .. .. py:attribute:: sigEditorInputChanged
+
+      Input changed
+
+
+   ..    .. .. py:attribute:: sigWillClose
+
+      Editor will close soon
+      .. Notice:
+          This only means editor is closed, but not document.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PREFAB <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.PREFAB>`
+        - \-
+      * - :py:obj:`sigKeyPressed <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigKeyPressed>`
+        - Keyboard is pressed, this signal is only emitted by human user pressing keyboard.
+      * - :py:obj:`sigMouseMove <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigMouseMove>`
+        - Mouse is pressed, this signal is only emitted by human user Moving mouse.
+      * - :py:obj:`sigMousePressed <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigMousePressed>`
+        - Mouse is pressed, this signal is only emitted by human user Moving mouse.
+      * - :py:obj:`sigDocumentReplaced <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigDocumentReplaced>`
+        - New document object is set to this code editor.
+      * - :py:obj:`sigTextChanged <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigTextChanged>`
+        - Text changed, this signal is alias of textChanged signal of QTextEdit/QPlainTextEdit
+      * - :py:obj:`sigBlockCountChanged <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigBlockCountChanged>`
+        - This signal is emitted whenever the block count changes. The new block count is passed in newBlockCount.
+      * - :py:obj:`sigContentScrolled <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigContentScrolled>`
+        - This signal is emitted when scroll bars are moved by dx, dy. changed when document displaying content changed
+      * - :py:obj:`sigCursorPositionChanged <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigCursorPositionChanged>`
+        - This signal is emitted whenever the position of the cursor changed.
+      * - :py:obj:`sigModificationChanged <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigModificationChanged>`
+        - Document modification state changed
+      * - :py:obj:`sigDoSaved <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigDoSaved>`
+        - Document do saved
+      * - :py:obj:`sigDoSavedAs <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigDoSavedAs>`
+        - Document do saved as
+      * - :py:obj:`sigEditorInputChanged <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigEditorInputChanged>`
+        - Input changed
+      * - :py:obj:`sigWillClose <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.sigWillClose>`
+        - Editor will close soon
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setColorScheme <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setColorScheme>`\ (colorScheme)
+        - Set color scheme for syntax highlighting
+      * - :py:obj:`setTabStopWidthSpace <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setTabStopWidthSpace>`\ (width)
+        - \-
+      * - :py:obj:`installExtension <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.installExtension>`\ (name, forger)
+        - \-
+      * - :py:obj:`getExtension <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.getExtension>`\ (name)
+        - \-
+      * - :py:obj:`getLanguage <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.getLanguage>`\ ()
+        - \-
+      * - :py:obj:`findBraceAtCursor <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.findBraceAtCursor>`\ ()
+        - Returns braced brackets pair's position when current cursor besides either open bracket or close bracket.
+      * - :py:obj:`setBlockUserData <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setBlockUserData>`\ (blockno, role, data)
+        - \-
+      * - :py:obj:`setBlockUserDataAll <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setBlockUserDataAll>`\ (role, data)
+        - \-
+      * - :py:obj:`getBlockUserData <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.getBlockUserData>`\ (blockno, role, default)
+        - \-
+      * - :py:obj:`getBlockUserDataAll <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.getBlockUserDataAll>`\ (role, default)
+        - \-
+      * - :py:obj:`setBlanksVisible <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setBlanksVisible>`\ (state)
+        - Toggle blanks visibility
+      * - :py:obj:`isBlanksVisible <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isBlanksVisible>`\ ()
+        - Returns if blanks and spaces are visible
+      * - :py:obj:`setScrollPastEndEnabled <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setScrollPastEndEnabled>`\ (state)
+        - Allow user to scroll past the end of the document to have the last
+      * - :py:obj:`isScrollPastEndEnabled <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isScrollPastEndEnabled>`\ ()
+        - Returns scroll past end state
+      * - :py:obj:`setWrapEnabled <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setWrapEnabled>`\ (enable)
+        - \-
+      * - :py:obj:`isWrapEnabled <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isWrapEnabled>`\ ()
+        - \-
+      * - :py:obj:`setIntelligentBackspaceEnabled <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setIntelligentBackspaceEnabled>`\ (enable)
+        - \-
+      * - :py:obj:`isIntelligentBackspaceEnabled <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isIntelligentBackspaceEnabled>`\ ()
+        - \-
+      * - :py:obj:`update <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.update>`\ ()
+        - \-
+      * - :py:obj:`setDocument <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setDocument>`\ (document)
+        - Override Qt method
+      * - :py:obj:`setFont <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setFont>`\ (font)
+        - \-
+      * - :py:obj:`cut <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.cut>`\ ()
+        - Handle cut event
+      * - :py:obj:`resizeEvent <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.resizeEvent>`\ (event)
+        - Reimplemented Qt method to handle p resizing
+      * - :py:obj:`mouseMoveEvent <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.mouseMoveEvent>`\ (event)
+        - \-
+      * - :py:obj:`mousePressEvent <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.mousePressEvent>`\ (event)
+        - \-
+      * - :py:obj:`keyPressEvent <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.keyPressEvent>`\ (event)
+        - \-
+      * - :py:obj:`scrollContentsBy <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.scrollContentsBy>`\ (dx, dy)
+        - Override to add signal sigContentScrolled emit
+      * - :py:obj:`indentLineOrSelection <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.indentLineOrSelection>`\ ()
+        - Indent line or selection
+      * - :py:obj:`unindentLineOrSelection <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.unindentLineOrSelection>`\ ()
+        - \-
+      * - :py:obj:`toggleCaseOfSelection <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.toggleCaseOfSelection>`\ ()
+        - Toggle to upper case if selected text letters are all lower cases
+      * - :py:obj:`getActionOnEnter <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.getActionOnEnter>`\ ()
+        - Calculate indentation we need on newed line
+      * - :py:obj:`doSave <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.doSave>`\ ()
+        - Save the contents of this editor.
+      * - :py:obj:`doSaveAs <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.doSaveAs>`\ (filepath)
+        - Save the contents of this editor to another object.
+      * - :py:obj:`close <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.close>`\ ()
+        - Close the codeeditor
+      * - :py:obj:`getEditorInput <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.getEditorInput>`\ ()
+        - Returns the input for this editor.
+      * - :py:obj:`setInput <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.setInput>`\ (input_)
+        - \-
+      * - :py:obj:`isModified <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isModified>`\ ()
+        - Returns whether the contents of this editor have changed since the
+      * - :py:obj:`isSaveAsAllowed <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isSaveAsAllowed>`\ ()
+        - Returns whether the "save as" operation is supported by this
+      * - :py:obj:`isSaveOnCloseNeeded <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isSaveOnCloseNeeded>`\ ()
+        - Returns whether the contents of this editor should be saved when
+      * - :py:obj:`isRedoAvailable <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isRedoAvailable>`\ ()
+        - Return ture if redo is availbale.
+      * - :py:obj:`isUndoAvailable <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isUndoAvailable>`\ ()
+        - Return ture if undo is availbale.
+      * - :py:obj:`clearUndo <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.clearUndo>`\ ()
+        - Clear undo.
+      * - :py:obj:`documentDidChange <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.documentDidChange>`\ (text)
+        - \-
+      * - :py:obj:`showFinder <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.showFinder>`\ (visible, replacer)
+        - \-
+      * - :py:obj:`isFindAvailable <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isFindAvailable>`\ ()
+        - \-
+      * - :py:obj:`isReplaceAvailable <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor.isReplaceAvailable>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   .. py:attribute:: sigKeyPressed
+
+      Keyboard is pressed, this signal is only emitted by human user pressing keyboard. 
+
+
+   .. py:attribute:: sigMouseMove
+
+      Mouse is pressed, this signal is only emitted by human user Moving mouse. 
+
+
+   .. py:attribute:: sigMousePressed
+
+      Mouse is pressed, this signal is only emitted by human user Moving mouse. 
+
+
+   .. py:attribute:: sigDocumentReplaced
+
+      New document object is set to this code editor.
+      .. Notice:
+          This signal is internal and only used for highlighting!
+
+
+   .. py:attribute:: sigTextChanged
+
+      Text changed, this signal is alias of textChanged signal of QTextEdit/QPlainTextEdit
+
+
+   .. py:attribute:: sigBlockCountChanged
+
+      This signal is emitted whenever the block count changes. The new block count is passed in newBlockCount.
+
+
+   .. py:attribute:: sigContentScrolled
+
+      This signal is emitted when scroll bars are moved by dx, dy. changed when document displaying content changed
+
+
+   .. py:attribute:: sigCursorPositionChanged
+
+      This signal is emitted whenever the position of the cursor changed. 
+
+
+   .. py:attribute:: sigModificationChanged
+
+      Document modification state changed
+
+
+   .. py:attribute:: sigDoSaved
+
+      Document do saved
+
+
+   .. py:attribute:: sigDoSavedAs
+
+      Document do saved as
+
+
+   .. py:attribute:: sigEditorInputChanged
+
+      Input changed
+
+
+   .. py:attribute:: sigWillClose
+
+      Editor will close soon
+      .. Notice:
+          This only means editor is closed, but not document.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setColorScheme(colorScheme: str)
+
+      Set color scheme for syntax highlighting
+              
+
+
+   .. py:method:: setTabStopWidthSpace(width: int)
+
+
+   .. py:method:: installExtension(name: pyllo.core.dtype.Identity, forger: pyllo.core.dtype.Forger[pyllo.plugins.codeeditorv2.api.ICodeEditorExtension])
+
+
+   .. py:method:: getExtension(name: str) -> Optional[pyllo.plugins.codeeditorv2.api.ICodeEditorExtension]
+
+
+   .. py:method:: getLanguage() -> str
+
+
+   .. py:method:: findBraceAtCursor() -> Optional[Tuple[int, int]]
+
+      Returns braced brackets pair's position when current cursor besides either open bracket or close bracket.
+      Returns
+      -------
+      positions: Optional[Tuple[int,int]]
+          Return open bracket position and close bracket position.
+
+
+   .. py:method:: setBlockUserData(blockno: int, role: str, data: Any)
+
+
+   .. py:method:: setBlockUserDataAll(role: str, data: Any)
+
+
+   .. py:method:: getBlockUserData(blockno: int, role: str, default=None) -> Any
+
+
+   .. py:method:: getBlockUserDataAll(role: str, default=None) -> List[Tuple[int, Any]]
+
+
+   .. py:method:: setBlanksVisible(state)
+
+      Toggle blanks visibility
+
+
+   .. py:method:: isBlanksVisible() -> bool
+
+      Returns if blanks and spaces are visible
+
+
+   .. py:method:: setScrollPastEndEnabled(state)
+
+      Allow user to scroll past the end of the document to have the last
+      line on top of the screen
+
+
+   .. py:method:: isScrollPastEndEnabled() -> bool
+
+      Returns scroll past end state
+
+
+   .. py:method:: setWrapEnabled(enable: bool)
+
+
+   .. py:method:: isWrapEnabled() -> bool
+
+
+   .. py:method:: setIntelligentBackspaceEnabled(enable: bool)
+
+
+   .. py:method:: isIntelligentBackspaceEnabled() -> bool
+
+
+   .. py:method:: update()
+
+
+   .. py:method:: setDocument(document: qtpy.QtGui.QTextDocument)
+
+      Override Qt method
+
+
+   .. py:method:: setFont(font: qtpy.QtGui.QFont)
+
+
+   .. py:method:: cut()
+
+      Handle cut event
+
+      If cursor not selected, cut line.
+      If cursor selected, cut text.
+
+
+   .. py:method:: resizeEvent(event)
+
+      Reimplemented Qt method to handle p resizing
+
+
+   .. py:method:: mouseMoveEvent(event: qtpy.QtGui.QMouseEvent) -> None
+
+
+   .. py:method:: mousePressEvent(event: qtpy.QtGui.QMouseEvent) -> None
+
+
+   .. py:method:: keyPressEvent(event: qtpy.QtGui.QKeyEvent)
+
+
+   .. py:method:: scrollContentsBy(dx: int, dy: int)
+
+      Override to add signal sigContentScrolled emit
+
+
+   .. py:method:: indentLineOrSelection()
+
+      Indent line or selection
+
+
+   .. py:method:: unindentLineOrSelection()
+
+
+   .. py:method:: toggleCaseOfSelection()
+
+      Toggle to upper case if selected text letters are all lower cases
+      otherwise it will lower case all selected text.
+      If cursor is not selects anything, it will try to select word under cursor.
+
+
+   .. py:method:: getActionOnEnter() -> Tuple[int, Optional[str], Optional[int], bool]
+
+      Calculate indentation we need on newed line
+
+      This is pure method without side effect.
+
+      Returns
+      -------
+      four_tuple: (int, Optional[str], Optional[int], bool)
+          1. indentation
+          2. appendText
+          3. removeText
+          4. indentOutdent
+
+
+   .. py:method:: doSave()
+
+      Save the contents of this editor.
+
+
+   .. py:method:: doSaveAs(filepath: str)
+
+      Save the contents of this editor to another object.
+
+
+   .. py:method:: close()
+
+      Close the codeeditor
+      ... Notice:
+          Close the editor will not save automatically even isSaveOnCloseNeeded return true, it is up to caller to
+          decide save or not.
+
+
+   .. py:method:: getEditorInput() -> pyllo.plugins.editorstack.api.TextEditorInput
+
+      Returns the input for this editor.
+
+
+   .. py:method:: setInput(input_: pyllo.plugins.editorstack.api.TextEditorInput) -> bool
+
+
+   .. py:method:: isModified() -> bool
+
+      Returns whether the contents of this editor have changed since the
+      last operation.
+
+
+   .. py:method:: isSaveAsAllowed() -> bool
+
+      Returns whether the "save as" operation is supported by this
+      editor.
+
+
+   .. py:method:: isSaveOnCloseNeeded() -> bool
+
+      Returns whether the contents of this editor should be saved when
+      the editor is closed.
+
+
+   .. py:method:: isRedoAvailable() -> bool
+
+      Return ture if redo is availbale.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: isUndoAvailable() -> bool
+
+      Return ture if undo is availbale.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: clearUndo()
+
+      Clear undo.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: documentDidChange(text=None)
+
+
+   .. py:method:: showFinder(visible=True, replacer=False)
+
+
+   .. py:method:: isFindAvailable() -> bool
+
+
+   .. py:method:: isReplaceAvailable() -> bool
+
+
+
+
+
+.. py:class:: CodeEditorDocumentLayout
+
+   Bases: :py:obj:`qtpy.QtWidgets.QPlainTextDocumentLayout`
+
+   Subclass QPlainTextDocumentLayout to provide own layout
+       
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`blockBoundingRect <pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditorDocumentLayout.blockBoundingRect>`\ (block)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: blockBoundingRect(block: qtpy.QtGui.QTextBlock) -> qtpy.QtCore.QRectF
+
+
+
+
+

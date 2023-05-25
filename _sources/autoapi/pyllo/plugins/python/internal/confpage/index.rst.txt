@@ -1,0 +1,62 @@
+:py:mod:`pyllo.plugins.python.internal.confpage`
+================================================
+
+.. py:module:: pyllo.plugins.python.internal.confpage
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PythonToolkitConfigPage <pyllo.plugins.python.internal.confpage.PythonToolkitConfigPage>`
+     - python configuration page.
+
+
+
+
+.. py:class:: PythonToolkitConfigPage(plugin: pyllo.core.runtime.spi.PylloPlugin, parent: qtpy.QtWidgets.QWidget)
+
+   Bases: :py:obj:`pyllo.ui.preferences.PluginConfigPage`
+
+   python configuration page.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setupPage <pyllo.plugins.python.internal.confpage.PythonToolkitConfigPage.setupPage>`\ ()
+        - Setup configuration page widget
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setupPage()
+
+      Setup configuration page widget
+
+      You should implement this method and set the layout of the
+      preferences page.
+
+      layout = QVBoxLayout()
+      layout.addWidget(...)
+      ...
+      self.setLayout(layout)
+
+
+
+
+

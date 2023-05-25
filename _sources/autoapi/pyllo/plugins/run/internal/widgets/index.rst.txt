@@ -1,0 +1,261 @@
+:py:mod:`pyllo.plugins.run.internal.widgets`
+============================================
+
+.. py:module:: pyllo.plugins.run.internal.widgets
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`RunConsole <pyllo.plugins.run.internal.widgets.RunConsole>`
+     - Basic functionality for all Pyllo widget and Qt items.
+   * - :py:obj:`RunSettingsDialog <pyllo.plugins.run.internal.widgets.RunSettingsDialog>`
+     - \-
+
+
+
+
+.. py:class:: RunConsole(parent: qtpy.QtWidgets.QWidget, *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`, :py:obj:`pyllo.ui.plugin.PylloToolbarMixin`, :py:obj:`pyllo.plugins.run.api.IRunner`
+
+   Basic functionality for all Pyllo widget and Qt items.
+
+   This mixin does not include toolbar handling as that is limited to the
+   application with the core ui plugin or the PluginMainWidget for dockable
+   plugins.
+
+   This provides a simple management of widget options, as well as Qt helpers
+   for defining the actions a widget provides.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: sigProcessStateChanged
+
+      
+
+   ..    .. .. py:attribute:: sigProcessStarted
+
+      
+
+   ..    .. .. py:attribute:: sigProcessFinished
+
+      
+
+   ..    .. .. py:attribute:: sigProcessErrorOcccurred
+
+      
+
+   ..    .. .. py:attribute:: RunSettings
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PREFAB <pyllo.plugins.run.internal.widgets.RunConsole.PREFAB>`
+        - \-
+      * - :py:obj:`sigProcessStateChanged <pyllo.plugins.run.internal.widgets.RunConsole.sigProcessStateChanged>`
+        - \-
+      * - :py:obj:`sigProcessStarted <pyllo.plugins.run.internal.widgets.RunConsole.sigProcessStarted>`
+        - \-
+      * - :py:obj:`sigProcessFinished <pyllo.plugins.run.internal.widgets.RunConsole.sigProcessFinished>`
+        - \-
+      * - :py:obj:`sigProcessErrorOcccurred <pyllo.plugins.run.internal.widgets.RunConsole.sigProcessErrorOcccurred>`
+        - \-
+      * - :py:obj:`RunSettings <pyllo.plugins.run.internal.widgets.RunConsole.RunSettings>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`objectName <pyllo.plugins.run.internal.widgets.RunConsole.objectName>`\ ()
+        - \-
+      * - :py:obj:`runSettings <pyllo.plugins.run.internal.widgets.RunConsole.runSettings>`\ ()
+        - \-
+      * - :py:obj:`setRunSettings <pyllo.plugins.run.internal.widgets.RunConsole.setRunSettings>`\ (name, program, arguments, wdir, environment)
+        - \-
+      * - :py:obj:`run <pyllo.plugins.run.internal.widgets.RunConsole.run>`\ ()
+        - Executes a system command.
+      * - :py:obj:`stop <pyllo.plugins.run.internal.widgets.RunConsole.stop>`\ ()
+        - \-
+      * - :py:obj:`processState <pyllo.plugins.run.internal.widgets.RunConsole.processState>`\ ()
+        - \-
+      * - :py:obj:`processExitCode <pyllo.plugins.run.internal.widgets.RunConsole.processExitCode>`\ ()
+        - \-
+      * - :py:obj:`processExitStatus <pyllo.plugins.run.internal.widgets.RunConsole.processExitStatus>`\ ()
+        - \-
+      * - :py:obj:`lastProcessError <pyllo.plugins.run.internal.widgets.RunConsole.lastProcessError>`\ ()
+        - \-
+      * - :py:obj:`lastProcessErrorString <pyllo.plugins.run.internal.widgets.RunConsole.lastProcessErrorString>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   .. py:attribute:: sigProcessStateChanged
+
+      
+
+   .. py:attribute:: sigProcessStarted
+
+      
+
+   .. py:attribute:: sigProcessFinished
+
+      
+
+   .. py:attribute:: sigProcessErrorOcccurred
+
+      
+
+   .. py:attribute:: RunSettings
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: objectName() -> pyllo.core.dtype.Identity
+
+
+   .. py:method:: runSettings() -> RunSettings
+
+
+   .. py:method:: setRunSettings(name: pyllo.core.dtype.Identity = None, program: pyllo.core.dtype.FilePath = None, arguments: List[pyllo.core.dtype.Text] = None, wdir: pyllo.core.dtype.DirName = None, environment: dict = None)
+
+
+   .. py:method:: run()
+
+      Executes a system command.
+
+
+   .. py:method:: stop()
+
+
+   .. py:method:: processState() -> qtpy.QtCore.QProcess.ProcessState
+
+
+   .. py:method:: processExitCode() -> int
+
+
+   .. py:method:: processExitStatus() -> qtpy.QtCore.QProcess.ExitStatus
+
+
+   .. py:method:: lastProcessError() -> qtpy.QtCore.QProcess.ProcessError
+
+
+   .. py:method:: lastProcessErrorString() -> str
+
+
+
+
+
+.. py:class:: RunSettingsDialog(parent=None, runSettings: RunConsole = None, *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QDialog`
+
+   ..    ..    ..    .. .. py:attribute:: ARGUMENTS_SEPARATOR
+      :value: ' '
+
+      
+
+   ..    .. .. py:attribute:: ENVIRONMENT_VAR_SEPARATOR
+      :value: ';'
+
+      
+
+   ..    .. .. py:attribute:: ENVIRONMENT_VAR_ASSIGNER
+      :value: '='
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ARGUMENTS_SEPARATOR <pyllo.plugins.run.internal.widgets.RunSettingsDialog.ARGUMENTS_SEPARATOR>`
+        - \-
+      * - :py:obj:`ENVIRONMENT_VAR_SEPARATOR <pyllo.plugins.run.internal.widgets.RunSettingsDialog.ENVIRONMENT_VAR_SEPARATOR>`
+        - \-
+      * - :py:obj:`ENVIRONMENT_VAR_ASSIGNER <pyllo.plugins.run.internal.widgets.RunSettingsDialog.ENVIRONMENT_VAR_ASSIGNER>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setSettings <pyllo.plugins.run.internal.widgets.RunSettingsDialog.setSettings>`\ (settings)
+        - \-
+      * - :py:obj:`settings <pyllo.plugins.run.internal.widgets.RunSettingsDialog.settings>`\ ()
+        - \-
+      * - :py:obj:`setApplyFunc <pyllo.plugins.run.internal.widgets.RunSettingsDialog.setApplyFunc>`\ (callback)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ARGUMENTS_SEPARATOR
+      :value: ' '
+
+      
+
+   .. py:attribute:: ENVIRONMENT_VAR_SEPARATOR
+      :value: ';'
+
+      
+
+   .. py:attribute:: ENVIRONMENT_VAR_ASSIGNER
+      :value: '='
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setSettings(settings: RunConsole)
+
+
+   .. py:method:: settings() -> RunConsole
+
+
+   .. py:method:: setApplyFunc(callback: Callable[[RunConsole], None])
+
+
+
+
+

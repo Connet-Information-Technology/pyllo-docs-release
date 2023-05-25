@@ -1,0 +1,148 @@
+:py:mod:`pyllo.plugins.output.internal.widgets`
+===============================================
+
+.. py:module:: pyllo.plugins.output.internal.widgets
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`OutputViewer <pyllo.plugins.output.internal.widgets.OutputViewer>`
+     - Common output viewer
+   * - :py:obj:`LogViewer <pyllo.plugins.output.internal.widgets.LogViewer>`
+     - Log viewer
+
+
+
+
+.. py:class:: OutputViewer(writer: pyllo.plugins.output.api.OutputWriter, parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`, :py:obj:`pyllo.ui.plugin.PylloToolbarMixin`
+
+   Common output viewer
+
+   ..    ..    ..    .. .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PREFAB <pyllo.plugins.output.internal.widgets.OutputViewer.PREFAB>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`console <pyllo.plugins.output.internal.widgets.OutputViewer.console>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: console()
+
+
+
+
+
+.. py:class:: LogViewer(logger, parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`, :py:obj:`pyllo.ui.plugin.PylloToolbarMixin`
+
+   Log viewer
+
+   ..    ..    ..    .. .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: formatter
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PREFAB <pyllo.plugins.output.internal.widgets.LogViewer.PREFAB>`
+        - \-
+      * - :py:obj:`formatter <pyllo.plugins.output.internal.widgets.LogViewer.formatter>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`console <pyllo.plugins.output.internal.widgets.LogViewer.console>`\ ()
+        - \-
+      * - :py:obj:`setLogger <pyllo.plugins.output.internal.widgets.LogViewer.setLogger>`\ (logger)
+        - Set logger
+      * - :py:obj:`getLogger <pyllo.plugins.output.internal.widgets.LogViewer.getLogger>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   .. py:attribute:: formatter
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: console()
+
+
+   .. py:method:: setLogger(logger: logging.Logger)
+
+      Set logger
+      1. Add custom QtHandler to it.
+      2. Set custom formatter.
+      3. Set debug level.
+
+
+   .. py:method:: getLogger()
+
+
+
+
+

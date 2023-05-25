@@ -1,0 +1,133 @@
+:py:mod:`pyllo.plugins.output.internal.logutils`
+================================================
+
+.. py:module:: pyllo.plugins.output.internal.logutils
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LoggerWriter <pyllo.plugins.output.internal.logutils.LoggerWriter>`
+     - Act like stream reader and logger writer.
+   * - :py:obj:`QtLogHandler <pyllo.plugins.output.internal.logutils.QtLogHandler>`
+     - Signal handler that emits logging.Handler message to qt loggerview.
+
+
+
+
+.. py:class:: LoggerWriter(level: callable)
+
+   Act like stream reader and logger writer.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`write <pyllo.plugins.output.internal.logutils.LoggerWriter.write>`\ (message)
+        - \-
+      * - :py:obj:`flush <pyllo.plugins.output.internal.logutils.LoggerWriter.flush>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: write(message)
+
+
+   .. py:method:: flush()
+
+
+
+
+
+.. py:class:: QtLogHandler(parent)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`, :py:obj:`logging.StreamHandler`
+
+   Signal handler that emits logging.Handler message to qt loggerview.
+
+   ..    ..    ..    .. .. py:attribute:: sigMessage
+
+      Signal emit with message string and log level number.
+
+
+   ..    .. .. py:attribute:: sigFlush
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigMessage <pyllo.plugins.output.internal.logutils.QtLogHandler.sigMessage>`
+        - Signal emit with message string and log level number.
+      * - :py:obj:`sigFlush <pyllo.plugins.output.internal.logutils.QtLogHandler.sigFlush>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`emit <pyllo.plugins.output.internal.logutils.QtLogHandler.emit>`\ (record)
+        - Emit a record.
+      * - :py:obj:`flush <pyllo.plugins.output.internal.logutils.QtLogHandler.flush>`\ ()
+        - Flushes the stream.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigMessage
+
+      Signal emit with message string and log level number.
+
+
+   .. py:attribute:: sigFlush
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: emit(record)
+
+      Emit a record.
+
+      If a formatter is specified, it is used to format the record.
+      The record is then written to the stream with a trailing newline.  If
+      exception information is present, it is formatted using
+      traceback.print_exception and appended to the stream.  If the stream
+      has an 'encoding' attribute, it is used to determine how to do the
+      output to the stream.
+
+
+   .. py:method:: flush()
+
+      Flushes the stream.
+
+
+
+
+

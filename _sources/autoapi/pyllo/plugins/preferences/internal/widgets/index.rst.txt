@@ -1,0 +1,274 @@
+:py:mod:`pyllo.plugins.preferences.internal.widgets`
+====================================================
+
+.. py:module:: pyllo.plugins.preferences.internal.widgets
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ConfigDialog <pyllo.plugins.preferences.internal.widgets.ConfigDialog>`
+     - Pyllo configuration ('Preferences') dialog box
+   * - :py:obj:`ConfigPage <pyllo.plugins.preferences.internal.widgets.ConfigPage>`
+     - Base class for configuration page in Preferences
+
+
+
+
+.. py:class:: ConfigDialog(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QDialog`
+
+   Pyllo configuration ('Preferences') dialog box
+
+   ..    ..    ..    .. .. py:attribute:: checkSettings
+
+      
+
+   ..    .. .. py:attribute:: sigResetPreferencesRequested
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`checkSettings <pyllo.plugins.preferences.internal.widgets.ConfigDialog.checkSettings>`
+        - \-
+      * - :py:obj:`sigResetPreferencesRequested <pyllo.plugins.preferences.internal.widgets.ConfigDialog.sigResetPreferencesRequested>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getCurrentIndex <pyllo.plugins.preferences.internal.widgets.ConfigDialog.getCurrentIndex>`\ ()
+        - Return current page index
+      * - :py:obj:`setCurrentIndex <pyllo.plugins.preferences.internal.widgets.ConfigDialog.setCurrentIndex>`\ (index)
+        - Set current page index
+      * - :py:obj:`getPage <pyllo.plugins.preferences.internal.widgets.ConfigDialog.getPage>`\ (index)
+        - Return page widget
+      * - :py:obj:`getIndexByName <pyllo.plugins.preferences.internal.widgets.ConfigDialog.getIndexByName>`\ (name)
+        - Return page index by CONF_SECTION name.
+      * - :py:obj:`accept <pyllo.plugins.preferences.internal.widgets.ConfigDialog.accept>`\ ()
+        - Reimplement Qt method
+      * - :py:obj:`buttonClicked <pyllo.plugins.preferences.internal.widgets.ConfigDialog.buttonClicked>`\ (button)
+        - \-
+      * - :py:obj:`currentPageChanged <pyllo.plugins.preferences.internal.widgets.ConfigDialog.currentPageChanged>`\ (index)
+        - \-
+      * - :py:obj:`addPage <pyllo.plugins.preferences.internal.widgets.ConfigDialog.addPage>`\ (widget)
+        - \-
+      * - :py:obj:`checkAllSettings <pyllo.plugins.preferences.internal.widgets.ConfigDialog.checkAllSettings>`\ ()
+        - This method is called to check all configuration page settings
+      * - :py:obj:`resizeEvent <pyllo.plugins.preferences.internal.widgets.ConfigDialog.resizeEvent>`\ (event)
+        - Reimplement Qt method to be able to save the widget's size from the
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: checkSettings
+
+      
+
+   .. py:attribute:: sigResetPreferencesRequested
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getCurrentIndex()
+
+      Return current page index
+
+
+   .. py:method:: setCurrentIndex(index)
+
+      Set current page index
+
+
+   .. py:method:: getPage(index=None)
+
+      Return page widget
+
+
+   .. py:method:: getIndexByName(name)
+
+      Return page index by CONF_SECTION name.
+
+
+   .. py:method:: accept()
+
+      Reimplement Qt method
+
+
+   .. py:method:: buttonClicked(button)
+
+
+   .. py:method:: currentPageChanged(index)
+
+
+   .. py:method:: addPage(widget)
+
+
+   .. py:method:: checkAllSettings()
+
+      This method is called to check all configuration page settings
+      after configuration dialog has been shown
+
+
+   .. py:method:: resizeEvent(event)
+
+      Reimplement Qt method to be able to save the widget's size from the
+      main application
+
+
+
+
+
+.. py:class:: ConfigPage(parent, applyCallback=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`
+
+   Base class for configuration page in Preferences
+
+   ..    ..    ..    .. .. py:attribute:: sigApplyButtonEnabled
+
+      
+
+   ..    .. .. py:attribute:: sigShowThisPage
+
+      
+
+   ..    .. .. py:attribute:: sigRestartRequested
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigApplyButtonEnabled <pyllo.plugins.preferences.internal.widgets.ConfigPage.sigApplyButtonEnabled>`
+        - \-
+      * - :py:obj:`sigShowThisPage <pyllo.plugins.preferences.internal.widgets.ConfigPage.sigShowThisPage>`
+        - \-
+      * - :py:obj:`sigRestartRequested <pyllo.plugins.preferences.internal.widgets.ConfigPage.sigRestartRequested>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`initialize <pyllo.plugins.preferences.internal.widgets.ConfigPage.initialize>`\ ()
+        - Initialize configuration page:
+      * - :py:obj:`getName <pyllo.plugins.preferences.internal.widgets.ConfigPage.getName>`\ ()
+        - :summarylabel:`abc` Return configuration page name
+      * - :py:obj:`getIcon <pyllo.plugins.preferences.internal.widgets.ConfigPage.getIcon>`\ ()
+        - :summarylabel:`abc` Return configuration page icon (24x24)
+      * - :py:obj:`setupPage <pyllo.plugins.preferences.internal.widgets.ConfigPage.setupPage>`\ ()
+        - :summarylabel:`abc` Setup configuration page widget
+      * - :py:obj:`setModified <pyllo.plugins.preferences.internal.widgets.ConfigPage.setModified>`\ (state)
+        - \-
+      * - :py:obj:`isValid <pyllo.plugins.preferences.internal.widgets.ConfigPage.isValid>`\ ()
+        - :summarylabel:`abc` Return True if all widget contents are valid
+      * - :py:obj:`applyChanges <pyllo.plugins.preferences.internal.widgets.ConfigPage.applyChanges>`\ ()
+        - Apply changes callback
+      * - :py:obj:`loadFromConf <pyllo.plugins.preferences.internal.widgets.ConfigPage.loadFromConf>`\ ()
+        - :summarylabel:`abc` Load settings from configuration file
+      * - :py:obj:`saveToConf <pyllo.plugins.preferences.internal.widgets.ConfigPage.saveToConf>`\ ()
+        - :summarylabel:`abc` Save settings to configuration file
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigApplyButtonEnabled
+
+      
+
+   .. py:attribute:: sigShowThisPage
+
+      
+
+   .. py:attribute:: sigRestartRequested
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: initialize()
+
+      Initialize configuration page:
+          * setup GUI widget
+          * load settings and change widget accordingly
+
+
+   .. py:method:: getName()
+      :abstractmethod:
+
+      Return configuration page name
+
+
+   .. py:method:: getIcon()
+      :abstractmethod:
+
+      Return configuration page icon (24x24)
+
+
+   .. py:method:: setupPage()
+      :abstractmethod:
+
+      Setup configuration page widget
+
+
+   .. py:method:: setModified(state)
+
+
+   .. py:method:: isValid()
+      :abstractmethod:
+
+      Return True if all widget contents are valid
+
+
+   .. py:method:: applyChanges()
+
+      Apply changes callback
+
+
+   .. py:method:: loadFromConf()
+      :abstractmethod:
+
+      Load settings from configuration file
+
+
+   .. py:method:: saveToConf()
+      :abstractmethod:
+
+      Save settings to configuration file
+
+
+
+
+

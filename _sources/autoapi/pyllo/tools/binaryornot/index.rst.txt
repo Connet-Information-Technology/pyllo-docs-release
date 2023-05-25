@@ -1,0 +1,25 @@
+:py:mod:`pyllo.tools.binaryornot`
+=================================
+
+.. py:module:: pyllo.tools.binaryornot
+
+.. autoapi-nested-parse::
+
+   BinaryOrNot
+   -----------
+
+   Objects defined in this module were adapted from
+   `BinaryOrNot <https://github.com/audreyr/binaryornot>`_.
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   check/index.rst
+   helpers/index.rst
+
+

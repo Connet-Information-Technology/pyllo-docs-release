@@ -1,0 +1,1439 @@
+:py:mod:`pyllo.core.runtime.preferences`
+========================================
+
+.. py:module:: pyllo.core.runtime.preferences
+
+.. autoapi-nested-parse::
+
+   Pyllo base configuration management / preference settings
+
+   This file only deals with non-GUI configuration features
+   (in other words, we won't import any PyQt object here, avoiding any
+   sip API incompatibility issue in non-gui modules)
+
+   .. versionadded:: 1.0.0
+
+   TODO: add typing
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloConfigurationAccessor <pyllo.core.runtime.preferences.PylloConfigurationAccessor>`
+     - @Mixin
+   * - :py:obj:`PylloConfigurationObserver <pyllo.core.runtime.preferences.PylloConfigurationObserver>`
+     - @Mixin
+   * - :py:obj:`PylloConfigurationMixin <pyllo.core.runtime.preferences.PylloConfigurationMixin>`
+     - @Mixin
+   * - :py:obj:`DefaultsConfig <pyllo.core.runtime.preferences.DefaultsConfig>`
+     - Class used to save defaults to a file and as UserConfig base class.
+   * - :py:obj:`UserConfig <pyllo.core.runtime.preferences.UserConfig>`
+     - UserConfig class, based on ConfigParser.
+   * - :py:obj:`PylloUserConfig <pyllo.core.runtime.preferences.PylloUserConfig>`
+     - UserConfig class, based on ConfigParser.
+   * - :py:obj:`MultiUserConfig <pyllo.core.runtime.preferences.MultiUserConfig>`
+     - Multiuser config class which emulates the basic UserConfig interface.
+   * - :py:obj:`ConfigurationManager <pyllo.core.runtime.preferences.ConfigurationManager>`
+     - Configuration manager to provide access to user/site/project config.
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`getConfDir <pyllo.core.runtime.preferences.getConfDir>`\ ()
+     - Absolute dirname to the root of configuration dir, and create one if it doesn't exist
+   * - :py:obj:`getUserConfigDir <pyllo.core.runtime.preferences.getUserConfigDir>`\ ()
+     - Return the user configuration path, and create one if it doesn't exist
+   * - :py:obj:`getSiteConfDirs <pyllo.core.runtime.preferences.getSiteConfDirs>`\ ()
+     - Return the files that can overwrite system configuration defaults.
+   * - :py:obj:`getPluginConfigDir <pyllo.core.runtime.preferences.getPluginConfigDir>`\ (plugin)
+     - Return the plugin configuration path, and create one if it doesn't exist
+   * - :py:obj:`onConfChange <pyllo.core.runtime.preferences.onConfChange>`\ (func, section, option)
+     - Method decorator used to handle changes on the configuration option
+   * - :py:obj:`cleanConfigFiles <pyllo.core.runtime.preferences.cleanConfigFiles>`\ ()
+     - Remove all config files
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`EXTRA_VALID_SHORTCUT_NAMESPACES <pyllo.core.runtime.preferences.EXTRA_VALID_SHORTCUT_NAMESPACES>`
+     - \-
+   * - :py:obj:`CONF <pyllo.core.runtime.preferences.CONF>`
+     - \-
+
+
+.. py:function:: getConfDir() -> pyllo.core.dtype.IO[pyllo.core.dtype.DirName]
+
+   Absolute dirname to the root of configuration dir, and create one if it doesn't exist
+   on local file system.
+
+   Returns
+   -------
+   dir: str
+       Absolute path to the root of configuration dir
+
+   >>> getConfDir()
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getUserConfigDir() -> pyllo.core.dtype.IO[pyllo.core.dtype.DirName]
+
+   Return the user configuration path, and create one if it doesn't exist
+   on local file system.
+
+   Returns
+   -------
+   dir: str
+       Absolute path to the user configuration path.
+
+   >>> getUserConfigDir()
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getSiteConfDirs() -> pyllo.core.dtype.IO[List[pyllo.core.dtype.DirName]]
+
+   Return the files that can overwrite system configuration defaults.
+
+   Win32:
+       1. C:/ProgramData/pyllo
+       2. $(CONDA_PREFIX)/etc/pyllo
+       3. {sys.prefix}/etc/pyllo
+   Linux or MacOS:
+       1. /etc/pyllo
+       2. /usr/local/etc/pyllo
+       3. $(CONDA_PREFIX)/etc/pyllo
+       4. {sys.prefix}/etc/pyllo
+
+   Notice: Returned paths' are ordered by level.
+
+   Returns
+   -------
+   dir: List[str]
+       Absolute paths to the site configuration path.
+
+   >>> getSiteConfDirs()
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getPluginConfigDir(plugin: pyllo.core.dtype.PluginName) -> pyllo.core.dtype.IO[pyllo.core.dtype.DirName]
+
+   Return the plugin configuration path, and create one if it doesn't exist
+   on local file system.
+
+   Parameters
+   ----------
+   plugin: str
+       Plugin name also sub folder name under configuration
+
+   Returns
+   -------
+   dir: str
+       Absolute path to plugin configuration dir.
+
+
+   >>> getPluginConfigDir('application')
+   'C:\Users\xxx\.pyllo\plugins\application'
+
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: onConfChange(func: Callable = None, section: Optional[pyllo.core.dtype.SectionName] = None, option: Optional[Union[pyllo.core.dtype.OptionName, List[pyllo.core.dtype.OptionName]]] = None) -> Callable
+
+   Method decorator used to handle changes on the configuration option
+   `option` of the section `section`.
+
+   The methods that use this decorator must have the following signature
+   `def method(self, value)` when observing a single value or the whole
+   section and `def method(self, option, value): ...` when observing
+   multiple values.
+
+   Parameters
+   ----------
+   func: Callable
+       Method to decorate. Given by default when applying the decorator.
+   section: Optional[str]
+       Name of the configuration whose option is going to be observed for
+       changes. If None, then the `CONF_SECTION` attribute of the class
+       where the method is defined is used.
+   option: Optional[Union[t.OptionName, List[t.OptionName]]]
+       Name/tuple of the option to observe or a list of name/tuples if the
+       method expects updates from multiple keys. If None, then all changes
+       on the specified section are observed.
+
+   Returns
+   -------
+   func: Callable
+       The same method that was given as input.
+
+
+   .. versionadded:: 1.0.0
+
+
+.. py:class:: PylloConfigurationAccessor
+
+   Bases: :py:obj:`pyllo.core.api.IConfigurationAccessor`
+
+   @Mixin
+
+   Mixin used to access options stored in the Pyllo configuration system.
+
+   .. attention:: Requires target object defines :attr:`CONF_SECTION`
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: CONF_SECTION
+      :type: pyllo.core.dtype.SectionName
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_SECTION <pyllo.core.runtime.preferences.PylloConfigurationAccessor.CONF_SECTION>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getConf <pyllo.core.runtime.preferences.PylloConfigurationAccessor.getConf>`\ (option, default, section)
+        - Get an option from the Pyllo configuration system.
+      * - :py:obj:`getConfOptions <pyllo.core.runtime.preferences.PylloConfigurationAccessor.getConfOptions>`\ (section)
+        - Get all options from the given section.
+      * - :py:obj:`setConf <pyllo.core.runtime.preferences.PylloConfigurationAccessor.setConf>`\ (option, value, section, recursiveNotification)
+        - Set an option in the Pyllo configuration system.
+      * - :py:obj:`removeConf <pyllo.core.runtime.preferences.PylloConfigurationAccessor.removeConf>`\ (option, section)
+        - Remove an option in the Pyllo configuration system.
+      * - :py:obj:`getConfDefault <pyllo.core.runtime.preferences.PylloConfigurationAccessor.getConfDefault>`\ (option, section)
+        - Get an option default value in the Pyllo configuration system.
+      * - :py:obj:`getShortcut <pyllo.core.runtime.preferences.PylloConfigurationAccessor.getShortcut>`\ (name, namespace)
+        - Get a shortcut sequence stored under the given name and namespace.
+      * - :py:obj:`createMethodShortcut <pyllo.core.runtime.preferences.PylloConfigurationAccessor.createMethodShortcut>`\ (method, namespace, name, parent, context)
+        - Create a Shortcut namedtuple for a widget.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_SECTION
+      :type: pyllo.core.dtype.SectionName
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getConf(option: pyllo.core.dtype.OptionName, default: Union[pyllo.core.api.NoDefault, pyllo.core.dtype.BasicTypes] = NoDefault, section: Optional[pyllo.core.dtype.SectionName] = None) -> pyllo.core.dtype.IO[pyllo.core.dtype.BasicTypes]
+
+      Get an option from the Pyllo configuration system.
+
+      Parameters
+      ----------
+      option: t.OptionName
+          Name/Tuple path of the option to get its value from.
+      default: Union[NoDefault, BasicTypes]
+          Fallback value to return if the option is not found on the
+          configuration system.
+      section: str
+          Section in the configuration system, e.g. `shortcuts`. If None,
+          then the value of `CONF_SECTION` is used.
+
+      Returns
+      -------
+      value: BasicTypes
+          Value of the option in the configuration section.
+
+      Raises
+      ------
+      AttributeError
+          If the section does not exist in the configuration.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getConfOptions(section: Optional[pyllo.core.dtype.SectionName] = None) -> pyllo.core.dtype.IO[List[pyllo.core.dtype.OptionName]]
+
+      Get all options from the given section.
+
+      Parameters
+      ----------
+      section: Optional[str]
+          Section in the configuration system, e.g. `shortcuts`. If None,
+          then the value of `CONF_SECTION` is used.
+
+      Returns
+      -------
+      values: BasicTypes
+          Values of the option in the configuration section.
+
+      Raises
+      ------
+      AttributeError
+          If the section does not exist in the configuration.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: setConf(option: pyllo.core.dtype.OptionName, value: pyllo.core.dtype.BasicTypes, section: Optional[pyllo.core.dtype.SectionName] = None, recursiveNotification: bool = True) -> pyllo.core.dtype.IO
+
+      Set an option in the Pyllo configuration system.
+
+      Parameters
+      ----------
+      option: t.OptionName
+          Name/Tuple path of the option to set its value.
+      value: BasicTypes
+          Value to set on the configuration system.
+      section: Optional[str]
+          Section in the configuration system, e.g. `shortcuts`. If None,
+          then the value of `CONF_SECTION` is used.
+      recursiveNotification: bool
+          If True, all objects that observe all changes on the
+          configuration section and objects that observe partial tuple paths
+          are notified. For example if the option `opt` of section `sec`
+          changes, then the observers for section `sec` are notified.
+          Likewise, if the option `(a, b, c)` changes, then observers for
+          `(a, b, c)`, `(a, b)` and a are notified as well.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: removeConf(option: pyllo.core.dtype.OptionName, section: Optional[pyllo.core.dtype.SectionName] = None) -> pyllo.core.dtype.IO
+
+      Remove an option in the Pyllo configuration system.
+
+      Parameters
+      ----------
+      option: t.OptionName
+          Name/Tuple path of the option to remove its value.
+      section: Optional[str]
+          Section in the configuration system, e.g. `shortcuts`. If None,
+          then the value of `CONF_SECTION` is used.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getConfDefault(option: pyllo.core.dtype.OptionName, section: Optional[pyllo.core.dtype.SectionName] = None) -> pyllo.core.dtype.IO[pyllo.core.dtype.BasicTypes]
+
+      Get an option default value in the Pyllo configuration system.
+
+      Parameters
+      ----------
+      option: t.OptionName
+          Name/Tuple path of the option to remove its value.
+      section: Optional[str]
+          Section in the configuration system, e.g. `shortcuts`. If None,
+          then the value of `CONF_SECTION` is used.
+
+      Returns
+      -------
+      value: BasicTypes/NoDefault
+          Value of the option in the configuration section.
+
+      Raises
+      ------
+      AttributeError
+          If the section does not exist in the configuration.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getShortcut(name: pyllo.core.dtype.ShortcutName, namespace: Optional[pyllo.core.dtype.ShortcutNamespace] = None) -> pyllo.core.dtype.IO[pyllo.core.dtype.KeySequenceString]
+
+      Get a shortcut sequence stored under the given name and namespace.
+
+      Parameters
+      ----------
+      name: str
+          Key identifier under which the shortcut is stored.
+      namespace: Optional[str]
+          Name of the context (plugin) where the shortcut was defined.
+
+      Returns
+      -------
+      shortcut: str
+          Key sequence of the shortcut.
+          
+          
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: createMethodShortcut(method: Callable, namespace: pyllo.core.dtype.ShortcutNamespace, name: pyllo.core.dtype.ShortcutName, parent: qtpy.QtWidgets.QWidget, context=Qt.ShortcutContext.WidgetShortcut) -> pyllo.core.dtype.IO[pyllo.core.api.Shortcut]
+
+      Create a Shortcut namedtuple for a widget.
+
+      The data contained in this tuple will be registered in our shortcuts
+      preferences page.
+
+      Parameters
+      ----------
+      method: Callable
+          Callable(like lambda) that will use the shortcut.
+      name: str
+          Key identifier under which the shortcut is stored.
+      parent: QWidget
+          Parent widget for the shortcut.
+      namespace: Optional[str]
+          Name of the context (plugin) where the shortcut was defined.
+
+      Returns
+      -------
+      shortcut: Shortcut
+          Namedtuple with the information of the shortcut as used for the
+          shortcuts preferences page.
+
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: PylloConfigurationObserver
+
+   Bases: :py:obj:`pyllo.core.api.IConfigurationObserver`
+
+   @Mixin
+
+   This mixin enables a class to receive configuration updates seamlessly,
+   by registering methods using the :func:`onConfChange` decorator, which
+   receives a configuration section and option to observe.
+
+   When a change occurs on any of the registered configuration options,
+   the corresponding registered method is called with the new value.
+
+
+   .. attention:: Requires target object defines :attr:`CONF_SECTION`
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: CONF_SECTION
+      :type: pyllo.core.dtype.SectionName
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_SECTION <pyllo.core.runtime.preferences.PylloConfigurationObserver.CONF_SECTION>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_SECTION
+      :type: pyllo.core.dtype.SectionName
+
+      
+
+
+
+
+
+
+.. py:class:: PylloConfigurationMixin
+
+   Bases: :py:obj:`PylloConfigurationAccessor`, :py:obj:`PylloConfigurationObserver`, :py:obj:`pyllo.core.api.IConfigurationMixin`
+
+   @Mixin
+
+   This mixin inherits PylloConfigurationObserver's feature and
+   PylloConfigurationAccessors's feature. Then enhance with
+   1. `CONF_NAME_MAP`:
+       Which split configuration into multiple .ini files
+   2. `CONF_DEFAULTS`:
+       Which adds additional defaults to :attr:`pyllo.config.main.DEFAULTS`
+       at plugin integrating phase.
+   3. `CONF_FILE`:
+       Instruct config manager to read from and write to separate init files
+       under sub folder named "{CONF_SECTION}" in pyllo configuration folder.
+   4. `CONF_VERSION`:
+       Configuration version.
+
+   .. attention:: Requires target object defines :attr:`CONF_SECTION`
+       :attr:`CONF_FILE`, :attr:`CONF_DEFAULTS`, :attr:`CONF_NAME_MAP`,
+       :attr:`CONF_VERSION`
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: CONF_FILE
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: CONF_DEFAULTS
+      :type: pyllo.core.dtype.Configurations
+
+      
+
+   ..    .. .. py:attribute:: CONF_NAME_MAP
+      :type: pyllo.core.dtype.FileConfigNameMap
+
+      
+
+   ..    .. .. py:attribute:: CONF_VERSION
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_FILE <pyllo.core.runtime.preferences.PylloConfigurationMixin.CONF_FILE>`
+        - \-
+      * - :py:obj:`CONF_DEFAULTS <pyllo.core.runtime.preferences.PylloConfigurationMixin.CONF_DEFAULTS>`
+        - \-
+      * - :py:obj:`CONF_NAME_MAP <pyllo.core.runtime.preferences.PylloConfigurationMixin.CONF_NAME_MAP>`
+        - \-
+      * - :py:obj:`CONF_VERSION <pyllo.core.runtime.preferences.PylloConfigurationMixin.CONF_VERSION>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_FILE
+      :value: True
+
+      
+
+   .. py:attribute:: CONF_DEFAULTS
+      :type: pyllo.core.dtype.Configurations
+
+      
+
+   .. py:attribute:: CONF_NAME_MAP
+      :type: pyllo.core.dtype.FileConfigNameMap
+
+      
+
+   .. py:attribute:: CONF_VERSION
+
+      
+
+
+
+
+
+
+.. py:class:: DefaultsConfig(name, path)
+
+   Bases: :py:obj:`configparser.ConfigParser`, :py:obj:`object`
+
+   Class used to save defaults to a file and as UserConfig base class.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getFilePath <pyllo.core.runtime.preferences.DefaultsConfig.getFilePath>`\ ()
+        - Return the ini file where this configuration is stored.
+      * - :py:obj:`setDefaults <pyllo.core.runtime.preferences.DefaultsConfig.setDefaults>`\ (defaults)
+        - Set default values and save to defaults folder location.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getFilePath()
+
+      Return the ini file where this configuration is stored.
+
+
+   .. py:method:: setDefaults(defaults)
+
+      Set default values and save to defaults folder location.
+
+      Parameters
+      ----------
+      defaults: list[tuple[str,dict[str,BasicTypes]]]
+          Sections / options with values.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: UserConfig(name, path, defaults=None, load=True, version=None, backup=False, rawMode=False, removeObsolete=False, externalPlugin=False)
+
+   Bases: :py:obj:`DefaultsConfig`
+
+   UserConfig class, based on ConfigParser.
+
+   Parameters
+   ----------
+   name: str
+       Name of the config
+   path: str
+       Configuration file will be saved in path/%name%.ini
+   defaults: {} or [(str, {}),]
+       Dictionary containing options *or* list of tuples (sec_name, options)
+   load: bool
+       If a previous configuration file is found, load will take the values
+       from this existing file, instead of using default values.
+   version: str
+       version of the configuration file in 'major.minor.micro' format.
+   backup: bool
+       A backup will be created on version changes and on initial setup.
+   rawMode: bool
+       If `True` do not apply any automatic conversion on values read from
+       the configuration.
+   removeObsolete: bool
+       If `True`, values that were removed from the configuration on version
+       change, are removed from the saved configuration file.
+
+   Notes
+   -----
+   The 'get' and 'set' arguments number and type differ from the override
+   methods. 'defaults' is an attribute and not a method.
+
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: DEFAULT_SECTION_NAME
+      :value: 'main'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`DEFAULT_SECTION_NAME <pyllo.core.runtime.preferences.UserConfig.DEFAULT_SECTION_NAME>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getPreviousConfigFilePath <pyllo.core.runtime.preferences.UserConfig.getPreviousConfigFilePath>`\ ()
+        - Return the last configuration file used if found.
+      * - :py:obj:`getConfigFilePathFromVersion <pyllo.core.runtime.preferences.UserConfig.getConfigFilePathFromVersion>`\ (version)
+        - Return the configuration path for given version.
+      * - :py:obj:`getBackupFilePathFromVersion <pyllo.core.runtime.preferences.UserConfig.getBackupFilePathFromVersion>`\ (version, oldVersion)
+        - Get backup location based on version.
+      * - :py:obj:`getDefaultsPathNameFromVersion <pyllo.core.runtime.preferences.UserConfig.getDefaultsPathNameFromVersion>`\ (oldVersion)
+        - Get defaults location based on version.
+      * - :py:obj:`applyConfigurationPatches <pyllo.core.runtime.preferences.UserConfig.applyConfigurationPatches>`\ (oldVersion)
+        - Apply any patch to configuration values on version changes.
+      * - :py:obj:`getVersion <pyllo.core.runtime.preferences.UserConfig.getVersion>`\ (version)
+        - Return configuration (not application!) version.
+      * - :py:obj:`setVersion <pyllo.core.runtime.preferences.UserConfig.setVersion>`\ (version, save)
+        - Set configuration (not application!) version.
+      * - :py:obj:`resetToDefaults <pyllo.core.runtime.preferences.UserConfig.resetToDefaults>`\ (save, verbose, section)
+        - Reset config to Default values.
+      * - :py:obj:`setAsDefaults <pyllo.core.runtime.preferences.UserConfig.setAsDefaults>`\ ()
+        - Set defaults from the current config.
+      * - :py:obj:`getDefault <pyllo.core.runtime.preferences.UserConfig.getDefault>`\ (section, option)
+        - Get default value for a given `section` and `option`.
+      * - :py:obj:`get <pyllo.core.runtime.preferences.UserConfig.get>`\ (section, option, default)
+        - Get an option.
+      * - :py:obj:`setDefault <pyllo.core.runtime.preferences.UserConfig.setDefault>`\ (section, option, defaultValue)
+        - Set Default value for a given `section`, `option`.
+      * - :py:obj:`set <pyllo.core.runtime.preferences.UserConfig.set>`\ (section, option, value, verbose, save)
+        - Set an `option` on a given `section`.
+      * - :py:obj:`removeSection <pyllo.core.runtime.preferences.UserConfig.removeSection>`\ (section)
+        - Remove `section` and all options within it.
+      * - :py:obj:`removeOption <pyllo.core.runtime.preferences.UserConfig.removeOption>`\ (section, option)
+        - Remove `option` from `section`.
+      * - :py:obj:`cleanup <pyllo.core.runtime.preferences.UserConfig.cleanup>`\ ()
+        - Remove .ini file associated to config.
+      * - :py:obj:`toList <pyllo.core.runtime.preferences.UserConfig.toList>`\ ()
+        - Return in list format.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: DEFAULT_SECTION_NAME
+      :value: 'main'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getPreviousConfigFilePath()
+
+      Return the last configuration file used if found.
+
+
+   .. py:method:: getConfigFilePathFromVersion(version=None)
+
+      Return the configuration path for given version.
+
+      If no version is provided, it returns the current file path.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getBackupFilePathFromVersion(version=None, oldVersion=None)
+
+      Get backup location based on version.
+
+      `oldVersion` can be used for checking compatibility whereas `version`
+      relates to adding the version to the file name.
+
+      To be overridden if versions changed backup location.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDefaultsPathNameFromVersion(oldVersion=None)
+
+      Get defaults location based on version.
+
+      To be overridden if versions changed defaults location.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: applyConfigurationPatches(oldVersion=None)
+
+      Apply any patch to configuration values on version changes.
+
+      To be overridden if patches to configuration values are needed.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getVersion(version='0.0.0')
+
+      Return configuration (not application!) version.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: setVersion(version='0.0.0', save=True)
+
+      Set configuration (not application!) version.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: resetToDefaults(save=True, verbose=False, section=None)
+
+      Reset config to Default values.
+
+      If `section` is None, then every section in `self.defaults` will be set into current immediatly.
+      If `section` is specified, then just options under section will be set into current.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: setAsDefaults()
+
+      Set defaults from the current config.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDefault(section, option)
+
+      Get default value for a given `section` and `option`.
+
+      This is useful for type checking in `get` method.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: get(section, option, default=NoDefault)
+
+      Get an option.
+
+      Parameters
+      ----------
+      section: str
+          Section name. If `None` is provide use the default section name.
+      option: str
+          Option name for `section`.
+      default:
+          Default value (if not specified, an exception will be raised if
+          option doesn't exist).
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: setDefault(section, option, defaultValue)
+
+      Set Default value for a given `section`, `option`.
+
+      If no defaults exist, no default is created. To be able to set
+      defaults, a call to set_as_defaults is needed to create defaults
+      based on current values.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: set(section, option, value, verbose=False, save=True)
+
+      Set an `option` on a given `section`.
+
+      If section is None, the `option` is added to the default section.
+
+      .. attention:: If there is no default value in section/option, then it will be added to default either.
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: removeSection(section)
+
+      Remove `section` and all options within it.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: removeOption(section, option)
+
+      Remove `option` from `section`.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: cleanup()
+
+      Remove .ini file associated to config.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: toList()
+
+      Return in list format.
+
+      The format is [('section1', {'opt-1': value, ...}),
+                     ('section2', {'opt-2': othervalue, ...}), ...]
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: PylloUserConfig(name, path, defaults=None, load=True, version=None, backup=False, rawMode=False, removeObsolete=False, externalPlugin=False)
+
+   Bases: :py:obj:`UserConfig`
+
+   UserConfig class, based on ConfigParser.
+
+   Parameters
+   ----------
+   name: str
+       Name of the config
+   path: str
+       Configuration file will be saved in path/%name%.ini
+   defaults: {} or [(str, {}),]
+       Dictionary containing options *or* list of tuples (sec_name, options)
+   load: bool
+       If a previous configuration file is found, load will take the values
+       from this existing file, instead of using default values.
+   version: str
+       version of the configuration file in 'major.minor.micro' format.
+   backup: bool
+       A backup will be created on version changes and on initial setup.
+   rawMode: bool
+       If `True` do not apply any automatic conversion on values read from
+       the configuration.
+   removeObsolete: bool
+       If `True`, values that were removed from the configuration on version
+       change, are removed from the saved configuration file.
+
+   Notes
+   -----
+   The 'get' and 'set' arguments number and type differ from the override
+   methods. 'defaults' is an attribute and not a method.
+
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`applyConfigurationPatches <pyllo.core.runtime.preferences.PylloUserConfig.applyConfigurationPatches>`\ (oldVersion)
+        - Override method.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: applyConfigurationPatches(oldVersion=None)
+
+      Override method.
+
+      Apply any patch to configuration values on version changes.
+
+
+
+
+
+.. py:class:: MultiUserConfig(nameMap, path, defaults=None, load=True, version=None, backup=False, rawMode=False, removeObsolete=False, externalPlugin=False)
+
+   Bases: :py:obj:`object`
+
+   Multiuser config class which emulates the basic UserConfig interface.
+
+   This class provides the same basic interface as UserConfig but allows
+   splitting the configuration sections and options among several files.
+
+   The `name` is now a `nameMap` where the sections and options per file name
+   are defined.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: DEFAULT_FILE_NAME
+      :value: 'pyllo'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`DEFAULT_FILE_NAME <pyllo.core.runtime.preferences.MultiUserConfig.DEFAULT_FILE_NAME>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getConfigClass <pyllo.core.runtime.preferences.MultiUserConfig.getConfigClass>`\ ()
+        - Return the UserConfig class to use.
+      * - :py:obj:`sections <pyllo.core.runtime.preferences.MultiUserConfig.sections>`\ ()
+        - Return all sections of the configuration file.
+      * - :py:obj:`items <pyllo.core.runtime.preferences.MultiUserConfig.items>`\ (section)
+        - Return all the items option/values for the given section.
+      * - :py:obj:`options <pyllo.core.runtime.preferences.MultiUserConfig.options>`\ (section)
+        - Return all the options for the given section.
+      * - :py:obj:`getDefault <pyllo.core.runtime.preferences.MultiUserConfig.getDefault>`\ (section, option)
+        - Get Default value for a given `section` and `option`.
+      * - :py:obj:`get <pyllo.core.runtime.preferences.MultiUserConfig.get>`\ (section, option, default)
+        - Get an `option` on a given `section`.
+      * - :py:obj:`set <pyllo.core.runtime.preferences.MultiUserConfig.set>`\ (section, option, value, verbose, save)
+        - Set an `option` on a given `section`.
+      * - :py:obj:`resetToDefaults <pyllo.core.runtime.preferences.MultiUserConfig.resetToDefaults>`\ (section)
+        - Reset configuration to Default values.
+      * - :py:obj:`removeSection <pyllo.core.runtime.preferences.MultiUserConfig.removeSection>`\ (section)
+        - Remove `section` and all options within it.
+      * - :py:obj:`removeOption <pyllo.core.runtime.preferences.MultiUserConfig.removeOption>`\ (section, option)
+        - Remove `option` from `section`.
+      * - :py:obj:`cleanup <pyllo.core.runtime.preferences.MultiUserConfig.cleanup>`\ ()
+        - Remove .ini files associated to configurations.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: DEFAULT_FILE_NAME
+      :value: 'pyllo'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getConfigClass()
+
+      Return the UserConfig class to use.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: sections()
+
+      Return all sections of the configuration file.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: items(section: pyllo.core.dtype.SectionName) -> Optional[List[Tuple[pyllo.core.dtype.OptionName, pyllo.core.dtype.BasicTypes]]]
+
+      Return all the items option/values for the given section.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: options(section: pyllo.core.dtype.SectionName) -> Optional[List[pyllo.core.dtype.OptionName]]
+
+      Return all the options for the given section.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDefault(section: pyllo.core.dtype.SectionName, option: pyllo.core.dtype.OptionName) -> Union[pyllo.core.api.NoDefault, pyllo.core.dtype.BasicTypes]
+
+      Get Default value for a given `section` and `option`.
+
+      This is useful for type checking in `get` method.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: get(section: pyllo.core.dtype.SectionName, option: pyllo.core.dtype.OptionName, default=NoDefault) -> pyllo.core.dtype.BasicTypes
+
+      Get an `option` on a given `section`.
+
+      If section is None, the `option` is requested from default section.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: set(section: pyllo.core.dtype.SectionName, option: pyllo.core.dtype.OptionName, value: pyllo.core.dtype.BasicTypes, verbose=False, save=True)
+
+      Set an `option` on a given `section`.
+
+      If section is None, the `option` is added to the default section.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: resetToDefaults(section: pyllo.core.dtype.SectionName = None)
+
+      Reset configuration to Default values.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: removeSection(section: pyllo.core.dtype.SectionName)
+
+      Remove `section` and all options within it.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: removeOption(section: pyllo.core.dtype.SectionName, option: pyllo.core.dtype.OptionName)
+
+      Remove `option` from `section`.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: cleanup()
+
+      Remove .ini files associated to configurations.
+
+
+
+
+
+.. py:class:: ConfigurationManager
+
+   Bases: :py:obj:`object`
+
+   Configuration manager to provide access to user/site/project config.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`registerPlugin <pyllo.core.runtime.preferences.ConfigurationManager.registerPlugin>`\ (plugin)
+        - Register plugin configuration.
+      * - :py:obj:`unregisterPlugin <pyllo.core.runtime.preferences.ConfigurationManager.unregisterPlugin>`\ (plugin)
+        - Unregister plugin.
+      * - :py:obj:`getActiveConf <pyllo.core.runtime.preferences.ConfigurationManager.getActiveConf>`\ (section)
+        - Return the active configuration object by section name.
+      * - :py:obj:`observeConfiguration <pyllo.core.runtime.preferences.ConfigurationManager.observeConfiguration>`\ (observer, section, option)
+        - Register an `observer` object to listen for changes in the option
+      * - :py:obj:`unobserveConfiguration <pyllo.core.runtime.preferences.ConfigurationManager.unobserveConfiguration>`\ (observer, section, option)
+        - Remove an observer to prevent it to receive further changes
+      * - :py:obj:`notifyAllObservers <pyllo.core.runtime.preferences.ConfigurationManager.notifyAllObservers>`\ ()
+        - Notify all the observers subscribed to all the sections and options.
+      * - :py:obj:`notifyObservers <pyllo.core.runtime.preferences.ConfigurationManager.notifyObservers>`\ (section, option, recursiveNotification)
+        - Notify observers of a change in the option `option` of configuration
+      * - :py:obj:`notifySectionAllObservers <pyllo.core.runtime.preferences.ConfigurationManager.notifySectionAllObservers>`\ (section)
+        - Notify all the observers subscribed to any option of a section.
+      * - :py:obj:`items <pyllo.core.runtime.preferences.ConfigurationManager.items>`\ (section)
+        - Return all the items option/values for the given section.
+      * - :py:obj:`options <pyllo.core.runtime.preferences.ConfigurationManager.options>`\ (section)
+        - Return all the options for the given section.
+      * - :py:obj:`get <pyllo.core.runtime.preferences.ConfigurationManager.get>`\ (section, option, default)
+        - Get an `option` on a given `section`.
+      * - :py:obj:`set <pyllo.core.runtime.preferences.ConfigurationManager.set>`\ (section, option, value, verbose, save, recursiveNotification, notification)
+        - Set an `option` on a given `section`.
+      * - :py:obj:`getDefault <pyllo.core.runtime.preferences.ConfigurationManager.getDefault>`\ (section, option)
+        - Get Default value for a given `section` and `option`.
+      * - :py:obj:`removeSection <pyllo.core.runtime.preferences.ConfigurationManager.removeSection>`\ (section)
+        - Remove `section` and all options within it.
+      * - :py:obj:`removeOption <pyllo.core.runtime.preferences.ConfigurationManager.removeOption>`\ (section, option)
+        - Remove `option` from `section`.
+      * - :py:obj:`resetToDefaults <pyllo.core.runtime.preferences.ConfigurationManager.resetToDefaults>`\ (section, notification)
+        - Reset config to Default values.
+      * - :py:obj:`getShortcut <pyllo.core.runtime.preferences.ConfigurationManager.getShortcut>`\ (namespace, name, plugin)
+        - Get keyboard shortcut (key sequence string).
+      * - :py:obj:`setShortcut <pyllo.core.runtime.preferences.ConfigurationManager.setShortcut>`\ (namespace, name, keystr, plugin)
+        - Set keyboard shortcut (key sequence string).
+      * - :py:obj:`iterShortcuts <pyllo.core.runtime.preferences.ConfigurationManager.iterShortcuts>`\ ()
+        - Iterate over keyboard shortcuts.
+      * - :py:obj:`resetShortcuts <pyllo.core.runtime.preferences.ConfigurationManager.resetShortcuts>`\ ()
+        - Reset keyboard shortcuts to default values.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: registerPlugin(plugin: PylloConfigurationMixin) -> ConfigurationManager
+
+      Register plugin configuration.
+
+      Parameters
+      ----------
+      plugin:
+          Plugin instance or plugin class.
+
+      Raises
+      ------
+      RuntimeError
+          If the plugin is already registered.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: unregisterPlugin(plugin: PylloConfigurationMixin) -> ConfigurationManager
+
+      Unregister plugin.
+
+      Parameters
+      ----------
+      plugin:
+          Plugin instance or plugin class.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getActiveConf(section: Optional[pyllo.core.dtype.SectionName] = None) -> pyllo.core.dtype.IO[MultiUserConfig]
+
+      Return the active configuration object by section name.
+
+      In manager we have one `MultiUserConfig` object for user configuration referenced by `_userConfig`.
+      And we also have one `MultiUserConfig` object for each plugin that sets `CONF_FILE=True` referenced by
+      `_pluginConfigs`.
+
+
+      Parameters
+      ----------
+      section: Optional[str]
+          section name that returned config object should contains, Global user config if None.
+
+      Returns
+      -------
+      config: MultiUserConfig
+          MultiUserConfig object which contains :param:`section` that user queried.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: observeConfiguration(observer: pyllo.core.api.IConfigurationObserver, section: pyllo.core.dtype.SectionName, option: Optional[pyllo.core.dtype.OptionName] = None) -> ConfigurationManager
+
+      Register an `observer` object to listen for changes in the option
+      `option` on the configuration `section`.
+
+      Parameters
+      ----------
+      observer: PylloConfigurationObserver
+          Object that conforms to the `ConfigurationObserver` protocol.
+      section: str
+          Name of the configuration section that contains the option
+          :param:`option`
+      option: Optional[t.OptionName]
+          Name of the option on the configuration section :param:`section`
+          that the object is going to subscribe to. If None, the observer
+          will observe any changes on any of the options of the configuration
+          section.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: unobserveConfiguration(observer: PylloConfigurationObserver, section: Optional[pyllo.core.dtype.SectionName] = None, option: Optional[pyllo.core.dtype.OptionName] = None) -> ConfigurationManager
+
+      Remove an observer to prevent it to receive further changes
+      on the values of the option `option` of the configuration section
+      `section`.
+
+      Parameters
+      ----------
+      observer: PylloConfigurationObserver
+          Object that conforms to the `ConfigurationObserver` protocol.
+      section: Optional[str]
+          Name of the configuration section that contains the option
+          :param:`option`. If None, the observer is unregistered from all
+          options for all sections that it has registered to.
+      option: Optional[t.OptionName]
+          Name of the configuration option on the configuration
+          :param:`section` that the observer is going to be unsubscribed
+          from. If None, the observer is unregistered from all the options of
+          the section `section`.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: notifyAllObservers()
+
+      Notify all the observers subscribed to all the sections and options.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: notifyObservers(section: pyllo.core.dtype.SectionName, option: pyllo.core.dtype.OptionName, recursiveNotification=True)
+
+      Notify observers of a change in the option `option` of configuration
+      section `section`.
+
+      Parameters
+      ----------
+      section: str
+          Name of the configuration section whose option did changed.
+      option: t.OptionName
+          Name/Path to the option that did changed.
+      recursiveNotification: bool
+          If True, all objects that observe all changes on the
+          configuration section and objects that observe partial tuple paths
+          are notified. For example if the option `opt` of section `sec`
+          changes, then the observers for section `sec` are notified.
+          Likewise, if the option `(a, b, c)` changes, then observers for
+          `(a, b, c)`, `(a, b)` and a are notified as well.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: notifySectionAllObservers(section: pyllo.core.dtype.SectionName)
+
+      Notify all the observers subscribed to any option of a section.
+
+
+   .. py:method:: items(section: pyllo.core.dtype.SectionName) -> Optional[List[Tuple[pyllo.core.dtype.OptionName, pyllo.core.dtype.BasicTypes]]]
+
+      Return all the items option/values for the given section.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: options(section: pyllo.core.dtype.SectionName) -> pyllo.core.dtype.IO[List[pyllo.core.dtype.OptionName]]
+
+      Return all the options for the given section.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: get(section: pyllo.core.dtype.SectionName, option: pyllo.core.dtype.OptionName, default=NoDefault) -> pyllo.core.dtype.IO[pyllo.core.dtype.BasicTypes]
+
+      Get an `option` on a given `section`.
+
+      If section is None, the `option` is requested from default section.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: set(section: pyllo.core.dtype.SectionName, option: pyllo.core.dtype.OptionName, value: pyllo.core.dtype.BasicTypes, verbose=False, save=True, recursiveNotification=True, notification=True)
+
+      Set an `option` on a given `section`.
+
+      If section is None, the `option` is added to the default section.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDefault(section: pyllo.core.dtype.SectionName, option: pyllo.core.dtype.OptionName)
+
+      Get Default value for a given `section` and `option`.
+
+      This is useful for type checking in `get` method.
+
+      Parameters
+      ----------
+      section: str
+          Section name.
+      option: t.OptionName
+          Name/Tuple path of the option to get its value from.
+
+      Returns
+      -------
+      value: BasicTypes/NoDefault
+          Value of the option in the configuration section.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: removeSection(section: pyllo.core.dtype.SectionName)
+
+      Remove `section` and all options within it.
+
+      Parameters
+      ----------
+      section: str
+          Name of section.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: removeOption(section: pyllo.core.dtype.SectionName, option: pyllo.core.dtype.OptionName)
+
+      Remove `option` from `section`.
+
+      Parameters
+      ----------
+      section: str
+          Name of section.
+      option: t.OptionName
+          Name/Tuple path of the option to get its value from.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: resetToDefaults(section: Optional[pyllo.core.dtype.SectionName] = None, notification=True) -> pyllo.core.dtype.IO
+
+      Reset config to Default values.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getShortcut(namespace: pyllo.core.dtype.ShortcutNamespace, name: pyllo.core.dtype.ShortcutName, plugin: Optional[pyllo.core.dtype.PluginName] = None) -> pyllo.core.dtype.KeySequenceString
+
+      Get keyboard shortcut (key sequence string).
+
+      Namespace must be either '_' for global or the name of a plugin.
+
+      # @ZJJ: so spyder team add :param:`plugin` here is to however
+      #  get active config object when '_' global namespace shortcuts is defined in
+      #  some seperate configuration file ?
+
+      #  When namespace is assigned with '_' which by means global namespace shortcuts
+      #  that should can be invoked no matter which plugin is currently focused.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: setShortcut(namespace: pyllo.core.dtype.ShortcutNamespace, name: pyllo.core.dtype.ShortcutName, keystr: pyllo.core.dtype.KeySequenceString, plugin: Optional[pyllo.core.dtype.PluginName] = None)
+
+      Set keyboard shortcut (key sequence string).
+
+      Namespace must be either '_' for global or the name of a plugin.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: iterShortcuts() -> Iterator[Tuple[pyllo.core.dtype.ShortcutNamespace, pyllo.core.dtype.ShortcutName, pyllo.core.dtype.KeySequenceString]]
+
+      Iterate over keyboard shortcuts.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: resetShortcuts() -> pyllo.core.dtype.IO
+
+      Reset keyboard shortcuts to default values.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:data:: EXTRA_VALID_SHORTCUT_NAMESPACES
+   :value: ['_', 'array_builder', 'console', 'findreplace']
+
+   
+
+.. py:data:: CONF
+   :type: ConfigurationManager
+
+   
+
+.. py:function:: cleanConfigFiles() -> pyllo.core.dtype.IO
+
+   Remove all config files
+
+

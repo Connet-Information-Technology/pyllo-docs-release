@@ -1,0 +1,888 @@
+:py:mod:`pyllo.ui.theme.palette`
+================================
+
+.. py:module:: pyllo.ui.theme.palette
+
+.. autoapi-nested-parse::
+
+   Palettes for dark and light themes used in Pyllo.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloPaletteDark <pyllo.ui.theme.palette.PylloPaletteDark>`
+     - Dark palette for Pyllo.
+   * - :py:obj:`PylloPaletteLight <pyllo.ui.theme.palette.PylloPaletteLight>`
+     - Light palette for Pyllo.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloPalette <pyllo.ui.theme.palette.PylloPalette>`
+     - \-
+
+
+.. py:class:: PylloPaletteDark
+
+   Dark palette for Pyllo.
+
+   ..    ..    ..    .. .. py:attribute:: COLOR_SUCCESS_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_SUCCESS_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_SUCCESS_3
+
+      
+
+   ..    .. .. py:attribute:: COLOR_ERROR_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_ERROR_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_ERROR_3
+
+      
+
+   ..    .. .. py:attribute:: COLOR_WARN_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_WARN_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_WARN_3
+
+      
+
+   ..    .. .. py:attribute:: ICON_1
+
+      
+
+   ..    .. .. py:attribute:: ICON_2
+
+      
+
+   ..    .. .. py:attribute:: ICON_3
+
+      
+
+   ..    .. .. py:attribute:: ICON_4
+
+      
+
+   ..    .. .. py:attribute:: ICON_5
+
+      
+
+   ..    .. .. py:attribute:: ICON_6
+
+      
+
+   ..    .. .. py:attribute:: GROUP_1
+
+      
+
+   ..    .. .. py:attribute:: GROUP_2
+
+      
+
+   ..    .. .. py:attribute:: GROUP_3
+
+      
+
+   ..    .. .. py:attribute:: GROUP_4
+
+      
+
+   ..    .. .. py:attribute:: GROUP_5
+
+      
+
+   ..    .. .. py:attribute:: GROUP_6
+
+      
+
+   ..    .. .. py:attribute:: GROUP_7
+
+      
+
+   ..    .. .. py:attribute:: GROUP_8
+
+      
+
+   ..    .. .. py:attribute:: GROUP_9
+
+      
+
+   ..    .. .. py:attribute:: GROUP_10
+
+      
+
+   ..    .. .. py:attribute:: GROUP_11
+
+      
+
+   ..    .. .. py:attribute:: GROUP_12
+
+      
+
+   ..    .. .. py:attribute:: COLOR_HIGHLIGHT_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_HIGHLIGHT_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_HIGHLIGHT_3
+
+      
+
+   ..    .. .. py:attribute:: COLOR_HIGHLIGHT_4
+
+      
+
+   ..    .. .. py:attribute:: COLOR_OCCURRENCE_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_OCCURRENCE_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_OCCURRENCE_3
+
+      
+
+   ..    .. .. py:attribute:: COLOR_OCCURRENCE_4
+
+      
+
+   ..    .. .. py:attribute:: PYTHON_LOGO_UP
+
+      
+
+   ..    .. .. py:attribute:: PYTHON_LOGO_DOWN
+
+      
+
+   ..    .. .. py:attribute:: PYLLO_LOGO_BACKGROUND
+
+      
+
+   ..    .. .. py:attribute:: PYLLO_LOGO_WEB
+
+      
+
+   ..    .. .. py:attribute:: PYLLO_LOGO_SNAKE
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`COLOR_SUCCESS_1 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_SUCCESS_1>`
+        - \-
+      * - :py:obj:`COLOR_SUCCESS_2 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_SUCCESS_2>`
+        - \-
+      * - :py:obj:`COLOR_SUCCESS_3 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_SUCCESS_3>`
+        - \-
+      * - :py:obj:`COLOR_ERROR_1 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_ERROR_1>`
+        - \-
+      * - :py:obj:`COLOR_ERROR_2 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_ERROR_2>`
+        - \-
+      * - :py:obj:`COLOR_ERROR_3 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_ERROR_3>`
+        - \-
+      * - :py:obj:`COLOR_WARN_1 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_WARN_1>`
+        - \-
+      * - :py:obj:`COLOR_WARN_2 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_WARN_2>`
+        - \-
+      * - :py:obj:`COLOR_WARN_3 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_WARN_3>`
+        - \-
+      * - :py:obj:`ICON_1 <pyllo.ui.theme.palette.PylloPaletteDark.ICON_1>`
+        - \-
+      * - :py:obj:`ICON_2 <pyllo.ui.theme.palette.PylloPaletteDark.ICON_2>`
+        - \-
+      * - :py:obj:`ICON_3 <pyllo.ui.theme.palette.PylloPaletteDark.ICON_3>`
+        - \-
+      * - :py:obj:`ICON_4 <pyllo.ui.theme.palette.PylloPaletteDark.ICON_4>`
+        - \-
+      * - :py:obj:`ICON_5 <pyllo.ui.theme.palette.PylloPaletteDark.ICON_5>`
+        - \-
+      * - :py:obj:`ICON_6 <pyllo.ui.theme.palette.PylloPaletteDark.ICON_6>`
+        - \-
+      * - :py:obj:`GROUP_1 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_1>`
+        - \-
+      * - :py:obj:`GROUP_2 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_2>`
+        - \-
+      * - :py:obj:`GROUP_3 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_3>`
+        - \-
+      * - :py:obj:`GROUP_4 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_4>`
+        - \-
+      * - :py:obj:`GROUP_5 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_5>`
+        - \-
+      * - :py:obj:`GROUP_6 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_6>`
+        - \-
+      * - :py:obj:`GROUP_7 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_7>`
+        - \-
+      * - :py:obj:`GROUP_8 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_8>`
+        - \-
+      * - :py:obj:`GROUP_9 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_9>`
+        - \-
+      * - :py:obj:`GROUP_10 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_10>`
+        - \-
+      * - :py:obj:`GROUP_11 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_11>`
+        - \-
+      * - :py:obj:`GROUP_12 <pyllo.ui.theme.palette.PylloPaletteDark.GROUP_12>`
+        - \-
+      * - :py:obj:`COLOR_HIGHLIGHT_1 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_HIGHLIGHT_1>`
+        - \-
+      * - :py:obj:`COLOR_HIGHLIGHT_2 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_HIGHLIGHT_2>`
+        - \-
+      * - :py:obj:`COLOR_HIGHLIGHT_3 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_HIGHLIGHT_3>`
+        - \-
+      * - :py:obj:`COLOR_HIGHLIGHT_4 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_HIGHLIGHT_4>`
+        - \-
+      * - :py:obj:`COLOR_OCCURRENCE_1 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_OCCURRENCE_1>`
+        - \-
+      * - :py:obj:`COLOR_OCCURRENCE_2 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_OCCURRENCE_2>`
+        - \-
+      * - :py:obj:`COLOR_OCCURRENCE_3 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_OCCURRENCE_3>`
+        - \-
+      * - :py:obj:`COLOR_OCCURRENCE_4 <pyllo.ui.theme.palette.PylloPaletteDark.COLOR_OCCURRENCE_4>`
+        - \-
+      * - :py:obj:`PYTHON_LOGO_UP <pyllo.ui.theme.palette.PylloPaletteDark.PYTHON_LOGO_UP>`
+        - \-
+      * - :py:obj:`PYTHON_LOGO_DOWN <pyllo.ui.theme.palette.PylloPaletteDark.PYTHON_LOGO_DOWN>`
+        - \-
+      * - :py:obj:`PYLLO_LOGO_BACKGROUND <pyllo.ui.theme.palette.PylloPaletteDark.PYLLO_LOGO_BACKGROUND>`
+        - \-
+      * - :py:obj:`PYLLO_LOGO_WEB <pyllo.ui.theme.palette.PylloPaletteDark.PYLLO_LOGO_WEB>`
+        - \-
+      * - :py:obj:`PYLLO_LOGO_SNAKE <pyllo.ui.theme.palette.PylloPaletteDark.PYLLO_LOGO_SNAKE>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: COLOR_SUCCESS_1
+
+      
+
+   .. py:attribute:: COLOR_SUCCESS_2
+
+      
+
+   .. py:attribute:: COLOR_SUCCESS_3
+
+      
+
+   .. py:attribute:: COLOR_ERROR_1
+
+      
+
+   .. py:attribute:: COLOR_ERROR_2
+
+      
+
+   .. py:attribute:: COLOR_ERROR_3
+
+      
+
+   .. py:attribute:: COLOR_WARN_1
+
+      
+
+   .. py:attribute:: COLOR_WARN_2
+
+      
+
+   .. py:attribute:: COLOR_WARN_3
+
+      
+
+   .. py:attribute:: ICON_1
+
+      
+
+   .. py:attribute:: ICON_2
+
+      
+
+   .. py:attribute:: ICON_3
+
+      
+
+   .. py:attribute:: ICON_4
+
+      
+
+   .. py:attribute:: ICON_5
+
+      
+
+   .. py:attribute:: ICON_6
+
+      
+
+   .. py:attribute:: GROUP_1
+
+      
+
+   .. py:attribute:: GROUP_2
+
+      
+
+   .. py:attribute:: GROUP_3
+
+      
+
+   .. py:attribute:: GROUP_4
+
+      
+
+   .. py:attribute:: GROUP_5
+
+      
+
+   .. py:attribute:: GROUP_6
+
+      
+
+   .. py:attribute:: GROUP_7
+
+      
+
+   .. py:attribute:: GROUP_8
+
+      
+
+   .. py:attribute:: GROUP_9
+
+      
+
+   .. py:attribute:: GROUP_10
+
+      
+
+   .. py:attribute:: GROUP_11
+
+      
+
+   .. py:attribute:: GROUP_12
+
+      
+
+   .. py:attribute:: COLOR_HIGHLIGHT_1
+
+      
+
+   .. py:attribute:: COLOR_HIGHLIGHT_2
+
+      
+
+   .. py:attribute:: COLOR_HIGHLIGHT_3
+
+      
+
+   .. py:attribute:: COLOR_HIGHLIGHT_4
+
+      
+
+   .. py:attribute:: COLOR_OCCURRENCE_1
+
+      
+
+   .. py:attribute:: COLOR_OCCURRENCE_2
+
+      
+
+   .. py:attribute:: COLOR_OCCURRENCE_3
+
+      
+
+   .. py:attribute:: COLOR_OCCURRENCE_4
+
+      
+
+   .. py:attribute:: PYTHON_LOGO_UP
+
+      
+
+   .. py:attribute:: PYTHON_LOGO_DOWN
+
+      
+
+   .. py:attribute:: PYLLO_LOGO_BACKGROUND
+
+      
+
+   .. py:attribute:: PYLLO_LOGO_WEB
+
+      
+
+   .. py:attribute:: PYLLO_LOGO_SNAKE
+
+      
+
+
+
+
+
+
+.. py:class:: PylloPaletteLight
+
+   Light palette for Pyllo.
+
+   ..    ..    ..    .. .. py:attribute:: COLOR_SUCCESS_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_SUCCESS_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_SUCCESS_3
+
+      
+
+   ..    .. .. py:attribute:: COLOR_ERROR_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_ERROR_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_ERROR_3
+
+      
+
+   ..    .. .. py:attribute:: COLOR_WARN_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_WARN_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_WARN_3
+
+      
+
+   ..    .. .. py:attribute:: ICON_1
+
+      
+
+   ..    .. .. py:attribute:: ICON_2
+
+      
+
+   ..    .. .. py:attribute:: ICON_3
+
+      
+
+   ..    .. .. py:attribute:: ICON_4
+
+      
+
+   ..    .. .. py:attribute:: ICON_5
+
+      
+
+   ..    .. .. py:attribute:: ICON_6
+
+      
+
+   ..    .. .. py:attribute:: GROUP_1
+
+      
+
+   ..    .. .. py:attribute:: GROUP_2
+
+      
+
+   ..    .. .. py:attribute:: GROUP_3
+
+      
+
+   ..    .. .. py:attribute:: GROUP_4
+
+      
+
+   ..    .. .. py:attribute:: GROUP_5
+
+      
+
+   ..    .. .. py:attribute:: GROUP_6
+
+      
+
+   ..    .. .. py:attribute:: GROUP_7
+
+      
+
+   ..    .. .. py:attribute:: GROUP_8
+
+      
+
+   ..    .. .. py:attribute:: GROUP_9
+
+      
+
+   ..    .. .. py:attribute:: GROUP_10
+
+      
+
+   ..    .. .. py:attribute:: GROUP_11
+
+      
+
+   ..    .. .. py:attribute:: GROUP_12
+
+      
+
+   ..    .. .. py:attribute:: COLOR_HIGHLIGHT_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_HIGHLIGHT_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_HIGHLIGHT_3
+
+      
+
+   ..    .. .. py:attribute:: COLOR_HIGHLIGHT_4
+
+      
+
+   ..    .. .. py:attribute:: COLOR_OCCURRENCE_1
+
+      
+
+   ..    .. .. py:attribute:: COLOR_OCCURRENCE_2
+
+      
+
+   ..    .. .. py:attribute:: COLOR_OCCURRENCE_3
+
+      
+
+   ..    .. .. py:attribute:: COLOR_OCCURRENCE_4
+
+      
+
+   ..    .. .. py:attribute:: PYTHON_LOGO_UP
+
+      
+
+   ..    .. .. py:attribute:: PYTHON_LOGO_DOWN
+
+      
+
+   ..    .. .. py:attribute:: PYLLO_LOGO_BACKGROUND
+
+      
+
+   ..    .. .. py:attribute:: PYLLO_LOGO_WEB
+
+      
+
+   ..    .. .. py:attribute:: PYLLO_LOGO_SNAKE
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`COLOR_SUCCESS_1 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_SUCCESS_1>`
+        - \-
+      * - :py:obj:`COLOR_SUCCESS_2 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_SUCCESS_2>`
+        - \-
+      * - :py:obj:`COLOR_SUCCESS_3 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_SUCCESS_3>`
+        - \-
+      * - :py:obj:`COLOR_ERROR_1 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_ERROR_1>`
+        - \-
+      * - :py:obj:`COLOR_ERROR_2 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_ERROR_2>`
+        - \-
+      * - :py:obj:`COLOR_ERROR_3 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_ERROR_3>`
+        - \-
+      * - :py:obj:`COLOR_WARN_1 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_WARN_1>`
+        - \-
+      * - :py:obj:`COLOR_WARN_2 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_WARN_2>`
+        - \-
+      * - :py:obj:`COLOR_WARN_3 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_WARN_3>`
+        - \-
+      * - :py:obj:`ICON_1 <pyllo.ui.theme.palette.PylloPaletteLight.ICON_1>`
+        - \-
+      * - :py:obj:`ICON_2 <pyllo.ui.theme.palette.PylloPaletteLight.ICON_2>`
+        - \-
+      * - :py:obj:`ICON_3 <pyllo.ui.theme.palette.PylloPaletteLight.ICON_3>`
+        - \-
+      * - :py:obj:`ICON_4 <pyllo.ui.theme.palette.PylloPaletteLight.ICON_4>`
+        - \-
+      * - :py:obj:`ICON_5 <pyllo.ui.theme.palette.PylloPaletteLight.ICON_5>`
+        - \-
+      * - :py:obj:`ICON_6 <pyllo.ui.theme.palette.PylloPaletteLight.ICON_6>`
+        - \-
+      * - :py:obj:`GROUP_1 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_1>`
+        - \-
+      * - :py:obj:`GROUP_2 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_2>`
+        - \-
+      * - :py:obj:`GROUP_3 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_3>`
+        - \-
+      * - :py:obj:`GROUP_4 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_4>`
+        - \-
+      * - :py:obj:`GROUP_5 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_5>`
+        - \-
+      * - :py:obj:`GROUP_6 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_6>`
+        - \-
+      * - :py:obj:`GROUP_7 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_7>`
+        - \-
+      * - :py:obj:`GROUP_8 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_8>`
+        - \-
+      * - :py:obj:`GROUP_9 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_9>`
+        - \-
+      * - :py:obj:`GROUP_10 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_10>`
+        - \-
+      * - :py:obj:`GROUP_11 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_11>`
+        - \-
+      * - :py:obj:`GROUP_12 <pyllo.ui.theme.palette.PylloPaletteLight.GROUP_12>`
+        - \-
+      * - :py:obj:`COLOR_HIGHLIGHT_1 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_HIGHLIGHT_1>`
+        - \-
+      * - :py:obj:`COLOR_HIGHLIGHT_2 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_HIGHLIGHT_2>`
+        - \-
+      * - :py:obj:`COLOR_HIGHLIGHT_3 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_HIGHLIGHT_3>`
+        - \-
+      * - :py:obj:`COLOR_HIGHLIGHT_4 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_HIGHLIGHT_4>`
+        - \-
+      * - :py:obj:`COLOR_OCCURRENCE_1 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_OCCURRENCE_1>`
+        - \-
+      * - :py:obj:`COLOR_OCCURRENCE_2 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_OCCURRENCE_2>`
+        - \-
+      * - :py:obj:`COLOR_OCCURRENCE_3 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_OCCURRENCE_3>`
+        - \-
+      * - :py:obj:`COLOR_OCCURRENCE_4 <pyllo.ui.theme.palette.PylloPaletteLight.COLOR_OCCURRENCE_4>`
+        - \-
+      * - :py:obj:`PYTHON_LOGO_UP <pyllo.ui.theme.palette.PylloPaletteLight.PYTHON_LOGO_UP>`
+        - \-
+      * - :py:obj:`PYTHON_LOGO_DOWN <pyllo.ui.theme.palette.PylloPaletteLight.PYTHON_LOGO_DOWN>`
+        - \-
+      * - :py:obj:`PYLLO_LOGO_BACKGROUND <pyllo.ui.theme.palette.PylloPaletteLight.PYLLO_LOGO_BACKGROUND>`
+        - \-
+      * - :py:obj:`PYLLO_LOGO_WEB <pyllo.ui.theme.palette.PylloPaletteLight.PYLLO_LOGO_WEB>`
+        - \-
+      * - :py:obj:`PYLLO_LOGO_SNAKE <pyllo.ui.theme.palette.PylloPaletteLight.PYLLO_LOGO_SNAKE>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: COLOR_SUCCESS_1
+
+      
+
+   .. py:attribute:: COLOR_SUCCESS_2
+
+      
+
+   .. py:attribute:: COLOR_SUCCESS_3
+
+      
+
+   .. py:attribute:: COLOR_ERROR_1
+
+      
+
+   .. py:attribute:: COLOR_ERROR_2
+
+      
+
+   .. py:attribute:: COLOR_ERROR_3
+
+      
+
+   .. py:attribute:: COLOR_WARN_1
+
+      
+
+   .. py:attribute:: COLOR_WARN_2
+
+      
+
+   .. py:attribute:: COLOR_WARN_3
+
+      
+
+   .. py:attribute:: ICON_1
+
+      
+
+   .. py:attribute:: ICON_2
+
+      
+
+   .. py:attribute:: ICON_3
+
+      
+
+   .. py:attribute:: ICON_4
+
+      
+
+   .. py:attribute:: ICON_5
+
+      
+
+   .. py:attribute:: ICON_6
+
+      
+
+   .. py:attribute:: GROUP_1
+
+      
+
+   .. py:attribute:: GROUP_2
+
+      
+
+   .. py:attribute:: GROUP_3
+
+      
+
+   .. py:attribute:: GROUP_4
+
+      
+
+   .. py:attribute:: GROUP_5
+
+      
+
+   .. py:attribute:: GROUP_6
+
+      
+
+   .. py:attribute:: GROUP_7
+
+      
+
+   .. py:attribute:: GROUP_8
+
+      
+
+   .. py:attribute:: GROUP_9
+
+      
+
+   .. py:attribute:: GROUP_10
+
+      
+
+   .. py:attribute:: GROUP_11
+
+      
+
+   .. py:attribute:: GROUP_12
+
+      
+
+   .. py:attribute:: COLOR_HIGHLIGHT_1
+
+      
+
+   .. py:attribute:: COLOR_HIGHLIGHT_2
+
+      
+
+   .. py:attribute:: COLOR_HIGHLIGHT_3
+
+      
+
+   .. py:attribute:: COLOR_HIGHLIGHT_4
+
+      
+
+   .. py:attribute:: COLOR_OCCURRENCE_1
+
+      
+
+   .. py:attribute:: COLOR_OCCURRENCE_2
+
+      
+
+   .. py:attribute:: COLOR_OCCURRENCE_3
+
+      
+
+   .. py:attribute:: COLOR_OCCURRENCE_4
+
+      
+
+   .. py:attribute:: PYTHON_LOGO_UP
+
+      
+
+   .. py:attribute:: PYTHON_LOGO_DOWN
+
+      
+
+   .. py:attribute:: PYLLO_LOGO_BACKGROUND
+
+      
+
+   .. py:attribute:: PYLLO_LOGO_WEB
+
+      
+
+   .. py:attribute:: PYLLO_LOGO_SNAKE
+
+      
+
+
+
+
+
+
+.. py:data:: PylloPalette
+
+   
+

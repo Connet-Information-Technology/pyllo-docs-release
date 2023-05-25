@@ -1,0 +1,184 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.container`
+=======================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.container
+
+.. autoapi-nested-parse::
+
+   CodeEditorV2 widget.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`CodeEditorV2Container <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container>`
+     - Container for codeeditorv2.
+
+
+
+
+.. py:class:: CodeEditorV2Container(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainContainer`
+
+   Container for codeeditorv2.
+
+   ..    ..    ..    .. .. py:attribute:: sigDocumentOpened
+
+      file path, language, content of opened text document
+
+
+   ..    .. .. py:attribute:: sigDocumentChanged
+
+      file path
+
+
+   ..    .. .. py:attribute:: sigDocumentClosed
+
+      file path
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigDocumentOpened <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.sigDocumentOpened>`
+        - file path, language, content of opened text document
+      * - :py:obj:`sigDocumentChanged <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.sigDocumentChanged>`
+        - file path
+      * - :py:obj:`sigDocumentClosed <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.sigDocumentClosed>`
+        - file path
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.setup>`\ ()
+        - Create actions, widget, add to menu and other setup requirements.
+      * - :py:obj:`getCodeEditor <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.getCodeEditor>`\ (input_, language, duplicate)
+        - Get an code editor and create it if not exists
+      * - :py:obj:`updateLineColumnNumberStatus <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.updateLineColumnNumberStatus>`\ (editor)
+        - \-
+      * - :py:obj:`permanentlyCloseEditor <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.permanentlyCloseEditor>`\ (fpath, editor)
+        - \-
+      * - :py:obj:`getOpenedEditors <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.getOpenedEditors>`\ ()
+        - Returns opened editors
+      * - :py:obj:`getVisibleEditors <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.getVisibleEditors>`\ ()
+        - Returns visible editors
+      * - :py:obj:`registerExtensionForger <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.registerExtensionForger>`\ (ext, forger)
+        - Add extension that can be installed to code editor
+      * - :py:obj:`registerLanguageExtensionForger <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.registerLanguageExtensionForger>`\ (ext, forger)
+        - Add language extension(language support) that can be installed to code editor
+      * - :py:obj:`getLanguages <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.getLanguages>`\ ()
+        - Get supported languages which features got from language extensions
+      * - :py:obj:`setLineNumbersVisible <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.setLineNumbersVisible>`\ (enable)
+        - \-
+      * - :py:obj:`setEdgeLineVisible <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.setEdgeLineVisible>`\ (enable)
+        - \-
+      * - :py:obj:`setEdgeLineColumns <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.setEdgeLineColumns>`\ (columns)
+        - \-
+      * - :py:obj:`setScrollFlagsVisible <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.setScrollFlagsVisible>`\ (enable)
+        - \-
+      * - :py:obj:`setAutoClosing <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.setAutoClosing>`\ (enable)
+        - \-
+      * - :py:obj:`setAutoSurrounding <pyllo.plugins.codeeditorv2.internal.container.CodeEditorV2Container.setAutoSurrounding>`\ (enable)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigDocumentOpened
+
+      file path, language, content of opened text document
+
+
+   .. py:attribute:: sigDocumentChanged
+
+      file path
+
+
+   .. py:attribute:: sigDocumentClosed
+
+      file path
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+   .. py:method:: getCodeEditor(input_: pyllo.plugins.editorstack.api.TextEditorInput, language: str = None, duplicate=False) -> pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor
+
+      Get an code editor and create it if not exists
+
+
+   .. py:method:: updateLineColumnNumberStatus(editor)
+
+
+   .. py:method:: permanentlyCloseEditor(fpath: pyllo.core.dtype.FilePath, editor: pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor)
+
+
+   .. py:method:: getOpenedEditors() -> List[CodeEditor]
+
+      Returns opened editors
+
+
+   .. py:method:: getVisibleEditors() -> List[CodeEditor]
+
+      Returns visible editors
+
+
+   .. py:method:: registerExtensionForger(ext: Type[pyllo.plugins.codeeditorv2.api.ICodeEditorExtension], forger: pyllo.core.dtype.Forger[pyllo.plugins.codeeditorv2.api.ICodeEditorExtension])
+
+      Add extension that can be installed to code editor
+
+
+   .. py:method:: registerLanguageExtensionForger(ext: Type[pyllo.plugins.codeeditorv2.api.LanguageExtension], forger: pyllo.core.dtype.Forger[pyllo.plugins.codeeditorv2.api.LanguageExtension])
+
+      Add language extension(language support) that can be installed to code editor
+
+
+   .. py:method:: getLanguages()
+
+      Get supported languages which features got from language extensions
+
+
+   .. py:method:: setLineNumbersVisible(enable: bool)
+
+
+   .. py:method:: setEdgeLineVisible(enable: bool)
+
+
+   .. py:method:: setEdgeLineColumns(columns: int)
+
+
+   .. py:method:: setScrollFlagsVisible(enable: bool)
+
+
+   .. py:method:: setAutoClosing(enable: bool)
+
+
+   .. py:method:: setAutoSurrounding(enable: bool)
+
+
+
+
+

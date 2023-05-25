@@ -1,0 +1,78 @@
+:py:mod:`pyllo.plugins.ipythonconsole.api.help`
+===============================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.api.help
+
+.. autoapi-nested-parse::
+
+   Help Mix-in classes
+
+   These classes were created to be able to provide Pyllo's regular text and
+   console widget features to an independent widget based on QTextEdit for the
+   IPython console plugin.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`GetHelpMixin <pyllo.plugins.ipythonconsole.api.help.GetHelpMixin>`
+     - \-
+
+
+
+
+.. py:class:: GetHelpMixin
+
+   Bases: :py:obj:`object`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setHelpEnabled <pyllo.plugins.ipythonconsole.api.help.GetHelpMixin.setHelpEnabled>`\ (state)
+        - \-
+      * - :py:obj:`inspectCurrentObject <pyllo.plugins.ipythonconsole.api.help.GetHelpMixin.inspectCurrentObject>`\ ()
+        - \-
+      * - :py:obj:`showObjectInfo <pyllo.plugins.ipythonconsole.api.help.GetHelpMixin.showObjectInfo>`\ (text, call, force)
+        - Show signature calltip and/or docstring in the Help plugin
+      * - :py:obj:`getLastObj <pyllo.plugins.ipythonconsole.api.help.GetHelpMixin.getLastObj>`\ (last)
+        - Return the last valid object on the current line
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setHelpEnabled(state)
+
+
+   .. py:method:: inspectCurrentObject()
+
+
+   .. py:method:: showObjectInfo(text, call=False, force=False)
+
+      Show signature calltip and/or docstring in the Help plugin
+
+
+   .. py:method:: getLastObj(last=False)
+
+      Return the last valid object on the current line
+
+
+
+
+

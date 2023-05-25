@@ -1,0 +1,16 @@
+:py:mod:`pyllo.plugins.statusbar.internal`
+==========================================
+
+.. py:module:: pyllo.plugins.statusbar.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   container/index.rst
+   widgets/index.rst
+
+

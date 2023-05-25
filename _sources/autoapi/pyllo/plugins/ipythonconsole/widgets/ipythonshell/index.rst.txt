@@ -1,0 +1,599 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.ipythonshell`
+===========================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.ipythonshell
+
+.. autoapi-nested-parse::
+
+   Shell Widget for the IPython Console
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ShellWidget <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget>`
+     - Shell widget for the IPython Console
+
+
+
+
+.. py:class:: ShellWidget(ipyClient, additional_options, interpreter_versions, external_kernel, *args, **kw)
+
+   Bases: :py:obj:`pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget`, :py:obj:`pyllo.plugins.ipythonconsole.widgets.help.HelpWidget`, :py:obj:`pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget`, :py:obj:`pyllo.plugins.ipythonconsole.widgets.figurebrowser.FigureBrowserWidget`
+
+   Shell widget for the IPython Console
+
+   This is the widget in charge of executing code
+
+   ..    ..    ..    .. .. py:attribute:: sigShowSyspath
+
+      
+
+   ..    .. .. py:attribute:: sigShowEnv
+
+      
+
+   ..    .. .. py:attribute:: sigNewInlineFigure
+
+      
+
+   ..    .. .. py:attribute:: sigPdbStep
+
+      
+
+   ..    .. .. py:attribute:: sigPdbStateChanged
+
+      
+
+   ..    .. .. py:attribute:: sigPdbPromptReady
+
+      
+
+   ..    .. .. py:attribute:: sigNewClient
+
+      
+
+   ..    .. .. py:attribute:: sigIsSpyderKernel
+
+      
+
+   ..    .. .. py:attribute:: sigKernelRestartedMessage
+
+      
+
+   ..    .. .. py:attribute:: sigKernelRestarted
+
+      
+
+   ..    .. .. py:attribute:: sigPromptReady
+
+      
+
+   ..    .. .. py:attribute:: sigRemoteExecute
+
+      
+
+   ..    .. .. py:attribute:: sigWorkingDirectoryChanged
+
+      
+
+   ..    .. .. py:attribute:: sigExceptionOccurred
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigShowSyspath <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigShowSyspath>`
+        - \-
+      * - :py:obj:`sigShowEnv <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigShowEnv>`
+        - \-
+      * - :py:obj:`sigNewInlineFigure <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigNewInlineFigure>`
+        - \-
+      * - :py:obj:`sigPdbStep <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigPdbStep>`
+        - \-
+      * - :py:obj:`sigPdbStateChanged <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigPdbStateChanged>`
+        - \-
+      * - :py:obj:`sigPdbPromptReady <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigPdbPromptReady>`
+        - \-
+      * - :py:obj:`sigNewClient <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigNewClient>`
+        - \-
+      * - :py:obj:`sigIsSpyderKernel <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigIsSpyderKernel>`
+        - \-
+      * - :py:obj:`sigKernelRestartedMessage <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigKernelRestartedMessage>`
+        - \-
+      * - :py:obj:`sigKernelRestarted <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigKernelRestarted>`
+        - \-
+      * - :py:obj:`sigPromptReady <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigPromptReady>`
+        - \-
+      * - :py:obj:`sigRemoteExecute <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigRemoteExecute>`
+        - \-
+      * - :py:obj:`sigWorkingDirectoryChanged <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigWorkingDirectoryChanged>`
+        - \-
+      * - :py:obj:`sigExceptionOccurred <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.sigExceptionOccurred>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`is_spyder_kernel <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.is_spyder_kernel>`\ ()
+        - Is the widget a pyllo kernel.
+      * - :py:obj:`shutdown <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.shutdown>`\ ()
+        - Shutdown kernel
+      * - :py:obj:`will_close <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.will_close>`\ (externally_managed)
+        - Close communication channels with the kernel if shutdown was not called.
+      * - :py:obj:`call_kernel <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.call_kernel>`\ (interrupt, blocking, callback, timeout, displayError)
+        - Send message to Pyllo kernel connected to this console.
+      * - :py:obj:`set_kernel_client_and_manager <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_kernel_client_and_manager>`\ (kernelClient, kernelManager)
+        - Set the kernel client and manager
+      * - :py:obj:`pop_execute_queue <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.pop_execute_queue>`\ ()
+        - Pop one waiting instruction.
+      * - :py:obj:`interrupt_kernel <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.interrupt_kernel>`\ ()
+        - Attempts to interrupt the running kernel.
+      * - :py:obj:`execute <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.execute>`\ (source, hidden, interactive)
+        - Executes source or the input buffer, possibly prompting for more
+      * - :py:obj:`request_interrupt_eventloop <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.request_interrupt_eventloop>`\ ()
+        - Send a message to the kernel to interrupt the eventloop.
+      * - :py:obj:`set_exit_callback <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_exit_callback>`\ ()
+        - Set exit callback for this shell.
+      * - :py:obj:`is_running <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.is_running>`\ ()
+        - \-
+      * - :py:obj:`check_spyder_kernel <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.check_spyder_kernel>`\ ()
+        - Determine if the kernel is from Spyder.
+      * - :py:obj:`set_cwd <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_cwd>`\ (dirname)
+        - Set shell current working directory.
+      * - :py:obj:`update_cwd <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.update_cwd>`\ ()
+        - Update current working directory in the kernel.
+      * - :py:obj:`remote_set_cwd <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.remote_set_cwd>`\ (cwd)
+        - Get current working directory from kernel.
+      * - :py:obj:`set_bracket_matcher_color_scheme <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_bracket_matcher_color_scheme>`\ (colorScheme)
+        - Set color scheme for matched parentheses.
+      * - :py:obj:`set_color_scheme <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_color_scheme>`\ (colorScheme, reset)
+        - Set color scheme of the shell.
+      * - :py:obj:`update_syspath <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.update_syspath>`\ (pathDict, newPathDict)
+        - Update sys.path contents on kernel.
+      * - :py:obj:`request_syspath <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.request_syspath>`\ ()
+        - Ask the kernel for sys.path contents.
+      * - :py:obj:`request_env <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.request_env>`\ ()
+        - Ask the kernel for environment variables.
+      * - :py:obj:`set_show_calltips <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_show_calltips>`\ (show_calltips)
+        - Enable/Disable showing calltips.
+      * - :py:obj:`set_buffer_size <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_buffer_size>`\ (buffer_size)
+        - Set buffer size for the shell.
+      * - :py:obj:`set_completion_type <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_completion_type>`\ (completion_type)
+        - Set completion type (Graphical, Terminal, Plain) for the shell.
+      * - :py:obj:`set_in_prompt <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_in_prompt>`\ (in_prompt)
+        - Set appereance of the In prompt.
+      * - :py:obj:`set_out_prompt <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_out_prompt>`\ (out_prompt)
+        - Set appereance of the Out prompt.
+      * - :py:obj:`set_jedi_completer <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_jedi_completer>`\ (use_jedi)
+        - Set if jedi completions should be used.
+      * - :py:obj:`set_greedy_completer <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_greedy_completer>`\ (use_greedy)
+        - Set if greedy completions should be used.
+      * - :py:obj:`set_autocall <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.set_autocall>`\ (autocall)
+        - Set if autocall functionality is enabled or not.
+      * - :py:obj:`long_banner <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.long_banner>`\ ()
+        - Banner for clients with additional content.
+      * - :py:obj:`short_banner <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.short_banner>`\ ()
+        - Short banner with Python and IPython versions only.
+      * - :py:obj:`clear_console <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.clear_console>`\ ()
+        - \-
+      * - :py:obj:`reset_namespace <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.reset_namespace>`\ (warning, message)
+        - Reset the namespace by removing all names defined by the user.
+      * - :py:obj:`handle_reset_message_answer <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.handle_reset_message_answer>`\ (messageBox, button, message)
+        - Handle the answer of the reset namespace message box.
+      * - :py:obj:`silent_execute <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.silent_execute>`\ (code)
+        - Execute code in the kernel without increasing the prompt
+      * - :py:obj:`silent_exec_method <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.silent_exec_method>`\ (code)
+        - Silently execute a kernel method and save its reply
+      * - :py:obj:`handle_exec_method <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.handle_exec_method>`\ (msg)
+        - Handle data returned by silent executions of kernel methods
+      * - :py:obj:`append_html_message <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.append_html_message>`\ (html, before_prompt, msg_type)
+        - Append an html message enclosed in a box.
+      * - :py:obj:`insert_horizontal_ruler <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.insert_horizontal_ruler>`\ ()
+        - Insert a horizontal ruler at the current cursor position.
+      * - :py:obj:`get_editor <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.get_editor>`\ (filename)
+        - Get editor for filename.
+      * - :py:obj:`handle_get_file_code <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.handle_get_file_code>`\ (filename, save_all)
+        - Return the bytes that compose the file.
+      * - :py:obj:`handle_current_filename <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.handle_current_filename>`\ ()
+        - Get the current filename.
+      * - :py:obj:`request_restart_kernel <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.request_restart_kernel>`\ ()
+        - Reimplemented to call our own restart mechanism.
+      * - :py:obj:`adjust_indentation <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.adjust_indentation>`\ (line, indentAdjustment)
+        - Adjust indentation.
+      * - :py:obj:`paste <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.paste>`\ (mode)
+        - Paste the contents of the clipboard into the input region.
+      * - :py:obj:`copy <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.copy>`\ ()
+        - Copy the currently selected text to the clipboard.
+      * - :py:obj:`cut <pyllo.plugins.ipythonconsole.widgets.ipythonshell.ShellWidget.cut>`\ ()
+        - Copy the currently selected text to the clipboard and delete it
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigShowSyspath
+
+      
+
+   .. py:attribute:: sigShowEnv
+
+      
+
+   .. py:attribute:: sigNewInlineFigure
+
+      
+
+   .. py:attribute:: sigPdbStep
+
+      
+
+   .. py:attribute:: sigPdbStateChanged
+
+      
+
+   .. py:attribute:: sigPdbPromptReady
+
+      
+
+   .. py:attribute:: sigNewClient
+
+      
+
+   .. py:attribute:: sigIsSpyderKernel
+
+      
+
+   .. py:attribute:: sigKernelRestartedMessage
+
+      
+
+   .. py:attribute:: sigKernelRestarted
+
+      
+
+   .. py:attribute:: sigPromptReady
+
+      
+
+   .. py:attribute:: sigRemoteExecute
+
+      
+
+   .. py:attribute:: sigWorkingDirectoryChanged
+
+      
+
+   .. py:attribute:: sigExceptionOccurred
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: is_spyder_kernel()
+
+      Is the widget a pyllo kernel.
+
+
+   .. py:method:: shutdown()
+
+      Shutdown kernel
+
+
+   .. py:method:: will_close(externally_managed)
+
+      Close communication channels with the kernel if shutdown was not called.
+      If the kernel is not externally managed, shutdown the kernel as well.
+
+
+   .. py:method:: call_kernel(interrupt=False, blocking=False, callback=None, timeout=None, displayError=False)
+
+      Send message to Pyllo kernel connected to this console.
+
+      Parameters
+      ----------
+      interrupt: bool
+          Interrupt the kernel while running or in Pdb to perform
+          the call.
+      blocking: bool
+          Make a blocking call, i.e. wait on this side until the
+          kernel sends its response.
+      callback: callable
+          Callable to process the response sent from the kernel
+          on the Pyllo side.
+      timeout: int or None
+          Maximum time (in seconds) before giving up when making a
+          blocking call to the kernel. If None, a default timeout
+          (defined in commbase.py, present in spyder-kernels) is
+          used.
+      displayError: bool
+          If an error occurs, should it be printed to the console.
+
+
+   .. py:method:: set_kernel_client_and_manager(kernelClient, kernelManager)
+
+      Set the kernel client and manager
+
+
+   .. py:method:: pop_execute_queue()
+
+      Pop one waiting instruction.
+
+
+   .. py:method:: interrupt_kernel()
+
+      Attempts to interrupt the running kernel.
+
+
+   .. py:method:: execute(source=None, hidden=False, interactive=False)
+
+      Executes source or the input buffer, possibly prompting for more
+      input.
+
+
+   .. py:method:: request_interrupt_eventloop()
+
+      Send a message to the kernel to interrupt the eventloop.
+
+
+   .. py:method:: set_exit_callback()
+
+      Set exit callback for this shell.
+
+
+   .. py:method:: is_running()
+
+
+   .. py:method:: check_spyder_kernel()
+
+      Determine if the kernel is from Spyder.
+
+
+   .. py:method:: set_cwd(dirname)
+
+      Set shell current working directory.
+
+
+   .. py:method:: update_cwd()
+
+      Update current working directory in the kernel.
+
+
+   .. py:method:: remote_set_cwd(cwd)
+
+      Get current working directory from kernel.
+
+
+   .. py:method:: set_bracket_matcher_color_scheme(colorScheme)
+
+      Set color scheme for matched parentheses.
+
+
+   .. py:method:: set_color_scheme(colorScheme, reset=True)
+
+      Set color scheme of the shell.
+
+
+   .. py:method:: update_syspath(pathDict, newPathDict)
+
+      Update sys.path contents on kernel.
+
+
+   .. py:method:: request_syspath()
+
+      Ask the kernel for sys.path contents.
+
+
+   .. py:method:: request_env()
+
+      Ask the kernel for environment variables.
+
+
+   .. py:method:: set_show_calltips(show_calltips)
+
+      Enable/Disable showing calltips.
+
+
+   .. py:method:: set_buffer_size(buffer_size)
+
+      Set buffer size for the shell.
+
+
+   .. py:method:: set_completion_type(completion_type)
+
+      Set completion type (Graphical, Terminal, Plain) for the shell.
+
+
+   .. py:method:: set_in_prompt(in_prompt)
+
+      Set appereance of the In prompt.
+
+
+   .. py:method:: set_out_prompt(out_prompt)
+
+      Set appereance of the Out prompt.
+
+
+   .. py:method:: set_jedi_completer(use_jedi)
+
+      Set if jedi completions should be used.
+
+
+   .. py:method:: set_greedy_completer(use_greedy)
+
+      Set if greedy completions should be used.
+
+
+   .. py:method:: set_autocall(autocall)
+
+      Set if autocall functionality is enabled or not.
+
+
+   .. py:method:: long_banner()
+
+      Banner for clients with additional content.
+
+
+   .. py:method:: short_banner()
+
+      Short banner with Python and IPython versions only.
+
+
+   .. py:method:: clear_console()
+
+
+   .. py:method:: reset_namespace(warning=False, message=False)
+
+      Reset the namespace by removing all names defined by the user.
+
+
+   .. py:method:: handle_reset_message_answer(messageBox, button, message)
+
+      Handle the answer of the reset namespace message box.
+
+      Parameters
+      ----------
+      messageBox
+          Instance of the message box shown to the user.
+      button: QPushButton
+          Instance of the button clicked by the user on the dialog.
+      message: bool
+          Whether to show a message in the console telling users the
+          namespace was reset.
+
+
+   .. py:method:: silent_execute(code)
+
+      Execute code in the kernel without increasing the prompt
+
+
+   .. py:method:: silent_exec_method(code)
+
+      Silently execute a kernel method and save its reply
+
+      The methods passed here **don't** involve getting the value
+      of a variable but instead replies that can be handled by
+      ast.literal_eval.
+
+      To get a value see `get_value`
+
+      Parameters
+      ----------
+      code : string
+          Code that contains the kernel method as part of its
+          string
+
+      See Also
+      --------
+      handle_exec_method : Method that deals with the reply
+
+      Note
+      ----
+      This is based on the _silent_exec_callback method of
+      RichJupyterWidget. Therefore this is licensed BSD
+
+
+   .. py:method:: handle_exec_method(msg)
+
+      Handle data returned by silent executions of kernel methods
+
+      This is based on the _handle_exec_callback of RichJupyterWidget.
+      Therefore this is licensed BSD.
+
+
+   .. py:method:: append_html_message(html, before_prompt=False, msg_type='warning')
+
+      Append an html message enclosed in a box.
+
+      Parameters
+      ----------
+      before_prompt: bool
+          Whether to add the message before the next prompt.
+      msg_type: str
+          Type of message to be showm. Possible values are
+          'warning' and 'error'.
+
+
+   .. py:method:: insert_horizontal_ruler()
+
+      Insert a horizontal ruler at the current cursor position.
+
+      Notes
+      -----
+      This only works when adding a single horizontal line to a
+      message. For more complex messages, please use
+      append_html_message.
+
+
+   .. py:method:: get_editor(filename)
+
+      Get editor for filename.
+
+
+   .. py:method:: handle_get_file_code(filename, save_all=True)
+
+      Return the bytes that compose the file.
+
+      Bytes are returned instead of str to support non utf-8 files.
+
+
+   .. py:method:: handle_current_filename()
+
+      Get the current filename.
+
+
+   .. py:method:: request_restart_kernel()
+
+      Reimplemented to call our own restart mechanism.
+
+
+   .. py:method:: adjust_indentation(line, indentAdjustment)
+
+      Adjust indentation.
+
+
+   .. py:method:: paste(mode=QtGui.QClipboard.Clipboard)
+
+      Paste the contents of the clipboard into the input region.
+
+      Parameters
+      ----------
+      mode : QClipboard::Mode, optional [default QClipboard::Clipboard]
+
+          Controls which part of the system clipboard is used. This can be
+          used to access the selection clipboard in X11 and the Find buffer
+          in Mac OS. By default, the regular clipboard is used.
+
+
+   .. py:method:: copy()
+
+      Copy the currently selected text to the clipboard.
+
+
+   .. py:method:: cut()
+
+      Copy the currently selected text to the clipboard and delete it
+      if it's inside the input buffer.
+
+
+
+
+

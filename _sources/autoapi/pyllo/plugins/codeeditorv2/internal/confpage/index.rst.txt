@@ -1,0 +1,62 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.confpage`
+======================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.confpage
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`CodeEditorV2ConfigPage <pyllo.plugins.codeeditorv2.internal.confpage.CodeEditorV2ConfigPage>`
+     - codeeditorv2 configuration page.
+
+
+
+
+.. py:class:: CodeEditorV2ConfigPage(plugin: pyllo.core.runtime.spi.PylloPlugin, parent: qtpy.QtWidgets.QWidget)
+
+   Bases: :py:obj:`pyllo.ui.preferences.PluginConfigPage`
+
+   codeeditorv2 configuration page.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setupPage <pyllo.plugins.codeeditorv2.internal.confpage.CodeEditorV2ConfigPage.setupPage>`\ ()
+        - Setup configuration page widget
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setupPage()
+
+      Setup configuration page widget
+
+      You should implement this method and set the layout of the
+      preferences page.
+
+      layout = QVBoxLayout()
+      layout.addWidget(...)
+      ...
+      self.setLayout(layout)
+
+
+
+
+

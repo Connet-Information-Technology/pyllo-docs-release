@@ -1,0 +1,38 @@
+:py:mod:`pyllo.config.tests.test_base`
+======================================
+
+.. py:module:: pyllo.config.tests.test_base
+
+.. autoapi-nested-parse::
+
+   Tests for the core.config.base module.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`testIsStableVersion <pyllo.config.tests.test_base.testIsStableVersion>`\ ()
+     - Test that stable and non-stable versions are recognized correctly.
+   * - :py:obj:`testGetConfDir <pyllo.config.tests.test_base.testGetConfDir>`\ (monkeypatch, useDevConfigDir)
+     - Test that the config dir path is set under dev and release builds.
+
+
+
+.. py:function:: testIsStableVersion()
+
+   Test that stable and non-stable versions are recognized correctly.
+
+
+.. py:function:: testGetConfDir(monkeypatch, useDevConfigDir)
+
+   Test that the config dir path is set under dev and release builds.
+
+

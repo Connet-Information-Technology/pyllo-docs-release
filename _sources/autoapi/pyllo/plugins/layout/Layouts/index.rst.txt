@@ -1,0 +1,16 @@
+:py:mod:`pyllo.plugins.layout.layouts`
+======================================
+
+.. py:module:: pyllo.plugins.layout.layouts
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   default/index.rst
+   terminal/index.rst
+
+

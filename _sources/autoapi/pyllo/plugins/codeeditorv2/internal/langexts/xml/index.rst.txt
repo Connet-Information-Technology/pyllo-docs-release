@@ -1,0 +1,139 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.langexts.xml`
+==========================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.langexts.xml
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`XmlExtension <pyllo.plugins.codeeditorv2.internal.langexts.xml.XmlExtension>`
+     - \-
+
+
+
+
+.. py:class:: XmlExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.internal.langexts.html.LanguageExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'xml'
+
+      
+
+   ..    .. .. py:attribute:: NAME_FILTERS
+      :value: ['*.xml']
+
+      
+
+   ..    .. .. py:attribute:: ALIASES
+      :value: ['XML', 'xml']
+
+      
+
+   ..    .. .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   ..    .. .. py:attribute:: CONFIGURATION
+
+      
+
+   ..    .. .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.langexts.xml.XmlExtension.NAME>`
+        - \-
+      * - :py:obj:`NAME_FILTERS <pyllo.plugins.codeeditorv2.internal.langexts.xml.XmlExtension.NAME_FILTERS>`
+        - \-
+      * - :py:obj:`ALIASES <pyllo.plugins.codeeditorv2.internal.langexts.xml.XmlExtension.ALIASES>`
+        - \-
+      * - :py:obj:`FILE_NAMES <pyllo.plugins.codeeditorv2.internal.langexts.xml.XmlExtension.FILE_NAMES>`
+        - \-
+      * - :py:obj:`FIRST_LINE <pyllo.plugins.codeeditorv2.internal.langexts.xml.XmlExtension.FIRST_LINE>`
+        - \-
+      * - :py:obj:`CONFIGURATION <pyllo.plugins.codeeditorv2.internal.langexts.xml.XmlExtension.CONFIGURATION>`
+        - \-
+      * - :py:obj:`SYNTAX_HIGHLIGHTER <pyllo.plugins.codeeditorv2.internal.langexts.xml.XmlExtension.SYNTAX_HIGHLIGHTER>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.langexts.xml.XmlExtension.onInitialize>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'xml'
+
+      
+
+   .. py:attribute:: NAME_FILTERS
+      :value: ['*.xml']
+
+      
+
+   .. py:attribute:: ALIASES
+      :value: ['XML', 'xml']
+
+      
+
+   .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   .. py:attribute:: CONFIGURATION
+
+      
+
+   .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+              
+
+
+
+
+

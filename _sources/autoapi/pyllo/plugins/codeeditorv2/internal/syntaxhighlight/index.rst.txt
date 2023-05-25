@@ -1,0 +1,289 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.syntaxhighlight`
+=============================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.syntaxhighlight
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`BaseSH <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH>`
+     - Base Syntax Highlighter Class
+   * - :py:obj:`TextSH <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.TextSH>`
+     - Simple Text Syntax Highlighter Class (only highlight spaces).
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`QSpan <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.QSpan>`\ (match, key)
+     - This method is identical to `match.span` method but tries to return the span of a match
+   * - :py:obj:`tokenSpec <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.tokenSpec>`\ (name, alternates)
+     - Return a named group pattern matching list of alternates.
+   * - :py:obj:`createPatterns <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.createPatterns>`\ (patterns, compile)
+     - Create patterns from pattern dictionary.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DEFAULT_PATTERNS <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.DEFAULT_PATTERNS>`
+     - \-
+   * - :py:obj:`CUSTOM_EXTENSION_LEXER <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.CUSTOM_EXTENSION_LEXER>`
+     - \-
+   * - :py:obj:`customExtensionLexerMapping <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.customExtensionLexerMapping>`
+     - \-
+   * - :py:obj:`DEFAULT_PATTERNS_TEXT <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.DEFAULT_PATTERNS_TEXT>`
+     - \-
+   * - :py:obj:`DEFAULT_COMPILED_PATTERNS <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.DEFAULT_COMPILED_PATTERNS>`
+     - \-
+
+
+.. py:data:: DEFAULT_PATTERNS
+
+   
+
+.. py:data:: CUSTOM_EXTENSION_LEXER
+
+   
+
+.. py:data:: customExtensionLexerMapping
+
+   
+
+.. py:function:: QSpan(match, key=None)
+
+   This method is identical to `match.span` method but tries to return the span of a match
+   as seen by qt.
+
+
+.. py:function:: tokenSpec(name, alternates)
+
+   Return a named group pattern matching list of alternates.
+
+
+.. py:function:: createPatterns(patterns, compile=False)
+
+   Create patterns from pattern dictionary.
+
+   The key correspond to the group name and the values a list of
+   possible pattern alternatives.
+
+
+.. py:data:: DEFAULT_PATTERNS_TEXT
+
+   
+
+.. py:data:: DEFAULT_COMPILED_PATTERNS
+
+   
+
+.. py:class:: BaseSH(parent, font, colorScheme='pyllo/dark')
+
+   Bases: :py:obj:`pyllo.ui.qt.PylloSyntaxHighlighter`
+
+   Base Syntax Highlighter Class
+
+   ..    ..    ..    .. .. py:attribute:: PROG
+
+      
+
+   ..    .. .. py:attribute:: BLANKPROG
+
+      
+
+   ..    .. .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+   ..    .. .. py:attribute:: BLANK_ALPHA_FACTOR
+      :value: 0.31
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PROG <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.PROG>`
+        - \-
+      * - :py:obj:`BLANKPROG <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.BLANKPROG>`
+        - \-
+      * - :py:obj:`NORMAL <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.NORMAL>`
+        - \-
+      * - :py:obj:`BLANK_ALPHA_FACTOR <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.BLANK_ALPHA_FACTOR>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getBackgroundColor <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getBackgroundColor>`\ ()
+        - \-
+      * - :py:obj:`getForegroundColor <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getForegroundColor>`\ ()
+        - Return foreground ('normal' text) color
+      * - :py:obj:`getCurrentLineColor <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getCurrentLineColor>`\ ()
+        - \-
+      * - :py:obj:`getOccurrenceColor <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getOccurrenceColor>`\ ()
+        - \-
+      * - :py:obj:`getCtrlClickColor <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getCtrlClickColor>`\ ()
+        - \-
+      * - :py:obj:`getSideAreasColor <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getSideAreasColor>`\ ()
+        - \-
+      * - :py:obj:`getMatchedPColor <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getMatchedPColor>`\ ()
+        - \-
+      * - :py:obj:`getUnmatchedPColor <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getUnmatchedPColor>`\ ()
+        - \-
+      * - :py:obj:`getCommentColor <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getCommentColor>`\ ()
+        - Return color for the comments
+      * - :py:obj:`getColorName <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.getColorName>`\ (fmt)
+        - Return color name assigned to a given format
+      * - :py:obj:`setFont <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.setFont>`\ (font)
+        - \-
+      * - :py:obj:`setColorScheme <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.setColorScheme>`\ (colorScheme)
+        - \-
+      * - :py:obj:`highlightBlock <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.highlightBlock>`\ (text)
+        - Highlights a block of text.
+      * - :py:obj:`highlightExtras <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.highlightExtras>`\ (text, offset)
+        - Perform additional global text highlight.
+      * - :py:obj:`rehighlight <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH.rehighlight>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PROG
+
+      
+
+   .. py:attribute:: BLANKPROG
+
+      
+
+   .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+   .. py:attribute:: BLANK_ALPHA_FACTOR
+      :value: 0.31
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getBackgroundColor()
+
+
+   .. py:method:: getForegroundColor()
+
+      Return foreground ('normal' text) color
+
+
+   .. py:method:: getCurrentLineColor()
+
+
+   .. py:method:: getOccurrenceColor()
+
+
+   .. py:method:: getCtrlClickColor()
+
+
+   .. py:method:: getSideAreasColor()
+
+
+   .. py:method:: getMatchedPColor()
+
+
+   .. py:method:: getUnmatchedPColor()
+
+
+   .. py:method:: getCommentColor()
+
+      Return color for the comments 
+
+
+   .. py:method:: getColorName(fmt)
+
+      Return color name assigned to a given format
+
+
+   .. py:method:: setFont(font)
+
+
+   .. py:method:: setColorScheme(colorScheme)
+
+
+   .. py:method:: highlightBlock(text)
+
+      Highlights a block of text.
+      :param text: text to highlight.
+
+
+   .. py:method:: highlightExtras(text, offset=0)
+
+      Perform additional global text highlight.
+
+      Derived classes could call this function at the end of
+      highlight_block().
+
+
+   .. py:method:: rehighlight()
+
+
+
+
+
+.. py:class:: TextSH(parent, font, colorScheme='pyllo/dark')
+
+   Bases: :py:obj:`BaseSH`
+
+   Simple Text Syntax Highlighter Class (only highlight spaces).
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highlightBlock <pyllo.plugins.codeeditorv2.internal.syntaxhighlight.TextSH.highlightBlock>`\ (text)
+        - Implement highlight, only highlight spaces.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: highlightBlock(text)
+
+      Implement highlight, only highlight spaces.
+
+
+
+
+

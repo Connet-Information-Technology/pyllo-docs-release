@@ -1,0 +1,165 @@
+:py:mod:`pyllo.plugins.debug.internal.configurationmanager`
+===========================================================
+
+.. py:module:: pyllo.plugins.debug.internal.configurationmanager
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ConfigurationManager <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager>`
+     - Configuration management
+
+
+
+
+.. py:class:: ConfigurationManager(launchFilename: pyllo.core.dtype.FilePath)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   Configuration management
+
+   ..    ..    ..    .. .. py:attribute:: sigErrorOccurred
+
+      error occurred when parsing configuration file
+
+
+   ..    .. .. py:attribute:: sigCurrentChanged
+
+      current configuration changed
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigErrorOccurred <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.sigErrorOccurred>`
+        - error occurred when parsing configuration file
+      * - :py:obj:`sigCurrentChanged <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.sigCurrentChanged>`
+        - current configuration changed
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`launchFilename <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.launchFilename>`\ ()
+        - returns launch filename
+      * - :py:obj:`currentIndex <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.currentIndex>`\ ()
+        - Return current index of configuraiton, returns -1 if none is chosen
+      * - :py:obj:`setCurrent <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.setCurrent>`\ (index)
+        - set current configuration to configuration
+      * - :py:obj:`currentConfiguration <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.currentConfiguration>`\ ()
+        - return current configuration
+      * - :py:obj:`reload <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.reload>`\ ()
+        - \-
+      * - :py:obj:`getConfigurations <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.getConfigurations>`\ ()
+        - get all configurations in json launch file configuration order.
+      * - :py:obj:`hasDebugConfigurationProvider <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.hasDebugConfigurationProvider>`\ (debugType)
+        - Has debug configuration provider
+      * - :py:obj:`registerDebugConfigurationProvider <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.registerDebugConfigurationProvider>`\ (debugType, provider)
+        - Register debug configuration provider
+      * - :py:obj:`unregisterDebugConfigurationProvider <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.unregisterDebugConfigurationProvider>`\ (debugType, provider)
+        - Unregister debug configuration provider
+      * - :py:obj:`getDebugConfigurationProvider <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.getDebugConfigurationProvider>`\ (debugType)
+        - Get debug configuration provider
+      * - :py:obj:`getDebugTypes <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.getDebugTypes>`\ ()
+        - Get debug configuration provider types
+      * - :py:obj:`resolveConfigurationByProviders <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.resolveConfigurationByProviders>`\ (debugConfiguration)
+        - Resolve configuratin by provider
+      * - :py:obj:`resolveDebugConfigurationWithSubstitutedVariables <pyllo.plugins.debug.internal.configurationmanager.ConfigurationManager.resolveDebugConfigurationWithSubstitutedVariables>`\ (debugConfiguration)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigErrorOccurred
+
+      error occurred when parsing configuration file
+
+
+   .. py:attribute:: sigCurrentChanged
+
+      current configuration changed
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: launchFilename() -> pyllo.core.dtype.FilePath
+
+      returns launch filename
+
+
+   .. py:method:: currentIndex() -> pyllo.core.dtype.Index
+
+      Return current index of configuraiton, returns -1 if none is chosen
+
+
+   .. py:method:: setCurrent(index: pyllo.core.dtype.Index)
+
+      set current configuration to configuration
+
+
+   .. py:method:: currentConfiguration() -> pyllo.core.dtype.IO[Optional[pyllo.plugins.debug.api.DebugConfiguration]]
+
+      return current configuration
+
+
+   .. py:method:: reload()
+
+
+   .. py:method:: getConfigurations() -> pyllo.core.dtype.IO[List[pyllo.plugins.debug.api.DebugConfiguration]]
+
+      get all configurations in json launch file configuration order.
+
+
+   .. py:method:: hasDebugConfigurationProvider(debugType: str) -> bool
+
+      Has debug configuration provider
+
+
+   .. py:method:: registerDebugConfigurationProvider(debugType: str, provider: pyllo.plugins.debug.api.IDebugConfigurationProvider)
+
+      Register debug configuration provider
+
+
+   .. py:method:: unregisterDebugConfigurationProvider(debugType: str, provider: pyllo.plugins.debug.api.IDebugConfigurationProvider)
+
+      Unregister debug configuration provider
+
+
+   .. py:method:: getDebugConfigurationProvider(debugType: str) -> Optional[pyllo.plugins.debug.api.IDebugConfigurationProvider]
+
+      Get debug configuration provider
+
+
+   .. py:method:: getDebugTypes() -> List[pyllo.core.dtype.Text]
+
+      Get debug configuration provider types
+
+
+   .. py:method:: resolveConfigurationByProviders(debugConfiguration: pyllo.plugins.debug.api.DebugConfiguration) -> pyllo.plugins.debug.api.DebugConfiguration
+
+      Resolve configuratin by provider
+
+
+   .. py:method:: resolveDebugConfigurationWithSubstitutedVariables(debugConfiguration: pyllo.plugins.debug.api.DebugConfiguration) -> pyllo.plugins.debug.api.DebugConfiguration
+
+
+
+
+

@@ -1,0 +1,35 @@
+:py:mod:`pyllo.plugins`
+=======================
+
+.. py:module:: pyllo.plugins
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   application/index.rst
+   breakpoints/index.rst
+   codeeditorv2/index.rst
+   contrib/index.rst
+   debug/index.rst
+   editorstack/index.rst
+   explorer/index.rst
+   ipythonconsole/index.rst
+   languageserver/index.rst
+   layout/index.rst
+   mainmenu/index.rst
+   outlineexplorer/index.rst
+   output/index.rst
+   preferences/index.rst
+   problems/index.rst
+   python/index.rst
+   run/index.rst
+   shortcuts/index.rst
+   statusbar/index.rst
+   toolbar/index.rst
+   workingdirectory/index.rst
+
+

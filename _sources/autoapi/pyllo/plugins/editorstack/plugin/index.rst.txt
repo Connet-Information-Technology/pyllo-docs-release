@@ -1,0 +1,316 @@
+:py:mod:`pyllo.plugins.editorstack.plugin`
+==========================================
+
+.. py:module:: pyllo.plugins.editorstack.plugin
+
+.. autoapi-nested-parse::
+
+   Editor Stack Plugin to manage multiple editors in one editor area.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`EditorStack <pyllo.plugins.editorstack.plugin.EditorStack>`
+     - Editor stack to manage multiple editors in one editor area.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.editorstack.plugin.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: EditorStack(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloDockablePlugin`
+
+   Editor stack to manage multiple editors in one editor area.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'editorstack'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.editorstack.plugin.EditorStack.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.editorstack.plugin.EditorStack.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.editorstack.plugin.EditorStack.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.editorstack.plugin.EditorStack.OPTIONAL>`
+        - \-
+      * - :py:obj:`WIDGET_CLASS <pyllo.plugins.editorstack.plugin.EditorStack.WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.editorstack.plugin.EditorStack.CONF_SECTION>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.editorstack.plugin.EditorStack.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getIcon <pyllo.plugins.editorstack.plugin.EditorStack.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`getDescription <pyllo.plugins.editorstack.plugin.EditorStack.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`onInitialize <pyllo.plugins.editorstack.plugin.EditorStack.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`openFileEditor <pyllo.plugins.editorstack.plugin.EditorStack.openFileEditor>`\ (filename, editorName, setCurrent, forceDuplicate)
+        - Parameters
+      * - :py:obj:`closeFileEditor <pyllo.plugins.editorstack.plugin.EditorStack.closeFileEditor>`\ (editor)
+        - close file editor
+      * - :py:obj:`insertTab <pyllo.plugins.editorstack.plugin.EditorStack.insertTab>`\ (tabs, index, editor, setCurrent)
+        - If editor already in tabs then its index is returned
+      * - :py:obj:`currentTabs <pyllo.plugins.editorstack.plugin.EditorStack.currentTabs>`\ ()
+        - \-
+      * - :py:obj:`getTabsStack <pyllo.plugins.editorstack.plugin.EditorStack.getTabsStack>`\ ()
+        - \-
+      * - :py:obj:`getTabsByEditor <pyllo.plugins.editorstack.plugin.EditorStack.getTabsByEditor>`\ (editor)
+        - get tabs which editor is in
+      * - :py:obj:`closeTab <pyllo.plugins.editorstack.plugin.EditorStack.closeTab>`\ (tabs, index)
+        - Parameters
+      * - :py:obj:`getEditors <pyllo.plugins.editorstack.plugin.EditorStack.getEditors>`\ ()
+        - \-
+      * - :py:obj:`currentEditor <pyllo.plugins.editorstack.plugin.EditorStack.currentEditor>`\ ()
+        - \-
+      * - :py:obj:`getContentTypeRegistry <pyllo.plugins.editorstack.plugin.EditorStack.getContentTypeRegistry>`\ ()
+        - \-
+      * - :py:obj:`onPluginFocusChanged <pyllo.plugins.editorstack.plugin.EditorStack.onPluginFocusChanged>`\ (previousWidget, previousPlugin, currentWidget, currentPlugin)
+        - Called when widget focus changed.
+      * - :py:obj:`closeAllTabs <pyllo.plugins.editorstack.plugin.EditorStack.closeAllTabs>`\ ()
+        - \-
+      * - :py:obj:`onTearDown <pyllo.plugins.editorstack.plugin.EditorStack.onTearDown>`\ (cancelable)
+        - Perform actions before the main window is closed.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'editorstack'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   .. py:attribute:: WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName() -> str
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: openFileEditor(filename: pyllo.core.dtype.FilePath, editorName: pyllo.core.dtype.Text = None, setCurrent: bool = False, forceDuplicate: bool = False) -> Optional[pyllo.plugins.editorstack.api.IEditor]
+
+      Parameters
+      ----------
+      filename: str
+          File to open.
+      editorName: str
+          Editor hint.
+      setCurrent: bool
+          Open file editor and set the editor page to current immediately.
+      forceDuplicate: bool
+          Force editor stack to open a new editor regardless of existing opened editors of file.
+
+      Returns
+      -------
+      editor object.
+
+
+   .. py:method:: closeFileEditor(editor: pyllo.plugins.editorstack.api.IEditor)
+
+      close file editor
+
+
+   .. py:method:: insertTab(tabs: pyllo.ui.tabs.PylloTabs, index: pyllo.core.dtype.Index, editor: pyllo.plugins.editorstack.api.IEditor, setCurrent: bool = False) -> pyllo.core.dtype.Index
+
+      If editor already in tabs then its index is returned
+
+
+   .. py:method:: currentTabs() -> pyllo.ui.tabs.PylloTabs
+
+
+   .. py:method:: getTabsStack() -> List[pyllo.ui.tabs.PylloTabs]
+
+
+   .. py:method:: getTabsByEditor(editor: pyllo.plugins.editorstack.api.IEditor) -> Optional[pyllo.ui.tabs.PylloTabs]
+
+      get tabs which editor is in
+
+
+   .. py:method:: closeTab(tabs: pyllo.ui.tabs.PylloTabs, index: pyllo.core.dtype.Index)
+
+      Parameters
+      ----------
+      tabs: PylloTabs
+          Tabs widget.
+      index: int
+          Index of tab.
+
+
+   .. py:method:: getEditors() -> List[pyllo.plugins.editorstack.api.IEditor]
+
+
+   .. py:method:: currentEditor() -> Optional[IEditor]
+
+
+   .. py:method:: getContentTypeRegistry() -> pyllo.plugins.editorstack.api.ContentTypeRegistry
+
+
+   .. py:method:: onPluginFocusChanged(previousWidget: qtpy.QtWidgets.QWidget, previousPlugin: pyllo.core.dtype.PluginName, currentWidget: qtpy.QtWidgets.QWidget, currentPlugin: pyllo.core.dtype.PluginName)
+
+      Called when widget focus changed.
+
+
+   .. py:method:: closeAllTabs()
+
+
+   .. py:method:: onTearDown(cancelable=False)
+
+      Perform actions before the main window is closed.
+
+      Returns
+      -------
+      bool
+          Whether the plugin may be closed immediately or not.
+
+      Notes
+      -----
+      The returned value is ignored if *cancelable* is False.
+
+
+      .. versionadded:: 1.0.0
+
+
+
+
+

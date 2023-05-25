@@ -1,0 +1,212 @@
+:py:mod:`pyllo.plugins.problems.internal.mainwidget`
+====================================================
+
+.. py:module:: pyllo.plugins.problems.internal.mainwidget
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ProblemsWidget <pyllo.plugins.problems.internal.mainwidget.ProblemsWidget>`
+     - Main widget of completions for diagnostics.
+   * - :py:obj:`FileProblemsModel <pyllo.plugins.problems.internal.mainwidget.FileProblemsModel>`
+     - Problems listview model whose data source is Pony SQLite database
+   * - :py:obj:`PluginProblemsModel <pyllo.plugins.problems.internal.mainwidget.PluginProblemsModel>`
+     - Problems listview model whose data source is Pony SQLite database
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.problems.internal.mainwidget.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: ProblemsWidget(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainWidget`
+
+   Main widget of completions for diagnostics.
+
+   ===================================
+   |File|Project/Workspace|__________|
+   |                                 |
+   | Console                         |
+   | ...                             |
+   ===================================
+
+   ..    ..    ..    .. .. py:attribute:: sigEditGotoRequested
+
+      Request for opening editor and goto specific line and column and set focus or not
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigEditGotoRequested <pyllo.plugins.problems.internal.mainwidget.ProblemsWidget.sigEditGotoRequested>`
+        - Request for opening editor and goto specific line and column and set focus or not
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getTitle <pyllo.plugins.problems.internal.mainwidget.ProblemsWidget.getTitle>`\ ()
+        - Return the title that will be displayed on dock widget or window title.
+      * - :py:obj:`setup <pyllo.plugins.problems.internal.mainwidget.ProblemsWidget.setup>`\ ()
+        - Create widget actions, add to menu and other setup requirements.
+      * - :py:obj:`createProblemsPanel <pyllo.plugins.problems.internal.mainwidget.ProblemsWidget.createProblemsPanel>`\ (editor)
+        - \-
+      * - :py:obj:`deleteProblemsPanel <pyllo.plugins.problems.internal.mainwidget.ProblemsWidget.deleteProblemsPanel>`\ (panel)
+        - the story ends here
+      * - :py:obj:`updateFileProblems <pyllo.plugins.problems.internal.mainwidget.ProblemsWidget.updateFileProblems>`\ (domain, problems, filePath)
+        - \-
+      * - :py:obj:`updatePluginProblems <pyllo.plugins.problems.internal.mainwidget.ProblemsWidget.updatePluginProblems>`\ (source, problems)
+        - \-
+      * - :py:obj:`updateInspectedFile <pyllo.plugins.problems.internal.mainwidget.ProblemsWidget.updateInspectedFile>`\ (filePath)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigEditGotoRequested
+
+      Request for opening editor and goto specific line and column and set focus or not
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getTitle()
+
+      Return the title that will be displayed on dock widget or window title.
+
+
+   .. py:method:: setup()
+
+      Create widget actions, add to menu and other setup requirements.
+
+
+   .. py:method:: createProblemsPanel(editor: pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor) -> pyllo.plugins.problems.internal.problemspanel.ProblemsPanel
+
+
+   .. py:method:: deleteProblemsPanel(panel: pyllo.plugins.problems.internal.problemspanel.ProblemsPanel)
+
+      the story ends here
+
+
+   .. py:method:: updateFileProblems(domain: str, problems: list, filePath: str)
+
+
+   .. py:method:: updatePluginProblems(source: str, problems: list)
+
+
+   .. py:method:: updateInspectedFile(filePath: str)
+
+
+
+
+
+.. py:class:: FileProblemsModel(parent=None)
+
+   Bases: :py:obj:`qtpy.QtCore.QAbstractListModel`
+
+   Problems listview model whose data source is Pony SQLite database
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`update <pyllo.plugins.problems.internal.mainwidget.FileProblemsModel.update>`\ ()
+        - \-
+      * - :py:obj:`rowCount <pyllo.plugins.problems.internal.mainwidget.FileProblemsModel.rowCount>`\ (parent, \*args, \*\*kwargs)
+        - \-
+      * - :py:obj:`data <pyllo.plugins.problems.internal.mainwidget.FileProblemsModel.data>`\ (index, role)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: update()
+
+
+   .. py:method:: rowCount(parent=None, *args, **kwargs)
+
+
+   .. py:method:: data(index: qtpy.QtCore.QModelIndex, role=Qt.DisplayRole)
+
+
+
+
+
+.. py:class:: PluginProblemsModel(parent=None)
+
+   Bases: :py:obj:`qtpy.QtCore.QAbstractListModel`
+
+   Problems listview model whose data source is Pony SQLite database
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`update <pyllo.plugins.problems.internal.mainwidget.PluginProblemsModel.update>`\ ()
+        - \-
+      * - :py:obj:`rowCount <pyllo.plugins.problems.internal.mainwidget.PluginProblemsModel.rowCount>`\ (parent, \*args, \*\*kwargs)
+        - \-
+      * - :py:obj:`data <pyllo.plugins.problems.internal.mainwidget.PluginProblemsModel.data>`\ (index, role)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: update()
+
+
+   .. py:method:: rowCount(parent=None, *args, **kwargs)
+
+
+   .. py:method:: data(index: qtpy.QtCore.QModelIndex, role=Qt.DisplayRole)
+
+
+
+
+

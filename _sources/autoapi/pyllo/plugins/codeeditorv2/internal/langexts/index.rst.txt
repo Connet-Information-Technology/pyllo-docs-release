@@ -1,0 +1,21 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.langexts`
+======================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.langexts
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   cpp/index.rst
+   html/index.rst
+   markdown/index.rst
+   pygments/index.rst
+   python/index.rst
+   xml/index.rst
+   yaml/index.rst
+
+

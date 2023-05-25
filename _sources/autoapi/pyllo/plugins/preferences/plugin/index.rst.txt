@@ -1,0 +1,289 @@
+:py:mod:`pyllo.plugins.preferences.plugin`
+==========================================
+
+.. py:module:: pyllo.plugins.preferences.plugin
+
+.. autoapi-nested-parse::
+
+   Pyllo preferences plugin.
+
+   This plugin is in charge of managing preference pages and tabs for all plugins
+   in Pyllo, both internal and external.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Preferences <pyllo.plugins.preferences.plugin.Preferences>`
+     - Pyllo preferences plugin.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.preferences.plugin.logger>`
+     - \-
+   * - :py:obj:`BaseType <pyllo.plugins.preferences.plugin.BaseType>`
+     - \-
+   * - :py:obj:`IterableType <pyllo.plugins.preferences.plugin.IterableType>`
+     - \-
+   * - :py:obj:`BasicType <pyllo.plugins.preferences.plugin.BasicType>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:data:: BaseType
+
+   
+
+.. py:data:: IterableType
+
+   
+
+.. py:data:: BasicType
+
+   
+
+.. py:class:: Preferences(app)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   Pyllo preferences plugin.
+
+   This class manages all the preference pages and tabs for all internal
+   and external plugins, as well enabling other plugins to add configurations
+   to other sections.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'preferences'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.preferences.plugin.Preferences.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.preferences.plugin.Preferences.VERSION>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.preferences.plugin.Preferences.CONF_SECTION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.preferences.plugin.Preferences.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.preferences.plugin.Preferences.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.preferences.plugin.Preferences.CONF_FILE>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.plugins.preferences.plugin.Preferences.CONTAINER_CLASS>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.preferences.plugin.Preferences.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.preferences.plugin.Preferences.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.preferences.plugin.Preferences.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.preferences.plugin.Preferences.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onMainMenuAvailable <pyllo.plugins.preferences.plugin.Preferences.onMainMenuAvailable>`\ ()
+        - \-
+      * - :py:obj:`onToolbarAvailable <pyllo.plugins.preferences.plugin.Preferences.onToolbarAvailable>`\ ()
+        - \-
+      * - :py:obj:`registerPluginPreferences <pyllo.plugins.preferences.plugin.Preferences.registerPluginPreferences>`\ (plugin)
+        - \-
+      * - :py:obj:`checkVersionAndMerge <pyllo.plugins.preferences.plugin.Preferences.checkVersionAndMerge>`\ (confSection, confKey, newValue, currentVersion, plugin)
+        - Add a versioned additional option to a configuration section.
+      * - :py:obj:`mergeDefaults <pyllo.plugins.preferences.plugin.Preferences.mergeDefaults>`\ (prevDefault, newDefault, allowReplacement, allowDeletions)
+        - Compare and merge two versioned values.
+      * - :py:obj:`mergeConfigurations <pyllo.plugins.preferences.plugin.Preferences.mergeConfigurations>`\ (currentValue, newValue)
+        - Recursively match and merge a new configuration value into a
+      * - :py:obj:`openDialog <pyllo.plugins.preferences.plugin.Preferences.openDialog>`\ ()
+        - \-
+      * - :py:obj:`reset <pyllo.plugins.preferences.plugin.Preferences.reset>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'preferences'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName() -> str
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon() -> qtpy.QtGui.QIcon
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainMenuAvailable()
+
+
+   .. py:method:: onToolbarAvailable()
+
+
+   .. py:method:: registerPluginPreferences(plugin: pyllo.core.runtime.spi.PylloPlugin) -> None
+
+
+   .. py:method:: checkVersionAndMerge(confSection: str, confKey: str, newValue: BasicType, currentVersion: packaging.version.Version, plugin)
+
+      Add a versioned additional option to a configuration section.
+
+
+   .. py:method:: mergeDefaults(prevDefault: BasicType, newDefault: BasicType, allowReplacement: bool = False, allowDeletions: bool = False) -> BasicType
+
+      Compare and merge two versioned values.
+
+
+   .. py:method:: mergeConfigurations(currentValue: BasicType, newValue: BasicType) -> BasicType
+
+      Recursively match and merge a new configuration value into a
+      previous one.
+
+
+   .. py:method:: openDialog()
+
+
+   .. py:method:: reset()
+
+
+
+
+

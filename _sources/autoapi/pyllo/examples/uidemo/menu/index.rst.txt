@@ -1,0 +1,28 @@
+:py:mod:`pyllo.examples.uidemo.menu`
+====================================
+
+.. py:module:: pyllo.examples.uidemo.menu
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MenuDemo <pyllo.examples.uidemo.menu.MenuDemo>`
+     - \-
+
+
+
+
+.. py:class:: MenuDemo(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QScrollArea`
+
+   ..    ..    .. 
+
+

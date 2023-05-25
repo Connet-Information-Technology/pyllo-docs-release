@@ -1,0 +1,285 @@
+:py:mod:`pyllo.plugins.breakpoints.plugin`
+==========================================
+
+.. py:module:: pyllo.plugins.breakpoints.plugin
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Breakpoints <pyllo.plugins.breakpoints.plugin.Breakpoints>`
+     - breakpoints plugin.
+
+
+
+
+.. py:class:: Breakpoints(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloDockablePlugin`
+
+   breakpoints plugin.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'breakpoints'
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: sigBreakpointAdded
+
+      breakpoint added
+
+
+   ..    .. .. py:attribute:: sigBreakpointChanged
+
+      breakpoint changed signal which first param is new, second one is old
+
+
+   ..    .. .. py:attribute:: sigBreakpointRemoved
+
+      breakpoint removed
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.breakpoints.plugin.Breakpoints.NAME>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.breakpoints.plugin.Breakpoints.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.breakpoints.plugin.Breakpoints.OPTIONAL>`
+        - \-
+      * - :py:obj:`WIDGET_CLASS <pyllo.plugins.breakpoints.plugin.Breakpoints.WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.breakpoints.plugin.Breakpoints.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.breakpoints.plugin.Breakpoints.CONF_FILE>`
+        - \-
+      * - :py:obj:`sigBreakpointAdded <pyllo.plugins.breakpoints.plugin.Breakpoints.sigBreakpointAdded>`
+        - breakpoint added
+      * - :py:obj:`sigBreakpointChanged <pyllo.plugins.breakpoints.plugin.Breakpoints.sigBreakpointChanged>`
+        - breakpoint changed signal which first param is new, second one is old
+      * - :py:obj:`sigBreakpointRemoved <pyllo.plugins.breakpoints.plugin.Breakpoints.sigBreakpointRemoved>`
+        - breakpoint removed
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.breakpoints.plugin.Breakpoints.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.breakpoints.plugin.Breakpoints.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.breakpoints.plugin.Breakpoints.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.breakpoints.plugin.Breakpoints.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onEditGotoRequested <pyllo.plugins.breakpoints.plugin.Breakpoints.onEditGotoRequested>`\ (file, lineno, columno, setFocus)
+        - edit goto
+      * - :py:obj:`onCodeEditorV2Available <pyllo.plugins.breakpoints.plugin.Breakpoints.onCodeEditorV2Available>`\ ()
+        - \-
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.breakpoints.plugin.Breakpoints.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`registerLanguage <pyllo.plugins.breakpoints.plugin.Breakpoints.registerLanguage>`\ (language)
+        - Register which language with breakpoints support, e.g. we can set breakpoints on the breakpoints panel
+      * - :py:obj:`languages <pyllo.plugins.breakpoints.plugin.Breakpoints.languages>`\ ()
+        - Return languages with breakpoints support
+      * - :py:obj:`breakpoints <pyllo.plugins.breakpoints.plugin.Breakpoints.breakpoints>`\ (source)
+        - Return breakpoints
+      * - :py:obj:`setBreakpointsMuted <pyllo.plugins.breakpoints.plugin.Breakpoints.setBreakpointsMuted>`\ (ids, mute)
+        - Mute breakpoints by id
+      * - :py:obj:`unmuteAll <pyllo.plugins.breakpoints.plugin.Breakpoints.unmuteAll>`\ ()
+        - unmute all breakpoints
+      * - :py:obj:`muteAll <pyllo.plugins.breakpoints.plugin.Breakpoints.muteAll>`\ ()
+        - mute all breakpoints
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'breakpoints'
+
+      
+
+   .. py:attribute:: REQUIRES
+
+      
+
+   .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   .. py:attribute:: WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: sigBreakpointAdded
+
+      breakpoint added
+
+
+   .. py:attribute:: sigBreakpointChanged
+
+      breakpoint changed signal which first param is new, second one is old
+
+
+   .. py:attribute:: sigBreakpointRemoved
+
+      breakpoint removed
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onEditGotoRequested(file: pyllo.core.dtype.FilePath, lineno: pyllo.core.dtype.LineNumber, columno: pyllo.core.dtype.ColumnNumber, setFocus=False)
+
+      edit goto
+
+
+   .. py:method:: onCodeEditorV2Available()
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: registerLanguage(language: pyllo.core.dtype.Text)
+
+      Register which language with breakpoints support, e.g. we can set breakpoints on the breakpoints panel
+
+
+   .. py:method:: languages() -> List[pyllo.core.dtype.Text]
+
+      Return languages with breakpoints support
+
+
+   .. py:method:: breakpoints(source: pyllo.core.dtype.FilePath = None) -> List[pyllo.plugins.breakpoints.api.Breakpoint]
+
+      Return breakpoints
+
+
+   .. py:method:: setBreakpointsMuted(ids: List[pyllo.core.dtype.Index], mute=True)
+
+      Mute breakpoints by id
+
+
+   .. py:method:: unmuteAll()
+
+      unmute all breakpoints
+
+
+   .. py:method:: muteAll()
+
+      mute all breakpoints
+
+
+
+
+

@@ -1,0 +1,360 @@
+:py:mod:`pyllo.core.dtype`
+==========================
+
+.. py:module:: pyllo.core.dtype
+
+.. autoapi-nested-parse::
+
+   Common types, this module provides richer type system of pyllo project.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Forger <pyllo.core.dtype.Forger>`
+     - A forger provides a way to transfer ownership of object creation and management from the caller to the callee,
+   * - :py:obj:`Severity <pyllo.core.dtype.Severity>`
+     - Generic enumeration.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`T <pyllo.core.dtype.T>`
+     - \-
+   * - :py:obj:`IO <pyllo.core.dtype.IO>`
+     - \-
+   * - :py:obj:`BasicTypes <pyllo.core.dtype.BasicTypes>`
+     - \-
+   * - :py:obj:`Text <pyllo.core.dtype.Text>`
+     - \-
+   * - :py:obj:`Identity <pyllo.core.dtype.Identity>`
+     - \-
+   * - :py:obj:`Index <pyllo.core.dtype.Index>`
+     - \-
+   * - :py:obj:`Language <pyllo.core.dtype.Language>`
+     - \-
+   * - :py:obj:`GlobalPos <pyllo.core.dtype.GlobalPos>`
+     - \-
+   * - :py:obj:`GlobalPosF <pyllo.core.dtype.GlobalPosF>`
+     - \-
+   * - :py:obj:`LocalPos <pyllo.core.dtype.LocalPos>`
+     - \-
+   * - :py:obj:`LocalPosF <pyllo.core.dtype.LocalPosF>`
+     - \-
+   * - :py:obj:`Seconds <pyllo.core.dtype.Seconds>`
+     - \-
+   * - :py:obj:`SecondsF <pyllo.core.dtype.SecondsF>`
+     - \-
+   * - :py:obj:`Milliseconds <pyllo.core.dtype.Milliseconds>`
+     - \-
+   * - :py:obj:`MillisecondsF <pyllo.core.dtype.MillisecondsF>`
+     - \-
+   * - :py:obj:`Microseconds <pyllo.core.dtype.Microseconds>`
+     - \-
+   * - :py:obj:`MicrosecondsF <pyllo.core.dtype.MicrosecondsF>`
+     - \-
+   * - :py:obj:`DirBaseName <pyllo.core.dtype.DirBaseName>`
+     - \-
+   * - :py:obj:`DirName <pyllo.core.dtype.DirName>`
+     - \-
+   * - :py:obj:`FileBaseName <pyllo.core.dtype.FileBaseName>`
+     - \-
+   * - :py:obj:`FilePath <pyllo.core.dtype.FilePath>`
+     - \-
+   * - :py:obj:`FileDescriptor <pyllo.core.dtype.FileDescriptor>`
+     - \-
+   * - :py:obj:`LineNumber <pyllo.core.dtype.LineNumber>`
+     - \-
+   * - :py:obj:`ColumnNumber <pyllo.core.dtype.ColumnNumber>`
+     - \-
+   * - :py:obj:`Command <pyllo.core.dtype.Command>`
+     - \-
+   * - :py:obj:`CommandToken <pyllo.core.dtype.CommandToken>`
+     - \-
+   * - :py:obj:`Commands <pyllo.core.dtype.Commands>`
+     - \-
+   * - :py:obj:`PluginName <pyllo.core.dtype.PluginName>`
+     - \-
+   * - :py:obj:`SectionName <pyllo.core.dtype.SectionName>`
+     - \-
+   * - :py:obj:`NestedOptionName <pyllo.core.dtype.NestedOptionName>`
+     - \-
+   * - :py:obj:`OptionName <pyllo.core.dtype.OptionName>`
+     - \-
+   * - :py:obj:`ShortcutName <pyllo.core.dtype.ShortcutName>`
+     - \-
+   * - :py:obj:`ShortcutNamespace <pyllo.core.dtype.ShortcutNamespace>`
+     - \-
+   * - :py:obj:`KeySequenceString <pyllo.core.dtype.KeySequenceString>`
+     - \-
+   * - :py:obj:`FileConfigNameMap <pyllo.core.dtype.FileConfigNameMap>`
+     - \-
+   * - :py:obj:`Configurations <pyllo.core.dtype.Configurations>`
+     - \-
+   * - :py:obj:`Registry1stNamespace <pyllo.core.dtype.Registry1stNamespace>`
+     - \-
+   * - :py:obj:`Registry2ndNamespace <pyllo.core.dtype.Registry2ndNamespace>`
+     - \-
+
+
+.. py:data:: T
+
+   
+
+.. py:data:: IO
+
+   
+
+.. py:class:: Forger(callableObject)
+
+   Bases: :py:obj:`Generic`\ [\ :py:obj:`T`\ ]
+
+   A forger provides a way to transfer ownership of object creation and management from the caller to the callee,
+   which can simplify the code and reduce the chances of errors.
+
+   ..    ..    .. 
+
+
+.. py:data:: BasicTypes
+
+   
+
+.. py:data:: Text
+
+   
+
+.. py:data:: Identity
+
+   
+
+.. py:data:: Index
+
+   
+
+.. py:data:: Language
+
+   
+
+.. py:data:: GlobalPos
+
+   
+
+.. py:data:: GlobalPosF
+
+   
+
+.. py:data:: LocalPos
+
+   
+
+.. py:data:: LocalPosF
+
+   
+
+.. py:data:: Seconds
+
+   
+
+.. py:data:: SecondsF
+
+   
+
+.. py:data:: Milliseconds
+
+   
+
+.. py:data:: MillisecondsF
+
+   
+
+.. py:data:: Microseconds
+
+   
+
+.. py:data:: MicrosecondsF
+
+   
+
+.. py:data:: DirBaseName
+
+   
+
+.. py:data:: DirName
+
+   
+
+.. py:data:: FileBaseName
+
+   
+
+.. py:data:: FilePath
+
+   
+
+.. py:data:: FileDescriptor
+
+   
+
+.. py:data:: LineNumber
+
+   
+
+.. py:data:: ColumnNumber
+
+   
+
+.. py:data:: Command
+
+   
+
+.. py:data:: CommandToken
+
+   
+
+.. py:data:: Commands
+
+   
+
+.. py:class:: Severity
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: PLAIN
+      :value: 0
+
+      
+
+   ..    .. .. py:attribute:: INFO
+      :value: 10
+
+      
+
+   ..    .. .. py:attribute:: SUCCESS
+      :value: 20
+
+      
+
+   ..    .. .. py:attribute:: WARNING
+      :value: 30
+
+      
+
+   ..    .. .. py:attribute:: ERROR
+      :value: 40
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PLAIN <pyllo.core.dtype.Severity.PLAIN>`
+        - \-
+      * - :py:obj:`INFO <pyllo.core.dtype.Severity.INFO>`
+        - \-
+      * - :py:obj:`SUCCESS <pyllo.core.dtype.Severity.SUCCESS>`
+        - \-
+      * - :py:obj:`WARNING <pyllo.core.dtype.Severity.WARNING>`
+        - \-
+      * - :py:obj:`ERROR <pyllo.core.dtype.Severity.ERROR>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PLAIN
+      :value: 0
+
+      
+
+   .. py:attribute:: INFO
+      :value: 10
+
+      
+
+   .. py:attribute:: SUCCESS
+      :value: 20
+
+      
+
+   .. py:attribute:: WARNING
+      :value: 30
+
+      
+
+   .. py:attribute:: ERROR
+      :value: 40
+
+      
+
+
+
+
+
+
+.. py:data:: PluginName
+
+   
+
+.. py:data:: SectionName
+
+   
+
+.. py:data:: NestedOptionName
+
+   
+
+.. py:data:: OptionName
+
+   
+
+.. py:data:: ShortcutName
+
+   
+
+.. py:data:: ShortcutNamespace
+
+   
+
+.. py:data:: KeySequenceString
+
+   
+
+.. py:data:: FileConfigNameMap
+
+   
+
+.. py:data:: Configurations
+
+   
+
+.. py:data:: Registry1stNamespace
+
+   
+
+.. py:data:: Registry2ndNamespace
+
+   
+

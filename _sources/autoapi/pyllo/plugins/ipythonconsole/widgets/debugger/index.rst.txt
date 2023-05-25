@@ -1,0 +1,357 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.debugger`
+=======================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.debugger
+
+.. autoapi-nested-parse::
+
+   Widget that handles communications between a console in debugging
+   mode and Pyllo
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloIPy3Lexer <pyllo.plugins.ipythonconsole.widgets.debugger.PylloIPy3Lexer>`
+     - \-
+   * - :py:obj:`PdbHistory <pyllo.plugins.ipythonconsole.widgets.debugger.PdbHistory>`
+     - A class to organize all history-related functionality in one place.
+   * - :py:obj:`DebuggingHistoryWidget <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingHistoryWidget>`
+     - Widget with the necessary attributes and methods to override the pdb
+   * - :py:obj:`DebuggingWidget <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget>`
+     - Widget with the necessary attributes and methods to handle
+
+
+
+
+.. py:class:: PylloIPy3Lexer
+
+   Bases: :py:obj:`IPython.lib.lexers.IPython3Lexer`
+
+   ..    ..    ..    .. .. py:attribute:: tokens
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`tokens <pyllo.plugins.ipythonconsole.widgets.debugger.PylloIPy3Lexer.tokens>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: tokens
+
+      
+
+
+
+
+
+
+.. py:class:: PdbHistory(shell=None, config=None, **traits)
+
+   Bases: :py:obj:`IPython.core.history.HistoryManager`
+
+   A class to organize all history-related functionality in one place.
+       
+
+   ..    ..    .. 
+
+
+.. py:class:: DebuggingHistoryWidget(*args, **kwargs)
+
+   Bases: :py:obj:`qtconsole.rich_jupyter_widget.RichJupyterWidget`
+
+   Widget with the necessary attributes and methods to override the pdb
+   history mechanism while debugging.
+
+   ..    ..    ..    .. .. py:attribute:: PDB_HIST_MAX
+      :value: 400
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PDB_HIST_MAX <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingHistoryWidget.PDB_HIST_MAX>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`shutdown <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingHistoryWidget.shutdown>`\ ()
+        - Shutdown the widget
+      * - :py:obj:`new_history_session <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingHistoryWidget.new_history_session>`\ ()
+        - Start a new history session.
+      * - :py:obj:`end_history_session <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingHistoryWidget.end_history_session>`\ ()
+        - End an history session.
+      * - :py:obj:`add_to_pdb_history <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingHistoryWidget.add_to_pdb_history>`\ (line)
+        - Add command to history
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PDB_HIST_MAX
+      :value: 400
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: shutdown()
+
+      Shutdown the widget
+
+
+   .. py:method:: new_history_session()
+
+      Start a new history session.
+
+
+   .. py:method:: end_history_session()
+
+      End an history session.
+
+
+   .. py:method:: add_to_pdb_history(line)
+
+      Add command to history
+
+
+
+
+
+.. py:class:: DebuggingWidget(*args, **kwargs)
+
+   Bases: :py:obj:`DebuggingHistoryWidget`, :py:obj:`pyllo.core.runtime.preferences.PylloConfigurationAccessor`
+
+   Widget with the necessary attributes and methods to handle
+   communications between a console in debugging mode and Pyllo
+
+   ..    ..    ..    .. .. py:attribute:: CONF_SECTION
+      :value: 'ipython_console'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.CONF_SECTION>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`will_close <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.will_close>`\ (externally_managed)
+        - Close the save thread and database file.
+      * - :py:obj:`set_debug_state <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.set_debug_state>`\ (is_debugging)
+        - Update the debug state.
+      * - :py:obj:`pdb_execute_command <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.pdb_execute_command>`\ (command)
+        - Execute a pdb command
+      * - :py:obj:`pdb_execute <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.pdb_execute>`\ (line, hidden, echo_stack_entry, add_history)
+        - Send line to the pdb kernel if possible.
+      * - :py:obj:`get_pdb_settings <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.get_pdb_settings>`\ ()
+        - Get pdb settings
+      * - :py:obj:`stop_debugging <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.stop_debugging>`\ ()
+        - Stop debugging.
+      * - :py:obj:`set_pyllo_breakpoints <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.set_pyllo_breakpoints>`\ ()
+        - Set Spyder breakpoints into a debugging session
+      * - :py:obj:`set_pdb_ignore_lib <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.set_pdb_ignore_lib>`\ (pdb_ignore_lib)
+        - Set pdb_ignore_lib into a debugging session
+      * - :py:obj:`set_pdb_execute_events <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.set_pdb_execute_events>`\ (pdb_execute_events)
+        - Set pdb_execute_events into a debugging session
+      * - :py:obj:`set_pdb_use_exclamation_mark <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.set_pdb_use_exclamation_mark>`\ (pdb_use_exclamation_mark)
+        - Set pdb_use_exclamation_mark into a debugging session
+      * - :py:obj:`is_pdb_using_exclamantion_mark <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.is_pdb_using_exclamantion_mark>`\ ()
+        - \-
+      * - :py:obj:`do_where <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.do_where>`\ ()
+        - Where was called, go to the current location.
+      * - :py:obj:`refresh_from_pdb <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.refresh_from_pdb>`\ (pdb_state)
+        - Refresh Variable Explorer and Editor from a Pdb session,
+      * - :py:obj:`set_pdb_state <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.set_pdb_state>`\ (pdb_state)
+        - Set current pdb state.
+      * - :py:obj:`get_pdb_last_step <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.get_pdb_last_step>`\ ()
+        - Get last pdb step retrieved from a Pdb session.
+      * - :py:obj:`is_debugging <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.is_debugging>`\ ()
+        - Check if we are debugging.
+      * - :py:obj:`is_waiting_pdb_input <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.is_waiting_pdb_input>`\ ()
+        - Check if we are waiting a pdb input.
+      * - :py:obj:`reset <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.reset>`\ (clear)
+        - Resets the widget to its initial state if ``clear`` parameter
+      * - :py:obj:`execute <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.execute>`\ (source, hidden, interactive)
+        - Executes source or the input buffer, possibly prompting for more
+      * - :py:obj:`pdb_input <pyllo.plugins.ipythonconsole.widgets.debugger.DebuggingWidget.pdb_input>`\ (prompt, password)
+        - Get input for a command.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_SECTION
+      :value: 'ipython_console'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: will_close(externally_managed)
+
+      Close the save thread and database file.
+
+
+   .. py:method:: set_debug_state(is_debugging)
+
+      Update the debug state.
+
+
+   .. py:method:: pdb_execute_command(command)
+
+      Execute a pdb command
+
+
+   .. py:method:: pdb_execute(line, hidden=False, echo_stack_entry=True, add_history=True)
+
+      Send line to the pdb kernel if possible.
+
+      Parameters
+      ----------
+      line: str
+          the line to execute
+
+      hidden: bool
+          If the line should be hidden
+
+      echo_stack_entry: bool
+          If not hidden, if the stack entry should be printed
+
+      add_history: bool
+          If not hidden, whether the line should be added to history
+
+
+   .. py:method:: get_pdb_settings()
+
+      Get pdb settings
+
+
+   .. py:method:: stop_debugging()
+
+      Stop debugging.
+
+
+   .. py:method:: set_pyllo_breakpoints()
+
+      Set Spyder breakpoints into a debugging session
+
+
+   .. py:method:: set_pdb_ignore_lib(pdb_ignore_lib)
+
+      Set pdb_ignore_lib into a debugging session
+
+
+   .. py:method:: set_pdb_execute_events(pdb_execute_events)
+
+      Set pdb_execute_events into a debugging session
+
+
+   .. py:method:: set_pdb_use_exclamation_mark(pdb_use_exclamation_mark)
+
+      Set pdb_use_exclamation_mark into a debugging session
+
+
+   .. py:method:: is_pdb_using_exclamantion_mark()
+
+
+   .. py:method:: do_where()
+
+      Where was called, go to the current location.
+
+
+   .. py:method:: refresh_from_pdb(pdb_state)
+
+      Refresh Variable Explorer and Editor from a Pdb session,
+      after running any pdb command.
+
+      See publish_pdb_state and notify_spyder in spyder_kernels
+
+
+   .. py:method:: set_pdb_state(pdb_state)
+
+      Set current pdb state.
+
+
+   .. py:method:: get_pdb_last_step()
+
+      Get last pdb step retrieved from a Pdb session.
+
+
+   .. py:method:: is_debugging()
+
+      Check if we are debugging.
+
+
+   .. py:method:: is_waiting_pdb_input()
+
+      Check if we are waiting a pdb input.
+
+
+   .. py:method:: reset(clear=False)
+
+      Resets the widget to its initial state if ``clear`` parameter
+      is True
+
+
+   .. py:method:: execute(source=None, hidden=False, interactive=False)
+
+      Executes source or the input buffer, possibly prompting for more
+      input.
+
+      Do not use to run pdb commands (such as `continue`).
+      Use pdb_execute instead. This will add a '!' in front of the code.
+
+
+   .. py:method:: pdb_input(prompt, password=None)
+
+      Get input for a command.
+
+
+
+
+

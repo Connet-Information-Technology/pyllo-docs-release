@@ -1,0 +1,300 @@
+:py:mod:`pyllo.plugins.languageserver.internal.codeeditorextensions`
+====================================================================
+
+.. py:module:: pyllo.plugins.languageserver.internal.codeeditorextensions
+
+.. autoapi-nested-parse::
+
+   CodeEditor Extension implements UX using Language Server
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Completion <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion>`
+     - \-
+   * - :py:obj:`GotoDefinition <pyllo.plugins.languageserver.internal.codeeditorextensions.GotoDefinition>`
+     - \-
+
+
+
+
+.. py:class:: Completion(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.CodeEditorExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'completion'
+
+      
+
+   ..    .. .. py:attribute:: sigCompletionKeyPressed
+
+      
+
+   ..    .. .. py:attribute:: sigCompletionRequest
+
+      
+
+   ..    .. .. py:attribute:: sigCompletionCancel
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.NAME>`
+        - \-
+      * - :py:obj:`sigCompletionKeyPressed <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.sigCompletionKeyPressed>`
+        - \-
+      * - :py:obj:`sigCompletionRequest <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.sigCompletionRequest>`
+        - \-
+      * - :py:obj:`sigCompletionCancel <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.sigCompletionCancel>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`beforeEditorVisible <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.beforeEditorVisible>`\ ()
+        - This method is called by editor extension framework just before editor is visible.
+      * - :py:obj:`getName <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.getDescription>`\ ()
+        - Return the extension's localized description.
+      * - :py:obj:`onKeyPressed <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.onKeyPressed>`\ (event)
+        - \-
+      * - :py:obj:`requestCompletion <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.requestCompletion>`\ ()
+        - Send completion request by cursor
+      * - :py:obj:`complete <pyllo.plugins.languageserver.internal.codeeditorextensions.Completion.complete>`\ (textInsert)
+        - Insert completion result by raw text
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'completion'
+
+      
+
+   .. py:attribute:: sigCompletionKeyPressed
+
+      
+
+   .. py:attribute:: sigCompletionRequest
+
+      
+
+   .. py:attribute:: sigCompletionCancel
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: beforeEditorVisible()
+
+      This method is called by editor extension framework just before editor is visible.
+
+      Notes
+      -----
+      This is usually used for cross extensions features.
+      Which by means one extension's feature is dependent to another extension's feature.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getName() -> pyllo.core.dtype.Text
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> pyllo.core.dtype.Text
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onKeyPressed(event: qtpy.QtGui.QKeyEvent)
+
+
+   .. py:method:: requestCompletion()
+
+      Send completion request by cursor 
+
+
+   .. py:method:: complete(textInsert: pyllo.core.dtype.Text)
+
+      Insert completion result by raw text
+
+
+
+
+
+.. py:class:: GotoDefinition(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.CodeEditorExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'gotodefinition'
+
+      
+
+   ..    .. .. py:attribute:: sigDefinitionKeyPressed
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.languageserver.internal.codeeditorextensions.GotoDefinition.NAME>`
+        - \-
+      * - :py:obj:`sigDefinitionKeyPressed <pyllo.plugins.languageserver.internal.codeeditorextensions.GotoDefinition.sigDefinitionKeyPressed>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.languageserver.internal.codeeditorextensions.GotoDefinition.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`getName <pyllo.plugins.languageserver.internal.codeeditorextensions.GotoDefinition.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.languageserver.internal.codeeditorextensions.GotoDefinition.getDescription>`\ ()
+        - Return the extension's localized description.
+      * - :py:obj:`onMousePressed <pyllo.plugins.languageserver.internal.codeeditorextensions.GotoDefinition.onMousePressed>`\ (event)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'gotodefinition'
+
+      
+
+   .. py:attribute:: sigDefinitionKeyPressed
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getName() -> str
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMousePressed(event: qtpy.QtGui.QKeyEvent)
+
+
+
+
+

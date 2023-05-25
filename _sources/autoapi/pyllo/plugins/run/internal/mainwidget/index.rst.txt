@@ -1,0 +1,115 @@
+:py:mod:`pyllo.plugins.run.internal.mainwidget`
+===============================================
+
+.. py:module:: pyllo.plugins.run.internal.mainwidget
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`RunMainWidget <pyllo.plugins.run.internal.mainwidget.RunMainWidget>`
+     - Run widget
+
+
+
+
+.. py:class:: RunMainWidget(name: pyllo.core.dtype.Identity, plugin, parent: qtpy.QtWidgets.QWidget = None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainWidget`
+
+   Run widget
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.run.internal.mainwidget.RunMainWidget.setup>`\ ()
+        - Create widget actions, add to menu and other setup requirements.
+      * - :py:obj:`getTitle <pyllo.plugins.run.internal.mainwidget.RunMainWidget.getTitle>`\ ()
+        - Return the title that will be displayed on dock widget or window title.
+      * - :py:obj:`getIcon <pyllo.plugins.run.internal.mainwidget.RunMainWidget.getIcon>`\ ()
+        - Return widget icon.
+      * - :py:obj:`openConsole <pyllo.plugins.run.internal.mainwidget.RunMainWidget.openConsole>`\ (name, \*None, setCurrent)
+        - Return console if opened or open a new one if not.
+      * - :py:obj:`console <pyllo.plugins.run.internal.mainwidget.RunMainWidget.console>`\ (name)
+        - \-
+      * - :py:obj:`consoles <pyllo.plugins.run.internal.mainwidget.RunMainWidget.consoles>`\ ()
+        - \-
+      * - :py:obj:`consoleName <pyllo.plugins.run.internal.mainwidget.RunMainWidget.consoleName>`\ (console)
+        - \-
+      * - :py:obj:`setConsoleTabText <pyllo.plugins.run.internal.mainwidget.RunMainWidget.setConsoleTabText>`\ (name, text)
+        - \-
+      * - :py:obj:`setCurrentConsole <pyllo.plugins.run.internal.mainwidget.RunMainWidget.setCurrentConsole>`\ (name)
+        - \-
+      * - :py:obj:`currentConsole <pyllo.plugins.run.internal.mainwidget.RunMainWidget.currentConsole>`\ ()
+        - \-
+      * - :py:obj:`closeConsole <pyllo.plugins.run.internal.mainwidget.RunMainWidget.closeConsole>`\ (name)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create widget actions, add to menu and other setup requirements.
+
+
+   .. py:method:: getTitle() -> pyllo.core.dtype.Text
+
+      Return the title that will be displayed on dock widget or window title.
+
+
+   .. py:method:: getIcon() -> qtpy.QtGui.QIcon
+
+      Return widget icon.
+
+
+   .. py:method:: openConsole(name: pyllo.core.dtype.Identity, *, setCurrent=True) -> pyllo.plugins.run.internal.widgets.RunConsole
+
+      Return console if opened or open a new one if not.
+
+      Parameters
+      ----------
+      name: t.Identity
+          Unique name used as identifier also showed as tabs label.
+
+
+   .. py:method:: console(name: pyllo.core.dtype.Identity) -> Optional[pyllo.plugins.run.internal.widgets.RunConsole]
+
+
+   .. py:method:: consoles() -> List[pyllo.plugins.run.internal.widgets.RunConsole]
+
+
+   .. py:method:: consoleName(console: pyllo.plugins.run.internal.widgets.RunConsole) -> Optional[pyllo.core.dtype.Identity]
+
+
+   .. py:method:: setConsoleTabText(name: pyllo.core.dtype.Identity, text: pyllo.core.dtype.Text)
+
+
+   .. py:method:: setCurrentConsole(name: pyllo.core.dtype.Identity)
+
+
+   .. py:method:: currentConsole() -> Optional[pyllo.core.dtype.Identity]
+
+
+   .. py:method:: closeConsole(name: pyllo.core.dtype.Identity)
+
+
+
+
+

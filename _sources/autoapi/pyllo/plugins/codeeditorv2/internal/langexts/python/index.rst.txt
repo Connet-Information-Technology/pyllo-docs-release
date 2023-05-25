@@ -1,0 +1,272 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.langexts.python`
+=============================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.langexts.python
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PythonSH <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonSH>`
+     - Python Syntax Highlighter
+   * - :py:obj:`PythonExtension <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonExtension>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`makePythonPatterns <pyllo.plugins.codeeditorv2.internal.langexts.python.makePythonPatterns>`\ (additionalKeywords, additionalBuiltins)
+     - .. seealso:: https://docs.python.org/3/library/re.html#writing-a-tokenizer
+   * - :py:obj:`makeIpythonPatterns <pyllo.plugins.codeeditorv2.internal.langexts.python.makeIpythonPatterns>`\ (additionalKeywords, additionalBuiltins)
+     - \-
+   * - :py:obj:`getCodeCellName <pyllo.plugins.codeeditorv2.internal.langexts.python.getCodeCellName>`\ (text)
+     - Returns a code cell name from a code cell comment.
+
+
+
+.. py:function:: makePythonPatterns(additionalKeywords=[], additionalBuiltins=[])
+
+   .. seealso:: https://docs.python.org/3/library/re.html#writing-a-tokenizer
+
+
+.. py:function:: makeIpythonPatterns(additionalKeywords=[], additionalBuiltins=[])
+
+
+.. py:function:: getCodeCellName(text)
+
+   Returns a code cell name from a code cell comment.
+
+
+.. py:class:: PythonSH(parent, font=None, colorScheme='pyllo/dark')
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH`
+
+   Python Syntax Highlighter
+
+   ..    ..    ..    .. .. py:attribute:: add_kw
+      :value: ['async', 'await']
+
+      
+
+   ..    .. .. py:attribute:: PROG
+
+      
+
+   ..    .. .. py:attribute:: IDPROG
+
+      
+
+   ..    .. .. py:attribute:: ASPROG
+
+      
+
+   ..    .. .. py:attribute:: OECOMMENT
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`add_kw <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonSH.add_kw>`
+        - \-
+      * - :py:obj:`PROG <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonSH.PROG>`
+        - \-
+      * - :py:obj:`IDPROG <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonSH.IDPROG>`
+        - \-
+      * - :py:obj:`ASPROG <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonSH.ASPROG>`
+        - \-
+      * - :py:obj:`OECOMMENT <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonSH.OECOMMENT>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highlightMatch <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonSH.highlightMatch>`\ (text, match, key, value, offset, state, importStmt, oedata)
+        - Highlight a single match.
+      * - :py:obj:`highlightBlock <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonSH.highlightBlock>`\ (text)
+        - Implement specific highlight for Python.
+      * - :py:obj:`getImportStatements <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonSH.getImportStatements>`\ ()
+        - Get import statment list.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: add_kw
+      :value: ['async', 'await']
+
+      
+
+   .. py:attribute:: PROG
+
+      
+
+   .. py:attribute:: IDPROG
+
+      
+
+   .. py:attribute:: ASPROG
+
+      
+
+   .. py:attribute:: OECOMMENT
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: highlightMatch(text, match, key, value, offset, state, importStmt, oedata)
+
+      Highlight a single match.
+
+
+   .. py:method:: highlightBlock(text)
+
+      Implement specific highlight for Python.
+
+
+   .. py:method:: getImportStatements()
+
+      Get import statment list.
+
+
+
+
+
+.. py:class:: PythonExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.LanguageExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'python'
+
+      
+
+   ..    .. .. py:attribute:: NAME_FILTERS
+      :value: ['*.py', '*.pyi']
+
+      
+
+   ..    .. .. py:attribute:: ALIASES
+      :value: ['Python', 'py']
+
+      
+
+   ..    .. .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FIRST_LINE
+      :value: '^#!/.*\\bpython[0-9.-]*\\b'
+
+      
+
+   ..    .. .. py:attribute:: CONFIGURATION
+
+      
+
+   ..    .. .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonExtension.NAME>`
+        - \-
+      * - :py:obj:`NAME_FILTERS <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonExtension.NAME_FILTERS>`
+        - \-
+      * - :py:obj:`ALIASES <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonExtension.ALIASES>`
+        - \-
+      * - :py:obj:`FILE_NAMES <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonExtension.FILE_NAMES>`
+        - \-
+      * - :py:obj:`FIRST_LINE <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonExtension.FIRST_LINE>`
+        - \-
+      * - :py:obj:`CONFIGURATION <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonExtension.CONFIGURATION>`
+        - \-
+      * - :py:obj:`SYNTAX_HIGHLIGHTER <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonExtension.SYNTAX_HIGHLIGHTER>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.langexts.python.PythonExtension.onInitialize>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'python'
+
+      
+
+   .. py:attribute:: NAME_FILTERS
+      :value: ['*.py', '*.pyi']
+
+      
+
+   .. py:attribute:: ALIASES
+      :value: ['Python', 'py']
+
+      
+
+   .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   .. py:attribute:: FIRST_LINE
+      :value: '^#!/.*\\bpython[0-9.-]*\\b'
+
+      
+
+   .. py:attribute:: CONFIGURATION
+
+      
+
+   .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+              
+
+
+
+
+

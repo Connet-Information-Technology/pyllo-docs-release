@@ -1,0 +1,35 @@
+:py:mod:`pyllo.plugins.layout`
+==============================
+
+.. py:module:: pyllo.plugins.layout
+
+.. autoapi-nested-parse::
+
+   pyllo.plugins.layout
+   =====================
+
+   Layout plugin.
+
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   internal/index.rst
+   layouts/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   Layouts/index.rst
+   api/index.rst
+   plugin/index.rst
+
+

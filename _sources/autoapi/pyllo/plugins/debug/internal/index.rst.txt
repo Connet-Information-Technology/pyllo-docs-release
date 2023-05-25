@@ -1,0 +1,28 @@
+:py:mod:`pyllo.plugins.debug.internal`
+======================================
+
+.. py:module:: pyllo.plugins.debug.internal
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   widgets/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   codeeditorextension/index.rst
+   configurationmanager/index.rst
+   debugadapters/index.rst
+   debugsession/index.rst
+   mainwidget/index.rst
+
+

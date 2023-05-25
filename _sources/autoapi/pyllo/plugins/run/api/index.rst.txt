@@ -1,0 +1,343 @@
+:py:mod:`pyllo.plugins.run.api`
+===============================
+
+.. py:module:: pyllo.plugins.run.api
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`RunToolbars <pyllo.plugins.run.api.RunToolbars>`
+     - \-
+   * - :py:obj:`RunToolbarSections <pyllo.plugins.run.api.RunToolbarSections>`
+     - \-
+   * - :py:obj:`RunActions <pyllo.plugins.run.api.RunActions>`
+     - \-
+   * - :py:obj:`RunConfiguration <pyllo.plugins.run.api.RunConfiguration>`
+     - \-
+   * - :py:obj:`IRunner <pyllo.plugins.run.api.IRunner>`
+     - \-
+
+
+
+
+.. py:class:: RunToolbars
+
+   ..    ..    ..    .. .. py:attribute:: Control
+      :value: 'control_toolbar'
+
+      
+
+   ..    .. .. py:attribute:: Output
+      :value: 'output_toolbar'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Control <pyllo.plugins.run.api.RunToolbars.Control>`
+        - \-
+      * - :py:obj:`Output <pyllo.plugins.run.api.RunToolbars.Output>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Control
+      :value: 'control_toolbar'
+
+      
+
+   .. py:attribute:: Output
+      :value: 'output_toolbar'
+
+      
+
+
+
+
+
+
+.. py:class:: RunToolbarSections
+
+   ..    ..    ..    .. .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   ..    .. .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Top <pyllo.plugins.run.api.RunToolbarSections.Top>`
+        - \-
+      * - :py:obj:`Bottom <pyllo.plugins.run.api.RunToolbarSections.Bottom>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+
+
+
+
+
+.. py:class:: RunActions
+
+   ..    ..    ..    .. .. py:attribute:: CloseTab
+      :value: 'close_tab_action'
+
+      
+
+   ..    .. .. py:attribute:: Run
+      :value: 'run_action'
+
+      
+
+   ..    .. .. py:attribute:: Stop
+      :value: 'stop_action'
+
+      
+
+   ..    .. .. py:attribute:: Modify
+      :value: 'modify_config_action'
+
+      
+
+   ..    .. .. py:attribute:: SoftWrap
+      :value: 'soft_wrap_action'
+
+      
+
+   ..    .. .. py:attribute:: ScrollToEnd
+      :value: 'scroll_to_end_action'
+
+      
+
+   ..    .. .. py:attribute:: ClearAll
+      :value: 'clear_all_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CloseTab <pyllo.plugins.run.api.RunActions.CloseTab>`
+        - \-
+      * - :py:obj:`Run <pyllo.plugins.run.api.RunActions.Run>`
+        - \-
+      * - :py:obj:`Stop <pyllo.plugins.run.api.RunActions.Stop>`
+        - \-
+      * - :py:obj:`Modify <pyllo.plugins.run.api.RunActions.Modify>`
+        - \-
+      * - :py:obj:`SoftWrap <pyllo.plugins.run.api.RunActions.SoftWrap>`
+        - \-
+      * - :py:obj:`ScrollToEnd <pyllo.plugins.run.api.RunActions.ScrollToEnd>`
+        - \-
+      * - :py:obj:`ClearAll <pyllo.plugins.run.api.RunActions.ClearAll>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CloseTab
+      :value: 'close_tab_action'
+
+      
+
+   .. py:attribute:: Run
+      :value: 'run_action'
+
+      
+
+   .. py:attribute:: Stop
+      :value: 'stop_action'
+
+      
+
+   .. py:attribute:: Modify
+      :value: 'modify_config_action'
+
+      
+
+   .. py:attribute:: SoftWrap
+      :value: 'soft_wrap_action'
+
+      
+
+   .. py:attribute:: ScrollToEnd
+      :value: 'scroll_to_end_action'
+
+      
+
+   .. py:attribute:: ClearAll
+      :value: 'clear_all_action'
+
+      
+
+
+
+
+
+
+.. py:class:: RunConfiguration
+
+   ..    ..    ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: command
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: args
+      :type: list
+
+      
+
+   ..    .. .. py:attribute:: cwd
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: env
+      :type: dict
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`name <pyllo.plugins.run.api.RunConfiguration.name>`
+        - \-
+      * - :py:obj:`command <pyllo.plugins.run.api.RunConfiguration.command>`
+        - \-
+      * - :py:obj:`args <pyllo.plugins.run.api.RunConfiguration.args>`
+        - \-
+      * - :py:obj:`cwd <pyllo.plugins.run.api.RunConfiguration.cwd>`
+        - \-
+      * - :py:obj:`env <pyllo.plugins.run.api.RunConfiguration.env>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: command
+      :type: str
+
+      
+
+   .. py:attribute:: args
+      :type: list
+
+      
+
+   .. py:attribute:: cwd
+      :type: str
+
+      
+
+   .. py:attribute:: env
+      :type: dict
+
+      
+
+
+
+
+
+
+.. py:class:: IRunner
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`run <pyllo.plugins.run.api.IRunner.run>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`stop <pyllo.plugins.run.api.IRunner.stop>`\ ()
+        - :summarylabel:`abc` \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: run()
+      :abstractmethod:
+
+
+   .. py:method:: stop()
+      :abstractmethod:
+
+
+
+
+

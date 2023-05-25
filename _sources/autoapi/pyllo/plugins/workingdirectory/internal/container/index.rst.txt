@@ -1,0 +1,304 @@
+:py:mod:`pyllo.plugins.workingdirectory.internal.container`
+===========================================================
+
+.. py:module:: pyllo.plugins.workingdirectory.internal.container
+
+.. autoapi-nested-parse::
+
+   Working Directory widget.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`WorkingDirectoryToolbar <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryToolbar>`
+     - \-
+   * - :py:obj:`WorkingDirectoryActions <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryActions>`
+     - \-
+   * - :py:obj:`WorkingDirectoryToolbarSections <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryToolbarSections>`
+     - \-
+   * - :py:obj:`WorkingDirectoryToolbarItems <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryToolbarItems>`
+     - \-
+   * - :py:obj:`WorkingDirectoryContainer <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryContainer>`
+     - Container for the working directory toolbar.
+
+
+
+
+.. py:class:: WorkingDirectoryToolbar
+
+   ..    ..    ..    .. .. py:attribute:: ID
+      :value: 'working_directory_toolbar'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ID <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryToolbar.ID>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ID
+      :value: 'working_directory_toolbar'
+
+      
+
+
+
+
+
+
+.. py:class:: WorkingDirectoryActions
+
+   ..    ..    ..    .. .. py:attribute:: Browse
+      :value: 'browse_action'
+
+      
+
+   ..    .. .. py:attribute:: Parent
+      :value: 'parent_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Browse <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryActions.Browse>`
+        - \-
+      * - :py:obj:`Parent <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryActions.Parent>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Browse
+      :value: 'browse_action'
+
+      
+
+   .. py:attribute:: Parent
+      :value: 'parent_action'
+
+      
+
+
+
+
+
+
+.. py:class:: WorkingDirectoryToolbarSections
+
+   ..    ..    ..    .. .. py:attribute:: Main
+      :value: 'main_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Main <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryToolbarSections.Main>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Main
+      :value: 'main_section'
+
+      
+
+
+
+
+
+
+.. py:class:: WorkingDirectoryToolbarItems
+
+   ..    ..    ..    .. .. py:attribute:: PathComboBox
+      :value: 'path_combo'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PathComboBox <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryToolbarItems.PathComboBox>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PathComboBox
+      :value: 'path_combo'
+
+      
+
+
+
+
+
+
+.. py:class:: WorkingDirectoryContainer(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainContainer`
+
+   Container for the working directory toolbar.
+
+   ..    ..    ..    .. .. py:attribute:: sigCurrentDirectoryChanged
+
+      This signal is emitted when the current directory has changed.
+
+      Parameters
+      ----------
+      newWorkingDirectory: str
+          The new new working directory path.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigCurrentDirectoryChanged <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryContainer.sigCurrentDirectoryChanged>`
+        - This signal is emitted when the current directory has changed.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryContainer.setup>`\ ()
+        - Create actions, widget, add to menu and other setup requirements.
+      * - :py:obj:`getWorkdir <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryContainer.getWorkdir>`\ ()
+        - Get the working directory from our config system or return the user
+      * - :py:obj:`selectDirectory <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryContainer.selectDirectory>`\ (directory)
+        - Select working directory.
+      * - :py:obj:`parentDirectory <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryContainer.parentDirectory>`\ ()
+        - Change working directory to parent one.
+      * - :py:obj:`chdir <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryContainer.chdir>`\ (directory, emit)
+        - Set `directory` as working directory.
+      * - :py:obj:`loadHistory <pyllo.plugins.workingdirectory.internal.container.WorkingDirectoryContainer.loadHistory>`\ ()
+        - Set the combobox list with history save in configuration.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigCurrentDirectoryChanged
+
+      This signal is emitted when the current directory has changed.
+
+      Parameters
+      ----------
+      newWorkingDirectory: str
+          The new new working directory path.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+   .. py:method:: getWorkdir()
+
+      Get the working directory from our config system or return the user
+      home directory if none could be found.
+
+      Returns
+      -------
+      str:
+          The current working directory.
+
+      FIXME: this method is not semantically correct. The working directories are confused.
+
+
+   .. py:method:: selectDirectory(directory=None)
+
+      Select working directory.
+
+      Parameters
+      ----------
+      directory: str, optional
+          The directory to change to.
+
+      Notes
+      -----
+      If directory is None, a get directory dialog will be used.
+
+
+   .. py:method:: parentDirectory()
+
+      Change working directory to parent one.
+
+
+   .. py:method:: chdir(directory, emit=True)
+
+      Set `directory` as working directory.
+
+      Parameters
+      ----------
+      directory: str
+          The new working directory.
+      emit: bool, optional
+          Emit a signal when changing the working directory.
+          Default is True.
+
+
+   .. py:method:: loadHistory()
+
+      Set the combobox list with history save in configuration.
+
+
+
+
+

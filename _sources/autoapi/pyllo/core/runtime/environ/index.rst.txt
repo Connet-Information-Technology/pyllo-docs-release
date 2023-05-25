@@ -1,0 +1,379 @@
+:py:mod:`pyllo.core.runtime.environ`
+====================================
+
+.. py:module:: pyllo.core.runtime.environ
+
+.. autoapi-nested-parse::
+
+   Common path utilies
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`WindowsEnvironVariable <pyllo.core.runtime.environ.WindowsEnvironVariable>`
+     - Environment variables used in Microsoft Windows OS
+   * - :py:obj:`LinuxEnvironVariable <pyllo.core.runtime.environ.LinuxEnvironVariable>`
+     - Environment variables used in Linux OS
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`getHomeDir <pyllo.core.runtime.environ.getHomeDir>`\ ()
+     - Return user home directory.
+   * - :py:obj:`getCwdOrHome <pyllo.core.runtime.environ.getCwdOrHome>`\ ()
+     - Safe version of getcwd that will fallback to home user dir.
+   * - :py:obj:`getTempDir <pyllo.core.runtime.environ.getTempDir>`\ (subfolder)
+     - Return temporary Pyllo directory.
+   * - :py:obj:`getModulePath <pyllo.core.runtime.environ.getModulePath>`\ (name)
+     - Return module *name* base path
+   * - :py:obj:`isUbuntu <pyllo.core.runtime.environ.isUbuntu>`\ ()
+     - Detect if we are running in an Ubuntu-based distribution
+   * - :py:obj:`isGtkDesktop <pyllo.core.runtime.environ.isGtkDesktop>`\ ()
+     - Detect if we are running in a Gtk-based desktop
+   * - :py:obj:`isKdeDesktop <pyllo.core.runtime.environ.isKdeDesktop>`\ ()
+     - Detect if we are running in a KDE desktop
+   * - :py:obj:`isMacOS <pyllo.core.runtime.environ.isMacOS>`\ ()
+     - Detect if we are running on MacOS
+   * - :py:obj:`isWin32 <pyllo.core.runtime.environ.isWin32>`\ ()
+     - Detect if we are running on Win32
+   * - :py:obj:`isLinux <pyllo.core.runtime.environ.isLinux>`\ ()
+     - Detect if we are running on Linux
+   * - :py:obj:`isAnaconda <pyllo.core.runtime.environ.isAnaconda>`\ ()
+     - Detect if we are running under Anaconda.
+   * - :py:obj:`isSafeMode <pyllo.core.runtime.environ.isSafeMode>`\ ()
+     - Make Pyllo use a temp clean configuration directory for testing
+   * - :py:obj:`isTestMode <pyllo.core.runtime.environ.isTestMode>`\ ()
+     - Return True if currently running under pytest.
+   * - :py:obj:`isStableVersion <pyllo.core.runtime.environ.isStableVersion>`\ (version)
+     - Return true if version is stable, i.e. with letters in the final component.
+   * - :py:obj:`isDevVersion <pyllo.core.runtime.environ.isDevVersion>`\ ()
+     - .. versionadded:: 1.0.0
+   * - :py:obj:`runningInMacApp <pyllo.core.runtime.environ.runningInMacApp>`\ (pyexec)
+     - Check if Python executable is located inside a standalone Mac app.
+
+
+
+.. py:class:: WindowsEnvironVariable
+
+   Environment variables used in Microsoft Windows OS
+
+   ..    ..    ..    .. .. py:attribute:: USERNAME
+      :value: 'USERNAME'
+
+      
+
+   ..    .. .. py:attribute:: USERPROFILE
+      :value: 'USERPROFILE'
+
+      
+
+   ..    .. .. py:attribute:: TEMP
+      :value: 'TEMP'
+
+      
+
+   ..    .. .. py:attribute:: TMP
+      :value: 'TMP'
+
+      
+
+   ..    .. .. py:attribute:: SYSTEMROOT
+      :value: 'SYSTEMROOT'
+
+      
+
+   ..    .. .. py:attribute:: SYSTEMDRIVE
+      :value: 'SYSTEMDRIVE'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`USERNAME <pyllo.core.runtime.environ.WindowsEnvironVariable.USERNAME>`
+        - \-
+      * - :py:obj:`USERPROFILE <pyllo.core.runtime.environ.WindowsEnvironVariable.USERPROFILE>`
+        - \-
+      * - :py:obj:`TEMP <pyllo.core.runtime.environ.WindowsEnvironVariable.TEMP>`
+        - \-
+      * - :py:obj:`TMP <pyllo.core.runtime.environ.WindowsEnvironVariable.TMP>`
+        - \-
+      * - :py:obj:`SYSTEMROOT <pyllo.core.runtime.environ.WindowsEnvironVariable.SYSTEMROOT>`
+        - \-
+      * - :py:obj:`SYSTEMDRIVE <pyllo.core.runtime.environ.WindowsEnvironVariable.SYSTEMDRIVE>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: USERNAME
+      :value: 'USERNAME'
+
+      
+
+   .. py:attribute:: USERPROFILE
+      :value: 'USERPROFILE'
+
+      
+
+   .. py:attribute:: TEMP
+      :value: 'TEMP'
+
+      
+
+   .. py:attribute:: TMP
+      :value: 'TMP'
+
+      
+
+   .. py:attribute:: SYSTEMROOT
+      :value: 'SYSTEMROOT'
+
+      
+
+   .. py:attribute:: SYSTEMDRIVE
+      :value: 'SYSTEMDRIVE'
+
+      
+
+
+
+
+
+
+.. py:class:: LinuxEnvironVariable
+
+   Environment variables used in Linux OS
+
+   ..    ..    ..    .. .. py:attribute:: HOME
+      :value: 'HOME'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`HOME <pyllo.core.runtime.environ.LinuxEnvironVariable.HOME>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: HOME
+      :value: 'HOME'
+
+      
+
+
+
+
+
+
+.. py:function:: getHomeDir() -> pyllo.core.dtype.IO[pyllo.core.dtype.DirName]
+
+   Return user home directory.
+
+   Returns
+   -------
+   dir: str
+       Home dirname.
+
+   Raises
+   ------
+   RuntimeError:
+       If home directory can't be fetched.
+
+   >>> getHomeDir()
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getCwdOrHome() -> pyllo.core.dtype.IO[pyllo.core.dtype.DirName]
+
+   Safe version of getcwd that will fallback to home user dir.
+
+   This will catch the error raised when the current working directory
+   was removed for an external program.
+
+   >>> getCwdOrHome()
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getTempDir(subfolder: pyllo.core.dtype.DirBaseName = '') -> pyllo.core.dtype.IO[pyllo.core.dtype.DirName]
+
+   Return temporary Pyllo directory.
+
+   Parameters
+   ----------
+   subfolder: str
+       Name of sub folder created in temp dir.
+
+   Returns
+   -------
+   path: str
+       Path to temporary pyllo directory that newly created.
+
+
+   >>> getTempDir()
+   'C:\\Users\\...\\AppData\\Local\\Temp\\pyllo'
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getModulePath(name: str) -> pyllo.core.dtype.IO[pyllo.core.dtype.FilePath]
+
+   Return module *name* base path
+
+   Parameters
+   ----------
+   name: str
+       Name of module in `sys.modules`
+
+   Returns
+   -------
+   path: str
+       Path of module
+
+   Raises
+   ------
+   KeyError
+       If module is not found in `sys.modules`.
+
+
+   >>> getModulePath('pyllo')
+
+   .. tip:: Please first check what modules you have in `sys.modules`.
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isUbuntu() -> pyllo.core.dtype.IO[bool]
+
+   Detect if we are running in an Ubuntu-based distribution
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isGtkDesktop() -> pyllo.core.dtype.IO[bool]
+
+   Detect if we are running in a Gtk-based desktop
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isKdeDesktop() -> pyllo.core.dtype.IO[bool]
+
+   Detect if we are running in a KDE desktop
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isMacOS() -> pyllo.core.dtype.IO[bool]
+
+   Detect if we are running on MacOS
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isWin32() -> pyllo.core.dtype.IO[bool]
+
+   Detect if we are running on Win32
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isLinux() -> pyllo.core.dtype.IO[bool]
+
+   Detect if we are running on Linux
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isAnaconda() -> pyllo.core.dtype.IO[bool]
+
+   Detect if we are running under Anaconda.
+
+   Taken from https://stackoverflow.com/a/47610844/438386
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isSafeMode() -> pyllo.core.dtype.IO[bool]
+
+   Make Pyllo use a temp clean configuration directory for testing
+   purposes PYLLO_SAFE_MODE can be set using the --safe-mode option.
+
+   .. attention:: not used yet.
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isTestMode() -> pyllo.core.dtype.IO[bool]
+
+   Return True if currently running under pytest.
+
+   This function is used to do some adjustment for testing. The environment
+   variable PYLLO_PYTEST is defined in conftest.py.
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isStableVersion(version: str) -> bool
+
+   Return true if version is stable, i.e. with letters in the final component.
+
+   Stable version examples: ``1.2``, ``1.3.4``, ``1.0.5``.
+   Non-stable version examples: ``1.3.4beta``, ``0.1.0rc1``, ``3.0.0dev0``.
+
+   Parameters
+   ----------
+   version: str
+       Version string.
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isDevVersion() -> pyllo.core.dtype.IO[bool]
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: runningInMacApp(pyexec=None) -> pyllo.core.dtype.IO[bool]
+
+   Check if Python executable is located inside a standalone Mac app.
+
+   If no executable is provided, the default will check `sys.executable`, i.e.
+   whether Pyllo is running from a standalone Mac app.
+
+   This is important for example for the singleInstance option and the
+   interpreter status in the statusBar.
+
+

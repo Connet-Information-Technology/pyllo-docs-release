@@ -1,0 +1,16 @@
+:py:mod:`pyllo.plugins.debug.internal.widgets`
+==============================================
+
+.. py:module:: pyllo.plugins.debug.internal.widgets
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   configbuttonbox/index.rst
+   debugconsole/index.rst
+
+

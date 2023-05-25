@@ -1,0 +1,68 @@
+:py:mod:`pyllo.plugins.workingdirectory.internal.widgets`
+=========================================================
+
+.. py:module:: pyllo.plugins.workingdirectory.internal.widgets
+
+.. autoapi-nested-parse::
+
+   Working directory widgets
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`WorkingDirectoryComboBox <pyllo.plugins.workingdirectory.internal.widgets.WorkingDirectoryComboBox>`
+     - QComboBox handling path locations
+
+
+
+
+.. py:class:: WorkingDirectoryComboBox(parent, adjustToContents=False, *args, **kwargs)
+
+   Bases: :py:obj:`pyllo.ui.widgets.combobox.PathComboBox`
+
+   QComboBox handling path locations
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sizeHint <pyllo.plugins.workingdirectory.internal.widgets.WorkingDirectoryComboBox.sizeHint>`\ ()
+        - Recommended size when there are toolbars to the right.
+      * - :py:obj:`enterEvent <pyllo.plugins.workingdirectory.internal.widgets.WorkingDirectoryComboBox.enterEvent>`\ (event)
+        - Set current path as the tooltip of the widget on hover.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: sizeHint()
+
+      Recommended size when there are toolbars to the right.
+
+
+   .. py:method:: enterEvent(event)
+
+      Set current path as the tooltip of the widget on hover.
+
+
+
+
+

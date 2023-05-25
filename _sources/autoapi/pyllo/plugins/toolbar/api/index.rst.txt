@@ -1,0 +1,192 @@
+:py:mod:`pyllo.plugins.toolbar.api`
+===================================
+
+.. py:module:: pyllo.plugins.toolbar.api
+
+.. autoapi-nested-parse::
+
+   Pyllo application toolbar constants.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ApplicationToolbars <pyllo.plugins.toolbar.api.ApplicationToolbars>`
+     - \-
+   * - :py:obj:`MainToolbarSections <pyllo.plugins.toolbar.api.MainToolbarSections>`
+     - \-
+   * - :py:obj:`ToolbarMenus <pyllo.plugins.toolbar.api.ToolbarMenus>`
+     - \-
+   * - :py:obj:`ToolbarsMenuSections <pyllo.plugins.toolbar.api.ToolbarsMenuSections>`
+     - \-
+
+
+
+
+.. py:class:: ApplicationToolbars
+
+   ..    ..    ..    .. .. py:attribute:: Main
+      :value: 'main_toolbar'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Main <pyllo.plugins.toolbar.api.ApplicationToolbars.Main>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Main
+      :value: 'main_toolbar'
+
+      
+
+
+
+
+
+
+.. py:class:: MainToolbarSections
+
+   ..    ..    ..    .. .. py:attribute:: LayoutSection
+      :value: 'layout_toolbar_section'
+
+      
+
+   ..    .. .. py:attribute:: ApplicationSection
+      :value: 'application_toolbar_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`LayoutSection <pyllo.plugins.toolbar.api.MainToolbarSections.LayoutSection>`
+        - \-
+      * - :py:obj:`ApplicationSection <pyllo.plugins.toolbar.api.MainToolbarSections.ApplicationSection>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: LayoutSection
+      :value: 'layout_toolbar_section'
+
+      
+
+   .. py:attribute:: ApplicationSection
+      :value: 'application_toolbar_section'
+
+      
+
+
+
+
+
+
+.. py:class:: ToolbarMenus
+
+   ..    ..    ..    .. .. py:attribute:: ToolbarsMenu
+      :value: 'toolbars_menu'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ToolbarsMenu <pyllo.plugins.toolbar.api.ToolbarMenus.ToolbarsMenu>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ToolbarsMenu
+      :value: 'toolbars_menu'
+
+      
+
+
+
+
+
+
+.. py:class:: ToolbarsMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Main
+      :value: 'main_section'
+
+      
+
+   ..    .. .. py:attribute:: Secondary
+      :value: 'secondary_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Main <pyllo.plugins.toolbar.api.ToolbarsMenuSections.Main>`
+        - \-
+      * - :py:obj:`Secondary <pyllo.plugins.toolbar.api.ToolbarsMenuSections.Secondary>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Main
+      :value: 'main_section'
+
+      
+
+   .. py:attribute:: Secondary
+      :value: 'secondary_section'
+
+      
+
+
+
+
+
+

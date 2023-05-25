@@ -1,0 +1,17 @@
+:py:mod:`pyllo.plugins.application.internal`
+============================================
+
+.. py:module:: pyllo.plugins.application.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   confpage/index.rst
+   container/index.rst
+   widgets/index.rst
+
+

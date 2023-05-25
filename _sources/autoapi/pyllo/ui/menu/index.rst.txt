@@ -1,0 +1,286 @@
+:py:mod:`pyllo.ui.menu`
+=======================
+
+.. py:module:: pyllo.ui.menu
+
+.. autoapi-nested-parse::
+
+   Pyllo UI menus
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloMenu <pyllo.ui.menu.PylloMenu>`
+     - A QMenu subclass to implement additional functionality for Pyllo.
+   * - :py:obj:`PylloMenuMixin <pyllo.ui.menu.PylloMenuMixin>`
+     - Provide methods to create, add and get menus.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MENU_SEPARATOR <pyllo.ui.menu.MENU_SEPARATOR>`
+     - \-
+   * - :py:obj:`MenuSectionName <pyllo.ui.menu.MenuSectionName>`
+     - \-
+   * - :py:obj:`MenuItemName <pyllo.ui.menu.MenuItemName>`
+     - \-
+   * - :py:obj:`MenuItem <pyllo.ui.menu.MenuItem>`
+     - \-
+
+
+.. py:data:: MENU_SEPARATOR
+
+   
+
+.. py:data:: MenuSectionName
+
+   
+
+.. py:data:: MenuItemName
+
+   
+
+.. py:data:: MenuItem
+
+   
+
+.. py:class:: PylloMenu(parent: qtpy.QtWidgets.QWidget = None, name: MenuItemName = None, title: pyllo.core.dtype.Text = None, visiblePredicate: Callable[[], bool] = None, enabledPredicate: Callable[[], bool] = None, *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QMenu`
+
+   A QMenu subclass to implement additional functionality for Pyllo.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`clearActions <pyllo.ui.menu.PylloMenu.clearActions>`\ ()
+        - Remove actions from the menu (including custom references)
+      * - :py:obj:`addItem <pyllo.ui.menu.PylloMenu.addItem>`\ (item, section, before, beforeSection, checkBefore)
+        - Add action to a given menu section.
+      * - :py:obj:`getTitle <pyllo.ui.menu.PylloMenu.getTitle>`\ ()
+        - Return the title for menu.
+      * - :py:obj:`getItems <pyllo.ui.menu.PylloMenu.getItems>`\ ()
+        - Return a parsed list of menu items.
+      * - :py:obj:`getSections <pyllo.ui.menu.PylloMenu.getSections>`\ ()
+        - Return a list of menu sections.
+      * - :py:obj:`refresh <pyllo.ui.menu.PylloMenu.refresh>`\ ()
+        - Create the menu prior to showing it. This takes into account sections
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: clearActions()
+
+      Remove actions from the menu (including custom references)
+
+      Returns
+      -------
+      None.
+
+
+   .. py:method:: addItem(item: MenuItem, section: MenuSectionName = None, before: MenuItemName = None, beforeSection: MenuSectionName = None, checkBefore: bool = True)
+
+      Add action to a given menu section.
+
+      Parameters
+      ----------
+      item: QAction
+          The action to add.
+      section: str or None
+          The section id in which to insert the `action`.
+      before: str or None
+          Make the action appear before the given action identifier.
+          Notice that `before` parameter must be used with `section` parameter.
+      beforeSection: str or None
+          Make the item section (if provided) appear before another
+          given section.
+      checkBefore: bool
+          Check if the `before` action is part of the menu. This is
+          necessary to avoid an infinite recursion when adding
+          unIntroduced actions with this method again.
+
+
+   .. py:method:: getTitle() -> pyllo.core.dtype.Text
+
+      Return the title for menu.
+
+
+   .. py:method:: getItems() -> List[MenuItem]
+
+      Return a parsed list of menu items.
+
+      Includes PylloAction PylloMenu and MENU_SEPARATOR taking into account the sections defined.
+
+
+   .. py:method:: getSections() -> List[MenuSectionName]
+
+      Return a list of menu sections.
+
+
+   .. py:method:: refresh()
+
+      Create the menu prior to showing it. This takes into account sections
+      and location of menus.
+
+
+
+
+
+.. py:class:: PylloMenuMixin
+
+   Bases: :py:obj:`pyllo.ui.api.IMixin`
+
+   Provide methods to create, add and get menus.
+
+   This mixin uses a custom menu object that allows for the creation of
+   sections in a simple way.
+
+   .. attention:: PylloMenuMixin requires mixin target object be instance
+       of QWidget. Target object must have following attributes:
+       :attr:`PLUGIN_NAME` Plugin name which actions belongs.
+       :attr:`NAMESPACE` Namespace (context name) to separate actions in groups within
+           plugin.
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`checkCompatibility <pyllo.ui.menu.PylloMenuMixin.checkCompatibility>`\ (targetObject)
+        - :summarylabel:`static` check compatibility
+      * - :py:obj:`addItemToMenu <pyllo.ui.menu.PylloMenuMixin.addItemToMenu>`\ (item, menu, section, before, beforeSection)
+        - Add a PylloAction or a QWidget to the menu.
+      * - :py:obj:`createMenu <pyllo.ui.menu.PylloMenuMixin.createMenu>`\ (name, text, icon, visiblePredicate, enabledPredicate)
+        - Create a menu.
+      * - :py:obj:`getMenu <pyllo.ui.menu.PylloMenuMixin.getMenu>`\ (name, namespace, plugin)
+        - Return a menu by name, plugin and namespace.
+      * - :py:obj:`getMenus <pyllo.ui.menu.PylloMenuMixin.getMenus>`\ (namespace, plugin)
+        - Return all menus defined by a namespace on a given plugin.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: checkCompatibility(targetObject: object) -> bool
+      :staticmethod:
+
+      check compatibility
+
+
+   .. py:method:: addItemToMenu(item: MenuItem, menu: PylloMenu, section: MenuSectionName = None, before: MenuItemName = None, beforeSection: MenuSectionName = None)
+
+      Add a PylloAction or a QWidget to the menu.
+
+      Parameters
+      ----------
+      item: Union[PylloAction, PylloMenu]
+          Action or submenu will be added to menu.
+      menu: PylloMenu
+          Menu that action or submenu added to.
+      section: Optional[str]
+          The section id in which to insert the `action`.
+      before: Optional[str]
+          Make the action appear before the given action identifier.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: createMenu(name: pyllo.core.dtype.Identity, text: pyllo.core.dtype.Text = None, icon: qtpy.QtGui.QIcon = None, visiblePredicate: Callable[[], bool] = None, enabledPredicate: Callable[[], bool] = None) -> PylloMenu
+
+      Create a menu.
+
+      Parameters
+      ----------
+      name: str
+          Unique str identifier.
+      text: str or None
+          Localized text string.
+      icon: QIcon or None
+          Icon to use for the menu.
+
+      Return: QMenu
+          Return the created menu.
+
+
+   .. py:method:: getMenu(name: pyllo.core.dtype.Identity, namespace: pyllo.core.dtype.Registry2ndNamespace = None, plugin: pyllo.core.dtype.PluginName = None) -> PylloMenu
+
+      Return a menu by name, plugin and namespace.
+
+      Parameters
+      ----------
+      name: str
+          Name of the menu to retrieve.
+      namespace: Optional[str]
+          Widget or namespace identifier under which the menu was stored.
+          If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the menu was defined. If None, then
+          `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      menu: PylloMenu
+          The corresponding menu stored under the given `name`, `namespace`
+          and `plugin`.
+
+      Raises
+      ------
+      KeyError
+          If either of `name`, `namespace` or `plugin` keys do not exist in the
+          menu registry.
+
+
+   .. py:method:: getMenus(namespace: pyllo.core.dtype.Registry2ndNamespace = None, plugin: pyllo.core.dtype.PluginName = None) -> Dict[str, PylloMenu]
+
+      Return all menus defined by a namespace on a given plugin.
+
+      Parameters
+      ----------
+      namespace: Optional[str]
+          Widget or Plugin namespace identifier under which the menus were stored.
+          If None, then `NAMESPACE` is used instead
+      plugin: Optional[str]
+          Name of the plugin where the menus were defined. If None, then
+          `PLUGIN_NAME` is used.
+
+      Returns
+      -------
+      menus: Dict[str, PylloMenu]
+          A dictionary that maps string keys to their corresponding menus.
+
+
+
+
+

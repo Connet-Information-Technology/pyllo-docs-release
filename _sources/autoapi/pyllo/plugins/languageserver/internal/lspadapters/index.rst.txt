@@ -1,0 +1,168 @@
+:py:mod:`pyllo.plugins.languageserver.internal.lspadapters`
+===========================================================
+
+.. py:module:: pyllo.plugins.languageserver.internal.lspadapters
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`StreamLSPAdapter <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter>`
+     - \-
+   * - :py:obj:`ExecutableLSPAdapter <pyllo.plugins.languageserver.internal.lspadapters.ExecutableLSPAdapter>`
+     - \-
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.languageserver.internal.lspadapters.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: StreamLSPAdapter
+
+   Bases: :py:obj:`pyllo.plugins.languageserver.api.ILanguageServerAdapter`
+
+   ..    ..    .. .. py:property:: adapterID
+
+
+   ..    .. 
+   .. rubric:: Overview
+
+   
+
+   .. list-table:: Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`adapterID <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.adapterID>`
+        - \-
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setStream <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.setStream>`\ (stream)
+        - \-
+      * - :py:obj:`startSession <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.startSession>`\ ()
+        - \-
+      * - :py:obj:`stopSession <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.stopSession>`\ ()
+        - \-
+      * - :py:obj:`sendRequest <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.sendRequest>`\ (method, params, onBeforeSent)
+        - \-
+      * - :py:obj:`sendNotification <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.sendNotification>`\ (method, params, onBeforeSent)
+        - \-
+      * - :py:obj:`sendResponse <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.sendResponse>`\ (_id, result, error)
+        - \-
+      * - :py:obj:`setRequestHandler <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.setRequestHandler>`\ (callback)
+        - \-
+      * - :py:obj:`setNotificationHandler <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.setNotificationHandler>`\ (callback)
+        - \-
+      * - :py:obj:`setResponseHandler <pyllo.plugins.languageserver.internal.lspadapters.StreamLSPAdapter.setResponseHandler>`\ (callback)
+        - \-
+
+
+
+
+   .. rubric:: Properties
+   .. py:property:: adapterID
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setStream(stream)
+
+
+   .. py:method:: startSession() -> bool
+
+
+   .. py:method:: stopSession()
+
+
+   .. py:method:: sendRequest(method: str, params=None, onBeforeSent=None)
+
+
+   .. py:method:: sendNotification(method: str, params=None, onBeforeSent=None)
+
+
+   .. py:method:: sendResponse(_id, result=None, error=None)
+
+
+   .. py:method:: setRequestHandler(callback)
+
+
+   .. py:method:: setNotificationHandler(callback)
+
+
+   .. py:method:: setResponseHandler(callback)
+
+
+
+
+
+.. py:class:: ExecutableLSPAdapter(adapter: pyllo.plugins.languageserver.api.LanguageServerAdapterExecutable)
+
+   Bases: :py:obj:`StreamLSPAdapter`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`startSession <pyllo.plugins.languageserver.internal.lspadapters.ExecutableLSPAdapter.startSession>`\ ()
+        - \-
+      * - :py:obj:`stopSession <pyllo.plugins.languageserver.internal.lspadapters.ExecutableLSPAdapter.stopSession>`\ ()
+        - \-
+      * - :py:obj:`sendNotification <pyllo.plugins.languageserver.internal.lspadapters.ExecutableLSPAdapter.sendNotification>`\ (method, params, onBeforeSent)
+        - \-
+      * - :py:obj:`sendResponse <pyllo.plugins.languageserver.internal.lspadapters.ExecutableLSPAdapter.sendResponse>`\ (_id, result, error)
+        - \-
+      * - :py:obj:`sendRequest <pyllo.plugins.languageserver.internal.lspadapters.ExecutableLSPAdapter.sendRequest>`\ (method, params, onBeforeSent)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: startSession() -> bool
+
+
+   .. py:method:: stopSession()
+
+
+   .. py:method:: sendNotification(method: str, params=None, onBeforeSent=None)
+
+
+   .. py:method:: sendResponse(_id, result=None, error=None)
+
+
+   .. py:method:: sendRequest(method: str, params=None, onBeforeSent=None)
+
+
+
+
+

@@ -1,0 +1,1093 @@
+:py:mod:`pyllo.plugins.debug.api`
+=================================
+
+.. py:module:: pyllo.plugins.debug.api
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DebugToolbar <pyllo.plugins.debug.api.DebugToolbar>`
+     - \-
+   * - :py:obj:`DebugToolbarMenuSections <pyllo.plugins.debug.api.DebugToolbarMenuSections>`
+     - \-
+   * - :py:obj:`DebugActions <pyllo.plugins.debug.api.DebugActions>`
+     - \-
+   * - :py:obj:`DebugConfiguration <pyllo.plugins.debug.api.DebugConfiguration>`
+     - \-
+   * - :py:obj:`TaskConfiguration <pyllo.plugins.debug.api.TaskConfiguration>`
+     - \-
+   * - :py:obj:`DebugAdapterExecutable <pyllo.plugins.debug.api.DebugAdapterExecutable>`
+     - \-
+   * - :py:obj:`DebugAdapterServer <pyllo.plugins.debug.api.DebugAdapterServer>`
+     - \-
+   * - :py:obj:`DebugAdapterNamedPipeServer <pyllo.plugins.debug.api.DebugAdapterNamedPipeServer>`
+     - \-
+   * - :py:obj:`DebugAdapterInlineImplementation <pyllo.plugins.debug.api.DebugAdapterInlineImplementation>`
+     - \-
+   * - :py:obj:`IDebugConfigurationProvider <pyllo.plugins.debug.api.IDebugConfigurationProvider>`
+     - \-
+   * - :py:obj:`DebugSessionStates <pyllo.plugins.debug.api.DebugSessionStates>`
+     - Generic enumeration.
+   * - :py:obj:`DebugAdapterStates <pyllo.plugins.debug.api.DebugAdapterStates>`
+     - Generic enumeration.
+   * - :py:obj:`IDebugAdapter <pyllo.plugins.debug.api.IDebugAdapter>`
+     - \-
+   * - :py:obj:`IDebuggerDescriptor <pyllo.plugins.debug.api.IDebuggerDescriptor>`
+     - Debug
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LAUNCH_FILE_SCHEMA <pyllo.plugins.debug.api.LAUNCH_FILE_SCHEMA>`
+     - \-
+   * - :py:obj:`DebugAdapterDescriptor <pyllo.plugins.debug.api.DebugAdapterDescriptor>`
+     - \-
+
+
+.. py:class:: DebugToolbar
+
+   ..    ..    ..    .. .. py:attribute:: Main
+      :value: 'debug_toolbar'
+
+      
+
+   ..    .. .. py:attribute:: Menu
+      :value: 'dialog_menu'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Main <pyllo.plugins.debug.api.DebugToolbar.Main>`
+        - \-
+      * - :py:obj:`Menu <pyllo.plugins.debug.api.DebugToolbar.Menu>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Main
+      :value: 'debug_toolbar'
+
+      
+
+   .. py:attribute:: Menu
+      :value: 'dialog_menu'
+
+      
+
+
+
+
+
+
+.. py:class:: DebugToolbarMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   ..    .. .. py:attribute:: Middle
+      :value: 'middle_section'
+
+      
+
+   ..    .. .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Top <pyllo.plugins.debug.api.DebugToolbarMenuSections.Top>`
+        - \-
+      * - :py:obj:`Middle <pyllo.plugins.debug.api.DebugToolbarMenuSections.Middle>`
+        - \-
+      * - :py:obj:`Bottom <pyllo.plugins.debug.api.DebugToolbarMenuSections.Bottom>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   .. py:attribute:: Middle
+      :value: 'middle_section'
+
+      
+
+   .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+
+
+
+
+
+.. py:class:: DebugActions
+
+   ..    ..    ..    .. .. py:attribute:: OpenEditConfigurationsDialog
+      :value: 'open_edit_configurations_dialog_button'
+
+      
+
+   ..    .. .. py:attribute:: EditConfigurations
+      :value: 'edit_configurations_action'
+
+      
+
+   ..    .. .. py:attribute:: Run
+      :value: 'run'
+
+      
+
+   ..    .. .. py:attribute:: Debug
+      :value: 'debug'
+
+      
+
+   ..    .. .. py:attribute:: Stop
+      :value: 'stop'
+
+      
+
+   ..    .. .. py:attribute:: StepOver
+      :value: 'step over'
+
+      
+
+   ..    .. .. py:attribute:: StepInto
+      :value: 'step into'
+
+      
+
+   ..    .. .. py:attribute:: StepOut
+      :value: 'step out'
+
+      
+
+   ..    .. .. py:attribute:: Pause
+      :value: 'pause'
+
+      
+
+   ..    .. .. py:attribute:: Resume
+      :value: 'resume'
+
+      
+
+   ..    .. .. py:attribute:: ModifyConfiguration
+      :value: 'modify configuration'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`OpenEditConfigurationsDialog <pyllo.plugins.debug.api.DebugActions.OpenEditConfigurationsDialog>`
+        - \-
+      * - :py:obj:`EditConfigurations <pyllo.plugins.debug.api.DebugActions.EditConfigurations>`
+        - \-
+      * - :py:obj:`Run <pyllo.plugins.debug.api.DebugActions.Run>`
+        - \-
+      * - :py:obj:`Debug <pyllo.plugins.debug.api.DebugActions.Debug>`
+        - \-
+      * - :py:obj:`Stop <pyllo.plugins.debug.api.DebugActions.Stop>`
+        - \-
+      * - :py:obj:`StepOver <pyllo.plugins.debug.api.DebugActions.StepOver>`
+        - \-
+      * - :py:obj:`StepInto <pyllo.plugins.debug.api.DebugActions.StepInto>`
+        - \-
+      * - :py:obj:`StepOut <pyllo.plugins.debug.api.DebugActions.StepOut>`
+        - \-
+      * - :py:obj:`Pause <pyllo.plugins.debug.api.DebugActions.Pause>`
+        - \-
+      * - :py:obj:`Resume <pyllo.plugins.debug.api.DebugActions.Resume>`
+        - \-
+      * - :py:obj:`ModifyConfiguration <pyllo.plugins.debug.api.DebugActions.ModifyConfiguration>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: OpenEditConfigurationsDialog
+      :value: 'open_edit_configurations_dialog_button'
+
+      
+
+   .. py:attribute:: EditConfigurations
+      :value: 'edit_configurations_action'
+
+      
+
+   .. py:attribute:: Run
+      :value: 'run'
+
+      
+
+   .. py:attribute:: Debug
+      :value: 'debug'
+
+      
+
+   .. py:attribute:: Stop
+      :value: 'stop'
+
+      
+
+   .. py:attribute:: StepOver
+      :value: 'step over'
+
+      
+
+   .. py:attribute:: StepInto
+      :value: 'step into'
+
+      
+
+   .. py:attribute:: StepOut
+      :value: 'step out'
+
+      
+
+   .. py:attribute:: Pause
+      :value: 'pause'
+
+      
+
+   .. py:attribute:: Resume
+      :value: 'resume'
+
+      
+
+   .. py:attribute:: ModifyConfiguration
+      :value: 'modify configuration'
+
+      
+
+
+
+
+
+
+.. py:data:: LAUNCH_FILE_SCHEMA
+
+   
+
+.. py:class:: DebugConfiguration
+
+   ..    ..    ..    .. .. py:attribute:: type
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: request
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: extra
+      :type: dataclasses_json.CatchAll
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`type <pyllo.plugins.debug.api.DebugConfiguration.type>`
+        - \-
+      * - :py:obj:`name <pyllo.plugins.debug.api.DebugConfiguration.name>`
+        - \-
+      * - :py:obj:`request <pyllo.plugins.debug.api.DebugConfiguration.request>`
+        - \-
+      * - :py:obj:`extra <pyllo.plugins.debug.api.DebugConfiguration.extra>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: type
+      :type: str
+
+      
+
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: request
+      :type: str
+
+      
+
+   .. py:attribute:: extra
+      :type: dataclasses_json.CatchAll
+
+      
+
+
+
+
+
+
+.. py:class:: TaskConfiguration
+
+   ..    ..    ..    .. .. py:attribute:: type
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: request
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: command
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: args
+      :type: List[str]
+
+      
+
+   ..    .. .. py:attribute:: cwd
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: env
+      :type: dict
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`type <pyllo.plugins.debug.api.TaskConfiguration.type>`
+        - \-
+      * - :py:obj:`name <pyllo.plugins.debug.api.TaskConfiguration.name>`
+        - \-
+      * - :py:obj:`request <pyllo.plugins.debug.api.TaskConfiguration.request>`
+        - \-
+      * - :py:obj:`command <pyllo.plugins.debug.api.TaskConfiguration.command>`
+        - \-
+      * - :py:obj:`args <pyllo.plugins.debug.api.TaskConfiguration.args>`
+        - \-
+      * - :py:obj:`cwd <pyllo.plugins.debug.api.TaskConfiguration.cwd>`
+        - \-
+      * - :py:obj:`env <pyllo.plugins.debug.api.TaskConfiguration.env>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: type
+      :type: str
+
+      
+
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: request
+      :type: str
+
+      
+
+   .. py:attribute:: command
+      :type: str
+
+      
+
+   .. py:attribute:: args
+      :type: List[str]
+
+      
+
+   .. py:attribute:: cwd
+      :type: str
+
+      
+
+   .. py:attribute:: env
+      :type: dict
+
+      
+
+
+
+
+
+
+.. py:class:: DebugAdapterExecutable
+
+   ..    ..    ..    .. .. py:attribute:: command
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: args
+      :type: list
+
+      
+
+   ..    .. .. py:attribute:: cwd
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: env
+      :type: dict
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`command <pyllo.plugins.debug.api.DebugAdapterExecutable.command>`
+        - \-
+      * - :py:obj:`args <pyllo.plugins.debug.api.DebugAdapterExecutable.args>`
+        - \-
+      * - :py:obj:`cwd <pyllo.plugins.debug.api.DebugAdapterExecutable.cwd>`
+        - \-
+      * - :py:obj:`env <pyllo.plugins.debug.api.DebugAdapterExecutable.env>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: command
+      :type: str
+
+      
+
+   .. py:attribute:: args
+      :type: list
+
+      
+
+   .. py:attribute:: cwd
+      :type: str
+
+      
+
+   .. py:attribute:: env
+      :type: dict
+
+      
+
+
+
+
+
+
+.. py:class:: DebugAdapterServer
+
+   ..    ..    ..    .. .. py:attribute:: port
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: host
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`port <pyllo.plugins.debug.api.DebugAdapterServer.port>`
+        - \-
+      * - :py:obj:`host <pyllo.plugins.debug.api.DebugAdapterServer.host>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: port
+      :type: int
+
+      
+
+   .. py:attribute:: host
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: DebugAdapterNamedPipeServer
+
+   ..    ..    ..    .. .. py:attribute:: path
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`path <pyllo.plugins.debug.api.DebugAdapterNamedPipeServer.path>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: path
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: DebugAdapterInlineImplementation
+
+   ..    ..    ..    .. .. py:attribute:: implement
+      :type: Any
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`implement <pyllo.plugins.debug.api.DebugAdapterInlineImplementation.implement>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: implement
+      :type: Any
+
+      
+
+
+
+
+
+
+.. py:data:: DebugAdapterDescriptor
+
+   
+
+.. py:class:: IDebugConfigurationProvider
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`provideDebugConfigurations <pyllo.plugins.debug.api.IDebugConfigurationProvider.provideDebugConfigurations>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`resolveDebugConfiguration <pyllo.plugins.debug.api.IDebugConfigurationProvider.resolveDebugConfiguration>`\ (debugConfiguration)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`resolveDebugConfigurationWithSubstitutedVariables <pyllo.plugins.debug.api.IDebugConfigurationProvider.resolveDebugConfigurationWithSubstitutedVariables>`\ (debugConfiguration)
+        - :summarylabel:`abc` \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: provideDebugConfigurations() -> List[DebugConfiguration]
+      :abstractmethod:
+
+
+   .. py:method:: resolveDebugConfiguration(debugConfiguration: DebugConfiguration) -> DebugConfiguration
+      :abstractmethod:
+
+
+   .. py:method:: resolveDebugConfigurationWithSubstitutedVariables(debugConfiguration: DebugConfiguration) -> DebugConfiguration
+      :abstractmethod:
+
+
+
+
+
+.. py:class:: DebugSessionStates
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: Inactive
+      :value: 'Inactive'
+
+      
+
+   ..    .. .. py:attribute:: Initializing
+      :value: 'Initializing'
+
+      
+
+   ..    .. .. py:attribute:: ReadyForLaunch
+      :value: 'ReadyForLaunch'
+
+      
+
+   ..    .. .. py:attribute:: Launching
+      :value: 'Launching'
+
+      
+
+   ..    .. .. py:attribute:: Attaching
+      :value: 'Attaching'
+
+      
+
+   ..    .. .. py:attribute:: ReadyForConfigure
+      :value: 'ReadyForConfigure'
+
+      
+
+   ..    .. .. py:attribute:: Running
+      :value: 'Running'
+
+      
+
+   ..    .. .. py:attribute:: Suspended
+      :value: 'Suspended'
+
+      
+
+   ..    .. .. py:attribute:: Exited
+      :value: 'Exited'
+
+      
+
+   ..    .. .. py:attribute:: Terminated
+      :value: 'Terminated'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Inactive <pyllo.plugins.debug.api.DebugSessionStates.Inactive>`
+        - \-
+      * - :py:obj:`Initializing <pyllo.plugins.debug.api.DebugSessionStates.Initializing>`
+        - \-
+      * - :py:obj:`ReadyForLaunch <pyllo.plugins.debug.api.DebugSessionStates.ReadyForLaunch>`
+        - \-
+      * - :py:obj:`Launching <pyllo.plugins.debug.api.DebugSessionStates.Launching>`
+        - \-
+      * - :py:obj:`Attaching <pyllo.plugins.debug.api.DebugSessionStates.Attaching>`
+        - \-
+      * - :py:obj:`ReadyForConfigure <pyllo.plugins.debug.api.DebugSessionStates.ReadyForConfigure>`
+        - \-
+      * - :py:obj:`Running <pyllo.plugins.debug.api.DebugSessionStates.Running>`
+        - \-
+      * - :py:obj:`Suspended <pyllo.plugins.debug.api.DebugSessionStates.Suspended>`
+        - \-
+      * - :py:obj:`Exited <pyllo.plugins.debug.api.DebugSessionStates.Exited>`
+        - \-
+      * - :py:obj:`Terminated <pyllo.plugins.debug.api.DebugSessionStates.Terminated>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Inactive
+      :value: 'Inactive'
+
+      
+
+   .. py:attribute:: Initializing
+      :value: 'Initializing'
+
+      
+
+   .. py:attribute:: ReadyForLaunch
+      :value: 'ReadyForLaunch'
+
+      
+
+   .. py:attribute:: Launching
+      :value: 'Launching'
+
+      
+
+   .. py:attribute:: Attaching
+      :value: 'Attaching'
+
+      
+
+   .. py:attribute:: ReadyForConfigure
+      :value: 'ReadyForConfigure'
+
+      
+
+   .. py:attribute:: Running
+      :value: 'Running'
+
+      
+
+   .. py:attribute:: Suspended
+      :value: 'Suspended'
+
+      
+
+   .. py:attribute:: Exited
+      :value: 'Exited'
+
+      
+
+   .. py:attribute:: Terminated
+      :value: 'Terminated'
+
+      
+
+
+
+
+
+
+.. py:class:: DebugAdapterStates
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: Inactive
+      :value: 'Inactive'
+
+      
+
+   ..    .. .. py:attribute:: Initializing
+      :value: 'Initializing'
+
+      
+
+   ..    .. .. py:attribute:: Running
+      :value: 'Running'
+
+      
+
+   ..    .. .. py:attribute:: Stopped
+      :value: 'Stopped'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Inactive <pyllo.plugins.debug.api.DebugAdapterStates.Inactive>`
+        - \-
+      * - :py:obj:`Initializing <pyllo.plugins.debug.api.DebugAdapterStates.Initializing>`
+        - \-
+      * - :py:obj:`Running <pyllo.plugins.debug.api.DebugAdapterStates.Running>`
+        - \-
+      * - :py:obj:`Stopped <pyllo.plugins.debug.api.DebugAdapterStates.Stopped>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Inactive
+      :value: 'Inactive'
+
+      
+
+   .. py:attribute:: Initializing
+      :value: 'Initializing'
+
+      
+
+   .. py:attribute:: Running
+      :value: 'Running'
+
+      
+
+   .. py:attribute:: Stopped
+      :value: 'Stopped'
+
+      
+
+
+
+
+
+
+.. py:class:: IDebugAdapter(initialState)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`, :py:obj:`pyllo.tools.statemachine.StateMachine`
+
+   ..    ..    ..    .. .. py:attribute:: STATES
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`STATES <pyllo.plugins.debug.api.IDebugAdapter.STATES>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setRequestHandler <pyllo.plugins.debug.api.IDebugAdapter.setRequestHandler>`\ (callback)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`setEventHandler <pyllo.plugins.debug.api.IDebugAdapter.setEventHandler>`\ (callback)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`setDisconnectHandler <pyllo.plugins.debug.api.IDebugAdapter.setDisconnectHandler>`\ (callback)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`startSession <pyllo.plugins.debug.api.IDebugAdapter.startSession>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`stopSession <pyllo.plugins.debug.api.IDebugAdapter.stopSession>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`sendEvent <pyllo.plugins.debug.api.IDebugAdapter.sendEvent>`\ (event, body)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`sendResponse <pyllo.plugins.debug.api.IDebugAdapter.sendResponse>`\ (requestSeq, success, command, message, body)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`sendRequest <pyllo.plugins.debug.api.IDebugAdapter.sendRequest>`\ (command, arguments, onBeforeSent)
+        - :summarylabel:`abc` \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: STATES
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setRequestHandler(callback)
+      :abstractmethod:
+
+
+   .. py:method:: setEventHandler(callback)
+      :abstractmethod:
+
+
+   .. py:method:: setDisconnectHandler(callback)
+      :abstractmethod:
+
+
+   .. py:method:: startSession() -> bool
+      :abstractmethod:
+
+
+   .. py:method:: stopSession()
+      :abstractmethod:
+
+
+   .. py:method:: sendEvent(event: str, body=None)
+      :abstractmethod:
+
+
+   .. py:method:: sendResponse(requestSeq: int, success: bool, command: str, message=None, body=None)
+      :abstractmethod:
+
+
+   .. py:method:: sendRequest(command: str, arguments=None, onBeforeSent=None)
+      :abstractmethod:
+
+
+
+
+
+.. py:exception:: DebugAdapterNotFoundError
+
+   Bases: :py:obj:`Exception`
+
+   Common base class for all non-exit exceptions.
+
+   ..    ..    .. 
+
+
+.. py:class:: IDebuggerDescriptor
+
+   Debug 
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`type <pyllo.plugins.debug.api.IDebuggerDescriptor.type>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`language <pyllo.plugins.debug.api.IDebuggerDescriptor.language>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`configurationProvider <pyllo.plugins.debug.api.IDebuggerDescriptor.configurationProvider>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`adapterDescriptor <pyllo.plugins.debug.api.IDebuggerDescriptor.adapterDescriptor>`\ ()
+        - :summarylabel:`abc` \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: type() -> pyllo.core.dtype.Identity
+      :abstractmethod:
+
+
+   .. py:method:: language() -> pyllo.core.dtype.Identity
+      :abstractmethod:
+
+
+   .. py:method:: configurationProvider() -> IDebugConfigurationProvider
+      :abstractmethod:
+
+
+   .. py:method:: adapterDescriptor() -> DebugAdapterDescriptor
+      :abstractmethod:
+
+
+
+
+

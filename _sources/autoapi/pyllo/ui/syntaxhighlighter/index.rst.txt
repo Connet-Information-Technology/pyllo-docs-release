@@ -1,0 +1,203 @@
+:py:mod:`pyllo.ui.syntaxhighlighter`
+====================================
+
+.. py:module:: pyllo.ui.syntaxhighlighter
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloSyntaxHighlighter <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter>`
+     - \-
+   * - :py:obj:`MySyntaxHighlighter <pyllo.ui.syntaxhighlighter.MySyntaxHighlighter>`
+     - \-
+
+
+
+
+.. py:class:: PylloSyntaxHighlighter(parent=None)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setEnabled <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.setEnabled>`\ (state)
+        - \-
+      * - :py:obj:`isEnabled <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.isEnabled>`\ ()
+        - \-
+      * - :py:obj:`setDocument <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.setDocument>`\ (doc)
+        - \-
+      * - :py:obj:`document <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.document>`\ ()
+        - \-
+      * - :py:obj:`rehighlight <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.rehighlight>`\ ()
+        - \-
+      * - :py:obj:`rehighlightBlock <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.rehighlightBlock>`\ (block)
+        - \-
+      * - :py:obj:`setFormat <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.setFormat>`\ (start, count, colorOrFontOrFormat)
+        - \-
+      * - :py:obj:`format <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.format>`\ (pos)
+        - QTextCharFormat QSyntaxHighlighter::format(int position) const
+      * - :py:obj:`previousBlockState <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.previousBlockState>`\ ()
+        - \-
+      * - :py:obj:`currentBlockState <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.currentBlockState>`\ ()
+        - \-
+      * - :py:obj:`setCurrentBlockState <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.setCurrentBlockState>`\ (newState)
+        - \-
+      * - :py:obj:`setCurrentBlockUserData <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.setCurrentBlockUserData>`\ (data)
+        - Attaches the given  data to the current text block.  The
+      * - :py:obj:`currentBlockUserData <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.currentBlockUserData>`\ ()
+        - \-
+      * - :py:obj:`currentBlock <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.currentBlock>`\ ()
+        - \-
+      * - :py:obj:`p_timed_rehighlight <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.p_timed_rehighlight>`\ ()
+        - \-
+      * - :py:obj:`p_rehighlight <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.p_rehighlight>`\ (cursor, operation)
+        - \-
+      * - :py:obj:`p_reformatBlocks <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.p_reformatBlocks>`\ (from_, charsRemoved, charsAdded, ignoreUserState)
+        - \-
+      * - :py:obj:`p_reformatBlock <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.p_reformatBlock>`\ (block)
+        - \-
+      * - :py:obj:`highlightBlock <pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter.highlightBlock>`\ (text)
+        - :summarylabel:`abc` \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setEnabled(state: bool)
+
+
+   .. py:method:: isEnabled() -> bool
+
+
+   .. py:method:: setDocument(doc: qtpy.QtGui.QTextDocument) -> bool
+
+
+   .. py:method:: document() -> qtpy.QtGui.QTextDocument
+
+
+   .. py:method:: rehighlight()
+
+
+   .. py:method:: rehighlightBlock(block: qtpy.QtGui.QTextBlock)
+
+
+   .. py:method:: setFormat(start: int, count: int, colorOrFontOrFormat: Union[qtpy.QtGui.QColor, qtpy.QtGui.QFont, qtpy.QtGui.QTextCharFormat])
+
+
+   .. py:method:: format(pos: int) -> qtpy.QtGui.QTextCharFormat
+
+      QTextCharFormat QSyntaxHighlighter::format(int position) const
+      Returns the format at position inside the syntax highlighter's
+      current text block.
+
+
+   .. py:method:: previousBlockState() -> int
+
+
+   .. py:method:: currentBlockState() -> int
+
+
+   .. py:method:: setCurrentBlockState(newState: int)
+
+
+   .. py:method:: setCurrentBlockUserData(data: qtpy.QtGui.QTextBlockUserData)
+
+      Attaches the given  data to the current text block.  The
+      ownership is passed to the underlying text document, i.e. the
+      provided QTextBlockUserData object will be deleted if the
+      corresponding text block gets deleted.
+      QTextBlockUserData can be used to store custom settings. In the
+      case of syntax highlighting, it is in particular interesting as
+      cache storage for information that you may figure out while
+      parsing the paragraph's text.
+      For example while parsing the text, you can keep track of
+      parenthesis characters that you encounter ('{[(' and the like),
+      and store their relative position and the actual QChar in a simple
+      class derived from QTextBlockUserData:
+      \snippet code/src_gui_text_qsyntaxhighlighter.cpp 3
+      During cursor navigation in the associated editor, you can ask the
+      current QTextBlock (retrieved using the QTextCursor::block()
+      function) if it has a user data object set and cast it to your \c
+      BlockData object. Then you can check if the current cursor
+      position matches with a previously recorded parenthesis position,
+      and, depending on the type of parenthesis (opening or closing),
+      find the next opening or closing parenthesis on the same level.
+      In this way you can do a visual parenthesis matching and highlight
+      from the current cursor position to the matching parenthesis. That
+      makes it easier to spot a missing parenthesis in your code and to
+      find where a corresponding opening/closing parenthesis is when
+      editing parenthesis intensive code.
+      \sa QTextBlock::setUserData()
+
+
+   .. py:method:: currentBlockUserData() -> Optional[qtpy.QtGui.QTextBlockUserData]
+
+
+   .. py:method:: currentBlock() -> qtpy.QtGui.QTextBlock
+
+
+   .. py:method:: p_timed_rehighlight()
+
+
+   .. py:method:: p_rehighlight(cursor: qtpy.QtGui.QTextCursor, operation: qtpy.QtGui.QTextCursor.MoveOperation)
+
+
+   .. py:method:: p_reformatBlocks(from_: int, charsRemoved: int, charsAdded: int, ignoreUserState=False)
+
+
+   .. py:method:: p_reformatBlock(block: qtpy.QtGui.QTextBlock)
+
+
+   .. py:method:: highlightBlock(text)
+      :abstractmethod:
+
+
+
+
+
+.. py:class:: MySyntaxHighlighter(parent=None)
+
+   Bases: :py:obj:`PylloSyntaxHighlighter`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highlightBlock <pyllo.ui.syntaxhighlighter.MySyntaxHighlighter.highlightBlock>`\ (text)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: highlightBlock(text)
+
+
+
+
+

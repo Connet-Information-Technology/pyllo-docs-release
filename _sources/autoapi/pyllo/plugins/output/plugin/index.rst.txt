@@ -1,0 +1,261 @@
+:py:mod:`pyllo.plugins.output.plugin`
+=====================================
+
+.. py:module:: pyllo.plugins.output.plugin
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Output <pyllo.plugins.output.plugin.Output>`
+     - console plugin.
+
+
+
+
+.. py:class:: Output(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloDockablePlugin`
+
+   console plugin.
+   Internal console 
+   This is auto-generated template. 
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'output'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.output.plugin.Output.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.output.plugin.Output.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.output.plugin.Output.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.output.plugin.Output.OPTIONAL>`
+        - \-
+      * - :py:obj:`WIDGET_CLASS <pyllo.plugins.output.plugin.Output.WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.output.plugin.Output.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.output.plugin.Output.CONF_FILE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.output.plugin.Output.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.output.plugin.Output.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.output.plugin.Output.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.output.plugin.Output.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onMainMenuAvailable <pyllo.plugins.output.plugin.Output.onMainMenuAvailable>`\ ()
+        - \-
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.output.plugin.Output.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`beforeMainwindowVisible <pyllo.plugins.output.plugin.Output.beforeMainwindowVisible>`\ ()
+        - Actions to be performed after setup but before the main window's has
+      * - :py:obj:`onTearDown <pyllo.plugins.output.plugin.Output.onTearDown>`\ (cancelable)
+        - Perform actions before the main window is closed.
+      * - :py:obj:`newOutputConsole <pyllo.plugins.output.plugin.Output.newOutputConsole>`\ (title, writer, setCurrent, closeable)
+        - \-
+      * - :py:obj:`closeOutputConsole <pyllo.plugins.output.plugin.Output.closeOutputConsole>`\ (title)
+        - \-
+      * - :py:obj:`newLoggerConsole <pyllo.plugins.output.plugin.Output.newLoggerConsole>`\ (title, logger, setCurrent, closeable)
+        - \-
+      * - :py:obj:`closeLoggerConsole <pyllo.plugins.output.plugin.Output.closeLoggerConsole>`\ (title)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'output'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName() -> pyllo.core.dtype.Text
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> pyllo.core.dtype.Text
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainMenuAvailable()
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: beforeMainwindowVisible()
+
+      Actions to be performed after setup but before the main window's has
+      been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onTearDown(cancelable=False)
+
+      Perform actions before the main window is closed.
+
+      Returns
+      -------
+      bool
+          Whether the plugin may be closed immediately or not.
+
+      Notes
+      -----
+      The returned value is ignored if *cancelable* is False.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: newOutputConsole(title: pyllo.core.dtype.Identity, writer: pyllo.plugins.output.api.OutputWriter, setCurrent=False, closeable=True)
+
+
+   .. py:method:: closeOutputConsole(title: pyllo.core.dtype.Identity)
+
+
+   .. py:method:: newLoggerConsole(title: pyllo.core.dtype.Identity, logger: logging.Logger, setCurrent=False, closeable=True)
+
+
+   .. py:method:: closeLoggerConsole(title: pyllo.core.dtype.Identity)
+
+
+
+
+

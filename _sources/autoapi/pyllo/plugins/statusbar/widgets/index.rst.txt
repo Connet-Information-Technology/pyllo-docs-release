@@ -1,0 +1,209 @@
+:py:mod:`pyllo.plugins.statusbar.widgets`
+=========================================
+
+.. py:module:: pyllo.plugins.statusbar.widgets
+
+.. autoapi-nested-parse::
+
+   Default status bar widgets.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`StatusBarWidget <pyllo.plugins.statusbar.widgets.StatusBarWidget>`
+     - Base class for status bar widgets.
+   * - :py:obj:`BaseTimerStatus <pyllo.plugins.statusbar.widgets.BaseTimerStatus>`
+     - Base class for status bar widgets that update based on timers.
+
+
+
+
+.. py:class:: StatusBarWidget(parent=None, showIcon=True, showLabel=True, showProgress=False, *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`
+
+   Base class for status bar widgets.
+
+   These widgets consist by default of an icon, a label and a spinner,
+   which are organized from left to right on that order.
+
+   You can also add any other QWidget to this layout by setting the
+   CUSTOM_WIDGET_CLASS class attribute. It'll be put between the label
+   and the spinner.
+
+   ..    ..    ..    .. .. py:attribute:: sigClicked
+
+      This signal is emmitted when the widget is clicked.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigClicked <pyllo.plugins.statusbar.widgets.StatusBarWidget.sigClicked>`
+        - This signal is emmitted when the widget is clicked.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`eventFilter <pyllo.plugins.statusbar.widgets.StatusBarWidget.eventFilter>`\ (obj, event)
+        - \-
+      * - :py:obj:`setProperty <pyllo.plugins.statusbar.widgets.StatusBarWidget.setProperty>`\ (name, value)
+        - \-
+      * - :py:obj:`setIcon <pyllo.plugins.statusbar.widgets.StatusBarWidget.setIcon>`\ (icon)
+        - \-
+      * - :py:obj:`setText <pyllo.plugins.statusbar.widgets.StatusBarWidget.setText>`\ (text)
+        - \-
+      * - :py:obj:`setIconVisible <pyllo.plugins.statusbar.widgets.StatusBarWidget.setIconVisible>`\ (visible)
+        - \-
+      * - :py:obj:`isIconVisible <pyllo.plugins.statusbar.widgets.StatusBarWidget.isIconVisible>`\ ()
+        - \-
+      * - :py:obj:`setTextVisible <pyllo.plugins.statusbar.widgets.StatusBarWidget.setTextVisible>`\ (visible)
+        - \-
+      * - :py:obj:`isTextVisible <pyllo.plugins.statusbar.widgets.StatusBarWidget.isTextVisible>`\ ()
+        - \-
+      * - :py:obj:`setProgressVisible <pyllo.plugins.statusbar.widgets.StatusBarWidget.setProgressVisible>`\ (visible)
+        - \-
+      * - :py:obj:`isProgressVisible <pyllo.plugins.statusbar.widgets.StatusBarWidget.isProgressVisible>`\ ()
+        - \-
+      * - :py:obj:`mouseReleaseEvent <pyllo.plugins.statusbar.widgets.StatusBarWidget.mouseReleaseEvent>`\ (event)
+        - Override Qt method to allow for click signal.
+      * - :py:obj:`getToolTip <pyllo.plugins.statusbar.widgets.StatusBarWidget.getToolTip>`\ ()
+        - Return the widget tooltip text.
+      * - :py:obj:`setToolTip <pyllo.plugins.statusbar.widgets.StatusBarWidget.setToolTip>`\ (text)
+        - \-
+      * - :py:obj:`getIcon <pyllo.plugins.statusbar.widgets.StatusBarWidget.getIcon>`\ ()
+        - Return the widget tooltip text.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigClicked
+
+      This signal is emmitted when the widget is clicked.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: eventFilter(obj: QObject, event: qtpy.QtCore.QEvent) -> bool
+
+
+   .. py:method:: setProperty(name: str, value)
+
+
+   .. py:method:: setIcon(icon: qtpy.QtGui.QIcon)
+
+
+   .. py:method:: setText(text: str)
+
+
+   .. py:method:: setIconVisible(visible: bool)
+
+
+   .. py:method:: isIconVisible() -> bool
+
+
+   .. py:method:: setTextVisible(visible: bool)
+
+
+   .. py:method:: isTextVisible() -> bool
+
+
+   .. py:method:: setProgressVisible(visible: bool)
+
+
+   .. py:method:: isProgressVisible() -> bool
+
+
+   .. py:method:: mouseReleaseEvent(event)
+
+      Override Qt method to allow for click signal.
+
+
+   .. py:method:: getToolTip()
+
+      Return the widget tooltip text.
+
+
+   .. py:method:: setToolTip(text: str)
+
+
+   .. py:method:: getIcon() -> qtpy.QtGui.QIcon
+
+      Return the widget tooltip text.
+
+
+
+
+
+.. py:class:: BaseTimerStatus(parent=None, showIcon=True, showLabel=True, showProgress=False, *args, **kwargs)
+
+   Bases: :py:obj:`StatusBarWidget`
+
+   Base class for status bar widgets that update based on timers.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`closeEvent <pyllo.plugins.statusbar.widgets.BaseTimerStatus.closeEvent>`\ (event)
+        - \-
+      * - :py:obj:`timerEvent <pyllo.plugins.statusbar.widgets.BaseTimerStatus.timerEvent>`\ (a0)
+        - Update status label widget, if widget is visible.
+      * - :py:obj:`setInterval <pyllo.plugins.statusbar.widgets.BaseTimerStatus.setInterval>`\ (ms)
+        - Set timer interval (ms).
+      * - :py:obj:`getText <pyllo.plugins.statusbar.widgets.BaseTimerStatus.getText>`\ ()
+        - :summarylabel:`abc` Return formatted text value.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: closeEvent(event)
+
+
+   .. py:method:: timerEvent(a0: QTimerEvent) -> None
+
+      Update status label widget, if widget is visible.
+
+
+   .. py:method:: setInterval(ms)
+
+      Set timer interval (ms).
+
+
+   .. py:method:: getText()
+      :abstractmethod:
+
+      Return formatted text value.
+
+
+
+
+

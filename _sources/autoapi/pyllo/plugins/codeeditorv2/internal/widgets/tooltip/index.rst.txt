@@ -1,0 +1,28 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.widgets.tooltip`
+=============================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.widgets.tooltip
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ToolTipWidget <pyllo.plugins.codeeditorv2.internal.widgets.tooltip.ToolTipWidget>`
+     - \-
+
+
+
+
+.. py:class:: ToolTipWidget(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QLabel`
+
+   ..    ..    .. 
+
+

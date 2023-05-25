@@ -1,0 +1,17 @@
+:py:mod:`pyllo.plugins.output.internal`
+=======================================
+
+.. py:module:: pyllo.plugins.output.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   logutils/index.rst
+   mainwidget/index.rst
+   widgets/index.rst
+
+

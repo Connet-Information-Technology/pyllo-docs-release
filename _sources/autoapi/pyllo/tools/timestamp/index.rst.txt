@@ -1,0 +1,34 @@
+:py:mod:`pyllo.tools.timestamp`
+===============================
+
+.. py:module:: pyllo.tools.timestamp
+
+.. autoapi-nested-parse::
+
+   Provides monotonic timestamps with a resetable zero.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`current <pyllo.tools.timestamp.current>`\ ()
+     - \-
+   * - :py:obj:`reset <pyllo.tools.timestamp.reset>`\ ()
+     - \-
+
+
+
+.. py:function:: current()
+
+
+.. py:function:: reset()
+
+

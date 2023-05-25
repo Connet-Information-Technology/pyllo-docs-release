@@ -1,0 +1,354 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.widgets.findreplace`
+=================================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.widgets.findreplace
+
+.. autoapi-nested-parse::
+
+   Find/Replace widget
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`FindReplaceActions <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplaceActions>`
+     - \-
+   * - :py:obj:`FindReplace <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace>`
+     - Find widget
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`app <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.app>`
+     - \-
+
+
+.. py:class:: FindReplaceActions
+
+   ..    ..    ..    .. .. py:attribute:: Previous
+      :value: 'previous_action'
+
+      
+
+   ..    .. .. py:attribute:: Next
+      :value: 'next_action'
+
+      
+
+   ..    .. .. py:attribute:: MatchCase
+      :value: 'match_case_action'
+
+      
+
+   ..    .. .. py:attribute:: MatchWords
+      :value: 'match_words_action'
+
+      
+
+   ..    .. .. py:attribute:: Regex
+      :value: 'regex_action'
+
+      
+
+   ..    .. .. py:attribute:: Replace
+      :value: 'replace_action'
+
+      
+
+   ..    .. .. py:attribute:: ReplaceAll
+      :value: 'replace_all_action'
+
+      
+
+   ..    .. .. py:attribute:: Close
+      :value: 'close_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Previous <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplaceActions.Previous>`
+        - \-
+      * - :py:obj:`Next <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplaceActions.Next>`
+        - \-
+      * - :py:obj:`MatchCase <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplaceActions.MatchCase>`
+        - \-
+      * - :py:obj:`MatchWords <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplaceActions.MatchWords>`
+        - \-
+      * - :py:obj:`Regex <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplaceActions.Regex>`
+        - \-
+      * - :py:obj:`Replace <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplaceActions.Replace>`
+        - \-
+      * - :py:obj:`ReplaceAll <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplaceActions.ReplaceAll>`
+        - \-
+      * - :py:obj:`Close <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplaceActions.Close>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Previous
+      :value: 'previous_action'
+
+      
+
+   .. py:attribute:: Next
+      :value: 'next_action'
+
+      
+
+   .. py:attribute:: MatchCase
+      :value: 'match_case_action'
+
+      
+
+   .. py:attribute:: MatchWords
+      :value: 'match_words_action'
+
+      
+
+   .. py:attribute:: Regex
+      :value: 'regex_action'
+
+      
+
+   .. py:attribute:: Replace
+      :value: 'replace_action'
+
+      
+
+   .. py:attribute:: ReplaceAll
+      :value: 'replace_all_action'
+
+      
+
+   .. py:attribute:: Close
+      :value: 'close_action'
+
+      
+
+
+
+
+
+
+.. py:class:: FindReplace(editor, parent=None, replaceEnabled=False)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`
+
+   Find widget
+
+   ..    ..    ..    .. .. py:attribute:: CONF_SECTION
+      :value: 'findreplace'
+
+      
+
+   ..    .. .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: STYLE
+
+      
+
+   ..    .. .. py:attribute:: TOOLTIP
+
+      
+
+   ..    .. .. py:attribute:: sigVisibilityChangeRequest
+
+      
+
+   ..    .. .. py:attribute:: sigHighlightOccurrences
+
+      
+
+   ..    .. .. py:attribute:: sigClearHighlightOccurrences
+
+      Emitted when find replace notify codeeditor to clear highlight occurrences
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.CONF_SECTION>`
+        - \-
+      * - :py:obj:`PREFAB <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.PREFAB>`
+        - \-
+      * - :py:obj:`STYLE <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.STYLE>`
+        - \-
+      * - :py:obj:`TOOLTIP <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.TOOLTIP>`
+        - \-
+      * - :py:obj:`sigVisibilityChangeRequest <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.sigVisibilityChangeRequest>`
+        - \-
+      * - :py:obj:`sigHighlightOccurrences <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.sigHighlightOccurrences>`
+        - \-
+      * - :py:obj:`sigClearHighlightOccurrences <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.sigClearHighlightOccurrences>`
+        - Emitted when find replace notify codeeditor to clear highlight occurrences
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`paintEvent <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.paintEvent>`\ (event)
+        - \-
+      * - :py:obj:`eventFilter <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.eventFilter>`\ (widget, event)
+        - Event filter for search_text widget.
+      * - :py:obj:`isMatchCase <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.isMatchCase>`\ ()
+        - \-
+      * - :py:obj:`isMatchWords <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.isMatchWords>`\ ()
+        - \-
+      * - :py:obj:`isRegex <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.isRegex>`\ ()
+        - \-
+      * - :py:obj:`getSearchText <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.getSearchText>`\ ()
+        - \-
+      * - :py:obj:`getReplaceText <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.getReplaceText>`\ ()
+        - \-
+      * - :py:obj:`findNext <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.findNext>`\ (textChanged)
+        - Find next occurrence
+      * - :py:obj:`findPrevious <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.findPrevious>`\ (textChanged)
+        - Find previous occurrence
+      * - :py:obj:`replace <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.replace>`\ ()
+        - \-
+      * - :py:obj:`replaceAll <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.replaceAll>`\ ()
+        - \-
+      * - :py:obj:`setReplaceEnabled <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.setReplaceEnabled>`\ (enable)
+        - Show/hide replace widgets
+      * - :py:obj:`find <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.find>`\ (textChanged, forward, rehighlight)
+        - \-
+      * - :py:obj:`changeNumberMatches <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.changeNumberMatches>`\ (currentMatchNumber, totalMatchCount)
+        - \-
+      * - :py:obj:`refresh <pyllo.plugins.codeeditorv2.internal.widgets.findreplace.FindReplace.refresh>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_SECTION
+      :value: 'findreplace'
+
+      
+
+   .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   .. py:attribute:: STYLE
+
+      
+
+   .. py:attribute:: TOOLTIP
+
+      
+
+   .. py:attribute:: sigVisibilityChangeRequest
+
+      
+
+   .. py:attribute:: sigHighlightOccurrences
+
+      
+
+   .. py:attribute:: sigClearHighlightOccurrences
+
+      Emitted when find replace notify codeeditor to clear highlight occurrences
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: paintEvent(event)
+
+
+   .. py:method:: eventFilter(widget: QObject, event: qtpy.QtCore.QEvent) -> bool
+
+      Event filter for search_text widget.
+
+      Emits signals when presing Enter and Shift+Enter.
+      This signals are used for search forward and backward.
+      Also, a crude hack to get tab working in the Find/Replace boxes.
+
+
+   .. py:method:: isMatchCase() -> bool
+
+
+   .. py:method:: isMatchWords() -> bool
+
+
+   .. py:method:: isRegex() -> bool
+
+
+   .. py:method:: getSearchText() -> str
+
+
+   .. py:method:: getReplaceText() -> str
+
+
+   .. py:method:: findNext(textChanged=False)
+
+      Find next occurrence
+
+
+   .. py:method:: findPrevious(textChanged=False)
+
+      Find previous occurrence
+
+
+   .. py:method:: replace()
+
+
+   .. py:method:: replaceAll()
+
+
+   .. py:method:: setReplaceEnabled(enable: bool)
+
+      Show/hide replace widgets
+
+
+   .. py:method:: find(textChanged=True, forward=True, rehighlight=True)
+
+
+   .. py:method:: changeNumberMatches(currentMatchNumber: int, totalMatchCount: int)
+
+
+   .. py:method:: refresh()
+
+
+
+
+
+.. py:data:: app
+
+   
+

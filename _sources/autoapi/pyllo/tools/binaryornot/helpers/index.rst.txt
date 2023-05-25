@@ -1,0 +1,74 @@
+:py:mod:`pyllo.tools.binaryornot.helpers`
+=========================================
+
+.. py:module:: pyllo.tools.binaryornot.helpers
+
+.. autoapi-nested-parse::
+
+   binaryornot.helpers
+   -------------------
+
+   Helper utilities used by BinaryOrNot.
+
+   Adapted from binaryornot/helpers.py of
+   `BinaryOrNot <https://github.com/audreyr/binaryornot>`_.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`printAsHex <pyllo.tools.binaryornot.helpers.printAsHex>`\ (s)
+     - Print a string as hex bytes.
+   * - :py:obj:`getStartingChunk <pyllo.tools.binaryornot.helpers.getStartingChunk>`\ (filename, length)
+     - :param filename: File to open and get the first little chunk of.
+   * - :py:obj:`isBinaryString <pyllo.tools.binaryornot.helpers.isBinaryString>`\ (bytesToCheck)
+     - Uses a simplified version of the Perl detection algorithm,
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.tools.binaryornot.helpers.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:function:: printAsHex(s)
+
+   Print a string as hex bytes.
+
+
+.. py:function:: getStartingChunk(filename, length=1024)
+
+   :param filename: File to open and get the first little chunk of.
+   :param length: Number of bytes to read, default 1024.
+   :returns: Starting chunk of bytes.
+
+
+.. py:function:: isBinaryString(bytesToCheck)
+
+   Uses a simplified version of the Perl detection algorithm,
+   based roughly on Eli Bendersky's translation to Python:
+   https://eli.thegreenplace.net/2011/10/19/perls-guess-if-file-is-text-or-binary-implemented-in-python/
+
+   This is biased slightly more in favour of deeming files as text
+   files than the Perl algorithm, since all ASCII compatible character
+   sets are accepted as text, not just utf-8.
+
+   :param bytes: A chunk of bytes to check.
+   :returns: True if appears to be a binary, otherwise False.
+
+

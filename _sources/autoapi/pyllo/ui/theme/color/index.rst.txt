@@ -1,0 +1,1102 @@
+:py:mod:`pyllo.ui.theme.color`
+==============================
+
+.. py:module:: pyllo.ui.theme.color
+
+.. autoapi-nested-parse::
+
+   Extra colors used for the dark and light themes in Pyllo.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Green <pyllo.ui.theme.color.Green>`
+     - \-
+   * - :py:obj:`Red <pyllo.ui.theme.color.Red>`
+     - \-
+   * - :py:obj:`Orange <pyllo.ui.theme.color.Orange>`
+     - \-
+   * - :py:obj:`GroupDark <pyllo.ui.theme.color.GroupDark>`
+     - Group colors for the dark palette.
+   * - :py:obj:`GroupLight <pyllo.ui.theme.color.GroupLight>`
+     - Group colors for light palette.
+   * - :py:obj:`Logos <pyllo.ui.theme.color.Logos>`
+     - Colors for the Python and Pyllo logos.
+
+
+
+
+.. py:class:: Green
+
+   ..    ..    ..    .. .. py:attribute:: B0
+      :value: '#000000'
+
+      
+
+   ..    .. .. py:attribute:: B10
+      :value: '#064738'
+
+      
+
+   ..    .. .. py:attribute:: B20
+      :value: '#055C49'
+
+      
+
+   ..    .. .. py:attribute:: B30
+      :value: '#007A5E'
+
+      
+
+   ..    .. .. py:attribute:: B40
+      :value: '#008760'
+
+      
+
+   ..    .. .. py:attribute:: B50
+      :value: '#019D70'
+
+      
+
+   ..    .. .. py:attribute:: B60
+      :value: '#02BA85'
+
+      
+
+   ..    .. .. py:attribute:: B70
+      :value: '#20C997'
+
+      
+
+   ..    .. .. py:attribute:: B80
+      :value: '#44DEB0'
+
+      
+
+   ..    .. .. py:attribute:: B90
+      :value: '#3BEBB7'
+
+      
+
+   ..    .. .. py:attribute:: B100
+      :value: '#88F2D3'
+
+      
+
+   ..    .. .. py:attribute:: B110
+      :value: '#B0F5E1'
+
+      
+
+   ..    .. .. py:attribute:: B120
+      :value: '#D1FBEE'
+
+      
+
+   ..    .. .. py:attribute:: B130
+      :value: '#E4FFF7'
+
+      
+
+   ..    .. .. py:attribute:: B140
+      :value: '#F5FFFD'
+
+      
+
+   ..    .. .. py:attribute:: B150
+      :value: '#FFFFFF'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`B0 <pyllo.ui.theme.color.Green.B0>`
+        - \-
+      * - :py:obj:`B10 <pyllo.ui.theme.color.Green.B10>`
+        - \-
+      * - :py:obj:`B20 <pyllo.ui.theme.color.Green.B20>`
+        - \-
+      * - :py:obj:`B30 <pyllo.ui.theme.color.Green.B30>`
+        - \-
+      * - :py:obj:`B40 <pyllo.ui.theme.color.Green.B40>`
+        - \-
+      * - :py:obj:`B50 <pyllo.ui.theme.color.Green.B50>`
+        - \-
+      * - :py:obj:`B60 <pyllo.ui.theme.color.Green.B60>`
+        - \-
+      * - :py:obj:`B70 <pyllo.ui.theme.color.Green.B70>`
+        - \-
+      * - :py:obj:`B80 <pyllo.ui.theme.color.Green.B80>`
+        - \-
+      * - :py:obj:`B90 <pyllo.ui.theme.color.Green.B90>`
+        - \-
+      * - :py:obj:`B100 <pyllo.ui.theme.color.Green.B100>`
+        - \-
+      * - :py:obj:`B110 <pyllo.ui.theme.color.Green.B110>`
+        - \-
+      * - :py:obj:`B120 <pyllo.ui.theme.color.Green.B120>`
+        - \-
+      * - :py:obj:`B130 <pyllo.ui.theme.color.Green.B130>`
+        - \-
+      * - :py:obj:`B140 <pyllo.ui.theme.color.Green.B140>`
+        - \-
+      * - :py:obj:`B150 <pyllo.ui.theme.color.Green.B150>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: B0
+      :value: '#000000'
+
+      
+
+   .. py:attribute:: B10
+      :value: '#064738'
+
+      
+
+   .. py:attribute:: B20
+      :value: '#055C49'
+
+      
+
+   .. py:attribute:: B30
+      :value: '#007A5E'
+
+      
+
+   .. py:attribute:: B40
+      :value: '#008760'
+
+      
+
+   .. py:attribute:: B50
+      :value: '#019D70'
+
+      
+
+   .. py:attribute:: B60
+      :value: '#02BA85'
+
+      
+
+   .. py:attribute:: B70
+      :value: '#20C997'
+
+      
+
+   .. py:attribute:: B80
+      :value: '#44DEB0'
+
+      
+
+   .. py:attribute:: B90
+      :value: '#3BEBB7'
+
+      
+
+   .. py:attribute:: B100
+      :value: '#88F2D3'
+
+      
+
+   .. py:attribute:: B110
+      :value: '#B0F5E1'
+
+      
+
+   .. py:attribute:: B120
+      :value: '#D1FBEE'
+
+      
+
+   .. py:attribute:: B130
+      :value: '#E4FFF7'
+
+      
+
+   .. py:attribute:: B140
+      :value: '#F5FFFD'
+
+      
+
+   .. py:attribute:: B150
+      :value: '#FFFFFF'
+
+      
+
+
+
+
+
+
+.. py:class:: Red
+
+   ..    ..    ..    .. .. py:attribute:: B0
+      :value: '#000000'
+
+      
+
+   ..    .. .. py:attribute:: B10
+      :value: '#470606'
+
+      
+
+   ..    .. .. py:attribute:: B20
+      :value: '#760B0B'
+
+      
+
+   ..    .. .. py:attribute:: B30
+      :value: '#AF0F0F'
+
+      
+
+   ..    .. .. py:attribute:: B40
+      :value: '#D4140B'
+
+      
+
+   ..    .. .. py:attribute:: B50
+      :value: '#DE321F'
+
+      
+
+   ..    .. .. py:attribute:: B60
+      :value: '#E24232'
+
+      
+
+   ..    .. .. py:attribute:: B70
+      :value: '#E74C3C'
+
+      
+
+   ..    .. .. py:attribute:: B80
+      :value: '#F66657'
+
+      
+
+   ..    .. .. py:attribute:: B90
+      :value: '#F88478'
+
+      
+
+   ..    .. .. py:attribute:: B100
+      :value: '#FFACA4'
+
+      
+
+   ..    .. .. py:attribute:: B110
+      :value: '#FFC3BD'
+
+      
+
+   ..    .. .. py:attribute:: B120
+      :value: '#FEDDDA'
+
+      
+
+   ..    .. .. py:attribute:: B130
+      :value: '#FFEEEE'
+
+      
+
+   ..    .. .. py:attribute:: B140
+      :value: '#FFF5F5'
+
+      
+
+   ..    .. .. py:attribute:: B150
+      :value: '##FFFFFF'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`B0 <pyllo.ui.theme.color.Red.B0>`
+        - \-
+      * - :py:obj:`B10 <pyllo.ui.theme.color.Red.B10>`
+        - \-
+      * - :py:obj:`B20 <pyllo.ui.theme.color.Red.B20>`
+        - \-
+      * - :py:obj:`B30 <pyllo.ui.theme.color.Red.B30>`
+        - \-
+      * - :py:obj:`B40 <pyllo.ui.theme.color.Red.B40>`
+        - \-
+      * - :py:obj:`B50 <pyllo.ui.theme.color.Red.B50>`
+        - \-
+      * - :py:obj:`B60 <pyllo.ui.theme.color.Red.B60>`
+        - \-
+      * - :py:obj:`B70 <pyllo.ui.theme.color.Red.B70>`
+        - \-
+      * - :py:obj:`B80 <pyllo.ui.theme.color.Red.B80>`
+        - \-
+      * - :py:obj:`B90 <pyllo.ui.theme.color.Red.B90>`
+        - \-
+      * - :py:obj:`B100 <pyllo.ui.theme.color.Red.B100>`
+        - \-
+      * - :py:obj:`B110 <pyllo.ui.theme.color.Red.B110>`
+        - \-
+      * - :py:obj:`B120 <pyllo.ui.theme.color.Red.B120>`
+        - \-
+      * - :py:obj:`B130 <pyllo.ui.theme.color.Red.B130>`
+        - \-
+      * - :py:obj:`B140 <pyllo.ui.theme.color.Red.B140>`
+        - \-
+      * - :py:obj:`B150 <pyllo.ui.theme.color.Red.B150>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: B0
+      :value: '#000000'
+
+      
+
+   .. py:attribute:: B10
+      :value: '#470606'
+
+      
+
+   .. py:attribute:: B20
+      :value: '#760B0B'
+
+      
+
+   .. py:attribute:: B30
+      :value: '#AF0F0F'
+
+      
+
+   .. py:attribute:: B40
+      :value: '#D4140B'
+
+      
+
+   .. py:attribute:: B50
+      :value: '#DE321F'
+
+      
+
+   .. py:attribute:: B60
+      :value: '#E24232'
+
+      
+
+   .. py:attribute:: B70
+      :value: '#E74C3C'
+
+      
+
+   .. py:attribute:: B80
+      :value: '#F66657'
+
+      
+
+   .. py:attribute:: B90
+      :value: '#F88478'
+
+      
+
+   .. py:attribute:: B100
+      :value: '#FFACA4'
+
+      
+
+   .. py:attribute:: B110
+      :value: '#FFC3BD'
+
+      
+
+   .. py:attribute:: B120
+      :value: '#FEDDDA'
+
+      
+
+   .. py:attribute:: B130
+      :value: '#FFEEEE'
+
+      
+
+   .. py:attribute:: B140
+      :value: '#FFF5F5'
+
+      
+
+   .. py:attribute:: B150
+      :value: '##FFFFFF'
+
+      
+
+
+
+
+
+
+.. py:class:: Orange
+
+   ..    ..    ..    .. .. py:attribute:: B0
+      :value: '#000000'
+
+      
+
+   ..    .. .. py:attribute:: B10
+      :value: '#471D06'
+
+      
+
+   ..    .. .. py:attribute:: B20
+      :value: '#692907'
+
+      
+
+   ..    .. .. py:attribute:: B30
+      :value: '#AB3E00'
+
+      
+
+   ..    .. .. py:attribute:: B40
+      :value: '#CE4B01'
+
+      
+
+   ..    .. .. py:attribute:: B50
+      :value: '#E05E15'
+
+      
+
+   ..    .. .. py:attribute:: B60
+      :value: '#E57004'
+
+      
+
+   ..    .. .. py:attribute:: B70
+      :value: '#F37E12'
+
+      
+
+   ..    .. .. py:attribute:: B80
+      :value: '#FF993B'
+
+      
+
+   ..    .. .. py:attribute:: B90
+      :value: '#FFB950'
+
+      
+
+   ..    .. .. py:attribute:: B100
+      :value: '#FFCF84'
+
+      
+
+   ..    .. .. py:attribute:: B110
+      :value: '#FFDDA7'
+
+      
+
+   ..    .. .. py:attribute:: B120
+      :value: '#FFEACA'
+
+      
+
+   ..    .. .. py:attribute:: B130
+      :value: '#FFF3E2'
+
+      
+
+   ..    .. .. py:attribute:: B140
+      :value: '#FFFBF5'
+
+      
+
+   ..    .. .. py:attribute:: B150
+      :value: '##FFFFFF'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`B0 <pyllo.ui.theme.color.Orange.B0>`
+        - \-
+      * - :py:obj:`B10 <pyllo.ui.theme.color.Orange.B10>`
+        - \-
+      * - :py:obj:`B20 <pyllo.ui.theme.color.Orange.B20>`
+        - \-
+      * - :py:obj:`B30 <pyllo.ui.theme.color.Orange.B30>`
+        - \-
+      * - :py:obj:`B40 <pyllo.ui.theme.color.Orange.B40>`
+        - \-
+      * - :py:obj:`B50 <pyllo.ui.theme.color.Orange.B50>`
+        - \-
+      * - :py:obj:`B60 <pyllo.ui.theme.color.Orange.B60>`
+        - \-
+      * - :py:obj:`B70 <pyllo.ui.theme.color.Orange.B70>`
+        - \-
+      * - :py:obj:`B80 <pyllo.ui.theme.color.Orange.B80>`
+        - \-
+      * - :py:obj:`B90 <pyllo.ui.theme.color.Orange.B90>`
+        - \-
+      * - :py:obj:`B100 <pyllo.ui.theme.color.Orange.B100>`
+        - \-
+      * - :py:obj:`B110 <pyllo.ui.theme.color.Orange.B110>`
+        - \-
+      * - :py:obj:`B120 <pyllo.ui.theme.color.Orange.B120>`
+        - \-
+      * - :py:obj:`B130 <pyllo.ui.theme.color.Orange.B130>`
+        - \-
+      * - :py:obj:`B140 <pyllo.ui.theme.color.Orange.B140>`
+        - \-
+      * - :py:obj:`B150 <pyllo.ui.theme.color.Orange.B150>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: B0
+      :value: '#000000'
+
+      
+
+   .. py:attribute:: B10
+      :value: '#471D06'
+
+      
+
+   .. py:attribute:: B20
+      :value: '#692907'
+
+      
+
+   .. py:attribute:: B30
+      :value: '#AB3E00'
+
+      
+
+   .. py:attribute:: B40
+      :value: '#CE4B01'
+
+      
+
+   .. py:attribute:: B50
+      :value: '#E05E15'
+
+      
+
+   .. py:attribute:: B60
+      :value: '#E57004'
+
+      
+
+   .. py:attribute:: B70
+      :value: '#F37E12'
+
+      
+
+   .. py:attribute:: B80
+      :value: '#FF993B'
+
+      
+
+   .. py:attribute:: B90
+      :value: '#FFB950'
+
+      
+
+   .. py:attribute:: B100
+      :value: '#FFCF84'
+
+      
+
+   .. py:attribute:: B110
+      :value: '#FFDDA7'
+
+      
+
+   .. py:attribute:: B120
+      :value: '#FFEACA'
+
+      
+
+   .. py:attribute:: B130
+      :value: '#FFF3E2'
+
+      
+
+   .. py:attribute:: B140
+      :value: '#FFFBF5'
+
+      
+
+   .. py:attribute:: B150
+      :value: '##FFFFFF'
+
+      
+
+
+
+
+
+
+.. py:class:: GroupDark
+
+   Group colors for the dark palette.
+
+   It does not start with B0 because it doesn't use black.
+
+   ..    ..    ..    .. .. py:attribute:: B10
+      :value: '#E11C1C'
+
+      
+
+   ..    .. .. py:attribute:: B20
+      :value: '#FF8A00'
+
+      
+
+   ..    .. .. py:attribute:: B30
+      :value: '#88BA00'
+
+      
+
+   ..    .. .. py:attribute:: B40
+      :value: '#2DB500'
+
+      
+
+   ..    .. .. py:attribute:: B50
+      :value: '#3FC6F0'
+
+      
+
+   ..    .. .. py:attribute:: B60
+      :value: '#107EEC'
+
+      
+
+   ..    .. .. py:attribute:: B70
+      :value: '#5C47E0'
+
+      
+
+   ..    .. .. py:attribute:: B80
+      :value: '#7F27C5'
+
+      
+
+   ..    .. .. py:attribute:: B90
+      :value: '#C88AFA'
+
+      
+
+   ..    .. .. py:attribute:: B100
+      :value: '#AF2294'
+
+      
+
+   ..    .. .. py:attribute:: B110
+      :value: '#DB4D8E'
+
+      
+
+   ..    .. .. py:attribute:: B120
+      :value: '#38D4A4'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`B10 <pyllo.ui.theme.color.GroupDark.B10>`
+        - \-
+      * - :py:obj:`B20 <pyllo.ui.theme.color.GroupDark.B20>`
+        - \-
+      * - :py:obj:`B30 <pyllo.ui.theme.color.GroupDark.B30>`
+        - \-
+      * - :py:obj:`B40 <pyllo.ui.theme.color.GroupDark.B40>`
+        - \-
+      * - :py:obj:`B50 <pyllo.ui.theme.color.GroupDark.B50>`
+        - \-
+      * - :py:obj:`B60 <pyllo.ui.theme.color.GroupDark.B60>`
+        - \-
+      * - :py:obj:`B70 <pyllo.ui.theme.color.GroupDark.B70>`
+        - \-
+      * - :py:obj:`B80 <pyllo.ui.theme.color.GroupDark.B80>`
+        - \-
+      * - :py:obj:`B90 <pyllo.ui.theme.color.GroupDark.B90>`
+        - \-
+      * - :py:obj:`B100 <pyllo.ui.theme.color.GroupDark.B100>`
+        - \-
+      * - :py:obj:`B110 <pyllo.ui.theme.color.GroupDark.B110>`
+        - \-
+      * - :py:obj:`B120 <pyllo.ui.theme.color.GroupDark.B120>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: B10
+      :value: '#E11C1C'
+
+      
+
+   .. py:attribute:: B20
+      :value: '#FF8A00'
+
+      
+
+   .. py:attribute:: B30
+      :value: '#88BA00'
+
+      
+
+   .. py:attribute:: B40
+      :value: '#2DB500'
+
+      
+
+   .. py:attribute:: B50
+      :value: '#3FC6F0'
+
+      
+
+   .. py:attribute:: B60
+      :value: '#107EEC'
+
+      
+
+   .. py:attribute:: B70
+      :value: '#5C47E0'
+
+      
+
+   .. py:attribute:: B80
+      :value: '#7F27C5'
+
+      
+
+   .. py:attribute:: B90
+      :value: '#C88AFA'
+
+      
+
+   .. py:attribute:: B100
+      :value: '#AF2294'
+
+      
+
+   .. py:attribute:: B110
+      :value: '#DB4D8E'
+
+      
+
+   .. py:attribute:: B120
+      :value: '#38D4A4'
+
+      
+
+
+
+
+
+
+.. py:class:: GroupLight
+
+   Group colors for light palette.
+
+   It does not start with B0 because it doesn't use black.
+
+   ..    ..    ..    .. .. py:attribute:: B10
+      :value: '#FF6700'
+
+      
+
+   ..    .. .. py:attribute:: B20
+      :value: '#FFB000'
+
+      
+
+   ..    .. .. py:attribute:: B30
+      :value: '#FFE600'
+
+      
+
+   ..    .. .. py:attribute:: B40
+      :value: '#7FDD05'
+
+      
+
+   ..    .. .. py:attribute:: B50
+      :value: '#00A585'
+
+      
+
+   ..    .. .. py:attribute:: B60
+      :value: '#22BCF2'
+
+      
+
+   ..    .. .. py:attribute:: B70
+      :value: '#1256CC'
+
+      
+
+   ..    .. .. py:attribute:: B80
+      :value: '#803AD0'
+
+      
+
+   ..    .. .. py:attribute:: B90
+      :value: '#B568F2'
+
+      
+
+   ..    .. .. py:attribute:: B100
+      :value: '#CC2782'
+
+      
+
+   ..    .. .. py:attribute:: B110
+      :value: '#FF71BF'
+
+      
+
+   ..    .. .. py:attribute:: B120
+      :value: '#7EE8C7'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`B10 <pyllo.ui.theme.color.GroupLight.B10>`
+        - \-
+      * - :py:obj:`B20 <pyllo.ui.theme.color.GroupLight.B20>`
+        - \-
+      * - :py:obj:`B30 <pyllo.ui.theme.color.GroupLight.B30>`
+        - \-
+      * - :py:obj:`B40 <pyllo.ui.theme.color.GroupLight.B40>`
+        - \-
+      * - :py:obj:`B50 <pyllo.ui.theme.color.GroupLight.B50>`
+        - \-
+      * - :py:obj:`B60 <pyllo.ui.theme.color.GroupLight.B60>`
+        - \-
+      * - :py:obj:`B70 <pyllo.ui.theme.color.GroupLight.B70>`
+        - \-
+      * - :py:obj:`B80 <pyllo.ui.theme.color.GroupLight.B80>`
+        - \-
+      * - :py:obj:`B90 <pyllo.ui.theme.color.GroupLight.B90>`
+        - \-
+      * - :py:obj:`B100 <pyllo.ui.theme.color.GroupLight.B100>`
+        - \-
+      * - :py:obj:`B110 <pyllo.ui.theme.color.GroupLight.B110>`
+        - \-
+      * - :py:obj:`B120 <pyllo.ui.theme.color.GroupLight.B120>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: B10
+      :value: '#FF6700'
+
+      
+
+   .. py:attribute:: B20
+      :value: '#FFB000'
+
+      
+
+   .. py:attribute:: B30
+      :value: '#FFE600'
+
+      
+
+   .. py:attribute:: B40
+      :value: '#7FDD05'
+
+      
+
+   .. py:attribute:: B50
+      :value: '#00A585'
+
+      
+
+   .. py:attribute:: B60
+      :value: '#22BCF2'
+
+      
+
+   .. py:attribute:: B70
+      :value: '#1256CC'
+
+      
+
+   .. py:attribute:: B80
+      :value: '#803AD0'
+
+      
+
+   .. py:attribute:: B90
+      :value: '#B568F2'
+
+      
+
+   .. py:attribute:: B100
+      :value: '#CC2782'
+
+      
+
+   .. py:attribute:: B110
+      :value: '#FF71BF'
+
+      
+
+   .. py:attribute:: B120
+      :value: '#7EE8C7'
+
+      
+
+
+
+
+
+
+.. py:class:: Logos
+
+   Colors for the Python and Pyllo logos.
+
+   ..    ..    ..    .. .. py:attribute:: B10
+      :value: '#3775a9'
+
+      
+
+   ..    .. .. py:attribute:: B20
+      :value: '#ffd444'
+
+      
+
+   ..    .. .. py:attribute:: B30
+      :value: '#414141'
+
+      
+
+   ..    .. .. py:attribute:: B40
+      :value: '#fafafa'
+
+      
+
+   ..    .. .. py:attribute:: B50
+      :value: '#ee0000'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`B10 <pyllo.ui.theme.color.Logos.B10>`
+        - \-
+      * - :py:obj:`B20 <pyllo.ui.theme.color.Logos.B20>`
+        - \-
+      * - :py:obj:`B30 <pyllo.ui.theme.color.Logos.B30>`
+        - \-
+      * - :py:obj:`B40 <pyllo.ui.theme.color.Logos.B40>`
+        - \-
+      * - :py:obj:`B50 <pyllo.ui.theme.color.Logos.B50>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: B10
+      :value: '#3775a9'
+
+      
+
+   .. py:attribute:: B20
+      :value: '#ffd444'
+
+      
+
+   .. py:attribute:: B30
+      :value: '#414141'
+
+      
+
+   .. py:attribute:: B40
+      :value: '#fafafa'
+
+      
+
+   .. py:attribute:: B50
+      :value: '#ee0000'
+
+      
+
+
+
+
+
+

@@ -1,0 +1,229 @@
+:py:mod:`pyllo.plugins.preferences.api`
+=======================================
+
+.. py:module:: pyllo.plugins.preferences.api
+
+.. autoapi-nested-parse::
+
+   Preferences plugin public API
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`BaseConfigTab <pyllo.plugins.preferences.api.BaseConfigTab>`
+     - Stub class to declare a config tab.
+   * - :py:obj:`PylloConfigPage <pyllo.plugins.preferences.api.PylloConfigPage>`
+     - Plugin configuration dialog box page widget
+
+
+
+
+.. py:class:: BaseConfigTab
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`
+
+   Stub class to declare a config tab.
+
+   ..    ..    .. 
+
+
+.. py:class:: PylloConfigPage(parent)
+
+   Bases: :py:obj:`pyllo.plugins.preferences.internal.widgets.ConfigPage`, :py:obj:`pyllo.plugins.preferences.internal.container.ConfigAccessMixin`
+
+   Plugin configuration dialog box page widget
+
+   ..    ..    ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.preferences.api.PylloConfigPage.CONF_SECTION>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`applySettings <pyllo.plugins.preferences.api.PylloConfigPage.applySettings>`\ (options)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`checkSettings <pyllo.plugins.preferences.api.PylloConfigPage.checkSettings>`\ ()
+        - This method is called to check settings after configuration
+      * - :py:obj:`setModified <pyllo.plugins.preferences.api.PylloConfigPage.setModified>`\ (state)
+        - \-
+      * - :py:obj:`isValid <pyllo.plugins.preferences.api.PylloConfigPage.isValid>`\ ()
+        - Return True if all widget contents are valid
+      * - :py:obj:`loadFromConf <pyllo.plugins.preferences.api.PylloConfigPage.loadFromConf>`\ ()
+        - Load settings from configuration file.
+      * - :py:obj:`saveToConf <pyllo.plugins.preferences.api.PylloConfigPage.saveToConf>`\ ()
+        - Save settings to configuration file
+      * - :py:obj:`hasBeenModified <pyllo.plugins.preferences.api.PylloConfigPage.hasBeenModified>`\ (option)
+        - \-
+      * - :py:obj:`createCheckbox <pyllo.plugins.preferences.api.PylloConfigPage.createCheckbox>`\ (text, option, default, tip, msgWarning, msgInfo, msgIfEnabled, section)
+        - \-
+      * - :py:obj:`createRadiobutton <pyllo.plugins.preferences.api.PylloConfigPage.createRadiobutton>`\ (text, option, default, tip, msgWarning, msgInfo, msgIfEnabled, buttonGroup, restart, section)
+        - \-
+      * - :py:obj:`createLineedit <pyllo.plugins.preferences.api.PylloConfigPage.createLineedit>`\ (text, option, default, tip, alignment, regex, restart, wordWrap, placeholder, contentType, section)
+        - \-
+      * - :py:obj:`createTextEdit <pyllo.plugins.preferences.api.PylloConfigPage.createTextEdit>`\ (text, option, default, tip, restart, contentType, section)
+        - \-
+      * - :py:obj:`createBrowseDir <pyllo.plugins.preferences.api.PylloConfigPage.createBrowseDir>`\ (text, option, default, tip, section)
+        - \-
+      * - :py:obj:`selectDirectory <pyllo.plugins.preferences.api.PylloConfigPage.selectDirectory>`\ (edit)
+        - Select directory
+      * - :py:obj:`createBrowseFile <pyllo.plugins.preferences.api.PylloConfigPage.createBrowseFile>`\ (text, option, default, tip, filters, section)
+        - \-
+      * - :py:obj:`selectFile <pyllo.plugins.preferences.api.PylloConfigPage.selectFile>`\ (edit, filters)
+        - Select File
+      * - :py:obj:`createSpinbox <pyllo.plugins.preferences.api.PylloConfigPage.createSpinbox>`\ (prefix, suffix, option, default, min_, max_, step, tip, section)
+        - \-
+      * - :py:obj:`createColorEdit <pyllo.plugins.preferences.api.PylloConfigPage.createColorEdit>`\ (text, option, default, tip, withoutLayout, section)
+        - \-
+      * - :py:obj:`createScEdit <pyllo.plugins.preferences.api.PylloConfigPage.createScEdit>`\ (text, option, default, tip, withoutLayout, section)
+        - \-
+      * - :py:obj:`createCombobox <pyllo.plugins.preferences.api.PylloConfigPage.createCombobox>`\ (text, choices, option, default, tip, restart, section)
+        - choices: couples (name, key)
+      * - :py:obj:`createFileCombobox <pyllo.plugins.preferences.api.PylloConfigPage.createFileCombobox>`\ (text, choices, option, default, tip, restart, filters, adjustToContents, defaultLineEdit, section, validateCallback)
+        - choices: couples (name, key)
+      * - :py:obj:`createFontGroup <pyllo.plugins.preferences.api.PylloConfigPage.createFontGroup>`\ (option, text, title, tip, fontfilters, withoutGroup)
+        - Option=None -> setting plugin font
+      * - :py:obj:`createButton <pyllo.plugins.preferences.api.PylloConfigPage.createButton>`\ (text, callback)
+        - \-
+      * - :py:obj:`createTab <pyllo.plugins.preferences.api.PylloConfigPage.createTab>`\ (\*widgets)
+        - Create simple tab widget page: widget added in a vertical layout
+      * - :py:obj:`promptRestartRequired <pyllo.plugins.preferences.api.PylloConfigPage.promptRestartRequired>`\ ()
+        - Prompt the user with a request to restart.
+      * - :py:obj:`addTab <pyllo.plugins.preferences.api.PylloConfigPage.addTab>`\ (Widget)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_SECTION
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: applySettings(options)
+      :abstractmethod:
+
+
+   .. py:method:: checkSettings()
+
+      This method is called to check settings after configuration
+      dialog has been shown
+
+
+   .. py:method:: setModified(state)
+
+
+   .. py:method:: isValid()
+
+      Return True if all widget contents are valid
+
+
+   .. py:method:: loadFromConf()
+
+      Load settings from configuration file.
+
+
+   .. py:method:: saveToConf()
+
+      Save settings to configuration file
+
+
+   .. py:method:: hasBeenModified(option)
+
+
+   .. py:method:: createCheckbox(text, option, default=NoDefault, tip=None, msgWarning=None, msgInfo=None, msgIfEnabled=False, section=None)
+
+
+   .. py:method:: createRadiobutton(text, option, default=NoDefault, tip=None, msgWarning=None, msgInfo=None, msgIfEnabled=False, buttonGroup=None, restart=False, section=None)
+
+
+   .. py:method:: createLineedit(text, option, default=NoDefault, tip=None, alignment=Qt.Vertical, regex=None, restart=False, wordWrap=True, placeholder=None, contentType=None, section=None)
+
+
+   .. py:method:: createTextEdit(text, option, default=NoDefault, tip=None, restart=False, contentType=None, section=None)
+
+
+   .. py:method:: createBrowseDir(text, option, default=NoDefault, tip=None, section=None)
+
+
+   .. py:method:: selectDirectory(edit)
+
+      Select directory
+
+
+   .. py:method:: createBrowseFile(text, option, default=NoDefault, tip=None, filters=None, section=None)
+
+
+   .. py:method:: selectFile(edit, filters=None)
+
+      Select File
+
+
+   .. py:method:: createSpinbox(prefix, suffix, option, default=NoDefault, min_=None, max_=None, step=None, tip=None, section=None)
+
+
+   .. py:method:: createColorEdit(text, option, default=NoDefault, tip=None, withoutLayout=False, section=None)
+
+
+   .. py:method:: createScEdit(text, option, default=NoDefault, tip=None, withoutLayout=False, section=None)
+
+
+   .. py:method:: createCombobox(text, choices, option, default=NoDefault, tip=None, restart=False, section=None)
+
+      choices: couples (name, key)
+
+
+   .. py:method:: createFileCombobox(text, choices, option, default=NoDefault, tip=None, restart=False, filters=None, adjustToContents=False, defaultLineEdit=False, section=None, validateCallback=None)
+
+      choices: couples (name, key)
+
+
+   .. py:method:: createFontGroup(option=None, text=None, title=None, tip=None, fontfilters=None, withoutGroup=False)
+
+      Option=None -> setting plugin font
+
+
+   .. py:method:: createButton(text, callback)
+
+
+   .. py:method:: createTab(*widgets)
+
+      Create simple tab widget page: widget added in a vertical layout
+
+
+   .. py:method:: promptRestartRequired()
+
+      Prompt the user with a request to restart.
+
+
+   .. py:method:: addTab(Widget)
+
+
+
+
+

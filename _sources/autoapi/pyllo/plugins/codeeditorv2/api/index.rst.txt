@@ -1,0 +1,1138 @@
+:py:mod:`pyllo.plugins.codeeditorv2.api`
+========================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.api
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`CodeEditorV2StatusBarWidgets <pyllo.plugins.codeeditorv2.api.CodeEditorV2StatusBarWidgets>`
+     - \-
+   * - :py:obj:`CodeEditorV2Actions <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions>`
+     - \-
+   * - :py:obj:`ICodeEditorExtension <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension>`
+     - \-
+   * - :py:obj:`CodeEditorExtension <pyllo.plugins.codeeditorv2.api.CodeEditorExtension>`
+     - \-
+   * - :py:obj:`LanguageExtension <pyllo.plugins.codeeditorv2.api.LanguageExtension>`
+     - \-
+   * - :py:obj:`PanelExtension <pyllo.plugins.codeeditorv2.api.PanelExtension>`
+     - Base class for editor extensional panels
+
+
+
+
+.. py:class:: CodeEditorV2StatusBarWidgets
+
+   ..    ..    ..    .. .. py:attribute:: LineColumnNumberStatus
+      :value: 'line_column_number_status'
+
+      
+
+   ..    .. .. py:attribute:: FileEncodingStatus
+      :value: 'file_encoding_status'
+
+      
+
+   ..    .. .. py:attribute:: LineSeparatorStatus
+      :value: 'line_separator_status'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`LineColumnNumberStatus <pyllo.plugins.codeeditorv2.api.CodeEditorV2StatusBarWidgets.LineColumnNumberStatus>`
+        - \-
+      * - :py:obj:`FileEncodingStatus <pyllo.plugins.codeeditorv2.api.CodeEditorV2StatusBarWidgets.FileEncodingStatus>`
+        - \-
+      * - :py:obj:`LineSeparatorStatus <pyllo.plugins.codeeditorv2.api.CodeEditorV2StatusBarWidgets.LineSeparatorStatus>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: LineColumnNumberStatus
+      :value: 'line_column_number_status'
+
+      
+
+   .. py:attribute:: FileEncodingStatus
+      :value: 'file_encoding_status'
+
+      
+
+   .. py:attribute:: LineSeparatorStatus
+      :value: 'line_separator_status'
+
+      
+
+
+
+
+
+
+.. py:class:: CodeEditorV2Actions
+
+   ..    ..    ..    .. .. py:attribute:: Cut
+      :value: 'cu&t'
+
+      
+
+   ..    .. .. py:attribute:: Copy
+      :value: '&copy'
+
+      
+
+   ..    .. .. py:attribute:: Paste
+      :value: '&paste'
+
+      
+
+   ..    .. .. py:attribute:: Delete
+      :value: '&delete'
+
+      
+
+   ..    .. .. py:attribute:: SelectAll
+      :value: 'select &all'
+
+      
+
+   ..    .. .. py:attribute:: Undo
+      :value: '&undo'
+
+      
+
+   ..    .. .. py:attribute:: Redo
+      :value: '&redo'
+
+      
+
+   ..    .. .. py:attribute:: ToggleCase
+      :value: 'toggle case'
+
+      
+
+   ..    .. .. py:attribute:: Indent
+      :value: 'indent'
+
+      
+
+   ..    .. .. py:attribute:: Unindent
+      :value: 'unindent'
+
+      
+
+   ..    .. .. py:attribute:: Find
+      :value: 'find text'
+
+      
+
+   ..    .. .. py:attribute:: Replace
+      :value: 'replace text'
+
+      
+
+   ..    .. .. py:attribute:: ShowWhiteSpaces
+      :value: 'show_white_spaces_action'
+
+      
+
+   ..    .. .. py:attribute:: SoftWrap
+      :value: 'softwrap_action'
+
+      
+
+   ..    .. .. py:attribute:: ShowLineNumbers
+      :value: 'show_line_numbers_action'
+
+      
+
+   ..    .. .. py:attribute:: ShowFlags
+      :value: 'show_flags_over_scrollbar_action'
+
+      
+
+   ..    .. .. py:attribute:: ShowEdgeLine
+      :value: 'show_edge_line_action'
+
+      
+
+   ..    .. .. py:attribute:: ScrollPastToEnd
+      :value: 'scroll_past_to_end_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Cut <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Cut>`
+        - \-
+      * - :py:obj:`Copy <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Copy>`
+        - \-
+      * - :py:obj:`Paste <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Paste>`
+        - \-
+      * - :py:obj:`Delete <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Delete>`
+        - \-
+      * - :py:obj:`SelectAll <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.SelectAll>`
+        - \-
+      * - :py:obj:`Undo <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Undo>`
+        - \-
+      * - :py:obj:`Redo <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Redo>`
+        - \-
+      * - :py:obj:`ToggleCase <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.ToggleCase>`
+        - \-
+      * - :py:obj:`Indent <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Indent>`
+        - \-
+      * - :py:obj:`Unindent <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Unindent>`
+        - \-
+      * - :py:obj:`Find <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Find>`
+        - \-
+      * - :py:obj:`Replace <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.Replace>`
+        - \-
+      * - :py:obj:`ShowWhiteSpaces <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.ShowWhiteSpaces>`
+        - \-
+      * - :py:obj:`SoftWrap <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.SoftWrap>`
+        - \-
+      * - :py:obj:`ShowLineNumbers <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.ShowLineNumbers>`
+        - \-
+      * - :py:obj:`ShowFlags <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.ShowFlags>`
+        - \-
+      * - :py:obj:`ShowEdgeLine <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.ShowEdgeLine>`
+        - \-
+      * - :py:obj:`ScrollPastToEnd <pyllo.plugins.codeeditorv2.api.CodeEditorV2Actions.ScrollPastToEnd>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Cut
+      :value: 'cu&t'
+
+      
+
+   .. py:attribute:: Copy
+      :value: '&copy'
+
+      
+
+   .. py:attribute:: Paste
+      :value: '&paste'
+
+      
+
+   .. py:attribute:: Delete
+      :value: '&delete'
+
+      
+
+   .. py:attribute:: SelectAll
+      :value: 'select &all'
+
+      
+
+   .. py:attribute:: Undo
+      :value: '&undo'
+
+      
+
+   .. py:attribute:: Redo
+      :value: '&redo'
+
+      
+
+   .. py:attribute:: ToggleCase
+      :value: 'toggle case'
+
+      
+
+   .. py:attribute:: Indent
+      :value: 'indent'
+
+      
+
+   .. py:attribute:: Unindent
+      :value: 'unindent'
+
+      
+
+   .. py:attribute:: Find
+      :value: 'find text'
+
+      
+
+   .. py:attribute:: Replace
+      :value: 'replace text'
+
+      
+
+   .. py:attribute:: ShowWhiteSpaces
+      :value: 'show_white_spaces_action'
+
+      
+
+   .. py:attribute:: SoftWrap
+      :value: 'softwrap_action'
+
+      
+
+   .. py:attribute:: ShowLineNumbers
+      :value: 'show_line_numbers_action'
+
+      
+
+   .. py:attribute:: ShowFlags
+      :value: 'show_flags_over_scrollbar_action'
+
+      
+
+   .. py:attribute:: ShowEdgeLine
+      :value: 'show_edge_line_action'
+
+      
+
+   .. py:attribute:: ScrollPastToEnd
+      :value: 'scroll_past_to_end_action'
+
+      
+
+
+
+
+
+
+.. py:class:: ICodeEditorExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`object`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: sigEnabled
+
+      
+
+   ..    .. .. py:attribute:: sigBeforeInitialization
+
+      
+
+   ..    .. .. py:attribute:: sigBeforeEditorVisible
+
+      
+
+   ..    .. .. py:attribute:: sigBeforeTeardown
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.VERSION>`
+        - \-
+      * - :py:obj:`sigEnabled <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.sigEnabled>`
+        - \-
+      * - :py:obj:`sigBeforeInitialization <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.sigBeforeInitialization>`
+        - \-
+      * - :py:obj:`sigBeforeEditorVisible <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.sigBeforeEditorVisible>`
+        - \-
+      * - :py:obj:`sigBeforeTeardown <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.sigBeforeTeardown>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`initialize <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.initialize>`\ ()
+        - initialize this extension object
+      * - :py:obj:`teardown <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.teardown>`\ ()
+        - \-
+      * - :py:obj:`activate <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.activate>`\ ()
+        - \-
+      * - :py:obj:`isEnabled <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.isEnabled>`\ ()
+        - Returns bool
+      * - :py:obj:`setEnabled <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.setEnabled>`\ (b)
+        - Set enabled state and call `onEnabled` when changed.
+      * - :py:obj:`getName <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.getName>`\ ()
+        - :summarylabel:`abc` Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.getDescription>`\ ()
+        - :summarylabel:`abc` Return the extension's localized description.
+      * - :py:obj:`beforeEditorVisible <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.beforeEditorVisible>`\ ()
+        - This method is called by editor extension framework just before editor is visible.
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.onInitialize>`\ ()
+        - :summarylabel:`abc` Setup the extension with the `CodeEditor`.
+      * - :py:obj:`onEnabled <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.onEnabled>`\ (enabled)
+        - Called when enable state is changed
+      * - :py:obj:`getIcon <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.getIcon>`\ ()
+        - Return the extension associated icon.
+      * - :py:obj:`onTeardown <pyllo.plugins.codeeditorv2.api.ICodeEditorExtension.onTeardown>`\ ()
+        - Cleans up footprint before extension been teared down.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: sigEnabled
+
+      
+
+   .. py:attribute:: sigBeforeInitialization
+
+      
+
+   .. py:attribute:: sigBeforeEditorVisible
+
+      
+
+   .. py:attribute:: sigBeforeTeardown
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: initialize()
+
+      initialize this extension object
+              
+
+
+   .. py:method:: teardown()
+
+
+   .. py:method:: activate()
+
+
+   .. py:method:: isEnabled() -> bool
+
+      Returns bool
+              
+
+
+   .. py:method:: setEnabled(b)
+
+      Set enabled state and call `onEnabled` when changed.
+              
+
+
+   .. py:method:: getName() -> str
+      :abstractmethod:
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+      :abstractmethod:
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: beforeEditorVisible()
+
+      This method is called by editor extension framework just before editor is visible.
+
+      Notes
+      -----
+      This is usually used for cross extensions features.
+      Which by means one extension's feature is dependent to another extension's feature.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+      :abstractmethod:
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onEnabled(enabled)
+
+      Called when enable state is changed
+
+
+   .. py:method:: getIcon()
+
+      Return the extension associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onTeardown()
+
+      Cleans up footprint before extension been teared down.
+              
+
+
+
+
+
+.. py:class:: CodeEditorExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`, :py:obj:`ICodeEditorExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: sigBeforeTeardown
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.api.CodeEditorExtension.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.api.CodeEditorExtension.VERSION>`
+        - \-
+      * - :py:obj:`sigBeforeTeardown <pyllo.plugins.codeeditorv2.api.CodeEditorExtension.sigBeforeTeardown>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: sigBeforeTeardown
+
+      
+
+
+
+
+
+
+.. py:class:: LanguageExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`CodeEditorExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+
+      
+
+   ..    .. .. py:attribute:: NAME_FILTERS
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: ALIASES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   ..    .. .. py:attribute:: CONFIGURATION
+
+      
+
+   ..    .. .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.api.LanguageExtension.NAME>`
+        - \-
+      * - :py:obj:`NAME_FILTERS <pyllo.plugins.codeeditorv2.api.LanguageExtension.NAME_FILTERS>`
+        - \-
+      * - :py:obj:`ALIASES <pyllo.plugins.codeeditorv2.api.LanguageExtension.ALIASES>`
+        - \-
+      * - :py:obj:`FILE_NAMES <pyllo.plugins.codeeditorv2.api.LanguageExtension.FILE_NAMES>`
+        - \-
+      * - :py:obj:`FIRST_LINE <pyllo.plugins.codeeditorv2.api.LanguageExtension.FIRST_LINE>`
+        - \-
+      * - :py:obj:`CONFIGURATION <pyllo.plugins.codeeditorv2.api.LanguageExtension.CONFIGURATION>`
+        - \-
+      * - :py:obj:`SYNTAX_HIGHLIGHTER <pyllo.plugins.codeeditorv2.api.LanguageExtension.SYNTAX_HIGHLIGHTER>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.codeeditorv2.api.LanguageExtension.getName>`\ ()
+        - :summarylabel:`abc` Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.codeeditorv2.api.LanguageExtension.getDescription>`\ ()
+        - :summarylabel:`abc` Return the extension's localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.codeeditorv2.api.LanguageExtension.getIcon>`\ ()
+        - :summarylabel:`abc` Return the extension associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.api.LanguageExtension.onInitialize>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`onTeardown <pyllo.plugins.codeeditorv2.api.LanguageExtension.onTeardown>`\ ()
+        - Cleans up footprint before extension been teared down.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+
+      
+
+   .. py:attribute:: NAME_FILTERS
+      :value: []
+
+      
+
+   .. py:attribute:: ALIASES
+      :value: []
+
+      
+
+   .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   .. py:attribute:: CONFIGURATION
+
+      
+
+   .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName() -> str
+      :abstractmethod:
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+      :abstractmethod:
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+      :abstractmethod:
+
+      Return the extension associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+      :abstractmethod:
+
+              
+
+
+   .. py:method:: onTeardown()
+
+      Cleans up footprint before extension been teared down.
+              
+
+
+
+
+
+.. py:class:: PanelExtension(codeEditor)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`ICodeEditorExtension`
+
+   Base class for editor extensional panels
+
+   A panel is a editor extension and a QWidget as well.
+
+   .. note:: Use enabled to disable panel actions and setVisible to change the
+       visibility of the panel.
+
+   ..    .. .. py:class:: Area
+
+      Enumerates the possible panel positions
+
+      ..    ..    ..    .. .. py:attribute:: TOP
+         :value: 0
+
+         
+
+      ..    .. .. py:attribute:: LEFT
+         :value: 1
+
+         
+
+      ..    .. .. py:attribute:: RIGHT
+         :value: 2
+
+         
+
+      ..    .. .. py:attribute:: BOTTOM
+         :value: 3
+
+         
+
+      ..    .. .. py:attribute:: FLOATING
+         :value: 4
+
+         
+
+      ..    .. .. py:attribute:: COUNT
+         :value: 5
+
+         
+
+      .. 
+      .. rubric:: Overview
+
+      
+      .. list-table:: Attributes
+         :header-rows: 0
+         :widths: auto
+         :class: summarytable
+
+         * - :py:obj:`TOP <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.TOP>`
+           - \-
+         * - :py:obj:`LEFT <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.LEFT>`
+           - \-
+         * - :py:obj:`RIGHT <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.RIGHT>`
+           - \-
+         * - :py:obj:`BOTTOM <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.BOTTOM>`
+           - \-
+         * - :py:obj:`FLOATING <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.FLOATING>`
+           - \-
+         * - :py:obj:`COUNT <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.COUNT>`
+           - \-
+
+
+
+
+
+      .. rubric:: Attributes
+      .. py:attribute:: TOP
+         :value: 0
+
+         
+
+      .. py:attribute:: LEFT
+         :value: 1
+
+         
+
+      .. py:attribute:: RIGHT
+         :value: 2
+
+         
+
+      .. py:attribute:: BOTTOM
+         :value: 3
+
+         
+
+      .. py:attribute:: FLOATING
+         :value: 4
+
+         
+
+      .. py:attribute:: COUNT
+         :value: 5
+
+         
+
+
+
+
+
+
+   ..    ..    ..    .. .. py:attribute:: sigVisibilityChanged
+
+      
+
+   ..    .. .. py:attribute:: AREA
+
+      
+
+   ..    .. .. py:attribute:: AREA_GRAVITY
+      :value: 10
+
+      
+
+   ..    .. .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: SCROLLABLE
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigVisibilityChanged <pyllo.plugins.codeeditorv2.api.PanelExtension.sigVisibilityChanged>`
+        - \-
+      * - :py:obj:`AREA <pyllo.plugins.codeeditorv2.api.PanelExtension.AREA>`
+        - \-
+      * - :py:obj:`AREA_GRAVITY <pyllo.plugins.codeeditorv2.api.PanelExtension.AREA_GRAVITY>`
+        - \-
+      * - :py:obj:`DYNAMIC <pyllo.plugins.codeeditorv2.api.PanelExtension.DYNAMIC>`
+        - \-
+      * - :py:obj:`SCROLLABLE <pyllo.plugins.codeeditorv2.api.PanelExtension.SCROLLABLE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sizeHint <pyllo.plugins.codeeditorv2.api.PanelExtension.sizeHint>`\ ()
+        - Return the widget size hint, overriding the Qt method.
+      * - :py:obj:`geometry <pyllo.plugins.codeeditorv2.api.PanelExtension.geometry>`\ ()
+        - Return geometry dimensions for floating Panels.
+      * - :py:obj:`paintEvent <pyllo.plugins.codeeditorv2.api.PanelExtension.paintEvent>`\ (event)
+        - Fill the panel background using QPalette.
+      * - :py:obj:`setVisible <pyllo.plugins.codeeditorv2.api.PanelExtension.setVisible>`\ (visible)
+        - \-
+      * - :py:obj:`setEnabled <pyllo.plugins.codeeditorv2.api.PanelExtension.setEnabled>`\ (value)
+        - Set enabled state and call `onEnabled` when changed.
+      * - :py:obj:`setFloatingGeometry <pyllo.plugins.codeeditorv2.api.PanelExtension.setFloatingGeometry>`\ (crect)
+        - Set geometry for floating panels.
+
+
+   .. rubric:: Member Classes
+   .. py:class:: Area
+
+      Enumerates the possible panel positions
+
+      ..    ..    ..    .. .. py:attribute:: TOP
+         :value: 0
+
+         
+
+      ..    .. .. py:attribute:: LEFT
+         :value: 1
+
+         
+
+      ..    .. .. py:attribute:: RIGHT
+         :value: 2
+
+         
+
+      ..    .. .. py:attribute:: BOTTOM
+         :value: 3
+
+         
+
+      ..    .. .. py:attribute:: FLOATING
+         :value: 4
+
+         
+
+      ..    .. .. py:attribute:: COUNT
+         :value: 5
+
+         
+
+      .. 
+      .. rubric:: Overview
+
+      
+      .. list-table:: Attributes
+         :header-rows: 0
+         :widths: auto
+         :class: summarytable
+
+         * - :py:obj:`TOP <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.TOP>`
+           - \-
+         * - :py:obj:`LEFT <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.LEFT>`
+           - \-
+         * - :py:obj:`RIGHT <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.RIGHT>`
+           - \-
+         * - :py:obj:`BOTTOM <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.BOTTOM>`
+           - \-
+         * - :py:obj:`FLOATING <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.FLOATING>`
+           - \-
+         * - :py:obj:`COUNT <pyllo.plugins.codeeditorv2.api.PanelExtension.Area.COUNT>`
+           - \-
+
+
+
+
+
+      .. rubric:: Attributes
+      .. py:attribute:: TOP
+         :value: 0
+
+         
+
+      .. py:attribute:: LEFT
+         :value: 1
+
+         
+
+      .. py:attribute:: RIGHT
+         :value: 2
+
+         
+
+      .. py:attribute:: BOTTOM
+         :value: 3
+
+         
+
+      .. py:attribute:: FLOATING
+         :value: 4
+
+         
+
+      .. py:attribute:: COUNT
+         :value: 5
+
+         
+
+
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigVisibilityChanged
+
+      
+
+   .. py:attribute:: AREA
+
+      
+
+   .. py:attribute:: AREA_GRAVITY
+      :value: 10
+
+      
+
+   .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   .. py:attribute:: SCROLLABLE
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: sizeHint()
+
+      Return the widget size hint, overriding the Qt method.
+
+      Notes
+      -----
+      * This size hint will define the QSize of the panel, i.e. it is
+        where its width and height are defined.
+      * If the size of your panel depends on displayed text, please
+        use the LineNumberArea one as reference on how to implement
+        this method.
+      * If the size is not dependent on displayed text, please use
+        the debugger panel as reference.
+      * If your panel is in a floating position, please use the
+        IndentationGuide one as reference.
+
+
+   .. py:method:: geometry()
+
+      Return geometry dimensions for floating Panels.
+
+      Note: If None is returned It'll use editor contentsRect dimensions.
+
+      returns: x0, y0, height width.
+
+
+   .. py:method:: paintEvent(event)
+
+      Fill the panel background using QPalette.
+
+      Notes
+      -----
+      Please remember to extend this method in the child class to
+      paint the panel's desired information.
+
+
+   .. py:method:: setVisible(visible)
+
+
+   .. py:method:: setEnabled(value: bool)
+
+      Set enabled state and call `onEnabled` when changed.
+              
+
+
+   .. py:method:: setFloatingGeometry(crect: qtpy.QtCore.QRect)
+
+      Set geometry for floating panels.
+
+      Normally you don't need to override this method, you should override
+      `geometry` instead.
+
+
+
+
+

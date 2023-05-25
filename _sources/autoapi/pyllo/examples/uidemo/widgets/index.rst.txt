@@ -1,0 +1,68 @@
+:py:mod:`pyllo.examples.uidemo.widgets`
+=======================================
+
+.. py:module:: pyllo.examples.uidemo.widgets
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MyEditableComboBox <pyllo.examples.uidemo.widgets.MyEditableComboBox>`
+     - Editable combo box + Validate
+   * - :py:obj:`WidgetsDemo <pyllo.examples.uidemo.widgets.WidgetsDemo>`
+     - \-
+
+
+
+
+.. py:class:: MyEditableComboBox(parent: qtpy.QtWidgets.QWidget = None, *args, **kwargs)
+
+   Bases: :py:obj:`pyllo.ui.widgets.combobox.EditableComboBox`
+
+   Editable combo box + Validate
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`validate <pyllo.examples.uidemo.widgets.MyEditableComboBox.validate>`\ (qstr)
+        - Return True if string is valid
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: validate(qstr: pyllo.core.dtype.Text) -> bool
+
+      Return True if string is valid
+      Override it to custom validation rules
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: WidgetsDemo(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QScrollArea`
+
+   ..    ..    .. 
+
+

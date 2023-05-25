@@ -1,0 +1,600 @@
+:py:mod:`pyllo.plugins.application.internal.container`
+======================================================
+
+.. py:module:: pyllo.plugins.application.internal.container
+
+.. autoapi-nested-parse::
+
+   Container Widget.
+
+   Holds references for base actions in the Application of Pyllo.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ApplicationPluginMenus <pyllo.plugins.application.internal.container.ApplicationPluginMenus>`
+     - \-
+   * - :py:obj:`LogsMenuSections <pyllo.plugins.application.internal.container.LogsMenuSections>`
+     - \-
+   * - :py:obj:`ApplicationActions <pyllo.plugins.application.internal.container.ApplicationActions>`
+     - \-
+   * - :py:obj:`ApplicationContainer <pyllo.plugins.application.internal.container.ApplicationContainer>`
+     - Pyllo plugin main container class.
+
+
+
+
+.. py:class:: ApplicationPluginMenus
+
+   ..    ..    ..    .. .. py:attribute:: DebugLogsMenu
+      :value: 'debug_logs_menu'
+
+      
+
+   ..    .. .. py:attribute:: New
+      :value: 'new_menu'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`DebugLogsMenu <pyllo.plugins.application.internal.container.ApplicationPluginMenus.DebugLogsMenu>`
+        - \-
+      * - :py:obj:`New <pyllo.plugins.application.internal.container.ApplicationPluginMenus.New>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: DebugLogsMenu
+      :value: 'debug_logs_menu'
+
+      
+
+   .. py:attribute:: New
+      :value: 'new_menu'
+
+      
+
+
+
+
+
+
+.. py:class:: LogsMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: PylloLogSection
+      :value: 'pyllo_log_section'
+
+      
+
+   ..    .. .. py:attribute:: LSPLogsSection
+      :value: 'lsp_logs_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PylloLogSection <pyllo.plugins.application.internal.container.LogsMenuSections.PylloLogSection>`
+        - \-
+      * - :py:obj:`LSPLogsSection <pyllo.plugins.application.internal.container.LogsMenuSections.LSPLogsSection>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PylloLogSection
+      :value: 'pyllo_log_section'
+
+      
+
+   .. py:attribute:: LSPLogsSection
+      :value: 'lsp_logs_section'
+
+      
+
+
+
+
+
+
+.. py:class:: ApplicationActions
+
+   ..    ..    ..    .. .. py:attribute:: Restart
+      :value: 'restart'
+
+      
+
+   ..    .. .. py:attribute:: Exit
+      :value: 'exit'
+
+      
+
+   ..    .. .. py:attribute:: Open
+      :value: '&open...'
+
+      
+
+   ..    .. .. py:attribute:: NewFile
+      :value: 'new_file_action'
+
+      
+
+   ..    .. .. py:attribute:: NewDirectory
+      :value: 'new_directory_action'
+
+      
+
+   ..    .. .. py:attribute:: SaveAs
+      :value: 'save_as_action'
+
+      
+
+   ..    .. .. py:attribute:: SaveAll
+      :value: '&save all'
+
+      
+
+   ..    .. .. py:attribute:: Undo
+      :value: '&undo'
+
+      
+
+   ..    .. .. py:attribute:: Redo
+      :value: '&redo'
+
+      
+
+   ..    .. .. py:attribute:: Cut
+      :value: 'cu&t'
+
+      
+
+   ..    .. .. py:attribute:: Copy
+      :value: '&copy'
+
+      
+
+   ..    .. .. py:attribute:: Paste
+      :value: '&paste'
+
+      
+
+   ..    .. .. py:attribute:: SelectAll
+      :value: 'select &all'
+
+      
+
+   ..    .. .. py:attribute:: Find
+      :value: 'find text'
+
+      
+
+   ..    .. .. py:attribute:: Replace
+      :value: 'replace text'
+
+      
+
+   ..    .. .. py:attribute:: HideFinderAndReplacer
+      :value: 'hide find and replace'
+
+      
+
+   ..    .. .. py:attribute:: WindowsEnvVariables
+      :value: 'windows_env_variables_action'
+
+      
+
+   ..    .. .. py:attribute:: Documentation
+      :value: 'documentation'
+
+      
+
+   ..    .. .. py:attribute:: About
+      :value: 'about_action'
+
+      
+
+   ..    .. .. py:attribute:: License
+      :value: 'license_action'
+
+      
+
+   ..    .. .. py:attribute:: RegisterPlugins
+      :value: 'register_plugins_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Restart <pyllo.plugins.application.internal.container.ApplicationActions.Restart>`
+        - \-
+      * - :py:obj:`Exit <pyllo.plugins.application.internal.container.ApplicationActions.Exit>`
+        - \-
+      * - :py:obj:`Open <pyllo.plugins.application.internal.container.ApplicationActions.Open>`
+        - \-
+      * - :py:obj:`NewFile <pyllo.plugins.application.internal.container.ApplicationActions.NewFile>`
+        - \-
+      * - :py:obj:`NewDirectory <pyllo.plugins.application.internal.container.ApplicationActions.NewDirectory>`
+        - \-
+      * - :py:obj:`SaveAs <pyllo.plugins.application.internal.container.ApplicationActions.SaveAs>`
+        - \-
+      * - :py:obj:`SaveAll <pyllo.plugins.application.internal.container.ApplicationActions.SaveAll>`
+        - \-
+      * - :py:obj:`Undo <pyllo.plugins.application.internal.container.ApplicationActions.Undo>`
+        - \-
+      * - :py:obj:`Redo <pyllo.plugins.application.internal.container.ApplicationActions.Redo>`
+        - \-
+      * - :py:obj:`Cut <pyllo.plugins.application.internal.container.ApplicationActions.Cut>`
+        - \-
+      * - :py:obj:`Copy <pyllo.plugins.application.internal.container.ApplicationActions.Copy>`
+        - \-
+      * - :py:obj:`Paste <pyllo.plugins.application.internal.container.ApplicationActions.Paste>`
+        - \-
+      * - :py:obj:`SelectAll <pyllo.plugins.application.internal.container.ApplicationActions.SelectAll>`
+        - \-
+      * - :py:obj:`Find <pyllo.plugins.application.internal.container.ApplicationActions.Find>`
+        - \-
+      * - :py:obj:`Replace <pyllo.plugins.application.internal.container.ApplicationActions.Replace>`
+        - \-
+      * - :py:obj:`HideFinderAndReplacer <pyllo.plugins.application.internal.container.ApplicationActions.HideFinderAndReplacer>`
+        - \-
+      * - :py:obj:`WindowsEnvVariables <pyllo.plugins.application.internal.container.ApplicationActions.WindowsEnvVariables>`
+        - \-
+      * - :py:obj:`Documentation <pyllo.plugins.application.internal.container.ApplicationActions.Documentation>`
+        - \-
+      * - :py:obj:`About <pyllo.plugins.application.internal.container.ApplicationActions.About>`
+        - \-
+      * - :py:obj:`License <pyllo.plugins.application.internal.container.ApplicationActions.License>`
+        - \-
+      * - :py:obj:`RegisterPlugins <pyllo.plugins.application.internal.container.ApplicationActions.RegisterPlugins>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Restart
+      :value: 'restart'
+
+      
+
+   .. py:attribute:: Exit
+      :value: 'exit'
+
+      
+
+   .. py:attribute:: Open
+      :value: '&open...'
+
+      
+
+   .. py:attribute:: NewFile
+      :value: 'new_file_action'
+
+      
+
+   .. py:attribute:: NewDirectory
+      :value: 'new_directory_action'
+
+      
+
+   .. py:attribute:: SaveAs
+      :value: 'save_as_action'
+
+      
+
+   .. py:attribute:: SaveAll
+      :value: '&save all'
+
+      
+
+   .. py:attribute:: Undo
+      :value: '&undo'
+
+      
+
+   .. py:attribute:: Redo
+      :value: '&redo'
+
+      
+
+   .. py:attribute:: Cut
+      :value: 'cu&t'
+
+      
+
+   .. py:attribute:: Copy
+      :value: '&copy'
+
+      
+
+   .. py:attribute:: Paste
+      :value: '&paste'
+
+      
+
+   .. py:attribute:: SelectAll
+      :value: 'select &all'
+
+      
+
+   .. py:attribute:: Find
+      :value: 'find text'
+
+      
+
+   .. py:attribute:: Replace
+      :value: 'replace text'
+
+      
+
+   .. py:attribute:: HideFinderAndReplacer
+      :value: 'hide find and replace'
+
+      
+
+   .. py:attribute:: WindowsEnvVariables
+      :value: 'windows_env_variables_action'
+
+      
+
+   .. py:attribute:: Documentation
+      :value: 'documentation'
+
+      
+
+   .. py:attribute:: About
+      :value: 'about_action'
+
+      
+
+   .. py:attribute:: License
+      :value: 'license_action'
+
+      
+
+   .. py:attribute:: RegisterPlugins
+      :value: 'register_plugins_action'
+
+      
+
+
+
+
+
+
+.. py:class:: ApplicationContainer(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainContainer`
+
+   Pyllo plugin main container class.
+
+   This class handles a non-dockable widget to be able to contain, parent and
+   store references to other widget, like status bar widget, toolbars,
+   context menus, etc.
+
+   Notes
+   -----
+   All Pyllo non dockable plugins can define a plugin container that must
+   subclass this.
+
+   PylloPlugin plugins must provide a CONTAINER_CLASS attribute that is a
+   subclass of PluginMainContainer, if they provide additional widget like
+   status bar widget or toolbars.
+
+   ..    ..    ..    .. .. py:attribute:: sigReportIssueRequested
+
+      Signal to request reporting an issue to Github.
+
+
+   ..    .. .. py:attribute:: sigLoadLogFile
+
+      Signal to load a log file
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigReportIssueRequested <pyllo.plugins.application.internal.container.ApplicationContainer.sigReportIssueRequested>`
+        - Signal to request reporting an issue to Github.
+      * - :py:obj:`sigLoadLogFile <pyllo.plugins.application.internal.container.ApplicationContainer.sigLoadLogFile>`
+        - Signal to load a log file
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.application.internal.container.ApplicationContainer.setup>`\ ()
+        - Create actions, widget, add to menu and other setup requirements.
+      * - :py:obj:`onPluginFocusChanged <pyllo.plugins.application.internal.container.ApplicationContainer.onPluginFocusChanged>`\ (previousWidget, previousPlugin, currentWidget, currentPlugin)
+        - \-
+      * - :py:obj:`updateActions <pyllo.plugins.application.internal.container.ApplicationContainer.updateActions>`\ ()
+        - Update the state of exposed actions.
+      * - :py:obj:`updateFileNewMenu <pyllo.plugins.application.internal.container.ApplicationContainer.updateFileNewMenu>`\ ()
+        - Update file new menu
+      * - :py:obj:`getNameFilters <pyllo.plugins.application.internal.container.ApplicationContainer.getNameFilters>`\ ()
+        - \-
+      * - :py:obj:`newFile <pyllo.plugins.application.internal.container.ApplicationContainer.newFile>`\ ()
+        - \-
+      * - :py:obj:`newDirectory <pyllo.plugins.application.internal.container.ApplicationContainer.newDirectory>`\ ()
+        - \-
+      * - :py:obj:`openFile <pyllo.plugins.application.internal.container.ApplicationContainer.openFile>`\ ()
+        - \-
+      * - :py:obj:`saveAs <pyllo.plugins.application.internal.container.ApplicationContainer.saveAs>`\ ()
+        - Select a name to save a file.
+      * - :py:obj:`undo <pyllo.plugins.application.internal.container.ApplicationContainer.undo>`\ ()
+        - \-
+      * - :py:obj:`redo <pyllo.plugins.application.internal.container.ApplicationContainer.redo>`\ ()
+        - \-
+      * - :py:obj:`cut <pyllo.plugins.application.internal.container.ApplicationContainer.cut>`\ ()
+        - \-
+      * - :py:obj:`copy <pyllo.plugins.application.internal.container.ApplicationContainer.copy>`\ ()
+        - \-
+      * - :py:obj:`paste <pyllo.plugins.application.internal.container.ApplicationContainer.paste>`\ ()
+        - \-
+      * - :py:obj:`selectAll <pyllo.plugins.application.internal.container.ApplicationContainer.selectAll>`\ ()
+        - \-
+      * - :py:obj:`showAbout <pyllo.plugins.application.internal.container.ApplicationContainer.showAbout>`\ ()
+        - Show Pyllo About dialog.
+      * - :py:obj:`showRegisterPluginsTool <pyllo.plugins.application.internal.container.ApplicationContainer.showRegisterPluginsTool>`\ ()
+        - Show register plugin window
+      * - :py:obj:`handleNewScreen <pyllo.plugins.application.internal.container.ApplicationContainer.handleNewScreen>`\ (newScreen)
+        - Connect DPI signals for new screen.
+      * - :py:obj:`handleDpiChangeResponse <pyllo.plugins.application.internal.container.ApplicationContainer.handleDpiChangeResponse>`\ (result, dpi)
+        - Handle dpi change message dialog result.
+      * - :py:obj:`showDpiChangeMessage <pyllo.plugins.application.internal.container.ApplicationContainer.showDpiChangeMessage>`\ (dpi)
+        - Show message to restart Pyllo since the DPI scale changed.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigReportIssueRequested
+
+      Signal to request reporting an issue to Github.
+
+
+   .. py:attribute:: sigLoadLogFile
+
+      Signal to load a log file
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+   .. py:method:: onPluginFocusChanged(previousWidget: Optional[qtpy.QtWidgets.QWidget], previousPlugin: str, currentWidget: Optional[qtpy.QtWidgets.QWidget], currentPlugin: str)
+
+
+   .. py:method:: updateActions()
+
+      Update the state of exposed actions.
+
+      Exposed actions are actions created by the `createAction` method.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: updateFileNewMenu()
+
+      Update file new menu
+
+
+   .. py:method:: getNameFilters()
+
+
+   .. py:method:: newFile()
+
+
+   .. py:method:: newDirectory()
+
+
+   .. py:method:: openFile()
+
+
+   .. py:method:: saveAs()
+
+      Select a name to save a file.
+
+      Args:
+          originalFilename: Used in the dialog to display the current file
+                  path and name.
+
+      Returns:
+          Normalized path for the selected file name or None if no name was
+          selected.
+
+
+   .. py:method:: undo()
+
+
+   .. py:method:: redo()
+
+
+   .. py:method:: cut()
+
+
+   .. py:method:: copy()
+
+
+   .. py:method:: paste()
+
+
+   .. py:method:: selectAll()
+
+
+   .. py:method:: showAbout()
+
+      Show Pyllo About dialog.
+
+
+   .. py:method:: showRegisterPluginsTool()
+
+      Show register plugin window
+
+
+   .. py:method:: handleNewScreen(newScreen)
+
+      Connect DPI signals for new screen.
+
+
+   .. py:method:: handleDpiChangeResponse(result, dpi)
+
+      Handle dpi change message dialog result.
+
+
+   .. py:method:: showDpiChangeMessage(dpi)
+
+      Show message to restart Pyllo since the DPI scale changed.
+
+
+
+
+

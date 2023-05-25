@@ -1,0 +1,214 @@
+:py:mod:`pyllo.plugins.python.internal.container`
+=================================================
+
+.. py:module:: pyllo.plugins.python.internal.container
+
+.. autoapi-nested-parse::
+
+   PythonPlugin widget.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PythonDebugConfigurationProvider <pyllo.plugins.python.internal.container.PythonDebugConfigurationProvider>`
+     - \-
+   * - :py:obj:`PythonDebugger <pyllo.plugins.python.internal.container.PythonDebugger>`
+     - Debug
+   * - :py:obj:`PythonToolkitContainer <pyllo.plugins.python.internal.container.PythonToolkitContainer>`
+     - Container for python.
+   * - :py:obj:`PythonLanguageServer <pyllo.plugins.python.internal.container.PythonLanguageServer>`
+     - Language server
+
+
+
+
+.. py:class:: PythonDebugConfigurationProvider
+
+   Bases: :py:obj:`pyllo.plugins.debug.api.IDebugConfigurationProvider`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`provideDebugConfigurations <pyllo.plugins.python.internal.container.PythonDebugConfigurationProvider.provideDebugConfigurations>`\ ()
+        - \-
+      * - :py:obj:`resolveDebugConfiguration <pyllo.plugins.python.internal.container.PythonDebugConfigurationProvider.resolveDebugConfiguration>`\ (debugConfiguration)
+        - \-
+      * - :py:obj:`resolveDebugConfigurationWithSubstitutedVariables <pyllo.plugins.python.internal.container.PythonDebugConfigurationProvider.resolveDebugConfigurationWithSubstitutedVariables>`\ (debugConfiguration)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: provideDebugConfigurations() -> List[pyllo.plugins.debug.api.DebugConfiguration]
+
+
+   .. py:method:: resolveDebugConfiguration(debugConfiguration: pyllo.plugins.debug.api.DebugConfiguration) -> pyllo.plugins.debug.api.DebugConfiguration
+
+
+   .. py:method:: resolveDebugConfigurationWithSubstitutedVariables(debugConfiguration: pyllo.plugins.debug.api.DebugConfiguration) -> pyllo.plugins.debug.api.DebugConfiguration
+
+
+
+
+
+.. py:class:: PythonDebugger(logdir: pyllo.core.dtype.DirName)
+
+   Bases: :py:obj:`pyllo.plugins.debug.api.IDebuggerDescriptor`
+
+   Debug 
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`type <pyllo.plugins.python.internal.container.PythonDebugger.type>`\ ()
+        - \-
+      * - :py:obj:`language <pyllo.plugins.python.internal.container.PythonDebugger.language>`\ ()
+        - \-
+      * - :py:obj:`configurationProvider <pyllo.plugins.python.internal.container.PythonDebugger.configurationProvider>`\ ()
+        - \-
+      * - :py:obj:`adapterDescriptor <pyllo.plugins.python.internal.container.PythonDebugger.adapterDescriptor>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: type() -> pyllo.core.dtype.Identity
+
+
+   .. py:method:: language() -> pyllo.core.dtype.Identity
+
+
+   .. py:method:: configurationProvider() -> pyllo.plugins.debug.api.IDebugConfigurationProvider
+
+
+   .. py:method:: adapterDescriptor() -> pyllo.plugins.debug.api.DebugAdapterDescriptor
+
+
+
+
+
+.. py:class:: PythonToolkitContainer(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainContainer`
+
+   Container for python.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.python.internal.container.PythonToolkitContainer.setup>`\ ()
+        - Create actions, widget, add to menu and other setup requirements.
+      * - :py:obj:`updateActions <pyllo.plugins.python.internal.container.PythonToolkitContainer.updateActions>`\ ()
+        - Update the state of exposed actions.
+      * - :py:obj:`getEnvInfo <pyllo.plugins.python.internal.container.PythonToolkitContainer.getEnvInfo>`\ (path)
+        - Get environment information.
+      * - :py:obj:`onInterpClicked <pyllo.plugins.python.internal.container.PythonToolkitContainer.onInterpClicked>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+   .. py:method:: updateActions()
+
+      Update the state of exposed actions.
+
+      Exposed actions are actions created by the `createAction` method.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getEnvInfo(path: pyllo.core.dtype.FilePath)
+
+      Get environment information.
+
+
+   .. py:method:: onInterpClicked()
+
+
+
+
+
+.. py:class:: PythonLanguageServer
+
+   Bases: :py:obj:`pyllo.plugins.languageserver.api.ILanguageServerDescriptor`
+
+   Language server
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`type <pyllo.plugins.python.internal.container.PythonLanguageServer.type>`\ ()
+        - \-
+      * - :py:obj:`language <pyllo.plugins.python.internal.container.PythonLanguageServer.language>`\ ()
+        - \-
+      * - :py:obj:`adapterDescriptor <pyllo.plugins.python.internal.container.PythonLanguageServer.adapterDescriptor>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: type() -> pyllo.core.dtype.Identity
+
+
+   .. py:method:: language() -> pyllo.core.dtype.Identity
+
+
+   .. py:method:: adapterDescriptor() -> pyllo.plugins.languageserver.api.LanguageServerAdapterDescriptor
+
+
+
+
+

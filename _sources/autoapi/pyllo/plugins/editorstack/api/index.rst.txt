@@ -1,0 +1,815 @@
+:py:mod:`pyllo.plugins.editorstack.api`
+=======================================
+
+.. py:module:: pyllo.plugins.editorstack.api
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`EditorStackMimeProtos <pyllo.plugins.editorstack.api.EditorStackMimeProtos>`
+     - \-
+   * - :py:obj:`EditorStackWidgetActions <pyllo.plugins.editorstack.api.EditorStackWidgetActions>`
+     - \-
+   * - :py:obj:`IAdaptable <pyllo.plugins.editorstack.api.IAdaptable>`
+     - An interface of an adaptable object.
+   * - :py:obj:`IEditorInput <pyllo.plugins.editorstack.api.IEditorInput>`
+     - An interface of editor input class
+   * - :py:obj:`IFileEditorInput <pyllo.plugins.editorstack.api.IFileEditorInput>`
+     - An interface of editor input class
+   * - :py:obj:`IEditor <pyllo.plugins.editorstack.api.IEditor>`
+     - Interface of editors
+   * - :py:obj:`IFindReplace <pyllo.plugins.editorstack.api.IFindReplace>`
+     - Interface of find and replace
+   * - :py:obj:`ContentTypeRegistry <pyllo.plugins.editorstack.api.ContentTypeRegistry>`
+     - Registry content type to application then it will know how to
+   * - :py:obj:`TextEditorInput <pyllo.plugins.editorstack.api.TextEditorInput>`
+     - TextEditor Input
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`T <pyllo.plugins.editorstack.api.T>`
+     - \-
+
+
+.. py:data:: T
+
+   
+
+.. py:class:: EditorStackMimeProtos
+
+   ..    ..    ..    .. .. py:attribute:: EditorMime
+      :value: 'editorstack-editor'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`EditorMime <pyllo.plugins.editorstack.api.EditorStackMimeProtos.EditorMime>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: EditorMime
+      :value: 'editorstack-editor'
+
+      
+
+
+
+
+
+
+.. py:class:: EditorStackWidgetActions
+
+   ..    ..    ..    .. .. py:attribute:: SplitRight
+      :value: 'split_right_action'
+
+      
+
+   ..    .. .. py:attribute:: SplitDown
+      :value: 'split_down_action'
+
+      
+
+   ..    .. .. py:attribute:: Unsplit
+      :value: 'unsplit_action'
+
+      
+
+   ..    .. .. py:attribute:: UnsplitAll
+      :value: 'unsplit_all_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`SplitRight <pyllo.plugins.editorstack.api.EditorStackWidgetActions.SplitRight>`
+        - \-
+      * - :py:obj:`SplitDown <pyllo.plugins.editorstack.api.EditorStackWidgetActions.SplitDown>`
+        - \-
+      * - :py:obj:`Unsplit <pyllo.plugins.editorstack.api.EditorStackWidgetActions.Unsplit>`
+        - \-
+      * - :py:obj:`UnsplitAll <pyllo.plugins.editorstack.api.EditorStackWidgetActions.UnsplitAll>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: SplitRight
+      :value: 'split_right_action'
+
+      
+
+   .. py:attribute:: SplitDown
+      :value: 'split_down_action'
+
+      
+
+   .. py:attribute:: Unsplit
+      :value: 'unsplit_action'
+
+      
+
+   .. py:attribute:: UnsplitAll
+      :value: 'unsplit_all_action'
+
+      
+
+
+
+
+
+
+.. py:class:: IAdaptable
+
+   Bases: :py:obj:`object`
+
+   An interface of an adaptable object.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getAdapter <pyllo.plugins.editorstack.api.IAdaptable.getAdapter>`\ (type_)
+        - :summarylabel:`abc` \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getAdapter(type_: Type[T]) -> T
+      :abstractmethod:
+
+
+
+
+
+.. py:class:: IEditorInput
+
+   Bases: :py:obj:`IAdaptable`
+
+   An interface of editor input class
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`exists <pyllo.plugins.editorstack.api.IEditorInput.exists>`\ ()
+        - :summarylabel:`abc` Returns whether the editor input still exists
+      * - :py:obj:`getIcon <pyllo.plugins.editorstack.api.IEditorInput.getIcon>`\ ()
+        - :summarylabel:`abc` Returns file type description icon show in the editor tab bar.
+      * - :py:obj:`getName <pyllo.plugins.editorstack.api.IEditorInput.getName>`\ ()
+        - :summarylabel:`abc` Returns the name of this editor input for display.
+      * - :py:obj:`getToolTip <pyllo.plugins.editorstack.api.IEditorInput.getToolTip>`\ ()
+        - :summarylabel:`abc` Returns the tool tip text for this editor input.
+      * - :py:obj:`getHash <pyllo.plugins.editorstack.api.IEditorInput.getHash>`\ ()
+        - :summarylabel:`abc` Return input hash id.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: exists() -> bool
+      :abstractmethod:
+
+      Returns whether the editor input still exists
+
+      .. attention: Not restrict to local file but any memory file object as well.
+
+
+   .. py:method:: getIcon() -> Optional[qtpy.QtGui.QIcon]
+      :abstractmethod:
+
+      Returns file type description icon show in the editor tab bar.
+
+
+   .. py:method:: getName() -> str
+      :abstractmethod:
+
+      Returns the name of this editor input for display.
+
+
+   .. py:method:: getToolTip() -> str
+      :abstractmethod:
+
+      Returns the tool tip text for this editor input.
+
+
+   .. py:method:: getHash() -> int
+      :abstractmethod:
+
+      Return input hash id.
+
+
+
+
+
+.. py:class:: IFileEditorInput
+
+   Bases: :py:obj:`IEditorInput`
+
+   An interface of editor input class
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getFileObject <pyllo.plugins.editorstack.api.IFileEditorInput.getFileObject>`\ ()
+        - :summarylabel:`abc` Returns file object.
+      * - :py:obj:`getFilePath <pyllo.plugins.editorstack.api.IFileEditorInput.getFilePath>`\ ()
+        - Returns absolute file path
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getFileObject() -> Optional[io.IOBase]
+      :abstractmethod:
+
+      Returns file object.
+
+      .. caution:: Don't forget to :meth:`closeFile` before editor closed.
+
+
+   .. py:method:: getFilePath() -> str
+
+      Returns absolute file path
+
+
+
+
+
+.. py:class:: IEditor
+
+   Bases: :py:obj:`object`
+
+   Interface of editors
+
+   ..    ..    ..    .. .. py:attribute:: sigModificationChanged
+
+      Document modification state changed
+
+
+   ..    .. .. py:attribute:: sigDoSaved
+
+      Document do saved
+
+
+   ..    .. .. py:attribute:: sigDoSavedAs
+
+      Document do saved as
+
+
+   ..    .. .. py:attribute:: sigEditorInputChanged
+
+      Document input changed
+
+
+   ..    .. .. py:attribute:: sigWillClose
+
+      Editor will close soon
+      .. Notice:
+          This only means editor is closed, but not document.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigModificationChanged <pyllo.plugins.editorstack.api.IEditor.sigModificationChanged>`
+        - Document modification state changed
+      * - :py:obj:`sigDoSaved <pyllo.plugins.editorstack.api.IEditor.sigDoSaved>`
+        - Document do saved
+      * - :py:obj:`sigDoSavedAs <pyllo.plugins.editorstack.api.IEditor.sigDoSavedAs>`
+        - Document do saved as
+      * - :py:obj:`sigEditorInputChanged <pyllo.plugins.editorstack.api.IEditor.sigEditorInputChanged>`
+        - Document input changed
+      * - :py:obj:`sigWillClose <pyllo.plugins.editorstack.api.IEditor.sigWillClose>`
+        - Editor will close soon
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`doSave <pyllo.plugins.editorstack.api.IEditor.doSave>`\ ()
+        - :summarylabel:`abc` Save the contents of this editor.
+      * - :py:obj:`doSaveAs <pyllo.plugins.editorstack.api.IEditor.doSaveAs>`\ (filepath)
+        - :summarylabel:`abc` Save the contents of this editor to another object.
+      * - :py:obj:`getEditorInput <pyllo.plugins.editorstack.api.IEditor.getEditorInput>`\ ()
+        - :summarylabel:`abc` Returns the input for this editor.
+      * - :py:obj:`setInput <pyllo.plugins.editorstack.api.IEditor.setInput>`\ (input_)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`isModified <pyllo.plugins.editorstack.api.IEditor.isModified>`\ ()
+        - :summarylabel:`abc` Returns whether the contents of this editor have changed since the
+      * - :py:obj:`isSaveAsAllowed <pyllo.plugins.editorstack.api.IEditor.isSaveAsAllowed>`\ ()
+        - :summarylabel:`abc` Returns whether the "save as" operation is supported by this
+      * - :py:obj:`isSaveOnCloseNeeded <pyllo.plugins.editorstack.api.IEditor.isSaveOnCloseNeeded>`\ ()
+        - :summarylabel:`abc` Returns whether the contents of this editor should be saved when
+      * - :py:obj:`close <pyllo.plugins.editorstack.api.IEditor.close>`\ ()
+        - :summarylabel:`abc` Close editor.
+      * - :py:obj:`isReadOnly <pyllo.plugins.editorstack.api.IEditor.isReadOnly>`\ ()
+        - :summarylabel:`abc` Is read only.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigModificationChanged
+
+      Document modification state changed
+
+
+   .. py:attribute:: sigDoSaved
+
+      Document do saved
+
+
+   .. py:attribute:: sigDoSavedAs
+
+      Document do saved as
+
+
+   .. py:attribute:: sigEditorInputChanged
+
+      Document input changed
+
+
+   .. py:attribute:: sigWillClose
+
+      Editor will close soon
+      .. Notice:
+          This only means editor is closed, but not document.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: doSave()
+      :abstractmethod:
+
+      Save the contents of this editor.
+
+
+   .. py:method:: doSaveAs(filepath: str)
+      :abstractmethod:
+
+      Save the contents of this editor to another object.
+
+
+   .. py:method:: getEditorInput() -> IEditorInput
+      :abstractmethod:
+
+      Returns the input for this editor.
+
+
+   .. py:method:: setInput(input_: IEditorInput) -> bool
+      :abstractmethod:
+
+
+   .. py:method:: isModified() -> bool
+      :abstractmethod:
+
+      Returns whether the contents of this editor have changed since the
+      last operation.
+
+
+   .. py:method:: isSaveAsAllowed() -> bool
+      :abstractmethod:
+
+      Returns whether the "save as" operation is supported by this
+      editor.
+
+
+   .. py:method:: isSaveOnCloseNeeded() -> bool
+      :abstractmethod:
+
+      Returns whether the contents of this editor should be saved when
+      the editor is closed.
+
+
+   .. py:method:: close()
+      :abstractmethod:
+
+      Close editor.
+
+
+   .. py:method:: isReadOnly() -> bool
+      :abstractmethod:
+
+      Is read only.
+
+
+
+
+
+.. py:class:: IFindReplace
+
+   Bases: :py:obj:`object`
+
+   Interface of find and replace
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`showFinder <pyllo.plugins.editorstack.api.IFindReplace.showFinder>`\ (visible, replacer)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`isFindAvailable <pyllo.plugins.editorstack.api.IFindReplace.isFindAvailable>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`isReplaceAvailable <pyllo.plugins.editorstack.api.IFindReplace.isReplaceAvailable>`\ ()
+        - :summarylabel:`abc` \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: showFinder(visible=True, replacer=False)
+      :abstractmethod:
+
+
+   .. py:method:: isFindAvailable() -> bool
+      :abstractmethod:
+
+
+   .. py:method:: isReplaceAvailable() -> bool
+      :abstractmethod:
+
+
+
+
+
+.. py:class:: ContentTypeRegistry
+
+   Bases: :py:obj:`object`
+
+   Registry content type to application then it will know how to
+   open a file with most appropriate editor.
+
+   .. seealso::
+       1. `IApplication.getContentTypeRegistry`
+       2. `IApplication.openFile`
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getContentTypes <pyllo.plugins.editorstack.api.ContentTypeRegistry.getContentTypes>`\ ()
+        - Returns registered content types.
+      * - :py:obj:`getContentTypesIcon <pyllo.plugins.editorstack.api.ContentTypeRegistry.getContentTypesIcon>`\ ()
+        - Returns registered content types icon.
+      * - :py:obj:`getEditorsForgers <pyllo.plugins.editorstack.api.ContentTypeRegistry.getEditorsForgers>`\ ()
+        - Returns registered editor forgers.
+      * - :py:obj:`getFileInputForgers <pyllo.plugins.editorstack.api.ContentTypeRegistry.getFileInputForgers>`\ ()
+        - Returns registered file input forgers.
+      * - :py:obj:`getDefaultEditors <pyllo.plugins.editorstack.api.ContentTypeRegistry.getDefaultEditors>`\ ()
+        - Returns default editor of corresponding content type.
+      * - :py:obj:`registerContentType <pyllo.plugins.editorstack.api.ContentTypeRegistry.registerContentType>`\ (name, nameFilters, icon)
+        - Register file content types with filters.
+      * - :py:obj:`registerDefaultEditor <pyllo.plugins.editorstack.api.ContentTypeRegistry.registerDefaultEditor>`\ (contentTypeName, editorName)
+        - Register default editor to use when file of content type is opened.
+      * - :py:obj:`registerEditorForger <pyllo.plugins.editorstack.api.ContentTypeRegistry.registerEditorForger>`\ (name, forger)
+        - Parameters
+      * - :py:obj:`registerFileInputForger <pyllo.plugins.editorstack.api.ContentTypeRegistry.registerFileInputForger>`\ (editorName, forger)
+        - Register editor input type to editor.
+      * - :py:obj:`getContentType <pyllo.plugins.editorstack.api.ContentTypeRegistry.getContentType>`\ (filename)
+        - Returns content type.
+      * - :py:obj:`getDefaultEditorForger <pyllo.plugins.editorstack.api.ContentTypeRegistry.getDefaultEditorForger>`\ (filename)
+        - Returns compatible editor forger.
+      * - :py:obj:`getDefaultFileInputForger <pyllo.plugins.editorstack.api.ContentTypeRegistry.getDefaultFileInputForger>`\ (filename)
+        - Returns compatible editor input forger.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getContentTypes()
+
+      Returns registered content types.
+
+      Returns
+      -------
+      contenttypes: Dict[str, List[str]]
+          { "{contenttype name}": [{name filters}] }
+
+
+   .. py:method:: getContentTypesIcon()
+
+      Returns registered content types icon.
+
+      Returns
+      -------
+      contenttypes: Dict[str, QIcon]
+
+
+   .. py:method:: getEditorsForgers() -> Dict[str, Callable[[IEditorInput, str, bool], IEditor]]
+
+      Returns registered editor forgers.
+
+      Returns
+      -------
+      editors:  Dict[editorName:str, Callable[[IEditorInput, contentType:str, duplicate:bool], IEditor]]
+          { "{editor name}": forger }
+
+
+   .. py:method:: getFileInputForgers() -> Dict[str, Callable[[str], IEditorInput]]
+
+      Returns registered file input forgers.
+
+      Returns
+      -------
+      inputForgers:  Dict[editorName:str, Callable[[uriOrPath: str], IEditorInput]]
+          { "{editor name}": inputForger }
+
+
+   .. py:method:: getDefaultEditors() -> Dict[str, str]
+
+      Returns default editor of corresponding content type.
+
+      Returns
+      -------
+      contenttypeEditorBindings: Dict[str, str]
+          {"{content type name}": "{default editor name}"}
+
+
+   .. py:method:: registerContentType(name: str, nameFilters: List[str], icon=None)
+
+      Register file content types with filters.
+
+      Parameters
+      ----------
+      name: str
+          Name of content type.
+      nameFilters: List[str]
+          Filters in wildcard such as ['*.txt', '*.yml'] etc.
+      icon: Optional[QIcon]
+          Icon to show in title bar.
+
+      .. caution: The name of content type should be unique in application.
+
+
+   .. py:method:: registerDefaultEditor(contentTypeName: str, editorName: str)
+
+      Register default editor to use when file of content type is opened.
+
+      Parameters
+      ----------
+      contentTypeName: str
+          Name of content type.
+      editorName: str
+          Name of editor.
+
+
+   .. py:method:: registerEditorForger(name: str, forger: Callable[[IEditorInput, str, bool], IEditor])
+
+      Parameters
+      ----------
+      name: str
+          Name of editor.
+      forger: Callable[[IEditorInput, contentType:str, duplicate:bool], IEditor]
+          Editor forger which takes input and return editor instance.
+
+
+   .. py:method:: registerFileInputForger(editorName: str, forger: Callable[[str], IEditorInput])
+
+      Register editor input type to editor.
+      Editor input type.
+
+      Parameters
+      ----------
+      editorName: str
+          Editor name.
+      forger: Callable[[str], IEditorInput]
+          Editor's input forget takes file path and return IEditorInput instance
+
+
+   .. py:method:: getContentType(filename: str) -> Optional[str]
+
+      Returns content type.
+
+      Parameters
+      ----------
+      filename: str
+          File name.
+
+      Returns
+      -------
+      contenttype: Optional[str]
+          Content type.
+
+
+
+   .. py:method:: getDefaultEditorForger(filename: str) -> Optional[Callable[[str], IEditor]]
+
+      Returns compatible editor forger.
+
+      Parameters
+      ----------
+      filename: str
+          File name with extension with such as 'main.py', 'note.txt' etc.
+
+      Returns
+      -------
+      editor forger: Optional['Callable[[str], IEditor]']
+          Return default editor forger for given file extension. None if not set.
+
+
+   .. py:method:: getDefaultFileInputForger(filename: str) -> Optional[Callable[[str], IEditorInput]]
+
+      Returns compatible editor input forger.
+
+      Parameters
+      ----------
+      filename: str
+          File name with extension with such as 'main.py', 'note.txt' etc.
+
+      Returns
+      -------
+      editor input forger: Optional['Callable[[str], IEditorInput]']
+          Return default editor input forger for given file extension. None if not set.
+
+
+
+
+
+.. py:class:: TextEditorInput(filePath: str, encoding=None)
+
+   Bases: :py:obj:`IFileEditorInput`
+
+   TextEditor Input
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getFileObject <pyllo.plugins.editorstack.api.TextEditorInput.getFileObject>`\ ()
+        - Return fileObject if file is opened else return None
+      * - :py:obj:`read <pyllo.plugins.editorstack.api.TextEditorInput.read>`\ ()
+        - \-
+      * - :py:obj:`write <pyllo.plugins.editorstack.api.TextEditorInput.write>`\ (text, encode)
+        - \-
+      * - :py:obj:`exists <pyllo.plugins.editorstack.api.TextEditorInput.exists>`\ ()
+        - Returns whether the editor input still exists
+      * - :py:obj:`getIcon <pyllo.plugins.editorstack.api.TextEditorInput.getIcon>`\ ()
+        - Returns file type description icon show in the editor tab bar.
+      * - :py:obj:`setIcon <pyllo.plugins.editorstack.api.TextEditorInput.setIcon>`\ (icon)
+        - \-
+      * - :py:obj:`getName <pyllo.plugins.editorstack.api.TextEditorInput.getName>`\ ()
+        - Returns the name of this editor input for display.
+      * - :py:obj:`getToolTip <pyllo.plugins.editorstack.api.TextEditorInput.getToolTip>`\ ()
+        - Returns the tool tip text for this editor input.
+      * - :py:obj:`getHash <pyllo.plugins.editorstack.api.TextEditorInput.getHash>`\ ()
+        - Return input hash id.
+      * - :py:obj:`getFilePath <pyllo.plugins.editorstack.api.TextEditorInput.getFilePath>`\ ()
+        - Returns absolute file path
+      * - :py:obj:`getAdapter <pyllo.plugins.editorstack.api.TextEditorInput.getAdapter>`\ (type_)
+        - \-
+      * - :py:obj:`getEncoding <pyllo.plugins.editorstack.api.TextEditorInput.getEncoding>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getFileObject() -> Optional[io.FileIO]
+
+      Return fileObject if file is opened else return None
+
+
+   .. py:method:: read()
+
+
+   .. py:method:: write(text, encode=None)
+
+
+   .. py:method:: exists() -> bool
+
+      Returns whether the editor input still exists
+
+      .. attention: Not restrict to local file but any memory file object as well.
+
+
+   .. py:method:: getIcon() -> Optional[qtpy.QtGui.QIcon]
+
+      Returns file type description icon show in the editor tab bar.
+
+
+   .. py:method:: setIcon(icon: qtpy.QtGui.QIcon)
+
+
+   .. py:method:: getName() -> str
+
+      Returns the name of this editor input for display.
+
+
+   .. py:method:: getToolTip() -> str
+
+      Returns the tool tip text for this editor input.
+
+
+   .. py:method:: getHash() -> int
+
+      Return input hash id.
+
+
+   .. py:method:: getFilePath() -> str
+
+      Returns absolute file path
+
+
+   .. py:method:: getAdapter(type_: Type[T]) -> T
+
+
+   .. py:method:: getEncoding() -> str
+
+
+
+
+

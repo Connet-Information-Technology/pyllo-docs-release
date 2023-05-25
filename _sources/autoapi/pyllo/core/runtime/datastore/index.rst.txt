@@ -1,0 +1,547 @@
+:py:mod:`pyllo.core.runtime.datastore`
+======================================
+
+.. py:module:: pyllo.core.runtime.datastore
+
+.. autoapi-nested-parse::
+
+   Pyllo datastore class provides a convenient interface for storing and
+   retrieving data.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`EntityHooks <pyllo.core.runtime.datastore.EntityHooks>`
+     - Generic enumeration.
+   * - :py:obj:`EntityHooksBase <pyllo.core.runtime.datastore.EntityHooksBase>`
+     - \-
+   * - :py:obj:`Bookmark <pyllo.core.runtime.datastore.Bookmark>`
+     - \-
+   * - :py:obj:`Breakpoint <pyllo.core.runtime.datastore.Breakpoint>`
+     - \-
+   * - :py:obj:`FileProblems <pyllo.core.runtime.datastore.FileProblems>`
+     - \-
+   * - :py:obj:`PluginProblems <pyllo.core.runtime.datastore.PluginProblems>`
+     - \-
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`db <pyllo.core.runtime.datastore.db>`
+     - \-
+   * - :py:obj:`filename <pyllo.core.runtime.datastore.filename>`
+     - \-
+
+
+.. py:data:: db
+
+   
+
+.. py:class:: EntityHooks
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: AfterDelete
+      :value: 'after_delete'
+
+      
+
+   ..    .. .. py:attribute:: AfterInsert
+      :value: 'after_insert'
+
+      
+
+   ..    .. .. py:attribute:: AfterUpdate
+      :value: 'after_update'
+
+      
+
+   ..    .. .. py:attribute:: BeforeDelete
+      :value: 'before_delete'
+
+      
+
+   ..    .. .. py:attribute:: BeforeInsert
+      :value: 'before_insert'
+
+      
+
+   ..    .. .. py:attribute:: BeforeUpdate
+      :value: 'before_update'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`AfterDelete <pyllo.core.runtime.datastore.EntityHooks.AfterDelete>`
+        - \-
+      * - :py:obj:`AfterInsert <pyllo.core.runtime.datastore.EntityHooks.AfterInsert>`
+        - \-
+      * - :py:obj:`AfterUpdate <pyllo.core.runtime.datastore.EntityHooks.AfterUpdate>`
+        - \-
+      * - :py:obj:`BeforeDelete <pyllo.core.runtime.datastore.EntityHooks.BeforeDelete>`
+        - \-
+      * - :py:obj:`BeforeInsert <pyllo.core.runtime.datastore.EntityHooks.BeforeInsert>`
+        - \-
+      * - :py:obj:`BeforeUpdate <pyllo.core.runtime.datastore.EntityHooks.BeforeUpdate>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: AfterDelete
+      :value: 'after_delete'
+
+      
+
+   .. py:attribute:: AfterInsert
+      :value: 'after_insert'
+
+      
+
+   .. py:attribute:: AfterUpdate
+      :value: 'after_update'
+
+      
+
+   .. py:attribute:: BeforeDelete
+      :value: 'before_delete'
+
+      
+
+   .. py:attribute:: BeforeInsert
+      :value: 'before_insert'
+
+      
+
+   .. py:attribute:: BeforeUpdate
+      :value: 'before_update'
+
+      
+
+
+
+
+
+
+.. py:class:: EntityHooksBase
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`registerListener <pyllo.core.runtime.datastore.EntityHooksBase.registerListener>`\ (hook, callable)
+        - :summarylabel:`class` \-
+      * - :py:obj:`unregisterListener <pyllo.core.runtime.datastore.EntityHooksBase.unregisterListener>`\ (hook, callable)
+        - :summarylabel:`class` \-
+      * - :py:obj:`after_delete <pyllo.core.runtime.datastore.EntityHooksBase.after_delete>`\ ()
+        - \-
+      * - :py:obj:`after_insert <pyllo.core.runtime.datastore.EntityHooksBase.after_insert>`\ ()
+        - \-
+      * - :py:obj:`after_update <pyllo.core.runtime.datastore.EntityHooksBase.after_update>`\ ()
+        - \-
+      * - :py:obj:`before_delete <pyllo.core.runtime.datastore.EntityHooksBase.before_delete>`\ ()
+        - \-
+      * - :py:obj:`before_insert <pyllo.core.runtime.datastore.EntityHooksBase.before_insert>`\ ()
+        - \-
+      * - :py:obj:`before_update <pyllo.core.runtime.datastore.EntityHooksBase.before_update>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: registerListener(hook: EntityHooks, callable)
+      :classmethod:
+
+
+   .. py:method:: unregisterListener(hook: EntityHooks, callable)
+      :classmethod:
+
+
+   .. py:method:: after_delete()
+
+
+   .. py:method:: after_insert()
+
+
+   .. py:method:: after_update()
+
+
+   .. py:method:: before_delete()
+
+
+   .. py:method:: before_insert()
+
+
+   .. py:method:: before_update()
+
+
+
+
+
+.. py:class:: Bookmark(*args, **kwargs)
+
+   Bases: :py:obj:`EntityHooksBase`, :py:obj:`db`
+
+   ..    ..    ..    .. .. py:attribute:: path
+
+      
+
+   ..    .. .. py:attribute:: line
+
+      
+
+   ..    .. .. py:attribute:: name
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`path <pyllo.core.runtime.datastore.Bookmark.path>`
+        - \-
+      * - :py:obj:`line <pyllo.core.runtime.datastore.Bookmark.line>`
+        - \-
+      * - :py:obj:`name <pyllo.core.runtime.datastore.Bookmark.name>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: path
+
+      
+
+   .. py:attribute:: line
+
+      
+
+   .. py:attribute:: name
+
+      
+
+
+
+
+
+
+.. py:class:: Breakpoint(*args, **kwargs)
+
+   Bases: :py:obj:`EntityHooksBase`, :py:obj:`db`
+
+   ..    ..    ..    .. .. py:attribute:: path
+
+      
+
+   ..    .. .. py:attribute:: line
+
+      
+
+   ..    .. .. py:attribute:: enabled
+
+      
+
+   ..    .. .. py:attribute:: condition
+
+      
+
+   ..    .. .. py:attribute:: muted
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`path <pyllo.core.runtime.datastore.Breakpoint.path>`
+        - \-
+      * - :py:obj:`line <pyllo.core.runtime.datastore.Breakpoint.line>`
+        - \-
+      * - :py:obj:`enabled <pyllo.core.runtime.datastore.Breakpoint.enabled>`
+        - \-
+      * - :py:obj:`condition <pyllo.core.runtime.datastore.Breakpoint.condition>`
+        - \-
+      * - :py:obj:`muted <pyllo.core.runtime.datastore.Breakpoint.muted>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: path
+
+      
+
+   .. py:attribute:: line
+
+      
+
+   .. py:attribute:: enabled
+
+      
+
+   .. py:attribute:: condition
+
+      
+
+   .. py:attribute:: muted
+
+      
+
+
+
+
+
+
+.. py:class:: FileProblems(*args, **kwargs)
+
+   Bases: :py:obj:`EntityHooksBase`, :py:obj:`db`
+
+   ..    ..    ..    .. .. py:attribute:: path
+
+      
+
+   ..    .. .. py:attribute:: domain
+
+      
+
+   ..    .. .. py:attribute:: source
+
+      
+
+   ..    .. .. py:attribute:: line
+
+      
+
+   ..    .. .. py:attribute:: start_col
+
+      
+
+   ..    .. .. py:attribute:: end_col
+
+      
+
+   ..    .. .. py:attribute:: err_code
+
+      
+
+   ..    .. .. py:attribute:: err_msg
+
+      
+
+   ..    .. .. py:attribute:: severity
+
+      
+
+   ..    .. .. py:attribute:: suggestion
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`path <pyllo.core.runtime.datastore.FileProblems.path>`
+        - \-
+      * - :py:obj:`domain <pyllo.core.runtime.datastore.FileProblems.domain>`
+        - \-
+      * - :py:obj:`source <pyllo.core.runtime.datastore.FileProblems.source>`
+        - \-
+      * - :py:obj:`line <pyllo.core.runtime.datastore.FileProblems.line>`
+        - \-
+      * - :py:obj:`start_col <pyllo.core.runtime.datastore.FileProblems.start_col>`
+        - \-
+      * - :py:obj:`end_col <pyllo.core.runtime.datastore.FileProblems.end_col>`
+        - \-
+      * - :py:obj:`err_code <pyllo.core.runtime.datastore.FileProblems.err_code>`
+        - \-
+      * - :py:obj:`err_msg <pyllo.core.runtime.datastore.FileProblems.err_msg>`
+        - \-
+      * - :py:obj:`severity <pyllo.core.runtime.datastore.FileProblems.severity>`
+        - \-
+      * - :py:obj:`suggestion <pyllo.core.runtime.datastore.FileProblems.suggestion>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: path
+
+      
+
+   .. py:attribute:: domain
+
+      
+
+   .. py:attribute:: source
+
+      
+
+   .. py:attribute:: line
+
+      
+
+   .. py:attribute:: start_col
+
+      
+
+   .. py:attribute:: end_col
+
+      
+
+   .. py:attribute:: err_code
+
+      
+
+   .. py:attribute:: err_msg
+
+      
+
+   .. py:attribute:: severity
+
+      
+
+   .. py:attribute:: suggestion
+
+      
+
+
+
+
+
+
+.. py:class:: PluginProblems(*args, **kwargs)
+
+   Bases: :py:obj:`EntityHooksBase`, :py:obj:`db`
+
+   ..    ..    ..    .. .. py:attribute:: source
+
+      
+
+   ..    .. .. py:attribute:: severity
+
+      
+
+   ..    .. .. py:attribute:: err_code
+
+      
+
+   ..    .. .. py:attribute:: err_msg
+
+      
+
+   ..    .. .. py:attribute:: suggestion
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`source <pyllo.core.runtime.datastore.PluginProblems.source>`
+        - \-
+      * - :py:obj:`severity <pyllo.core.runtime.datastore.PluginProblems.severity>`
+        - \-
+      * - :py:obj:`err_code <pyllo.core.runtime.datastore.PluginProblems.err_code>`
+        - \-
+      * - :py:obj:`err_msg <pyllo.core.runtime.datastore.PluginProblems.err_msg>`
+        - \-
+      * - :py:obj:`suggestion <pyllo.core.runtime.datastore.PluginProblems.suggestion>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: source
+
+      
+
+   .. py:attribute:: severity
+
+      
+
+   .. py:attribute:: err_code
+
+      
+
+   .. py:attribute:: err_msg
+
+      
+
+   .. py:attribute:: suggestion
+
+      
+
+
+
+
+
+
+.. py:data:: filename
+
+   
+

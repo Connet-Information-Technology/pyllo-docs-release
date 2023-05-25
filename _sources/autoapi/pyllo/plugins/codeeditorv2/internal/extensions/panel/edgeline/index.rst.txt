@@ -1,0 +1,211 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline`
+=======================================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`EdgeLinePanel <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel>`
+     - Source code editor's edge line (default: 79 columns,PEP8)
+
+
+
+
+.. py:class:: EdgeLinePanel(codeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.PanelExtension`
+
+   Source code editor's edge line (default: 79 columns,PEP8)
+       
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'edgeline'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   ..    .. .. py:attribute:: AREA
+
+      
+
+   ..    .. .. py:attribute:: DYNAMIC
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: SCROLLABLE
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.VERSION>`
+        - \-
+      * - :py:obj:`AREA <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.AREA>`
+        - \-
+      * - :py:obj:`DYNAMIC <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.DYNAMIC>`
+        - \-
+      * - :py:obj:`SCROLLABLE <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.SCROLLABLE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`onEnabled <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.onEnabled>`\ (enabled)
+        - Called when enable state is changed
+      * - :py:obj:`getName <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.getDescription>`\ ()
+        - Return the extension's localized description.
+      * - :py:obj:`sizeHint <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.sizeHint>`\ ()
+        - Return the widget size hint, overriding the Qt method.
+      * - :py:obj:`paintEvent <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.paintEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`setColumns <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.setColumns>`\ (columns)
+        - Set edge line columns values.
+      * - :py:obj:`setColor <pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline.EdgeLinePanel.setColor>`\ (color)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'edgeline'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. py:attribute:: AREA
+
+      
+
+   .. py:attribute:: DYNAMIC
+      :value: True
+
+      
+
+   .. py:attribute:: SCROLLABLE
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onEnabled(enabled)
+
+      Called when enable state is changed
+
+
+   .. py:method:: getName() -> str
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: sizeHint()
+
+      Return the widget size hint, overriding the Qt method.
+
+      Notes
+      -----
+      * This size hint will define the QSize of the panel, i.e. it is
+        where its width and height are defined.
+      * If the size of your panel depends on displayed text, please
+        use the LineNumberArea one as reference on how to implement
+        this method.
+      * If the size is not dependent on displayed text, please use
+        the debugger panel as reference.
+      * If your panel is in a floating position, please use the
+        IndentationGuide one as reference.
+
+
+   .. py:method:: paintEvent(event)
+
+      Override Qt method
+
+
+   .. py:method:: setColumns(columns)
+
+      Set edge line columns values.
+
+
+   .. py:method:: setColor(color: qtpy.QtGui.QColor)
+
+
+
+
+

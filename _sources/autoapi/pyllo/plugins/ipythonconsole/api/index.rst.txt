@@ -1,0 +1,24 @@
+:py:mod:`pyllo.plugins.ipythonconsole.api`
+==========================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.api
+
+.. autoapi-nested-parse::
+
+   Classes to connect a plugin to the shell widgets in the IPython console.
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   clipboard/index.rst
+   help/index.rst
+   history/index.rst
+   shellconnect/index.rst
+   traceback/index.rst
+
+

@@ -1,0 +1,202 @@
+:py:mod:`pyllo.ui.preferences`
+==============================
+
+.. py:module:: pyllo.ui.preferences
+
+.. autoapi-nested-parse::
+
+   API to create an entry in Pyllo Preferences associated to a given plugin.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloPreferencesTab <pyllo.ui.preferences.PylloPreferencesTab>`
+     - Widget that represents a tab on a preference page.
+   * - :py:obj:`PluginConfigPage <pyllo.ui.preferences.PluginConfigPage>`
+     - Widget to expose the options a plugin offers for configuration as
+
+
+
+
+.. py:class:: PylloPreferencesTab(parent: pyllo.plugins.preferences.api.PylloConfigPage)
+
+   Bases: :py:obj:`pyllo.plugins.preferences.api.BaseConfigTab`
+
+   Widget that represents a tab on a preference page.
+
+   All calls to :class:`PylloConfigPage` attributes are resolved
+   via delegation.
+
+   ..    ..    ..    .. .. py:attribute:: TITLE
+      :type: pyllo.core.dtype.Text
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`TITLE <pyllo.ui.preferences.PylloPreferencesTab.TITLE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`applySettings <pyllo.ui.preferences.PylloPreferencesTab.applySettings>`\ ()
+        - Hook called to manually apply settings that cannot be automatically
+      * - :py:obj:`isValid <pyllo.ui.preferences.PylloPreferencesTab.isValid>`\ ()
+        - Return True if the tab contents are valid.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: TITLE
+      :type: pyllo.core.dtype.Text
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: applySettings() -> Set[pyllo.core.dtype.OptionName]
+
+      Hook called to manually apply settings that cannot be automatically
+      applied.
+
+      Reimplement this if the configuration tab has complex widget that
+      cannot be created with any of the `self.create_*` calls.
+
+
+   .. py:method:: isValid() -> bool
+
+      Return True if the tab contents are valid.
+
+      This method can be override to perform complex checks.
+
+
+
+
+
+.. py:class:: PluginConfigPage(plugin: pyllo.core.runtime.spi.PylloPlugin, parent: qtpy.QtWidgets.QWidget)
+
+   Bases: :py:obj:`pyllo.plugins.preferences.api.PylloConfigPage`
+
+   Widget to expose the options a plugin offers for configuration as
+   an entry in Pyllo's Preferences dialog.
+
+   ..    ..    ..    .. .. py:attribute:: APPLY_CONF_PAGE_SETTINGS
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`APPLY_CONF_PAGE_SETTINGS <pyllo.ui.preferences.PluginConfigPage.APPLY_CONF_PAGE_SETTINGS>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`aggregateSectionsPartials <pyllo.ui.preferences.PluginConfigPage.aggregateSectionsPartials>`\ (opts)
+        - Aggregate options by sections in order to notify observers.
+      * - :py:obj:`getName <pyllo.ui.preferences.PluginConfigPage.getName>`\ ()
+        - Return plugin name to use in preferences page title, and
+      * - :py:obj:`getIcon <pyllo.ui.preferences.PluginConfigPage.getIcon>`\ ()
+        - Return plugin icon to use in preferences page.
+      * - :py:obj:`setupPage <pyllo.ui.preferences.PluginConfigPage.setupPage>`\ ()
+        - :summarylabel:`abc` Setup configuration page widget
+      * - :py:obj:`applySettings <pyllo.ui.preferences.PluginConfigPage.applySettings>`\ ()
+        - Hook called to manually apply settings that cannot be automatically
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: APPLY_CONF_PAGE_SETTINGS
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: aggregateSectionsPartials(opts)
+
+      Aggregate options by sections in order to notify observers.
+
+
+   .. py:method:: getName()
+
+      Return plugin name to use in preferences page title, and
+      message boxes.
+
+      Normally you do not have to reimplement it, as soon as the
+      plugin name in preferences page will be the same as the plugin
+      title.
+
+
+   .. py:method:: getIcon() -> qtpy.QtGui.QIcon
+
+      Return plugin icon to use in preferences page.
+
+      Normally you do not have to reimplement it, as soon as the
+      plugin icon in preferences page will be the same as the plugin
+      icon.
+
+
+   .. py:method:: setupPage()
+      :abstractmethod:
+
+      Setup configuration page widget
+
+      You should implement this method and set the layout of the
+      preferences page.
+
+      layout = QVBoxLayout()
+      layout.addWidget(...)
+      ...
+      self.setLayout(layout)
+
+
+   .. py:method:: applySettings() -> Set[pyllo.core.dtype.OptionName]
+
+      Hook called to manually apply settings that cannot be automatically
+      applied.
+
+      Reimplement this if the configuration page has complex widget that
+      cannot be created with any of the `self.create_*` calls.
+
+      This call should return a set containing the configuration options that
+      changed.
+
+
+
+
+

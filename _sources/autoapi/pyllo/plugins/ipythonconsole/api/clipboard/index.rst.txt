@@ -1,0 +1,126 @@
+:py:mod:`pyllo.plugins.ipythonconsole.api.clipboard`
+====================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.api.clipboard
+
+.. autoapi-nested-parse::
+
+   Clipboard helper.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ClipboardHelper <pyllo.plugins.ipythonconsole.api.clipboard.ClipboardHelper>`
+     - \-
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`CLIPBOARD_HELPER <pyllo.plugins.ipythonconsole.api.clipboard.CLIPBOARD_HELPER>`
+     - \-
+
+
+.. py:class:: ClipboardHelper
+
+   ..    ..    ..    .. .. py:attribute:: metadataHash
+
+      
+
+   ..    .. .. py:attribute:: metadataIndent
+
+      
+
+   ..    .. .. py:attribute:: metadataTabStopWidthSpaces
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`metadataHash <pyllo.plugins.ipythonconsole.api.clipboard.ClipboardHelper.metadataHash>`
+        - \-
+      * - :py:obj:`metadataIndent <pyllo.plugins.ipythonconsole.api.clipboard.ClipboardHelper.metadataIndent>`
+        - \-
+      * - :py:obj:`metadataTabStopWidthSpaces <pyllo.plugins.ipythonconsole.api.clipboard.ClipboardHelper.metadataTabStopWidthSpaces>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getCurrentHash <pyllo.plugins.ipythonconsole.api.clipboard.ClipboardHelper.getCurrentHash>`\ ()
+        - \-
+      * - :py:obj:`getLineIndentation <pyllo.plugins.ipythonconsole.api.clipboard.ClipboardHelper.getLineIndentation>`\ (text, tabStopWidthSpaces)
+        - Get indentation for given line.
+      * - :py:obj:`saveIndentation <pyllo.plugins.ipythonconsole.api.clipboard.ClipboardHelper.saveIndentation>`\ (precedingText, tabStopWidthSpaces)
+        - Save the indentation corresponding to the clipboard data.
+      * - :py:obj:`remainingLinesAdjustment <pyllo.plugins.ipythonconsole.api.clipboard.ClipboardHelper.remainingLinesAdjustment>`\ (precedingText)
+        - Get remaining lines adjustments needed to keep multiline
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: metadataHash
+
+      
+
+   .. py:attribute:: metadataIndent
+
+      
+
+   .. py:attribute:: metadataTabStopWidthSpaces
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getCurrentHash()
+
+
+   .. py:method:: getLineIndentation(text, tabStopWidthSpaces=None)
+
+      Get indentation for given line.
+
+
+   .. py:method:: saveIndentation(precedingText, tabStopWidthSpaces=None)
+
+      Save the indentation corresponding to the clipboard data.
+
+      Must be called right after copying.
+
+
+   .. py:method:: remainingLinesAdjustment(precedingText)
+
+      Get remaining lines adjustments needed to keep multiline
+      pasted text consistant.
+
+
+
+
+
+.. py:data:: CLIPBOARD_HELPER
+
+   
+

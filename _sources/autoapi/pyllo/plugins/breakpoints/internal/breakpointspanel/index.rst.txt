@@ -1,0 +1,218 @@
+:py:mod:`pyllo.plugins.breakpoints.internal.breakpointspanel`
+=============================================================
+
+.. py:module:: pyllo.plugins.breakpoints.internal.breakpointspanel
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`BreakpointsPanel <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel>`
+     - Panel showing line numbers in codeeditor
+
+
+
+
+.. py:class:: BreakpointsPanel(codeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.PanelExtension`
+
+   Panel showing line numbers in codeeditor
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'breakpoints'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   ..    .. .. py:attribute:: AREA
+
+      
+
+   ..    .. .. py:attribute:: AREA_GRAVITY
+      :value: 11
+
+      
+
+   ..    .. .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: SCROLLABLE
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: sigMouseClicked
+
+      when mouse click on specific position corresponding to block number of codeeditor
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.VERSION>`
+        - \-
+      * - :py:obj:`AREA <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.AREA>`
+        - \-
+      * - :py:obj:`AREA_GRAVITY <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.AREA_GRAVITY>`
+        - \-
+      * - :py:obj:`DYNAMIC <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.DYNAMIC>`
+        - \-
+      * - :py:obj:`SCROLLABLE <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.SCROLLABLE>`
+        - \-
+      * - :py:obj:`sigMouseClicked <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.sigMouseClicked>`
+        - when mouse click on specific position corresponding to block number of codeeditor
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`onEnabled <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.onEnabled>`\ (enabled)
+        - Called when enable state is changed
+      * - :py:obj:`getName <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.getDescription>`\ (self)
+        - :summarylabel:`static` Return the extension's localized description.
+      * - :py:obj:`sizeHint <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.sizeHint>`\ ()
+        - Compute and return line number area width
+      * - :py:obj:`paintEvent <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.paintEvent>`\ (event)
+        - Painting line numbers
+      * - :py:obj:`mousePressEvent <pyllo.plugins.breakpoints.internal.breakpointspanel.BreakpointsPanel.mousePressEvent>`\ (event)
+        - mouse press to add/remove breakpoints
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'breakpoints'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. py:attribute:: AREA
+
+      
+
+   .. py:attribute:: AREA_GRAVITY
+      :value: 11
+
+      
+
+   .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   .. py:attribute:: SCROLLABLE
+      :value: True
+
+      
+
+   .. py:attribute:: sigMouseClicked
+
+      when mouse click on specific position corresponding to block number of codeeditor
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onEnabled(enabled)
+
+      Called when enable state is changed
+
+
+   .. py:method:: getName() -> str
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription(self) -> str
+      :staticmethod:
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: sizeHint()
+
+      Compute and return line number area width
+
+
+   .. py:method:: paintEvent(event)
+
+      Painting line numbers
+
+
+   .. py:method:: mousePressEvent(event: qtpy.QtGui.QMouseEvent)
+
+      mouse press to add/remove breakpoints
+
+
+
+
+

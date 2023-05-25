@@ -1,0 +1,101 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.kernelconnect`
+============================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.kernelconnect
+
+.. autoapi-nested-parse::
+
+   External Kernel connection widget
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`KernelConnectionDialog <pyllo.plugins.ipythonconsole.widgets.kernelconnect.KernelConnectionDialog>`
+     - Dialog to connect to existing kernels (either local or remote).
+
+
+
+
+.. py:class:: KernelConnectionDialog(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QDialog`, :py:obj:`pyllo.core.runtime.preferences.PylloConfigurationAccessor`
+
+   Dialog to connect to existing kernels (either local or remote).
+
+   ..    ..    ..    .. .. py:attribute:: CONF_SECTION
+      :value: 'existing-kernel'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.ipythonconsole.widgets.kernelconnect.KernelConnectionDialog.CONF_SECTION>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`loadConnectionSettings <pyllo.plugins.ipythonconsole.widgets.kernelconnect.KernelConnectionDialog.loadConnectionSettings>`\ ()
+        - Load the user's previously-saved kernel connection settings.
+      * - :py:obj:`saveConnectionSettings <pyllo.plugins.ipythonconsole.widgets.kernelconnect.KernelConnectionDialog.saveConnectionSettings>`\ ()
+        - Save user's kernel connection settings.
+      * - :py:obj:`selectConnectionFile <pyllo.plugins.ipythonconsole.widgets.kernelconnect.KernelConnectionDialog.selectConnectionFile>`\ ()
+        - \-
+      * - :py:obj:`selectSshKey <pyllo.plugins.ipythonconsole.widgets.kernelconnect.KernelConnectionDialog.selectSshKey>`\ ()
+        - \-
+      * - :py:obj:`getConnectionParameters <pyllo.plugins.ipythonconsole.widgets.kernelconnect.KernelConnectionDialog.getConnectionParameters>`\ (parent, dialog)
+        - :summarylabel:`static` \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_SECTION
+      :value: 'existing-kernel'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: loadConnectionSettings()
+
+      Load the user's previously-saved kernel connection settings.
+
+
+   .. py:method:: saveConnectionSettings()
+
+      Save user's kernel connection settings.
+
+
+   .. py:method:: selectConnectionFile()
+
+
+   .. py:method:: selectSshKey()
+
+
+   .. py:method:: getConnectionParameters(parent=None, dialog=None)
+      :staticmethod:
+
+
+
+
+

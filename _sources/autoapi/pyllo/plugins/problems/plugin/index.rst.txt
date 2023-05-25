@@ -1,0 +1,229 @@
+:py:mod:`pyllo.plugins.problems.plugin`
+=======================================
+
+.. py:module:: pyllo.plugins.problems.plugin
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Problems <pyllo.plugins.problems.plugin.Problems>`
+     - breakpoints plugin.
+
+
+
+
+.. py:class:: Problems(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloDockablePlugin`
+
+   breakpoints plugin.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'problems'
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.problems.plugin.Problems.NAME>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.problems.plugin.Problems.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.problems.plugin.Problems.OPTIONAL>`
+        - \-
+      * - :py:obj:`WIDGET_CLASS <pyllo.plugins.problems.plugin.Problems.WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.problems.plugin.Problems.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.problems.plugin.Problems.CONF_FILE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.problems.plugin.Problems.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.problems.plugin.Problems.getDescription>`\ ()
+        - Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.problems.plugin.Problems.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.problems.plugin.Problems.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onCodeEditorV2Available <pyllo.plugins.problems.plugin.Problems.onCodeEditorV2Available>`\ ()
+        - \-
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.problems.plugin.Problems.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`onLanguageServerAvailable <pyllo.plugins.problems.plugin.Problems.onLanguageServerAvailable>`\ ()
+        - \-
+      * - :py:obj:`registerLanguage <pyllo.plugins.problems.plugin.Problems.registerLanguage>`\ (language)
+        - \-
+      * - :py:obj:`languages <pyllo.plugins.problems.plugin.Problems.languages>`\ ()
+        - \-
+      * - :py:obj:`onPluginFocusChanged <pyllo.plugins.problems.plugin.Problems.onPluginFocusChanged>`\ (previousWidget, previousPlugin, currentWidget, currentPlugin)
+        - Called when widget focus changed.
+      * - :py:obj:`openCodeEditorAndGoto <pyllo.plugins.problems.plugin.Problems.openCodeEditorAndGoto>`\ (filePath, lineNo, colNo, setFocus)
+        - \-
+      * - :py:obj:`onCurrentEditorChanged <pyllo.plugins.problems.plugin.Problems.onCurrentEditorChanged>`\ (editor)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'problems'
+
+      
+
+   .. py:attribute:: REQUIRES
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onCodeEditorV2Available()
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: onLanguageServerAvailable()
+
+
+   .. py:method:: registerLanguage(language: pyllo.core.dtype.Text)
+
+
+   .. py:method:: languages() -> List[pyllo.core.dtype.Text]
+
+
+   .. py:method:: onPluginFocusChanged(previousWidget: qtpy.QtWidgets.QWidget, previousPlugin: pyllo.core.dtype.PluginName, currentWidget: qtpy.QtWidgets.QWidget, currentPlugin: pyllo.core.dtype.PluginName)
+
+      Called when widget focus changed.
+
+
+   .. py:method:: openCodeEditorAndGoto(filePath: pyllo.core.dtype.FilePath, lineNo: pyllo.core.dtype.LineNumber, colNo: pyllo.core.dtype.ColumnNumber, setFocus=False)
+
+
+   .. py:method:: onCurrentEditorChanged(editor)
+
+
+
+
+

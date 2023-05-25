@@ -1,0 +1,89 @@
+:py:mod:`pyllo.plugins.shortcuts.internal.confpage`
+===================================================
+
+.. py:module:: pyllo.plugins.shortcuts.internal.confpage
+
+.. autoapi-nested-parse::
+
+   Shortcuts Plugin ConfigPage.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ShortcutsConfigPage <pyllo.plugins.shortcuts.internal.confpage.ShortcutsConfigPage>`
+     - Widget to expose the options a plugin offers for configuration as
+
+
+
+
+.. py:class:: ShortcutsConfigPage(plugin: pyllo.core.runtime.spi.PylloPlugin, parent: qtpy.QtWidgets.QWidget)
+
+   Bases: :py:obj:`pyllo.ui.preferences.PluginConfigPage`
+
+   Widget to expose the options a plugin offers for configuration as
+   an entry in Pyllo's Preferences dialog.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`applySettings <pyllo.plugins.shortcuts.internal.confpage.ShortcutsConfigPage.applySettings>`\ (options)
+        - Hook called to manually apply settings that cannot be automatically
+      * - :py:obj:`setupPage <pyllo.plugins.shortcuts.internal.confpage.ShortcutsConfigPage.setupPage>`\ ()
+        - Setup configuration page widget
+      * - :py:obj:`setRegex <pyllo.plugins.shortcuts.internal.confpage.ShortcutsConfigPage.setRegex>`\ (regex, reset)
+        - Update the regex text for the shortcut finder.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: applySettings(options)
+
+      Hook called to manually apply settings that cannot be automatically
+      applied.
+
+      Reimplement this if the configuration page has complex widget that
+      cannot be created with any of the `self.create_*` calls.
+
+      This call should return a set containing the configuration options that
+      changed.
+
+
+   .. py:method:: setupPage()
+
+      Setup configuration page widget
+
+      You should implement this method and set the layout of the
+      preferences page.
+
+      layout = QVBoxLayout()
+      layout.addWidget(...)
+      ...
+      self.setLayout(layout)
+
+
+   .. py:method:: setRegex(regex=None, reset=False)
+
+      Update the regex text for the shortcut finder.
+
+
+
+
+

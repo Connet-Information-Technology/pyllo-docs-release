@@ -1,0 +1,16 @@
+:py:mod:`pyllo.plugins.problems.internal`
+=========================================
+
+.. py:module:: pyllo.plugins.problems.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   mainwidget/index.rst
+   problemspanel/index.rst
+
+

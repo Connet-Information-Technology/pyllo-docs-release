@@ -1,0 +1,3556 @@
+:py:mod:`pyllo.plugins.languageserver.protocol`
+===============================================
+
+.. py:module:: pyllo.plugins.languageserver.protocol
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`TextDocumentSyncClientCapabilities <pyllo.plugins.languageserver.protocol.TextDocumentSyncClientCapabilities>`
+     - \-
+   * - :py:obj:`CompletionClientCapabilities <pyllo.plugins.languageserver.protocol.CompletionClientCapabilities>`
+     - \-
+   * - :py:obj:`DefinitionClientCapabilities <pyllo.plugins.languageserver.protocol.DefinitionClientCapabilities>`
+     - \-
+   * - :py:obj:`PublishDiagnosticsClientCapabilities <pyllo.plugins.languageserver.protocol.PublishDiagnosticsClientCapabilities>`
+     - \-
+   * - :py:obj:`FoldingRangeClientCapabilities <pyllo.plugins.languageserver.protocol.FoldingRangeClientCapabilities>`
+     - \-
+   * - :py:obj:`TextDocumentClientCapabilities <pyllo.plugins.languageserver.protocol.TextDocumentClientCapabilities>`
+     - \-
+   * - :py:obj:`WorkDoneProgressParams <pyllo.plugins.languageserver.protocol.WorkDoneProgressParams>`
+     - \-
+   * - :py:obj:`InitializeParamsClientInfo <pyllo.plugins.languageserver.protocol.InitializeParamsClientInfo>`
+     - \-
+   * - :py:obj:`ClientCapabilities <pyllo.plugins.languageserver.protocol.ClientCapabilities>`
+     - \-
+   * - :py:obj:`TextDocumentSyncKind <pyllo.plugins.languageserver.protocol.TextDocumentSyncKind>`
+     - Generic enumeration.
+   * - :py:obj:`TextDocumentSyncOptions <pyllo.plugins.languageserver.protocol.TextDocumentSyncOptions>`
+     - \-
+   * - :py:obj:`ServerCapabilities <pyllo.plugins.languageserver.protocol.ServerCapabilities>`
+     - \-
+   * - :py:obj:`InitializeParams <pyllo.plugins.languageserver.protocol.InitializeParams>`
+     - \-
+   * - :py:obj:`Command <pyllo.plugins.languageserver.protocol.Command>`
+     - \-
+   * - :py:obj:`MarkupKind <pyllo.plugins.languageserver.protocol.MarkupKind>`
+     - Generic enumeration.
+   * - :py:obj:`MarkupContent <pyllo.plugins.languageserver.protocol.MarkupContent>`
+     - \-
+   * - :py:obj:`TextDocumentIdentifier <pyllo.plugins.languageserver.protocol.TextDocumentIdentifier>`
+     - \-
+   * - :py:obj:`VersionedTextDocumentIdentifier <pyllo.plugins.languageserver.protocol.VersionedTextDocumentIdentifier>`
+     - \-
+   * - :py:obj:`TextDocumentItem <pyllo.plugins.languageserver.protocol.TextDocumentItem>`
+     - \-
+   * - :py:obj:`Position <pyllo.plugins.languageserver.protocol.Position>`
+     - \-
+   * - :py:obj:`Range <pyllo.plugins.languageserver.protocol.Range>`
+     - \-
+   * - :py:obj:`Location <pyllo.plugins.languageserver.protocol.Location>`
+     - \-
+   * - :py:obj:`TextDocumentPositionParams <pyllo.plugins.languageserver.protocol.TextDocumentPositionParams>`
+     - \-
+   * - :py:obj:`WorkDoneProgressParams <pyllo.plugins.languageserver.protocol.WorkDoneProgressParams>`
+     - \-
+   * - :py:obj:`PartialResultParams <pyllo.plugins.languageserver.protocol.PartialResultParams>`
+     - \-
+   * - :py:obj:`CompletionTriggerKind <pyllo.plugins.languageserver.protocol.CompletionTriggerKind>`
+     - Generic enumeration.
+   * - :py:obj:`CompletionContext <pyllo.plugins.languageserver.protocol.CompletionContext>`
+     - \-
+   * - :py:obj:`CompletionParams <pyllo.plugins.languageserver.protocol.CompletionParams>`
+     - \-
+   * - :py:obj:`TextDocumentContentChangeEvent <pyllo.plugins.languageserver.protocol.TextDocumentContentChangeEvent>`
+     - \-
+   * - :py:obj:`DidOpenTextDocumentParams <pyllo.plugins.languageserver.protocol.DidOpenTextDocumentParams>`
+     - \-
+   * - :py:obj:`DidChangeTextDocumentParams <pyllo.plugins.languageserver.protocol.DidChangeTextDocumentParams>`
+     - \-
+   * - :py:obj:`DidSaveTextDocumentParam <pyllo.plugins.languageserver.protocol.DidSaveTextDocumentParam>`
+     - \-
+   * - :py:obj:`DidCloseTextDocumentParams <pyllo.plugins.languageserver.protocol.DidCloseTextDocumentParams>`
+     - \-
+   * - :py:obj:`DiagnosticSeverity <pyllo.plugins.languageserver.protocol.DiagnosticSeverity>`
+     - Generic enumeration.
+   * - :py:obj:`DiagnosticTag <pyllo.plugins.languageserver.protocol.DiagnosticTag>`
+     - Generic enumeration.
+   * - :py:obj:`DiagnosticRelatedInformation <pyllo.plugins.languageserver.protocol.DiagnosticRelatedInformation>`
+     - \-
+   * - :py:obj:`CodeDescription <pyllo.plugins.languageserver.protocol.CodeDescription>`
+     - \-
+   * - :py:obj:`Diagnostic <pyllo.plugins.languageserver.protocol.Diagnostic>`
+     - \-
+   * - :py:obj:`PublishDiagnosticsParams <pyllo.plugins.languageserver.protocol.PublishDiagnosticsParams>`
+     - \-
+   * - :py:obj:`TextEdit <pyllo.plugins.languageserver.protocol.TextEdit>`
+     - \-
+   * - :py:obj:`CompletionItemKind <pyllo.plugins.languageserver.protocol.CompletionItemKind>`
+     - Generic enumeration.
+   * - :py:obj:`InsertTextFormat <pyllo.plugins.languageserver.protocol.InsertTextFormat>`
+     - Generic enumeration.
+   * - :py:obj:`InsertTextMode <pyllo.plugins.languageserver.protocol.InsertTextMode>`
+     - Generic enumeration.
+   * - :py:obj:`CompletionItemTag <pyllo.plugins.languageserver.protocol.CompletionItemTag>`
+     - Generic enumeration.
+   * - :py:obj:`InsertReplaceEdit <pyllo.plugins.languageserver.protocol.InsertReplaceEdit>`
+     - \-
+   * - :py:obj:`CompletionItem <pyllo.plugins.languageserver.protocol.CompletionItem>`
+     - \-
+   * - :py:obj:`CompletionList <pyllo.plugins.languageserver.protocol.CompletionList>`
+     - \-
+   * - :py:obj:`DefinitionParams <pyllo.plugins.languageserver.protocol.DefinitionParams>`
+     - \-
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DocumentUri <pyllo.plugins.languageserver.protocol.DocumentUri>`
+     - \-
+   * - :py:obj:`URI <pyllo.plugins.languageserver.protocol.URI>`
+     - \-
+   * - :py:obj:`ProgressToken <pyllo.plugins.languageserver.protocol.ProgressToken>`
+     - \-
+
+
+.. py:data:: DocumentUri
+
+   
+
+.. py:data:: URI
+
+   
+
+.. py:data:: ProgressToken
+
+   
+
+.. py:class:: TextDocumentSyncClientCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: dynamicRegistration
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: willSave
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: willSaveUntil
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: didSave
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`dynamicRegistration <pyllo.plugins.languageserver.protocol.TextDocumentSyncClientCapabilities.dynamicRegistration>`
+        - \-
+      * - :py:obj:`willSave <pyllo.plugins.languageserver.protocol.TextDocumentSyncClientCapabilities.willSave>`
+        - \-
+      * - :py:obj:`willSaveUntil <pyllo.plugins.languageserver.protocol.TextDocumentSyncClientCapabilities.willSaveUntil>`
+        - \-
+      * - :py:obj:`didSave <pyllo.plugins.languageserver.protocol.TextDocumentSyncClientCapabilities.didSave>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: dynamicRegistration
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: willSave
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: willSaveUntil
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: didSave
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionClientCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: dynamicRegistration
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: completionItem
+      :type: Optional[dict]
+
+      
+
+   ..    .. .. py:attribute:: completionItemKind
+      :type: Optional[dict]
+
+      
+
+   ..    .. .. py:attribute:: contextSupport
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`dynamicRegistration <pyllo.plugins.languageserver.protocol.CompletionClientCapabilities.dynamicRegistration>`
+        - \-
+      * - :py:obj:`completionItem <pyllo.plugins.languageserver.protocol.CompletionClientCapabilities.completionItem>`
+        - \-
+      * - :py:obj:`completionItemKind <pyllo.plugins.languageserver.protocol.CompletionClientCapabilities.completionItemKind>`
+        - \-
+      * - :py:obj:`contextSupport <pyllo.plugins.languageserver.protocol.CompletionClientCapabilities.contextSupport>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: dynamicRegistration
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: completionItem
+      :type: Optional[dict]
+
+      
+
+   .. py:attribute:: completionItemKind
+      :type: Optional[dict]
+
+      
+
+   .. py:attribute:: contextSupport
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: DefinitionClientCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: dynamicRegistration
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: linkSupport
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`dynamicRegistration <pyllo.plugins.languageserver.protocol.DefinitionClientCapabilities.dynamicRegistration>`
+        - \-
+      * - :py:obj:`linkSupport <pyllo.plugins.languageserver.protocol.DefinitionClientCapabilities.linkSupport>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: dynamicRegistration
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: linkSupport
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: PublishDiagnosticsClientCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: relatedInformation
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: tagSupport
+      :type: Optional[dict]
+
+      
+
+   ..    .. .. py:attribute:: versionSupport
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: codeDescriptionSupport
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: dataSupport
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`relatedInformation <pyllo.plugins.languageserver.protocol.PublishDiagnosticsClientCapabilities.relatedInformation>`
+        - \-
+      * - :py:obj:`tagSupport <pyllo.plugins.languageserver.protocol.PublishDiagnosticsClientCapabilities.tagSupport>`
+        - \-
+      * - :py:obj:`versionSupport <pyllo.plugins.languageserver.protocol.PublishDiagnosticsClientCapabilities.versionSupport>`
+        - \-
+      * - :py:obj:`codeDescriptionSupport <pyllo.plugins.languageserver.protocol.PublishDiagnosticsClientCapabilities.codeDescriptionSupport>`
+        - \-
+      * - :py:obj:`dataSupport <pyllo.plugins.languageserver.protocol.PublishDiagnosticsClientCapabilities.dataSupport>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: relatedInformation
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: tagSupport
+      :type: Optional[dict]
+
+      
+
+   .. py:attribute:: versionSupport
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: codeDescriptionSupport
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: dataSupport
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: FoldingRangeClientCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: dynamicRegistration
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: rangeLimit
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: lineFoldingOnly
+      :type: Optional[bool]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`dynamicRegistration <pyllo.plugins.languageserver.protocol.FoldingRangeClientCapabilities.dynamicRegistration>`
+        - \-
+      * - :py:obj:`rangeLimit <pyllo.plugins.languageserver.protocol.FoldingRangeClientCapabilities.rangeLimit>`
+        - \-
+      * - :py:obj:`lineFoldingOnly <pyllo.plugins.languageserver.protocol.FoldingRangeClientCapabilities.lineFoldingOnly>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: dynamicRegistration
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: rangeLimit
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: lineFoldingOnly
+      :type: Optional[bool]
+
+      
+
+
+
+
+
+
+.. py:class:: TextDocumentClientCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: synchronization
+      :type: Optional[TextDocumentSyncClientCapabilities]
+
+      
+
+   ..    .. .. py:attribute:: completion
+      :type: Optional[CompletionClientCapabilities]
+
+      
+
+   ..    .. .. py:attribute:: definition
+      :type: Optional[DefinitionClientCapabilities]
+
+      
+
+   ..    .. .. py:attribute:: publishDiagnostics
+      :type: Optional[PublishDiagnosticsClientCapabilities]
+
+      
+
+   ..    .. .. py:attribute:: foldingRange
+      :type: Optional[FoldingRangeClientCapabilities]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`synchronization <pyllo.plugins.languageserver.protocol.TextDocumentClientCapabilities.synchronization>`
+        - \-
+      * - :py:obj:`completion <pyllo.plugins.languageserver.protocol.TextDocumentClientCapabilities.completion>`
+        - \-
+      * - :py:obj:`definition <pyllo.plugins.languageserver.protocol.TextDocumentClientCapabilities.definition>`
+        - \-
+      * - :py:obj:`publishDiagnostics <pyllo.plugins.languageserver.protocol.TextDocumentClientCapabilities.publishDiagnostics>`
+        - \-
+      * - :py:obj:`foldingRange <pyllo.plugins.languageserver.protocol.TextDocumentClientCapabilities.foldingRange>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: synchronization
+      :type: Optional[TextDocumentSyncClientCapabilities]
+
+      
+
+   .. py:attribute:: completion
+      :type: Optional[CompletionClientCapabilities]
+
+      
+
+   .. py:attribute:: definition
+      :type: Optional[DefinitionClientCapabilities]
+
+      
+
+   .. py:attribute:: publishDiagnostics
+      :type: Optional[PublishDiagnosticsClientCapabilities]
+
+      
+
+   .. py:attribute:: foldingRange
+      :type: Optional[FoldingRangeClientCapabilities]
+
+      
+
+
+
+
+
+
+.. py:class:: WorkDoneProgressParams
+
+   ..    ..    ..    .. .. py:attribute:: workDoneToken
+      :type: Optional[Any]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`workDoneToken <pyllo.plugins.languageserver.protocol.WorkDoneProgressParams.workDoneToken>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: workDoneToken
+      :type: Optional[Any]
+
+      
+
+
+
+
+
+
+.. py:class:: InitializeParamsClientInfo
+
+   ..    ..    ..    .. .. py:attribute:: name
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: version
+      :type: Optional[str]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`name <pyllo.plugins.languageserver.protocol.InitializeParamsClientInfo.name>`
+        - \-
+      * - :py:obj:`version <pyllo.plugins.languageserver.protocol.InitializeParamsClientInfo.version>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: name
+      :type: str
+
+      
+
+   .. py:attribute:: version
+      :type: Optional[str]
+
+      
+
+
+
+
+
+
+.. py:class:: ClientCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: workspace
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: textDocument
+      :type: Optional[TextDocumentClientCapabilities]
+
+      
+
+   ..    .. .. py:attribute:: notebookDocument
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: window
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: general
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: experimental
+      :type: Optional[Any]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`workspace <pyllo.plugins.languageserver.protocol.ClientCapabilities.workspace>`
+        - \-
+      * - :py:obj:`textDocument <pyllo.plugins.languageserver.protocol.ClientCapabilities.textDocument>`
+        - \-
+      * - :py:obj:`notebookDocument <pyllo.plugins.languageserver.protocol.ClientCapabilities.notebookDocument>`
+        - \-
+      * - :py:obj:`window <pyllo.plugins.languageserver.protocol.ClientCapabilities.window>`
+        - \-
+      * - :py:obj:`general <pyllo.plugins.languageserver.protocol.ClientCapabilities.general>`
+        - \-
+      * - :py:obj:`experimental <pyllo.plugins.languageserver.protocol.ClientCapabilities.experimental>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: workspace
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: textDocument
+      :type: Optional[TextDocumentClientCapabilities]
+
+      
+
+   .. py:attribute:: notebookDocument
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: window
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: general
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: experimental
+      :type: Optional[Any]
+
+      
+
+
+
+
+
+
+.. py:class:: TextDocumentSyncKind
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: NONE
+      :value: 0
+
+      
+
+   ..    .. .. py:attribute:: Full
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: Incremental
+      :value: 2
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NONE <pyllo.plugins.languageserver.protocol.TextDocumentSyncKind.NONE>`
+        - \-
+      * - :py:obj:`Full <pyllo.plugins.languageserver.protocol.TextDocumentSyncKind.Full>`
+        - \-
+      * - :py:obj:`Incremental <pyllo.plugins.languageserver.protocol.TextDocumentSyncKind.Incremental>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NONE
+      :value: 0
+
+      
+
+   .. py:attribute:: Full
+      :value: 1
+
+      
+
+   .. py:attribute:: Incremental
+      :value: 2
+
+      
+
+
+
+
+
+
+.. py:class:: TextDocumentSyncOptions
+
+   ..    ..    ..    .. .. py:attribute:: openClose
+      :type: Optional[bool]
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: change
+      :type: Optional[TextDocumentSyncKind]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`openClose <pyllo.plugins.languageserver.protocol.TextDocumentSyncOptions.openClose>`
+        - \-
+      * - :py:obj:`change <pyllo.plugins.languageserver.protocol.TextDocumentSyncOptions.change>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: openClose
+      :type: Optional[bool]
+      :value: False
+
+      
+
+   .. py:attribute:: change
+      :type: Optional[TextDocumentSyncKind]
+
+      
+
+
+
+
+
+
+.. py:class:: ServerCapabilities
+
+   ..    ..    ..    .. .. py:attribute:: positionEncoding
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: textDocumentSync
+      :type: Optional[Union[TextDocumentSyncOptions, TextDocumentSyncKind]]
+
+      
+
+   ..    .. .. py:attribute:: notebookDocumentSync
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: completionProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: hoverProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: signatureHelpProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: declarationProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: definitionProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: typeDefinitionProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: implementationProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: referencesProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: documentHighlightProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: documentSymbolProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: codeActionProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: codeLensProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: documentLinkProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: colorProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: documentFormattingProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: documentRangeFormattingProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: documentOnTypeFormattingProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: renameProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: foldingRangeProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: executeCommandProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: selectionRangeProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: linkedEditingRangeProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: callHierarchyProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: semanticTokensProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: monikerProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: typeHierarchyProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: inlineValueProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: inlayHintProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: diagnosticProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: workspaceSymbolProvider
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: workspace
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: experimental
+      :type: Optional[Any]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`positionEncoding <pyllo.plugins.languageserver.protocol.ServerCapabilities.positionEncoding>`
+        - \-
+      * - :py:obj:`textDocumentSync <pyllo.plugins.languageserver.protocol.ServerCapabilities.textDocumentSync>`
+        - \-
+      * - :py:obj:`notebookDocumentSync <pyllo.plugins.languageserver.protocol.ServerCapabilities.notebookDocumentSync>`
+        - \-
+      * - :py:obj:`completionProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.completionProvider>`
+        - \-
+      * - :py:obj:`hoverProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.hoverProvider>`
+        - \-
+      * - :py:obj:`signatureHelpProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.signatureHelpProvider>`
+        - \-
+      * - :py:obj:`declarationProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.declarationProvider>`
+        - \-
+      * - :py:obj:`definitionProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.definitionProvider>`
+        - \-
+      * - :py:obj:`typeDefinitionProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.typeDefinitionProvider>`
+        - \-
+      * - :py:obj:`implementationProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.implementationProvider>`
+        - \-
+      * - :py:obj:`referencesProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.referencesProvider>`
+        - \-
+      * - :py:obj:`documentHighlightProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.documentHighlightProvider>`
+        - \-
+      * - :py:obj:`documentSymbolProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.documentSymbolProvider>`
+        - \-
+      * - :py:obj:`codeActionProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.codeActionProvider>`
+        - \-
+      * - :py:obj:`codeLensProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.codeLensProvider>`
+        - \-
+      * - :py:obj:`documentLinkProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.documentLinkProvider>`
+        - \-
+      * - :py:obj:`colorProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.colorProvider>`
+        - \-
+      * - :py:obj:`documentFormattingProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.documentFormattingProvider>`
+        - \-
+      * - :py:obj:`documentRangeFormattingProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.documentRangeFormattingProvider>`
+        - \-
+      * - :py:obj:`documentOnTypeFormattingProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.documentOnTypeFormattingProvider>`
+        - \-
+      * - :py:obj:`renameProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.renameProvider>`
+        - \-
+      * - :py:obj:`foldingRangeProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.foldingRangeProvider>`
+        - \-
+      * - :py:obj:`executeCommandProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.executeCommandProvider>`
+        - \-
+      * - :py:obj:`selectionRangeProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.selectionRangeProvider>`
+        - \-
+      * - :py:obj:`linkedEditingRangeProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.linkedEditingRangeProvider>`
+        - \-
+      * - :py:obj:`callHierarchyProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.callHierarchyProvider>`
+        - \-
+      * - :py:obj:`semanticTokensProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.semanticTokensProvider>`
+        - \-
+      * - :py:obj:`monikerProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.monikerProvider>`
+        - \-
+      * - :py:obj:`typeHierarchyProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.typeHierarchyProvider>`
+        - \-
+      * - :py:obj:`inlineValueProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.inlineValueProvider>`
+        - \-
+      * - :py:obj:`inlayHintProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.inlayHintProvider>`
+        - \-
+      * - :py:obj:`diagnosticProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.diagnosticProvider>`
+        - \-
+      * - :py:obj:`workspaceSymbolProvider <pyllo.plugins.languageserver.protocol.ServerCapabilities.workspaceSymbolProvider>`
+        - \-
+      * - :py:obj:`workspace <pyllo.plugins.languageserver.protocol.ServerCapabilities.workspace>`
+        - \-
+      * - :py:obj:`experimental <pyllo.plugins.languageserver.protocol.ServerCapabilities.experimental>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: positionEncoding
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: textDocumentSync
+      :type: Optional[Union[TextDocumentSyncOptions, TextDocumentSyncKind]]
+
+      
+
+   .. py:attribute:: notebookDocumentSync
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: completionProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: hoverProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: signatureHelpProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: declarationProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: definitionProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: typeDefinitionProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: implementationProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: referencesProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: documentHighlightProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: documentSymbolProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: codeActionProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: codeLensProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: documentLinkProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: colorProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: documentFormattingProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: documentRangeFormattingProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: documentOnTypeFormattingProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: renameProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: foldingRangeProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: executeCommandProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: selectionRangeProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: linkedEditingRangeProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: callHierarchyProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: semanticTokensProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: monikerProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: typeHierarchyProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: inlineValueProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: inlayHintProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: diagnosticProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: workspaceSymbolProvider
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: workspace
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: experimental
+      :type: Optional[Any]
+
+      
+
+
+
+
+
+
+.. py:class:: InitializeParams
+
+   ..    ..    ..    .. .. py:attribute:: capabilities
+      :type: ClientCapabilities
+
+      
+
+   ..    .. .. py:attribute:: processId
+      :type: Optional[int]
+
+      
+
+   ..    .. .. py:attribute:: trace
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: workspaceFolders
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: clientInfo
+      :type: Optional[InitializeParamsClientInfo]
+
+      
+
+   ..    .. .. py:attribute:: locale
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: rootPath
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: rootUri
+      :type: Optional[Any]
+
+      
+
+   ..    .. .. py:attribute:: initializationOptions
+      :type: Optional[Any]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`capabilities <pyllo.plugins.languageserver.protocol.InitializeParams.capabilities>`
+        - \-
+      * - :py:obj:`processId <pyllo.plugins.languageserver.protocol.InitializeParams.processId>`
+        - \-
+      * - :py:obj:`trace <pyllo.plugins.languageserver.protocol.InitializeParams.trace>`
+        - \-
+      * - :py:obj:`workspaceFolders <pyllo.plugins.languageserver.protocol.InitializeParams.workspaceFolders>`
+        - \-
+      * - :py:obj:`clientInfo <pyllo.plugins.languageserver.protocol.InitializeParams.clientInfo>`
+        - \-
+      * - :py:obj:`locale <pyllo.plugins.languageserver.protocol.InitializeParams.locale>`
+        - \-
+      * - :py:obj:`rootPath <pyllo.plugins.languageserver.protocol.InitializeParams.rootPath>`
+        - \-
+      * - :py:obj:`rootUri <pyllo.plugins.languageserver.protocol.InitializeParams.rootUri>`
+        - \-
+      * - :py:obj:`initializationOptions <pyllo.plugins.languageserver.protocol.InitializeParams.initializationOptions>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: capabilities
+      :type: ClientCapabilities
+
+      
+
+   .. py:attribute:: processId
+      :type: Optional[int]
+
+      
+
+   .. py:attribute:: trace
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: workspaceFolders
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: clientInfo
+      :type: Optional[InitializeParamsClientInfo]
+
+      
+
+   .. py:attribute:: locale
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: rootPath
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: rootUri
+      :type: Optional[Any]
+
+      
+
+   .. py:attribute:: initializationOptions
+      :type: Optional[Any]
+
+      
+
+
+
+
+
+
+.. py:class:: Command
+
+   ..    ..    ..    .. .. py:attribute:: title
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: command
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: arguments
+      :type: Optional[List[Any]]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`title <pyllo.plugins.languageserver.protocol.Command.title>`
+        - \-
+      * - :py:obj:`command <pyllo.plugins.languageserver.protocol.Command.command>`
+        - \-
+      * - :py:obj:`arguments <pyllo.plugins.languageserver.protocol.Command.arguments>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: title
+      :type: str
+
+      
+
+   .. py:attribute:: command
+      :type: str
+
+      
+
+   .. py:attribute:: arguments
+      :type: Optional[List[Any]]
+
+      
+
+
+
+
+
+
+.. py:class:: MarkupKind
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: PlainText
+      :value: 'plaintext'
+
+      
+
+   ..    .. .. py:attribute:: Markdown
+      :value: 'markdown'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PlainText <pyllo.plugins.languageserver.protocol.MarkupKind.PlainText>`
+        - \-
+      * - :py:obj:`Markdown <pyllo.plugins.languageserver.protocol.MarkupKind.Markdown>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PlainText
+      :value: 'plaintext'
+
+      
+
+   .. py:attribute:: Markdown
+      :value: 'markdown'
+
+      
+
+
+
+
+
+
+.. py:class:: MarkupContent
+
+   ..    ..    ..    .. .. py:attribute:: kind
+      :type: MarkupKind
+
+      
+
+   ..    .. .. py:attribute:: value
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`kind <pyllo.plugins.languageserver.protocol.MarkupContent.kind>`
+        - \-
+      * - :py:obj:`value <pyllo.plugins.languageserver.protocol.MarkupContent.value>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: kind
+      :type: MarkupKind
+
+      
+
+   .. py:attribute:: value
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: TextDocumentIdentifier
+
+   ..    ..    ..    .. .. py:attribute:: uri
+      :type: DocumentUri
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`uri <pyllo.plugins.languageserver.protocol.TextDocumentIdentifier.uri>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: uri
+      :type: DocumentUri
+
+      
+
+
+
+
+
+
+.. py:class:: VersionedTextDocumentIdentifier
+
+   Bases: :py:obj:`TextDocumentIdentifier`
+
+   ..    ..    ..    .. .. py:attribute:: version
+      :type: int
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`version <pyllo.plugins.languageserver.protocol.VersionedTextDocumentIdentifier.version>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: version
+      :type: int
+
+      
+
+
+
+
+
+
+.. py:class:: TextDocumentItem
+
+   ..    ..    ..    .. .. py:attribute:: uri
+      :type: DocumentUri
+
+      
+
+   ..    .. .. py:attribute:: languageId
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: version
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: text
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`uri <pyllo.plugins.languageserver.protocol.TextDocumentItem.uri>`
+        - \-
+      * - :py:obj:`languageId <pyllo.plugins.languageserver.protocol.TextDocumentItem.languageId>`
+        - \-
+      * - :py:obj:`version <pyllo.plugins.languageserver.protocol.TextDocumentItem.version>`
+        - \-
+      * - :py:obj:`text <pyllo.plugins.languageserver.protocol.TextDocumentItem.text>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: uri
+      :type: DocumentUri
+
+      
+
+   .. py:attribute:: languageId
+      :type: str
+
+      
+
+   .. py:attribute:: version
+      :type: int
+
+      
+
+   .. py:attribute:: text
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: Position
+
+   ..    ..    ..    .. .. py:attribute:: line
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: character
+      :type: int
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`line <pyllo.plugins.languageserver.protocol.Position.line>`
+        - \-
+      * - :py:obj:`character <pyllo.plugins.languageserver.protocol.Position.character>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: line
+      :type: int
+
+      
+
+   .. py:attribute:: character
+      :type: int
+
+      
+
+
+
+
+
+
+.. py:class:: Range
+
+   ..    ..    ..    .. .. py:attribute:: start
+      :type: Position
+
+      
+
+   ..    .. .. py:attribute:: end
+      :type: Position
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`start <pyllo.plugins.languageserver.protocol.Range.start>`
+        - \-
+      * - :py:obj:`end <pyllo.plugins.languageserver.protocol.Range.end>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: start
+      :type: Position
+
+      
+
+   .. py:attribute:: end
+      :type: Position
+
+      
+
+
+
+
+
+
+.. py:class:: Location
+
+   ..    ..    ..    .. .. py:attribute:: uri
+      :type: DocumentUri
+
+      
+
+   ..    .. .. py:attribute:: range
+      :type: Range
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`uri <pyllo.plugins.languageserver.protocol.Location.uri>`
+        - \-
+      * - :py:obj:`range <pyllo.plugins.languageserver.protocol.Location.range>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: uri
+      :type: DocumentUri
+
+      
+
+   .. py:attribute:: range
+      :type: Range
+
+      
+
+
+
+
+
+
+.. py:class:: TextDocumentPositionParams
+
+   ..    ..    ..    .. .. py:attribute:: textDocument
+      :type: TextDocumentIdentifier
+
+      
+
+   ..    .. .. py:attribute:: position
+      :type: Position
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`textDocument <pyllo.plugins.languageserver.protocol.TextDocumentPositionParams.textDocument>`
+        - \-
+      * - :py:obj:`position <pyllo.plugins.languageserver.protocol.TextDocumentPositionParams.position>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: textDocument
+      :type: TextDocumentIdentifier
+
+      
+
+   .. py:attribute:: position
+      :type: Position
+
+      
+
+
+
+
+
+
+.. py:class:: WorkDoneProgressParams
+
+   ..    ..    ..    .. .. py:attribute:: workDoneToken
+      :type: Optional[ProgressToken]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`workDoneToken <pyllo.plugins.languageserver.protocol.WorkDoneProgressParams.workDoneToken>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: workDoneToken
+      :type: Optional[ProgressToken]
+
+      
+
+
+
+
+
+
+.. py:class:: PartialResultParams
+
+   ..    ..    ..    .. .. py:attribute:: partialResultToken
+      :type: Optional[ProgressToken]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`partialResultToken <pyllo.plugins.languageserver.protocol.PartialResultParams.partialResultToken>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: partialResultToken
+      :type: Optional[ProgressToken]
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionTriggerKind
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: Invoked
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: TriggerCharacter
+      :value: 2
+
+      
+
+   ..    .. .. py:attribute:: TriggerForIncompleteCompletions
+      :value: 3
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Invoked <pyllo.plugins.languageserver.protocol.CompletionTriggerKind.Invoked>`
+        - \-
+      * - :py:obj:`TriggerCharacter <pyllo.plugins.languageserver.protocol.CompletionTriggerKind.TriggerCharacter>`
+        - \-
+      * - :py:obj:`TriggerForIncompleteCompletions <pyllo.plugins.languageserver.protocol.CompletionTriggerKind.TriggerForIncompleteCompletions>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Invoked
+      :value: 1
+
+      
+
+   .. py:attribute:: TriggerCharacter
+      :value: 2
+
+      
+
+   .. py:attribute:: TriggerForIncompleteCompletions
+      :value: 3
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionContext
+
+   ..    ..    ..    .. .. py:attribute:: triggerKind
+      :type: CompletionTriggerKind
+
+      
+
+   ..    .. .. py:attribute:: triggerCharacter
+      :type: Optional[str]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`triggerKind <pyllo.plugins.languageserver.protocol.CompletionContext.triggerKind>`
+        - \-
+      * - :py:obj:`triggerCharacter <pyllo.plugins.languageserver.protocol.CompletionContext.triggerCharacter>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: triggerKind
+      :type: CompletionTriggerKind
+
+      
+
+   .. py:attribute:: triggerCharacter
+      :type: Optional[str]
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionParams
+
+   Bases: :py:obj:`TextDocumentPositionParams`
+
+   ..    ..    ..    .. .. py:attribute:: context
+      :type: Optional[CompletionContext]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`context <pyllo.plugins.languageserver.protocol.CompletionParams.context>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: context
+      :type: Optional[CompletionContext]
+
+      
+
+
+
+
+
+
+.. py:class:: TextDocumentContentChangeEvent
+
+   ..    ..    ..    .. .. py:attribute:: text
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: range
+      :type: Optional[Range]
+
+      
+
+   ..    .. .. py:attribute:: rangeLength
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`text <pyllo.plugins.languageserver.protocol.TextDocumentContentChangeEvent.text>`
+        - \-
+      * - :py:obj:`range <pyllo.plugins.languageserver.protocol.TextDocumentContentChangeEvent.range>`
+        - \-
+      * - :py:obj:`rangeLength <pyllo.plugins.languageserver.protocol.TextDocumentContentChangeEvent.rangeLength>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: text
+      :type: str
+
+      
+
+   .. py:attribute:: range
+      :type: Optional[Range]
+
+      
+
+   .. py:attribute:: rangeLength
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: DidOpenTextDocumentParams
+
+   ..    ..    ..    .. .. py:attribute:: textDocument
+      :type: TextDocumentItem
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`textDocument <pyllo.plugins.languageserver.protocol.DidOpenTextDocumentParams.textDocument>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: textDocument
+      :type: TextDocumentItem
+
+      
+
+
+
+
+
+
+.. py:class:: DidChangeTextDocumentParams
+
+   ..    ..    ..    .. .. py:attribute:: textDocument
+      :type: VersionedTextDocumentIdentifier
+
+      
+
+   ..    .. .. py:attribute:: contentChanges
+      :type: List[TextDocumentContentChangeEvent]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`textDocument <pyllo.plugins.languageserver.protocol.DidChangeTextDocumentParams.textDocument>`
+        - \-
+      * - :py:obj:`contentChanges <pyllo.plugins.languageserver.protocol.DidChangeTextDocumentParams.contentChanges>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: textDocument
+      :type: VersionedTextDocumentIdentifier
+
+      
+
+   .. py:attribute:: contentChanges
+      :type: List[TextDocumentContentChangeEvent]
+
+      
+
+
+
+
+
+
+.. py:class:: DidSaveTextDocumentParam
+
+   ..    ..    ..    .. .. py:attribute:: testDocument
+      :type: TextDocumentIdentifier
+
+      
+
+   ..    .. .. py:attribute:: text
+      :type: Optional[str]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`testDocument <pyllo.plugins.languageserver.protocol.DidSaveTextDocumentParam.testDocument>`
+        - \-
+      * - :py:obj:`text <pyllo.plugins.languageserver.protocol.DidSaveTextDocumentParam.text>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: testDocument
+      :type: TextDocumentIdentifier
+
+      
+
+   .. py:attribute:: text
+      :type: Optional[str]
+
+      
+
+
+
+
+
+
+.. py:class:: DidCloseTextDocumentParams
+
+   ..    ..    ..    .. .. py:attribute:: textDocument
+      :type: TextDocumentIdentifier
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`textDocument <pyllo.plugins.languageserver.protocol.DidCloseTextDocumentParams.textDocument>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: textDocument
+      :type: TextDocumentIdentifier
+
+      
+
+
+
+
+
+
+.. py:class:: DiagnosticSeverity
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: Error
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: Warning
+      :value: 2
+
+      
+
+   ..    .. .. py:attribute:: Information
+      :value: 3
+
+      
+
+   ..    .. .. py:attribute:: Hint
+      :value: 4
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Error <pyllo.plugins.languageserver.protocol.DiagnosticSeverity.Error>`
+        - \-
+      * - :py:obj:`Warning <pyllo.plugins.languageserver.protocol.DiagnosticSeverity.Warning>`
+        - \-
+      * - :py:obj:`Information <pyllo.plugins.languageserver.protocol.DiagnosticSeverity.Information>`
+        - \-
+      * - :py:obj:`Hint <pyllo.plugins.languageserver.protocol.DiagnosticSeverity.Hint>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Error
+      :value: 1
+
+      
+
+   .. py:attribute:: Warning
+      :value: 2
+
+      
+
+   .. py:attribute:: Information
+      :value: 3
+
+      
+
+   .. py:attribute:: Hint
+      :value: 4
+
+      
+
+
+
+
+
+
+.. py:class:: DiagnosticTag
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: Unnecessary
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: Deprecated
+      :value: 2
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Unnecessary <pyllo.plugins.languageserver.protocol.DiagnosticTag.Unnecessary>`
+        - \-
+      * - :py:obj:`Deprecated <pyllo.plugins.languageserver.protocol.DiagnosticTag.Deprecated>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Unnecessary
+      :value: 1
+
+      
+
+   .. py:attribute:: Deprecated
+      :value: 2
+
+      
+
+
+
+
+
+
+.. py:class:: DiagnosticRelatedInformation
+
+   ..    ..    ..    .. .. py:attribute:: location
+      :type: Location
+
+      
+
+   ..    .. .. py:attribute:: message
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`location <pyllo.plugins.languageserver.protocol.DiagnosticRelatedInformation.location>`
+        - \-
+      * - :py:obj:`message <pyllo.plugins.languageserver.protocol.DiagnosticRelatedInformation.message>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: location
+      :type: Location
+
+      
+
+   .. py:attribute:: message
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: CodeDescription
+
+   ..    ..    ..    .. .. py:attribute:: href
+      :type: URI
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`href <pyllo.plugins.languageserver.protocol.CodeDescription.href>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: href
+      :type: URI
+
+      
+
+
+
+
+
+
+.. py:class:: Diagnostic
+
+   ..    ..    ..    .. .. py:attribute:: range
+      :type: Range
+
+      
+
+   ..    .. .. py:attribute:: message
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: severity
+      :type: Optional[DiagnosticSeverity]
+
+      
+
+   ..    .. .. py:attribute:: code
+      :type: Optional[Union[int, str]]
+
+      
+
+   ..    .. .. py:attribute:: codeDescription
+      :type: Optional[CodeDescription]
+
+      
+
+   ..    .. .. py:attribute:: source
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: tags
+      :type: Optional[List[DiagnosticTag]]
+
+      
+
+   ..    .. .. py:attribute:: relatedInformation
+      :type: Optional[List[DiagnosticRelatedInformation]]
+
+      
+
+   ..    .. .. py:attribute:: data
+      :type: Optional[any]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`range <pyllo.plugins.languageserver.protocol.Diagnostic.range>`
+        - \-
+      * - :py:obj:`message <pyllo.plugins.languageserver.protocol.Diagnostic.message>`
+        - \-
+      * - :py:obj:`severity <pyllo.plugins.languageserver.protocol.Diagnostic.severity>`
+        - \-
+      * - :py:obj:`code <pyllo.plugins.languageserver.protocol.Diagnostic.code>`
+        - \-
+      * - :py:obj:`codeDescription <pyllo.plugins.languageserver.protocol.Diagnostic.codeDescription>`
+        - \-
+      * - :py:obj:`source <pyllo.plugins.languageserver.protocol.Diagnostic.source>`
+        - \-
+      * - :py:obj:`tags <pyllo.plugins.languageserver.protocol.Diagnostic.tags>`
+        - \-
+      * - :py:obj:`relatedInformation <pyllo.plugins.languageserver.protocol.Diagnostic.relatedInformation>`
+        - \-
+      * - :py:obj:`data <pyllo.plugins.languageserver.protocol.Diagnostic.data>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: range
+      :type: Range
+
+      
+
+   .. py:attribute:: message
+      :type: str
+
+      
+
+   .. py:attribute:: severity
+      :type: Optional[DiagnosticSeverity]
+
+      
+
+   .. py:attribute:: code
+      :type: Optional[Union[int, str]]
+
+      
+
+   .. py:attribute:: codeDescription
+      :type: Optional[CodeDescription]
+
+      
+
+   .. py:attribute:: source
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: tags
+      :type: Optional[List[DiagnosticTag]]
+
+      
+
+   .. py:attribute:: relatedInformation
+      :type: Optional[List[DiagnosticRelatedInformation]]
+
+      
+
+   .. py:attribute:: data
+      :type: Optional[any]
+
+      
+
+
+
+
+
+
+.. py:class:: PublishDiagnosticsParams
+
+   ..    ..    ..    .. .. py:attribute:: uri
+      :type: DocumentUri
+
+      
+
+   ..    .. .. py:attribute:: diagnostics
+      :type: Optional[List[Diagnostic]]
+
+      
+
+   ..    .. .. py:attribute:: version
+      :type: Optional[int]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`uri <pyllo.plugins.languageserver.protocol.PublishDiagnosticsParams.uri>`
+        - \-
+      * - :py:obj:`diagnostics <pyllo.plugins.languageserver.protocol.PublishDiagnosticsParams.diagnostics>`
+        - \-
+      * - :py:obj:`version <pyllo.plugins.languageserver.protocol.PublishDiagnosticsParams.version>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: uri
+      :type: DocumentUri
+
+      
+
+   .. py:attribute:: diagnostics
+      :type: Optional[List[Diagnostic]]
+
+      
+
+   .. py:attribute:: version
+      :type: Optional[int]
+
+      
+
+
+
+
+
+
+.. py:class:: TextEdit
+
+   ..    ..    ..    .. .. py:attribute:: range
+      :type: Range
+
+      
+
+   ..    .. .. py:attribute:: newText
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`range <pyllo.plugins.languageserver.protocol.TextEdit.range>`
+        - \-
+      * - :py:obj:`newText <pyllo.plugins.languageserver.protocol.TextEdit.newText>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: range
+      :type: Range
+
+      
+
+   .. py:attribute:: newText
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionItemKind
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: Text
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: Method
+      :value: 2
+
+      
+
+   ..    .. .. py:attribute:: Function
+      :value: 3
+
+      
+
+   ..    .. .. py:attribute:: Constructor
+      :value: 4
+
+      
+
+   ..    .. .. py:attribute:: Filed
+      :value: 5
+
+      
+
+   ..    .. .. py:attribute:: Variable
+      :value: 6
+
+      
+
+   ..    .. .. py:attribute:: Class
+      :value: 7
+
+      
+
+   ..    .. .. py:attribute:: Interface
+      :value: 8
+
+      
+
+   ..    .. .. py:attribute:: Module
+      :value: 9
+
+      
+
+   ..    .. .. py:attribute:: Property
+      :value: 10
+
+      
+
+   ..    .. .. py:attribute:: Unit
+      :value: 11
+
+      
+
+   ..    .. .. py:attribute:: Value
+      :value: 12
+
+      
+
+   ..    .. .. py:attribute:: Enum
+      :value: 13
+
+      
+
+   ..    .. .. py:attribute:: Keyword
+      :value: 14
+
+      
+
+   ..    .. .. py:attribute:: Snippet
+      :value: 15
+
+      
+
+   ..    .. .. py:attribute:: Color
+      :value: 16
+
+      
+
+   ..    .. .. py:attribute:: File
+      :value: 17
+
+      
+
+   ..    .. .. py:attribute:: Reference
+      :value: 18
+
+      
+
+   ..    .. .. py:attribute:: Folder
+      :value: 19
+
+      
+
+   ..    .. .. py:attribute:: EnumMember
+      :value: 20
+
+      
+
+   ..    .. .. py:attribute:: Constant
+      :value: 21
+
+      
+
+   ..    .. .. py:attribute:: Struct
+      :value: 22
+
+      
+
+   ..    .. .. py:attribute:: Event
+      :value: 23
+
+      
+
+   ..    .. .. py:attribute:: Operator
+      :value: 24
+
+      
+
+   ..    .. .. py:attribute:: TypeParameter
+      :value: 25
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Text <pyllo.plugins.languageserver.protocol.CompletionItemKind.Text>`
+        - \-
+      * - :py:obj:`Method <pyllo.plugins.languageserver.protocol.CompletionItemKind.Method>`
+        - \-
+      * - :py:obj:`Function <pyllo.plugins.languageserver.protocol.CompletionItemKind.Function>`
+        - \-
+      * - :py:obj:`Constructor <pyllo.plugins.languageserver.protocol.CompletionItemKind.Constructor>`
+        - \-
+      * - :py:obj:`Filed <pyllo.plugins.languageserver.protocol.CompletionItemKind.Filed>`
+        - \-
+      * - :py:obj:`Variable <pyllo.plugins.languageserver.protocol.CompletionItemKind.Variable>`
+        - \-
+      * - :py:obj:`Class <pyllo.plugins.languageserver.protocol.CompletionItemKind.Class>`
+        - \-
+      * - :py:obj:`Interface <pyllo.plugins.languageserver.protocol.CompletionItemKind.Interface>`
+        - \-
+      * - :py:obj:`Module <pyllo.plugins.languageserver.protocol.CompletionItemKind.Module>`
+        - \-
+      * - :py:obj:`Property <pyllo.plugins.languageserver.protocol.CompletionItemKind.Property>`
+        - \-
+      * - :py:obj:`Unit <pyllo.plugins.languageserver.protocol.CompletionItemKind.Unit>`
+        - \-
+      * - :py:obj:`Value <pyllo.plugins.languageserver.protocol.CompletionItemKind.Value>`
+        - \-
+      * - :py:obj:`Enum <pyllo.plugins.languageserver.protocol.CompletionItemKind.Enum>`
+        - \-
+      * - :py:obj:`Keyword <pyllo.plugins.languageserver.protocol.CompletionItemKind.Keyword>`
+        - \-
+      * - :py:obj:`Snippet <pyllo.plugins.languageserver.protocol.CompletionItemKind.Snippet>`
+        - \-
+      * - :py:obj:`Color <pyllo.plugins.languageserver.protocol.CompletionItemKind.Color>`
+        - \-
+      * - :py:obj:`File <pyllo.plugins.languageserver.protocol.CompletionItemKind.File>`
+        - \-
+      * - :py:obj:`Reference <pyllo.plugins.languageserver.protocol.CompletionItemKind.Reference>`
+        - \-
+      * - :py:obj:`Folder <pyllo.plugins.languageserver.protocol.CompletionItemKind.Folder>`
+        - \-
+      * - :py:obj:`EnumMember <pyllo.plugins.languageserver.protocol.CompletionItemKind.EnumMember>`
+        - \-
+      * - :py:obj:`Constant <pyllo.plugins.languageserver.protocol.CompletionItemKind.Constant>`
+        - \-
+      * - :py:obj:`Struct <pyllo.plugins.languageserver.protocol.CompletionItemKind.Struct>`
+        - \-
+      * - :py:obj:`Event <pyllo.plugins.languageserver.protocol.CompletionItemKind.Event>`
+        - \-
+      * - :py:obj:`Operator <pyllo.plugins.languageserver.protocol.CompletionItemKind.Operator>`
+        - \-
+      * - :py:obj:`TypeParameter <pyllo.plugins.languageserver.protocol.CompletionItemKind.TypeParameter>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Text
+      :value: 1
+
+      
+
+   .. py:attribute:: Method
+      :value: 2
+
+      
+
+   .. py:attribute:: Function
+      :value: 3
+
+      
+
+   .. py:attribute:: Constructor
+      :value: 4
+
+      
+
+   .. py:attribute:: Filed
+      :value: 5
+
+      
+
+   .. py:attribute:: Variable
+      :value: 6
+
+      
+
+   .. py:attribute:: Class
+      :value: 7
+
+      
+
+   .. py:attribute:: Interface
+      :value: 8
+
+      
+
+   .. py:attribute:: Module
+      :value: 9
+
+      
+
+   .. py:attribute:: Property
+      :value: 10
+
+      
+
+   .. py:attribute:: Unit
+      :value: 11
+
+      
+
+   .. py:attribute:: Value
+      :value: 12
+
+      
+
+   .. py:attribute:: Enum
+      :value: 13
+
+      
+
+   .. py:attribute:: Keyword
+      :value: 14
+
+      
+
+   .. py:attribute:: Snippet
+      :value: 15
+
+      
+
+   .. py:attribute:: Color
+      :value: 16
+
+      
+
+   .. py:attribute:: File
+      :value: 17
+
+      
+
+   .. py:attribute:: Reference
+      :value: 18
+
+      
+
+   .. py:attribute:: Folder
+      :value: 19
+
+      
+
+   .. py:attribute:: EnumMember
+      :value: 20
+
+      
+
+   .. py:attribute:: Constant
+      :value: 21
+
+      
+
+   .. py:attribute:: Struct
+      :value: 22
+
+      
+
+   .. py:attribute:: Event
+      :value: 23
+
+      
+
+   .. py:attribute:: Operator
+      :value: 24
+
+      
+
+   .. py:attribute:: TypeParameter
+      :value: 25
+
+      
+
+
+
+
+
+
+.. py:class:: InsertTextFormat
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: PlainText
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: Snippet
+      :value: 2
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PlainText <pyllo.plugins.languageserver.protocol.InsertTextFormat.PlainText>`
+        - \-
+      * - :py:obj:`Snippet <pyllo.plugins.languageserver.protocol.InsertTextFormat.Snippet>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PlainText
+      :value: 1
+
+      
+
+   .. py:attribute:: Snippet
+      :value: 2
+
+      
+
+
+
+
+
+
+.. py:class:: InsertTextMode
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: asIs
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: adjustIndentation
+      :value: 2
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`asIs <pyllo.plugins.languageserver.protocol.InsertTextMode.asIs>`
+        - \-
+      * - :py:obj:`adjustIndentation <pyllo.plugins.languageserver.protocol.InsertTextMode.adjustIndentation>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: asIs
+      :value: 1
+
+      
+
+   .. py:attribute:: adjustIndentation
+      :value: 2
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionItemTag
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: Deprecated
+      :value: 1
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Deprecated <pyllo.plugins.languageserver.protocol.CompletionItemTag.Deprecated>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Deprecated
+      :value: 1
+
+      
+
+
+
+
+
+
+.. py:class:: InsertReplaceEdit
+
+   ..    ..    ..    .. .. py:attribute:: newText
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: insert
+      :type: Range
+
+      
+
+   ..    .. .. py:attribute:: replace
+      :type: Range
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`newText <pyllo.plugins.languageserver.protocol.InsertReplaceEdit.newText>`
+        - \-
+      * - :py:obj:`insert <pyllo.plugins.languageserver.protocol.InsertReplaceEdit.insert>`
+        - \-
+      * - :py:obj:`replace <pyllo.plugins.languageserver.protocol.InsertReplaceEdit.replace>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: newText
+      :type: str
+
+      
+
+   .. py:attribute:: insert
+      :type: Range
+
+      
+
+   .. py:attribute:: replace
+      :type: Range
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionItem
+
+   ..    ..    ..    .. .. py:attribute:: label
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: kind
+      :type: Optional[CompletionItemKind]
+
+      
+
+   ..    .. .. py:attribute:: tags
+      :type: Optional[List[CompletionItemTag]]
+
+      
+
+   ..    .. .. py:attribute:: detail
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: documentation
+      :type: Optional[Union[str, MarkupContent]]
+
+      
+
+   ..    .. .. py:attribute:: deprecated
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: preselect
+      :type: Optional[bool]
+
+      
+
+   ..    .. .. py:attribute:: sortText
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: filterText
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: insertText
+      :type: Optional[str]
+
+      
+
+   ..    .. .. py:attribute:: insertTextFormat
+      :type: Optional[InsertTextFormat]
+
+      
+
+   ..    .. .. py:attribute:: insertTextMode
+      :type: Optional[InsertTextMode]
+
+      
+
+   ..    .. .. py:attribute:: textEdit
+      :type: Optional[Union[TextEdit, InsertReplaceEdit]]
+
+      
+
+   ..    .. .. py:attribute:: commitCharacters
+      :type: Optional[List[str]]
+
+      
+
+   ..    .. .. py:attribute:: command
+      :type: Optional[Command]
+
+      
+
+   ..    .. .. py:attribute:: data
+      :type: Optional[Any]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`label <pyllo.plugins.languageserver.protocol.CompletionItem.label>`
+        - \-
+      * - :py:obj:`kind <pyllo.plugins.languageserver.protocol.CompletionItem.kind>`
+        - \-
+      * - :py:obj:`tags <pyllo.plugins.languageserver.protocol.CompletionItem.tags>`
+        - \-
+      * - :py:obj:`detail <pyllo.plugins.languageserver.protocol.CompletionItem.detail>`
+        - \-
+      * - :py:obj:`documentation <pyllo.plugins.languageserver.protocol.CompletionItem.documentation>`
+        - \-
+      * - :py:obj:`deprecated <pyllo.plugins.languageserver.protocol.CompletionItem.deprecated>`
+        - \-
+      * - :py:obj:`preselect <pyllo.plugins.languageserver.protocol.CompletionItem.preselect>`
+        - \-
+      * - :py:obj:`sortText <pyllo.plugins.languageserver.protocol.CompletionItem.sortText>`
+        - \-
+      * - :py:obj:`filterText <pyllo.plugins.languageserver.protocol.CompletionItem.filterText>`
+        - \-
+      * - :py:obj:`insertText <pyllo.plugins.languageserver.protocol.CompletionItem.insertText>`
+        - \-
+      * - :py:obj:`insertTextFormat <pyllo.plugins.languageserver.protocol.CompletionItem.insertTextFormat>`
+        - \-
+      * - :py:obj:`insertTextMode <pyllo.plugins.languageserver.protocol.CompletionItem.insertTextMode>`
+        - \-
+      * - :py:obj:`textEdit <pyllo.plugins.languageserver.protocol.CompletionItem.textEdit>`
+        - \-
+      * - :py:obj:`commitCharacters <pyllo.plugins.languageserver.protocol.CompletionItem.commitCharacters>`
+        - \-
+      * - :py:obj:`command <pyllo.plugins.languageserver.protocol.CompletionItem.command>`
+        - \-
+      * - :py:obj:`data <pyllo.plugins.languageserver.protocol.CompletionItem.data>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: label
+      :type: str
+
+      
+
+   .. py:attribute:: kind
+      :type: Optional[CompletionItemKind]
+
+      
+
+   .. py:attribute:: tags
+      :type: Optional[List[CompletionItemTag]]
+
+      
+
+   .. py:attribute:: detail
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: documentation
+      :type: Optional[Union[str, MarkupContent]]
+
+      
+
+   .. py:attribute:: deprecated
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: preselect
+      :type: Optional[bool]
+
+      
+
+   .. py:attribute:: sortText
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: filterText
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: insertText
+      :type: Optional[str]
+
+      
+
+   .. py:attribute:: insertTextFormat
+      :type: Optional[InsertTextFormat]
+
+      
+
+   .. py:attribute:: insertTextMode
+      :type: Optional[InsertTextMode]
+
+      
+
+   .. py:attribute:: textEdit
+      :type: Optional[Union[TextEdit, InsertReplaceEdit]]
+
+      
+
+   .. py:attribute:: commitCharacters
+      :type: Optional[List[str]]
+
+      
+
+   .. py:attribute:: command
+      :type: Optional[Command]
+
+      
+
+   .. py:attribute:: data
+      :type: Optional[Any]
+
+      
+
+
+
+
+
+
+.. py:class:: CompletionList
+
+   ..    ..    ..    .. .. py:attribute:: isIncomplete
+      :type: bool
+
+      
+
+   ..    .. .. py:attribute:: items
+      :type: List[CompletionItem]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`isIncomplete <pyllo.plugins.languageserver.protocol.CompletionList.isIncomplete>`
+        - \-
+      * - :py:obj:`items <pyllo.plugins.languageserver.protocol.CompletionList.items>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: isIncomplete
+      :type: bool
+
+      
+
+   .. py:attribute:: items
+      :type: List[CompletionItem]
+
+      
+
+
+
+
+
+
+.. py:class:: DefinitionParams
+
+   Bases: :py:obj:`WorkDoneProgressParams`, :py:obj:`PartialResultParams`, :py:obj:`TextDocumentPositionParams`
+
+   ..    ..    .. 
+
+

@@ -1,0 +1,243 @@
+:py:mod:`pyllo.plugins.shortcuts.internal.widgets`
+==================================================
+
+.. py:module:: pyllo.plugins.shortcuts.internal.widgets
+
+.. autoapi-nested-parse::
+
+   Shortcuts Plugin widgets.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ShortcutsModel <pyllo.plugins.shortcuts.internal.widgets.ShortcutsModel>`
+     - Shortcuts table model
+   * - :py:obj:`ShortcutsSortFilterProxy <pyllo.plugins.shortcuts.internal.widgets.ShortcutsSortFilterProxy>`
+     - Custom proxy for supporting shortcuts multifiltering.
+   * - :py:obj:`ShortcutsTable <pyllo.plugins.shortcuts.internal.widgets.ShortcutsTable>`
+     - Shortcuts table
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`NAMESPACE_COLUMN <pyllo.plugins.shortcuts.internal.widgets.NAMESPACE_COLUMN>`
+     - \-
+   * - :py:obj:`NAME_COLUMN <pyllo.plugins.shortcuts.internal.widgets.NAME_COLUMN>`
+     - \-
+   * - :py:obj:`SEQUENCE_COLUMN <pyllo.plugins.shortcuts.internal.widgets.SEQUENCE_COLUMN>`
+     - \-
+   * - :py:obj:`SEARCH_SCORE_COLUMN <pyllo.plugins.shortcuts.internal.widgets.SEARCH_SCORE_COLUMN>`
+     - \-
+   * - :py:obj:`PLAIN_TEXT_ROLE <pyllo.plugins.shortcuts.internal.widgets.PLAIN_TEXT_ROLE>`
+     - \-
+
+
+.. py:data:: NAMESPACE_COLUMN
+   :value: 0
+
+   
+
+.. py:data:: NAME_COLUMN
+   :value: 1
+
+   
+
+.. py:data:: SEQUENCE_COLUMN
+   :value: 2
+
+   
+
+.. py:data:: SEARCH_SCORE_COLUMN
+   :value: 3
+
+   
+
+.. py:data:: PLAIN_TEXT_ROLE
+
+   
+
+.. py:class:: ShortcutsModel(parent)
+
+   Bases: :py:obj:`qtpy.QtCore.QAbstractTableModel`
+
+   Shortcuts table model
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`flags <pyllo.plugins.shortcuts.internal.widgets.ShortcutsModel.flags>`\ (index)
+        - Qt Override
+      * - :py:obj:`headerData <pyllo.plugins.shortcuts.internal.widgets.ShortcutsModel.headerData>`\ (section, orientation, role)
+        - \-
+      * - :py:obj:`data <pyllo.plugins.shortcuts.internal.widgets.ShortcutsModel.data>`\ (index, role)
+        - Qt Override
+      * - :py:obj:`rowCount <pyllo.plugins.shortcuts.internal.widgets.ShortcutsModel.rowCount>`\ (parent)
+        - Qt Override
+      * - :py:obj:`columnCount <pyllo.plugins.shortcuts.internal.widgets.ShortcutsModel.columnCount>`\ (index)
+        - \-
+      * - :py:obj:`updateSearchLettersInText <pyllo.plugins.shortcuts.internal.widgets.ShortcutsModel.updateSearchLettersInText>`\ (text)
+        - Update search letters with text input in search box.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: flags(index: qtpy.QtCore.QModelIndex)
+
+      Qt Override
+
+
+   .. py:method:: headerData(section, orientation, role=Qt.DisplayRole)
+
+
+   .. py:method:: data(index: qtpy.QtCore.QModelIndex, role=Qt.DisplayRole)
+
+      Qt Override
+
+
+   .. py:method:: rowCount(parent=QModelIndex())
+
+      Qt Override
+
+
+   .. py:method:: columnCount(index=QModelIndex())
+
+
+   .. py:method:: updateSearchLettersInText(text)
+
+      Update search letters with text input in search box.
+
+
+
+
+
+.. py:class:: ShortcutsSortFilterProxy(view=None)
+
+   Bases: :py:obj:`qtpy.QtCore.QSortFilterProxyModel`
+
+   Custom proxy for supporting shortcuts multifiltering.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setFilterByColumn <pyllo.plugins.shortcuts.internal.widgets.ShortcutsSortFilterProxy.setFilterByColumn>`\ (column)
+        - Set regular expression in the given column.
+      * - :py:obj:`setFilter <pyllo.plugins.shortcuts.internal.widgets.ShortcutsSortFilterProxy.setFilter>`\ (text)
+        - Set regular expression for filter.
+      * - :py:obj:`clearFilter <pyllo.plugins.shortcuts.internal.widgets.ShortcutsSortFilterProxy.clearFilter>`\ (column)
+        - Clear the filter of the given column.
+      * - :py:obj:`clearFilters <pyllo.plugins.shortcuts.internal.widgets.ShortcutsSortFilterProxy.clearFilters>`\ ()
+        - Clear all the filters.
+      * - :py:obj:`filterAcceptsRow <pyllo.plugins.shortcuts.internal.widgets.ShortcutsSortFilterProxy.filterAcceptsRow>`\ (row, parent)
+        - Qt override.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setFilterByColumn(column)
+
+      Set regular expression in the given column.
+
+
+   .. py:method:: setFilter(text)
+
+      Set regular expression for filter.
+
+
+   .. py:method:: clearFilter(column)
+
+      Clear the filter of the given column.
+
+
+   .. py:method:: clearFilters()
+
+      Clear all the filters.
+
+
+   .. py:method:: filterAcceptsRow(row, parent)
+
+      Qt override.
+
+      Reimplemented to allow filtering in multiple columns.
+
+
+
+
+
+.. py:class:: ShortcutsTable(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QTableView`
+
+   Shortcuts table
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`gotoPreviousRow <pyllo.plugins.shortcuts.internal.widgets.ShortcutsTable.gotoPreviousRow>`\ ()
+        - \-
+      * - :py:obj:`gotoNextRow <pyllo.plugins.shortcuts.internal.widgets.ShortcutsTable.gotoNextRow>`\ ()
+        - \-
+      * - :py:obj:`editCurrentRow <pyllo.plugins.shortcuts.internal.widgets.ShortcutsTable.editCurrentRow>`\ ()
+        - \-
+      * - :py:obj:`setModel <pyllo.plugins.shortcuts.internal.widgets.ShortcutsTable.setModel>`\ (model)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: gotoPreviousRow()
+
+
+   .. py:method:: gotoNextRow()
+
+
+   .. py:method:: editCurrentRow()
+
+
+   .. py:method:: setModel(model)
+
+
+
+
+

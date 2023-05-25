@@ -1,0 +1,141 @@
+:py:mod:`pyllo.plugins.ipythonconsole.core.kernelspec`
+======================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.core.kernelspec
+
+.. autoapi-nested-parse::
+
+   Kernel spec for jupyter kernels
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloKernelSpec <pyllo.plugins.ipythonconsole.core.kernelspec.PylloKernelSpec>`
+     - Kernel spec for pyllo kernels
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`isDifferentInterpreter <pyllo.plugins.ipythonconsole.core.kernelspec.isDifferentInterpreter>`\ (pyexec)
+     - Check that pyexec is a different interpreter from sys.executable.
+   * - :py:obj:`getActivationScript <pyllo.plugins.ipythonconsole.core.kernelspec.getActivationScript>`\ (quote)
+     - Return path for bash/batch conda activation script to run pyllo-kernels.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`HERE <pyllo.plugins.ipythonconsole.core.kernelspec.HERE>`
+     - \-
+   * - :py:obj:`logger <pyllo.plugins.ipythonconsole.core.kernelspec.logger>`
+     - \-
+   * - :py:obj:`HERE <pyllo.plugins.ipythonconsole.core.kernelspec.HERE>`
+     - \-
+
+
+.. py:data:: HERE
+
+   
+
+.. py:data:: logger
+
+   
+
+.. py:function:: isDifferentInterpreter(pyexec)
+
+   Check that pyexec is a different interpreter from sys.executable.
+
+
+.. py:function:: getActivationScript(quote=False)
+
+   Return path for bash/batch conda activation script to run pyllo-kernels.
+
+   If `quote` is True, then quotes are added if spaces are found in the path.
+
+
+.. py:data:: HERE
+
+   
+
+.. py:class:: PylloKernelSpec(**kwargs)
+
+   Bases: :py:obj:`jupyter_client.kernelspec.KernelSpec`, :py:obj:`pyllo.core.runtime.preferences.PylloConfigurationAccessor`
+
+   Kernel spec for pyllo kernels
+
+   ..    ..    .. .. py:property:: argv
+
+      Command to start kernels
+
+
+   ..    .. .. py:property:: env
+
+      Env vars for kernels
+
+
+   ..    ..    .. .. py:attribute:: CONF_SECTION
+      :value: 'ipython_console'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.ipythonconsole.core.kernelspec.PylloKernelSpec.CONF_SECTION>`
+        - \-
+
+
+   .. list-table:: Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`argv <pyllo.plugins.ipythonconsole.core.kernelspec.PylloKernelSpec.argv>`
+        - Command to start kernels
+      * - :py:obj:`env <pyllo.plugins.ipythonconsole.core.kernelspec.PylloKernelSpec.env>`
+        - Env vars for kernels
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CONF_SECTION
+      :value: 'ipython_console'
+
+      
+
+
+   .. rubric:: Properties
+   .. py:property:: argv
+
+      Command to start kernels
+
+
+   .. py:property:: env
+
+      Env vars for kernels
+
+
+
+
+
+

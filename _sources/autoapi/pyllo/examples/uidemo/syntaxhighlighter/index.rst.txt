@@ -1,0 +1,92 @@
+:py:mod:`pyllo.examples.uidemo.syntaxhighlighter`
+=================================================
+
+.. py:module:: pyllo.examples.uidemo.syntaxhighlighter
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MySyntaxHighlighter <pyllo.examples.uidemo.syntaxhighlighter.MySyntaxHighlighter>`
+     - \-
+   * - :py:obj:`QtMySyntaxHighlighter <pyllo.examples.uidemo.syntaxhighlighter.QtMySyntaxHighlighter>`
+     - \-
+   * - :py:obj:`SyntaxHighlighterDemo <pyllo.examples.uidemo.syntaxhighlighter.SyntaxHighlighterDemo>`
+     - Syntax Highlight Demo
+
+
+
+
+.. py:class:: MySyntaxHighlighter(parent=None)
+
+   Bases: :py:obj:`pyllo.ui.syntaxhighlighter.PylloSyntaxHighlighter`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highlightBlock <pyllo.examples.uidemo.syntaxhighlighter.MySyntaxHighlighter.highlightBlock>`\ (text)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: highlightBlock(text)
+
+
+
+
+
+.. py:class:: QtMySyntaxHighlighter
+
+   Bases: :py:obj:`qtpy.QtGui.QSyntaxHighlighter`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highlightBlock <pyllo.examples.uidemo.syntaxhighlighter.QtMySyntaxHighlighter.highlightBlock>`\ (text)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: highlightBlock(text: str)
+
+
+
+
+
+.. py:class:: SyntaxHighlighterDemo(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QScrollArea`
+
+   Syntax Highlight Demo
+
+   ..    ..    .. 
+
+

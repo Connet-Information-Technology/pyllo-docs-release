@@ -1,0 +1,104 @@
+:py:mod:`pyllo.plugins.ipythonconsole.core.conda`
+=================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.core.conda
+
+.. autoapi-nested-parse::
+
+   Conda/anaconda utilities.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`addQuotes <pyllo.plugins.ipythonconsole.core.conda.addQuotes>`\ (path)
+     - Return quotes if needed for spaces on path.
+   * - :py:obj:`isCondaEnv <pyllo.plugins.ipythonconsole.core.conda.isCondaEnv>`\ (prefix, pyexec)
+     - Check if prefix or python executable are in a conda environment.
+   * - :py:obj:`getCondaRootPrefix <pyllo.plugins.ipythonconsole.core.conda.getCondaRootPrefix>`\ (pyexec, quote)
+     - Return conda prefix from pyexec path
+   * - :py:obj:`getCondaActivationScript <pyllo.plugins.ipythonconsole.core.conda.getCondaActivationScript>`\ (pyexec, quote)
+     - Return full path to conda activation script.
+   * - :py:obj:`getCondaEnvPath <pyllo.plugins.ipythonconsole.core.conda.getCondaEnvPath>`\ (pyexec, quote)
+     - Return the full path to the conda environment from give python executable.
+   * - :py:obj:`findConda <pyllo.plugins.ipythonconsole.core.conda.findConda>`\ ()
+     - Find conda executable.
+   * - :py:obj:`getListCondaEnvs <pyllo.plugins.ipythonconsole.core.conda.getListCondaEnvs>`\ ()
+     - Return the list of all conda envs found in the system.
+   * - :py:obj:`getListCondaEnvsCache <pyllo.plugins.ipythonconsole.core.conda.getListCondaEnvsCache>`\ ()
+     - Return a cache of envs to avoid computing them again.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`WINDOWS <pyllo.plugins.ipythonconsole.core.conda.WINDOWS>`
+     - \-
+   * - :py:obj:`CONDA_ENV_LIST_CACHE <pyllo.plugins.ipythonconsole.core.conda.CONDA_ENV_LIST_CACHE>`
+     - \-
+
+
+.. py:data:: WINDOWS
+
+   
+
+.. py:data:: CONDA_ENV_LIST_CACHE
+
+   
+
+.. py:function:: addQuotes(path)
+
+   Return quotes if needed for spaces on path.
+
+
+.. py:function:: isCondaEnv(prefix=None, pyexec=None)
+
+   Check if prefix or python executable are in a conda environment.
+
+
+.. py:function:: getCondaRootPrefix(pyexec=None, quote=False)
+
+   Return conda prefix from pyexec path
+
+   If `quote` is True, then quotes are added if spaces are found in the path.
+
+
+.. py:function:: getCondaActivationScript(pyexec=None, quote=False)
+
+   Return full path to conda activation script.
+
+   If `quote` is True, then quotes are added if spaces are found in the path.
+
+
+.. py:function:: getCondaEnvPath(pyexec, quote=False)
+
+   Return the full path to the conda environment from give python executable.
+
+   If `quote` is True, then quotes are added if spaces are found in the path.
+
+
+.. py:function:: findConda()
+
+   Find conda executable.
+
+
+.. py:function:: getListCondaEnvs()
+
+   Return the list of all conda envs found in the system.
+
+
+.. py:function:: getListCondaEnvsCache()
+
+   Return a cache of envs to avoid computing them again.
+
+

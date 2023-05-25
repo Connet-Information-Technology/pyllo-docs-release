@@ -1,0 +1,38 @@
+:py:mod:`pyllo.ui`
+==================
+
+.. py:module:: pyllo.ui
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   editor/index.rst
+   tests/index.rst
+   theme/index.rst
+   widgets/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   api/index.rst
+   browser/index.rst
+   dock/index.rst
+   mainwindow/index.rst
+   menu/index.rst
+   plugin/index.rst
+   preferences/index.rst
+   qt/index.rst
+   qtpatch/index.rst
+   syntaxhighlighter/index.rst
+   tabs/index.rst
+   toolbar/index.rst
+
+

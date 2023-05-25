@@ -1,0 +1,229 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.control`
+======================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.control
+
+.. autoapi-nested-parse::
+
+   Control widgets used by ipython ShellWidget
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ControlWidget <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget>`
+     - Subclass of QTextEdit with features from Pyllo's mixins to use as the
+   * - :py:obj:`PageControlWidget <pyllo.plugins.ipythonconsole.widgets.control.PageControlWidget>`
+     - Subclass of QTextEdit with features from Pyllo's mixins.BaseEditMixin to
+
+
+
+
+.. py:class:: ControlWidget(parent=None)
+
+   Bases: :py:obj:`pyllo.plugins.ipythonconsole.api.help.GetHelpMixin`, :py:obj:`qtpy.QtWidgets.QTextEdit`, :py:obj:`pyllo.ui.editor.textedits.BaseEditMixin`
+
+   Subclass of QTextEdit with features from Pyllo's mixins to use as the
+   control widget for IPython widgets
+
+   ..    ..    ..    .. .. py:attribute:: QT_CLASS
+
+      
+
+   ..    .. .. py:attribute:: sigVisibilityChanged
+
+      
+
+   ..    .. .. py:attribute:: sigGoToErrorRequested
+
+      
+
+   ..    .. .. py:attribute:: sigHelpRequested
+
+      This signal is emitted to request help on a given object's `name`.
+
+      help_data: dict
+          Example `{'name': str, 'ignore_unknown': bool}`.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`QT_CLASS <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget.QT_CLASS>`
+        - \-
+      * - :py:obj:`sigVisibilityChanged <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget.sigVisibilityChanged>`
+        - \-
+      * - :py:obj:`sigGoToErrorRequested <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget.sigGoToErrorRequested>`
+        - \-
+      * - :py:obj:`sigHelpRequested <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget.sigHelpRequested>`
+        - This signal is emitted to request help on a given object's `name`.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`insertHorizontalRuler <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget.insertHorizontalRuler>`\ ()
+        - Insert a horizontal ruler with the appropriate color according
+      * - :py:obj:`showEvent <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget.showEvent>`\ (event)
+        - Reimplement Qt Method
+      * - :py:obj:`keyPressEvent <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget.keyPressEvent>`\ (event)
+        - Reimplement Qt Method - Basic keypress event handler
+      * - :py:obj:`mouseMoveEvent <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget.mouseMoveEvent>`\ (event)
+        - Detect anchors and change cursor shape accordingly.
+      * - :py:obj:`mouseReleaseEvent <pyllo.plugins.ipythonconsole.widgets.control.ControlWidget.mouseReleaseEvent>`\ (event)
+        - Ooen anchors when clicked.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: QT_CLASS
+
+      
+
+   .. py:attribute:: sigVisibilityChanged
+
+      
+
+   .. py:attribute:: sigGoToErrorRequested
+
+      
+
+   .. py:attribute:: sigHelpRequested
+
+      This signal is emitted to request help on a given object's `name`.
+
+      help_data: dict
+          Example `{'name': str, 'ignore_unknown': bool}`.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: insertHorizontalRuler()
+
+      Insert a horizontal ruler with the appropriate color according
+      to our theme in the current cursor position.
+
+      We have to do this because html hr elements can't be stylized
+      in QTextEdit.
+
+      Taken from https://stackoverflow.com/a/50016969/438386
+
+
+   .. py:method:: showEvent(event)
+
+      Reimplement Qt Method
+
+
+   .. py:method:: keyPressEvent(event)
+
+      Reimplement Qt Method - Basic keypress event handler
+
+
+   .. py:method:: mouseMoveEvent(event)
+
+      Detect anchors and change cursor shape accordingly.
+
+
+   .. py:method:: mouseReleaseEvent(event)
+
+      Ooen anchors when clicked.
+
+
+
+
+
+.. py:class:: PageControlWidget(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QTextEdit`, :py:obj:`pyllo.ui.editor.textedits.BaseEditMixin`
+
+   Subclass of QTextEdit with features from Pyllo's mixins.BaseEditMixin to
+   use as the paging widget for IPython widgets
+
+   ..    ..    ..    .. .. py:attribute:: QT_CLASS
+
+      
+
+   ..    .. .. py:attribute:: sigVisibilityChanged
+
+      
+
+   ..    .. .. py:attribute:: sigShowFindWidgetRequested
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`QT_CLASS <pyllo.plugins.ipythonconsole.widgets.control.PageControlWidget.QT_CLASS>`
+        - \-
+      * - :py:obj:`sigVisibilityChanged <pyllo.plugins.ipythonconsole.widgets.control.PageControlWidget.sigVisibilityChanged>`
+        - \-
+      * - :py:obj:`sigShowFindWidgetRequested <pyllo.plugins.ipythonconsole.widgets.control.PageControlWidget.sigShowFindWidgetRequested>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`showEvent <pyllo.plugins.ipythonconsole.widgets.control.PageControlWidget.showEvent>`\ (event)
+        - Reimplement Qt Method
+      * - :py:obj:`keyPressEvent <pyllo.plugins.ipythonconsole.widgets.control.PageControlWidget.keyPressEvent>`\ (event)
+        - Reimplement Qt Method - Basic keypress event handler
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: QT_CLASS
+
+      
+
+   .. py:attribute:: sigVisibilityChanged
+
+      
+
+   .. py:attribute:: sigShowFindWidgetRequested
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: showEvent(event)
+
+      Reimplement Qt Method
+
+
+   .. py:method:: keyPressEvent(event)
+
+      Reimplement Qt Method - Basic keypress event handler
+
+
+
+
+

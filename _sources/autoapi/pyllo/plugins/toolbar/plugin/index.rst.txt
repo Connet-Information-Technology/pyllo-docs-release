@@ -1,0 +1,322 @@
+:py:mod:`pyllo.plugins.toolbar.plugin`
+======================================
+
+.. py:module:: pyllo.plugins.toolbar.plugin
+
+.. autoapi-nested-parse::
+
+   Toolbar Plugin.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Toolbar <pyllo.plugins.toolbar.plugin.Toolbar>`
+     - Docstrings viewer widget.
+
+
+
+
+.. py:class:: Toolbar(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   Docstrings viewer widget.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'toolbar'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.toolbar.plugin.Toolbar.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.toolbar.plugin.Toolbar.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.toolbar.plugin.Toolbar.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.toolbar.plugin.Toolbar.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.toolbar.plugin.Toolbar.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.toolbar.plugin.Toolbar.CONF_FILE>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.plugins.toolbar.plugin.Toolbar.CONTAINER_CLASS>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.toolbar.plugin.Toolbar.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.toolbar.plugin.Toolbar.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.toolbar.plugin.Toolbar.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.toolbar.plugin.Toolbar.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onMainMenuAvailable <pyllo.plugins.toolbar.plugin.Toolbar.onMainMenuAvailable>`\ ()
+        - \-
+      * - :py:obj:`onMainwindowVisible <pyllo.plugins.toolbar.plugin.Toolbar.onMainwindowVisible>`\ ()
+        - Actions to be performed after the main window's has been shown.
+      * - :py:obj:`onTearDown <pyllo.plugins.toolbar.plugin.Toolbar.onTearDown>`\ (cancelable)
+        - Perform actions before the main window is closed.
+      * - :py:obj:`createApplicationToolbar <pyllo.plugins.toolbar.plugin.Toolbar.createApplicationToolbar>`\ (toolbarId, title)
+        - Create a Pyllo application toolbar.
+      * - :py:obj:`addApplicationToolbar <pyllo.plugins.toolbar.plugin.Toolbar.addApplicationToolbar>`\ (toolbar)
+        - Add toolbar to application toolbars.
+      * - :py:obj:`addItemToApplicationToolbar <pyllo.plugins.toolbar.plugin.Toolbar.addItemToApplicationToolbar>`\ (item, toolbarId, section, before, beforeSection)
+        - Add action or widget `item` to given application menu `section`.
+      * - :py:obj:`getApplicationToolbar <pyllo.plugins.toolbar.plugin.Toolbar.getApplicationToolbar>`\ (toolbarId)
+        - Return an application toolbar by toolbarId.
+      * - :py:obj:`getApplicationToolbars <pyllo.plugins.toolbar.plugin.Toolbar.getApplicationToolbars>`\ ()
+        - \-
+      * - :py:obj:`toggleLock <pyllo.plugins.toolbar.plugin.Toolbar.toggleLock>`\ (value)
+        - Lock/Unlock toolbars.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'toolbar'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainMenuAvailable()
+
+
+   .. py:method:: onMainwindowVisible()
+
+      Actions to be performed after the main window's has been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onTearDown(cancelable=False)
+
+      Perform actions before the main window is closed.
+
+      Returns
+      -------
+      bool
+          Whether the plugin may be closed immediately or not.
+
+      Notes
+      -----
+      The returned value is ignored if *cancelable* is False.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: createApplicationToolbar(toolbarId, title) -> pyllo.ui.toolbar.ApplicationToolbar
+
+      Create a Pyllo application toolbar.
+
+      Parameters
+      ----------
+      toolbarId: str
+          The toolbar unique identifier string.
+      title: str
+          The localized toolbar title to be displayed.
+
+      Returns
+      -------
+      core.api.widget.toolbar.ApplicationToolbar
+          The created application toolbar.
+
+
+   .. py:method:: addApplicationToolbar(toolbar)
+
+      Add toolbar to application toolbars.
+
+      This can be used to add a custom toolbar. The `WorkingDirectory`
+      plugin is an example of this.
+
+      Parameters
+      ----------
+      toolbar: core.api.widget.toolbars.ApplicationToolbar
+          The application toolbar to add to the main window.
+
+
+   .. py:method:: addItemToApplicationToolbar(item: Union[pyllo.ui.qt.PylloAction, qtpy.QtWidgets.QWidget], toolbarId: Optional[str] = None, section: Optional[str] = None, before: Optional[str] = None, beforeSection: Optional[str] = None)
+
+      Add action or widget `item` to given application menu `section`.
+
+      Parameters
+      ----------
+      :param item: PylloAction or QWidget
+          The item to add to the `toolbar`.
+      :param toolbarId: str or None
+          The application toolbar unique string identifier.
+      :param section: str or None
+          The section id in which to insert the `item` on the `toolbar`.
+      :param before: str or None
+          Make the item appear before another given item.
+      :param beforeSection: str or None
+          Make the item defined section appear before another given section
+          (must be already defined).
+
+
+   .. py:method:: getApplicationToolbar(toolbarId)
+
+      Return an application toolbar by toolbarId.
+
+      Parameters
+      ----------
+      toolbarId: str
+          The toolbar unique string identifier.
+
+      Returns
+      -------
+      core.api.widget.toolbars.ApplicationToolbar
+          The application toolbar.
+
+
+   .. py:method:: getApplicationToolbars()
+
+
+   .. py:method:: toggleLock(value=None)
+
+      Lock/Unlock toolbars.
+
+
+
+
+

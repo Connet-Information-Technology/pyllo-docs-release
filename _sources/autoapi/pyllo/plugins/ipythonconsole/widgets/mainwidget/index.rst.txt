@@ -1,0 +1,1009 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.mainwidget`
+=========================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.mainwidget
+
+.. autoapi-nested-parse::
+
+   IPython Console main widget.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`IPythonWidgetActions <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonWidgetActions>`
+     - \-
+   * - :py:obj:`IPythonToolbarButtons <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonToolbarButtons>`
+     - \-
+   * - :py:obj:`IPythonConsoleWidget <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget>`
+     - Pyllo plugin main widget class.
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`disambiguateFname <pyllo.plugins.ipythonconsole.widgets.mainwidget.disambiguateFname>`\ (filesPathList, filename)
+     - Get tab title without ambiguation.
+   * - :py:obj:`getSameNameFiles <pyllo.plugins.ipythonconsole.widgets.mainwidget.getSameNameFiles>`\ (filesPathList, filename)
+     - Get a list of the path components of the files with the same name.
+   * - :py:obj:`shortestPath <pyllo.plugins.ipythonconsole.widgets.mainwidget.shortestPath>`\ (filesPathList)
+     - Shortest path between files in the list.
+   * - :py:obj:`pathComponents <pyllo.plugins.ipythonconsole.widgets.mainwidget.pathComponents>`\ (path)
+     - Return the individual components of a given file path
+   * - :py:obj:`differentiatePrefix <pyllo.plugins.ipythonconsole.widgets.mainwidget.differentiatePrefix>`\ (path_components0, path_components1)
+     - Return the differentiated prefix of the given two iterables.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.ipythonconsole.widgets.mainwidget.logger>`
+     - \-
+   * - :py:obj:`MAIN_BG_COLOR <pyllo.plugins.ipythonconsole.widgets.mainwidget.MAIN_BG_COLOR>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:data:: MAIN_BG_COLOR
+
+   
+
+.. py:class:: IPythonWidgetActions
+
+   ..    ..    ..    .. .. py:attribute:: CreateClient
+      :value: 'createClientAction'
+
+      
+
+   ..    .. .. py:attribute:: ConnectToKernel
+      :value: 'connectToKernelAction'
+
+      
+
+   ..    .. .. py:attribute:: Interrupt
+      :value: 'interruptAction'
+
+      
+
+   ..    .. .. py:attribute:: RestartClient
+      :value: 'restartClientAction'
+
+      
+
+   ..    .. .. py:attribute:: ResetClient
+      :value: 'resetClientAction'
+
+      
+
+   ..    .. .. py:attribute:: RenameTab
+      :value: 'renameTabAction'
+
+      
+
+   ..    .. .. py:attribute:: Quit
+      :value: 'Quit'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`CreateClient <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonWidgetActions.CreateClient>`
+        - \-
+      * - :py:obj:`ConnectToKernel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonWidgetActions.ConnectToKernel>`
+        - \-
+      * - :py:obj:`Interrupt <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonWidgetActions.Interrupt>`
+        - \-
+      * - :py:obj:`RestartClient <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonWidgetActions.RestartClient>`
+        - \-
+      * - :py:obj:`ResetClient <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonWidgetActions.ResetClient>`
+        - \-
+      * - :py:obj:`RenameTab <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonWidgetActions.RenameTab>`
+        - \-
+      * - :py:obj:`Quit <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonWidgetActions.Quit>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: CreateClient
+      :value: 'createClientAction'
+
+      
+
+   .. py:attribute:: ConnectToKernel
+      :value: 'connectToKernelAction'
+
+      
+
+   .. py:attribute:: Interrupt
+      :value: 'interruptAction'
+
+      
+
+   .. py:attribute:: RestartClient
+      :value: 'restartClientAction'
+
+      
+
+   .. py:attribute:: ResetClient
+      :value: 'resetClientAction'
+
+      
+
+   .. py:attribute:: RenameTab
+      :value: 'renameTabAction'
+
+      
+
+   .. py:attribute:: Quit
+      :value: 'Quit'
+
+      
+
+
+
+
+
+
+.. py:class:: IPythonToolbarButtons
+
+   ..    ..    ..    .. .. py:attribute:: New
+      :value: 'new_console'
+
+      
+
+   ..    .. .. py:attribute:: Restart
+      :value: 'restart_kernel'
+
+      
+
+   ..    .. .. py:attribute:: Interrupt
+      :value: 'interrupt_kernel'
+
+      
+
+   ..    .. .. py:attribute:: Reset
+      :value: 'reset_kernel'
+
+      
+
+   ..    .. .. py:attribute:: Clear
+      :value: 'clear_console'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`New <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonToolbarButtons.New>`
+        - \-
+      * - :py:obj:`Restart <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonToolbarButtons.Restart>`
+        - \-
+      * - :py:obj:`Interrupt <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonToolbarButtons.Interrupt>`
+        - \-
+      * - :py:obj:`Reset <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonToolbarButtons.Reset>`
+        - \-
+      * - :py:obj:`Clear <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonToolbarButtons.Clear>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: New
+      :value: 'new_console'
+
+      
+
+   .. py:attribute:: Restart
+      :value: 'restart_kernel'
+
+      
+
+   .. py:attribute:: Interrupt
+      :value: 'interrupt_kernel'
+
+      
+
+   .. py:attribute:: Reset
+      :value: 'reset_kernel'
+
+      
+
+   .. py:attribute:: Clear
+      :value: 'clear_console'
+
+      
+
+
+
+
+
+
+.. py:class:: IPythonConsoleWidget(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainWidget`
+
+   Pyllo plugin main widget class.
+
+   This class handles both a dock widget pane and a floating window widget
+   (undocked pane).
+
+   Notes
+   -----
+   All Pyllo dockable plugins define a main widget that must subclass this.
+
+   PylloDockablePlugin plugins must provide a WIDGET_CLASS attribute that is a
+   subclass of PluginMainWidget.
+
+   This widget is a subclass of QMainWindow that consists of a single,
+   central widget and a set of toolbars that are stacked above or below
+   that widget.
+
+   The toolbars are not movable nor floatable and must occupy the entire
+   horizontal space available for the plugin. This mean that toolbars must be
+   stacked vertically and cannot be placed horizontally next to each other.
+
+   ..    ..    ..    .. .. py:attribute:: PYLLO_PATH
+
+      
+
+   ..    .. .. py:attribute:: PYLLO_NOT_ACTIVE_PATH
+
+      
+
+   ..    .. .. py:attribute:: sigEditGotoRequested
+
+      
+
+   ..    .. .. py:attribute:: sigPdbStateChanged
+
+      
+
+   ..    .. .. py:attribute:: sigShellWidgetCreated
+
+      This signal is emitted when a shellWidget is created.
+
+
+   ..    .. .. py:attribute:: sigShellWidgetDeleted
+
+      This signal is emitted when a shellWidget is deleted/removed.
+
+
+   ..    .. .. py:attribute:: sigShellWidgetChanged
+
+      This signal is emitted when the current shellWidget changes.
+
+
+   ..    .. .. py:attribute:: sigRenderPlainTextRequested
+
+      This signal is emitted to request a plain text help render.
+
+      Parameters
+      ----------
+      plain_text: str
+          The plain text to render.
+
+
+   ..    .. .. py:attribute:: sigRenderRichTextRequested
+
+      This signal is emitted to request a rich text help render.
+
+      Parameters
+      ----------
+      rich_text: str
+          The rich text.
+      collapse: bool
+          If the text contains collapsed sections, show them closed (True) or
+          open (False).
+
+
+   ..    .. .. py:attribute:: sigHelpRequested
+
+      This signal is emitted to request help on a given object `name`.
+
+      Parameters
+      ----------
+      help_data: dict
+          Example `{'name': str, 'ignore_unknown': bool}`.
+
+
+   ..    .. .. py:attribute:: sigCurrentDirectoryChanged
+
+      This signal is emitted when the current directory of the active shell
+      widget has changed.
+
+      Parameters
+      ----------
+      working_directory: str
+          The new working directory path.
+
+
+   ..    .. .. py:attribute:: PERMISSION_ERROR_MSG
+      :value: 'The directory {} is not writable and it is required to create Python consoles. Please make it writable.'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PYLLO_PATH <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.PYLLO_PATH>`
+        - \-
+      * - :py:obj:`PYLLO_NOT_ACTIVE_PATH <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.PYLLO_NOT_ACTIVE_PATH>`
+        - \-
+      * - :py:obj:`sigEditGotoRequested <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sigEditGotoRequested>`
+        - \-
+      * - :py:obj:`sigPdbStateChanged <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sigPdbStateChanged>`
+        - \-
+      * - :py:obj:`sigShellWidgetCreated <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sigShellWidgetCreated>`
+        - This signal is emitted when a shellWidget is created.
+      * - :py:obj:`sigShellWidgetDeleted <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sigShellWidgetDeleted>`
+        - This signal is emitted when a shellWidget is deleted/removed.
+      * - :py:obj:`sigShellWidgetChanged <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sigShellWidgetChanged>`
+        - This signal is emitted when the current shellWidget changes.
+      * - :py:obj:`sigRenderPlainTextRequested <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sigRenderPlainTextRequested>`
+        - This signal is emitted to request a plain text help render.
+      * - :py:obj:`sigRenderRichTextRequested <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sigRenderRichTextRequested>`
+        - This signal is emitted to request a rich text help render.
+      * - :py:obj:`sigHelpRequested <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sigHelpRequested>`
+        - This signal is emitted to request help on a given object `name`.
+      * - :py:obj:`sigCurrentDirectoryChanged <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sigCurrentDirectoryChanged>`
+        - This signal is emitted when the current directory of the active shell
+      * - :py:obj:`PERMISSION_ERROR_MSG <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.PERMISSION_ERROR_MSG>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getTitle <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getTitle>`\ ()
+        - Return the title that will be displayed on dock widget or window title.
+      * - :py:obj:`setup <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.setup>`\ ()
+        - Create widget actions, add to menu and other setup requirements.
+      * - :py:obj:`updateFont <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.updateFont>`\ (font)
+        - Update font from Preferences
+      * - :py:obj:`getFocusWidget <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getFocusWidget>`\ ()
+        - Return the widget to give focus to when
+      * - :py:obj:`toggleView <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.toggleView>`\ (visible)
+        - Toggle view
+      * - :py:obj:`refresh <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.refresh>`\ ()
+        - Refresh ui widgets
+      * - :py:obj:`getClients <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getClients>`\ ()
+        - Return clients list
+      * - :py:obj:`getFocusClient <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getFocusClient>`\ ()
+        - Return current client with focus, if any
+      * - :py:obj:`getCurrentClient <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getCurrentClient>`\ ()
+        - Return the currently selected client
+      * - :py:obj:`getCurrentShellWidget <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getCurrentShellWidget>`\ ()
+        - Return the shell widget of the current client
+      * - :py:obj:`runScript <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.runScript>`\ (filename, wdir, args, debug, postMortem, currentClient, clearVariables, consoleNamespace)
+        - Run script in current or dedicated client
+      * - :py:obj:`setCurrentClientWorkingDirectory <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.setCurrentClientWorkingDirectory>`\ (directory)
+        - Set current client working directory.
+      * - :py:obj:`setWorkingDirectory <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.setWorkingDirectory>`\ (dirName)
+        - Set current working directory.
+      * - :py:obj:`updateWorkingDirectory <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.updateWorkingDirectory>`\ ()
+        - Update working directory to console cwd.
+      * - :py:obj:`updatePath <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.updatePath>`\ (pathDict, newPathDict)
+        - Update path on consoles.
+      * - :py:obj:`executeCode <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.executeCode>`\ (lines, currentClient, clearVariables)
+        - Execute code instructions.
+      * - :py:obj:`pdbExecuteCommand <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.pdbExecuteCommand>`\ (command)
+        - Send command to the pdb kernel if possible.
+      * - :py:obj:`stopDebugging <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.stopDebugging>`\ ()
+        - Stop debugging
+      * - :py:obj:`getPdbState <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getPdbState>`\ ()
+        - Get debugging state of the current console.
+      * - :py:obj:`getPdbLastStep <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getPdbLastStep>`\ ()
+        - Get last pdb step of the current console.
+      * - :py:obj:`checkPdbState <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.checkPdbState>`\ ()
+        - Check if actions need to be taken checking the last pdb state.
+      * - :py:obj:`createNewClient <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.createNewClient>`\ (giveFocus, filename, givenName)
+        - Create a new client
+      * - :py:obj:`createClientForKernel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.createClientForKernel>`\ ()
+        - Create a client connected to an existing kernel
+      * - :py:obj:`connectClientToKernel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.connectClientToKernel>`\ (client)
+        - Connect a client to its kernel
+      * - :py:obj:`editFile <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.editFile>`\ (filename, line)
+        - Handle %edit magic petitions.
+      * - :py:obj:`configOptions <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.configOptions>`\ ()
+        - Generate a Trailets Config instance for shell widgets using our
+      * - :py:obj:`interpreterVersions <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.interpreterVersions>`\ ()
+        - Python and IPython versions used by clients
+      * - :py:obj:`additionalOptions <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.additionalOptions>`\ ()
+        - Additional options for shell widgets that are not defined
+      * - :py:obj:`registerClient <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.registerClient>`\ (client, giveFocus)
+        - Register new client
+      * - :py:obj:`closeClient <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.closeClient>`\ (index, client, force)
+        - Close client tab from index or widget (or close current tab)
+      * - :py:obj:`getClientIndexFromId <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getClientIndexFromId>`\ (clientId)
+        - Return client index from id
+      * - :py:obj:`getRelatedClients <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getRelatedClients>`\ (client)
+        - Get all other clients that are connected to the same kernel as `client`
+      * - :py:obj:`closeRelatedClients <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.closeRelatedClients>`\ (client)
+        - Close all clients related to *client*, except itself
+      * - :py:obj:`restart <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.restart>`\ ()
+        - Restart the console
+      * - :py:obj:`pdbHasStopped <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.pdbHasStopped>`\ (fname, lineno, shellWidget)
+        - Python debugger has just stopped at frame (fname, lineno)
+      * - :py:obj:`setPylloBreakpoints <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.setPylloBreakpoints>`\ ()
+        - Set Spyder breakpoints into all clients
+      * - :py:obj:`createClientFromPath <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.createClientFromPath>`\ (path)
+        - Create a client with its cwd pointing to path.
+      * - :py:obj:`createClientForFile <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.createClientForFile>`\ (filename)
+        - Create a client to execute code related to a file.
+      * - :py:obj:`getClientForFile <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getClientForFile>`\ (filename)
+        - Get client associated with a given file.
+      * - :py:obj:`setElapsedTime <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.setElapsedTime>`\ (client)
+        - Set elapsed time for slave clients.
+      * - :py:obj:`setInfoWidgetFont <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.setInfoWidgetFont>`\ ()
+        - Set font for infowidget
+      * - :py:obj:`sshTunnel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.sshTunnel>`\ (\*args, \*\*kwargs)
+        - \-
+      * - :py:obj:`tunnelToKernel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.tunnelToKernel>`\ (connectionInfo, hostname, sshkey, password, timeout)
+        - Tunnel connections to a kernel via ssh.
+      * - :py:obj:`createKernelSpec <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.createKernelSpec>`\ ()
+        - Create a kernel spec for our own kernels
+      * - :py:obj:`createKernelManagerAndKernelClient <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.createKernelManagerAndKernelClient>`\ (connectionFile, stderrHandle)
+        - Create kernel manager and client.
+      * - :py:obj:`restartKernel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.restartKernel>`\ ()
+        - Restart kernel of current client.
+      * - :py:obj:`resetKernel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.resetKernel>`\ ()
+        - Reset kernel of current client.
+      * - :py:obj:`interruptKernel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.interruptKernel>`\ ()
+        - Interrupt kernel of current client.
+      * - :py:obj:`updateExecutionStateKernel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.updateExecutionStateKernel>`\ ()
+        - Update actions following the execution state of the kernel.
+      * - :py:obj:`connectExternalKernel <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.connectExternalKernel>`\ (widget)
+        - TODO:
+      * - :py:obj:`addTab <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.addTab>`\ (widget, name, filename)
+        - Add tab
+      * - :py:obj:`updateActions <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.updateActions>`\ ()
+        - Update the state of exposed actions.
+      * - :py:obj:`moveTab <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.moveTab>`\ (indexFrom, indexTo)
+        - Move tab (tabs themselves have already been moved by the tabWidget)
+      * - :py:obj:`disambiguateFileName <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.disambiguateFileName>`\ (fileName)
+        - Generate a file name without ambiguation.
+      * - :py:obj:`updateTabsText <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.updateTabsText>`\ ()
+        - Update the text from the tabs.
+      * - :py:obj:`renameClientTab <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.renameClientTab>`\ (client, givenName)
+        - Rename client's tab
+      * - :py:obj:`renameTabsAfterChange <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.renameTabsAfterChange>`\ (givenName)
+        - Rename tabs after a change in name.
+      * - :py:obj:`tabNameEditor <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.tabNameEditor>`\ ()
+        - Trigger the tab name editor.
+      * - :py:obj:`goToError <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.goToError>`\ (text)
+        - Go to error if relevant
+      * - :py:obj:`showIntro <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.showIntro>`\ ()
+        - Show intro to IPython help
+      * - :py:obj:`showGuiRef <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.showGuiRef>`\ ()
+        - Show qtconsole help
+      * - :py:obj:`showQuickRef <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.showQuickRef>`\ ()
+        - Show IPython Cheat Sheet
+      * - :py:obj:`shellWidgetStarted <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.shellWidgetStarted>`\ (client)
+        - \-
+      * - :py:obj:`shellWidgetDeleted <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.shellWidgetDeleted>`\ (client)
+        - \-
+      * - :py:obj:`printDebugFileMsg <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.printDebugFileMsg>`\ ()
+        - Print message in the current console when a file can't be closed.
+      * - :py:obj:`loadPythonPath <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.loadPythonPath>`\ ()
+        - Load path stored in Pyllo configuration folder.
+      * - :py:obj:`getPylloPythonPathDict <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getPylloPythonPathDict>`\ ()
+        - Return Pyllo PYTHONPATH.
+      * - :py:obj:`getPylloPythonPath <pyllo.plugins.ipythonconsole.widgets.mainwidget.IPythonConsoleWidget.getPylloPythonPath>`\ ()
+        - Return Pyllo PYTHONPATH.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PYLLO_PATH
+
+      
+
+   .. py:attribute:: PYLLO_NOT_ACTIVE_PATH
+
+      
+
+   .. py:attribute:: sigEditGotoRequested
+
+      
+
+   .. py:attribute:: sigPdbStateChanged
+
+      
+
+   .. py:attribute:: sigShellWidgetCreated
+
+      This signal is emitted when a shellWidget is created.
+
+
+   .. py:attribute:: sigShellWidgetDeleted
+
+      This signal is emitted when a shellWidget is deleted/removed.
+
+
+   .. py:attribute:: sigShellWidgetChanged
+
+      This signal is emitted when the current shellWidget changes.
+
+
+   .. py:attribute:: sigRenderPlainTextRequested
+
+      This signal is emitted to request a plain text help render.
+
+      Parameters
+      ----------
+      plain_text: str
+          The plain text to render.
+
+
+   .. py:attribute:: sigRenderRichTextRequested
+
+      This signal is emitted to request a rich text help render.
+
+      Parameters
+      ----------
+      rich_text: str
+          The rich text.
+      collapse: bool
+          If the text contains collapsed sections, show them closed (True) or
+          open (False).
+
+
+   .. py:attribute:: sigHelpRequested
+
+      This signal is emitted to request help on a given object `name`.
+
+      Parameters
+      ----------
+      help_data: dict
+          Example `{'name': str, 'ignore_unknown': bool}`.
+
+
+   .. py:attribute:: sigCurrentDirectoryChanged
+
+      This signal is emitted when the current directory of the active shell
+      widget has changed.
+
+      Parameters
+      ----------
+      working_directory: str
+          The new working directory path.
+
+
+   .. py:attribute:: PERMISSION_ERROR_MSG
+      :value: 'The directory {} is not writable and it is required to create Python consoles. Please make it writable.'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getTitle()
+
+      Return the title that will be displayed on dock widget or window title.
+
+
+   .. py:method:: setup()
+
+      Create widget actions, add to menu and other setup requirements.
+
+
+   .. py:method:: updateFont(font)
+
+      Update font from Preferences
+
+
+   .. py:method:: getFocusWidget()
+
+      Return the widget to give focus to when
+      this plugin's dockWidget is raised on top-level
+
+
+   .. py:method:: toggleView(visible: bool)
+
+      Toggle view
+
+
+   .. py:method:: refresh()
+
+      Refresh ui widgets
+
+
+   .. py:method:: getClients()
+
+      Return clients list
+
+
+   .. py:method:: getFocusClient()
+
+      Return current client with focus, if any
+
+
+   .. py:method:: getCurrentClient()
+
+      Return the currently selected client
+
+
+   .. py:method:: getCurrentShellWidget()
+
+      Return the shell widget of the current client
+
+
+   .. py:method:: runScript(filename, wdir, args, debug, postMortem, currentClient, clearVariables, consoleNamespace)
+
+      Run script in current or dedicated client
+
+
+   .. py:method:: setCurrentClientWorkingDirectory(directory)
+
+      Set current client working directory.
+
+
+   .. py:method:: setWorkingDirectory(dirName)
+
+      Set current working directory.
+      In the workingdirectory and explorer plugins.
+
+
+   .. py:method:: updateWorkingDirectory()
+
+      Update working directory to console cwd.
+
+
+   .. py:method:: updatePath(pathDict, newPathDict)
+
+      Update path on consoles.
+
+
+   .. py:method:: executeCode(lines, currentClient=True, clearVariables=False)
+
+      Execute code instructions.
+
+
+   .. py:method:: pdbExecuteCommand(command)
+
+      Send command to the pdb kernel if possible.
+
+
+   .. py:method:: stopDebugging()
+
+      Stop debugging
+
+
+   .. py:method:: getPdbState()
+
+      Get debugging state of the current console.
+
+
+   .. py:method:: getPdbLastStep()
+
+      Get last pdb step of the current console.
+
+
+   .. py:method:: checkPdbState()
+
+      Check if actions need to be taken checking the last pdb state.
+
+
+   .. py:method:: createNewClient(giveFocus=True, filename='', givenName=None)
+
+      Create a new client
+
+
+   .. py:method:: createClientForKernel()
+
+      Create a client connected to an existing kernel
+
+
+   .. py:method:: connectClientToKernel(client)
+
+      Connect a client to its kernel
+
+
+   .. py:method:: editFile(filename, line)
+
+      Handle %edit magic petitions.
+
+
+   .. py:method:: configOptions()
+
+      Generate a Trailets Config instance for shell widgets using our
+      config system
+
+      This lets us create each widget with its own config
+
+
+   .. py:method:: interpreterVersions()
+
+      Python and IPython versions used by clients
+
+
+   .. py:method:: additionalOptions()
+
+      Additional options for shell widgets that are not defined
+      in JupyterWidget config options
+
+
+   .. py:method:: registerClient(client, giveFocus=True)
+
+      Register new client
+
+
+   .. py:method:: closeClient(index=None, client=None, force=False)
+
+      Close client tab from index or widget (or close current tab)
+
+
+   .. py:method:: getClientIndexFromId(clientId)
+
+      Return client index from id
+
+
+   .. py:method:: getRelatedClients(client)
+
+      Get all other clients that are connected to the same kernel as `client`
+
+
+   .. py:method:: closeRelatedClients(client)
+
+      Close all clients related to *client*, except itself
+
+
+   .. py:method:: restart()
+
+      Restart the console
+
+      This is needed when we update PYTHONPATH and the selected interpreter
+
+
+   .. py:method:: pdbHasStopped(fname, lineno, shellWidget)
+
+      Python debugger has just stopped at frame (fname, lineno)
+
+
+   .. py:method:: setPylloBreakpoints()
+
+      Set Spyder breakpoints into all clients
+
+
+   .. py:method:: createClientFromPath(path)
+
+      Create a client with its cwd pointing to path.
+
+
+   .. py:method:: createClientForFile(filename)
+
+      Create a client to execute code related to a file.
+
+
+   .. py:method:: getClientForFile(filename)
+
+      Get client associated with a given file.
+
+
+   .. py:method:: setElapsedTime(client)
+
+      Set elapsed time for slave clients.
+
+
+   .. py:method:: setInfoWidgetFont()
+
+      Set font for infowidget
+
+
+   .. py:method:: sshTunnel(*args, **kwargs)
+
+
+   .. py:method:: tunnelToKernel(connectionInfo, hostname, sshkey=None, password=None, timeout=10)
+
+      Tunnel connections to a kernel via ssh.
+
+      Remote ports are specified in the connection info ci.
+
+
+   .. py:method:: createKernelSpec()
+
+      Create a kernel spec for our own kernels
+
+
+   .. py:method:: createKernelManagerAndKernelClient(connectionFile, stderrHandle)
+
+      Create kernel manager and client.
+
+
+   .. py:method:: restartKernel()
+
+      Restart kernel of current client.
+
+
+   .. py:method:: resetKernel()
+
+      Reset kernel of current client.
+
+
+   .. py:method:: interruptKernel()
+
+      Interrupt kernel of current client.
+
+
+   .. py:method:: updateExecutionStateKernel()
+
+      Update actions following the execution state of the kernel.
+
+
+   .. py:method:: connectExternalKernel(widget)
+
+      TODO:
+          Connect an external kernel to the Variable Explorer, Help and
+          Plots, but only if it is a Spyder kernel.
+
+
+   .. py:method:: addTab(widget, name, filename='')
+
+      Add tab
+
+
+   .. py:method:: updateActions()
+
+      Update the state of exposed actions.
+
+      Exposed actions are actions created by the `createAction` method.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: moveTab(indexFrom, indexTo)
+
+      Move tab (tabs themselves have already been moved by the tabWidget)
+
+
+   .. py:method:: disambiguateFileName(fileName)
+
+      Generate a file name without ambiguation.
+
+
+   .. py:method:: updateTabsText()
+
+      Update the text from the tabs.
+
+
+   .. py:method:: renameClientTab(client, givenName)
+
+      Rename client's tab
+
+
+   .. py:method:: renameTabsAfterChange(givenName)
+
+      Rename tabs after a change in name.
+
+
+   .. py:method:: tabNameEditor()
+
+      Trigger the tab name editor.
+
+
+   .. py:method:: goToError(text)
+
+      Go to error if relevant
+
+
+   .. py:method:: showIntro()
+
+      Show intro to IPython help
+
+
+   .. py:method:: showGuiRef()
+
+      Show qtconsole help
+
+
+   .. py:method:: showQuickRef()
+
+      Show IPython Cheat Sheet
+
+
+   .. py:method:: shellWidgetStarted(client)
+
+
+   .. py:method:: shellWidgetDeleted(client)
+
+
+   .. py:method:: printDebugFileMsg()
+
+      Print message in the current console when a file can't be closed.
+
+
+   .. py:method:: loadPythonPath()
+
+      Load path stored in Pyllo configuration folder.
+
+
+   .. py:method:: getPylloPythonPathDict()
+
+      Return Pyllo PYTHONPATH.
+
+      The returned ordered dictionary has the paths as keys and the state
+      as values. The state is `True` for active and `False` for inactive.
+
+      Example:
+          OrderedDict([('/some/path, True), ('/some/other/path, False)])
+
+
+   .. py:method:: getPylloPythonPath()
+
+      Return Pyllo PYTHONPATH.
+
+
+
+
+
+.. py:function:: disambiguateFname(filesPathList, filename)
+
+   Get tab title without ambiguation.
+
+
+.. py:function:: getSameNameFiles(filesPathList, filename)
+
+   Get a list of the path components of the files with the same name.
+
+
+.. py:function:: shortestPath(filesPathList)
+
+   Shortest path between files in the list.
+
+
+.. py:function:: pathComponents(path)
+
+   Return the individual components of a given file path
+   string (for the local operating system).
+
+   Taken from https://stackoverflow.com/q/21498939/438386
+
+
+.. py:function:: differentiatePrefix(path_components0, path_components1)
+
+   Return the differentiated prefix of the given two iterables.
+
+   Taken from https://stackoverflow.com/q/21498939/438386
+
+

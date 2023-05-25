@@ -1,0 +1,21 @@
+:py:mod:`pyllo.plugins.ipythonconsole.core`
+===========================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.core
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   conda/index.rst
+   environ/index.rst
+   kernelcomm/index.rst
+   kernelspec/index.rst
+   manager/index.rst
+   pyenv/index.rst
+   ssh/index.rst
+
+

@@ -1,0 +1,246 @@
+:py:mod:`pyllo.plugins.debug.internal.mainwidget`
+=================================================
+
+.. py:module:: pyllo.plugins.debug.internal.mainwidget
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DebugWidget <pyllo.plugins.debug.internal.mainwidget.DebugWidget>`
+     - Pyllo plugin main widget class.
+
+
+
+
+.. py:class:: DebugWidget(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainWidget`
+
+   Pyllo plugin main widget class.
+
+   This class handles both a dock widget pane and a floating window widget
+   (undocked pane).
+
+   Notes
+   -----
+   All Pyllo dockable plugins define a main widget that must subclass this.
+
+   PylloDockablePlugin plugins must provide a WIDGET_CLASS attribute that is a
+   subclass of PluginMainWidget.
+
+   This widget is a subclass of QMainWindow that consists of a single,
+   central widget and a set of toolbars that are stacked above or below
+   that widget.
+
+   The toolbars are not movable nor floatable and must occupy the entire
+   horizontal space available for the plugin. This mean that toolbars must be
+   stacked vertically and cannot be placed horizontally next to each other.
+
+   ..    ..    ..    .. .. py:attribute:: sigEditConfigurationsRequest
+
+      when `edit configurations` is selected
+
+
+   ..    .. .. py:attribute:: sigAddDefaultConfigurationRequest
+
+      when registered debug type needs default configuration
+
+
+   ..    .. .. py:attribute:: sigRunTaskRequest
+
+      when `run` button is clicked and current configuration type is task
+
+
+   ..    .. .. py:attribute:: sigDebugGotoRequest
+
+      debug goto line of file and focus
+
+
+   ..    .. .. py:attribute:: sigDebugGotoClearRequest
+
+      clear goto fucus and highlight
+
+
+   ..    .. .. py:attribute:: sigConfigurationDoneRequired
+
+      required for breakpoints configuration
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigEditConfigurationsRequest <pyllo.plugins.debug.internal.mainwidget.DebugWidget.sigEditConfigurationsRequest>`
+        - when `edit configurations` is selected
+      * - :py:obj:`sigAddDefaultConfigurationRequest <pyllo.plugins.debug.internal.mainwidget.DebugWidget.sigAddDefaultConfigurationRequest>`
+        - when registered debug type needs default configuration
+      * - :py:obj:`sigRunTaskRequest <pyllo.plugins.debug.internal.mainwidget.DebugWidget.sigRunTaskRequest>`
+        - when `run` button is clicked and current configuration type is task
+      * - :py:obj:`sigDebugGotoRequest <pyllo.plugins.debug.internal.mainwidget.DebugWidget.sigDebugGotoRequest>`
+        - debug goto line of file and focus
+      * - :py:obj:`sigDebugGotoClearRequest <pyllo.plugins.debug.internal.mainwidget.DebugWidget.sigDebugGotoClearRequest>`
+        - clear goto fucus and highlight
+      * - :py:obj:`sigConfigurationDoneRequired <pyllo.plugins.debug.internal.mainwidget.DebugWidget.sigConfigurationDoneRequired>`
+        - required for breakpoints configuration
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getTitle <pyllo.plugins.debug.internal.mainwidget.DebugWidget.getTitle>`\ ()
+        - Return the title that will be displayed on dock widget or window title.
+      * - :py:obj:`getLaunchFilePath <pyllo.plugins.debug.internal.mainwidget.DebugWidget.getLaunchFilePath>`\ ()
+        - \-
+      * - :py:obj:`setup <pyllo.plugins.debug.internal.mainwidget.DebugWidget.setup>`\ ()
+        - setup actions
+      * - :py:obj:`updateActions <pyllo.plugins.debug.internal.mainwidget.DebugWidget.updateActions>`\ ()
+        - Update the state of exposed actions.
+      * - :py:obj:`registerAdapterDescriptor <pyllo.plugins.debug.internal.mainwidget.DebugWidget.registerAdapterDescriptor>`\ (debugType, descriptor)
+        - \-
+      * - :py:obj:`getAdapterDescriptor <pyllo.plugins.debug.internal.mainwidget.DebugWidget.getAdapterDescriptor>`\ (debugType)
+        - \-
+      * - :py:obj:`getDebugAdapterForger <pyllo.plugins.debug.internal.mainwidget.DebugWidget.getDebugAdapterForger>`\ (debugType)
+        - \-
+      * - :py:obj:`openDebugConsoleAndRun <pyllo.plugins.debug.internal.mainwidget.DebugWidget.openDebugConsoleAndRun>`\ (configuration)
+        - \-
+      * - :py:obj:`onDebugStarted <pyllo.plugins.debug.internal.mainwidget.DebugWidget.onDebugStarted>`\ ()
+        - \-
+      * - :py:obj:`onDebugTerminated <pyllo.plugins.debug.internal.mainwidget.DebugWidget.onDebugTerminated>`\ ()
+        - \-
+      * - :py:obj:`debugConsole <pyllo.plugins.debug.internal.mainwidget.DebugWidget.debugConsole>`\ (index)
+        - \-
+      * - :py:obj:`setCurrentIndex <pyllo.plugins.debug.internal.mainwidget.DebugWidget.setCurrentIndex>`\ (index)
+        - \-
+      * - :py:obj:`currentIndex <pyllo.plugins.debug.internal.mainwidget.DebugWidget.currentIndex>`\ ()
+        - \-
+      * - :py:obj:`currentDebugConsole <pyllo.plugins.debug.internal.mainwidget.DebugWidget.currentDebugConsole>`\ ()
+        - \-
+      * - :py:obj:`debugConsoleCount <pyllo.plugins.debug.internal.mainwidget.DebugWidget.debugConsoleCount>`\ ()
+        - \-
+      * - :py:obj:`closeDebugConsoleAndStop <pyllo.plugins.debug.internal.mainwidget.DebugWidget.closeDebugConsoleAndStop>`\ (index)
+        - \-
+      * - :py:obj:`runDebugOnCurrentConfiguration <pyllo.plugins.debug.internal.mainwidget.DebugWidget.runDebugOnCurrentConfiguration>`\ (debug)
+        - open/reusing debug console to run current configuration selected by debug configuration box
+      * - :py:obj:`substituteVariables <pyllo.plugins.debug.internal.mainwidget.DebugWidget.substituteVariables>`\ (debugConfiguration, substituteBuiltinVariables)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigEditConfigurationsRequest
+
+      when `edit configurations` is selected
+
+
+   .. py:attribute:: sigAddDefaultConfigurationRequest
+
+      when registered debug type needs default configuration
+
+
+   .. py:attribute:: sigRunTaskRequest
+
+      when `run` button is clicked and current configuration type is task
+
+
+   .. py:attribute:: sigDebugGotoRequest
+
+      debug goto line of file and focus
+
+
+   .. py:attribute:: sigDebugGotoClearRequest
+
+      clear goto fucus and highlight
+
+
+   .. py:attribute:: sigConfigurationDoneRequired
+
+      required for breakpoints configuration
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getTitle() -> pyllo.core.dtype.Text
+
+      Return the title that will be displayed on dock widget or window title.
+
+
+   .. py:method:: getLaunchFilePath() -> pyllo.core.dtype.IO[pyllo.core.dtype.FilePath]
+
+
+   .. py:method:: setup()
+
+      setup actions
+
+
+   .. py:method:: updateActions()
+
+      Update the state of exposed actions.
+
+      Exposed actions are actions created by the `createAction` method.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: registerAdapterDescriptor(debugType: str, descriptor: pyllo.plugins.debug.api.DebugAdapterDescriptor)
+
+
+   .. py:method:: getAdapterDescriptor(debugType: str) -> Optional[pyllo.plugins.debug.api.DebugAdapterDescriptor]
+
+
+   .. py:method:: getDebugAdapterForger(debugType: str) -> Optional[pyllo.core.dtype.Forger[pyllo.plugins.debug.api.IDebugAdapter]]
+
+
+   .. py:method:: openDebugConsoleAndRun(configuration: pyllo.plugins.debug.api.DebugConfiguration) -> pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole
+
+
+   .. py:method:: onDebugStarted()
+
+
+   .. py:method:: onDebugTerminated()
+
+
+   .. py:method:: debugConsole(index: pyllo.core.dtype.Index) -> Optional[pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole]
+
+
+   .. py:method:: setCurrentIndex(index: pyllo.core.dtype.Index)
+
+
+   .. py:method:: currentIndex()
+
+
+   .. py:method:: currentDebugConsole() -> Optional[pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole]
+
+
+   .. py:method:: debugConsoleCount() -> int
+
+
+   .. py:method:: closeDebugConsoleAndStop(index: pyllo.core.dtype.Index)
+
+
+   .. py:method:: runDebugOnCurrentConfiguration(debug: bool)
+
+      open/reusing debug console to run current configuration selected by debug configuration box
+
+
+   .. py:method:: substituteVariables(debugConfiguration: pyllo.plugins.debug.api.DebugConfiguration, substituteBuiltinVariables: dict) -> pyllo.plugins.debug.api.DebugConfiguration
+
+
+
+
+

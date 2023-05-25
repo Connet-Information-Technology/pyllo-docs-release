@@ -1,0 +1,380 @@
+:py:mod:`pyllo.core.runtime.app`
+================================
+
+.. py:module:: pyllo.core.runtime.app
+
+.. autoapi-nested-parse::
+
+   Pyllo main application implementation which conforms plugin's integration API.
+   It can load plugins to the application and adding features.
+
+
+   Plugin entry points declaration:
+   1. `PLUGINS_ENTRY_POINTS` resides in `pyllo.setup` module.
+      (For internal plugins only)
+   2. `pyllo.plugins` within `setuptools` package entry point declaration.
+      (For most of plugins)
+
+
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloApp <pyllo.core.runtime.app.PylloApp>`
+     - PylloApp, handles plugins integration, MainWindow and their lifecycle.
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`findInternalPlugins <pyllo.core.runtime.app.findInternalPlugins>`\ ()
+     - Find internal plugins in setup.py of entry points.
+   * - :py:obj:`findExternalPlugins <pyllo.core.runtime.app.findExternalPlugins>`\ (excluding)
+     - Find available external plugins based on setuptools entry points.
+
+
+
+.. py:function:: findInternalPlugins() -> pyllo.core.dtype.IO[List[Type[pyllo.core.runtime.spi.PylloPlugin]]]
+
+   Find internal plugins in setup.py of entry points.
+
+   Returns
+   -------
+   internalPlugins: List[Type[PylloPlugin]]
+       Class type array of internal plugins.
+
+   Raises
+   ------
+   SyntaxError:
+       Setup entry is malformed.
+
+   TypeError:
+       Plugin class defined in setup entry is not subclass of PylloPlugin.
+
+   AssertionError:
+       Plugin name not matched.
+
+   ImportError:
+       Plugin class module import error.
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: findExternalPlugins(excluding: List[pyllo.core.dtype.PluginName] = None) -> pyllo.core.dtype.IO[List[Type[pyllo.core.runtime.spi.PylloPlugin]]]
+
+   Find available external plugins based on setuptools entry points.
+
+   Returns
+   -------
+   externalPlugins: Dict[str, subclass[PylloPlugin/PylloDockablePlugin]]
+       External plugins dictionary with plugin name as keys and class type as values.
+
+   Side effects
+   ------------
+   Logging:
+       Any exceptions will be logged but not raised.
+
+   .. versionadded:: 1.0.0
+
+
+.. py:class:: PylloApp(qapp: qtpy.QtWidgets.QApplication)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   PylloApp, handles plugins integration, MainWindow and their lifecycle.
+
+   .. versionadded:: 1.0
+
+   ..    ..    ..    .. .. py:attribute:: sigPluginFocusChanged
+
+      This signal is emitted each time user focus is changed in application 
+      level, and it is used to inform each plugin with focused widget and plugin
+      name.
+
+      Parameters
+      ----------
+      previousWidget: QWidget/None
+      previousPluginName: str
+      currentWidget: QWidget/None
+      currentPluginName: str
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigPluginFocusChanged <pyllo.core.runtime.app.PylloApp.sigPluginFocusChanged>`
+        - This signal is emitted each time user focus is changed in application
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getMainWindow <pyllo.core.runtime.app.PylloApp.getMainWindow>`\ ()
+        - Returns
+      * - :py:obj:`showSplashMessage <pyllo.core.runtime.app.PylloApp.showSplashMessage>`\ (message)
+        - Set message to show in splash screen.
+      * - :py:obj:`isPluginAvailable <pyllo.core.runtime.app.PylloApp.isPluginAvailable>`\ (name)
+        - Determine if a given plugin is going to be loaded.
+      * - :py:obj:`getPlugin <pyllo.core.runtime.app.PylloApp.getPlugin>`\ (name, error)
+        - Return a plugin instance by providing the plugin's name.
+      * - :py:obj:`getExternalPlugins <pyllo.core.runtime.app.PylloApp.getExternalPlugins>`\ ()
+        - Returns
+      * - :py:obj:`getInternalPlugins <pyllo.core.runtime.app.PylloApp.getInternalPlugins>`\ ()
+        - Returns
+      * - :py:obj:`getPlugins <pyllo.core.runtime.app.PylloApp.getPlugins>`\ ()
+        - Returns
+      * - :py:obj:`getDockablePlugins <pyllo.core.runtime.app.PylloApp.getDockablePlugins>`\ ()
+        - Get a list of all dockable plugins.
+      * - :py:obj:`launch <pyllo.core.runtime.app.PylloApp.launch>`\ ()
+        - Launch application, do all heavy things from plugin integration to
+      * - :py:obj:`loadPlugin <pyllo.core.runtime.app.PylloApp.loadPlugin>`\ (plugin)
+        - Load a plugin in to application.
+      * - :py:obj:`unloadPlugin <pyllo.core.runtime.app.PylloApp.unloadPlugin>`\ (plugin)
+        - Unload a plugin from application
+      * - :py:obj:`quit <pyllo.core.runtime.app.PylloApp.quit>`\ ()
+        - @Slot()
+      * - :py:obj:`restart <pyllo.core.runtime.app.PylloApp.restart>`\ ()
+        - :summarylabel:`abc` @Slot()
+      * - :py:obj:`handleException <pyllo.core.runtime.app.PylloApp.handleException>`\ (errorData)
+        - :summarylabel:`abc` TODO: @Nezha maybe we never use it.
+      * - :py:obj:`freeMemory <pyllo.core.runtime.app.PylloApp.freeMemory>`\ ()
+        - :summarylabel:`static` Free memory after event.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigPluginFocusChanged
+
+      This signal is emitted each time user focus is changed in application 
+      level, and it is used to inform each plugin with focused widget and plugin
+      name.
+
+      Parameters
+      ----------
+      previousWidget: QWidget/None
+      previousPluginName: str
+      currentWidget: QWidget/None
+      currentPluginName: str
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getMainWindow() -> qtpy.QtWidgets.QMainWindow
+
+      Returns
+      -------
+      mainWindow: MainWindowClass
+          Main window object instanced by `MainWindowClass`
+
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: showSplashMessage(message: pyllo.core.dtype.Text)
+
+      Set message to show in splash screen.
+
+      Parameters
+      ----------
+      message: str
+          Message to show.
+
+
+      .. versionadded:: 1.0
+      .. note:: Please use it while launching(before main window is visible).
+
+
+   .. py:method:: isPluginAvailable(name: pyllo.core.dtype.PluginName) -> bool
+
+      Determine if a given plugin is going to be loaded.
+
+      Parameters
+      ----------
+      name: str
+          Plugin name.
+
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: getPlugin(name: pyllo.core.dtype.PluginName, error=True) -> Optional[pyllo.core.runtime.spi.PylloPlugin]
+
+      Return a plugin instance by providing the plugin's name.
+
+      Parameters
+      ----------
+      name: str
+          Plugin name.
+      error: bool
+          Raises plugin not found error if true else returns None.
+
+      Returns
+      -------
+      plugin: Union[PylloPlugin, PylloDockablePlugin]
+          Plugin that registrated in pyllo.
+
+      Raises
+      ------
+      KeyError
+          Raises plugin not found if :param:`error` is True.
+
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: getExternalPlugins() -> List[pyllo.core.runtime.spi.PylloPlugin]
+
+      Returns
+      -------
+      externalPlugins: Dict[str, Union[PylloPlugin, PylloDockablePlugin]]
+          External plugins.
+
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: getInternalPlugins() -> List[pyllo.core.runtime.spi.PylloPlugin]
+
+      Returns
+      -------
+      internalPlugins: Dict[str, Union[PylloPlugin, PylloDockablePlugin]]
+          Internal plugins.
+
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: getPlugins() -> List[pyllo.core.runtime.spi.PylloPlugin]
+
+      Returns
+      -------
+      plugins: Dict[str, Union[PylloPlugin, PylloDockablePlugin]]
+          Plugins registered in pyllo.
+
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: getDockablePlugins() -> List[pyllo.core.runtime.spi.PylloDockablePlugin]
+
+      Get a list of all dockable plugins.
+
+      Returns
+      -------
+      dockablePlugins: List[PylloDockablePlugin]
+          Dockable plugin that registrated in pyllo.
+
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: launch()
+
+      Launch application, do all heavy things from plugin integration to
+      mainWindow bringup.
+
+      It will search and initialize all registered plugins declared in the
+      plugin entry points Pyllo specified, then try to bring plugins into
+      application. If any exception happens by using plugins implemented
+      externally, it will just log the error and continue unless setting
+      `PYLLO_DEV=1` in environment variables.
+
+
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: loadPlugin(plugin: pyllo.core.runtime.spi.PylloPlugin)
+
+      Load a plugin in to application.
+
+      Parameters
+      ----------
+      plugin: PylloPlugin
+          Plugin.
+      external: bool
+          Plugin is external.
+      omitConf: bool
+          Omit configuration of plugin.
+
+      .. versionadded:: 1.0
+      .. warning:: Plugin compatibility feature is not implement
+
+
+   .. py:method:: unloadPlugin(plugin: pyllo.core.runtime.spi.PylloPlugin)
+
+      Unload a plugin from application
+
+      Parameters
+      ----------
+      plugin: PylloPlugin
+          Plugin to unregister.
+
+      .. versionadded:: 1.0
+      .. warning:: Plugin compatibility feature is not implement
+
+
+   .. py:method:: quit()
+
+      @Slot()
+
+      Plugin's quit request handler.
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: restart()
+      :abstractmethod:
+
+      @Slot()
+
+      Plugin's quit request handler.
+
+      TODO: implement restart feature
+
+
+   .. py:method:: handleException(errorData)
+      :abstractmethod:
+
+      TODO: @Nezha maybe we never use it.
+      Parameters
+      ----------
+      errorData: Dict[str, Any]
+          Error data, typically dict(text=line, is_traceback=True)
+
+      .. versionadded:: 1.0
+
+
+   .. py:method:: freeMemory()
+      :staticmethod:
+
+      Free memory after event.
+
+      .. versionadded:: 1.0
+
+
+
+
+

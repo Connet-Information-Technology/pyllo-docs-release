@@ -1,0 +1,17 @@
+Pyllo Platform Overview
+=======================
+The Pyllo platform follows a layered structure, reminiscent of a logo, with each layer serving a specific purpose in 
+the overall architecture. At the foundation lies the Pyllo Runtime, which acts as a small runtime engine responsible 
+for integrating different plugins seamlessly. It not only provides the necessary infrastructure for plugin integration 
+but also defines the features and rules (API) that plugins must adhere to.
+
+Building on top of the Pyllo Runtime is the Pyllo UI library, which utilizes the QT framework to implement a wide range 
+of UI components and plugin UI functionalities. This layer ensures a cohesive and consistent user interface experience 
+throughout the platform, making it intuitive and user-friendly.
+
+The core of the Pyllo platform resides within the plugins themselves. These plugins, created internally, form the 
+building blocks of the platform's functionality. Pyllo strives to achieve seamless integration of various tools and a 
+controlled openness by establishing a common paradigm for quickly creating plugins and reusing existing toolkits. By 
+leveraging this extensibility, users can shape Pyllo to meet their specific needs or simply for the sake of 
+experimentation and fun.
+

@@ -1,0 +1,144 @@
+:py:mod:`pyllo.plugins.debug.internal.codeeditorextension`
+==========================================================
+
+.. py:module:: pyllo.plugins.debug.internal.codeeditorextension
+
+.. autoapi-nested-parse::
+
+   Code decorating extension.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DebugHighlighter <pyllo.plugins.debug.internal.codeeditorextension.DebugHighlighter>`
+     - \-
+
+
+
+
+.. py:class:: DebugHighlighter(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.CodeEditorExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'debughighlighter'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.debug.internal.codeeditorextension.DebugHighlighter.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.debug.internal.codeeditorextension.DebugHighlighter.VERSION>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.debug.internal.codeeditorextension.DebugHighlighter.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`getName <pyllo.plugins.debug.internal.codeeditorextension.DebugHighlighter.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.debug.internal.codeeditorextension.DebugHighlighter.getDescription>`\ ()
+        - Return the extension's localized description.
+      * - :py:obj:`highlight <pyllo.plugins.debug.internal.codeeditorextension.DebugHighlighter.highlight>`\ (blockno)
+        - \-
+      * - :py:obj:`clear <pyllo.plugins.debug.internal.codeeditorextension.DebugHighlighter.clear>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'debughighlighter'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getName() -> str
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: highlight(blockno: int)
+
+
+   .. py:method:: clear()
+
+
+
+
+

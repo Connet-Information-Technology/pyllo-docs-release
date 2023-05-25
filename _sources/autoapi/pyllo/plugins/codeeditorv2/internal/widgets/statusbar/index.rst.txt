@@ -1,0 +1,117 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.widgets.statusbar`
+===============================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.widgets.statusbar
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LineColumnNumberStatus <pyllo.plugins.codeeditorv2.internal.widgets.statusbar.LineColumnNumberStatus>`
+     - Base class for status bar widgets.
+   * - :py:obj:`FileEncodingStatus <pyllo.plugins.codeeditorv2.internal.widgets.statusbar.FileEncodingStatus>`
+     - Base class for status bar widgets.
+   * - :py:obj:`LineSeparatorStatus <pyllo.plugins.codeeditorv2.internal.widgets.statusbar.LineSeparatorStatus>`
+     - Base class for status bar widgets.
+
+
+
+
+.. py:class:: LineColumnNumberStatus(parent=None)
+
+   Bases: :py:obj:`pyllo.plugins.statusbar.widgets.StatusBarWidget`
+
+   Base class for status bar widgets.
+
+   These widgets consist by default of an icon, a label and a spinner,
+   which are organized from left to right on that order.
+
+   You can also add any other QWidget to this layout by setting the
+   CUSTOM_WIDGET_CLASS class attribute. It'll be put between the label
+   and the spinner.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setLineColumnNumber <pyllo.plugins.codeeditorv2.internal.widgets.statusbar.LineColumnNumberStatus.setLineColumnNumber>`\ (line, column, chars, lines)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setLineColumnNumber(line: int, column: int, chars: int, lines: int)
+
+
+
+
+
+.. py:class:: FileEncodingStatus(parent=None)
+
+   Bases: :py:obj:`pyllo.plugins.statusbar.widgets.StatusBarWidget`
+
+   Base class for status bar widgets.
+
+   These widgets consist by default of an icon, a label and a spinner,
+   which are organized from left to right on that order.
+
+   You can also add any other QWidget to this layout by setting the
+   CUSTOM_WIDGET_CLASS class attribute. It'll be put between the label
+   and the spinner.
+
+   ..    ..    .. 
+
+
+.. py:class:: LineSeparatorStatus(parent=None)
+
+   Bases: :py:obj:`pyllo.plugins.statusbar.widgets.StatusBarWidget`
+
+   Base class for status bar widgets.
+
+   These widgets consist by default of an icon, a label and a spinner,
+   which are organized from left to right on that order.
+
+   You can also add any other QWidget to this layout by setting the
+   CUSTOM_WIDGET_CLASS class attribute. It'll be put between the label
+   and the spinner.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setLineSeparatorCharaters <pyllo.plugins.codeeditorv2.internal.widgets.statusbar.LineSeparatorStatus.setLineSeparatorCharaters>`\ (linesep)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setLineSeparatorCharaters(linesep: str)
+
+
+
+
+

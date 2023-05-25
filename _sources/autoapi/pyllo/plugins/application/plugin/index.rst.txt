@@ -1,0 +1,354 @@
+:py:mod:`pyllo.plugins.application.plugin`
+==========================================
+
+.. py:module:: pyllo.plugins.application.plugin
+
+.. autoapi-nested-parse::
+
+   Application Plugin.
+
+   Manages application feature context and application level behavior.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Application <pyllo.plugins.application.plugin.Application>`
+     - A Pyllo plugin to extend application with an aspect of features without
+   * - :py:obj:`ExplorerMenuExt <pyllo.plugins.application.plugin.ExplorerMenuExt>`
+     - Extensional submenu to explorer's menu
+
+
+
+
+.. py:class:: Application(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   A Pyllo plugin to extend application with an aspect of features without
+   a dockable widget(pane).
+
+   If you want to create a plugin that adds a new pane, please use
+   PylloDockablePlugin.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'application'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+      :value: 'main'
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.application.plugin.Application.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.application.plugin.Application.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.application.plugin.Application.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.application.plugin.Application.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.plugins.application.plugin.Application.CONTAINER_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.application.plugin.Application.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.application.plugin.Application.CONF_FILE>`
+        - \-
+      * - :py:obj:`CONF_WIDGET_CLASS <pyllo.plugins.application.plugin.Application.CONF_WIDGET_CLASS>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.application.plugin.Application.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getIcon <pyllo.plugins.application.plugin.Application.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`getDescription <pyllo.plugins.application.plugin.Application.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`onInitialize <pyllo.plugins.application.plugin.Application.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onPluginFocusChanged <pyllo.plugins.application.plugin.Application.onPluginFocusChanged>`\ (previousWidget, previousPlugin, currentWidget, currentPlugin)
+        - Update menu and actions when plugin widget focus changed.
+      * - :py:obj:`onTearDown <pyllo.plugins.application.plugin.Application.onTearDown>`\ (cancelable)
+        - Perform actions before the main window is closed.
+      * - :py:obj:`onMainwindowVisible <pyllo.plugins.application.plugin.Application.onMainwindowVisible>`\ ()
+        - Actions after the mainwindow in visible.
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.application.plugin.Application.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`onMainMenuAvailable <pyllo.plugins.application.plugin.Application.onMainMenuAvailable>`\ ()
+        - Add base actions and menus to the menu.
+      * - :py:obj:`beforeMainwindowVisible <pyllo.plugins.application.plugin.Application.beforeMainwindowVisible>`\ ()
+        - Actions to be performed after setup but before the main window's has
+      * - :py:obj:`reportIssue <pyllo.plugins.application.plugin.Application.reportIssue>`\ ()
+        - When issue happens, report it to our server about what was happened.
+      * - :py:obj:`applySettings <pyllo.plugins.application.plugin.Application.applySettings>`\ ()
+        - Make application plugin to apply settings immediately
+      * - :py:obj:`openFile <pyllo.plugins.application.plugin.Application.openFile>`\ (filename, editorHint, setCurrent)
+        - Open file with specific editor.
+      * - :py:obj:`saveAll <pyllo.plugins.application.plugin.Application.saveAll>`\ ()
+        - Save all editor changes to files.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'application'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+      :value: 'main'
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onPluginFocusChanged(previousWidget: Optional[qtpy.QtWidgets.QWidget], previousPlugin: str, currentWidget: Optional[qtpy.QtWidgets.QWidget], currentPlugin: str)
+
+      Update menu and actions when plugin widget focus changed.
+
+
+   .. py:method:: onTearDown(cancelable=False)
+
+      Perform actions before the main window is closed.
+
+      Returns
+      -------
+      bool
+          Whether the plugin may be closed immediately or not.
+
+      Notes
+      -----
+      The returned value is ignored if *cancelable* is False.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainwindowVisible()
+
+      Actions after the mainwindow in visible.
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: onMainMenuAvailable()
+
+      Add base actions and menus to the menu.
+
+
+   .. py:method:: beforeMainwindowVisible()
+
+      Actions to be performed after setup but before the main window's has
+      been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: reportIssue()
+
+      When issue happens, report it to our server about what was happened.
+
+      .. attention:: Not implemented yet.
+
+
+   .. py:method:: applySettings()
+
+      Make application plugin to apply settings immediately
+
+
+   .. py:method:: openFile(filename, editorHint: str = None, setCurrent=True)
+
+      Open file with specific editor.
+
+      openFile(filenames, editor)
+
+      Parameters
+      ----------
+      filename: str
+          File absolute path.
+      editorHint: Optional[str]
+          Editor to open file with.
+
+
+   .. py:method:: saveAll()
+
+      Save all editor changes to files.
+              
+
+
+
+
+
+.. py:class:: ExplorerMenuExt
+
+   Extensional submenu to explorer's menu
+
+   ..    ..    ..    .. .. py:attribute:: OpenIn
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`OpenIn <pyllo.plugins.application.plugin.ExplorerMenuExt.OpenIn>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: OpenIn
+
+      
+
+
+
+
+
+

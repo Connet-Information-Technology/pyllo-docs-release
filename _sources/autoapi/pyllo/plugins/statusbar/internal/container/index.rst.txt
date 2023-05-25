@@ -1,0 +1,59 @@
+:py:mod:`pyllo.plugins.statusbar.internal.container`
+====================================================
+
+.. py:module:: pyllo.plugins.statusbar.internal.container
+
+.. autoapi-nested-parse::
+
+   StatusBar widget.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`StatusBarContainer <pyllo.plugins.statusbar.internal.container.StatusBarContainer>`
+     - Container for statusbar.
+
+
+
+
+.. py:class:: StatusBarContainer(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainContainer`
+
+   Container for statusbar.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.statusbar.internal.container.StatusBarContainer.setup>`\ ()
+        - Create actions, widget, add to menu and other setup requirements.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+
+
+

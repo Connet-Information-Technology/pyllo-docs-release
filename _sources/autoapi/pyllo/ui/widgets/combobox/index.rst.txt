@@ -1,0 +1,509 @@
+:py:mod:`pyllo.ui.widgets.combobox`
+===================================
+
+.. py:module:: pyllo.ui.widgets.combobox
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`BaseComboBox <pyllo.ui.widgets.combobox.BaseComboBox>`
+     - Editable combo box base class
+   * - :py:obj:`PatternComboBox <pyllo.ui.widgets.combobox.PatternComboBox>`
+     - Search pattern combo box
+   * - :py:obj:`EditableComboBox <pyllo.ui.widgets.combobox.EditableComboBox>`
+     - Editable combo box + Validate
+   * - :py:obj:`PathComboBox <pyllo.ui.widgets.combobox.PathComboBox>`
+     - QComboBox handling path locations
+   * - :py:obj:`UrlComboBox <pyllo.ui.widgets.combobox.UrlComboBox>`
+     - QComboBox handling urls
+   * - :py:obj:`FileComboBox <pyllo.ui.widgets.combobox.FileComboBox>`
+     - QComboBox handling File paths
+   * - :py:obj:`PythonModulesComboBox <pyllo.ui.widgets.combobox.PythonModulesComboBox>`
+     - QComboBox handling Python modules or packages path
+
+
+
+
+.. py:class:: BaseComboBox(parent: qtpy.QtWidgets.QWidget = None, *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QComboBox`
+
+   Editable combo box base class
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: sigValidChanged
+
+      Parameters
+      ----------
+      isValid: bool
+          indicates validation status of current text in combobox edit
+
+
+   ..    .. .. py:attribute:: sigTabKeyPressed
+
+      tab pressed
+
+
+   ..    .. .. py:attribute:: sigEnterKeyPressed
+
+      enter key pressed
+
+
+   ..    .. .. py:attribute:: sigResized
+
+      This signal is emitted to inform the widget has been resized.
+
+      Parameters
+      ----------
+      size: QSize
+          The new size of the widget.
+      oldSize: QSize
+          The previous size of the widget.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigValidChanged <pyllo.ui.widgets.combobox.BaseComboBox.sigValidChanged>`
+        - Parameters
+      * - :py:obj:`sigTabKeyPressed <pyllo.ui.widgets.combobox.BaseComboBox.sigTabKeyPressed>`
+        - tab pressed
+      * - :py:obj:`sigEnterKeyPressed <pyllo.ui.widgets.combobox.BaseComboBox.sigEnterKeyPressed>`
+        - enter key pressed
+      * - :py:obj:`sigResized <pyllo.ui.widgets.combobox.BaseComboBox.sigResized>`
+        - This signal is emitted to inform the widget has been resized.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`event <pyllo.ui.widgets.combobox.BaseComboBox.event>`\ (event)
+        - Qt Override.
+      * - :py:obj:`keyPressEvent <pyllo.ui.widgets.combobox.BaseComboBox.keyPressEvent>`\ (event)
+        - Qt Override.
+      * - :py:obj:`resizeEvent <pyllo.ui.widgets.combobox.BaseComboBox.resizeEvent>`\ (event)
+        - Emit a resize signal for widgets that need to adapt its size.
+      * - :py:obj:`validate <pyllo.ui.widgets.combobox.BaseComboBox.validate>`\ (qstr)
+        - Return True if string is valid
+      * - :py:obj:`onSelectChanged <pyllo.ui.widgets.combobox.BaseComboBox.onSelectChanged>`\ (text)
+        - Action to be executed when a valid item has been onSelectChanged
+      * - :py:obj:`addText <pyllo.ui.widgets.combobox.BaseComboBox.addText>`\ (text)
+        - Add text to combo box: add a new item if text is not found in
+      * - :py:obj:`setCurrentText <pyllo.ui.widgets.combobox.BaseComboBox.setCurrentText>`\ (text)
+        - Sets the text of the QLineEdit of the QComboBox.
+      * - :py:obj:`hideCompleter <pyllo.ui.widgets.combobox.BaseComboBox.hideCompleter>`\ ()
+        - Hides the completion widget.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigValidChanged
+
+      Parameters
+      ----------
+      isValid: bool
+          indicates validation status of current text in combobox edit
+
+
+   .. py:attribute:: sigTabKeyPressed
+
+      tab pressed
+
+
+   .. py:attribute:: sigEnterKeyPressed
+
+      enter key pressed
+
+
+   .. py:attribute:: sigResized
+
+      This signal is emitted to inform the widget has been resized.
+
+      Parameters
+      ----------
+      size: QSize
+          The new size of the widget.
+      oldSize: QSize
+          The previous size of the widget.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: event(event)
+
+      Qt Override.
+
+      Filter tab keys and process double tab keys.
+
+
+   .. py:method:: keyPressEvent(event)
+
+      Qt Override.
+
+      Handle key press events.
+
+
+   .. py:method:: resizeEvent(event)
+
+      Emit a resize signal for widgets that need to adapt its size.
+
+
+   .. py:method:: validate(qstr: pyllo.core.dtype.Text) -> bool
+
+      Return True if string is valid
+      Override it to custom validation rules
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onSelectChanged(text: pyllo.core.dtype.Text)
+
+      Action to be executed when a valid item has been onSelectChanged
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: addText(text: pyllo.core.dtype.Text) -> bool
+
+      Add text to combo box: add a new item if text is not found in
+      combo box items.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: setCurrentText(text: pyllo.core.dtype.Text)
+
+      Sets the text of the QLineEdit of the QComboBox.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: hideCompleter()
+
+      Hides the completion widget.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: PatternComboBox(items: Iterable[pyllo.core.dtype.Text] = None, tip: pyllo.core.dtype.Text = None, adjustToMinimum: bool = True, parent: qtpy.QtWidgets.QWidget = None, *args, **kwargs)
+
+   Bases: :py:obj:`BaseComboBox`
+
+   Search pattern combo box
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+
+
+.. py:class:: EditableComboBox(parent: qtpy.QtWidgets.QWidget = None, *args, **kwargs)
+
+   Bases: :py:obj:`BaseComboBox`
+
+   Editable combo box + Validate
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`lineEdit <pyllo.ui.widgets.combobox.EditableComboBox.lineEdit>`\ ()
+        - \-
+      * - :py:obj:`tipHint <pyllo.ui.widgets.combobox.EditableComboBox.tipHint>`\ (valid)
+        - \-
+      * - :py:obj:`onTextChanged <pyllo.ui.widgets.combobox.EditableComboBox.onTextChanged>`\ (qstr)
+        - Validate entered path
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: lineEdit() -> pyllo.ui.widgets.lineedit.IconLineEdit
+
+
+   .. py:method:: tipHint(valid: bool)
+
+
+   .. py:method:: onTextChanged(qstr: pyllo.core.dtype.Text)
+
+      Validate entered path
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: PathComboBox(parent: qtpy.QtWidgets.QWidget = None, adjustToContents: bool = False, *args, **kwargs)
+
+   Bases: :py:obj:`EditableComboBox`
+
+   QComboBox handling path locations
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: sigPathChanged
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigPathChanged <pyllo.ui.widgets.combobox.PathComboBox.sigPathChanged>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`focusInEvent <pyllo.ui.widgets.combobox.PathComboBox.focusInEvent>`\ (event)
+        - Handle focus in event restoring to display the status icon.
+      * - :py:obj:`focusOutEvent <pyllo.ui.widgets.combobox.PathComboBox.focusOutEvent>`\ (event)
+        - Handle focus out event restoring the last valid selected path.
+      * - :py:obj:`tabComplete <pyllo.ui.widgets.combobox.PathComboBox.tabComplete>`\ ()
+        - If there is a single option available one tab completes the option.
+      * - :py:obj:`validate <pyllo.ui.widgets.combobox.PathComboBox.validate>`\ (qstr)
+        - Return True if string is valid
+      * - :py:obj:`onSelectChanged <pyllo.ui.widgets.combobox.PathComboBox.onSelectChanged>`\ (text)
+        - Action to be executed when a valid item has been onSelectChanged
+      * - :py:obj:`addToolTipToHighlightedItem <pyllo.ui.widgets.combobox.PathComboBox.addToolTipToHighlightedItem>`\ (index)
+        - Add a tooltip showing the full path of the currently highlighted item
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigPathChanged
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: focusInEvent(event)
+
+      Handle focus in event restoring to display the status icon.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: focusOutEvent(event)
+
+      Handle focus out event restoring the last valid selected path.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: tabComplete()
+
+      If there is a single option available one tab completes the option.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: validate(qstr: pyllo.core.dtype.Text) -> bool
+
+      Return True if string is valid
+      Override it to custom validation rules
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onSelectChanged(text: pyllo.core.dtype.Text)
+
+      Action to be executed when a valid item has been onSelectChanged
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: addToolTipToHighlightedItem(index: pyllo.core.dtype.Index)
+
+      Add a tooltip showing the full path of the currently highlighted item
+      of the PathComboBox.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: UrlComboBox(parent: qtpy.QtWidgets.QWidget = None, adjustToContents=False, *args, **kwargs)
+
+   Bases: :py:obj:`PathComboBox`
+
+   QComboBox handling urls
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`validate <pyllo.ui.widgets.combobox.UrlComboBox.validate>`\ (qstr)
+        - Return True if string is valid
+      * - :py:obj:`onSelectChanged <pyllo.ui.widgets.combobox.UrlComboBox.onSelectChanged>`\ (text)
+        - Action to be executed when a valid item has been onSelectChanged
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: validate(qstr: pyllo.core.dtype.Text)
+
+      Return True if string is valid
+      Override it to custom validation rules
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onSelectChanged(text: pyllo.core.dtype.Text)
+
+      Action to be executed when a valid item has been onSelectChanged
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: FileComboBox(parent: qtpy.QtWidgets.QWidget = None, adjustToContents=False, defaultLineEdit=False, *args, **kwargs)
+
+   Bases: :py:obj:`PathComboBox`
+
+   QComboBox handling File paths
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`validate <pyllo.ui.widgets.combobox.FileComboBox.validate>`\ (qstr)
+        - Return True if string is valid
+      * - :py:obj:`tabComplete <pyllo.ui.widgets.combobox.FileComboBox.tabComplete>`\ ()
+        - If there is a single option available one tab completes the option.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: validate(qstr: pyllo.core.dtype.Text) -> bool
+
+      Return True if string is valid
+      Override it to custom validation rules
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: tabComplete()
+
+      If there is a single option available one tab completes the option.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: PythonModulesComboBox(parent: qtpy.QtWidgets.QWidget = None, adjustToContents=False, *args, **kwargs)
+
+   Bases: :py:obj:`PathComboBox`
+
+   QComboBox handling Python modules or packages path
+   (i.e. .py, .pyw files *and* directories containing __init__.py)
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`validate <pyllo.ui.widgets.combobox.PythonModulesComboBox.validate>`\ (qstr)
+        - Return True if string is valid
+      * - :py:obj:`onSelectChanged <pyllo.ui.widgets.combobox.PythonModulesComboBox.onSelectChanged>`\ (text)
+        - Action to be executed when a valid item has been onSelectChanged
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: validate(qstr: pyllo.core.dtype.Text)
+
+      Return True if string is valid
+      Override it to custom validation rules
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onSelectChanged(text: pyllo.core.dtype.Text)
+
+      Action to be executed when a valid item has been onSelectChanged
+
+      .. versionadded:: 1.0.0
+
+
+
+
+

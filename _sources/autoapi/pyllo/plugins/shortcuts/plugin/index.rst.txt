@@ -1,0 +1,209 @@
+:py:mod:`pyllo.plugins.shortcuts.plugin`
+========================================
+
+.. py:module:: pyllo.plugins.shortcuts.plugin
+
+.. autoapi-nested-parse::
+
+   Shortcuts Plugin.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Shortcuts <pyllo.plugins.shortcuts.plugin.Shortcuts>`
+     - A Pyllo plugin to extend application with an aspect of features without
+
+
+
+
+.. py:class:: Shortcuts(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   A Pyllo plugin to extend application with an aspect of features without
+   a dockable widget(pane).
+
+   If you want to create a plugin that adds a new pane, please use
+   PylloDockablePlugin.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'shortcuts'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.shortcuts.plugin.Shortcuts.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.shortcuts.plugin.Shortcuts.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.shortcuts.plugin.Shortcuts.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.shortcuts.plugin.Shortcuts.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.shortcuts.plugin.Shortcuts.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.shortcuts.plugin.Shortcuts.CONF_FILE>`
+        - \-
+      * - :py:obj:`CONF_WIDGET_CLASS <pyllo.plugins.shortcuts.plugin.Shortcuts.CONF_WIDGET_CLASS>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.shortcuts.plugin.Shortcuts.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.shortcuts.plugin.Shortcuts.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.shortcuts.plugin.Shortcuts.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.shortcuts.plugin.Shortcuts.onInitialize>`\ ()
+        - Setup container's actions
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.shortcuts.plugin.Shortcuts.onPreferencesAvailable>`\ ()
+        - Connect when preferences available.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'shortcuts'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName() -> str
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup container's actions
+
+
+   .. py:method:: onPreferencesAvailable()
+
+      Connect when preferences available.
+
+
+
+
+

@@ -1,0 +1,206 @@
+:py:mod:`pyllo.plugins.ipythonconsole.api.history`
+==================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.api.history
+
+.. autoapi-nested-parse::
+
+   History Mix-in classes
+
+   These classes were created to be able to provide Pyllo's regular text and
+   console widget features to an independent widget based on QTextEdit for the
+   IPython console plugin.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`SaveHistoryMixin <pyllo.plugins.ipythonconsole.api.history.SaveHistoryMixin>`
+     - \-
+   * - :py:obj:`BrowseHistory <pyllo.plugins.ipythonconsole.api.history.BrowseHistory>`
+     - \-
+   * - :py:obj:`BrowseHistoryMixin <pyllo.plugins.ipythonconsole.api.history.BrowseHistoryMixin>`
+     - \-
+
+
+
+
+.. py:class:: SaveHistoryMixin(historyFilename='')
+
+   Bases: :py:obj:`object`
+
+   ..    ..    ..    .. .. py:attribute:: INIT_HISTORY
+
+      
+
+   ..    .. .. py:attribute:: SEPARATOR
+
+      
+
+   ..    .. .. py:attribute:: HISTORY_FILENAMES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: sigAppendToHistoryRequested
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`INIT_HISTORY <pyllo.plugins.ipythonconsole.api.history.SaveHistoryMixin.INIT_HISTORY>`
+        - \-
+      * - :py:obj:`SEPARATOR <pyllo.plugins.ipythonconsole.api.history.SaveHistoryMixin.SEPARATOR>`
+        - \-
+      * - :py:obj:`HISTORY_FILENAMES <pyllo.plugins.ipythonconsole.api.history.SaveHistoryMixin.HISTORY_FILENAMES>`
+        - \-
+      * - :py:obj:`sigAppendToHistoryRequested <pyllo.plugins.ipythonconsole.api.history.SaveHistoryMixin.sigAppendToHistoryRequested>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`createHistoryFilename <pyllo.plugins.ipythonconsole.api.history.SaveHistoryMixin.createHistoryFilename>`\ ()
+        - Create history_filename with INIT HISTORY if it doesn't exist.
+      * - :py:obj:`addToHistory <pyllo.plugins.ipythonconsole.api.history.SaveHistoryMixin.addToHistory>`\ (command, handle)
+        - Add command to history
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: INIT_HISTORY
+
+      
+
+   .. py:attribute:: SEPARATOR
+
+      
+
+   .. py:attribute:: HISTORY_FILENAMES
+      :value: []
+
+      
+
+   .. py:attribute:: sigAppendToHistoryRequested
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: createHistoryFilename()
+
+      Create history_filename with INIT HISTORY if it doesn't exist.
+
+
+   .. py:method:: addToHistory(command, handle=True)
+
+      Add command to history
+
+
+
+
+
+.. py:class:: BrowseHistory
+
+   Bases: :py:obj:`object`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`browseHistory <pyllo.plugins.ipythonconsole.api.history.BrowseHistory.browseHistory>`\ (line, cursorPos, backward)
+        - Browse history.
+      * - :py:obj:`findInHistory <pyllo.plugins.ipythonconsole.api.history.BrowseHistory.findInHistory>`\ (tocursor, startIdx, backward)
+        - Find text 'tocursor' in history, from index 'start_idx'
+      * - :py:obj:`resetSearchPos <pyllo.plugins.ipythonconsole.api.history.BrowseHistory.resetSearchPos>`\ ()
+        - Reset the position from which to search the history
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: browseHistory(line, cursorPos, backward)
+
+      Browse history.
+
+      Return the new text and wherever the cursor should move.
+
+
+   .. py:method:: findInHistory(tocursor, startIdx, backward)
+
+      Find text 'tocursor' in history, from index 'start_idx'
+
+
+   .. py:method:: resetSearchPos()
+
+      Reset the position from which to search the history
+
+
+
+
+
+.. py:class:: BrowseHistoryMixin
+
+   Bases: :py:obj:`BrowseHistory`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`clearLine <pyllo.plugins.ipythonconsole.api.history.BrowseHistoryMixin.clearLine>`\ ()
+        - Clear current line (without clearing console prompt)
+      * - :py:obj:`browseHistory <pyllo.plugins.ipythonconsole.api.history.BrowseHistoryMixin.browseHistory>`\ (backward)
+        - Browse history
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: clearLine()
+
+      Clear current line (without clearing console prompt)
+
+
+   .. py:method:: browseHistory(backward)
+
+      Browse history
+
+
+
+
+

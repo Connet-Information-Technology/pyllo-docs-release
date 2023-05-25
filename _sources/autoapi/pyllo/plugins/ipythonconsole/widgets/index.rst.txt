@@ -1,0 +1,31 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets`
+==============================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets
+
+.. autoapi-nested-parse::
+
+   plugins.ipythonconsole
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   calltip/index.rst
+   client/index.rst
+   control/index.rst
+   debugger/index.rst
+   figurebrowser/index.rst
+   help/index.rst
+   infowidget/index.rst
+   ipythonshell/index.rst
+   kernelconnect/index.rst
+   mainwidget/index.rst
+   namespacebrowser/index.rst
+   restartdialog/index.rst
+
+

@@ -1,0 +1,71 @@
+:py:mod:`pyllo.examples.ui`
+===========================
+
+.. py:module:: pyllo.examples.ui
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DemoMainWindow <pyllo.examples.ui.DemoMainWindow>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`main <pyllo.examples.ui.main>`\ ()
+     - \-
+
+
+
+.. py:class:: DemoMainWindow
+
+   Bases: :py:obj:`qtpy.QtWidgets.QMainWindow`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setCurrentDemo <pyllo.examples.ui.DemoMainWindow.setCurrentDemo>`\ (item)
+        - \-
+      * - :py:obj:`addUiDemo <pyllo.examples.ui.DemoMainWindow.addUiDemo>`\ (name, widget, setCurrent)
+        - \-
+      * - :py:obj:`setInspectModeEnabled <pyllo.examples.ui.DemoMainWindow.setInspectModeEnabled>`\ (enable)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setCurrentDemo(item: qtpy.QtWidgets.QListWidgetItem)
+
+
+   .. py:method:: addUiDemo(name: str, widget: qtpy.QtWidgets.QWidget, setCurrent=False)
+
+
+   .. py:method:: setInspectModeEnabled(enable: bool)
+
+
+
+
+
+.. py:function:: main()
+
+

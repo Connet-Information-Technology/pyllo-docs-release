@@ -1,0 +1,165 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.namespacebrowser`
+===============================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.namespacebrowser
+
+.. autoapi-nested-parse::
+
+   Widget that handle communications between the IPython Console and
+   the Variable Explorer
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`NamepaceBrowserWidget <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget>`
+     - Widget with the necessary attributes and methods to handle communications
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.logger>`
+     - \-
+   * - :py:obj:`CALL_KERNEL_TIMEOUT <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.CALL_KERNEL_TIMEOUT>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:data:: CALL_KERNEL_TIMEOUT
+   :value: 30
+
+   
+
+.. py:class:: NamepaceBrowserWidget(*args, **kw)
+
+   Bases: :py:obj:`qtconsole.rich_jupyter_widget.RichJupyterWidget`
+
+   Widget with the necessary attributes and methods to handle communications
+   between the IPython Console and the Variable Explorer
+
+   ..    ..    ..    .. .. py:attribute:: namespacebrowser
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`namespacebrowser <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.namespacebrowser>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`set_namespacebrowser <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.set_namespacebrowser>`\ (namespacebrowser)
+        - Set namespace browser widget
+      * - :py:obj:`refresh_namespacebrowser <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.refresh_namespacebrowser>`\ (interrupt)
+        - Refresh namespace browser
+      * - :py:obj:`set_namespace_view <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.set_namespace_view>`\ (view)
+        - Set the current namespace view.
+      * - :py:obj:`set_var_properties <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.set_var_properties>`\ (properties)
+        - Set var properties.
+      * - :py:obj:`set_namespace_view_settings <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.set_namespace_view_settings>`\ ()
+        - Set the namespace view settings
+      * - :py:obj:`get_value <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.get_value>`\ (name)
+        - Ask kernel for a value
+      * - :py:obj:`set_value <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.set_value>`\ (name, value)
+        - Set value for a variable
+      * - :py:obj:`remove_value <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.remove_value>`\ (name)
+        - Remove a variable
+      * - :py:obj:`copy_value <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.copy_value>`\ (orig_name, new_name)
+        - Copy a variable
+      * - :py:obj:`load_data <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.load_data>`\ (filename, ext)
+        - Load data from a file.
+      * - :py:obj:`save_namespace <pyllo.plugins.ipythonconsole.widgets.namespacebrowser.NamepaceBrowserWidget.save_namespace>`\ (filename)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: namespacebrowser
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: set_namespacebrowser(namespacebrowser)
+
+      Set namespace browser widget
+
+
+   .. py:method:: refresh_namespacebrowser(interrupt=True)
+
+      Refresh namespace browser
+
+
+   .. py:method:: set_namespace_view(view)
+
+      Set the current namespace view.
+
+
+   .. py:method:: set_var_properties(properties)
+
+      Set var properties.
+
+
+   .. py:method:: set_namespace_view_settings()
+
+      Set the namespace view settings
+
+
+   .. py:method:: get_value(name)
+
+      Ask kernel for a value
+
+
+   .. py:method:: set_value(name, value)
+
+      Set value for a variable
+
+
+   .. py:method:: remove_value(name)
+
+      Remove a variable
+
+
+   .. py:method:: copy_value(orig_name, new_name)
+
+      Copy a variable
+
+
+   .. py:method:: load_data(filename, ext)
+
+      Load data from a file.
+
+
+   .. py:method:: save_namespace(filename)
+
+
+
+
+

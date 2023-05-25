@@ -1,0 +1,145 @@
+:py:mod:`pyllo.tools.stringmatching`
+====================================
+
+.. py:module:: pyllo.tools.stringmatching
+
+.. autoapi-nested-parse::
+
+   String search and match utilities useful when filtering a list of texts.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`getSearchRegex <pyllo.tools.stringmatching.getSearchRegex>`\ (query, ignore_case)
+     - Returns a compiled regex pattern to search for query letters in order.
+   * - :py:obj:`getSearchScore <pyllo.tools.stringmatching.getSearchScore>`\ (query, choice, ignore_case, apply_regex, template)
+     - Returns a tuple with the enriched text (if a template is provided) and
+   * - :py:obj:`getSearchScores <pyllo.tools.stringmatching.getSearchScores>`\ (query, choices, ignore_case, template, valid_only, sort)
+     - Search for query inside choices and return a list of tuples.
+   * - :py:obj:`test <pyllo.tools.stringmatching.test>`\ ()
+     - \-
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`NOT_FOUND_SCORE <pyllo.tools.stringmatching.NOT_FOUND_SCORE>`
+     - \-
+   * - :py:obj:`NO_SCORE <pyllo.tools.stringmatching.NO_SCORE>`
+     - \-
+
+
+.. py:data:: NOT_FOUND_SCORE
+
+   
+
+.. py:data:: NO_SCORE
+   :value: 0
+
+   
+
+.. py:function:: getSearchRegex(query, ignore_case=True)
+
+   Returns a compiled regex pattern to search for query letters in order.
+
+   Parameters
+   ----------
+   query : str
+       String to search in another string (in order of character occurrence).
+   ignore_case : True
+       Optional value perform a case insensitive search (True by default).
+
+   Returns
+   -------
+   pattern : SRE_Pattern
+
+   >>>
+
+   Notes
+   -----
+   This function adds '.*' between the query characters and compiles the
+   resulting regular expression.
+
+
+.. py:function:: getSearchScore(query, choice, ignore_case=True, apply_regex=True, template='{}')
+
+   Returns a tuple with the enriched text (if a template is provided) and
+   a score for the match.
+
+   Parameters
+   ----------
+   query : str
+       String with letters to search in choice (in order of appearance).
+   choice : str
+       Sentence/words in which to search for the 'query' letters.
+   ignore_case : bool, optional
+       Optional value perform a case insensitive search (True by default).
+   apply_regex : bool, optional
+       Optional value (True by default) to perform a regex search. Useful
+       when this function is called directly.
+   template : str, optional
+       Optional template string to surround letters found in choices. This is
+       useful when using a rich text editor ('{}' by default).
+       Examples: '<b>{}</b>', '<code>{}</code>', '<i>{}</i>'
+
+   Returns
+   -------
+   results : tuple
+       Tuples where the first item is the text (enriched if a template was
+       used) and the second item is a search score.
+
+   Notes
+   -----
+   The score is given according the following precedence (high to low):
+
+   - Letters in one word and no spaces with exact match.
+     Example: 'up' in 'up stroke'
+   - Letters in one word and no spaces with partial match.
+     Example: 'up' in 'upstream stroke'
+   - Letters in one word but with skip letters.
+     Example: 'cls' in 'close up'
+   - Letters in two or more words
+     Example: 'cls' in 'car lost'
+
+
+.. py:function:: getSearchScores(query, choices, ignore_case=True, template='{}', valid_only=False, sort=False)
+
+   Search for query inside choices and return a list of tuples.
+
+   Returns a list of tuples of text with the enriched text (if a template is
+   provided) and a score for the match. Lower scores imply a better match.
+
+   Parameters
+   ----------
+   query : str
+       String with letters to search in each choice (in order of appearance).
+   choices : list of str
+       List of sentences/words in which to search for the 'query' letters.
+   ignore_case : bool, optional
+       Optional value perform a case insensitive search (True by default).
+   template : str, optional
+       Optional template string to surround letters found in choices. This is
+       useful when using a rich text editor ('{}' by default).
+       Examples: '<b>{}</b>', '<code>{}</code>', '<i>{}</i>'
+
+   Returns
+   -------
+   results : list of tuples
+       List of tuples where the first item is the text (enriched if a
+       template was used) and a search score. Lower scores means better match.
+
+
+.. py:function:: test()
+
+

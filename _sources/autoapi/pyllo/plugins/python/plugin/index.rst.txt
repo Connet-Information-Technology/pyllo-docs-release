@@ -1,0 +1,232 @@
+:py:mod:`pyllo.plugins.python.plugin`
+=====================================
+
+.. py:module:: pyllo.plugins.python.plugin
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PythonToolkit <pyllo.plugins.python.plugin.PythonToolkit>`
+     - python plugin.
+
+
+
+
+.. py:class:: PythonToolkit(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   python plugin.
+   python language and debugger support 
+   This is auto-generated template. 
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'pythontoolkit'
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: CONF_DEFAULTS
+      :value: [()]
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.python.plugin.PythonToolkit.NAME>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.python.plugin.PythonToolkit.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.python.plugin.PythonToolkit.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.plugins.python.plugin.PythonToolkit.CONTAINER_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.python.plugin.PythonToolkit.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_WIDGET_CLASS <pyllo.plugins.python.plugin.PythonToolkit.CONF_WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.python.plugin.PythonToolkit.CONF_FILE>`
+        - \-
+      * - :py:obj:`CONF_DEFAULTS <pyllo.plugins.python.plugin.PythonToolkit.CONF_DEFAULTS>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.python.plugin.PythonToolkit.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.python.plugin.PythonToolkit.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.python.plugin.PythonToolkit.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.python.plugin.PythonToolkit.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onDebugAvailable <pyllo.plugins.python.plugin.PythonToolkit.onDebugAvailable>`\ ()
+        - \-
+      * - :py:obj:`onLanguageServerAvailable <pyllo.plugins.python.plugin.PythonToolkit.onLanguageServerAvailable>`\ ()
+        - \-
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.python.plugin.PythonToolkit.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`onStatusBarAvailable <pyllo.plugins.python.plugin.PythonToolkit.onStatusBarAvailable>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'pythontoolkit'
+
+      
+
+   .. py:attribute:: REQUIRES
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: True
+
+      
+
+   .. py:attribute:: CONF_DEFAULTS
+      :value: [()]
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onDebugAvailable()
+
+
+   .. py:method:: onLanguageServerAvailable()
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: onStatusBarAvailable()
+
+
+
+
+

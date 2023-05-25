@@ -1,0 +1,27 @@
+:py:mod:`pyllo.plugins.statusbar`
+=================================
+
+.. py:module:: pyllo.plugins.statusbar
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   internal/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   api/index.rst
+   confpage/index.rst
+   plugin/index.rst
+   widgets/index.rst
+
+

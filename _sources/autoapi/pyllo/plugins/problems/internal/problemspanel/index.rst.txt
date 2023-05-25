@@ -1,0 +1,311 @@
+:py:mod:`pyllo.plugins.problems.internal.problemspanel`
+=======================================================
+
+.. py:module:: pyllo.plugins.problems.internal.problemspanel
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ProblemsPanel <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel>`
+     - Panel showing code diagnostic in codeeditor
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.problems.internal.problemspanel.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: ProblemsPanel(codeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.PanelExtension`
+
+   Panel showing code diagnostic in codeeditor
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'problems'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   ..    .. .. py:attribute:: AREA
+
+      
+
+   ..    .. .. py:attribute:: AREA_GRAVITY
+      :value: 9
+
+      
+
+   ..    .. .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: SCROLLABLE
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: TEXT_COLOR
+
+      
+
+   ..    .. .. py:attribute:: DEFAULT_MAX_HINT_WIDTH
+      :value: 85
+
+      
+
+   ..    .. .. py:attribute:: sigMouseClicked
+
+      
+
+   ..    .. .. py:attribute:: sigBeforeEditorVisible
+
+      
+
+   ..    .. .. py:attribute:: sigBeforeTeardown
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.VERSION>`
+        - \-
+      * - :py:obj:`AREA <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.AREA>`
+        - \-
+      * - :py:obj:`AREA_GRAVITY <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.AREA_GRAVITY>`
+        - \-
+      * - :py:obj:`DYNAMIC <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.DYNAMIC>`
+        - \-
+      * - :py:obj:`SCROLLABLE <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.SCROLLABLE>`
+        - \-
+      * - :py:obj:`TEXT_COLOR <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.TEXT_COLOR>`
+        - \-
+      * - :py:obj:`DEFAULT_MAX_HINT_WIDTH <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.DEFAULT_MAX_HINT_WIDTH>`
+        - \-
+      * - :py:obj:`sigMouseClicked <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.sigMouseClicked>`
+        - \-
+      * - :py:obj:`sigBeforeEditorVisible <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.sigBeforeEditorVisible>`
+        - \-
+      * - :py:obj:`sigBeforeTeardown <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.sigBeforeTeardown>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`onTeardown <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.onTeardown>`\ ()
+        - Cleans up footprint before extension been teared down.
+      * - :py:obj:`beforeEditorVisible <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.beforeEditorVisible>`\ ()
+        - This method is called by editor extension framework just before editor is visible.
+      * - :py:obj:`onStateChanged <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.onStateChanged>`\ (enabled)
+        - \-
+      * - :py:obj:`getName <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.getDescription>`\ ()
+        - Return the extension's localized description.
+      * - :py:obj:`sizeHint <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.sizeHint>`\ ()
+        - Return the widget size hint, overriding the Qt method.
+      * - :py:obj:`paintEvent <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.paintEvent>`\ (event)
+        - Painting line numbers
+      * - :py:obj:`mouseMoveEvent <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.mouseMoveEvent>`\ (event)
+        - \-
+      * - :py:obj:`leaveEvent <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.leaveEvent>`\ (event)
+        - \-
+      * - :py:obj:`showCodeAnalysisResults <pyllo.plugins.problems.internal.problemspanel.ProblemsPanel.showCodeAnalysisResults>`\ (lineNumber, codeAnalysis)
+        - Show warning/error messages.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'problems'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. py:attribute:: AREA
+
+      
+
+   .. py:attribute:: AREA_GRAVITY
+      :value: 9
+
+      
+
+   .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   .. py:attribute:: SCROLLABLE
+      :value: True
+
+      
+
+   .. py:attribute:: TEXT_COLOR
+
+      
+
+   .. py:attribute:: DEFAULT_MAX_HINT_WIDTH
+      :value: 85
+
+      
+
+   .. py:attribute:: sigMouseClicked
+
+      
+
+   .. py:attribute:: sigBeforeEditorVisible
+
+      
+
+   .. py:attribute:: sigBeforeTeardown
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onTeardown()
+
+      Cleans up footprint before extension been teared down.
+              
+
+
+   .. py:method:: beforeEditorVisible()
+
+      This method is called by editor extension framework just before editor is visible.
+
+      Notes
+      -----
+      This is usually used for cross extensions features.
+      Which by means one extension's feature is dependent to another extension's feature.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onStateChanged(enabled)
+
+
+   .. py:method:: getName() -> str
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: sizeHint()
+
+      Return the widget size hint, overriding the Qt method.
+
+      Notes
+      -----
+      * This size hint will define the QSize of the panel, i.e. it is
+        where its width and height are defined.
+      * If the size of your panel depends on displayed text, please
+        use the LineNumberArea one as reference on how to implement
+        this method.
+      * If the size is not dependent on displayed text, please use
+        the debugger panel as reference.
+      * If your panel is in a floating position, please use the
+        IndentationGuide one as reference.
+
+
+   .. py:method:: paintEvent(event)
+
+      Painting line numbers
+
+
+   .. py:method:: mouseMoveEvent(event) -> None
+
+
+   .. py:method:: leaveEvent(event) -> None
+
+
+   .. py:method:: showCodeAnalysisResults(lineNumber, codeAnalysis)
+
+      Show warning/error messages.
+
+
+
+
+

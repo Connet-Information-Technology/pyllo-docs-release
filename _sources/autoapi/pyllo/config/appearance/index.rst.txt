@@ -1,0 +1,28 @@
+:py:mod:`pyllo.config.appearance`
+=================================
+
+.. py:module:: pyllo.config.appearance
+
+.. autoapi-nested-parse::
+
+   Pyllo appearance configuration
+
+
+
+Module Contents
+---------------
+
+
+
+.. py:data:: WIN
+
+   
+
+.. py:data:: LINUX
+
+   
+
+.. py:data:: APPEARANCE
+
+   
+

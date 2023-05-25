@@ -1,0 +1,624 @@
+:py:mod:`pyllo.plugins.debug.internal.widgets.debugconsole`
+===========================================================
+
+.. py:module:: pyllo.plugins.debug.internal.widgets.debugconsole
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DebugViewToolbars <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewToolbars>`
+     - \-
+   * - :py:obj:`DebugViewToolbarSections <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewToolbarSections>`
+     - \-
+   * - :py:obj:`DebugViewActions <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewActions>`
+     - \-
+   * - :py:obj:`DebuggerViewer <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer>`
+     - Debugger viewer for threads and frame stacks and variables viewing
+   * - :py:obj:`DebugConsole <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole>`
+     - Debug Session
+
+
+
+
+.. py:class:: DebugViewToolbars
+
+   ..    ..    ..    .. .. py:attribute:: Run
+      :value: 'run_toolbar'
+
+      
+
+   ..    .. .. py:attribute:: Stepping
+      :value: 'stepping_toolbar'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Run <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewToolbars.Run>`
+        - \-
+      * - :py:obj:`Stepping <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewToolbars.Stepping>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Run
+      :value: 'run_toolbar'
+
+      
+
+   .. py:attribute:: Stepping
+      :value: 'stepping_toolbar'
+
+      
+
+
+
+
+
+
+.. py:class:: DebugViewToolbarSections
+
+   ..    ..    ..    .. .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   ..    .. .. py:attribute:: Middle
+      :value: 'middle_section'
+
+      
+
+   ..    .. .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Top <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewToolbarSections.Top>`
+        - \-
+      * - :py:obj:`Middle <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewToolbarSections.Middle>`
+        - \-
+      * - :py:obj:`Bottom <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewToolbarSections.Bottom>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Top
+      :value: 'top_section'
+
+      
+
+   .. py:attribute:: Middle
+      :value: 'middle_section'
+
+      
+
+   .. py:attribute:: Bottom
+      :value: 'bottom_section'
+
+      
+
+
+
+
+
+
+.. py:class:: DebugViewActions
+
+   ..    ..    ..    .. .. py:attribute:: Rerun
+      :value: 'rerun_action'
+
+      
+
+   ..    .. .. py:attribute:: ModifyConfig
+      :value: 'modify_configuration_action'
+
+      
+
+   ..    .. .. py:attribute:: ResumeProgram
+      :value: 'resume_program_action'
+
+      
+
+   ..    .. .. py:attribute:: PauseProgram
+      :value: 'pause_program_action'
+
+      
+
+   ..    .. .. py:attribute:: Stop
+      :value: 'stop_action'
+
+      
+
+   ..    .. .. py:attribute:: StepOver
+      :value: 'step_over_action'
+
+      
+
+   ..    .. .. py:attribute:: StepInto
+      :value: 'step_into_action'
+
+      
+
+   ..    .. .. py:attribute:: StepOut
+      :value: 'step_out_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Rerun <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewActions.Rerun>`
+        - \-
+      * - :py:obj:`ModifyConfig <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewActions.ModifyConfig>`
+        - \-
+      * - :py:obj:`ResumeProgram <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewActions.ResumeProgram>`
+        - \-
+      * - :py:obj:`PauseProgram <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewActions.PauseProgram>`
+        - \-
+      * - :py:obj:`Stop <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewActions.Stop>`
+        - \-
+      * - :py:obj:`StepOver <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewActions.StepOver>`
+        - \-
+      * - :py:obj:`StepInto <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewActions.StepInto>`
+        - \-
+      * - :py:obj:`StepOut <pyllo.plugins.debug.internal.widgets.debugconsole.DebugViewActions.StepOut>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Rerun
+      :value: 'rerun_action'
+
+      
+
+   .. py:attribute:: ModifyConfig
+      :value: 'modify_configuration_action'
+
+      
+
+   .. py:attribute:: ResumeProgram
+      :value: 'resume_program_action'
+
+      
+
+   .. py:attribute:: PauseProgram
+      :value: 'pause_program_action'
+
+      
+
+   .. py:attribute:: Stop
+      :value: 'stop_action'
+
+      
+
+   .. py:attribute:: StepOver
+      :value: 'step_over_action'
+
+      
+
+   .. py:attribute:: StepInto
+      :value: 'step_into_action'
+
+      
+
+   .. py:attribute:: StepOut
+      :value: 'step_out_action'
+
+      
+
+
+
+
+
+
+.. py:class:: DebuggerViewer(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`, :py:obj:`pyllo.ui.plugin.PylloToolbarMixin`
+
+   Debugger viewer for threads and frame stacks and variables viewing 
+
+   ..    ..    ..    .. .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: sigDebugGotoRequest
+
+      debug goto file path, line number, column number, focus
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PREFAB <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer.PREFAB>`
+        - \-
+      * - :py:obj:`sigDebugGotoRequest <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer.sigDebugGotoRequest>`
+        - debug goto file path, line number, column number, focus
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`currentThread <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer.currentThread>`\ ()
+        - return current thread or None if program is running
+      * - :py:obj:`setSession <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer.setSession>`\ (session)
+        - set new debugger session
+      * - :py:obj:`clear <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer.clear>`\ ()
+        - \-
+      * - :py:obj:`onStateChanged <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer.onStateChanged>`\ (state)
+        - \-
+      * - :py:obj:`onStoppedEvent <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer.onStoppedEvent>`\ (event)
+        - \-
+      * - :py:obj:`onThreadSelected <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer.onThreadSelected>`\ (row)
+        - thread selected
+      * - :py:obj:`onStackFrameSelected <pyllo.plugins.debug.internal.widgets.debugconsole.DebuggerViewer.onStackFrameSelected>`\ (stackFrame, keepFocus)
+        - when select stack frame is selected by user
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   .. py:attribute:: sigDebugGotoRequest
+
+      debug goto file path, line number, column number, focus
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: currentThread() -> Optional[pyllo.plugins.debug.protocol.Thread]
+
+      return current thread or None if program is running
+
+
+   .. py:method:: setSession(session: pyllo.plugins.debug.internal.debugsession.DebugSession)
+
+      set new debugger session
+
+
+   .. py:method:: clear()
+
+
+   .. py:method:: onStateChanged(state: pyllo.plugins.debug.api.DebugSessionStates)
+
+
+   .. py:method:: onStoppedEvent(event: pyllo.plugins.debug.protocol.StoppedEventBody)
+
+
+   .. py:method:: onThreadSelected(row: pyllo.core.dtype.Index)
+
+      thread selected
+
+
+   .. py:method:: onStackFrameSelected(stackFrame: pyllo.plugins.debug.protocol.StackFrame, keepFocus=True)
+
+      when select stack frame is selected by user
+
+
+
+
+
+.. py:class:: DebugConsole(debugAdapterForgerProvider, configuration: pyllo.plugins.debug.api.DebugConfiguration, parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`, :py:obj:`pyllo.ui.plugin.PylloToolbarMixin`
+
+   Debug Session
+
+   ..    ..    ..    .. .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: sigDebugGotoRequest
+
+      debug goto file path, line number, column number, focus
+
+
+   ..    .. .. py:attribute:: sigDebugStarted
+
+      debug started
+
+
+   ..    .. .. py:attribute:: sigConfigurationDoneRequired
+
+      require for calling configurationDone, before calling configurationDone caller can set breakpoints
+
+
+   ..    .. .. py:attribute:: sigDebugSuspended
+
+      debug suspended or continued
+
+
+   ..    .. .. py:attribute:: sigDebugContinued
+
+      debug continued
+
+
+   ..    .. .. py:attribute:: sigDebugTerminated
+
+      debug terminated
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PREFAB <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.PREFAB>`
+        - \-
+      * - :py:obj:`sigDebugGotoRequest <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.sigDebugGotoRequest>`
+        - debug goto file path, line number, column number, focus
+      * - :py:obj:`sigDebugStarted <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.sigDebugStarted>`
+        - debug started
+      * - :py:obj:`sigConfigurationDoneRequired <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.sigConfigurationDoneRequired>`
+        - require for calling configurationDone, before calling configurationDone caller can set breakpoints
+      * - :py:obj:`sigDebugSuspended <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.sigDebugSuspended>`
+        - debug suspended or continued
+      * - :py:obj:`sigDebugContinued <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.sigDebugContinued>`
+        - debug continued
+      * - :py:obj:`sigDebugTerminated <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.sigDebugTerminated>`
+        - debug terminated
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`configurationName <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.configurationName>`\ ()
+        - \-
+      * - :py:obj:`configuration <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.configuration>`\ ()
+        - \-
+      * - :py:obj:`session <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.session>`\ ()
+        - return session
+      * - :py:obj:`onStateChanged <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.onStateChanged>`\ (state)
+        - session state changed
+      * - :py:obj:`onExpressionEvaluate <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.onExpressionEvaluate>`\ ()
+        - \-
+      * - :py:obj:`onExpressionCompletions <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.onExpressionCompletions>`\ ()
+        - \-
+      * - :py:obj:`updateActions <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.updateActions>`\ ()
+        - Update the state of exposed actions.
+      * - :py:obj:`canRerun <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.canRerun>`\ ()
+        - \-
+      * - :py:obj:`rerun <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.rerun>`\ (newConfiguration)
+        - rerun program
+      * - :py:obj:`canTerminate <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.canTerminate>`\ ()
+        - can terminate
+      * - :py:obj:`terminate <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.terminate>`\ ()
+        - terminate
+      * - :py:obj:`isTerminated <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.isTerminated>`\ ()
+        - check is terminated
+      * - :py:obj:`canPause <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.canPause>`\ ()
+        - check if it can pause
+      * - :py:obj:`pause <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.pause>`\ ()
+        - pause program
+      * - :py:obj:`canResume <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.canResume>`\ ()
+        - check if it can pause
+      * - :py:obj:`resume <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.resume>`\ ()
+        - resume program
+      * - :py:obj:`canStep <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.canStep>`\ ()
+        - check if it can step in/out/over
+      * - :py:obj:`stepIn <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.stepIn>`\ ()
+        - step-in
+      * - :py:obj:`stepOut <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.stepOut>`\ ()
+        - step-out
+      * - :py:obj:`stepOver <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.stepOver>`\ ()
+        - step over
+      * - :py:obj:`canConfigurationDone <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.canConfigurationDone>`\ ()
+        - \-
+      * - :py:obj:`configurationDone <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.configurationDone>`\ ()
+        - \-
+      * - :py:obj:`canSetBreakpoints <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.canSetBreakpoints>`\ ()
+        - \-
+      * - :py:obj:`setBreakpoints <pyllo.plugins.debug.internal.widgets.debugconsole.DebugConsole.setBreakpoints>`\ (arguments)
+        - set breakpoints
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   .. py:attribute:: sigDebugGotoRequest
+
+      debug goto file path, line number, column number, focus
+
+
+   .. py:attribute:: sigDebugStarted
+
+      debug started
+
+
+   .. py:attribute:: sigConfigurationDoneRequired
+
+      require for calling configurationDone, before calling configurationDone caller can set breakpoints
+
+
+   .. py:attribute:: sigDebugSuspended
+
+      debug suspended or continued
+
+
+   .. py:attribute:: sigDebugContinued
+
+      debug continued
+
+
+   .. py:attribute:: sigDebugTerminated
+
+      debug terminated
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: configurationName() -> pyllo.core.dtype.Identity
+
+
+   .. py:method:: configuration() -> pyllo.plugins.debug.api.DebugConfiguration
+
+
+   .. py:method:: session() -> pyllo.plugins.debug.internal.debugsession.DebugSession
+
+      return session
+
+
+   .. py:method:: onStateChanged(state: pyllo.plugins.debug.api.DebugSessionStates)
+
+      session state changed
+
+
+   .. py:method:: onExpressionEvaluate()
+
+
+   .. py:method:: onExpressionCompletions()
+
+
+   .. py:method:: updateActions()
+
+      Update the state of exposed actions.
+
+      Exposed actions are actions created by the `createAction` method.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: canRerun() -> bool
+
+
+   .. py:method:: rerun(newConfiguration: pyllo.plugins.debug.api.DebugConfiguration = None)
+
+      rerun program
+
+
+   .. py:method:: canTerminate() -> bool
+
+      can terminate
+
+
+   .. py:method:: terminate()
+
+      terminate
+
+
+   .. py:method:: isTerminated() -> bool
+
+      check is terminated
+
+
+   .. py:method:: canPause() -> bool
+
+      check if it can pause
+
+
+   .. py:method:: pause()
+
+      pause program
+
+
+   .. py:method:: canResume() -> bool
+
+      check if it can pause
+
+
+   .. py:method:: resume()
+
+      resume program
+
+
+   .. py:method:: canStep() -> bool
+
+      check if it can step in/out/over
+
+
+   .. py:method:: stepIn()
+
+      step-in
+
+
+   .. py:method:: stepOut()
+
+      step-out
+
+
+   .. py:method:: stepOver()
+
+      step over
+
+
+   .. py:method:: canConfigurationDone() -> bool
+
+
+   .. py:method:: configurationDone()
+
+
+   .. py:method:: canSetBreakpoints() -> bool
+
+
+   .. py:method:: setBreakpoints(arguments: pyllo.plugins.debug.protocol.SetBreakpointsArguments) -> Optional[pyllo.plugins.debug.protocol.SetBreakpointsResponseBody]
+
+      set breakpoints
+
+
+
+
+

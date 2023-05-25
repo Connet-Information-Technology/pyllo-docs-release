@@ -1,0 +1,82 @@
+:py:mod:`pyllo.config.utils`
+============================
+
+.. py:module:: pyllo.config.utils
+
+.. autoapi-nested-parse::
+
+   Utilities to define configuration values
+
+   TODO: @ZJJ  is this file necessary now ? Since we already have content type registry.
+   : We should carefully remove it later.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`getFilter <pyllo.config.utils.getFilter>`\ (filetypes, ext)
+     - Return filter associated to file extension
+   * - :py:obj:`getEditFileTypes <pyllo.config.utils.getEditFileTypes>`\ ()
+     - Get all file types supported by the Editor
+   * - :py:obj:`getEditFilters <pyllo.config.utils.getEditFilters>`\ ()
+     - Return filters associated with the file types
+   * - :py:obj:`getEditExtensions <pyllo.config.utils.getEditExtensions>`\ ()
+     - Return extensions associated with the file types
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`EDIT_FILETYPES <pyllo.config.utils.EDIT_FILETYPES>`
+     - \-
+   * - :py:obj:`ALL_FILTER <pyllo.config.utils.ALL_FILTER>`
+     - \-
+   * - :py:obj:`IMPORT_EXT <pyllo.config.utils.IMPORT_EXT>`
+     - \-
+
+
+.. py:data:: EDIT_FILETYPES
+   :value: [('Pyllo files', ('.pyllo',))]
+
+   
+
+.. py:data:: ALL_FILTER
+
+   
+
+.. py:data:: IMPORT_EXT
+
+   
+
+.. py:function:: getFilter(filetypes, ext)
+
+   Return filter associated to file extension
+
+
+.. py:function:: getEditFileTypes()
+
+   Get all file types supported by the Editor
+
+
+.. py:function:: getEditFilters()
+
+   Return filters associated with the file types
+   supported by the Editor
+
+
+.. py:function:: getEditExtensions()
+
+   Return extensions associated with the file types
+   supported by the Editor
+
+

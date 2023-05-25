@@ -1,0 +1,265 @@
+:py:mod:`pyllo.plugins.breakpoints.api`
+=======================================
+
+.. py:module:: pyllo.plugins.breakpoints.api
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Breakpoint <pyllo.plugins.breakpoints.api.Breakpoint>`
+     - \-
+   * - :py:obj:`BreakpointsActions <pyllo.plugins.breakpoints.api.BreakpointsActions>`
+     - \-
+   * - :py:obj:`BreakpointsMenu <pyllo.plugins.breakpoints.api.BreakpointsMenu>`
+     - \-
+
+
+
+
+.. py:class:: Breakpoint
+
+   ..    ..    ..    .. .. py:attribute:: id
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: path
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: line
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: enabled
+      :type: bool
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: condition
+      :type: str
+      :value: ''
+
+      
+
+   ..    .. .. py:attribute:: muted
+      :type: bool
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`id <pyllo.plugins.breakpoints.api.Breakpoint.id>`
+        - \-
+      * - :py:obj:`path <pyllo.plugins.breakpoints.api.Breakpoint.path>`
+        - \-
+      * - :py:obj:`line <pyllo.plugins.breakpoints.api.Breakpoint.line>`
+        - \-
+      * - :py:obj:`enabled <pyllo.plugins.breakpoints.api.Breakpoint.enabled>`
+        - \-
+      * - :py:obj:`condition <pyllo.plugins.breakpoints.api.Breakpoint.condition>`
+        - \-
+      * - :py:obj:`muted <pyllo.plugins.breakpoints.api.Breakpoint.muted>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: id
+      :type: int
+
+      
+
+   .. py:attribute:: path
+      :type: str
+
+      
+
+   .. py:attribute:: line
+      :type: int
+
+      
+
+   .. py:attribute:: enabled
+      :type: bool
+      :value: True
+
+      
+
+   .. py:attribute:: condition
+      :type: str
+      :value: ''
+
+      
+
+   .. py:attribute:: muted
+      :type: bool
+      :value: False
+
+      
+
+
+
+
+
+
+.. py:class:: BreakpointsActions
+
+   ..    ..    ..    .. .. py:attribute:: RemoveAll
+      :value: 'remove_all_action'
+
+      
+
+   ..    .. .. py:attribute:: ToggleAll
+      :value: 'toggle_all_action'
+
+      
+
+   ..    .. .. py:attribute:: Remove
+      :value: 'remove_action'
+
+      
+
+   ..    .. .. py:attribute:: Edit
+      :value: 'edit_action'
+
+      
+
+   ..    .. .. py:attribute:: Toggle
+      :value: 'toggle_action'
+
+      
+
+   ..    .. .. py:attribute:: Add
+      :value: 'add_action'
+
+      
+
+   ..    .. .. py:attribute:: AddConditional
+      :value: 'add_conditional_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`RemoveAll <pyllo.plugins.breakpoints.api.BreakpointsActions.RemoveAll>`
+        - \-
+      * - :py:obj:`ToggleAll <pyllo.plugins.breakpoints.api.BreakpointsActions.ToggleAll>`
+        - \-
+      * - :py:obj:`Remove <pyllo.plugins.breakpoints.api.BreakpointsActions.Remove>`
+        - \-
+      * - :py:obj:`Edit <pyllo.plugins.breakpoints.api.BreakpointsActions.Edit>`
+        - \-
+      * - :py:obj:`Toggle <pyllo.plugins.breakpoints.api.BreakpointsActions.Toggle>`
+        - \-
+      * - :py:obj:`Add <pyllo.plugins.breakpoints.api.BreakpointsActions.Add>`
+        - \-
+      * - :py:obj:`AddConditional <pyllo.plugins.breakpoints.api.BreakpointsActions.AddConditional>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: RemoveAll
+      :value: 'remove_all_action'
+
+      
+
+   .. py:attribute:: ToggleAll
+      :value: 'toggle_all_action'
+
+      
+
+   .. py:attribute:: Remove
+      :value: 'remove_action'
+
+      
+
+   .. py:attribute:: Edit
+      :value: 'edit_action'
+
+      
+
+   .. py:attribute:: Toggle
+      :value: 'toggle_action'
+
+      
+
+   .. py:attribute:: Add
+      :value: 'add_action'
+
+      
+
+   .. py:attribute:: AddConditional
+      :value: 'add_conditional_action'
+
+      
+
+
+
+
+
+
+.. py:class:: BreakpointsMenu
+
+   ..    ..    ..    .. .. py:attribute:: ContextMenu
+      :value: 'edit_context_menu'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ContextMenu <pyllo.plugins.breakpoints.api.BreakpointsMenu.ContextMenu>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ContextMenu
+      :value: 'edit_context_menu'
+
+      
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+:py:mod:`pyllo.config.tests`
+============================
+
+.. py:module:: pyllo.config.tests
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   conftest/index.rst
+   test_base/index.rst
+   test_manager/index.rst
+   test_user/index.rst
+
+

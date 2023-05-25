@@ -1,0 +1,123 @@
+:py:mod:`pyllo.plugins.output.api`
+==================================
+
+.. py:module:: pyllo.plugins.output.api
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`OutputWriter <pyllo.plugins.output.api.OutputWriter>`
+     - Signal handler that emits text to qt output view
+   * - :py:obj:`OutputType <pyllo.plugins.output.api.OutputType>`
+     - Generic enumeration.
+
+
+
+
+.. py:class:: OutputWriter(parent=None)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   Signal handler that emits text to qt output view
+
+   ..    ..    ..    .. .. py:attribute:: sigTextWritten
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigTextWritten <pyllo.plugins.output.api.OutputWriter.sigTextWritten>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`write <pyllo.plugins.output.api.OutputWriter.write>`\ (text, severity)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigTextWritten
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: write(text: pyllo.core.dtype.Text, severity=t.Severity.PLAIN)
+
+
+
+
+
+.. py:class:: OutputType
+
+   Bases: :py:obj:`enum.Enum`
+
+   Generic enumeration.
+
+   Derive from this class to define new enumerations.
+
+   ..    ..    ..    .. .. py:attribute:: LOGGER_TYPE
+      :value: 'logger'
+
+      
+
+   ..    .. .. py:attribute:: WRITER_TYPE
+      :value: 'writer'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`LOGGER_TYPE <pyllo.plugins.output.api.OutputType.LOGGER_TYPE>`
+        - \-
+      * - :py:obj:`WRITER_TYPE <pyllo.plugins.output.api.OutputType.WRITER_TYPE>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: LOGGER_TYPE
+      :value: 'logger'
+
+      
+
+   .. py:attribute:: WRITER_TYPE
+      :value: 'writer'
+
+      
+
+
+
+
+
+

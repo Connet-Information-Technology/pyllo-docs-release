@@ -1,0 +1,30 @@
+:py:mod:`pyllo.plugins.preferences`
+===================================
+
+.. py:module:: pyllo.plugins.preferences
+
+.. autoapi-nested-parse::
+
+   Preference plugin
+
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   internal/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   api/index.rst
+   plugin/index.rst
+
+

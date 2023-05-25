@@ -1,0 +1,21 @@
+:py:mod:`pyllo.plugins.codeeditorv2.config`
+===========================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.config
+
+
+Module Contents
+---------------
+
+
+
+.. py:data:: CONF_DEFAULTS
+   :value: [('codeeditorv2',), ('shortcuts',)]
+
+   
+
+.. py:data:: CONF_VERSION
+   :value: '0.1.0'
+
+   
+

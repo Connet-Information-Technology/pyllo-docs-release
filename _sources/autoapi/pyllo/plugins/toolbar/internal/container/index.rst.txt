@@ -1,0 +1,187 @@
+:py:mod:`pyllo.plugins.toolbar.internal.container`
+==================================================
+
+.. py:module:: pyllo.plugins.toolbar.internal.container
+
+.. autoapi-nested-parse::
+
+   Toolbar Container.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ToolbarContainer <pyllo.plugins.toolbar.internal.container.ToolbarContainer>`
+     - Pyllo plugin main container class.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ToolbarItem <pyllo.plugins.toolbar.internal.container.ToolbarItem>`
+     - \-
+   * - :py:obj:`ItemInfo <pyllo.plugins.toolbar.internal.container.ItemInfo>`
+     - \-
+
+
+.. py:data:: ToolbarItem
+
+   
+
+.. py:data:: ItemInfo
+
+   
+
+.. py:class:: ToolbarContainer(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainContainer`
+
+   Pyllo plugin main container class.
+
+   This class handles a non-dockable widget to be able to contain, parent and
+   store references to other widget, like status bar widget, toolbars,
+   context menus, etc.
+
+   Notes
+   -----
+   All Pyllo non dockable plugins can define a plugin container that must
+   subclass this.
+
+   PylloPlugin plugins must provide a CONTAINER_CLASS attribute that is a
+   subclass of PluginMainContainer, if they provide additional widget like
+   status bar widget or toolbars.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.toolbar.internal.container.ToolbarContainer.setup>`\ ()
+        - Create actions, widget, add to menu and other setup requirements.
+      * - :py:obj:`createApplicationToolbar <pyllo.plugins.toolbar.internal.container.ToolbarContainer.createApplicationToolbar>`\ (name, title)
+        - Create an application toolbar and add it to the main window.
+      * - :py:obj:`addApplicationToolbar <pyllo.plugins.toolbar.internal.container.ToolbarContainer.addApplicationToolbar>`\ (toolbar, mainwindow)
+        - Add toolbar to application toolbars.
+      * - :py:obj:`addItemToApplicationToolbar <pyllo.plugins.toolbar.internal.container.ToolbarContainer.addItemToApplicationToolbar>`\ (item, toolbarId, section, before, beforeSection)
+        - Add action or widget `item` to given application toolbar `section`.
+      * - :py:obj:`getApplicationToolbar <pyllo.plugins.toolbar.internal.container.ToolbarContainer.getApplicationToolbar>`\ (toolbarId)
+        - Return an application toolbar by toolbar_id.
+      * - :py:obj:`getApplicationToolbars <pyllo.plugins.toolbar.internal.container.ToolbarContainer.getApplicationToolbars>`\ ()
+        - Return all created application toolbars.
+      * - :py:obj:`loadLastVisibleToolbars <pyllo.plugins.toolbar.internal.container.ToolbarContainer.loadLastVisibleToolbars>`\ ()
+        - Load the last visible toolbars from our preferences..
+      * - :py:obj:`createToolbarsMenu <pyllo.plugins.toolbar.internal.container.ToolbarContainer.createToolbarsMenu>`\ ()
+        - Populate the toolbars menu inside the view application menu.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Create actions, widget, add to menu and other setup requirements.
+
+
+   .. py:method:: createApplicationToolbar(name: pyllo.core.dtype.Identity, title: str) -> pyllo.ui.toolbar.ApplicationToolbar
+
+      Create an application toolbar and add it to the main window.
+
+      Parameters
+      ----------
+      name: str
+          The toolbar unique identifier string.
+      title: str
+          The localized toolbar title to be displayed.
+
+      Returns
+      -------
+      pyllo.api.widget.toolbar.ApplicationToolbar
+          The created application toolbar.
+
+
+   .. py:method:: addApplicationToolbar(toolbar, mainwindow=None)
+
+      Add toolbar to application toolbars.
+
+      Parameters
+      ----------
+      toolbar: core.api.widget.toolbars.ApplicationToolbar
+          The application toolbar to add to the `mainwindow`.
+      mainwindow: QMainWindow
+          The main application window.
+
+
+   .. py:method:: addItemToApplicationToolbar(item: ToolbarItem, toolbarId: Optional[str] = None, section: Optional[str] = None, before: Optional[str] = None, beforeSection: Optional[str] = None)
+
+      Add action or widget `item` to given application toolbar `section`.
+
+      Parameters
+      ----------
+      item: PylloAction or QWidget
+          The item to add to the `toolbar`.
+      toolbarId: str or None
+          The application toolbar unique string identifier.
+      section: str or None
+          The section id in which to insert the `item` on the `toolbar`.
+      before: str or None
+          Make the item appear before another given item.
+      beforeSection: str or None
+          Make the item defined section appear before another given section
+          (the section must be already defined).
+
+
+   .. py:method:: getApplicationToolbar(toolbarId: str) -> pyllo.ui.toolbar.ApplicationToolbar
+
+      Return an application toolbar by toolbar_id.
+
+      Parameters
+      ----------
+      toolbarId: str
+          The toolbar unique string identifier.
+
+      Returns
+      -------
+      core.api.widget.toolbars.ApplicationToolbar
+          The application toolbar.
+
+
+   .. py:method:: getApplicationToolbars()
+
+      Return all created application toolbars.
+
+      Returns
+      -------
+      list
+          The list of all the added application toolbars.
+
+
+   .. py:method:: loadLastVisibleToolbars()
+
+      Load the last visible toolbars from our preferences..
+
+
+   .. py:method:: createToolbarsMenu()
+
+      Populate the toolbars menu inside the view application menu.
+
+
+
+
+

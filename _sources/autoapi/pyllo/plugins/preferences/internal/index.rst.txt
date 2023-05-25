@@ -1,0 +1,16 @@
+:py:mod:`pyllo.plugins.preferences.internal`
+============================================
+
+.. py:module:: pyllo.plugins.preferences.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   container/index.rst
+   widgets/index.rst
+
+

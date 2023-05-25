@@ -1,0 +1,220 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers`
+==========================================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LineNumbersPanel <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel>`
+     - Panel showing line numbers in codeeditor
+
+
+
+
+.. py:class:: LineNumbersPanel(codeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.PanelExtension`
+
+   Panel showing line numbers in codeeditor
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'linenumbers'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   ..    .. .. py:attribute:: AREA
+
+      
+
+   ..    .. .. py:attribute:: AREA_GRAVITY
+      :value: 10
+
+      
+
+   ..    .. .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: SCROLLABLE
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: TEXT_COLOR
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.VERSION>`
+        - \-
+      * - :py:obj:`AREA <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.AREA>`
+        - \-
+      * - :py:obj:`AREA_GRAVITY <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.AREA_GRAVITY>`
+        - \-
+      * - :py:obj:`DYNAMIC <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.DYNAMIC>`
+        - \-
+      * - :py:obj:`SCROLLABLE <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.SCROLLABLE>`
+        - \-
+      * - :py:obj:`TEXT_COLOR <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.TEXT_COLOR>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`onEnabled <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.onEnabled>`\ (enabled)
+        - Called when enable state is changed
+      * - :py:obj:`getName <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.getDescription>`\ ()
+        - Return the extension's localized description.
+      * - :py:obj:`sizeHint <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.sizeHint>`\ ()
+        - Return the widget size hint, overriding the Qt method.
+      * - :py:obj:`paintEvent <pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers.LineNumbersPanel.paintEvent>`\ (event)
+        - Painting line numbers
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'linenumbers'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. py:attribute:: AREA
+
+      
+
+   .. py:attribute:: AREA_GRAVITY
+      :value: 10
+
+      
+
+   .. py:attribute:: DYNAMIC
+      :value: False
+
+      
+
+   .. py:attribute:: SCROLLABLE
+      :value: True
+
+      
+
+   .. py:attribute:: TEXT_COLOR
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onEnabled(enabled)
+
+      Called when enable state is changed
+
+
+   .. py:method:: getName() -> str
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: sizeHint()
+
+      Return the widget size hint, overriding the Qt method.
+
+      Notes
+      -----
+      * This size hint will define the QSize of the panel, i.e. it is
+        where its width and height are defined.
+      * If the size of your panel depends on displayed text, please
+        use the LineNumberArea one as reference on how to implement
+        this method.
+      * If the size is not dependent on displayed text, please use
+        the debugger panel as reference.
+      * If your panel is in a floating position, please use the
+        IndentationGuide one as reference.
+
+
+   .. py:method:: paintEvent(event)
+
+      Painting line numbers
+
+
+
+
+

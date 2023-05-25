@@ -1,0 +1,16 @@
+:py:mod:`pyllo.ui.editor`
+=========================
+
+.. py:module:: pyllo.ui.editor
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   simplecodeeditor/index.rst
+   textedits/index.rst
+
+

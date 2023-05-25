@@ -1,0 +1,117 @@
+:py:mod:`pyllo.plugins.languageserver.widget.completionlistwidget`
+==================================================================
+
+.. py:module:: pyllo.plugins.languageserver.widget.completionlistwidget
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`CompletionListWidget <pyllo.plugins.languageserver.widget.completionlistwidget.CompletionListWidget>`
+     - \-
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`DEFAULT_COMPLETION_ITEM_HEIGHT <pyllo.plugins.languageserver.widget.completionlistwidget.DEFAULT_COMPLETION_ITEM_HEIGHT>`
+     - \-
+   * - :py:obj:`DEFAULT_COMPLETION_ITEM_WIDTH <pyllo.plugins.languageserver.widget.completionlistwidget.DEFAULT_COMPLETION_ITEM_WIDTH>`
+     - \-
+   * - :py:obj:`DEFAULT_COMPLETION_ITEM_HEIGHT <pyllo.plugins.languageserver.widget.completionlistwidget.DEFAULT_COMPLETION_ITEM_HEIGHT>`
+     - \-
+
+
+.. py:data:: DEFAULT_COMPLETION_ITEM_HEIGHT
+   :value: 15
+
+   
+
+.. py:data:: DEFAULT_COMPLETION_ITEM_WIDTH
+   :value: 200
+
+   
+
+.. py:data:: DEFAULT_COMPLETION_ITEM_HEIGHT
+   :value: 120
+
+   
+
+.. py:class:: CompletionListWidget(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QListWidget`
+
+   ..    ..    ..    .. .. py:attribute:: sigCompletionSelected
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigCompletionSelected <pyllo.plugins.languageserver.widget.completionlistwidget.CompletionListWidget.sigCompletionSelected>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setupAppearance <pyllo.plugins.languageserver.widget.completionlistwidget.CompletionListWidget.setupAppearance>`\ (size)
+        - Setup size and font of the completion widget.
+      * - :py:obj:`showList <pyllo.plugins.languageserver.widget.completionlistwidget.CompletionListWidget.showList>`\ (completionList, position)
+        - Show list corresponding to position.
+      * - :py:obj:`hide <pyllo.plugins.languageserver.widget.completionlistwidget.CompletionListWidget.hide>`\ (focusToParent)
+        - Override Qt method.
+      * - :py:obj:`itemSelected <pyllo.plugins.languageserver.widget.completionlistwidget.CompletionListWidget.itemSelected>`\ (item)
+        - Perform the item selected action.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigCompletionSelected
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setupAppearance(size)
+
+      Setup size and font of the completion widget.
+
+
+   .. py:method:: showList(completionList, position)
+
+      Show list corresponding to position.
+
+
+   .. py:method:: hide(focusToParent=True)
+
+      Override Qt method.
+
+
+   .. py:method:: itemSelected(item)
+
+      Perform the item selected action.
+
+
+
+
+

@@ -1,0 +1,102 @@
+:py:mod:`pyllo.plugins.ipythonconsole.api.traceback`
+====================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.api.traceback
+
+.. autoapi-nested-parse::
+
+   Traceback Mix-in classes
+
+   These classes were created to be able to provide Pyllo's regular text and
+   console widget features to an independent widget based on QTextEdit for the
+   IPython console plugin.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`TracebackLinksMixin <pyllo.plugins.ipythonconsole.api.traceback.TracebackLinksMixin>`
+     - \-
+
+
+
+
+.. py:class:: TracebackLinksMixin
+
+   Bases: :py:obj:`object`
+
+   ..    ..    ..    .. .. py:attribute:: QT_CLASS
+
+      
+
+   ..    .. .. py:attribute:: sigGoToErrorRequested
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`QT_CLASS <pyllo.plugins.ipythonconsole.api.traceback.TracebackLinksMixin.QT_CLASS>`
+        - \-
+      * - :py:obj:`sigGoToErrorRequested <pyllo.plugins.ipythonconsole.api.traceback.TracebackLinksMixin.sigGoToErrorRequested>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`mouseReleaseEvent <pyllo.plugins.ipythonconsole.api.traceback.TracebackLinksMixin.mouseReleaseEvent>`\ (event)
+        - Go to error
+      * - :py:obj:`mouseMoveEvent <pyllo.plugins.ipythonconsole.api.traceback.TracebackLinksMixin.mouseMoveEvent>`\ (event)
+        - Show Pointing Hand Cursor on error messages
+      * - :py:obj:`leaveEvent <pyllo.plugins.ipythonconsole.api.traceback.TracebackLinksMixin.leaveEvent>`\ (event)
+        - If cursor has not been restored yet, do it now
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: QT_CLASS
+
+      
+
+   .. py:attribute:: sigGoToErrorRequested
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: mouseReleaseEvent(event)
+
+      Go to error
+
+
+   .. py:method:: mouseMoveEvent(event)
+
+      Show Pointing Hand Cursor on error messages
+
+
+   .. py:method:: leaveEvent(event)
+
+      If cursor has not been restored yet, do it now
+
+
+
+
+

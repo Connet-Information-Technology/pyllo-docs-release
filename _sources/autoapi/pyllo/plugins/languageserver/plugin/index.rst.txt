@@ -1,0 +1,241 @@
+:py:mod:`pyllo.plugins.languageserver.plugin`
+=============================================
+
+.. py:module:: pyllo.plugins.languageserver.plugin
+
+.. autoapi-nested-parse::
+
+   Language Server Plugin implements UX in LSP
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LanguageServer <pyllo.plugins.languageserver.plugin.LanguageServer>`
+     - language server plugin.
+
+
+
+
+.. py:class:: LanguageServer(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   language server plugin.
+   Language Server Protocol 
+   This is auto-generated template. 
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'languageserver'
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.languageserver.plugin.LanguageServer.NAME>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.languageserver.plugin.LanguageServer.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.languageserver.plugin.LanguageServer.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.plugins.languageserver.plugin.LanguageServer.CONTAINER_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.languageserver.plugin.LanguageServer.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_WIDGET_CLASS <pyllo.plugins.languageserver.plugin.LanguageServer.CONF_WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.languageserver.plugin.LanguageServer.CONF_FILE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.languageserver.plugin.LanguageServer.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.languageserver.plugin.LanguageServer.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.languageserver.plugin.LanguageServer.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.languageserver.plugin.LanguageServer.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onStatusBarAvailable <pyllo.plugins.languageserver.plugin.LanguageServer.onStatusBarAvailable>`\ ()
+        - \-
+      * - :py:obj:`onMainMenuAvailable <pyllo.plugins.languageserver.plugin.LanguageServer.onMainMenuAvailable>`\ ()
+        - \-
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.languageserver.plugin.LanguageServer.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`onCodeEditorV2Available <pyllo.plugins.languageserver.plugin.LanguageServer.onCodeEditorV2Available>`\ ()
+        - \-
+      * - :py:obj:`registerLanguageServer <pyllo.plugins.languageserver.plugin.LanguageServer.registerLanguageServer>`\ (descriptor)
+        - register language server descriptors
+      * - :py:obj:`openCodeEditorAndGoto <pyllo.plugins.languageserver.plugin.LanguageServer.openCodeEditorAndGoto>`\ (filePath, lineNo, colNo, setFocus)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'languageserver'
+
+      
+
+   .. py:attribute:: REQUIRES
+
+      
+
+   .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onStatusBarAvailable()
+
+
+   .. py:method:: onMainMenuAvailable()
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: onCodeEditorV2Available()
+
+
+   .. py:method:: registerLanguageServer(descriptor: pyllo.plugins.languageserver.api.ILanguageServerDescriptor)
+
+      register language server descriptors
+
+
+   .. py:method:: openCodeEditorAndGoto(filePath: pyllo.core.dtype.FilePath, lineNo: pyllo.core.dtype.LineNumber, colNo: pyllo.core.dtype.ColumnNumber, setFocus=False)
+
+
+
+
+

@@ -1,0 +1,247 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.calltip`
+======================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.calltip
+
+.. autoapi-nested-parse::
+
+   Calltip widget used only to show signatures.
+
+   Adapted from IPython/frontend/qt/console/call_tip_widget.py of the
+   `IPython Project <https://github.com/ipython/ipython>`_.
+   Now located at qtconsole/call_tip_widget.py as part of the
+   `Jupyter QtConsole Project <https://github.com/jupyter/qtconsole>`_.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ToolTipWidget <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget>`
+     - Shows tooltips that can be styled with the different themes.
+   * - :py:obj:`CallTipWidget <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget>`
+     - Shows call tips by parsing the current text of Q[Plain]TextEdit.
+
+
+
+
+.. py:class:: ToolTipWidget(parent=None, asTooltip=False)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QLabel`
+
+   Shows tooltips that can be styled with the different themes.
+
+   ..    ..    ..    .. .. py:attribute:: sigCompletionHelpRequested
+
+      
+
+   ..    .. .. py:attribute:: sigHelpRequested
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigCompletionHelpRequested <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget.sigCompletionHelpRequested>`
+        - \-
+      * - :py:obj:`sigHelpRequested <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget.sigHelpRequested>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`paintEvent <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget.paintEvent>`\ (event)
+        - Reimplemented to paint the background panel.
+      * - :py:obj:`showBasicTip <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget.showBasicTip>`\ (point, tip)
+        - Show basic tip.
+      * - :py:obj:`showTip <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget.showTip>`\ (point, tip, cursor, completionDoc)
+        - Attempts to show the specified tip at the current cursor location.
+      * - :py:obj:`mousePressEvent <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget.mousePressEvent>`\ (event)
+        - Reimplemented to hide it when focus goes out of the main window.
+      * - :py:obj:`focusOutEvent <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget.focusOutEvent>`\ (event)
+        - Reimplemented to hide it when focus goes out of the main window.
+      * - :py:obj:`leaveEvent <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget.leaveEvent>`\ (event)
+        - Override Qt method to hide the tooltip on leave.
+      * - :py:obj:`hide <pyllo.plugins.ipythonconsole.widgets.calltip.ToolTipWidget.hide>`\ ()
+        - Override Qt method to add timer and restore cursor.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigCompletionHelpRequested
+
+      
+
+   .. py:attribute:: sigHelpRequested
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: paintEvent(event)
+
+      Reimplemented to paint the background panel.
+
+
+   .. py:method:: showBasicTip(point, tip)
+
+      Show basic tip.
+
+
+   .. py:method:: showTip(point, tip, cursor=None, completionDoc=None)
+
+      Attempts to show the specified tip at the current cursor location.
+
+
+   .. py:method:: mousePressEvent(event)
+
+      Reimplemented to hide it when focus goes out of the main window.
+
+
+   .. py:method:: focusOutEvent(event)
+
+      Reimplemented to hide it when focus goes out of the main window.
+
+
+   .. py:method:: leaveEvent(event)
+
+      Override Qt method to hide the tooltip on leave.
+
+
+   .. py:method:: hide()
+
+      Override Qt method to add timer and restore cursor.
+
+
+
+
+
+.. py:class:: CallTipWidget(textEdit, hideTimerOn=False, asTooltip=False)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QLabel`
+
+   Shows call tips by parsing the current text of Q[Plain]TextEdit.
+       
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`eventFilter <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.eventFilter>`\ (obj, event)
+        - Reimplemented to hide on certain key presses and on text edit focus
+      * - :py:obj:`timerEvent <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.timerEvent>`\ (event)
+        - Reimplemented to hide the widget when the hide timer fires.
+      * - :py:obj:`enterEvent <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.enterEvent>`\ (event)
+        - Reimplemented to cancel the hide timer.
+      * - :py:obj:`hideEvent <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.hideEvent>`\ (event)
+        - Reimplemented to disconnect signal handlers and event filter.
+      * - :py:obj:`leaveEvent <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.leaveEvent>`\ (event)
+        - Reimplemented to start the hide timer.
+      * - :py:obj:`mousePressEvent <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.mousePressEvent>`\ (event)
+        - \-
+      * - :py:obj:`paintEvent <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.paintEvent>`\ (event)
+        - Reimplemented to paint the background panel.
+      * - :py:obj:`setFont <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.setFont>`\ (font)
+        - Reimplemented to allow use of this method as a slot.
+      * - :py:obj:`showEvent <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.showEvent>`\ (event)
+        - Reimplemented to connect signal handlers and event filter.
+      * - :py:obj:`focusOutEvent <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.focusOutEvent>`\ (event)
+        - Reimplemented to hide it when focus goes out of the main
+      * - :py:obj:`showTip <pyllo.plugins.ipythonconsole.widgets.calltip.CallTipWidget.showTip>`\ (point, tip, wrappedTiplines)
+        - Attempts to show the specified tip at the current cursor location.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: eventFilter(obj, event)
+
+      Reimplemented to hide on certain key presses and on text edit focus
+      changes.
+
+
+   .. py:method:: timerEvent(event)
+
+      Reimplemented to hide the widget when the hide timer fires.
+              
+
+
+   .. py:method:: enterEvent(event)
+
+      Reimplemented to cancel the hide timer.
+              
+
+
+   .. py:method:: hideEvent(event)
+
+      Reimplemented to disconnect signal handlers and event filter.
+              
+
+
+   .. py:method:: leaveEvent(event)
+
+      Reimplemented to start the hide timer.
+              
+
+
+   .. py:method:: mousePressEvent(event)
+
+
+   .. py:method:: paintEvent(event)
+
+      Reimplemented to paint the background panel.
+              
+
+
+   .. py:method:: setFont(font)
+
+      Reimplemented to allow use of this method as a slot.
+              
+
+
+   .. py:method:: showEvent(event)
+
+      Reimplemented to connect signal handlers and event filter.
+              
+
+
+   .. py:method:: focusOutEvent(event)
+
+      Reimplemented to hide it when focus goes out of the main
+      window.
+
+
+   .. py:method:: showTip(point, tip, wrappedTiplines)
+
+      Attempts to show the specified tip at the current cursor location.
+              
+
+
+
+
+

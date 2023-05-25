@@ -1,0 +1,33 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.infowidget`
+=========================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.infowidget
+
+.. autoapi-nested-parse::
+
+   TODO: kernel loading widget
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`InfoWidget <pyllo.plugins.ipythonconsole.widgets.infowidget.InfoWidget>`
+     - \-
+
+
+
+
+.. py:class:: InfoWidget
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`
+
+   ..    ..    .. 
+
+

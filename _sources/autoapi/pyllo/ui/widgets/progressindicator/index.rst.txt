@@ -1,0 +1,124 @@
+:py:mod:`pyllo.ui.widgets.progressindicator`
+============================================
+
+.. py:module:: pyllo.ui.widgets.progressindicator
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`QProgressIndicator <pyllo.ui.widgets.progressindicator.QProgressIndicator>`
+     - Progress indicator(circular)
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`app <pyllo.ui.widgets.progressindicator.app>`
+     - \-
+
+
+.. py:class:: QProgressIndicator(parent=None, *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`
+
+   Progress indicator(circular)
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`animationInterval <pyllo.ui.widgets.progressindicator.QProgressIndicator.animationInterval>`\ ()
+        - \-
+      * - :py:obj:`isAnimated <pyllo.ui.widgets.progressindicator.QProgressIndicator.isAnimated>`\ ()
+        - \-
+      * - :py:obj:`isDisplayedWhenStopped <pyllo.ui.widgets.progressindicator.QProgressIndicator.isDisplayedWhenStopped>`\ ()
+        - \-
+      * - :py:obj:`color <pyllo.ui.widgets.progressindicator.QProgressIndicator.color>`\ ()
+        - \-
+      * - :py:obj:`sizeHint <pyllo.ui.widgets.progressindicator.QProgressIndicator.sizeHint>`\ ()
+        - \-
+      * - :py:obj:`heightForWidth <pyllo.ui.widgets.progressindicator.QProgressIndicator.heightForWidth>`\ (w)
+        - \-
+      * - :py:obj:`startAnimation <pyllo.ui.widgets.progressindicator.QProgressIndicator.startAnimation>`\ (interval)
+        - \-
+      * - :py:obj:`stopAnimation <pyllo.ui.widgets.progressindicator.QProgressIndicator.stopAnimation>`\ ()
+        - \-
+      * - :py:obj:`setAnimationInterval <pyllo.ui.widgets.progressindicator.QProgressIndicator.setAnimationInterval>`\ (time)
+        - \-
+      * - :py:obj:`setDisplayedWhenStopped <pyllo.ui.widgets.progressindicator.QProgressIndicator.setDisplayedWhenStopped>`\ (enabled)
+        - \-
+      * - :py:obj:`setColor <pyllo.ui.widgets.progressindicator.QProgressIndicator.setColor>`\ (color)
+        - \-
+      * - :py:obj:`timerEvent <pyllo.ui.widgets.progressindicator.QProgressIndicator.timerEvent>`\ (event)
+        - \-
+      * - :py:obj:`paintEvent <pyllo.ui.widgets.progressindicator.QProgressIndicator.paintEvent>`\ (event)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: animationInterval() -> pyllo.core.dtype.Milliseconds
+
+
+   .. py:method:: isAnimated() -> bool
+
+
+   .. py:method:: isDisplayedWhenStopped() -> bool
+
+
+   .. py:method:: color() -> qtpy.QtGui.QColor
+
+
+   .. py:method:: sizeHint() -> qtpy.QtCore.QSize
+
+
+   .. py:method:: heightForWidth(w: int) -> int
+
+
+   .. py:method:: startAnimation(interval: pyllo.core.dtype.Milliseconds = None)
+
+
+   .. py:method:: stopAnimation()
+
+
+   .. py:method:: setAnimationInterval(time: pyllo.core.dtype.Milliseconds)
+
+
+   .. py:method:: setDisplayedWhenStopped(enabled: bool)
+
+
+   .. py:method:: setColor(color: qtpy.QtGui.QColor)
+
+
+   .. py:method:: timerEvent(event)
+
+
+   .. py:method:: paintEvent(event)
+
+
+
+
+
+.. py:data:: app
+
+   
+

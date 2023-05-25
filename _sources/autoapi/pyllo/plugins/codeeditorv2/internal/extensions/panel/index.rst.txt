@@ -1,0 +1,18 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.extensions.panel`
+==============================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.extensions.panel
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   edgeline/index.rst
+   findreplace/index.rst
+   linenumbers/index.rst
+   scrollflag/index.rst
+
+

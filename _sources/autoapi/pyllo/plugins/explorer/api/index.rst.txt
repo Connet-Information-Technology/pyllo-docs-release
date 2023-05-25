@@ -1,0 +1,552 @@
+:py:mod:`pyllo.plugins.explorer.api`
+====================================
+
+.. py:module:: pyllo.plugins.explorer.api
+
+.. autoapi-nested-parse::
+
+   Explorer Plugin API.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ExplorerWidgetContextMenuSections <pyllo.plugins.explorer.api.ExplorerWidgetContextMenuSections>`
+     - \-
+   * - :py:obj:`ExplorerWidgetActions <pyllo.plugins.explorer.api.ExplorerWidgetActions>`
+     - \-
+   * - :py:obj:`ExplorerWidgetMainToolbarSections <pyllo.plugins.explorer.api.ExplorerWidgetMainToolbarSections>`
+     - \-
+   * - :py:obj:`ExplorerMenus <pyllo.plugins.explorer.api.ExplorerMenus>`
+     - \-
+   * - :py:obj:`ExplorerTreeWidgetActions <pyllo.plugins.explorer.api.ExplorerTreeWidgetActions>`
+     - \-
+   * - :py:obj:`ExplorerColumns <pyllo.plugins.explorer.api.ExplorerColumns>`
+     - \-
+   * - :py:obj:`ExplorerActions <pyllo.plugins.explorer.api.ExplorerActions>`
+     - \-
+
+
+
+
+.. py:class:: ExplorerWidgetContextMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: New
+      :value: 'new_section'
+
+      
+
+   ..    .. .. py:attribute:: Copy
+      :value: 'copy_section'
+
+      
+
+   ..    .. .. py:attribute:: Edit
+      :value: 'edit_section'
+
+      
+
+   ..    .. .. py:attribute:: Find
+      :value: 'find_section'
+
+      
+
+   ..    .. .. py:attribute:: Open
+      :value: 'open_section'
+
+      
+
+   ..    .. .. py:attribute:: Addition
+      :value: 'addition_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`New <pyllo.plugins.explorer.api.ExplorerWidgetContextMenuSections.New>`
+        - \-
+      * - :py:obj:`Copy <pyllo.plugins.explorer.api.ExplorerWidgetContextMenuSections.Copy>`
+        - \-
+      * - :py:obj:`Edit <pyllo.plugins.explorer.api.ExplorerWidgetContextMenuSections.Edit>`
+        - \-
+      * - :py:obj:`Find <pyllo.plugins.explorer.api.ExplorerWidgetContextMenuSections.Find>`
+        - \-
+      * - :py:obj:`Open <pyllo.plugins.explorer.api.ExplorerWidgetContextMenuSections.Open>`
+        - \-
+      * - :py:obj:`Addition <pyllo.plugins.explorer.api.ExplorerWidgetContextMenuSections.Addition>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: New
+      :value: 'new_section'
+
+      
+
+   .. py:attribute:: Copy
+      :value: 'copy_section'
+
+      
+
+   .. py:attribute:: Edit
+      :value: 'edit_section'
+
+      
+
+   .. py:attribute:: Find
+      :value: 'find_section'
+
+      
+
+   .. py:attribute:: Open
+      :value: 'open_section'
+
+      
+
+   .. py:attribute:: Addition
+      :value: 'addition_section'
+
+      
+
+
+
+
+
+
+.. py:class:: ExplorerWidgetActions
+
+   ..    ..    ..    .. .. py:attribute:: NewFile
+      :value: 'new_file_action'
+
+      
+
+   ..    .. .. py:attribute:: NewDirectory
+      :value: 'new_directory_action'
+
+      
+
+   ..    .. .. py:attribute:: ShowInExternalFileExplorer
+      :value: 'show_in_external_file_explorer_action'
+
+      
+
+   ..    .. .. py:attribute:: Delete
+      :value: 'delete...'
+
+      
+
+   ..    .. .. py:attribute:: Rename
+      :value: 'rename'
+
+      
+
+   ..    .. .. py:attribute:: Copy
+      :value: 'copy'
+
+      
+
+   ..    .. .. py:attribute:: CopyPath
+      :value: 'copy path'
+
+      
+
+   ..    .. .. py:attribute:: Paste
+      :value: 'paste'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NewFile <pyllo.plugins.explorer.api.ExplorerWidgetActions.NewFile>`
+        - \-
+      * - :py:obj:`NewDirectory <pyllo.plugins.explorer.api.ExplorerWidgetActions.NewDirectory>`
+        - \-
+      * - :py:obj:`ShowInExternalFileExplorer <pyllo.plugins.explorer.api.ExplorerWidgetActions.ShowInExternalFileExplorer>`
+        - \-
+      * - :py:obj:`Delete <pyllo.plugins.explorer.api.ExplorerWidgetActions.Delete>`
+        - \-
+      * - :py:obj:`Rename <pyllo.plugins.explorer.api.ExplorerWidgetActions.Rename>`
+        - \-
+      * - :py:obj:`Copy <pyllo.plugins.explorer.api.ExplorerWidgetActions.Copy>`
+        - \-
+      * - :py:obj:`CopyPath <pyllo.plugins.explorer.api.ExplorerWidgetActions.CopyPath>`
+        - \-
+      * - :py:obj:`Paste <pyllo.plugins.explorer.api.ExplorerWidgetActions.Paste>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NewFile
+      :value: 'new_file_action'
+
+      
+
+   .. py:attribute:: NewDirectory
+      :value: 'new_directory_action'
+
+      
+
+   .. py:attribute:: ShowInExternalFileExplorer
+      :value: 'show_in_external_file_explorer_action'
+
+      
+
+   .. py:attribute:: Delete
+      :value: 'delete...'
+
+      
+
+   .. py:attribute:: Rename
+      :value: 'rename'
+
+      
+
+   .. py:attribute:: Copy
+      :value: 'copy'
+
+      
+
+   .. py:attribute:: CopyPath
+      :value: 'copy path'
+
+      
+
+   .. py:attribute:: Paste
+      :value: 'paste'
+
+      
+
+
+
+
+
+
+.. py:class:: ExplorerWidgetMainToolbarSections
+
+   ..    ..    ..    .. .. py:attribute:: Main
+      :value: 'main_section'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Main <pyllo.plugins.explorer.api.ExplorerWidgetMainToolbarSections.Main>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Main
+      :value: 'main_section'
+
+      
+
+
+
+
+
+
+.. py:class:: ExplorerMenus
+
+   ..    ..    ..    .. .. py:attribute:: Header
+      :value: 'header_menu'
+
+      
+
+   ..    .. .. py:attribute:: Context
+      :value: 'context_menu'
+
+      
+
+   ..    .. .. py:attribute:: New
+      :value: 'new_menu'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Header <pyllo.plugins.explorer.api.ExplorerMenus.Header>`
+        - \-
+      * - :py:obj:`Context <pyllo.plugins.explorer.api.ExplorerMenus.Context>`
+        - \-
+      * - :py:obj:`New <pyllo.plugins.explorer.api.ExplorerMenus.New>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Header
+      :value: 'header_menu'
+
+      
+
+   .. py:attribute:: Context
+      :value: 'context_menu'
+
+      
+
+   .. py:attribute:: New
+      :value: 'new_menu'
+
+      
+
+
+
+
+
+
+.. py:class:: ExplorerTreeWidgetActions
+
+   ..    ..    ..    .. .. py:attribute:: Forward
+      :value: 'next_action'
+
+      
+
+   ..    .. .. py:attribute:: Parent
+      :value: 'go to parent'
+
+      
+
+   ..    .. .. py:attribute:: Back
+      :value: 'previous_action'
+
+      
+
+   ..    .. .. py:attribute:: ExpandAll
+      :value: 'expand all'
+
+      
+
+   ..    .. .. py:attribute:: CollapseAll
+      :value: 'collapse all'
+
+      
+
+   ..    .. .. py:attribute:: SelectOpenedFile
+      :value: 'select_opened_file_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Forward <pyllo.plugins.explorer.api.ExplorerTreeWidgetActions.Forward>`
+        - \-
+      * - :py:obj:`Parent <pyllo.plugins.explorer.api.ExplorerTreeWidgetActions.Parent>`
+        - \-
+      * - :py:obj:`Back <pyllo.plugins.explorer.api.ExplorerTreeWidgetActions.Back>`
+        - \-
+      * - :py:obj:`ExpandAll <pyllo.plugins.explorer.api.ExplorerTreeWidgetActions.ExpandAll>`
+        - \-
+      * - :py:obj:`CollapseAll <pyllo.plugins.explorer.api.ExplorerTreeWidgetActions.CollapseAll>`
+        - \-
+      * - :py:obj:`SelectOpenedFile <pyllo.plugins.explorer.api.ExplorerTreeWidgetActions.SelectOpenedFile>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Forward
+      :value: 'next_action'
+
+      
+
+   .. py:attribute:: Parent
+      :value: 'go to parent'
+
+      
+
+   .. py:attribute:: Back
+      :value: 'previous_action'
+
+      
+
+   .. py:attribute:: ExpandAll
+      :value: 'expand all'
+
+      
+
+   .. py:attribute:: CollapseAll
+      :value: 'collapse all'
+
+      
+
+   .. py:attribute:: SelectOpenedFile
+      :value: 'select_opened_file_action'
+
+      
+
+
+
+
+
+
+.. py:class:: ExplorerColumns
+
+   ..    ..    ..    .. .. py:attribute:: Size
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: Type
+      :value: 2
+
+      
+
+   ..    .. .. py:attribute:: Date
+      :value: 3
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Size <pyllo.plugins.explorer.api.ExplorerColumns.Size>`
+        - \-
+      * - :py:obj:`Type <pyllo.plugins.explorer.api.ExplorerColumns.Type>`
+        - \-
+      * - :py:obj:`Date <pyllo.plugins.explorer.api.ExplorerColumns.Date>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Size
+      :value: 1
+
+      
+
+   .. py:attribute:: Type
+      :value: 2
+
+      
+
+   .. py:attribute:: Date
+      :value: 3
+
+      
+
+
+
+
+
+
+.. py:class:: ExplorerActions
+
+   ..    ..    ..    .. .. py:attribute:: ToggleSizeColumn
+      :value: 'toggle_size_column_action'
+
+      
+
+   ..    .. .. py:attribute:: ToggleTypeColumn
+      :value: 'toggle_type_column_action'
+
+      
+
+   ..    .. .. py:attribute:: ToggleDateColumn
+      :value: 'toggle_date_column_action'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ToggleSizeColumn <pyllo.plugins.explorer.api.ExplorerActions.ToggleSizeColumn>`
+        - \-
+      * - :py:obj:`ToggleTypeColumn <pyllo.plugins.explorer.api.ExplorerActions.ToggleTypeColumn>`
+        - \-
+      * - :py:obj:`ToggleDateColumn <pyllo.plugins.explorer.api.ExplorerActions.ToggleDateColumn>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ToggleSizeColumn
+      :value: 'toggle_size_column_action'
+
+      
+
+   .. py:attribute:: ToggleTypeColumn
+      :value: 'toggle_type_column_action'
+
+      
+
+   .. py:attribute:: ToggleDateColumn
+      :value: 'toggle_date_column_action'
+
+      
+
+
+
+
+
+

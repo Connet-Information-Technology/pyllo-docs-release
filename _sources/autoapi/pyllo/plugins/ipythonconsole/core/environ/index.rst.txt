@@ -1,0 +1,48 @@
+:py:mod:`pyllo.plugins.ipythonconsole.core.environ`
+===================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.core.environ
+
+.. autoapi-nested-parse::
+
+   Environment variable utilities.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`envdict2listdict <pyllo.plugins.ipythonconsole.core.environ.envdict2listdict>`\ (envdict)
+     - Dict --> Dict of lists
+   * - :py:obj:`listdict2envdict <pyllo.plugins.ipythonconsole.core.environ.listdict2envdict>`\ (listdict)
+     - Dict of lists --> Dict
+   * - :py:obj:`cleanEnv <pyllo.plugins.ipythonconsole.core.environ.cleanEnv>`\ (envVars)
+     - Remove non-ascii entries from a dictionary of environments variables.
+
+
+
+.. py:function:: envdict2listdict(envdict)
+
+   Dict --> Dict of lists
+
+
+.. py:function:: listdict2envdict(listdict)
+
+   Dict of lists --> Dict
+
+
+.. py:function:: cleanEnv(envVars)
+
+   Remove non-ascii entries from a dictionary of environments variables.
+
+   The values will be converted to strings. If an
+   exception is raised, an empty string will be used.
+
+

@@ -1,0 +1,300 @@
+:py:mod:`pyllo.plugins.mainmenu.plugin`
+=======================================
+
+.. py:module:: pyllo.plugins.mainmenu.plugin
+
+.. autoapi-nested-parse::
+
+   Main menu Plugin.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MainMenu <pyllo.plugins.mainmenu.plugin.MainMenu>`
+     - A Pyllo plugin to extend application with an aspect of features without
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ItemType <pyllo.plugins.mainmenu.plugin.ItemType>`
+     - \-
+   * - :py:obj:`ItemSectionBefore <pyllo.plugins.mainmenu.plugin.ItemSectionBefore>`
+     - \-
+   * - :py:obj:`ItemQueue <pyllo.plugins.mainmenu.plugin.ItemQueue>`
+     - \-
+
+
+.. py:data:: ItemType
+
+   
+
+.. py:data:: ItemSectionBefore
+
+   
+
+.. py:data:: ItemQueue
+
+   
+
+.. py:class:: MainMenu(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   A Pyllo plugin to extend application with an aspect of features without
+   a dockable widget(pane).
+
+   If you want to create a plugin that adds a new pane, please use
+   PylloDockablePlugin.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'mainmenu'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.mainmenu.plugin.MainMenu.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.mainmenu.plugin.MainMenu.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.mainmenu.plugin.MainMenu.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.mainmenu.plugin.MainMenu.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.mainmenu.plugin.MainMenu.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.mainmenu.plugin.MainMenu.CONF_FILE>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.mainmenu.plugin.MainMenu.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getIcon <pyllo.plugins.mainmenu.plugin.MainMenu.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`getDescription <pyllo.plugins.mainmenu.plugin.MainMenu.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`onInitialize <pyllo.plugins.mainmenu.plugin.MainMenu.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onMainwindowVisible <pyllo.plugins.mainmenu.plugin.MainMenu.onMainwindowVisible>`\ ()
+        - Actions to be performed after the main window's has been shown.
+      * - :py:obj:`createApplicationMenu <pyllo.plugins.mainmenu.plugin.MainMenu.createApplicationMenu>`\ (name, title)
+        - Create a Pyllo application menu.
+      * - :py:obj:`insertMenuBefore <pyllo.plugins.mainmenu.plugin.MainMenu.insertMenuBefore>`\ (beforeMenu, menu)
+        - Insert menu before another menu, user can use this method to change original position of menu which
+      * - :py:obj:`addItemToApplicationMenu <pyllo.plugins.mainmenu.plugin.MainMenu.addItemToApplicationMenu>`\ (item, menu, section, before, beforeSection)
+        - Add action or widget `item` to given application menu `section`.
+      * - :py:obj:`getApplicationMenu <pyllo.plugins.mainmenu.plugin.MainMenu.getApplicationMenu>`\ (menu)
+        - Return an application menu by menu unique id.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'mainmenu'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+      :value: []
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainwindowVisible()
+
+      Actions to be performed after the main window's has been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: createApplicationMenu(name: str, title: str) -> pyllo.ui.menu.PylloMenu
+
+      Create a Pyllo application menu.
+
+      Parameters
+      ----------
+      name: str
+          The menu unique identifier string.
+      title: str
+          The localized menu title to be displayed.
+
+      Returns
+      -------
+      created_menu: ApplicationMenu
+          Newly created application menu.
+
+
+   .. py:method:: insertMenuBefore(beforeMenu: str, menu: pyllo.ui.menu.PylloMenu)
+
+      Insert menu before another menu, user can use this method to change original position of menu which
+      by means is order of menus added.
+
+
+   .. py:method:: addItemToApplicationMenu(item: ItemType, menu: Optional[str] = None, section: Optional[str] = None, before: Optional[str] = None, beforeSection: Optional[str] = None)
+
+      Add action or widget `item` to given application menu `section`.
+
+      Parameters
+      ----------
+      item: PylloAction or PylloMenu
+          The item to add to the `menu`.
+      menu: str or None
+          The application menu unique string identifier.
+      section: str or None
+          The section id in which to insert the `item` on the `menu`.
+      before: str
+          Make the item appear before the given object identifier.
+      beforeSection: Section or None
+          Make the item section (if provided) appear before another
+          given section.
+
+      Notes
+      -----
+      Must provide a `menu` or a `menu_id`.
+
+
+   .. py:method:: getApplicationMenu(menu: str) -> pyllo.ui.menu.PylloMenu
+
+      Return an application menu by menu unique id.
+
+      Parameters
+      ----------
+      menu: Name
+          The menu unique identifier string.
+
+
+
+
+

@@ -1,0 +1,16 @@
+:py:mod:`pyllo.plugins.run.internal`
+====================================
+
+.. py:module:: pyllo.plugins.run.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   mainwidget/index.rst
+   widgets/index.rst
+
+

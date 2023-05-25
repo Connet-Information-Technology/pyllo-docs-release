@@ -1,0 +1,29 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal`
+=============================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   extensions/index.rst
+   langexts/index.rst
+   tests/index.rst
+   widgets/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   confpage/index.rst
+   container/index.rst
+   syntaxhighlight/index.rst
+
+

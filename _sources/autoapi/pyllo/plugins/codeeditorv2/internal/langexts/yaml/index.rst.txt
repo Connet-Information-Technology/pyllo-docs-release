@@ -1,0 +1,204 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.langexts.yaml`
+===========================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.langexts.yaml
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`YamlSH <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlSH>`
+     - yaml Syntax Highlighter
+   * - :py:obj:`YamlExtension <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlExtension>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`makeYamlPatterns <pyllo.plugins.codeeditorv2.internal.langexts.yaml.makeYamlPatterns>`\ ()
+     - Strongly inspired from sublime highlighter
+
+
+
+.. py:function:: makeYamlPatterns()
+
+   Strongly inspired from sublime highlighter 
+
+
+.. py:class:: YamlSH(parent, font, colorScheme='pyllo/dark')
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH`
+
+   yaml Syntax Highlighter
+
+   ..    ..    ..    .. .. py:attribute:: PROG
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PROG <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlSH.PROG>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highlightBlock <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlSH.highlightBlock>`\ (text)
+        - Implement highlight using regex defined in children classes.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PROG
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: highlightBlock(text: str)
+
+      Implement highlight using regex defined in children classes.
+
+
+
+
+
+.. py:class:: YamlExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.LanguageExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'yaml'
+
+      
+
+   ..    .. .. py:attribute:: NAME_FILTERS
+      :value: ['*.yaml', '*.yml']
+
+      
+
+   ..    .. .. py:attribute:: ALIASES
+      :value: ['YAML', 'yaml', 'yml']
+
+      
+
+   ..    .. .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   ..    .. .. py:attribute:: CONFIGURATION
+
+      
+
+   ..    .. .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlExtension.NAME>`
+        - \-
+      * - :py:obj:`NAME_FILTERS <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlExtension.NAME_FILTERS>`
+        - \-
+      * - :py:obj:`ALIASES <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlExtension.ALIASES>`
+        - \-
+      * - :py:obj:`FILE_NAMES <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlExtension.FILE_NAMES>`
+        - \-
+      * - :py:obj:`FIRST_LINE <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlExtension.FIRST_LINE>`
+        - \-
+      * - :py:obj:`CONFIGURATION <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlExtension.CONFIGURATION>`
+        - \-
+      * - :py:obj:`SYNTAX_HIGHLIGHTER <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlExtension.SYNTAX_HIGHLIGHTER>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.langexts.yaml.YamlExtension.onInitialize>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'yaml'
+
+      
+
+   .. py:attribute:: NAME_FILTERS
+      :value: ['*.yaml', '*.yml']
+
+      
+
+   .. py:attribute:: ALIASES
+      :value: ['YAML', 'yaml', 'yml']
+
+      
+
+   .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   .. py:attribute:: CONFIGURATION
+
+      
+
+   .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+              
+
+
+
+
+

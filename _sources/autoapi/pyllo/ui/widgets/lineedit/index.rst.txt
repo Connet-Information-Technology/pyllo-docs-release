@@ -1,0 +1,169 @@
+:py:mod:`pyllo.ui.widgets.lineedit`
+===================================
+
+.. py:module:: pyllo.ui.widgets.lineedit
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`FinderLineEdit <pyllo.ui.widgets.lineedit.FinderLineEdit>`
+     - QLineEdit for filtering listed elements in the parent widget.
+   * - :py:obj:`IconLineEdit <pyllo.ui.widgets.lineedit.IconLineEdit>`
+     - Custom QLineEdit that includes an icon representing the validation.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`VALID_ACCENT_CHARS <pyllo.ui.widgets.lineedit.VALID_ACCENT_CHARS>`
+     - \-
+   * - :py:obj:`VALID_FINDER_CHARS <pyllo.ui.widgets.lineedit.VALID_FINDER_CHARS>`
+     - \-
+
+
+.. py:data:: VALID_ACCENT_CHARS
+   :value: 'ÁÉÍOÚáéíúóàèìòùÀÈÌÒÙâêîôûÂÊÎÔÛäëïöüÄËÏÖÜñÑ'
+
+   
+
+.. py:data:: VALID_FINDER_CHARS
+
+   
+
+.. py:class:: FinderLineEdit(parent=None, regexBase=VALID_FINDER_CHARS)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QLineEdit`
+
+   QLineEdit for filtering listed elements in the parent widget.
+
+   ..    ..    ..    .. .. py:attribute:: sigKeyUpPressed
+
+      
+
+   ..    .. .. py:attribute:: sigKeyDownPressed
+
+      
+
+   ..    .. .. py:attribute:: sigKeyEnterReturnPressed
+
+      
+
+   ..    .. .. py:attribute:: sigTextChanged
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigKeyUpPressed <pyllo.ui.widgets.lineedit.FinderLineEdit.sigKeyUpPressed>`
+        - \-
+      * - :py:obj:`sigKeyDownPressed <pyllo.ui.widgets.lineedit.FinderLineEdit.sigKeyDownPressed>`
+        - \-
+      * - :py:obj:`sigKeyEnterReturnPressed <pyllo.ui.widgets.lineedit.FinderLineEdit.sigKeyEnterReturnPressed>`
+        - \-
+      * - :py:obj:`sigTextChanged <pyllo.ui.widgets.lineedit.FinderLineEdit.sigTextChanged>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`keyPressEvent <pyllo.ui.widgets.lineedit.FinderLineEdit.keyPressEvent>`\ (event)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigKeyUpPressed
+
+      
+
+   .. py:attribute:: sigKeyDownPressed
+
+      
+
+   .. py:attribute:: sigKeyEnterReturnPressed
+
+      
+
+   .. py:attribute:: sigTextChanged
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: keyPressEvent(event: qtpy.QtGui.QKeyEvent)
+
+
+
+
+
+.. py:class:: IconLineEdit(icons: Dict[pyllo.core.dtype.Identity, qtpy.QtGui.QIcon] = None, parent=None, *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QLineEdit`
+
+   Custom QLineEdit that includes an icon representing the validation.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setIconVisible <pyllo.ui.widgets.lineedit.IconLineEdit.setIconVisible>`\ (visible)
+        - Hide the status icon.
+      * - :py:obj:`setCurrentIcon <pyllo.ui.widgets.lineedit.IconLineEdit.setCurrentIcon>`\ (name)
+        - Update the status and set_status to update the icons to display.
+      * - :py:obj:`paintEvent <pyllo.ui.widgets.lineedit.IconLineEdit.paintEvent>`\ (event)
+        - Qt Override.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setIconVisible(visible: bool)
+
+      Hide the status icon.
+
+
+   .. py:method:: setCurrentIcon(name: pyllo.core.dtype.Identity)
+
+      Update the status and set_status to update the icons to display.
+
+
+   .. py:method:: paintEvent(event)
+
+      Qt Override.
+
+      Include a validation icon to the left of the line edit.
+
+
+
+
+

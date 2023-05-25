@@ -1,0 +1,267 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.langexts.cpp`
+==========================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.langexts.cpp
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`CppSH <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppSH>`
+     - C/C++ Syntax Highlighter
+   * - :py:obj:`CppExtension <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppExtension>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`makeGenericCPatterns <pyllo.plugins.codeeditorv2.internal.langexts.cpp.makeGenericCPatterns>`\ (keywords, builtins, instance, define, comment)
+     - Strongly inspired from idlelib.ColorDelegator.make_pat
+   * - :py:obj:`makeCppPatterns <pyllo.plugins.codeeditorv2.internal.langexts.cpp.makeCppPatterns>`\ ()
+     - \-
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`C_TYPES <pyllo.plugins.codeeditorv2.internal.langexts.cpp.C_TYPES>`
+     - \-
+   * - :py:obj:`C_KEYWORDS1 <pyllo.plugins.codeeditorv2.internal.langexts.cpp.C_KEYWORDS1>`
+     - \-
+   * - :py:obj:`C_KEYWORDS2 <pyllo.plugins.codeeditorv2.internal.langexts.cpp.C_KEYWORDS2>`
+     - \-
+   * - :py:obj:`C_KEYWORDS3 <pyllo.plugins.codeeditorv2.internal.langexts.cpp.C_KEYWORDS3>`
+     - \-
+
+
+.. py:data:: C_TYPES
+   :value: 'bool char double enum float int long mutable short signed struct unsigned void NULL'
+
+   
+
+.. py:data:: C_KEYWORDS1
+   :value: 'and and_eq bitand bitor break case catch const const_cast continue default delete do...'
+
+   
+
+.. py:data:: C_KEYWORDS2
+   :value: 'a addindex addtogroup anchor arg attention author b brief bug c class code date def defgroup...'
+
+   
+
+.. py:data:: C_KEYWORDS3
+   :value: 'asm auto class compl false true volatile wchar_t'
+
+   
+
+.. py:function:: makeGenericCPatterns(keywords, builtins, instance=None, define=None, comment=None)
+
+   Strongly inspired from idlelib.ColorDelegator.make_pat
+
+
+.. py:function:: makeCppPatterns()
+
+
+.. py:class:: CppSH(parent, font=None, colorScheme=None)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH`
+
+   C/C++ Syntax Highlighter
+
+   ..    ..    ..    .. .. py:attribute:: PROG
+
+      
+
+   ..    .. .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+   ..    .. .. py:attribute:: INSIDE_COMMENT
+      :value: 1
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PROG <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppSH.PROG>`
+        - \-
+      * - :py:obj:`NORMAL <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppSH.NORMAL>`
+        - \-
+      * - :py:obj:`INSIDE_COMMENT <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppSH.INSIDE_COMMENT>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highlightBlock <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppSH.highlightBlock>`\ (text)
+        - Implement highlight specific for C/C++.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PROG
+
+      
+
+   .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+   .. py:attribute:: INSIDE_COMMENT
+      :value: 1
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: highlightBlock(text: str)
+
+      Implement highlight specific for C/C++.
+
+
+
+
+
+.. py:class:: CppExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.LanguageExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'cpp'
+
+      
+
+   ..    .. .. py:attribute:: NAME_FILTERS
+      :value: ['*.cpp', '*.c', '*.h', '*.hpp']
+
+      
+
+   ..    .. .. py:attribute:: ALIASES
+      :value: ['C++', 'C', 'cpp', 'c']
+
+      
+
+   ..    .. .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   ..    .. .. py:attribute:: CONFIGURATION
+
+      
+
+   ..    .. .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppExtension.NAME>`
+        - \-
+      * - :py:obj:`NAME_FILTERS <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppExtension.NAME_FILTERS>`
+        - \-
+      * - :py:obj:`ALIASES <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppExtension.ALIASES>`
+        - \-
+      * - :py:obj:`FILE_NAMES <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppExtension.FILE_NAMES>`
+        - \-
+      * - :py:obj:`FIRST_LINE <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppExtension.FIRST_LINE>`
+        - \-
+      * - :py:obj:`CONFIGURATION <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppExtension.CONFIGURATION>`
+        - \-
+      * - :py:obj:`SYNTAX_HIGHLIGHTER <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppExtension.SYNTAX_HIGHLIGHTER>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.langexts.cpp.CppExtension.onInitialize>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'cpp'
+
+      
+
+   .. py:attribute:: NAME_FILTERS
+      :value: ['*.cpp', '*.c', '*.h', '*.hpp']
+
+      
+
+   .. py:attribute:: ALIASES
+      :value: ['C++', 'C', 'cpp', 'c']
+
+      
+
+   .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   .. py:attribute:: CONFIGURATION
+
+      
+
+   .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+              
+
+
+
+
+

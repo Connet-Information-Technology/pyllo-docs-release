@@ -1,0 +1,51 @@
+:py:mod:`pyllo.ui.theme.style`
+==============================
+
+.. py:module:: pyllo.ui.theme.style
+
+.. autoapi-nested-parse::
+
+   Style for IPython Console
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`createQssStyle <pyllo.ui.theme.style.createQssStyle>`\ (colorScheme)
+     - Returns a QSS stylesheet with Pyllo color scheme settings.
+   * - :py:obj:`createPygmentsDict <pyllo.ui.theme.style.createPygmentsDict>`\ (colorSchemeName)
+     - Create a dictionary that saves the given color scheme as a
+   * - :py:obj:`createStyleClass <pyllo.ui.theme.style.createStyleClass>`\ (colorSchemeName)
+     - Create a Pygments Style class with the given color scheme.
+
+
+
+.. py:function:: createQssStyle(colorScheme)
+
+   Returns a QSS stylesheet with Pyllo color scheme settings.
+
+   The stylesheet can contain classes for:
+       Qt: QPlainTextEdit, QFrame, QWidget, etc
+      Pygments: .c, .k, .o, etc. (see PygmentsHighlighter)
+       IPython: .error, .in-prompt, .out-prompt, etc
+
+
+.. py:function:: createPygmentsDict(colorSchemeName)
+
+   Create a dictionary that saves the given color scheme as a
+   Pygments style.
+
+
+.. py:function:: createStyleClass(colorSchemeName)
+
+   Create a Pygments Style class with the given color scheme.
+
+

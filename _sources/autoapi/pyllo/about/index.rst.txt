@@ -1,0 +1,90 @@
+:py:mod:`pyllo.about`
+=====================
+
+.. py:module:: pyllo.about
+
+.. autoapi-nested-parse::
+
+   About dialog of application.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`AboutDialog <pyllo.about.AboutDialog>`
+     - About dialog displaying application information.
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`getVersions <pyllo.about.getVersions>`\ (reporev)
+     - Get version information for components
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`app <pyllo.about.app>`
+     - \-
+
+
+.. py:function:: getVersions(reporev=True) -> dict
+
+   Get version information for components
+
+
+.. py:class:: AboutDialog(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QDialog`
+
+   About dialog displaying application information.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`addContribution <pyllo.about.AboutDialog.addContribution>`\ (name, icon, description, license)
+        - Add contribution information.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: addContribution(name: str, icon: qtpy.QtGui.QIcon = None, description='', license='')
+
+      Add contribution information.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:data:: app
+
+   
+

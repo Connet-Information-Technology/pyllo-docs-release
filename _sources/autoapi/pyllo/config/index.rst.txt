@@ -1,0 +1,33 @@
+:py:mod:`pyllo.config`
+======================
+
+.. py:module:: pyllo.config
+
+.. autoapi-nested-parse::
+
+   Pyllo configurations
+
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   tests/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   appearance/index.rst
+   fonts/index.rst
+   gui/index.rst
+   main/index.rst
+   utils/index.rst
+
+

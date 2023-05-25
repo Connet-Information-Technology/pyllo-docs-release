@@ -1,0 +1,276 @@
+:py:mod:`pyllo.plugins.explorer.internal.mainwidget`
+====================================================
+
+.. py:module:: pyllo.plugins.explorer.internal.mainwidget
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ExplorerWidget <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget>`
+     - Explorer widget
+
+
+
+
+.. py:class:: ExplorerWidget(name, plugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainWidget`
+
+   Explorer widget
+
+   ..    ..    ..    .. .. py:attribute:: sigDirOpened
+
+      This signal is emitted to indicate a folder has been opened.
+
+      Parameters
+      ----------
+      directory: str
+          The path to the directory opened.
+
+
+   ..    .. .. py:attribute:: sigDirCreated
+
+      When folder is created
+
+
+   ..    .. .. py:attribute:: sigDirRemoved
+
+      When folder is removed
+
+
+   ..    .. .. py:attribute:: sigDirRenamed
+
+      When folder is renamed
+
+
+   ..    .. .. py:attribute:: sigOpenFileRequested
+
+      This signal is emitted to request opening a new file with Pyllo.
+
+
+   ..    .. .. py:attribute:: sigFileCreated
+
+      When file is created
+
+
+   ..    .. .. py:attribute:: sigFileRenamed
+
+      When file is renamed
+
+
+   ..    .. .. py:attribute:: sigFileRemoved
+
+      When file is removed
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigDirOpened <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.sigDirOpened>`
+        - This signal is emitted to indicate a folder has been opened.
+      * - :py:obj:`sigDirCreated <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.sigDirCreated>`
+        - When folder is created
+      * - :py:obj:`sigDirRemoved <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.sigDirRemoved>`
+        - When folder is removed
+      * - :py:obj:`sigDirRenamed <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.sigDirRenamed>`
+        - When folder is renamed
+      * - :py:obj:`sigOpenFileRequested <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.sigOpenFileRequested>`
+        - This signal is emitted to request opening a new file with Pyllo.
+      * - :py:obj:`sigFileCreated <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.sigFileCreated>`
+        - When file is created
+      * - :py:obj:`sigFileRenamed <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.sigFileRenamed>`
+        - When file is renamed
+      * - :py:obj:`sigFileRemoved <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.sigFileRemoved>`
+        - When file is removed
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.setup>`\ ()
+        - Performs the setup of plugin's menu and actions.
+      * - :py:obj:`contextMenuEvent <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.contextMenuEvent>`\ (event)
+        - \-
+      * - :py:obj:`getTitle <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.getTitle>`\ ()
+        - Return the title that will be displayed on dock widget or window title.
+      * - :py:obj:`chdir <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.chdir>`\ (directory, emit)
+        - Set working directory.
+      * - :py:obj:`clearNavigateHistory <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.clearNavigateHistory>`\ ()
+        - Clear navigate history
+      * - :py:obj:`getSelectedFilenames <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.getSelectedFilenames>`\ ()
+        - Returns selected filenames
+      * - :py:obj:`getCurrentFolder <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.getCurrentFolder>`\ ()
+        - Get current folder in the tree widget.
+      * - :py:obj:`setCurrentFolder <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.setCurrentFolder>`\ (folder, expand)
+        - Set the current folder in the tree widget.
+      * - :py:obj:`newFile <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.newFile>`\ ()
+        - \-
+      * - :py:obj:`newDirectory <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.newDirectory>`\ ()
+        - \-
+      * - :py:obj:`deleteFiles <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.deleteFiles>`\ ()
+        - \-
+      * - :py:obj:`renameFile <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.renameFile>`\ ()
+        - \-
+      * - :py:obj:`copyFilesClipboard <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.copyFilesClipboard>`\ ()
+        - Copy file(s)/folders(s) to clipboard.
+      * - :py:obj:`copyPath <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.copyPath>`\ ()
+        - \-
+      * - :py:obj:`pasteFilesClipboard <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.pasteFilesClipboard>`\ ()
+        - \-
+      * - :py:obj:`getIndex <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.getIndex>`\ (filename)
+        - \-
+      * - :py:obj:`setCurrentIndex <pyllo.plugins.explorer.internal.mainwidget.ExplorerWidget.setCurrentIndex>`\ (index)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigDirOpened
+
+      This signal is emitted to indicate a folder has been opened.
+
+      Parameters
+      ----------
+      directory: str
+          The path to the directory opened.
+
+
+   .. py:attribute:: sigDirCreated
+
+      When folder is created
+
+
+   .. py:attribute:: sigDirRemoved
+
+      When folder is removed
+
+
+   .. py:attribute:: sigDirRenamed
+
+      When folder is renamed
+
+
+   .. py:attribute:: sigOpenFileRequested
+
+      This signal is emitted to request opening a new file with Pyllo.
+
+
+   .. py:attribute:: sigFileCreated
+
+      When file is created
+
+
+   .. py:attribute:: sigFileRenamed
+
+      When file is renamed
+
+
+   .. py:attribute:: sigFileRemoved
+
+      When file is removed
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+      Performs the setup of plugin's menu and actions.
+
+
+   .. py:method:: contextMenuEvent(event)
+
+
+   .. py:method:: getTitle()
+
+      Return the title that will be displayed on dock widget or window title.
+
+
+   .. py:method:: chdir(directory, emit=True)
+
+      Set working directory.
+
+      Parameters
+      ----------
+      directory: str
+          Directory to set as working directory.
+      emit: bool, optional
+          Default is True.
+
+
+   .. py:method:: clearNavigateHistory()
+
+      Clear navigate history
+
+
+   .. py:method:: getSelectedFilenames() -> List[str]
+
+      Returns selected filenames
+              
+
+
+   .. py:method:: getCurrentFolder() -> str
+
+      Get current folder in the tree widget.
+
+
+   .. py:method:: setCurrentFolder(folder, expand=True)
+
+      Set the current folder in the tree widget.
+
+      Parameters
+      ----------
+      folder: str
+          Folder path to set as current folder.
+      expand: str
+          Expand the treeview item.
+
+
+   .. py:method:: newFile()
+
+
+   .. py:method:: newDirectory()
+
+
+   .. py:method:: deleteFiles()
+
+
+   .. py:method:: renameFile()
+
+
+   .. py:method:: copyFilesClipboard()
+
+      Copy file(s)/folders(s) to clipboard.
+
+
+   .. py:method:: copyPath()
+
+
+   .. py:method:: pasteFilesClipboard()
+
+
+   .. py:method:: getIndex(filename: str)
+
+
+   .. py:method:: setCurrentIndex(index)
+
+
+
+
+

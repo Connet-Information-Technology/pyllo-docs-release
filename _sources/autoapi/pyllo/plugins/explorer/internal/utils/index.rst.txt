@@ -1,0 +1,67 @@
+:py:mod:`pyllo.plugins.explorer.internal.utils`
+===============================================
+
+.. py:module:: pyllo.plugins.explorer.internal.utils
+
+.. autoapi-nested-parse::
+
+   Explorer widget utilities.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`openFileInExternalExplorer <pyllo.plugins.explorer.internal.utils.openFileInExternalExplorer>`\ (filename)
+     - \-
+   * - :py:obj:`showInExternalFileExplorer <pyllo.plugins.explorer.internal.utils.showInExternalFileExplorer>`\ (fnames)
+     - Show files in external file explorer
+   * - :py:obj:`fixpath <pyllo.plugins.explorer.internal.utils.fixpath>`\ (path)
+     - Normalize path fixing case, making absolute and removing symlinks
+   * - :py:obj:`createScript <pyllo.plugins.explorer.internal.utils.createScript>`\ (fname)
+     - Create a new Python script
+   * - :py:obj:`listdir <pyllo.plugins.explorer.internal.utils.listdir>`\ (path, include, exclude, foldersOnly)
+     - List files and directories
+   * - :py:obj:`hasSubdirectories <pyllo.plugins.explorer.internal.utils.hasSubdirectories>`\ (path, include, exclude)
+     - Return True if path has subdirectories
+
+
+
+.. py:function:: openFileInExternalExplorer(filename)
+
+
+.. py:function:: showInExternalFileExplorer(fnames=None)
+
+   Show files in external file explorer
+
+   Args:
+       fnames (list): Names of files to show.
+
+
+.. py:function:: fixpath(path)
+
+   Normalize path fixing case, making absolute and removing symlinks
+
+
+.. py:function:: createScript(fname)
+
+   Create a new Python script
+
+
+.. py:function:: listdir(path, include='.', exclude='\\.pyc$|^\\.', foldersOnly=False)
+
+   List files and directories
+
+
+.. py:function:: hasSubdirectories(path, include, exclude)
+
+   Return True if path has subdirectories
+
+

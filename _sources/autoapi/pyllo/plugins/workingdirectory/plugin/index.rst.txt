@@ -1,0 +1,278 @@
+:py:mod:`pyllo.plugins.workingdirectory.plugin`
+===============================================
+
+.. py:module:: pyllo.plugins.workingdirectory.plugin
+
+.. autoapi-nested-parse::
+
+   Working Directory Plugin
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`WorkingDirectory <pyllo.plugins.workingdirectory.plugin.WorkingDirectory>`
+     - Working directory changer plugin.
+
+
+
+
+.. py:class:: WorkingDirectory(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   Working directory changer plugin.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'workingdir'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: sigCurrentDirectoryChanged
+
+      This signal is emitted when the current directory has changed.
+
+      Parameters
+      ----------
+      newWorkingDirectory: str
+          The new new working directory path.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.CONTAINER_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_WIDGET_CLASS <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.CONF_WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.CONF_FILE>`
+        - \-
+      * - :py:obj:`sigCurrentDirectoryChanged <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.sigCurrentDirectoryChanged>`
+        - This signal is emitted when the current directory has changed.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onToolbarAvailable <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.onToolbarAvailable>`\ ()
+        - \-
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`onExplorerAvailable <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.onExplorerAvailable>`\ ()
+        - \-
+      * - :py:obj:`chdir <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.chdir>`\ (directory, senderPlugin)
+        - Change current working directory.
+      * - :py:obj:`getWorkdir <pyllo.plugins.workingdirectory.plugin.WorkingDirectory.getWorkdir>`\ ()
+        - Get current working directory.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'workingdir'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: sigCurrentDirectoryChanged
+
+      This signal is emitted when the current directory has changed.
+
+      Parameters
+      ----------
+      newWorkingDirectory: str
+          The new new working directory path.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onToolbarAvailable()
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: onExplorerAvailable()
+
+
+   .. py:method:: chdir(directory, senderPlugin=None)
+
+      Change current working directory.
+
+      Parameters
+      ----------
+      directory: str
+          The new working directory to set.
+      senderPlugin: pyllo.api.plugins.PylloPlugin
+          The plugin that requested this change: Default is None.
+
+
+   .. py:method:: getWorkdir() -> str
+
+      Get current working directory.
+
+      Returns
+      -------
+      str
+          Current working directory.
+
+
+
+
+

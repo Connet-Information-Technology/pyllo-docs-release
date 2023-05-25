@@ -1,0 +1,1046 @@
+:py:mod:`pyllo.core.runtime.spi`
+================================
+
+.. py:module:: pyllo.core.runtime.spi
+
+.. autoapi-nested-parse::
+
+   Pyllo plugin integration API implementation.
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloPluginObserver <pyllo.core.runtime.spi.PylloPluginObserver>`
+     - This mixin enables a class to receive notifications when a plugin
+   * - :py:obj:`PylloPlugin <pyllo.core.runtime.spi.PylloPlugin>`
+     - A Pyllo plugin to extend application with an aspect of features without
+   * - :py:obj:`PylloDockablePlugin <pyllo.core.runtime.spi.PylloDockablePlugin>`
+     - A Pyllo plugin to enhance functionality with a dockable widget.
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`onPluginAvailable <pyllo.core.runtime.spi.onPluginAvailable>`\ (func, plugin)
+     - Method decorator used to handle plugin availability on Pyllo.
+   * - :py:obj:`onPluginTeardown <pyllo.core.runtime.spi.onPluginTeardown>`\ (func, plugin)
+     - Method decorator used to handle plugin teardown on Pyllo.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ObserveCallback <pyllo.core.runtime.spi.ObserveCallback>`
+     - \-
+
+
+.. py:data:: ObserveCallback
+
+   
+
+.. py:function:: onPluginAvailable(func: ObserveCallback = None, plugin: Optional[pyllo.core.dtype.PluginName] = None)
+
+   Method decorator used to handle plugin availability on Pyllo.
+
+   The methods that use this decorator must have the following signature:
+   `def method(self)` when observing a single plugin or
+   `def method(self, plugin): ...` when observing multiple plugins or
+   all plugins that were listed as dependencies.
+
+   Parameters
+   ----------
+   func: Callable
+       Method to decorate. Given by default when applying the decorator.
+   plugin: Optional[str]
+       Name of the requested plugin whose availability triggers the method.
+
+   Returns
+   -------
+   func: Callable
+       The same method that was given as input.
+
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: onPluginTeardown(func: ObserveCallback = None, plugin: Optional[pyllo.core.dtype.PluginName] = None)
+
+   Method decorator used to handle plugin teardown on Pyllo.
+
+   This decorator will be called **before** the specified plugin is deleted
+   and also **before** the plugin that uses the decorator is destroyed.
+
+   The methods that use this decorator must have the following signature:
+   `def method(self)`.
+
+   Parameters
+   ----------
+   func: Callable
+       Method to decorate. Given by default when applying the decorator.
+   plugin: str
+       Name of the requested plugin whose teardown triggers the method.
+
+   Returns
+   -------
+   func: Callable
+       The same method that was given as input.
+
+
+   .. versionadded:: 1.0.0
+
+
+.. py:class:: PylloPluginObserver
+
+   Bases: :py:obj:`pyllo.core.api.IPluginObserver`
+
+   This mixin enables a class to receive notifications when a plugin
+   is available, by registering methods using the
+   :func:`onPluginAvailable` decorator, and receive notification when a plugin
+   is teardown, by registering methods using the
+   :func:`onPluginTearDown` decorator.
+
+   When any of the requested plugins is ready, the corresponding registered
+   method is called.
+
+
+   .. attention:: This mixin will only operate over the plugin requirements
+       listed under `REQUIRES` and `OPTIONAL` class constants.
+
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: ObservesAll
+      :value: '__all__'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ObservesAll <pyllo.core.runtime.spi.PylloPluginObserver.ObservesAll>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onPluginAvailable <pyllo.core.runtime.spi.PylloPluginObserver.onPluginAvailable>`\ (plugin)
+        - Handle plugin availability and redirect it to plugin-specific
+      * - :py:obj:`onPluginTeardown <pyllo.core.runtime.spi.PylloPluginObserver.onPluginTeardown>`\ (plugin)
+        - Handle plugin teardown and redirect it to plugin-specific teardown
+      * - :py:obj:`onPluginFocusChanged <pyllo.core.runtime.spi.PylloPluginObserver.onPluginFocusChanged>`\ (previousWidget, previousPlugin, currentWidget, currentPlugin)
+        - Called when widget focus changed.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ObservesAll
+      :value: '__all__'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onPluginAvailable(plugin: pyllo.core.dtype.PluginName)
+
+      Handle plugin availability and redirect it to plugin-specific
+      startup handlers.
+
+      Parameters
+      ----------
+      plugin: str
+          Name of the plugin that was notified as available.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onPluginTeardown(plugin: pyllo.core.dtype.PluginName)
+
+      Handle plugin teardown and redirect it to plugin-specific teardown
+      handlers.
+
+      Parameters
+      ----------
+      plugin: str
+          Name of the plugin that is going through its teardown process.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onPluginFocusChanged(previousWidget: qtpy.QtWidgets.QWidget, previousPlugin: pyllo.core.dtype.PluginName, currentWidget: qtpy.QtWidgets.QWidget, currentPlugin: pyllo.core.dtype.PluginName)
+
+      Called when widget focus changed.
+
+
+
+
+
+.. py:class:: PylloPlugin(app: PylloApp)
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`, :py:obj:`pyllo.ui.plugin.PylloActionMixin`, :py:obj:`pyllo.core.runtime.preferences.PylloConfigurationMixin`, :py:obj:`PylloPluginObserver`, :py:obj:`pyllo.core.api.IPlugin`
+
+   A Pyllo plugin to extend application with an aspect of features without
+   a dockable widget(pane).
+
+   If you want to create a plugin that adds a new pane, please use
+   PylloDockablePlugin.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: RequiresAll
+      :value: '__all__'
+
+      Requires all plugins string flag.
+
+      Example:
+
+          class PylloPlugin:
+              REQUIRES = [PylloPlugin.RequiresAll]
+
+      .. versionadded:: 1.0.0
+
+
+   ..    .. .. py:attribute:: NAME
+      :type: pyllo.core.dtype.PluginName
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :type: List[pyllo.core.dtype.PluginName]
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+      :type: List[pyllo.core.dtype.PluginName]
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+      :type: PluginMainContainer
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+      :type: pyllo.core.dtype.SectionName
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: CONF_DEFAULTS
+      :type: pyllo.core.dtype.Configurations
+
+      
+
+   ..    .. .. py:attribute:: CONF_NAME_MAP
+      :type: pyllo.core.dtype.FileConfigNameMap
+
+      
+
+   ..    .. .. py:attribute:: CONF_VERSION
+
+      
+
+   ..    .. .. py:attribute:: CONF_WIDGET_CLASS
+      :type: PluginMainWidget
+
+      
+
+   ..    .. .. py:attribute:: FONT_SIZE_DELTA
+      :value: 0
+
+      
+
+   ..    .. .. py:attribute:: RICH_FONT_SIZE_DELTA
+      :value: 0
+
+      
+
+   ..    .. .. py:attribute:: NAMESPACE
+      :type: pyllo.core.dtype.Registry2ndNamespace
+
+      
+
+   ..    .. .. py:attribute:: sigFreeMemoryRequested
+
+      
+
+   ..    .. .. py:attribute:: sigQuitRequested
+
+      
+
+   ..    .. .. py:attribute:: sigRestartRequested
+
+      
+
+   ..    .. .. py:attribute:: sigStatusMessageRequested
+
+      
+
+   ..    .. .. py:attribute:: sigExceptionOccurred
+
+      
+
+   ..    .. .. py:attribute:: sigMainwindowResized
+
+      
+
+   ..    .. .. py:attribute:: sigMainwindowMoved
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`RequiresAll <pyllo.core.runtime.spi.PylloPlugin.RequiresAll>`
+        - Requires all plugins string flag.
+      * - :py:obj:`NAME <pyllo.core.runtime.spi.PylloPlugin.NAME>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.core.runtime.spi.PylloPlugin.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.core.runtime.spi.PylloPlugin.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.core.runtime.spi.PylloPlugin.CONTAINER_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.core.runtime.spi.PylloPlugin.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.core.runtime.spi.PylloPlugin.CONF_FILE>`
+        - \-
+      * - :py:obj:`CONF_DEFAULTS <pyllo.core.runtime.spi.PylloPlugin.CONF_DEFAULTS>`
+        - \-
+      * - :py:obj:`CONF_NAME_MAP <pyllo.core.runtime.spi.PylloPlugin.CONF_NAME_MAP>`
+        - \-
+      * - :py:obj:`CONF_VERSION <pyllo.core.runtime.spi.PylloPlugin.CONF_VERSION>`
+        - \-
+      * - :py:obj:`CONF_WIDGET_CLASS <pyllo.core.runtime.spi.PylloPlugin.CONF_WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`FONT_SIZE_DELTA <pyllo.core.runtime.spi.PylloPlugin.FONT_SIZE_DELTA>`
+        - \-
+      * - :py:obj:`RICH_FONT_SIZE_DELTA <pyllo.core.runtime.spi.PylloPlugin.RICH_FONT_SIZE_DELTA>`
+        - \-
+      * - :py:obj:`NAMESPACE <pyllo.core.runtime.spi.PylloPlugin.NAMESPACE>`
+        - \-
+      * - :py:obj:`sigFreeMemoryRequested <pyllo.core.runtime.spi.PylloPlugin.sigFreeMemoryRequested>`
+        - \-
+      * - :py:obj:`sigQuitRequested <pyllo.core.runtime.spi.PylloPlugin.sigQuitRequested>`
+        - \-
+      * - :py:obj:`sigRestartRequested <pyllo.core.runtime.spi.PylloPlugin.sigRestartRequested>`
+        - \-
+      * - :py:obj:`sigStatusMessageRequested <pyllo.core.runtime.spi.PylloPlugin.sigStatusMessageRequested>`
+        - \-
+      * - :py:obj:`sigExceptionOccurred <pyllo.core.runtime.spi.PylloPlugin.sigExceptionOccurred>`
+        - \-
+      * - :py:obj:`sigMainwindowResized <pyllo.core.runtime.spi.PylloPlugin.sigMainwindowResized>`
+        - \-
+      * - :py:obj:`sigMainwindowMoved <pyllo.core.runtime.spi.PylloPlugin.sigMainwindowMoved>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getPath <pyllo.core.runtime.spi.PylloPlugin.getPath>`\ ()
+        - Return the plugin's system path.
+      * - :py:obj:`getContainer <pyllo.core.runtime.spi.PylloPlugin.getContainer>`\ ()
+        - Return the plugin main container.
+      * - :py:obj:`getMainWindow <pyllo.core.runtime.spi.PylloPlugin.getMainWindow>`\ ()
+        - Return the Pyllo main window..
+      * - :py:obj:`getApp <pyllo.core.runtime.spi.PylloPlugin.getApp>`\ ()
+        - Return the PylloApp.
+      * - :py:obj:`getPlugin <pyllo.core.runtime.spi.PylloPlugin.getPlugin>`\ (name)
+        - Return a plugin instance by providing the plugin's NAME.
+      * - :py:obj:`isPluginAvailable <pyllo.core.runtime.spi.PylloPlugin.isPluginAvailable>`\ (name)
+        - Determine if a given plugin is available.
+      * - :py:obj:`applyConf <pyllo.core.runtime.spi.PylloPlugin.applyConf>`\ (optionsSet)
+        - Apply `optionsSet` to this plugin's widget.
+      * - :py:obj:`showStatusMessage <pyllo.core.runtime.spi.PylloPlugin.showStatusMessage>`\ (message, timeout)
+        - Show message in status bar.
+      * - :py:obj:`beforeLongProcess <pyllo.core.runtime.spi.PylloPlugin.beforeLongProcess>`\ (message)
+        - Show a message in main window's status bar and change the mouse
+      * - :py:obj:`afterLongProcess <pyllo.core.runtime.spi.PylloPlugin.afterLongProcess>`\ (message)
+        - Clear main window's status bar after a long process and restore
+      * - :py:obj:`createIcon <pyllo.core.runtime.spi.PylloPlugin.createIcon>`\ (name, format)
+        - :summarylabel:`static` Provide icons from the theme and icon manager.
+      * - :py:obj:`getFont <pyllo.core.runtime.spi.PylloPlugin.getFont>`\ (richText)
+        - :summarylabel:`class` Return plain or rich text font used in Pyllo.
+      * - :py:obj:`getName <pyllo.core.runtime.spi.PylloPlugin.getName>`\ ()
+        - :summarylabel:`abc` Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.core.runtime.spi.PylloPlugin.getDescription>`\ ()
+        - :summarylabel:`abc` Return the plugin localized description.
+      * - :py:obj:`onInitialize <pyllo.core.runtime.spi.PylloPlugin.onInitialize>`\ ()
+        - :summarylabel:`abc` Setup the plugin object with it's container.
+      * - :py:obj:`getIcon <pyllo.core.runtime.spi.PylloPlugin.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`checkCompatibility <pyllo.core.runtime.spi.PylloPlugin.checkCompatibility>`\ ()
+        - :summarylabel:`static` This method can be reimplemented to check compatibility of a plugin
+      * - :py:obj:`beforeMainwindowVisible <pyllo.core.runtime.spi.PylloPlugin.beforeMainwindowVisible>`\ ()
+        - Actions to be performed after setup but before the main window's has
+      * - :py:obj:`onMainwindowVisible <pyllo.core.runtime.spi.PylloPlugin.onMainwindowVisible>`\ ()
+        - Actions to be performed after the main window's has been shown.
+      * - :py:obj:`onTearDown <pyllo.core.runtime.spi.PylloPlugin.onTearDown>`\ (cancelable)
+        - Perform actions before the main window is closed.
+      * - :py:obj:`isReadyForTeardown <pyllo.core.runtime.spi.PylloPlugin.isReadyForTeardown>`\ ()
+        - Determine if a plugin can be closed.
+      * - :py:obj:`beforeMainWidgetContainerSetup <pyllo.core.runtime.spi.PylloPlugin.beforeMainWidgetContainerSetup>`\ ()
+        - Perform necessary operations right before container setup()
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: RequiresAll
+      :value: '__all__'
+
+      Requires all plugins string flag.
+
+      Example:
+
+          class PylloPlugin:
+              REQUIRES = [PylloPlugin.RequiresAll]
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:attribute:: NAME
+      :type: pyllo.core.dtype.PluginName
+
+      
+
+   .. py:attribute:: REQUIRES
+      :type: List[pyllo.core.dtype.PluginName]
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+      :type: List[pyllo.core.dtype.PluginName]
+      :value: []
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+      :type: PluginMainContainer
+
+      
+
+   .. py:attribute:: CONF_SECTION
+      :type: pyllo.core.dtype.SectionName
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: True
+
+      
+
+   .. py:attribute:: CONF_DEFAULTS
+      :type: pyllo.core.dtype.Configurations
+
+      
+
+   .. py:attribute:: CONF_NAME_MAP
+      :type: pyllo.core.dtype.FileConfigNameMap
+
+      
+
+   .. py:attribute:: CONF_VERSION
+
+      
+
+   .. py:attribute:: CONF_WIDGET_CLASS
+      :type: PluginMainWidget
+
+      
+
+   .. py:attribute:: FONT_SIZE_DELTA
+      :value: 0
+
+      
+
+   .. py:attribute:: RICH_FONT_SIZE_DELTA
+      :value: 0
+
+      
+
+   .. py:attribute:: NAMESPACE
+      :type: pyllo.core.dtype.Registry2ndNamespace
+
+      
+
+   .. py:attribute:: sigFreeMemoryRequested
+
+      
+
+   .. py:attribute:: sigQuitRequested
+
+      
+
+   .. py:attribute:: sigRestartRequested
+
+      
+
+   .. py:attribute:: sigStatusMessageRequested
+
+      
+
+   .. py:attribute:: sigExceptionOccurred
+
+      
+
+   .. py:attribute:: sigMainwindowResized
+
+      
+
+   .. py:attribute:: sigMainwindowMoved
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getPath() -> pyllo.core.dtype.DirName
+
+      Return the plugin's system path.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getContainer() -> PluginMainContainer
+
+      Return the plugin main container.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getMainWindow() -> MainWindow
+
+      Return the Pyllo main window..
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getApp() -> PylloApp
+
+      Return the PylloApp.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getPlugin(name: pyllo.core.dtype.PluginName) -> Union[PylloPlugin, PylloDockablePlugin]
+
+      Return a plugin instance by providing the plugin's NAME.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: isPluginAvailable(name: pyllo.core.dtype.PluginName) -> bool
+
+      Determine if a given plugin is available.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: applyConf(optionsSet)
+
+      Apply `optionsSet` to this plugin's widget.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: showStatusMessage(message: pyllo.core.dtype.Text, timeout=0)
+
+      Show message in status bar.
+
+      Parameters
+      ----------
+      message: str
+          Message to display in the status bar.
+      timeout: int
+          Amount of time to display the message.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: beforeLongProcess(message: pyllo.core.dtype.Text)
+
+      Show a message in main window's status bar and change the mouse
+      pointer to Qt.WaitCursor when starting a long process.
+
+      Parameters
+      ----------
+      message: str
+          Message to show in the status bar when the long process starts.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: afterLongProcess(message: pyllo.core.dtype.Text = '')
+
+      Clear main window's status bar after a long process and restore
+      mouse pointer to the OS default.
+
+      Parameters
+      ----------
+      message: str
+          Message to show in the status bar when the long process finishes.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: createIcon(name, format='svg') -> qtpy.QtGui.QIcon
+      :staticmethod:
+
+      Provide icons from the theme and icon manager.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getFont(richText=False) -> qtpy.QtGui.QFont
+      :classmethod:
+
+      Return plain or rich text font used in Pyllo.
+
+      Parameters
+      ----------
+      richText: bool
+          Return rich text font (i.e. the one used in the Help pane)
+          or plain text one (i.e. the one used in the Editor).
+
+      Returns
+      -------
+      QFont
+          QFont object to be passed to other Qt widget.
+
+      Notes
+      -----
+      All plugins in Pyllo use the same, global font. This is a convenience
+      method in case some plugins want to use a delta size based on the
+      default one. That can be controlled by using FONT_SIZE_DELTA.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getName() -> pyllo.core.dtype.Text
+      :abstractmethod:
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> pyllo.core.dtype.Text
+      :staticmethod:
+      :abstractmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+      :abstractmethod:
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon() -> qtpy.QtGui.QIcon
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: checkCompatibility() -> bool
+      :staticmethod:
+
+      This method can be reimplemented to check compatibility of a plugin
+      with the user's current environment.
+
+      Returns
+      -------
+      (bool, str)
+          The first value tells Pyllo if the plugin has passed the
+          compatibility test defined in this method. The second value
+          is a message that must explain users why the plugin was
+          found to be incompatible (e.g. 'This plugin does not work
+          with PyQt4'). It will be shown at startup in a QMessageBox.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: beforeMainwindowVisible()
+
+      Actions to be performed after setup but before the main window's has
+      been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainwindowVisible()
+
+      Actions to be performed after the main window's has been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onTearDown(cancelable=False)
+
+      Perform actions before the main window is closed.
+
+      Returns
+      -------
+      bool
+          Whether the plugin may be closed immediately or not.
+
+      Notes
+      -----
+      The returned value is ignored if *cancelable* is False.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: isReadyForTeardown() -> bool
+
+      Determine if a plugin can be closed.
+
+      Returns
+      -------
+      close: bool
+          True if the plugin can be closed, False otherwise.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: beforeMainWidgetContainerSetup()
+
+      Perform necessary operations right before container setup()
+      .. versionadded:: 1.0.0
+
+
+
+
+
+.. py:class:: PylloDockablePlugin(app: PylloApp)
+
+   Bases: :py:obj:`PylloPlugin`, :py:obj:`pyllo.core.api.IDockablePlugin`
+
+   A Pyllo plugin to enhance functionality with a dockable widget.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. .. py:property:: dockWidget
+      :type: PylloDockWidget
+
+      Dock widget.
+
+      .. versionadded:: 1.0.0
+
+
+   ..    .. .. py:property:: toggleViewAction
+      :type: PylloAction
+
+      Toggle view action.
+
+      .. versionadded:: 1.0.0
+
+
+   ..    ..    .. .. py:attribute:: WIDGET_CLASS
+      :type: PluginMainWidget
+
+      
+
+   ..    .. .. py:attribute:: sigToggleViewChanged
+
+      This action is emitted to inform the visibility of a dockable plugin
+      has changed.
+
+      This is triggered by checking/unchecking the entry for a pane in the
+      `View > Panes` menu.
+
+      Parameters
+      ----------
+      visible: bool
+          New visibility of the dockWidget.
+
+
+   ..    .. .. py:attribute:: sigRaisePaneRequested
+      :type: qtpy.QtCore.Signal[PylloDockablePlugin, bool]
+
+      This signal can be emitted to inform the main window that this plugin
+      requested to be displayed.
+
+      Notes
+      -----
+      This is automatically connected to main container/widget at plugin's
+      registration.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`WIDGET_CLASS <pyllo.core.runtime.spi.PylloDockablePlugin.WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`sigToggleViewChanged <pyllo.core.runtime.spi.PylloDockablePlugin.sigToggleViewChanged>`
+        - This action is emitted to inform the visibility of a dockable plugin
+      * - :py:obj:`sigRaisePaneRequested <pyllo.core.runtime.spi.PylloDockablePlugin.sigRaisePaneRequested>`
+        - This signal can be emitted to inform the main window that this plugin
+
+
+   .. list-table:: Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`dockWidget <pyllo.core.runtime.spi.PylloDockablePlugin.dockWidget>`
+        - Dock widget.
+      * - :py:obj:`toggleViewAction <pyllo.core.runtime.spi.PylloDockablePlugin.toggleViewAction>`
+        - Toggle view action.
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`beforeLongProcess <pyllo.core.runtime.spi.PylloDockablePlugin.beforeLongProcess>`\ (message)
+        - Show a message in main window's status bar, change the mouse pointer
+      * - :py:obj:`afterLongProcess <pyllo.core.runtime.spi.PylloDockablePlugin.afterLongProcess>`\ (message)
+        - Clear main window's status bar after a long process, restore mouse
+      * - :py:obj:`getWidget <pyllo.core.runtime.spi.PylloDockablePlugin.getWidget>`\ ()
+        - Return the plugin main widget.
+      * - :py:obj:`updateMargins <pyllo.core.runtime.spi.PylloDockablePlugin.updateMargins>`\ (margin)
+        - Update margins of main widget inside dockable plugin.
+      * - :py:obj:`raisePane <pyllo.core.runtime.spi.PylloDockablePlugin.raisePane>`\ (forceFocus)
+        - Raises this plugin to view (if it's hidden) and gives it focus (if
+      * - :py:obj:`closeWindow <pyllo.core.runtime.spi.PylloDockablePlugin.closeWindow>`\ ()
+        - Close dockable window.
+      * - :py:obj:`changeVisibility <pyllo.core.runtime.spi.PylloDockablePlugin.changeVisibility>`\ (state, forceFocus)
+        - Toggle view.
+      * - :py:obj:`toggleView <pyllo.core.runtime.spi.PylloDockablePlugin.toggleView>`\ (visible)
+        - Toggle view.
+      * - :py:obj:`createDockWidget <pyllo.core.runtime.spi.PylloDockablePlugin.createDockWidget>`\ (mainwindow)
+        - Internal method to create dockable window which is a container of
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: WIDGET_CLASS
+      :type: PluginMainWidget
+
+      
+
+   .. py:attribute:: sigToggleViewChanged
+
+      This action is emitted to inform the visibility of a dockable plugin
+      has changed.
+
+      This is triggered by checking/unchecking the entry for a pane in the
+      `View > Panes` menu.
+
+      Parameters
+      ----------
+      visible: bool
+          New visibility of the dockWidget.
+
+
+   .. py:attribute:: sigRaisePaneRequested
+      :type: qtpy.QtCore.Signal[PylloDockablePlugin, bool]
+
+      This signal can be emitted to inform the main window that this plugin
+      requested to be displayed.
+
+      Notes
+      -----
+      This is automatically connected to main container/widget at plugin's
+      registration.
+
+
+
+   .. rubric:: Properties
+   .. py:property:: dockWidget
+      :type: PylloDockWidget
+
+      Dock widget.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:property:: toggleViewAction
+      :type: PylloAction
+
+      Toggle view action.
+
+      .. versionadded:: 1.0.0
+
+
+
+   .. rubric:: Methods
+   .. py:method:: beforeLongProcess(message: pyllo.core.dtype.Text)
+
+      Show a message in main window's status bar, change the mouse pointer
+      to Qt.WaitCursor and start spinner when starting a long process.
+
+      Parameters
+      ----------
+      message: str
+          Message to show in the status bar when the long process starts.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: afterLongProcess(message: pyllo.core.dtype.Text = '')
+
+      Clear main window's status bar after a long process, restore mouse
+      pointer to the OS default and stop spinner.
+
+      Parameters
+      ----------
+      message: str
+          Message to show in the status bar when the long process finishes.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getWidget() -> PluginMainWidget
+
+      Return the plugin main widget.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: updateMargins(margin: int)
+
+      Update margins of main widget inside dockable plugin.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: raisePane(forceFocus=False)
+
+      Raises this plugin to view (if it's hidden) and gives it focus (if
+      possible).
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: closeWindow()
+
+      Close dockable window.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: changeVisibility(state: bool, forceFocus=False)
+
+      Toggle view.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: toggleView(visible: bool)
+
+      Toggle view.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: createDockWidget(mainwindow: MainWindow) -> PylloDockWidget
+
+      Internal method to create dockable window which is a container of
+      Dockable Panel.
+
+      .. versionadded:: 1.0.0
+
+
+
+
+

@@ -1,0 +1,429 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.client`
+=====================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.client
+
+.. autoapi-nested-parse::
+
+   Client widget for the IPython Console.
+
+   This is the widget used on all its tabs.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ClientWidget <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget>`
+     - Client widget for the Python Console
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`UI_PATH <pyllo.plugins.ipythonconsole.widgets.client.UI_PATH>`
+     - \-
+   * - :py:obj:`CSS_PATH <pyllo.plugins.ipythonconsole.widgets.client.CSS_PATH>`
+     - \-
+   * - :py:obj:`TEMPLATES_PATH <pyllo.plugins.ipythonconsole.widgets.client.TEMPLATES_PATH>`
+     - \-
+   * - :py:obj:`BLANK <pyllo.plugins.ipythonconsole.widgets.client.BLANK>`
+     - \-
+   * - :py:obj:`LOADING <pyllo.plugins.ipythonconsole.widgets.client.LOADING>`
+     - \-
+   * - :py:obj:`KERNEL_ERROR <pyllo.plugins.ipythonconsole.widgets.client.KERNEL_ERROR>`
+     - \-
+
+
+.. py:data:: UI_PATH
+
+   
+
+.. py:data:: CSS_PATH
+
+   
+
+.. py:data:: TEMPLATES_PATH
+
+   
+
+.. py:data:: BLANK
+
+   
+
+.. py:data:: LOADING
+
+   
+
+.. py:data:: KERNEL_ERROR
+
+   
+
+.. py:class:: ClientWidget(parent, id_, historyFilename, configOptions, additionalOptions, interpreterVersions, externalKernel=False, connectionFile=None, hostname=None, slave=False, givenName=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`pyllo.plugins.ipythonconsole.api.history.SaveHistoryMixin`, :py:obj:`pyllo.core.runtime.preferences.PylloConfigurationAccessor`
+
+   Client widget for the Python Console
+
+   This widget is necessary to handle the interaction between the
+   plugin and each shell widget.
+
+   ..    ..    .. .. py:property:: kernelId
+
+      Get kernel id
+
+
+   ..    .. .. py:property:: stderrFile
+
+      Filename to save kernel stderr output.
+
+
+   ..    .. .. py:property:: stderrHandle
+
+      Get handle to stderr_file.
+
+
+   ..    ..    .. .. py:attribute:: sigAppendToHistoryRequested
+
+      
+
+   ..    .. .. py:attribute:: sigExecutionStateChanged
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+      :value: 'ipython_console'
+
+      
+
+   ..    .. .. py:attribute:: SEPARATOR
+
+      
+
+   ..    .. .. py:attribute:: INIT_HISTORY
+      :value: ['# -*- coding: utf-8 -*-', '# *** Pyllo Python Console History Log ***']
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigAppendToHistoryRequested <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.sigAppendToHistoryRequested>`
+        - \-
+      * - :py:obj:`sigExecutionStateChanged <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.sigExecutionStateChanged>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.CONF_SECTION>`
+        - \-
+      * - :py:obj:`SEPARATOR <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.SEPARATOR>`
+        - \-
+      * - :py:obj:`INIT_HISTORY <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.INIT_HISTORY>`
+        - \-
+
+
+   .. list-table:: Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`kernelId <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.kernelId>`
+        - Get kernel id
+      * - :py:obj:`stderrFile <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.stderrFile>`
+        - Filename to save kernel stderr output.
+      * - :py:obj:`stderrHandle <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.stderrHandle>`
+        - Get handle to stderr_file.
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`removeStderrFile <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.removeStderrFile>`\ ()
+        - Remove stderrFile associated with the client.
+      * - :py:obj:`getStderrContents <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.getStderrContents>`\ ()
+        - Get the contents of the stderr kernel file.
+      * - :py:obj:`pollStderrFileChange <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.pollStderrFileChange>`\ ()
+        - Check if the stderr file just changed
+      * - :py:obj:`configureShellWidget <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.configureShellWidget>`\ (giveFocus)
+        - Configure shellWidget after kernel is connected.
+      * - :py:obj:`addToHistory <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.addToHistory>`\ (command, handle)
+        - Add command to history
+      * - :py:obj:`enableStopButton <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.enableStopButton>`\ ()
+        - \-
+      * - :py:obj:`disableStopButton <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.disableStopButton>`\ ()
+        - \-
+      * - :py:obj:`stopButtonClickHandler <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.stopButtonClickHandler>`\ ()
+        - Method to handle what to do when the stop button is pressed
+      * - :py:obj:`showKernelError <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.showKernelError>`\ (error)
+        - Show kernel initialization errors in infowidget.
+      * - :py:obj:`getName <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.getName>`\ ()
+        - Return client name
+      * - :py:obj:`getControl <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.getControl>`\ ()
+        - Return the text widget (or similar) to give focus to
+      * - :py:obj:`getKernel <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.getKernel>`\ ()
+        - Get kernel associated with this client
+      * - :py:obj:`getToolbarButtons <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.getToolbarButtons>`\ ()
+        - Return toolbar buttons list.
+      * - :py:obj:`addActionsToContextMenu <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.addActionsToContextMenu>`\ (menu)
+        - Add actions to IPython widget context menu
+      * - :py:obj:`setFont <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.setFont>`\ (font)
+        - Set IPython widget's font
+      * - :py:obj:`setColorScheme <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.setColorScheme>`\ (colorScheme, reset)
+        - Set IPython color scheme.
+      * - :py:obj:`shutdown <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.shutdown>`\ ()
+        - Shutdown kernel
+      * - :py:obj:`close <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.close>`\ ()
+        - Close client
+      * - :py:obj:`interruptKernel <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.interruptKernel>`\ ()
+        - Interrupt the associanted Pyllo kernel if it's running
+      * - :py:obj:`isExecuting <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.isExecuting>`\ ()
+        - \-
+      * - :py:obj:`restartKernel <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.restartKernel>`\ ()
+        - Restart the associated kernel.
+      * - :py:obj:`kernelRestartedMessage <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.kernelRestartedMessage>`\ (msg)
+        - Show kernel restarted/died messages.
+      * - :py:obj:`clearLine <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.clearLine>`\ ()
+        - Clear a console line
+      * - :py:obj:`clearConsole <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.clearConsole>`\ ()
+        - Clear the whole console
+      * - :py:obj:`resetNamespace <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.resetNamespace>`\ ()
+        - Resets the namespace by removing all names defined by the user
+      * - :py:obj:`updateHistory <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.updateHistory>`\ ()
+        - \-
+      * - :py:obj:`showSyspath <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.showSyspath>`\ (syspath)
+        - Show sys.path contents.
+      * - :py:obj:`showEnv <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.showEnv>`\ (env)
+        - Show environment variables.
+      * - :py:obj:`createTimeLabel <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.createTimeLabel>`\ ()
+        - Create elapsed time label widget (if necessary) and return it
+      * - :py:obj:`showTime <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.showTime>`\ (end)
+        - Text to show in time_label.
+      * - :py:obj:`updateTimeLabelVisibility <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.updateTimeLabelVisibility>`\ ()
+        - Update elapsed time visibility.
+      * - :py:obj:`setElapsedTimeVisible <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.setElapsedTimeVisible>`\ (state)
+        - Slot to show/hide elapsed time label.
+      * - :py:obj:`setInfoPage <pyllo.plugins.ipythonconsole.widgets.client.ClientWidget.setInfoPage>`\ ()
+        - Set current info_page.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigAppendToHistoryRequested
+
+      
+
+   .. py:attribute:: sigExecutionStateChanged
+
+      
+
+   .. py:attribute:: CONF_SECTION
+      :value: 'ipython_console'
+
+      
+
+   .. py:attribute:: SEPARATOR
+
+      
+
+   .. py:attribute:: INIT_HISTORY
+      :value: ['# -*- coding: utf-8 -*-', '# *** Pyllo Python Console History Log ***']
+
+      
+
+
+   .. rubric:: Properties
+   .. py:property:: kernelId
+
+      Get kernel id
+
+
+   .. py:property:: stderrFile
+
+      Filename to save kernel stderr output.
+
+
+   .. py:property:: stderrHandle
+
+      Get handle to stderr_file.
+
+
+
+   .. rubric:: Methods
+   .. py:method:: removeStderrFile()
+
+      Remove stderrFile associated with the client.
+
+
+   .. py:method:: getStderrContents()
+
+      Get the contents of the stderr kernel file.
+
+
+   .. py:method:: pollStderrFileChange()
+
+      Check if the stderr file just changed
+
+
+   .. py:method:: configureShellWidget(giveFocus=True)
+
+      Configure shellWidget after kernel is connected.
+
+
+   .. py:method:: addToHistory(command, handle=True)
+
+      Add command to history
+
+
+   .. py:method:: enableStopButton()
+
+
+   .. py:method:: disableStopButton()
+
+
+   .. py:method:: stopButtonClickHandler()
+
+      Method to handle what to do when the stop button is pressed
+
+
+   .. py:method:: showKernelError(error)
+
+      Show kernel initialization errors in infowidget.
+
+
+   .. py:method:: getName()
+
+      Return client name
+
+
+   .. py:method:: getControl()
+
+      Return the text widget (or similar) to give focus to
+
+
+   .. py:method:: getKernel()
+
+      Get kernel associated with this client
+
+
+   .. py:method:: getToolbarButtons()
+
+      Return toolbar buttons list.
+
+
+   .. py:method:: addActionsToContextMenu(menu)
+
+      Add actions to IPython widget context menu
+
+
+   .. py:method:: setFont(font)
+
+      Set IPython widget's font
+
+
+   .. py:method:: setColorScheme(colorScheme, reset=True)
+
+      Set IPython color scheme.
+
+
+   .. py:method:: shutdown()
+
+      Shutdown kernel
+
+
+   .. py:method:: close()
+
+      Close client
+
+
+   .. py:method:: interruptKernel()
+
+      Interrupt the associanted Pyllo kernel if it's running
+
+
+   .. py:method:: isExecuting()
+
+
+   .. py:method:: restartKernel()
+
+      Restart the associated kernel.
+
+      Took this code from the qtconsole project
+      Licensed under the BSD license
+
+
+   .. py:method:: kernelRestartedMessage(msg)
+
+      Show kernel restarted/died messages.
+
+
+   .. py:method:: clearLine()
+
+      Clear a console line
+
+
+   .. py:method:: clearConsole()
+
+      Clear the whole console
+
+
+   .. py:method:: resetNamespace()
+
+      Resets the namespace by removing all names defined by the user
+
+
+   .. py:method:: updateHistory()
+
+
+   .. py:method:: showSyspath(syspath)
+
+      Show sys.path contents.
+
+
+   .. py:method:: showEnv(env)
+
+      Show environment variables.
+
+
+   .. py:method:: createTimeLabel()
+
+      Create elapsed time label widget (if necessary) and return it
+
+
+   .. py:method:: showTime(end=False)
+
+      Text to show in time_label.
+
+
+   .. py:method:: updateTimeLabelVisibility()
+
+      Update elapsed time visibility.
+
+
+   .. py:method:: setElapsedTimeVisible(state)
+
+      Slot to show/hide elapsed time label.
+
+
+   .. py:method:: setInfoPage()
+
+      Set current info_page.
+
+
+
+
+

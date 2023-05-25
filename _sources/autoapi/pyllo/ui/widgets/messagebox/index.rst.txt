@@ -1,0 +1,78 @@
+:py:mod:`pyllo.ui.widgets.messagebox`
+=====================================
+
+.. py:module:: pyllo.ui.widgets.messagebox
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MessageCheckBox <pyllo.ui.widgets.messagebox.MessageCheckBox>`
+     - A QMessageBox derived widget that includes a QCheckBox aligned to the right
+
+
+
+
+.. py:class:: MessageCheckBox(title: pyllo.core.dtype.Text = '', text: pyllo.core.dtype.Text = '', checkText: pyllo.core.dtype.Text = '', checked: bool = False, parent: qtpy.QtWidgets.QWidget = None, *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QMessageBox`
+
+   A QMessageBox derived widget that includes a QCheckBox aligned to the right
+   under the message and on top of the buttons.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`isChecked <pyllo.ui.widgets.messagebox.MessageCheckBox.isChecked>`\ ()
+        - \-
+      * - :py:obj:`setChecked <pyllo.ui.widgets.messagebox.MessageCheckBox.setChecked>`\ (checked)
+        - \-
+      * - :py:obj:`setCheckVisible <pyllo.ui.widgets.messagebox.MessageCheckBox.setCheckVisible>`\ (visible)
+        - \-
+      * - :py:obj:`isCheckVisible <pyllo.ui.widgets.messagebox.MessageCheckBox.isCheckVisible>`\ ()
+        - \-
+      * - :py:obj:`checkboxText <pyllo.ui.widgets.messagebox.MessageCheckBox.checkboxText>`\ ()
+        - \-
+      * - :py:obj:`setCheckboxText <pyllo.ui.widgets.messagebox.MessageCheckBox.setCheckboxText>`\ (text)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: isChecked() -> bool
+
+
+   .. py:method:: setChecked(checked: bool)
+
+
+   .. py:method:: setCheckVisible(visible: bool)
+
+
+   .. py:method:: isCheckVisible() -> bool
+
+
+   .. py:method:: checkboxText() -> pyllo.core.dtype.Text
+
+
+   .. py:method:: setCheckboxText(text: pyllo.core.dtype.Text)
+
+
+
+
+

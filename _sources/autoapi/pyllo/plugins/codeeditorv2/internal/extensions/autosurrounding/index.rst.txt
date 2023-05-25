@@ -1,0 +1,158 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding`
+========================================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding
+
+.. autoapi-nested-parse::
+
+   Auto surrounding pairs extension.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`AutoSurrounding <pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding.AutoSurrounding>`
+     - Auto surrounding feature when user select a piece of text and enter
+
+
+
+
+.. py:class:: AutoSurrounding(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.CodeEditorExtension`
+
+   Auto surrounding feature when user select a piece of text and enter
+   open brackets of surrounding paris.
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'autosurrounding'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding.AutoSurrounding.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding.AutoSurrounding.VERSION>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding.AutoSurrounding.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`beforeEditorVisible <pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding.AutoSurrounding.beforeEditorVisible>`\ ()
+        - This method is called by editor extension framework just before editor is visible.
+      * - :py:obj:`getName <pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding.AutoSurrounding.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding.AutoSurrounding.getDescription>`\ ()
+        - Return the extension's localized description.
+      * - :py:obj:`onKeyPressed <pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding.AutoSurrounding.onKeyPressed>`\ (event)
+        - Trigger when keyboard is pressed
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'autosurrounding'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: beforeEditorVisible()
+
+      This method is called by editor extension framework just before editor is visible.
+
+      Notes
+      -----
+      This is usually used for cross extensions features.
+      Which by means one extension's feature is dependent to another extension's feature.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getName() -> str
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onKeyPressed(event: qtpy.QtGui.QKeyEvent)
+
+      Trigger when keyboard is pressed
+
+
+
+
+

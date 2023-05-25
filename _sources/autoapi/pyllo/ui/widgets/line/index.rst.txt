@@ -1,0 +1,37 @@
+:py:mod:`pyllo.ui.widgets.line`
+===============================
+
+.. py:module:: pyllo.ui.widgets.line
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`VLine <pyllo.ui.widgets.line.VLine>`
+     - \-
+   * - :py:obj:`HLine <pyllo.ui.widgets.line.HLine>`
+     - \-
+
+
+
+
+.. py:class:: VLine(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QFrame`
+
+   ..    ..    .. 
+
+
+.. py:class:: HLine(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QFrame`
+
+   ..    ..    .. 
+
+

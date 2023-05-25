@@ -1,0 +1,114 @@
+:py:mod:`pyllo.plugins.application.internal.confpage`
+=====================================================
+
+.. py:module:: pyllo.plugins.application.internal.confpage
+
+.. autoapi-nested-parse::
+
+   General entry in Preferences.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ApplicationConfigPage <pyllo.plugins.application.internal.confpage.ApplicationConfigPage>`
+     - Widget to expose the options a plugin offers for configuration as
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`HDPI_QT_PAGE <pyllo.plugins.application.internal.confpage.HDPI_QT_PAGE>`
+     - \-
+
+
+.. py:data:: HDPI_QT_PAGE
+   :value: 'https://doc.qt.io/qt-5/highdpi.html'
+
+   
+
+.. py:class:: ApplicationConfigPage(plugin: pyllo.core.runtime.spi.PylloPlugin, parent: qtpy.QtWidgets.QWidget)
+
+   Bases: :py:obj:`pyllo.ui.preferences.PluginConfigPage`
+
+   Widget to expose the options a plugin offers for configuration as
+   an entry in Pyllo's Preferences dialog.
+
+   ..    ..    ..    .. .. py:attribute:: APPLY_CONF_PAGE_SETTINGS
+      :value: True
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`APPLY_CONF_PAGE_SETTINGS <pyllo.plugins.application.internal.confpage.ApplicationConfigPage.APPLY_CONF_PAGE_SETTINGS>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setupPage <pyllo.plugins.application.internal.confpage.ApplicationConfigPage.setupPage>`\ ()
+        - Setup configuration page widget
+      * - :py:obj:`applySettings <pyllo.plugins.application.internal.confpage.ApplicationConfigPage.applySettings>`\ (options)
+        - Hook called to manually apply settings that cannot be automatically
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: APPLY_CONF_PAGE_SETTINGS
+      :value: True
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setupPage()
+
+      Setup configuration page widget
+
+      You should implement this method and set the layout of the
+      preferences page.
+
+      layout = QVBoxLayout()
+      layout.addWidget(...)
+      ...
+      self.setLayout(layout)
+
+
+   .. py:method:: applySettings(options)
+
+      Hook called to manually apply settings that cannot be automatically
+      applied.
+
+      Reimplement this if the configuration page has complex widget that
+      cannot be created with any of the `self.create_*` calls.
+
+      This call should return a set containing the configuration options that
+      changed.
+
+
+
+
+

@@ -1,0 +1,36 @@
+:py:mod:`pyllo.tools.qtsplittertreemap`
+=======================================
+
+.. py:module:: pyllo.tools.qtsplittertreemap
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`buildSplitterTreeMap <pyllo.tools.qtsplittertreemap.buildSplitterTreeMap>`\ (splits)
+     - \-
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`app <pyllo.tools.qtsplittertreemap.app>`
+     - \-
+
+
+.. py:function:: buildSplitterTreeMap(splits)
+
+
+.. py:data:: app
+
+   
+

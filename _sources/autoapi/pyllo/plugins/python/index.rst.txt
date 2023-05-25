@@ -1,0 +1,25 @@
+:py:mod:`pyllo.plugins.python`
+==============================
+
+.. py:module:: pyllo.plugins.python
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   internal/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   api/index.rst
+   plugin/index.rst
+
+

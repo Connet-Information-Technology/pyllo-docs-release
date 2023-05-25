@@ -1,0 +1,278 @@
+:py:mod:`pyllo.plugins.statusbar.plugin`
+========================================
+
+.. py:module:: pyllo.plugins.statusbar.plugin
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`StatusBar <pyllo.plugins.statusbar.plugin.StatusBar>`
+     - statusbar plugin.
+
+
+
+
+.. py:class:: StatusBar(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   statusbar plugin.
+   MainWindow statusbar management 
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'statusbar'
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: sigTest
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.statusbar.plugin.StatusBar.NAME>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.statusbar.plugin.StatusBar.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.statusbar.plugin.StatusBar.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.plugins.statusbar.plugin.StatusBar.CONTAINER_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.statusbar.plugin.StatusBar.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.statusbar.plugin.StatusBar.CONF_FILE>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.statusbar.plugin.StatusBar.VERSION>`
+        - \-
+      * - :py:obj:`sigTest <pyllo.plugins.statusbar.plugin.StatusBar.sigTest>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.statusbar.plugin.StatusBar.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.statusbar.plugin.StatusBar.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.statusbar.plugin.StatusBar.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.statusbar.plugin.StatusBar.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.statusbar.plugin.StatusBar.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`beforeMainwindowVisible <pyllo.plugins.statusbar.plugin.StatusBar.beforeMainwindowVisible>`\ ()
+        - Actions to be performed after setup but before the main window's has
+      * - :py:obj:`addWidget <pyllo.plugins.statusbar.plugin.StatusBar.addWidget>`\ (widget, before)
+        - Add status widget to main application status bar
+      * - :py:obj:`removeStatusWidget <pyllo.plugins.statusbar.plugin.StatusBar.removeStatusWidget>`\ (name)
+        - Remove widget from status bar.
+      * - :py:obj:`getStatusWidget <pyllo.plugins.statusbar.plugin.StatusBar.getStatusWidget>`\ (name)
+        - Return an application status widget by name.
+      * - :py:obj:`getStatusWidgets <pyllo.plugins.statusbar.plugin.StatusBar.getStatusWidgets>`\ ()
+        - Return all status widgets.
+      * - :py:obj:`clear <pyllo.plugins.statusbar.plugin.StatusBar.clear>`\ ()
+        - Remove all status widgets.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'statusbar'
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: sigTest
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: beforeMainwindowVisible()
+
+      Actions to be performed after setup but before the main window's has
+      been shown.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: addWidget(widget, before=None)
+
+      Add status widget to main application status bar
+
+      Parameters
+      ----------
+      before: Union[str, None, all]
+          Statusbar widget object name is used to place this widget.
+          Append right most if before is None
+          Insert at left most if before is `all`
+
+
+   .. py:method:: removeStatusWidget(name: pyllo.core.dtype.Identity)
+
+      Remove widget from status bar.
+
+      Parameters
+      ----------
+      name: str
+          String identifier for the widget.
+
+
+   .. py:method:: getStatusWidget(name: pyllo.core.dtype.Identity)
+
+      Return an application status widget by name.
+
+      Parameters
+      ----------
+      name: str
+          String identifier for the widget.
+
+
+   .. py:method:: getStatusWidgets()
+
+      Return all status widgets.
+
+
+   .. py:method:: clear()
+
+      Remove all status widgets.
+
+
+
+
+

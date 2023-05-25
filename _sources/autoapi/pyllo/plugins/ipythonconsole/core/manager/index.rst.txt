@@ -1,0 +1,71 @@
+:py:mod:`pyllo.plugins.ipythonconsole.core.manager`
+===================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.core.manager
+
+.. autoapi-nested-parse::
+
+   Kernel Manager subclass.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloKernelManager <pyllo.plugins.ipythonconsole.core.manager.PylloKernelManager>`
+     - Pyllo kernels that live in a conda environment are now properly activated
+
+
+
+
+.. py:class:: PylloKernelManager(*args, **kwargs)
+
+   Bases: :py:obj:`qtconsole.manager.QtKernelManager`
+
+   Pyllo kernels that live in a conda environment are now properly activated
+   with custom activation scripts located at plugins/console/scripts.
+
+   However, on windows the batch script is terminated but not the kernel it
+   started so this subclass overrides the `_kill_kernel` method to properly
+   kill the started kernels by using psutil.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`kill_proc_tree <pyllo.plugins.ipythonconsole.core.manager.PylloKernelManager.kill_proc_tree>`\ (pid, sig, include_parent, timeout, on_terminate)
+        - :summarylabel:`static` Kill a process tree (including grandchildren) with sig and return a
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: kill_proc_tree(pid, sig=signal.SIGTERM, include_parent=True, timeout=None, on_terminate=None)
+      :staticmethod:
+
+      Kill a process tree (including grandchildren) with sig and return a
+      (gone, still_alive) tuple.
+
+      "on_terminate", if specified, is a callabck function which is called
+      as soon as a child terminates.
+
+      This is an new method not present in QtKernelManager.
+
+
+
+
+

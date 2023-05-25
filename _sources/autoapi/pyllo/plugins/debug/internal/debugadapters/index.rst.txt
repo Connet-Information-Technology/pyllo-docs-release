@@ -1,0 +1,164 @@
+:py:mod:`pyllo.plugins.debug.internal.debugadapters`
+====================================================
+
+.. py:module:: pyllo.plugins.debug.internal.debugadapters
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`StreamDebugAdapter <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter>`
+     - \-
+   * - :py:obj:`ExecutableDebugAdapter <pyllo.plugins.debug.internal.debugadapters.ExecutableDebugAdapter>`
+     - \-
+
+
+
+
+.. py:class:: StreamDebugAdapter
+
+   Bases: :py:obj:`pyllo.plugins.debug.api.IDebugAdapter`
+
+   ..    ..    .. .. py:property:: adapterID
+
+
+   ..    .. .. py:property:: debuggeeID
+
+
+   ..    .. 
+   .. rubric:: Overview
+
+   
+
+   .. list-table:: Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`adapterID <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.adapterID>`
+        - \-
+      * - :py:obj:`debuggeeID <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.debuggeeID>`
+        - \-
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setStream <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.setStream>`\ (stream)
+        - \-
+      * - :py:obj:`setRequestHandler <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.setRequestHandler>`\ (callback)
+        - \-
+      * - :py:obj:`setEventHandler <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.setEventHandler>`\ (callback)
+        - \-
+      * - :py:obj:`setDisconnectHandler <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.setDisconnectHandler>`\ (callback)
+        - \-
+      * - :py:obj:`startSession <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.startSession>`\ ()
+        - \-
+      * - :py:obj:`stopSession <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.stopSession>`\ ()
+        - \-
+      * - :py:obj:`sendEvent <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.sendEvent>`\ (event, body)
+        - \-
+      * - :py:obj:`sendRequest <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.sendRequest>`\ (command, arguments, onBeforeSent)
+        - \-
+      * - :py:obj:`sendResponse <pyllo.plugins.debug.internal.debugadapters.StreamDebugAdapter.sendResponse>`\ (requestSeq, success, command, message, body)
+        - \-
+
+
+
+
+   .. rubric:: Properties
+   .. py:property:: adapterID
+
+
+   .. py:property:: debuggeeID
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setStream(stream)
+
+
+   .. py:method:: setRequestHandler(callback)
+
+
+   .. py:method:: setEventHandler(callback)
+
+
+   .. py:method:: setDisconnectHandler(callback)
+
+
+   .. py:method:: startSession() -> bool
+
+
+   .. py:method:: stopSession()
+
+
+   .. py:method:: sendEvent(event: str, body=None)
+
+
+   .. py:method:: sendRequest(command: str, arguments=None, onBeforeSent=None)
+
+
+   .. py:method:: sendResponse(requestSeq: int, success: bool, command: str, message=None, body=None)
+
+
+
+
+
+.. py:class:: ExecutableDebugAdapter(adapter: pyllo.plugins.debug.api.DebugAdapterExecutable, debugType: str)
+
+   Bases: :py:obj:`StreamDebugAdapter`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`startSession <pyllo.plugins.debug.internal.debugadapters.ExecutableDebugAdapter.startSession>`\ ()
+        - \-
+      * - :py:obj:`stopSession <pyllo.plugins.debug.internal.debugadapters.ExecutableDebugAdapter.stopSession>`\ ()
+        - \-
+      * - :py:obj:`sendEvent <pyllo.plugins.debug.internal.debugadapters.ExecutableDebugAdapter.sendEvent>`\ (event, body)
+        - \-
+      * - :py:obj:`sendResponse <pyllo.plugins.debug.internal.debugadapters.ExecutableDebugAdapter.sendResponse>`\ (requestSeq, success, command, message, body)
+        - \-
+      * - :py:obj:`sendRequest <pyllo.plugins.debug.internal.debugadapters.ExecutableDebugAdapter.sendRequest>`\ (command, arguments, onBeforeSent)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: startSession() -> bool
+
+
+   .. py:method:: stopSession()
+
+
+   .. py:method:: sendEvent(event: str, body=None)
+
+
+   .. py:method:: sendResponse(requestSeq: int, success: bool, command: str, message=None, body=None)
+
+
+   .. py:method:: sendRequest(command: str, arguments=None, onBeforeSent=None)
+
+
+
+
+

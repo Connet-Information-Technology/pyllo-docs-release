@@ -1,0 +1,447 @@
+:py:mod:`pyllo.plugins.explorer.plugin`
+=======================================
+
+.. py:module:: pyllo.plugins.explorer.plugin
+
+.. autoapi-nested-parse::
+
+   Files and Directories Explorer Plugin
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Explorer <pyllo.plugins.explorer.plugin.Explorer>`
+     - File and Directories Explorer DockWidget.
+
+
+
+
+.. py:class:: Explorer(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloDockablePlugin`
+
+   File and Directories Explorer DockWidget.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'explorer'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   ..    .. .. py:attribute:: sigDirOpened
+
+      This signal is emitted to indicate a folder has been opened.
+
+      Parameters
+      ----------
+      directory: str
+          The opened path directory.
+
+      Notes
+      -----
+      This will update the current working directory.
+
+
+   ..    .. .. py:attribute:: sigDirCreated
+
+      This signal is emitted to request creating a new dir with Pyllo.
+
+      Parameters
+      ----------
+      path: str
+          Dir path created.
+
+
+   ..    .. .. py:attribute:: sigFileCreated
+
+      This signal is emitted to request creating a new file with Pyllo.
+
+      Parameters
+      ----------
+      path: str
+          File path to run.
+
+
+   ..    .. .. py:attribute:: sigFileRemoved
+
+      This signal is emitted when a file is removed.
+
+      Parameters
+      ----------
+      path: str
+          File path removed.
+
+
+   ..    .. .. py:attribute:: sigFileRenamed
+
+      This signal is emitted when a file is renamed.
+
+      Parameters
+      ----------
+      oldPath: str
+          Old path for renamed file.
+      newPath: str
+          New path for renamed file.
+
+
+   ..    .. .. py:attribute:: sigOpenFileRequested
+
+      This signal is emitted to request opening a new file with Pyllo.
+
+      Parameters
+      ----------
+      paths: str
+          File path to run.
+
+
+   ..    .. .. py:attribute:: sigDirRemoved
+
+      This signal is emitted when a folder is removed.
+
+      Parameters
+      ----------
+      path: str
+          Folder to remove.
+
+
+   ..    .. .. py:attribute:: sigDirRenamed
+
+      This signal is emitted when a folder is renamed.
+
+      Parameters
+      ----------
+      path: str
+          Folder to remove.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.explorer.plugin.Explorer.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.explorer.plugin.Explorer.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.explorer.plugin.Explorer.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.explorer.plugin.Explorer.OPTIONAL>`
+        - \-
+      * - :py:obj:`WIDGET_CLASS <pyllo.plugins.explorer.plugin.Explorer.WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.explorer.plugin.Explorer.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_WIDGET_CLASS <pyllo.plugins.explorer.plugin.Explorer.CONF_WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`CONF_FILE <pyllo.plugins.explorer.plugin.Explorer.CONF_FILE>`
+        - \-
+      * - :py:obj:`sigDirOpened <pyllo.plugins.explorer.plugin.Explorer.sigDirOpened>`
+        - This signal is emitted to indicate a folder has been opened.
+      * - :py:obj:`sigDirCreated <pyllo.plugins.explorer.plugin.Explorer.sigDirCreated>`
+        - This signal is emitted to request creating a new dir with Pyllo.
+      * - :py:obj:`sigFileCreated <pyllo.plugins.explorer.plugin.Explorer.sigFileCreated>`
+        - This signal is emitted to request creating a new file with Pyllo.
+      * - :py:obj:`sigFileRemoved <pyllo.plugins.explorer.plugin.Explorer.sigFileRemoved>`
+        - This signal is emitted when a file is removed.
+      * - :py:obj:`sigFileRenamed <pyllo.plugins.explorer.plugin.Explorer.sigFileRenamed>`
+        - This signal is emitted when a file is renamed.
+      * - :py:obj:`sigOpenFileRequested <pyllo.plugins.explorer.plugin.Explorer.sigOpenFileRequested>`
+        - This signal is emitted to request opening a new file with Pyllo.
+      * - :py:obj:`sigDirRemoved <pyllo.plugins.explorer.plugin.Explorer.sigDirRemoved>`
+        - This signal is emitted when a folder is removed.
+      * - :py:obj:`sigDirRenamed <pyllo.plugins.explorer.plugin.Explorer.sigDirRenamed>`
+        - This signal is emitted when a folder is renamed.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.explorer.plugin.Explorer.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.explorer.plugin.Explorer.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.explorer.plugin.Explorer.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.explorer.plugin.Explorer.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onApplicationAvailable <pyllo.plugins.explorer.plugin.Explorer.onApplicationAvailable>`\ ()
+        - \-
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.explorer.plugin.Explorer.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`onEditorStackAvailable <pyllo.plugins.explorer.plugin.Explorer.onEditorStackAvailable>`\ ()
+        - \-
+      * - :py:obj:`chdir <pyllo.plugins.explorer.plugin.Explorer.chdir>`\ (directory, emit)
+        - Set working directory.
+      * - :py:obj:`clearNavigateHistory <pyllo.plugins.explorer.plugin.Explorer.clearNavigateHistory>`\ ()
+        - \-
+      * - :py:obj:`getSelectedFilenames <pyllo.plugins.explorer.plugin.Explorer.getSelectedFilenames>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'explorer'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+      :value: []
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   .. py:attribute:: CONF_FILE
+      :value: False
+
+      
+
+   .. py:attribute:: sigDirOpened
+
+      This signal is emitted to indicate a folder has been opened.
+
+      Parameters
+      ----------
+      directory: str
+          The opened path directory.
+
+      Notes
+      -----
+      This will update the current working directory.
+
+
+   .. py:attribute:: sigDirCreated
+
+      This signal is emitted to request creating a new dir with Pyllo.
+
+      Parameters
+      ----------
+      path: str
+          Dir path created.
+
+
+   .. py:attribute:: sigFileCreated
+
+      This signal is emitted to request creating a new file with Pyllo.
+
+      Parameters
+      ----------
+      path: str
+          File path to run.
+
+
+   .. py:attribute:: sigFileRemoved
+
+      This signal is emitted when a file is removed.
+
+      Parameters
+      ----------
+      path: str
+          File path removed.
+
+
+   .. py:attribute:: sigFileRenamed
+
+      This signal is emitted when a file is renamed.
+
+      Parameters
+      ----------
+      oldPath: str
+          Old path for renamed file.
+      newPath: str
+          New path for renamed file.
+
+
+   .. py:attribute:: sigOpenFileRequested
+
+      This signal is emitted to request opening a new file with Pyllo.
+
+      Parameters
+      ----------
+      paths: str
+          File path to run.
+
+
+   .. py:attribute:: sigDirRemoved
+
+      This signal is emitted when a folder is removed.
+
+      Parameters
+      ----------
+      path: str
+          Folder to remove.
+
+
+   .. py:attribute:: sigDirRenamed
+
+      This signal is emitted when a folder is renamed.
+
+      Parameters
+      ----------
+      path: str
+          Folder to remove.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onApplicationAvailable()
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: onEditorStackAvailable()
+
+
+   .. py:method:: chdir(directory, emit=True)
+
+      Set working directory.
+
+      Parameters
+      ----------
+      directory: str
+          The new working directory path.
+      emit: bool, optional
+          Emit a signal to indicate the working directory has changed.
+          Default is True.
+
+
+   .. py:method:: clearNavigateHistory()
+
+
+   .. py:method:: getSelectedFilenames() -> List[str]
+
+
+
+
+

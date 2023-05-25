@@ -1,0 +1,123 @@
+:py:mod:`pyllo.core.runtime.i18n`
+=================================
+
+.. py:module:: pyllo.core.runtime.i18n
+
+.. autoapi-nested-parse::
+
+   Pyllo i18n
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`setLocale <pyllo.core.runtime.i18n.setLocale>`\ (lang)
+     - Set localization
+   * - :py:obj:`getAvailableLocales <pyllo.core.runtime.i18n.getAvailableLocales>`\ ()
+     - Returns
+   * - :py:obj:`getTranslation <pyllo.core.runtime.i18n.getTranslation>`\ (modname, language, path)
+     - Return translation callback for module *modname*
+   * - :py:obj:`getLocale <pyllo.core.runtime.i18n.getLocale>`\ ()
+     - .. versionadded:: 1.0.0
+   * - :py:obj:`getSystemLocale <pyllo.core.runtime.i18n.getSystemLocale>`\ ()
+     - .. versionadded:: 1.0.0
+   * - :py:obj:`getQtTranslator <pyllo.core.runtime.i18n.getQtTranslator>`\ ()
+     - Install Qt translator to the QApplication instance
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LANGUAGE_CODES <pyllo.core.runtime.i18n.LANGUAGE_CODES>`
+     - \-
+   * - :py:obj:`DISABLED_LANGUAGES <pyllo.core.runtime.i18n.DISABLED_LANGUAGES>`
+     - \-
+   * - :py:obj:`Language <pyllo.core.runtime.i18n.Language>`
+     - \-
+   * - :py:obj:`TRANSLATOR <pyllo.core.runtime.i18n.TRANSLATOR>`
+     - \-
+   * - :py:obj:`FALLBACK_LANGUAGE <pyllo.core.runtime.i18n.FALLBACK_LANGUAGE>`
+     - \-
+   * - :py:obj:`CURRENT_LANGUAGE <pyllo.core.runtime.i18n.CURRENT_LANGUAGE>`
+     - \-
+
+
+.. py:data:: LANGUAGE_CODES
+
+   
+
+.. py:data:: DISABLED_LANGUAGES
+   :value: ['fr', 'es', 'hu', 'pt_BR', 'ru', 'ja', 'de', 'pl']
+
+   
+
+.. py:data:: Language
+
+   
+
+.. py:data:: TRANSLATOR
+   :type: Callable[[pyllo.core.dtype.Text], pyllo.core.dtype.Text]
+
+   
+
+.. py:data:: FALLBACK_LANGUAGE
+   :value: 'en'
+
+   
+
+.. py:data:: CURRENT_LANGUAGE
+   :type: Language
+
+   
+
+.. py:function:: setLocale(lang: Language) -> pyllo.core.dtype.IO
+
+   Set localization
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getAvailableLocales() -> pyllo.core.dtype.IO[List[Language]]
+
+   Returns
+   -------
+   languages: List[str]
+       List of locale names.
+
+   >>> getAvailableLocales()
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getTranslation(modname, language: Language, path=TRANSLATIONS_PATH) -> pyllo.core.dtype.IO[Callable[[pyllo.core.dtype.Text], pyllo.core.dtype.Text]]
+
+   Return translation callback for module *modname*
+
+
+.. py:function:: getLocale() -> pyllo.core.dtype.IO[Language]
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getSystemLocale() -> pyllo.core.dtype.IO[Language]
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getQtTranslator() -> pyllo.core.dtype.IO[qtpy.QtCore.QTranslator]
+
+   Install Qt translator to the QApplication instance
+
+

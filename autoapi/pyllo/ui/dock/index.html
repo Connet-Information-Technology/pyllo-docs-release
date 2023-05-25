@@ -1,0 +1,896 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../../../genindex.html" /><link rel="search" title="Search" href="../../../../search.html" /><link rel="next" title="pyllo.ui.mainwindow" href="../mainwindow/index.html" /><link rel="prev" title="pyllo.ui.browser" href="../browser/index.html" />
+
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.03.27 -->
+        <title>pyllo.ui.dock - Pyllo documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../index.html"><div class="brand">Pyllo  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../../index.html">
+  
+  
+  <span class="sidebar-brand-text">Pyllo  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../welcome.html">Welcome to Pyllo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../platform.html">Pyllo Platform Overview</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../../index.html">API Reference</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../config/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../config/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.tests</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../config/tests/conftest/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.tests.conftest</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../config/tests/test_base/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.tests.test_base</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../config/tests/test_manager/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.tests.test_manager</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../config/tests/test_user/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.tests.test_user</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/appearance/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.appearance</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/fonts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.fonts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/gui/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.gui</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/main/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.main</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.config.utils</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../core/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../core/runtime/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../core/runtime/app/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime.app</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../core/runtime/datastore/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime.datastore</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../core/runtime/environ/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime.environ</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../core/runtime/filesystem/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime.filesystem</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../core/runtime/i18n/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime.i18n</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../core/runtime/preferences/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime.preferences</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../core/runtime/programs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime.programs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../core/runtime/registries/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime.registries</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../core/runtime/spi/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.runtime.spi</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../core/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.api</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core/dtype/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.dtype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../core/undoredo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.core.undoredo</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../examples/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../examples/uidemo/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.uidemo</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../examples/uidemo/menu/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.uidemo.menu</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../examples/uidemo/simpleeditor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.uidemo.simpleeditor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../examples/uidemo/syntaxhighlighter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.uidemo.syntaxhighlighter</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../examples/uidemo/tabs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.uidemo.tabs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../examples/uidemo/toolbar/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.uidemo.toolbar</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../examples/uidemo/webbrowser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.uidemo.webbrowser</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../examples/uidemo/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.uidemo.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../examples/example_edit/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.example_edit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../examples/ui/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.examples.ui</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../plugins/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/application/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.application</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/application/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.application.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/application/internal/confpage/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.application.internal.confpage</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/application/internal/container/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.application.internal.container</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/application/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.application.internal.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/application/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.application.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/application/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.application.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/breakpoints/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.breakpoints</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/breakpoints/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.breakpoints.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/breakpoints/internal/breakpointspanel/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.breakpoints.internal.breakpointspanel</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/breakpoints/internal/mainwidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.breakpoints.internal.mainwidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/breakpoints/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.breakpoints.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/breakpoints/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.breakpoints.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/codeeditorv2/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/codeeditorv2/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7 has-children"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/panel/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions.panel</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/panel/edgeline/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions.panel.edgeline</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/panel/findreplace/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/panel/linenumbers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions.panel.linenumbers</span></code></a></li>
+<li class="toctree-l8"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/panel/scrollflag/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions.panel.scrollflag</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/autoclosing/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions.autoclosing</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/autosurrounding/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions.autosurrounding</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/decorating/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions.decorating</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/extensions/occurrencemarking/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.extensions.occurrencemarking</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../plugins/codeeditorv2/internal/langexts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.langexts</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" role="switch" type="checkbox"/><label for="toctree-checkbox-18"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/langexts/cpp/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.langexts.cpp</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/langexts/html/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.langexts.html</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/langexts/markdown/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.langexts.markdown</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/langexts/pygments/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.langexts.pygments</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/langexts/python/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.langexts.python</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/langexts/xml/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.langexts.xml</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/langexts/yaml/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.langexts.yaml</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/codeeditorv2/internal/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.tests</span></code></a></li>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../plugins/codeeditorv2/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.widgets</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" role="switch" type="checkbox"/><label for="toctree-checkbox-19"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7 has-children"><a class="reference internal" href="../../plugins/codeeditorv2/internal/widgets/tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.widgets.tests</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" role="switch" type="checkbox"/><label for="toctree-checkbox-20"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l8"><a class="reference internal" href="../../plugins/codeeditorv2/internal/widgets/tests/test_editor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.widgets.tests.test_editor</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/widgets/editor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.widgets.editor</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/widgets/findreplace/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.widgets.findreplace</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/widgets/statusbar/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.widgets.statusbar</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/codeeditorv2/internal/widgets/tooltip/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.widgets.tooltip</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/codeeditorv2/internal/confpage/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.confpage</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/codeeditorv2/internal/container/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.container</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/codeeditorv2/internal/syntaxhighlight/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.internal.syntaxhighlight</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/codeeditorv2/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/codeeditorv2/config/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.config</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/codeeditorv2/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.codeeditorv2.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/contrib/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.contrib</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" role="switch" type="checkbox"/><label for="toctree-checkbox-21"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/contrib/python/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.contrib.python</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/debug/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" role="switch" type="checkbox"/><label for="toctree-checkbox-22"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/debug/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" role="switch" type="checkbox"/><label for="toctree-checkbox-23"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6 has-children"><a class="reference internal" href="../../plugins/debug/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.internal.widgets</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" role="switch" type="checkbox"/><label for="toctree-checkbox-24"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/debug/internal/widgets/configbuttonbox/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.internal.widgets.configbuttonbox</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="../../plugins/debug/internal/widgets/debugconsole/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.internal.widgets.debugconsole</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/debug/internal/codeeditorextension/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.internal.codeeditorextension</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/debug/internal/configurationmanager/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.internal.configurationmanager</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/debug/internal/debugadapters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.internal.debugadapters</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/debug/internal/debugsession/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.internal.debugsession</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/debug/internal/mainwidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.internal.mainwidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/debug/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/debug/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.plugin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/debug/protocol/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.debug.protocol</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/editorstack/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.editorstack</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" role="switch" type="checkbox"/><label for="toctree-checkbox-25"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/editorstack/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.editorstack.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" role="switch" type="checkbox"/><label for="toctree-checkbox-26"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/editorstack/internal/mainwidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.editorstack.internal.mainwidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/editorstack/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.editorstack.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/editorstack/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.editorstack.plugin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/editorstack/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.editorstack.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/explorer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.explorer</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" role="switch" type="checkbox"/><label for="toctree-checkbox-27"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/explorer/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.explorer.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" role="switch" type="checkbox"/><label for="toctree-checkbox-28"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/explorer/internal/confpage/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.explorer.internal.confpage</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/explorer/internal/mainwidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.explorer.internal.mainwidget</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/explorer/internal/utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.explorer.internal.utils</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/explorer/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.explorer.internal.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/explorer/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.explorer.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/explorer/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.explorer.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/ipythonconsole/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" role="switch" type="checkbox"/><label for="toctree-checkbox-29"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/ipythonconsole/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.api</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" role="switch" type="checkbox"/><label for="toctree-checkbox-30"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/api/clipboard/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.api.clipboard</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/api/help/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.api.help</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/api/history/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.api.history</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/api/shellconnect/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.api.shellconnect</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/api/traceback/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.api.traceback</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/ipythonconsole/core/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.core</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" role="switch" type="checkbox"/><label for="toctree-checkbox-31"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/core/conda/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.core.conda</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/core/environ/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.core.environ</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/core/kernelcomm/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.core.kernelcomm</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/core/kernelspec/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.core.kernelspec</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/core/manager/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.core.manager</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/core/pyenv/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.core.pyenv</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/core/ssh/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.core.ssh</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" role="switch" type="checkbox"/><label for="toctree-checkbox-32"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/calltip/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.calltip</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/client/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.client</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/control/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.control</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/debugger/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.debugger</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/figurebrowser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.figurebrowser</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/help/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.help</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/infowidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.infowidget</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/ipythonshell/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.ipythonshell</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/kernelconnect/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.kernelconnect</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/mainwidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.mainwidget</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/namespacebrowser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.namespacebrowser</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/ipythonconsole/widgets/restartdialog/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.widgets.restartdialog</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/ipythonconsole/confpage/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.confpage</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/ipythonconsole/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.ipythonconsole.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/languageserver/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" role="switch" type="checkbox"/><label for="toctree-checkbox-33"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/languageserver/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" role="switch" type="checkbox"/><label for="toctree-checkbox-34"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/languageserver/internal/codeeditorextensions/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.internal.codeeditorextensions</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/languageserver/internal/confpage/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.internal.confpage</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/languageserver/internal/container/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.internal.container</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/languageserver/internal/lspadapters/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.internal.lspadapters</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/languageserver/internal/lspsession/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.internal.lspsession</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/languageserver/widget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.widget</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" role="switch" type="checkbox"/><label for="toctree-checkbox-35"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/languageserver/widget/completionlistwidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.widget.completionlistwidget</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/languageserver/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/languageserver/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.plugin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/languageserver/protocol/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.languageserver.protocol</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/layout/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.layout</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" role="switch" type="checkbox"/><label for="toctree-checkbox-36"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/layout/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.layout.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" role="switch" type="checkbox"/><label for="toctree-checkbox-37"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/layout/internal/container/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.layout.internal.container</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/layout/Layouts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.layout.layouts</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" role="switch" type="checkbox"/><label for="toctree-checkbox-38"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/layout/Layouts/default/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.layout.layouts.default</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/layout/Layouts/terminal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.layout.layouts.terminal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/layout/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.layout.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/layout/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.layout.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/mainmenu/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.mainmenu</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" role="switch" type="checkbox"/><label for="toctree-checkbox-39"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/mainmenu/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.mainmenu.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/mainmenu/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.mainmenu.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/outlineexplorer/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.outlineexplorer</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" role="switch" type="checkbox"/><label for="toctree-checkbox-40"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/outlineexplorer/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.outlineexplorer.api</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/output/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.output</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" role="switch" type="checkbox"/><label for="toctree-checkbox-41"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/output/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.output.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" role="switch" type="checkbox"/><label for="toctree-checkbox-42"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/output/internal/logutils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.output.internal.logutils</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/output/internal/mainwidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.output.internal.mainwidget</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/output/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.output.internal.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/output/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.output.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/output/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.output.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/preferences/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.preferences</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" role="switch" type="checkbox"/><label for="toctree-checkbox-43"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/preferences/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.preferences.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" role="switch" type="checkbox"/><label for="toctree-checkbox-44"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/preferences/internal/container/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.preferences.internal.container</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/preferences/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.preferences.internal.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/preferences/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.preferences.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/preferences/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.preferences.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/problems/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.problems</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" role="switch" type="checkbox"/><label for="toctree-checkbox-45"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/problems/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.problems.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" role="switch" type="checkbox"/><label for="toctree-checkbox-46"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/problems/internal/mainwidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.problems.internal.mainwidget</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/problems/internal/problemspanel/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.problems.internal.problemspanel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/problems/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.problems.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/problems/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.problems.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/python/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.python</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" role="switch" type="checkbox"/><label for="toctree-checkbox-47"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/python/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.python.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" role="switch" type="checkbox"/><label for="toctree-checkbox-48"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/python/internal/confpage/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.python.internal.confpage</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/python/internal/container/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.python.internal.container</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/python/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.python.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/python/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.python.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/run/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.run</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" role="switch" type="checkbox"/><label for="toctree-checkbox-49"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/run/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.run.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" role="switch" type="checkbox"/><label for="toctree-checkbox-50"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/run/internal/mainwidget/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.run.internal.mainwidget</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/run/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.run.internal.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/run/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.run.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/run/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.run.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/shortcuts/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.shortcuts</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" role="switch" type="checkbox"/><label for="toctree-checkbox-51"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/shortcuts/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.shortcuts.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" role="switch" type="checkbox"/><label for="toctree-checkbox-52"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/shortcuts/internal/confpage/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.shortcuts.internal.confpage</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/shortcuts/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.shortcuts.internal.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/shortcuts/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.shortcuts.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/statusbar/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.statusbar</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" role="switch" type="checkbox"/><label for="toctree-checkbox-53"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/statusbar/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.statusbar.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" role="switch" type="checkbox"/><label for="toctree-checkbox-54"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/statusbar/internal/container/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.statusbar.internal.container</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/statusbar/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.statusbar.internal.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/statusbar/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.statusbar.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/statusbar/confpage/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.statusbar.confpage</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/statusbar/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.statusbar.plugin</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/statusbar/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.statusbar.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/toolbar/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.toolbar</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" role="switch" type="checkbox"/><label for="toctree-checkbox-55"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/toolbar/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.toolbar.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" role="switch" type="checkbox"/><label for="toctree-checkbox-56"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/toolbar/internal/container/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.toolbar.internal.container</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/toolbar/api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.toolbar.api</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/toolbar/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.toolbar.plugin</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../plugins/workingdirectory/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.workingdirectory</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" role="switch" type="checkbox"/><label for="toctree-checkbox-57"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5 has-children"><a class="reference internal" href="../../plugins/workingdirectory/internal/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.workingdirectory.internal</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" role="switch" type="checkbox"/><label for="toctree-checkbox-58"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/workingdirectory/internal/confpage/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.workingdirectory.internal.confpage</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/workingdirectory/internal/container/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.workingdirectory.internal.container</span></code></a></li>
+<li class="toctree-l6"><a class="reference internal" href="../../plugins/workingdirectory/internal/widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.workingdirectory.internal.widgets</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="../../plugins/workingdirectory/plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.plugins.workingdirectory.plugin</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../resources/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.resources</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" role="switch" type="checkbox"/><label for="toctree-checkbox-59"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../resources/resource/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.resources.resource</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../tools/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" role="switch" type="checkbox"/><label for="toctree-checkbox-60"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../tools/binaryornot/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.binaryornot</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" role="switch" type="checkbox"/><label for="toctree-checkbox-61"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../tools/binaryornot/check/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.binaryornot.check</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../../tools/binaryornot/helpers/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.binaryornot.helpers</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../../tools/watchdog/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.watchdog</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" role="switch" type="checkbox"/><label for="toctree-checkbox-62"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../../tools/watchdog/worker/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.watchdog.worker</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/encoding/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.encoding</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/json/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.json</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/jsonrpc2/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.jsonrpc2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/log/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.log</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/prefixtuple/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.prefixtuple</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/qtsplittertreemap/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.qtsplittertreemap</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/statemachine/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.statemachine</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/stringmatching/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.stringmatching</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/timestamp/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.timestamp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/vcs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.vcs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../tools/wildcard/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.tools.wildcard</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" role="switch" type="checkbox"/><label for="toctree-checkbox-63"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4 has-children"><a class="reference internal" href="../editor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.editor</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-64" name="toctree-checkbox-64" role="switch" type="checkbox"/><label for="toctree-checkbox-64"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../editor/simplecodeeditor/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.editor.simplecodeeditor</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../editor/textedits/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.editor.textedits</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../tests/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.tests</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-65" name="toctree-checkbox-65" role="switch" type="checkbox"/><label for="toctree-checkbox-65"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../tests/test_tabs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.tests.test_tabs</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../tests/test_toolbar/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.tests.test_toolbar</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../theme/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.theme</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-66" name="toctree-checkbox-66" role="switch" type="checkbox"/><label for="toctree-checkbox-66"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../theme/color/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.theme.color</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../theme/palette/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.theme.palette</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../theme/style/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.theme.style</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../theme/stylesheet/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.theme.stylesheet</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4 has-children"><a class="reference internal" href="../widgets/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.widgets</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-67" name="toctree-checkbox-67" role="switch" type="checkbox"/><label for="toctree-checkbox-67"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l5"><a class="reference internal" href="../widgets/colorpicker/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.widgets.colorpicker</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../widgets/combobox/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.widgets.combobox</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../widgets/line/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.widgets.line</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../widgets/lineedit/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.widgets.lineedit</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../widgets/messagebox/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.widgets.messagebox</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../widgets/progressindicator/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.widgets.progressindicator</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../widgets/styleditemdelegate/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.widgets.styleditemdelegate</span></code></a></li>
+<li class="toctree-l5"><a class="reference internal" href="../widgets/textconsole/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.widgets.textconsole</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="../api/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.api</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../browser/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.browser</span></code></a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.dock</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../mainwindow/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.mainwindow</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../menu/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.menu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../plugin/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.plugin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../preferences/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.preferences</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../qt/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.qt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../qtpatch/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.qtpatch</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../syntaxhighlighter/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.syntaxhighlighter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../tabs/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.tabs</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="../toolbar/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.toolbar</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../utils/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.utils</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../about/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.about</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../bootstrap/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.bootstrap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../main/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.main</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../setup/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.setup</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="module-pyllo.ui.dock">
+<span id="pyllo-ui-dock"></span><h1><a class="reference internal" href="#module-pyllo.ui.dock" title="pyllo.ui.dock"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.dock</span></code></a><a class="headerlink" href="#module-pyllo.ui.dock" title="Permalink to this heading">#</a></h1>
+<p>Dock widget for plugin panel displaying.</p>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">#</a></h2>
+<div class="table-wrapper colwidths-auto summarytable docutils container" id="id1">
+<table class="summarytable docutils align-default" id="id1">
+<caption><span class="caption-text">Classes</span><a class="headerlink" href="#id1" title="Permalink to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyllo.ui.dock.TabFilter" title="pyllo.ui.dock.TabFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TabFilter</span></code></a></p></td>
+<td><p>Filter event attached to each DockWidget QTabBar.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyllo.ui.dock.DockTitleBar" title="pyllo.ui.dock.DockTitleBar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DockTitleBar</span></code></a></p></td>
+<td><p>Custom title bar for our dock widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget" title="pyllo.ui.dock.PylloDockWidget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PylloDockWidget</span></code></a></p></td>
+<td><p>Subclass to override needed methods</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyllo.ui.dock.TabFilter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyllo.ui.dock.</span></span><span class="sig-name descname"><span class="pre">TabFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dockTabBar</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">qtpy.QtWidgets.QTabBar</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mainWindow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">qtpy.QtWidgets.QMainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.TabFilter" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">qtpy.QtCore.QObject</span></code></p>
+<p>Filter event attached to each DockWidget QTabBar.</p>
+<p class="rubric">Overview</p>
+<div class="table-wrapper colwidths-auto summarytable docutils container" id="id2">
+<table class="summarytable docutils align-default" id="id2">
+<caption><span class="caption-text">Methods</span><a class="headerlink" href="#id2" title="Permalink to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyllo.ui.dock.TabFilter.eventFilter" title="pyllo.ui.dock.TabFilter.eventFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eventFilter</span></code></a>(obj, event)</p></td>
+<td><p>Filter mouse press events.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Methods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyllo.ui.dock.TabFilter.eventFilter">
+<span class="sig-name descname"><span class="pre">eventFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.TabFilter.eventFilter" title="Permalink to this definition">#</a></dt>
+<dd><p>Filter mouse press events.</p>
+<p>Events that are captured and not propagated return True. Events that
+are not captured and are propagated return False.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyllo.ui.dock.DockTitleBar">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyllo.ui.dock.</span></span><span class="sig-name descname"><span class="pre">DockTitleBar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.DockTitleBar" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">qtpy.QtWidgets.QWidget</span></code></p>
+<p>Custom title bar for our dock widget.</p>
+<p>Inspired from
+<a class="reference external" href="https://stackoverflow.com/a/40894225/438386">https://stackoverflow.com/a/40894225/438386</a></p>
+<p class="rubric">Overview</p>
+<div class="table-wrapper colwidths-auto summarytable docutils container" id="id3">
+<table class="summarytable docutils align-default" id="id3">
+<caption><span class="caption-text">Methods</span><a class="headerlink" href="#id3" title="Permalink to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyllo.ui.dock.DockTitleBar.mouseReleaseEvent" title="pyllo.ui.dock.DockTitleBar.mouseReleaseEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mouseReleaseEvent</span></code></a>(event)</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyllo.ui.dock.DockTitleBar.mousePressEvent" title="pyllo.ui.dock.DockTitleBar.mousePressEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mousePressEvent</span></code></a>(event)</p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyllo.ui.dock.DockTitleBar.mouseMoveEvent" title="pyllo.ui.dock.DockTitleBar.mouseMoveEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mouseMoveEvent</span></code></a>(event)</p></td>
+<td><p>-</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Methods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyllo.ui.dock.DockTitleBar.mouseReleaseEvent">
+<span class="sig-name descname"><span class="pre">mouseReleaseEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">qtpy.QtGui.QMouseEvent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.DockTitleBar.mouseReleaseEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyllo.ui.dock.DockTitleBar.mousePressEvent">
+<span class="sig-name descname"><span class="pre">mousePressEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">qtpy.QtGui.QMouseEvent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.DockTitleBar.mousePressEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyllo.ui.dock.DockTitleBar.mouseMoveEvent">
+<span class="sig-name descname"><span class="pre">mouseMoveEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">qtpy.QtGui.QMouseEvent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.DockTitleBar.mouseMoveEvent" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyllo.ui.dock.PylloDockWidget">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyllo.ui.dock.</span></span><span class="sig-name descname"><span class="pre">PylloDockWidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pyllo.core.dtype.Text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mainWindow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">qtpy.QtWidgets.QMainWindow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.PylloDockWidget" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">qtpy.QtWidgets.QDockWidget</span></code></p>
+<p>Subclass to override needed methods</p>
+<p class="rubric">Overview</p>
+<div class="table-wrapper colwidths-auto summarytable docutils container" id="id4">
+<table class="summarytable docutils align-default" id="id4">
+<caption><span class="caption-text">Attributes</span><a class="headerlink" href="#id4" title="Permalink to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.ALLOWED_AREAS" title="pyllo.ui.dock.PylloDockWidget.ALLOWED_AREAS"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ALLOWED_AREAS</span></code></a></p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.LOCATION" title="pyllo.ui.dock.PylloDockWidget.LOCATION"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LOCATION</span></code></a></p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.FEATURES" title="pyllo.ui.dock.PylloDockWidget.FEATURES"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FEATURES</span></code></a></p></td>
+<td><p>-</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.sigClosed" title="pyllo.ui.dock.PylloDockWidget.sigClosed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sigClosed</span></code></a></p></td>
+<td><p>-</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-wrapper colwidths-auto summarytable docutils container" id="id5">
+<table class="summarytable docutils align-default" id="id5">
+<caption><span class="caption-text">Methods</span><a class="headerlink" href="#id5" title="Permalink to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.closeEvent" title="pyllo.ui.dock.PylloDockWidget.closeEvent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">closeEvent</span></code></a>(event)</p></td>
+<td><p>Reimplement Qt method to send a signal on close so that “Panes” main</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.installTabEventFilter" title="pyllo.ui.dock.PylloDockWidget.installTabEventFilter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">installTabEventFilter</span></code></a>()</p></td>
+<td><p>Install an event filter to capture mouse events in the tabs of a</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.hideTitleBar" title="pyllo.ui.dock.PylloDockWidget.hideTitleBar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hideTitleBar</span></code></a>()</p></td>
+<td><p>Set empty QWidget on title bar.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.showTitleBar" title="pyllo.ui.dock.PylloDockWidget.showTitleBar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">showTitleBar</span></code></a>()</p></td>
+<td><p>Set custom title bar.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyllo.ui.dock.PylloDockWidget.ALLOWED_AREAS">
+<span class="sig-name descname"><span class="pre">ALLOWED_AREAS</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">qtpy.QtCore.Qt.DockWidgetAreas</span></em><a class="headerlink" href="#pyllo.ui.dock.PylloDockWidget.ALLOWED_AREAS" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyllo.ui.dock.PylloDockWidget.LOCATION">
+<span class="sig-name descname"><span class="pre">LOCATION</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">qtpy.QtCore.Qt.DockWidgetAreas</span></em><a class="headerlink" href="#pyllo.ui.dock.PylloDockWidget.LOCATION" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyllo.ui.dock.PylloDockWidget.FEATURES">
+<span class="sig-name descname"><span class="pre">FEATURES</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">qtpy.QtWidgets.QDockWidget.DockWidgetFeatures</span></em><a class="headerlink" href="#pyllo.ui.dock.PylloDockWidget.FEATURES" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyllo.ui.dock.PylloDockWidget.sigClosed">
+<span class="sig-name descname"><span class="pre">sigClosed</span></span><a class="headerlink" href="#pyllo.ui.dock.PylloDockWidget.sigClosed" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyllo.ui.dock.PylloDockWidget.closeEvent">
+<span class="sig-name descname"><span class="pre">closeEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.PylloDockWidget.closeEvent" title="Permalink to this definition">#</a></dt>
+<dd><p>Reimplement Qt method to send a signal on close so that “Panes” main
+window menu can be updated correctly</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyllo.ui.dock.PylloDockWidget.installTabEventFilter">
+<span class="sig-name descname"><span class="pre">installTabEventFilter</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.PylloDockWidget.installTabEventFilter" title="Permalink to this definition">#</a></dt>
+<dd><p>Install an event filter to capture mouse events in the tabs of a
+QTabBar holding typified dock widget.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyllo.ui.dock.PylloDockWidget.hideTitleBar">
+<span class="sig-name descname"><span class="pre">hideTitleBar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.PylloDockWidget.hideTitleBar" title="Permalink to this definition">#</a></dt>
+<dd><p>Set empty QWidget on title bar.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyllo.ui.dock.PylloDockWidget.showTitleBar">
+<span class="sig-name descname"><span class="pre">showTitleBar</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyllo.ui.dock.PylloDockWidget.showTitleBar" title="Permalink to this definition">#</a></dt>
+<dd><p>Set custom title bar.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../mainwindow/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.mainwindow</span></code></div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../browser/index.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.browser</span></code></div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, Connet Information Technology Company, Shanghai
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyllo.ui.dock</span></code></a><ul>
+<li><a class="reference internal" href="#module-contents">Module Contents</a><ul>
+<li><a class="reference internal" href="#pyllo.ui.dock.TabFilter"><code class="docutils literal notranslate"><span class="pre">TabFilter</span></code></a><ul>
+<li><a class="reference internal" href="#pyllo.ui.dock.TabFilter.eventFilter"><code class="docutils literal notranslate"><span class="pre">TabFilter.eventFilter()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyllo.ui.dock.DockTitleBar"><code class="docutils literal notranslate"><span class="pre">DockTitleBar</span></code></a><ul>
+<li><a class="reference internal" href="#pyllo.ui.dock.DockTitleBar.mouseReleaseEvent"><code class="docutils literal notranslate"><span class="pre">DockTitleBar.mouseReleaseEvent()</span></code></a></li>
+<li><a class="reference internal" href="#pyllo.ui.dock.DockTitleBar.mousePressEvent"><code class="docutils literal notranslate"><span class="pre">DockTitleBar.mousePressEvent()</span></code></a></li>
+<li><a class="reference internal" href="#pyllo.ui.dock.DockTitleBar.mouseMoveEvent"><code class="docutils literal notranslate"><span class="pre">DockTitleBar.mouseMoveEvent()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget"><code class="docutils literal notranslate"><span class="pre">PylloDockWidget</span></code></a><ul>
+<li><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.ALLOWED_AREAS"><code class="docutils literal notranslate"><span class="pre">PylloDockWidget.ALLOWED_AREAS</span></code></a></li>
+<li><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.LOCATION"><code class="docutils literal notranslate"><span class="pre">PylloDockWidget.LOCATION</span></code></a></li>
+<li><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.FEATURES"><code class="docutils literal notranslate"><span class="pre">PylloDockWidget.FEATURES</span></code></a></li>
+<li><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.sigClosed"><code class="docutils literal notranslate"><span class="pre">PylloDockWidget.sigClosed</span></code></a></li>
+<li><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.closeEvent"><code class="docutils literal notranslate"><span class="pre">PylloDockWidget.closeEvent()</span></code></a></li>
+<li><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.installTabEventFilter"><code class="docutils literal notranslate"><span class="pre">PylloDockWidget.installTabEventFilter()</span></code></a></li>
+<li><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.hideTitleBar"><code class="docutils literal notranslate"><span class="pre">PylloDockWidget.hideTitleBar()</span></code></a></li>
+<li><a class="reference internal" href="#pyllo.ui.dock.PylloDockWidget.showTitleBar"><code class="docutils literal notranslate"><span class="pre">PylloDockWidget.showTitleBar()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+    <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../../_static/scripts/furo.js"></script>
+    </body>
+</html>

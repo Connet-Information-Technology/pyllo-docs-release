@@ -1,0 +1,265 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace`
+==========================================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`FindReplacePanel <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel>`
+     - Find replace panel
+
+
+
+
+.. py:class:: FindReplacePanel(codeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.PanelExtension`
+
+   Find replace panel
+       
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'findreplace'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   ..    .. .. py:attribute:: AREA
+
+      
+
+   ..    .. .. py:attribute:: AREA_GRAVITY
+      :value: 10
+
+      
+
+   ..    .. .. py:attribute:: DYNAMIC
+      :value: True
+
+      
+
+   ..    .. .. py:attribute:: OCCURRENCE_COLOR
+
+      
+
+   ..    .. .. py:attribute:: FOUND_COLOR
+
+      
+
+   ..    .. .. py:attribute:: MAX_HIGHLIGHT_OCCURRENCES
+      :value: 2000
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.VERSION>`
+        - \-
+      * - :py:obj:`AREA <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.AREA>`
+        - \-
+      * - :py:obj:`AREA_GRAVITY <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.AREA_GRAVITY>`
+        - \-
+      * - :py:obj:`DYNAMIC <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.DYNAMIC>`
+        - \-
+      * - :py:obj:`OCCURRENCE_COLOR <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.OCCURRENCE_COLOR>`
+        - \-
+      * - :py:obj:`FOUND_COLOR <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.FOUND_COLOR>`
+        - \-
+      * - :py:obj:`MAX_HIGHLIGHT_OCCURRENCES <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.MAX_HIGHLIGHT_OCCURRENCES>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`beforeEditorVisible <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.beforeEditorVisible>`\ ()
+        - This method is called by editor extension framework just before editor is visible.
+      * - :py:obj:`onEnabled <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.onEnabled>`\ (enabled)
+        - Called when enable state is changed
+      * - :py:obj:`getName <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.getDescription>`\ ()
+        - Return the extension's localized description.
+      * - :py:obj:`sizeHint <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.sizeHint>`\ ()
+        - Return the widget size hint, overriding the Qt method.
+      * - :py:obj:`highlightFoundResults <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.highlightFoundResults>`\ (text, matchCase, matchWords, isRegex)
+        - Highlight all found patterns
+      * - :py:obj:`clearFoundResults <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.clearFoundResults>`\ ()
+        - Clear found results highlighting
+      * - :py:obj:`setReplaceEnabled <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.setReplaceEnabled>`\ (enable)
+        - \-
+      * - :py:obj:`setEnabled <pyllo.plugins.codeeditorv2.internal.extensions.panel.findreplace.FindReplacePanel.setEnabled>`\ (value)
+        - Set enabled state and call `onEnabled` when changed.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'findreplace'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. py:attribute:: AREA
+
+      
+
+   .. py:attribute:: AREA_GRAVITY
+      :value: 10
+
+      
+
+   .. py:attribute:: DYNAMIC
+      :value: True
+
+      
+
+   .. py:attribute:: OCCURRENCE_COLOR
+
+      
+
+   .. py:attribute:: FOUND_COLOR
+
+      
+
+   .. py:attribute:: MAX_HIGHLIGHT_OCCURRENCES
+      :value: 2000
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: beforeEditorVisible()
+
+      This method is called by editor extension framework just before editor is visible.
+
+      Notes
+      -----
+      This is usually used for cross extensions features.
+      Which by means one extension's feature is dependent to another extension's feature.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onEnabled(enabled)
+
+      Called when enable state is changed
+
+
+   .. py:method:: getName() -> str
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: sizeHint()
+
+      Return the widget size hint, overriding the Qt method.
+
+      Notes
+      -----
+      * This size hint will define the QSize of the panel, i.e. it is
+        where its width and height are defined.
+      * If the size of your panel depends on displayed text, please
+        use the LineNumberArea one as reference on how to implement
+        this method.
+      * If the size is not dependent on displayed text, please use
+        the debugger panel as reference.
+      * If your panel is in a floating position, please use the
+        IndentationGuide one as reference.
+
+
+   .. py:method:: highlightFoundResults(text: str, matchCase=False, matchWords=False, isRegex=False)
+
+      Highlight all found patterns
+
+
+   .. py:method:: clearFoundResults()
+
+      Clear found results highlighting
+
+
+   .. py:method:: setReplaceEnabled(enable: bool)
+
+
+   .. py:method:: setEnabled(value: bool)
+
+      Set enabled state and call `onEnabled` when changed.
+              
+
+
+
+
+

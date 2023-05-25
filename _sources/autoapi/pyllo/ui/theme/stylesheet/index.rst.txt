@@ -1,0 +1,565 @@
+:py:mod:`pyllo.ui.theme.stylesheet`
+===================================
+
+.. py:module:: pyllo.ui.theme.stylesheet
+
+.. autoapi-nested-parse::
+
+   Custom stylesheets used in Pyllo.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PylloStyleSheet <pyllo.ui.theme.stylesheet.PylloStyleSheet>`
+     - Base class for Pyllo stylesheets.
+   * - :py:obj:`AppStylesheet <pyllo.ui.theme.stylesheet.AppStylesheet>`
+     - Class to build and access the stylesheet we use in the entire
+   * - :py:obj:`ApplicationToolbarStylesheet <pyllo.ui.theme.stylesheet.ApplicationToolbarStylesheet>`
+     - Stylesheet for application toolbars.
+   * - :py:obj:`PanesToolbarStyleSheet <pyllo.ui.theme.stylesheet.PanesToolbarStyleSheet>`
+     - Stylesheet for pane toolbars.
+   * - :py:obj:`WidgetToolbarStyleSheet <pyllo.ui.theme.stylesheet.WidgetToolbarStyleSheet>`
+     - Stylesheet for pane toolbars.
+   * - :py:obj:`PanesTabBarStyleSheet <pyllo.ui.theme.stylesheet.PanesTabBarStyleSheet>`
+     - Stylesheet for pane tabbars
+   * - :py:obj:`DialogStyle <pyllo.ui.theme.stylesheet.DialogStyle>`
+     - Style constants for tour, about and kite dialogs.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MAC <pyllo.ui.theme.stylesheet.MAC>`
+     - \-
+   * - :py:obj:`MAC_STYLESHEET <pyllo.ui.theme.stylesheet.MAC_STYLESHEET>`
+     - \-
+   * - :py:obj:`MAC_STYLESHEET <pyllo.ui.theme.stylesheet.MAC_STYLESHEET>`
+     - \-
+   * - :py:obj:`APP_STYLESHEET <pyllo.ui.theme.stylesheet.APP_STYLESHEET>`
+     - \-
+   * - :py:obj:`APP_TOOLBAR_STYLESHEET <pyllo.ui.theme.stylesheet.APP_TOOLBAR_STYLESHEET>`
+     - \-
+   * - :py:obj:`PANES_TOOLBAR_STYLESHEET <pyllo.ui.theme.stylesheet.PANES_TOOLBAR_STYLESHEET>`
+     - \-
+   * - :py:obj:`WIDGET_TOOLBAR_STYLESHEET <pyllo.ui.theme.stylesheet.WIDGET_TOOLBAR_STYLESHEET>`
+     - \-
+   * - :py:obj:`PANES_TABBAR_STYLESHEET <pyllo.ui.theme.stylesheet.PANES_TABBAR_STYLESHEET>`
+     - \-
+
+
+.. py:data:: MAC
+
+   
+
+.. py:data:: MAC_STYLESHEET
+
+   
+
+.. py:data:: MAC_STYLESHEET
+
+   
+
+.. py:class:: PylloStyleSheet
+
+   Base class for Pyllo stylesheets.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getStylesheet <pyllo.ui.theme.stylesheet.PylloStyleSheet.getStylesheet>`\ ()
+        - \-
+      * - :py:obj:`toString <pyllo.ui.theme.stylesheet.PylloStyleSheet.toString>`\ ()
+        - \-
+      * - :py:obj:`getCopy <pyllo.ui.theme.stylesheet.PylloStyleSheet.getCopy>`\ ()
+        - Return a copy of the stylesheet.
+      * - :py:obj:`setStylesheet <pyllo.ui.theme.stylesheet.PylloStyleSheet.setStylesheet>`\ ()
+        - :summarylabel:`abc` \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getStylesheet()
+
+
+   .. py:method:: toString()
+
+
+   .. py:method:: getCopy()
+
+      Return a copy of the stylesheet.
+
+      This allows it to be modified for specific widget.
+
+
+   .. py:method:: setStylesheet()
+      :abstractmethod:
+
+
+
+
+
+.. py:class:: AppStylesheet
+
+   Bases: :py:obj:`PylloStyleSheet`
+
+   Class to build and access the stylesheet we use in the entire
+   application.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`toString <pyllo.ui.theme.stylesheet.AppStylesheet.toString>`\ ()
+        - Save stylesheet as a string for quick access.
+      * - :py:obj:`setStylesheet <pyllo.ui.theme.stylesheet.AppStylesheet.setStylesheet>`\ ()
+        - This takes the stylesheet from QDarkstyle and applies our
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: toString()
+
+      Save stylesheet as a string for quick access.
+
+
+   .. py:method:: setStylesheet()
+
+      This takes the stylesheet from QDarkstyle and applies our
+      customizations to it.
+
+
+
+
+
+.. py:data:: APP_STYLESHEET
+
+   
+
+.. py:class:: ApplicationToolbarStylesheet
+
+   Bases: :py:obj:`PylloStyleSheet`
+
+   Stylesheet for application toolbars.
+
+   ..    ..    ..    .. .. py:attribute:: BUTTON_WIDTH
+      :value: '1.2em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_HEIGHT
+      :value: '1.2em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_MARGIN_LEFT
+      :value: '0.25em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_MARGIN_RIGHT
+      :value: '0.25em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_MARGIN_TOP
+      :value: '0.25em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_MARGIN_BOTTOM
+      :value: '0.25em'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`BUTTON_WIDTH <pyllo.ui.theme.stylesheet.ApplicationToolbarStylesheet.BUTTON_WIDTH>`
+        - \-
+      * - :py:obj:`BUTTON_HEIGHT <pyllo.ui.theme.stylesheet.ApplicationToolbarStylesheet.BUTTON_HEIGHT>`
+        - \-
+      * - :py:obj:`BUTTON_MARGIN_LEFT <pyllo.ui.theme.stylesheet.ApplicationToolbarStylesheet.BUTTON_MARGIN_LEFT>`
+        - \-
+      * - :py:obj:`BUTTON_MARGIN_RIGHT <pyllo.ui.theme.stylesheet.ApplicationToolbarStylesheet.BUTTON_MARGIN_RIGHT>`
+        - \-
+      * - :py:obj:`BUTTON_MARGIN_TOP <pyllo.ui.theme.stylesheet.ApplicationToolbarStylesheet.BUTTON_MARGIN_TOP>`
+        - \-
+      * - :py:obj:`BUTTON_MARGIN_BOTTOM <pyllo.ui.theme.stylesheet.ApplicationToolbarStylesheet.BUTTON_MARGIN_BOTTOM>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setStylesheet <pyllo.ui.theme.stylesheet.ApplicationToolbarStylesheet.setStylesheet>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: BUTTON_WIDTH
+      :value: '1.2em'
+
+      
+
+   .. py:attribute:: BUTTON_HEIGHT
+      :value: '1.2em'
+
+      
+
+   .. py:attribute:: BUTTON_MARGIN_LEFT
+      :value: '0.25em'
+
+      
+
+   .. py:attribute:: BUTTON_MARGIN_RIGHT
+      :value: '0.25em'
+
+      
+
+   .. py:attribute:: BUTTON_MARGIN_TOP
+      :value: '0.25em'
+
+      
+
+   .. py:attribute:: BUTTON_MARGIN_BOTTOM
+      :value: '0.25em'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setStylesheet()
+
+
+
+
+
+.. py:class:: PanesToolbarStyleSheet
+
+   Bases: :py:obj:`PylloStyleSheet`
+
+   Stylesheet for pane toolbars.
+
+   ..    ..    ..    .. .. py:attribute:: BUTTON_WIDTH
+      :value: '1.2em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_HEIGHT
+      :value: '1.2em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_MARGIN_LEFT
+      :value: '0.1em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_MARGIN_RIGHT
+      :value: '0.1em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_MARGIN_TOP
+      :value: '0.1em'
+
+      
+
+   ..    .. .. py:attribute:: BUTTON_MARGIN_BOTTOM
+      :value: '0.1em'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`BUTTON_WIDTH <pyllo.ui.theme.stylesheet.PanesToolbarStyleSheet.BUTTON_WIDTH>`
+        - \-
+      * - :py:obj:`BUTTON_HEIGHT <pyllo.ui.theme.stylesheet.PanesToolbarStyleSheet.BUTTON_HEIGHT>`
+        - \-
+      * - :py:obj:`BUTTON_MARGIN_LEFT <pyllo.ui.theme.stylesheet.PanesToolbarStyleSheet.BUTTON_MARGIN_LEFT>`
+        - \-
+      * - :py:obj:`BUTTON_MARGIN_RIGHT <pyllo.ui.theme.stylesheet.PanesToolbarStyleSheet.BUTTON_MARGIN_RIGHT>`
+        - \-
+      * - :py:obj:`BUTTON_MARGIN_TOP <pyllo.ui.theme.stylesheet.PanesToolbarStyleSheet.BUTTON_MARGIN_TOP>`
+        - \-
+      * - :py:obj:`BUTTON_MARGIN_BOTTOM <pyllo.ui.theme.stylesheet.PanesToolbarStyleSheet.BUTTON_MARGIN_BOTTOM>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setStylesheet <pyllo.ui.theme.stylesheet.PanesToolbarStyleSheet.setStylesheet>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: BUTTON_WIDTH
+      :value: '1.2em'
+
+      
+
+   .. py:attribute:: BUTTON_HEIGHT
+      :value: '1.2em'
+
+      
+
+   .. py:attribute:: BUTTON_MARGIN_LEFT
+      :value: '0.1em'
+
+      
+
+   .. py:attribute:: BUTTON_MARGIN_RIGHT
+      :value: '0.1em'
+
+      
+
+   .. py:attribute:: BUTTON_MARGIN_TOP
+      :value: '0.1em'
+
+      
+
+   .. py:attribute:: BUTTON_MARGIN_BOTTOM
+      :value: '0.1em'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setStylesheet()
+
+
+
+
+
+.. py:class:: WidgetToolbarStyleSheet
+
+   Bases: :py:obj:`PanesToolbarStyleSheet`
+
+   Stylesheet for pane toolbars.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setStylesheet <pyllo.ui.theme.stylesheet.WidgetToolbarStyleSheet.setStylesheet>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setStylesheet()
+
+
+
+
+
+.. py:data:: APP_TOOLBAR_STYLESHEET
+
+   
+
+.. py:data:: PANES_TOOLBAR_STYLESHEET
+
+   
+
+.. py:data:: WIDGET_TOOLBAR_STYLESHEET
+
+   
+
+.. py:class:: PanesTabBarStyleSheet
+
+   Bases: :py:obj:`PanesToolbarStyleSheet`
+
+   Stylesheet for pane tabbars
+
+   ..    ..    ..    .. .. py:attribute:: TOP_MARGIN
+      :value: '2px'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`TOP_MARGIN <pyllo.ui.theme.stylesheet.PanesTabBarStyleSheet.TOP_MARGIN>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setStylesheet <pyllo.ui.theme.stylesheet.PanesTabBarStyleSheet.setStylesheet>`\ ()
+        - \-
+      * - :py:obj:`toString <pyllo.ui.theme.stylesheet.PanesTabBarStyleSheet.toString>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: TOP_MARGIN
+      :value: '2px'
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setStylesheet()
+
+
+   .. py:method:: toString()
+
+
+
+
+
+.. py:data:: PANES_TABBAR_STYLESHEET
+
+   
+
+.. py:class:: DialogStyle
+
+   Style constants for tour, about and kite dialogs.
+
+   ..    ..    ..    .. .. py:attribute:: IconScaleFactor
+      :value: 0.5
+
+      
+
+   ..    .. .. py:attribute:: TitleFontSize
+
+      
+
+   ..    .. .. py:attribute:: ContentFontSize
+
+      
+
+   ..    .. .. py:attribute:: ButtonsFontSize
+
+      
+
+   ..    .. .. py:attribute:: ButtonsPadding
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`IconScaleFactor <pyllo.ui.theme.stylesheet.DialogStyle.IconScaleFactor>`
+        - \-
+      * - :py:obj:`TitleFontSize <pyllo.ui.theme.stylesheet.DialogStyle.TitleFontSize>`
+        - \-
+      * - :py:obj:`ContentFontSize <pyllo.ui.theme.stylesheet.DialogStyle.ContentFontSize>`
+        - \-
+      * - :py:obj:`ButtonsFontSize <pyllo.ui.theme.stylesheet.DialogStyle.ButtonsFontSize>`
+        - \-
+      * - :py:obj:`ButtonsPadding <pyllo.ui.theme.stylesheet.DialogStyle.ButtonsPadding>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: IconScaleFactor
+      :value: 0.5
+
+      
+
+   .. py:attribute:: TitleFontSize
+
+      
+
+   .. py:attribute:: ContentFontSize
+
+      
+
+   .. py:attribute:: ButtonsFontSize
+
+      
+
+   .. py:attribute:: ButtonsPadding
+
+      
+
+
+
+
+
+

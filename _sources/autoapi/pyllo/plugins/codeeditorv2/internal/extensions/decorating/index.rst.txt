@@ -1,0 +1,550 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.extensions.decorating`
+===================================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.extensions.decorating
+
+.. autoapi-nested-parse::
+
+   Code decorating extension.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`CodeDecorator <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator>`
+     - \-
+   * - :py:obj:`TextDecoration <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration>`
+     - Helper class to quickly create a text decoration.
+
+
+
+
+.. py:class:: CodeDecorator(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.CodeEditorExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'codedecorator'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   ..    .. .. py:attribute:: UPDATE_TIMEOUT
+      :value: 15
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.VERSION>`
+        - \-
+      * - :py:obj:`UPDATE_TIMEOUT <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.UPDATE_TIMEOUT>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.onInitialize>`\ ()
+        - Setup the extension with the `CodeEditor`.
+      * - :py:obj:`getName <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.getName>`\ ()
+        - Return the extension localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.getDescription>`\ ()
+        - Return the extension's localized description.
+      * - :py:obj:`highlightCurrentLine <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.highlightCurrentLine>`\ ()
+        - \-
+      * - :py:obj:`highlightBracketMatching <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.highlightBracketMatching>`\ ()
+        - \-
+      * - :py:obj:`update <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.update>`\ ()
+        - Update decorations.
+      * - :py:obj:`getBoundOfEditorBufferBlocks <pyllo.plugins.codeeditorv2.internal.extensions.decorating.CodeDecorator.getBoundOfEditorBufferBlocks>`\ ()
+        - Get the first and last block numbers of a region that covers
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'codedecorator'
+
+      
+
+   .. py:attribute:: VERSION
+      :value: '0.1.0'
+
+      
+
+   .. py:attribute:: UPDATE_TIMEOUT
+      :value: 15
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+      Setup the extension with the `CodeEditor`.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getName() -> str
+
+      Return the extension localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the extension.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription() -> str
+
+      Return the extension's localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: highlightCurrentLine()
+
+
+   .. py:method:: highlightBracketMatching()
+
+
+   .. py:method:: update()
+
+      Update decorations.
+
+      This starts a timer to update decorations only after
+      UPDATE_TIMEOUT has passed. That avoids multiple calls to
+      _delayedUpdate in a very short amount of time.
+
+
+   .. py:method:: getBoundOfEditorBufferBlocks() -> Tuple[int, int]
+
+      Get the first and last block numbers of a region that covers
+      the visible one plus a buffer of half that region above and
+      below to make more fluid certain operations.
+
+
+
+
+
+.. py:class:: TextDecoration(cursorBlocDocUnion, startPos: int = None, endPos: int = None, startLine: int = None, endLine: int = None, drawOrder=0, tooltip: str = None, fullWidth=False, font=None, kind: str = None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QTextEdit.ExtraSelection`
+
+   Helper class to quickly create a text decoration.
+
+   The text decoration is an utility class that adds a few utility methods to
+   QTextEdit.ExtraSelection.
+
+   In addition to the helper methods, a tooltip can be added to a decoration.
+   (useful for errors markers and so on...)
+
+   Text decoration expose a **clicked** signal stored in a separate QObject:
+       :attr:`pyqode.core.api.TextDecoration.Signals`
+
+   .. code-block:: python
+
+       deco = TextDecoration()
+       deco.signals.clicked.connect(a_slot)
+
+       def a_slot(decoration):
+           print(decoration)  # spyder: test-skip
+
+   ..    .. .. py:class:: Signals
+
+      Bases: :py:obj:`qtpy.QtCore.QObject`
+
+      Holds the signals for a TextDecoration (since we cannot make it a
+      QObject, we need to store its signals in an external QObject).
+
+      ..    ..    ..    .. .. py:attribute:: clicked
+
+         
+
+      .. 
+      .. rubric:: Overview
+
+      
+      .. list-table:: Attributes
+         :header-rows: 0
+         :widths: auto
+         :class: summarytable
+
+         * - :py:obj:`clicked <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.Signals.clicked>`
+           - \-
+
+
+
+
+
+      .. rubric:: Attributes
+      .. py:attribute:: clicked
+
+         
+
+
+
+
+
+
+   ..    ..    ..    .. .. py:attribute:: BOTTOM
+      :value: 0
+
+      
+
+   ..    .. .. py:attribute:: CODE_FOLDING
+      :value: 1
+
+      
+
+   ..    .. .. py:attribute:: BREAKPOINT_LINE
+      :value: 2
+
+      
+
+   ..    .. .. py:attribute:: CURRENT_LINE
+      :value: 3
+
+      
+
+   ..    .. .. py:attribute:: DEBUG_LINE
+      :value: 4
+
+      
+
+   ..    .. .. py:attribute:: OCCURRENCE
+      :value: 5
+
+      
+
+   ..    .. .. py:attribute:: MATCH
+      :value: 6
+
+      
+
+   ..    .. .. py:attribute:: FOUND_RESULTS
+      :value: 7
+
+      
+
+   ..    .. .. py:attribute:: SPELLCHECK
+      :value: 8
+
+      
+
+   ..    .. .. py:attribute:: WARNING
+      :value: 9
+
+      
+
+   ..    .. .. py:attribute:: ERROR
+      :value: 10
+
+      
+
+   ..    .. .. py:attribute:: TOP
+      :value: 11
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`BOTTOM <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.BOTTOM>`
+        - \-
+      * - :py:obj:`CODE_FOLDING <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.CODE_FOLDING>`
+        - \-
+      * - :py:obj:`BREAKPOINT_LINE <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.BREAKPOINT_LINE>`
+        - \-
+      * - :py:obj:`CURRENT_LINE <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.CURRENT_LINE>`
+        - \-
+      * - :py:obj:`DEBUG_LINE <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.DEBUG_LINE>`
+        - \-
+      * - :py:obj:`OCCURRENCE <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.OCCURRENCE>`
+        - \-
+      * - :py:obj:`MATCH <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.MATCH>`
+        - \-
+      * - :py:obj:`FOUND_RESULTS <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.FOUND_RESULTS>`
+        - \-
+      * - :py:obj:`SPELLCHECK <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.SPELLCHECK>`
+        - \-
+      * - :py:obj:`WARNING <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.WARNING>`
+        - \-
+      * - :py:obj:`ERROR <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.ERROR>`
+        - \-
+      * - :py:obj:`TOP <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.TOP>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`containsCursor <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.containsCursor>`\ (cursor)
+        - Checks if the textCursor is in the decoration.
+      * - :py:obj:`setForeground <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.setForeground>`\ (color)
+        - Sets the foreground color.
+      * - :py:obj:`setBackground <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.setBackground>`\ (color)
+        - Sets the background brush.
+      * - :py:obj:`setOutline <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.setOutline>`\ (color)
+        - Uses an outline rectangle.
+      * - :py:obj:`selectLine <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.selectLine>`\ ()
+        - Select the entire line but starts at the first non whitespace character
+      * - :py:obj:`setFullWidth <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.setFullWidth>`\ (flag, clear)
+        - Enables FullWidthSelection (the selection does not stops at after the
+      * - :py:obj:`setAsUnderlined <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.setAsUnderlined>`\ (color)
+        - Underlines the text.
+      * - :py:obj:`setAsSpellCheck <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.setAsSpellCheck>`\ (color)
+        - Underlines text as a spellcheck error.
+      * - :py:obj:`setAsError <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.setAsError>`\ (color)
+        - Highlights text as a syntax error.
+      * - :py:obj:`setAsWarning <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.setAsWarning>`\ (color)
+        - Highlights text as a syntax warning.
+
+
+   .. rubric:: Member Classes
+   .. py:class:: Signals
+
+      Bases: :py:obj:`qtpy.QtCore.QObject`
+
+      Holds the signals for a TextDecoration (since we cannot make it a
+      QObject, we need to store its signals in an external QObject).
+
+      ..    ..    ..    .. .. py:attribute:: clicked
+
+         
+
+      .. 
+      .. rubric:: Overview
+
+      
+      .. list-table:: Attributes
+         :header-rows: 0
+         :widths: auto
+         :class: summarytable
+
+         * - :py:obj:`clicked <pyllo.plugins.codeeditorv2.internal.extensions.decorating.TextDecoration.Signals.clicked>`
+           - \-
+
+
+
+
+
+      .. rubric:: Attributes
+      .. py:attribute:: clicked
+
+         
+
+
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: BOTTOM
+      :value: 0
+
+      
+
+   .. py:attribute:: CODE_FOLDING
+      :value: 1
+
+      
+
+   .. py:attribute:: BREAKPOINT_LINE
+      :value: 2
+
+      
+
+   .. py:attribute:: CURRENT_LINE
+      :value: 3
+
+      
+
+   .. py:attribute:: DEBUG_LINE
+      :value: 4
+
+      
+
+   .. py:attribute:: OCCURRENCE
+      :value: 5
+
+      
+
+   .. py:attribute:: MATCH
+      :value: 6
+
+      
+
+   .. py:attribute:: FOUND_RESULTS
+      :value: 7
+
+      
+
+   .. py:attribute:: SPELLCHECK
+      :value: 8
+
+      
+
+   .. py:attribute:: WARNING
+      :value: 9
+
+      
+
+   .. py:attribute:: ERROR
+      :value: 10
+
+      
+
+   .. py:attribute:: TOP
+      :value: 11
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: containsCursor(cursor: pyllo.ui.editor.textedits.TextCursor)
+
+      Checks if the textCursor is in the decoration.
+
+      :param cursor: The text cursor to test
+      :type cursor: TextCursor
+
+      :returns: True if the cursor is over the selection
+
+
+   .. py:method:: setForeground(color: qtpy.QtGui.QColor)
+
+      Sets the foreground color.
+      :param color: Color
+      :type color: QtGui.QColor
+
+
+   .. py:method:: setBackground(color: qtpy.QtGui.QColor)
+
+      Sets the background brush.
+
+      :param color: Brush
+      :type color: QtGui.QBrush
+
+
+   .. py:method:: setOutline(color: qtpy.QtGui.QColor)
+
+      Uses an outline rectangle.
+
+      :param color: Color of the outline rect
+      :type color: QtGui.QColor
+
+
+   .. py:method:: selectLine()
+
+      Select the entire line but starts at the first non whitespace character
+      and stops at the non-whitespace character.
+      :return:
+
+
+   .. py:method:: setFullWidth(flag=True, clear=True)
+
+      Enables FullWidthSelection (the selection does not stops at after the
+      character instead it goes up to the right side of the widget).
+
+      :param flag: True to use full width selection.
+      :type flag: bool
+
+      :param clear: True to clear any previous selection. Default is True.
+      :type clear: bool
+
+
+   .. py:method:: setAsUnderlined(color=Qt.blue)
+
+      Underlines the text.
+
+      :param color: underline color.
+
+
+   .. py:method:: setAsSpellCheck(color=Qt.blue)
+
+      Underlines text as a spellcheck error.
+
+      :param color: Underline color
+      :type color: QtGui.QColor
+
+
+   .. py:method:: setAsError(color=PylloPalette.COLOR_ERROR_2)
+
+      Highlights text as a syntax error.
+
+      :param color: Underline color
+      :type color: QtGui.QColor
+
+
+   .. py:method:: setAsWarning(color=QColor(PylloPalette.COLOR_WARN_1))
+
+      Highlights text as a syntax warning.
+
+      :param color: Underline color
+      :type color: QtGui.QColor
+
+
+
+
+

@@ -1,0 +1,15 @@
+:py:mod:`pyllo.plugins.toolbar.internal`
+========================================
+
+.. py:module:: pyllo.plugins.toolbar.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   container/index.rst
+
+

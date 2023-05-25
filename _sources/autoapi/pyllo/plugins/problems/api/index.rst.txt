@@ -1,0 +1,182 @@
+:py:mod:`pyllo.plugins.problems.api`
+====================================
+
+.. py:module:: pyllo.plugins.problems.api
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`Problems <pyllo.plugins.problems.api.Problems>`
+     - \-
+   * - :py:obj:`ProblemsActions <pyllo.plugins.problems.api.ProblemsActions>`
+     - \-
+
+
+
+
+.. py:class:: Problems
+
+   ..    ..    ..    .. .. py:attribute:: id
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: domain
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: path
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: source
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: line
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: start_col
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: end_col
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: err_code
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: err_msg
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: severity
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: suggestion
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`id <pyllo.plugins.problems.api.Problems.id>`
+        - \-
+      * - :py:obj:`domain <pyllo.plugins.problems.api.Problems.domain>`
+        - \-
+      * - :py:obj:`path <pyllo.plugins.problems.api.Problems.path>`
+        - \-
+      * - :py:obj:`source <pyllo.plugins.problems.api.Problems.source>`
+        - \-
+      * - :py:obj:`line <pyllo.plugins.problems.api.Problems.line>`
+        - \-
+      * - :py:obj:`start_col <pyllo.plugins.problems.api.Problems.start_col>`
+        - \-
+      * - :py:obj:`end_col <pyllo.plugins.problems.api.Problems.end_col>`
+        - \-
+      * - :py:obj:`err_code <pyllo.plugins.problems.api.Problems.err_code>`
+        - \-
+      * - :py:obj:`err_msg <pyllo.plugins.problems.api.Problems.err_msg>`
+        - \-
+      * - :py:obj:`severity <pyllo.plugins.problems.api.Problems.severity>`
+        - \-
+      * - :py:obj:`suggestion <pyllo.plugins.problems.api.Problems.suggestion>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: id
+      :type: int
+
+      
+
+   .. py:attribute:: domain
+      :type: str
+
+      
+
+   .. py:attribute:: path
+      :type: str
+
+      
+
+   .. py:attribute:: source
+      :type: str
+
+      
+
+   .. py:attribute:: line
+      :type: int
+
+      
+
+   .. py:attribute:: start_col
+      :type: int
+
+      
+
+   .. py:attribute:: end_col
+      :type: int
+
+      
+
+   .. py:attribute:: err_code
+      :type: str
+
+      
+
+   .. py:attribute:: err_msg
+      :type: str
+
+      
+
+   .. py:attribute:: severity
+      :type: int
+
+      
+
+   .. py:attribute:: suggestion
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: ProblemsActions
+
+   ..    ..    .. 
+
+

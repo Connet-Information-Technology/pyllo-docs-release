@@ -1,0 +1,33 @@
+:py:mod:`pyllo.core`
+====================
+
+.. py:module:: pyllo.core
+
+.. autoapi-nested-parse::
+
+   Pyllo core
+
+   .. versionadded:: 1.0.0
+
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   runtime/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   api/index.rst
+   dtype/index.rst
+   undoredo/index.rst
+
+

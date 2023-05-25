@@ -1,0 +1,154 @@
+:py:mod:`pyllo.ui.widgets.textconsole`
+======================================
+
+.. py:module:: pyllo.ui.widgets.textconsole
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`TextOutput <pyllo.ui.widgets.textconsole.TextOutput>`
+     - Text output
+   * - :py:obj:`TextConsole <pyllo.ui.widgets.textconsole.TextConsole>`
+     - Common output viewer
+
+
+
+
+.. py:class:: TextOutput(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QPlainTextEdit`, :py:obj:`pyllo.ui.editor.textedits.BaseEditMixin`
+
+   Text output
+
+   ..    ..    ..    .. .. py:attribute:: sigNewLineAppended
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigNewLineAppended <pyllo.ui.widgets.textconsole.TextOutput.sigNewLineAppended>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setFont <pyllo.ui.widgets.textconsole.TextOutput.setFont>`\ (font)
+        - \-
+      * - :py:obj:`printl <pyllo.ui.widgets.textconsole.TextOutput.printl>`\ (message, severity, end)
+        - printline with ANIS clear screen support
+      * - :py:obj:`updateFormat <pyllo.ui.widgets.textconsole.TextOutput.updateFormat>`\ ()
+        - \-
+      * - :py:obj:`createTextCharFormat <pyllo.ui.widgets.textconsole.TextOutput.createTextCharFormat>`\ (font, foregroundcolor, backgroundcolor, bold, italic, underline)
+        - :summarylabel:`static` \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigNewLineAppended
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setFont(font)
+
+
+   .. py:method:: printl(message: str, severity: pyllo.core.dtype.Severity, end=None)
+
+      printline with ANIS clear screen support
+
+
+   .. py:method:: updateFormat()
+
+
+   .. py:method:: createTextCharFormat(font, foregroundcolor, backgroundcolor, bold, italic, underline)
+      :staticmethod:
+
+
+
+
+
+.. py:class:: TextConsole(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`, :py:obj:`pyllo.ui.toolbar.PylloToolbarMixin`
+
+   Common output viewer
+
+   ..    ..    ..    .. .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PREFAB <pyllo.ui.widgets.textconsole.TextConsole.PREFAB>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`output <pyllo.ui.widgets.textconsole.TextConsole.output>`\ ()
+        - \-
+      * - :py:obj:`input <pyllo.ui.widgets.textconsole.TextConsole.input>`\ ()
+        - \-
+      * - :py:obj:`printl <pyllo.ui.widgets.textconsole.TextConsole.printl>`\ (text, severity)
+        - \-
+      * - :py:obj:`clear <pyllo.ui.widgets.textconsole.TextConsole.clear>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: output() -> TextOutput
+
+
+   .. py:method:: input() -> pyllo.ui.widgets.combobox.EditableComboBox
+
+
+   .. py:method:: printl(text: pyllo.core.dtype.Text, severity: pyllo.core.dtype.Severity)
+
+
+   .. py:method:: clear()
+
+
+
+
+

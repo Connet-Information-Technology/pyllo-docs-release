@@ -1,0 +1,354 @@
+:py:mod:`pyllo.plugins.codeeditorv2.plugin`
+===========================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.plugin
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`CodeEditorV2 <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2>`
+     - codeeditorv2 plugin.
+
+
+
+
+.. py:class:: CodeEditorV2(app: PylloApp)
+
+   Bases: :py:obj:`pyllo.core.runtime.spi.PylloPlugin`
+
+   codeeditorv2 plugin.
+   normal plugin which doesn't contain dockable window. 
+   This is auto-generated template. 
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'codeeditorv2'
+
+      
+
+   ..    .. .. py:attribute:: VERSION
+
+      
+
+   ..    .. .. py:attribute:: REQUIRES
+
+      
+
+   ..    .. .. py:attribute:: OPTIONAL
+
+      
+
+   ..    .. .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   ..    .. .. py:attribute:: CONF_SECTION
+
+      
+
+   ..    .. .. py:attribute:: CONF_DEFAULTS
+
+      
+
+   ..    .. .. py:attribute:: CONF_VERSION
+
+      
+
+   ..    .. .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   ..    .. .. py:attribute:: sigCurrentEditorChanged
+
+      when current active editor changed, activeEditor: Optional[CodeEditor]
+
+
+   ..    .. .. py:attribute:: sigDocumentOpened
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.NAME>`
+        - \-
+      * - :py:obj:`VERSION <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.VERSION>`
+        - \-
+      * - :py:obj:`REQUIRES <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.REQUIRES>`
+        - \-
+      * - :py:obj:`OPTIONAL <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.OPTIONAL>`
+        - \-
+      * - :py:obj:`CONTAINER_CLASS <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.CONTAINER_CLASS>`
+        - \-
+      * - :py:obj:`CONF_SECTION <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.CONF_SECTION>`
+        - \-
+      * - :py:obj:`CONF_DEFAULTS <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.CONF_DEFAULTS>`
+        - \-
+      * - :py:obj:`CONF_VERSION <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.CONF_VERSION>`
+        - \-
+      * - :py:obj:`CONF_WIDGET_CLASS <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.CONF_WIDGET_CLASS>`
+        - \-
+      * - :py:obj:`sigCurrentEditorChanged <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.sigCurrentEditorChanged>`
+        - when current active editor changed, activeEditor: Optional[CodeEditor]
+      * - :py:obj:`sigDocumentOpened <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.sigDocumentOpened>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getName <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.getName>`\ ()
+        - Return the plugin localized name.
+      * - :py:obj:`getDescription <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.getDescription>`\ ()
+        - :summarylabel:`static` Return the plugin localized description.
+      * - :py:obj:`getIcon <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.getIcon>`\ ()
+        - Return the plugin associated icon.
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.onInitialize>`\ ()
+        - Setup the plugin object with it's container.
+      * - :py:obj:`onPluginFocusChanged <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.onPluginFocusChanged>`\ (previousWidget, previousPlugin, currentWidget, currentPlugin)
+        - Called when widget focus changed.
+      * - :py:obj:`isReadyForTeardown <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.isReadyForTeardown>`\ ()
+        - Determine if a plugin can be closed.
+      * - :py:obj:`onTearDown <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.onTearDown>`\ (cancelable)
+        - Perform actions before the main window is closed.
+      * - :py:obj:`onMainMenuAvailable <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.onMainMenuAvailable>`\ ()
+        - \-
+      * - :py:obj:`onPreferencesAvailable <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.onPreferencesAvailable>`\ ()
+        - \-
+      * - :py:obj:`onEditorStackAvailable <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.onEditorStackAvailable>`\ ()
+        - \-
+      * - :py:obj:`onStatusBarAvailable <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.onStatusBarAvailable>`\ ()
+        - \-
+      * - :py:obj:`registerExtensionForger <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.registerExtensionForger>`\ (ext, forger)
+        - Add extension that can be installed to code editor
+      * - :py:obj:`registerLanguageExtensionForger <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.registerLanguageExtensionForger>`\ (ext, forger)
+        - Add language extension(language support) that can be installed to code editor
+      * - :py:obj:`getCodeEditor <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.getCodeEditor>`\ (input_, language, duplicate)
+        - Get an code editor and create it if not exists
+      * - :py:obj:`openSourceFileInEditorStack <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.openSourceFileInEditorStack>`\ (source, setCurrent)
+        - open editor
+      * - :py:obj:`closeEditorInEditorStack <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.closeEditorInEditorStack>`\ (editor)
+        - close editor
+      * - :py:obj:`getOpenedEditors <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.getOpenedEditors>`\ ()
+        - \-
+      * - :py:obj:`getVisibleEditors <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.getVisibleEditors>`\ ()
+        - \-
+      * - :py:obj:`getCurrentEditor <pyllo.plugins.codeeditorv2.plugin.CodeEditorV2.getCurrentEditor>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'codeeditorv2'
+
+      
+
+   .. py:attribute:: VERSION
+
+      
+
+   .. py:attribute:: REQUIRES
+
+      
+
+   .. py:attribute:: OPTIONAL
+
+      
+
+   .. py:attribute:: CONTAINER_CLASS
+
+      
+
+   .. py:attribute:: CONF_SECTION
+
+      
+
+   .. py:attribute:: CONF_DEFAULTS
+
+      
+
+   .. py:attribute:: CONF_VERSION
+
+      
+
+   .. py:attribute:: CONF_WIDGET_CLASS
+
+      
+
+   .. py:attribute:: sigCurrentEditorChanged
+
+      when current active editor changed, activeEditor: Optional[CodeEditor]
+
+
+   .. py:attribute:: sigDocumentOpened
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getName()
+
+      Return the plugin localized name.
+
+      Returns
+      -------
+      str
+          Localized name of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getDescription()
+      :staticmethod:
+
+      Return the plugin localized description.
+
+      Returns
+      -------
+      str
+          Localized description of the plugin.
+
+      Notes
+      -----
+      This is a method to be able to update localization without a restart.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: getIcon()
+
+      Return the plugin associated icon.
+
+      Returns
+      -------
+      QIcon
+          QIcon instance
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onInitialize()
+
+      Setup the plugin object with it's container.
+
+      Like signal binding stuff.
+
+      Notes
+      -----
+      All calls performed on this method should not call other plugins.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onPluginFocusChanged(previousWidget, previousPlugin: str, currentWidget, currentPlugin: str)
+
+      Called when widget focus changed.
+
+
+   .. py:method:: isReadyForTeardown() -> bool
+
+      Determine if a plugin can be closed.
+
+      Returns
+      -------
+      close: bool
+          True if the plugin can be closed, False otherwise.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onTearDown(cancelable=False)
+
+      Perform actions before the main window is closed.
+
+      Returns
+      -------
+      bool
+          Whether the plugin may be closed immediately or not.
+
+      Notes
+      -----
+      The returned value is ignored if *cancelable* is False.
+
+
+      .. versionadded:: 1.0.0
+
+
+   .. py:method:: onMainMenuAvailable()
+
+
+   .. py:method:: onPreferencesAvailable()
+
+
+   .. py:method:: onEditorStackAvailable()
+
+
+   .. py:method:: onStatusBarAvailable()
+
+
+   .. py:method:: registerExtensionForger(ext: Type[pyllo.plugins.codeeditorv2.api.CodeEditorExtension], forger: pyllo.core.dtype.Forger[pyllo.plugins.codeeditorv2.api.CodeEditorExtension])
+
+      Add extension that can be installed to code editor
+
+
+   .. py:method:: registerLanguageExtensionForger(ext: Type[pyllo.plugins.codeeditorv2.api.LanguageExtension], forger: pyllo.core.dtype.Forger[pyllo.plugins.codeeditorv2.api.LanguageExtension])
+
+      Add language extension(language support) that can be installed to code editor
+
+
+   .. py:method:: getCodeEditor(input_: pyllo.plugins.editorstack.api.TextEditorInput, language: str = None, duplicate=False) -> pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor
+
+      Get an code editor and create it if not exists
+      Notice:
+          This method will only return a CodeEditor widget, it will not open the editor in the editor stack
+          automatically, if you want open a codeeditor in editor stack please check `openCodeEditorInEditorStack`
+
+
+   .. py:method:: openSourceFileInEditorStack(source: pyllo.core.dtype.FilePath, setCurrent=False) -> Optional[pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor]
+
+      open editor
+
+
+   .. py:method:: closeEditorInEditorStack(editor: pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor)
+
+      close editor
+
+
+   .. py:method:: getOpenedEditors() -> List[pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor]
+
+
+   .. py:method:: getVisibleEditors() -> List[pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor]
+
+
+   .. py:method:: getCurrentEditor() -> Optional[pyllo.plugins.codeeditorv2.internal.widgets.editor.CodeEditor]
+
+
+
+
+

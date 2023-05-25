@@ -1,0 +1,30 @@
+:py:mod:`pyllo.plugins.toolbar`
+===============================
+
+.. py:module:: pyllo.plugins.toolbar
+
+.. autoapi-nested-parse::
+
+   Pyllo toolbar plugin
+
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   internal/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   api/index.rst
+   plugin/index.rst
+
+

@@ -1,0 +1,24 @@
+:py:mod:`pyllo.plugins.shortcuts`
+=================================
+
+.. py:module:: pyllo.plugins.shortcuts
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   internal/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   plugin/index.rst
+
+

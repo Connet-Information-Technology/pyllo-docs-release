@@ -1,0 +1,68 @@
+:py:mod:`pyllo.plugins.workingdirectory.internal.confpage`
+==========================================================
+
+.. py:module:: pyllo.plugins.workingdirectory.internal.confpage
+
+.. autoapi-nested-parse::
+
+   Working Directory Plugin
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`WorkingDirectoryConfigPage <pyllo.plugins.workingdirectory.internal.confpage.WorkingDirectoryConfigPage>`
+     - Widget to expose the options a plugin offers for configuration as
+
+
+
+
+.. py:class:: WorkingDirectoryConfigPage(plugin: pyllo.core.runtime.spi.PylloPlugin, parent: qtpy.QtWidgets.QWidget)
+
+   Bases: :py:obj:`pyllo.ui.preferences.PluginConfigPage`
+
+   Widget to expose the options a plugin offers for configuration as
+   an entry in Pyllo's Preferences dialog.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setupPage <pyllo.plugins.workingdirectory.internal.confpage.WorkingDirectoryConfigPage.setupPage>`\ ()
+        - Setup configuration page widget
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setupPage()
+
+      Setup configuration page widget
+
+      You should implement this method and set the layout of the
+      preferences page.
+
+      layout = QVBoxLayout()
+      layout.addWidget(...)
+      ...
+      self.setLayout(layout)
+
+
+
+
+

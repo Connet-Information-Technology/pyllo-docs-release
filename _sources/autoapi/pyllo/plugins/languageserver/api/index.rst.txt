@@ -1,0 +1,506 @@
+:py:mod:`pyllo.plugins.languageserver.api`
+==========================================
+
+.. py:module:: pyllo.plugins.languageserver.api
+
+.. autoapi-nested-parse::
+
+   Language Server Plugin implements UX in LSP
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LanguageServerStatusBarWidgets <pyllo.plugins.languageserver.api.LanguageServerStatusBarWidgets>`
+     - \-
+   * - :py:obj:`LanguageServerAdapterExecutable <pyllo.plugins.languageserver.api.LanguageServerAdapterExecutable>`
+     - \-
+   * - :py:obj:`LanguageServerAdapterServer <pyllo.plugins.languageserver.api.LanguageServerAdapterServer>`
+     - \-
+   * - :py:obj:`LanguageServerAdapterNamedPipeServer <pyllo.plugins.languageserver.api.LanguageServerAdapterNamedPipeServer>`
+     - \-
+   * - :py:obj:`LanguageServerAdapterInlineImplementation <pyllo.plugins.languageserver.api.LanguageServerAdapterInlineImplementation>`
+     - \-
+   * - :py:obj:`ILanguageServerDescriptor <pyllo.plugins.languageserver.api.ILanguageServerDescriptor>`
+     - Language server
+   * - :py:obj:`ILanguageServerAdapter <pyllo.plugins.languageserver.api.ILanguageServerAdapter>`
+     - \-
+   * - :py:obj:`CompletionRequestTypes <pyllo.plugins.languageserver.api.CompletionRequestTypes>`
+     - Language Server Protocol request/response types.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LanguageServerAdapterDescriptor <pyllo.plugins.languageserver.api.LanguageServerAdapterDescriptor>`
+     - \-
+
+
+.. py:class:: LanguageServerStatusBarWidgets
+
+   ..    ..    ..    .. .. py:attribute:: LSPSessionStatus
+      :value: 'lsp_session_status'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`LSPSessionStatus <pyllo.plugins.languageserver.api.LanguageServerStatusBarWidgets.LSPSessionStatus>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: LSPSessionStatus
+      :value: 'lsp_session_status'
+
+      
+
+
+
+
+
+
+.. py:class:: LanguageServerAdapterExecutable
+
+   ..    ..    ..    .. .. py:attribute:: command
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: args
+      :type: list
+
+      
+
+   ..    .. .. py:attribute:: cwd
+      :type: str
+
+      
+
+   ..    .. .. py:attribute:: env
+      :type: dict
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`command <pyllo.plugins.languageserver.api.LanguageServerAdapterExecutable.command>`
+        - \-
+      * - :py:obj:`args <pyllo.plugins.languageserver.api.LanguageServerAdapterExecutable.args>`
+        - \-
+      * - :py:obj:`cwd <pyllo.plugins.languageserver.api.LanguageServerAdapterExecutable.cwd>`
+        - \-
+      * - :py:obj:`env <pyllo.plugins.languageserver.api.LanguageServerAdapterExecutable.env>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: command
+      :type: str
+
+      
+
+   .. py:attribute:: args
+      :type: list
+
+      
+
+   .. py:attribute:: cwd
+      :type: str
+
+      
+
+   .. py:attribute:: env
+      :type: dict
+
+      
+
+
+
+
+
+
+.. py:class:: LanguageServerAdapterServer
+
+   ..    ..    ..    .. .. py:attribute:: port
+      :type: int
+
+      
+
+   ..    .. .. py:attribute:: host
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`port <pyllo.plugins.languageserver.api.LanguageServerAdapterServer.port>`
+        - \-
+      * - :py:obj:`host <pyllo.plugins.languageserver.api.LanguageServerAdapterServer.host>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: port
+      :type: int
+
+      
+
+   .. py:attribute:: host
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: LanguageServerAdapterNamedPipeServer
+
+   ..    ..    ..    .. .. py:attribute:: path
+      :type: str
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`path <pyllo.plugins.languageserver.api.LanguageServerAdapterNamedPipeServer.path>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: path
+      :type: str
+
+      
+
+
+
+
+
+
+.. py:class:: LanguageServerAdapterInlineImplementation
+
+   ..    ..    ..    .. .. py:attribute:: implement
+      :type: Any
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`implement <pyllo.plugins.languageserver.api.LanguageServerAdapterInlineImplementation.implement>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: implement
+      :type: Any
+
+      
+
+
+
+
+
+
+.. py:data:: LanguageServerAdapterDescriptor
+
+   
+
+.. py:class:: ILanguageServerDescriptor
+
+   Language server
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`type <pyllo.plugins.languageserver.api.ILanguageServerDescriptor.type>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`language <pyllo.plugins.languageserver.api.ILanguageServerDescriptor.language>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`adapterDescriptor <pyllo.plugins.languageserver.api.ILanguageServerDescriptor.adapterDescriptor>`\ ()
+        - :summarylabel:`abc` \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: type() -> pyllo.core.dtype.Identity
+      :abstractmethod:
+
+
+   .. py:method:: language() -> pyllo.core.dtype.Identity
+      :abstractmethod:
+
+
+   .. py:method:: adapterDescriptor() -> LanguageServerAdapterDescriptor
+      :abstractmethod:
+
+
+
+
+
+.. py:class:: ILanguageServerAdapter
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setRequestHandler <pyllo.plugins.languageserver.api.ILanguageServerAdapter.setRequestHandler>`\ (callback)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`setNotificationHandler <pyllo.plugins.languageserver.api.ILanguageServerAdapter.setNotificationHandler>`\ (callback)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`setResponseHandler <pyllo.plugins.languageserver.api.ILanguageServerAdapter.setResponseHandler>`\ (callback)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`startSession <pyllo.plugins.languageserver.api.ILanguageServerAdapter.startSession>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`stopSession <pyllo.plugins.languageserver.api.ILanguageServerAdapter.stopSession>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`sendResponse <pyllo.plugins.languageserver.api.ILanguageServerAdapter.sendResponse>`\ ()
+        - :summarylabel:`abc` \-
+      * - :py:obj:`sendRequest <pyllo.plugins.languageserver.api.ILanguageServerAdapter.sendRequest>`\ (method, params, onBeforeSent)
+        - :summarylabel:`abc` \-
+      * - :py:obj:`sendNotification <pyllo.plugins.languageserver.api.ILanguageServerAdapter.sendNotification>`\ (method, params, onBeforeSent)
+        - :summarylabel:`abc` \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setRequestHandler(callback)
+      :abstractmethod:
+
+
+   .. py:method:: setNotificationHandler(callback)
+      :abstractmethod:
+
+
+   .. py:method:: setResponseHandler(callback)
+      :abstractmethod:
+
+
+   .. py:method:: startSession() -> bool
+      :abstractmethod:
+
+
+   .. py:method:: stopSession()
+      :abstractmethod:
+
+
+   .. py:method:: sendResponse()
+      :abstractmethod:
+
+
+   .. py:method:: sendRequest(method, params=None, onBeforeSent=None)
+      :abstractmethod:
+
+
+   .. py:method:: sendNotification(method: str, params=None, onBeforeSent=None)
+      :abstractmethod:
+
+
+
+
+
+.. py:class:: CompletionRequestTypes
+
+   Language Server Protocol request/response types.
+
+   ..    ..    ..    .. .. py:attribute:: INITIALIZE
+      :value: 'initialize'
+
+      
+
+   ..    .. .. py:attribute:: INITIALIZED
+      :value: 'initialized'
+
+      
+
+   ..    .. .. py:attribute:: DOCUMENT_PUBLISH_DIAGNOSTICS
+      :value: 'textDocument/publishDiagnostics'
+
+      
+
+   ..    .. .. py:attribute:: DOCUMENT_DID_OPEN
+      :value: 'textDocument/didOpen'
+
+      
+
+   ..    .. .. py:attribute:: DOCUMENT_DID_CHANGE
+      :value: 'textDocument/didChange'
+
+      
+
+   ..    .. .. py:attribute:: DOCUMENT_DID_CLOSE
+      :value: 'textDocument/didClose'
+
+      
+
+   ..    .. .. py:attribute:: DOCUMENT_COMPLETION
+      :value: 'textDocument/completion'
+
+      
+
+   ..    .. .. py:attribute:: DOCUMENT_DEFINITION
+      :value: 'textDocument/definition'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`INITIALIZE <pyllo.plugins.languageserver.api.CompletionRequestTypes.INITIALIZE>`
+        - \-
+      * - :py:obj:`INITIALIZED <pyllo.plugins.languageserver.api.CompletionRequestTypes.INITIALIZED>`
+        - \-
+      * - :py:obj:`DOCUMENT_PUBLISH_DIAGNOSTICS <pyllo.plugins.languageserver.api.CompletionRequestTypes.DOCUMENT_PUBLISH_DIAGNOSTICS>`
+        - \-
+      * - :py:obj:`DOCUMENT_DID_OPEN <pyllo.plugins.languageserver.api.CompletionRequestTypes.DOCUMENT_DID_OPEN>`
+        - \-
+      * - :py:obj:`DOCUMENT_DID_CHANGE <pyllo.plugins.languageserver.api.CompletionRequestTypes.DOCUMENT_DID_CHANGE>`
+        - \-
+      * - :py:obj:`DOCUMENT_DID_CLOSE <pyllo.plugins.languageserver.api.CompletionRequestTypes.DOCUMENT_DID_CLOSE>`
+        - \-
+      * - :py:obj:`DOCUMENT_COMPLETION <pyllo.plugins.languageserver.api.CompletionRequestTypes.DOCUMENT_COMPLETION>`
+        - \-
+      * - :py:obj:`DOCUMENT_DEFINITION <pyllo.plugins.languageserver.api.CompletionRequestTypes.DOCUMENT_DEFINITION>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: INITIALIZE
+      :value: 'initialize'
+
+      
+
+   .. py:attribute:: INITIALIZED
+      :value: 'initialized'
+
+      
+
+   .. py:attribute:: DOCUMENT_PUBLISH_DIAGNOSTICS
+      :value: 'textDocument/publishDiagnostics'
+
+      
+
+   .. py:attribute:: DOCUMENT_DID_OPEN
+      :value: 'textDocument/didOpen'
+
+      
+
+   .. py:attribute:: DOCUMENT_DID_CHANGE
+      :value: 'textDocument/didChange'
+
+      
+
+   .. py:attribute:: DOCUMENT_DID_CLOSE
+      :value: 'textDocument/didClose'
+
+      
+
+   .. py:attribute:: DOCUMENT_COMPLETION
+      :value: 'textDocument/completion'
+
+      
+
+   .. py:attribute:: DOCUMENT_DEFINITION
+      :value: 'textDocument/definition'
+
+      
+
+
+
+
+
+

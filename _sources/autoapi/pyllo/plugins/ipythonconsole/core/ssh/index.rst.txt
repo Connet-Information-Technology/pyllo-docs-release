@@ -1,0 +1,33 @@
+:py:mod:`pyllo.plugins.ipythonconsole.core.ssh`
+===============================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.core.ssh
+
+.. autoapi-nested-parse::
+
+   Utilities to connect to kernels through ssh.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`opensshTunnel <pyllo.plugins.ipythonconsole.core.ssh.opensshTunnel>`\ (self, lport, rport, server, remoteip, keyfile, password, timeout)
+     - We decided to replace pyzmq's openssh_tunnel method to work around
+
+
+
+.. py:function:: opensshTunnel(self, lport, rport, server, remoteip='127.0.0.1', keyfile=None, password=None, timeout=0.4)
+
+   We decided to replace pyzmq's openssh_tunnel method to work around
+   issue https://github.com/zeromq/pyzmq/issues/589 which was solved
+   in pyzmq https://github.com/zeromq/pyzmq/pull/615
+
+

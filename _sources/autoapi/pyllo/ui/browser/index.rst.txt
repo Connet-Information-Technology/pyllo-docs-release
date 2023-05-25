@@ -1,0 +1,645 @@
+:py:mod:`pyllo.ui.browser`
+==========================
+
+.. py:module:: pyllo.ui.browser
+
+.. autoapi-nested-parse::
+
+   Simple web browser widget
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`WebViewActions <pyllo.ui.browser.WebViewActions>`
+     - \-
+   * - :py:obj:`WebViewMenuSections <pyllo.ui.browser.WebViewMenuSections>`
+     - \-
+   * - :py:obj:`WebViewMenus <pyllo.ui.browser.WebViewMenus>`
+     - \-
+   * - :py:obj:`WebPage <pyllo.ui.browser.WebPage>`
+     - Web page subclass to manage hyperlinks for WebEngine
+   * - :py:obj:`WebView <pyllo.ui.browser.WebView>`
+     - Web view.
+   * - :py:obj:`WebBrowser <pyllo.ui.browser.WebBrowser>`
+     - Web browser widget.
+   * - :py:obj:`FrameWebView <pyllo.ui.browser.FrameWebView>`
+     - Framed WebView for UI consistency in Pyllo.
+
+
+
+
+.. py:class:: WebViewActions
+
+   ..    ..    ..    .. .. py:attribute:: ZoomIn
+      :value: 'webZoomInAction'
+
+      
+
+   ..    .. .. py:attribute:: ZoomOut
+      :value: 'webZoomOutAction'
+
+      
+
+   ..    .. .. py:attribute:: Back
+      :value: 'webBackAction'
+
+      
+
+   ..    .. .. py:attribute:: Forward
+      :value: 'webForwardAction'
+
+      
+
+   ..    .. .. py:attribute:: SelectAll
+      :value: 'webSelectAllAction'
+
+      
+
+   ..    .. .. py:attribute:: Copy
+      :value: 'webCopyAction'
+
+      
+
+   ..    .. .. py:attribute:: Inspect
+      :value: 'webInspectAction'
+
+      
+
+   ..    .. .. py:attribute:: Stop
+      :value: 'webStopAction'
+
+      
+
+   ..    .. .. py:attribute:: Refresh
+      :value: 'webRefreshAction'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ZoomIn <pyllo.ui.browser.WebViewActions.ZoomIn>`
+        - \-
+      * - :py:obj:`ZoomOut <pyllo.ui.browser.WebViewActions.ZoomOut>`
+        - \-
+      * - :py:obj:`Back <pyllo.ui.browser.WebViewActions.Back>`
+        - \-
+      * - :py:obj:`Forward <pyllo.ui.browser.WebViewActions.Forward>`
+        - \-
+      * - :py:obj:`SelectAll <pyllo.ui.browser.WebViewActions.SelectAll>`
+        - \-
+      * - :py:obj:`Copy <pyllo.ui.browser.WebViewActions.Copy>`
+        - \-
+      * - :py:obj:`Inspect <pyllo.ui.browser.WebViewActions.Inspect>`
+        - \-
+      * - :py:obj:`Stop <pyllo.ui.browser.WebViewActions.Stop>`
+        - \-
+      * - :py:obj:`Refresh <pyllo.ui.browser.WebViewActions.Refresh>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: ZoomIn
+      :value: 'webZoomInAction'
+
+      
+
+   .. py:attribute:: ZoomOut
+      :value: 'webZoomOutAction'
+
+      
+
+   .. py:attribute:: Back
+      :value: 'webBackAction'
+
+      
+
+   .. py:attribute:: Forward
+      :value: 'webForwardAction'
+
+      
+
+   .. py:attribute:: SelectAll
+      :value: 'webSelectAllAction'
+
+      
+
+   .. py:attribute:: Copy
+      :value: 'webCopyAction'
+
+      
+
+   .. py:attribute:: Inspect
+      :value: 'webInspectAction'
+
+      
+
+   .. py:attribute:: Stop
+      :value: 'webStopAction'
+
+      
+
+   .. py:attribute:: Refresh
+      :value: 'webRefreshAction'
+
+      
+
+
+
+
+
+
+.. py:class:: WebViewMenuSections
+
+   ..    ..    ..    .. .. py:attribute:: Move
+      :value: 'moveSection'
+
+      
+
+   ..    .. .. py:attribute:: Select
+      :value: 'selectSection'
+
+      
+
+   ..    .. .. py:attribute:: Zoom
+      :value: 'zoomSection'
+
+      
+
+   ..    .. .. py:attribute:: Extras
+      :value: 'extrasSection'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Move <pyllo.ui.browser.WebViewMenuSections.Move>`
+        - \-
+      * - :py:obj:`Select <pyllo.ui.browser.WebViewMenuSections.Select>`
+        - \-
+      * - :py:obj:`Zoom <pyllo.ui.browser.WebViewMenuSections.Zoom>`
+        - \-
+      * - :py:obj:`Extras <pyllo.ui.browser.WebViewMenuSections.Extras>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Move
+      :value: 'moveSection'
+
+      
+
+   .. py:attribute:: Select
+      :value: 'selectSection'
+
+      
+
+   .. py:attribute:: Zoom
+      :value: 'zoomSection'
+
+      
+
+   .. py:attribute:: Extras
+      :value: 'extrasSection'
+
+      
+
+
+
+
+
+
+.. py:class:: WebViewMenus
+
+   ..    ..    ..    .. .. py:attribute:: Context
+      :value: 'contextMenu'
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`Context <pyllo.ui.browser.WebViewMenus.Context>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: Context
+      :value: 'contextMenu'
+
+      
+
+
+
+
+
+
+.. py:class:: WebPage
+
+   Bases: :py:obj:`qtpy.QtWebEngineWidgets.QWebEnginePage`
+
+   Web page subclass to manage hyperlinks for WebEngine
+
+   Note: This can't be used for WebKit because the
+   acceptNavigationRequest method has a different
+   functionality for it.
+
+   ..    ..    ..    .. .. py:attribute:: sigLinkClicked
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigLinkClicked <pyllo.ui.browser.WebPage.sigLinkClicked>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`acceptNavigationRequest <pyllo.ui.browser.WebPage.acceptNavigationRequest>`\ (url, navigationType, isMainFrame)
+        - Overloaded method to handle links ourselves
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigLinkClicked
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: acceptNavigationRequest(url, navigationType, isMainFrame)
+
+      Overloaded method to handle links ourselves
+
+
+
+
+
+.. py:class:: WebView(parent, handleLinks=True, classParent=None)
+
+   Bases: :py:obj:`qtpy.QtWebEngineWidgets.QWebEngineView`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`
+
+   Web view.
+
+   ..    ..    ..    .. .. py:attribute:: sigFocusInEvent
+
+      This signal is emitted when the widget receives focus.
+
+
+   ..    .. .. py:attribute:: sigFocusOutEvent
+
+      This signal is emitted when the widget loses focus.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigFocusInEvent <pyllo.ui.browser.WebView.sigFocusInEvent>`
+        - This signal is emitted when the widget receives focus.
+      * - :py:obj:`sigFocusOutEvent <pyllo.ui.browser.WebView.sigFocusOutEvent>`
+        - This signal is emitted when the widget loses focus.
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setup <pyllo.ui.browser.WebView.setup>`\ ()
+        - \-
+      * - :py:obj:`findText <pyllo.ui.browser.WebView.findText>`\ (text, changed, forward, case, word, regexp)
+        - Find text.
+      * - :py:obj:`setSourceText <pyllo.ui.browser.WebView.setSourceText>`\ (sourceText)
+        - Set source text of the page. Callback for QWebEngineView.
+      * - :py:obj:`getNumberMatches <pyllo.ui.browser.WebView.getNumberMatches>`\ (pattern, sourceText, case, regexp, word)
+        - Get the number of matches for the searched text.
+      * - :py:obj:`setFont <pyllo.ui.browser.WebView.setFont>`\ (font, fixedFont)
+        - \-
+      * - :py:obj:`applyZoomFactor <pyllo.ui.browser.WebView.applyZoomFactor>`\ ()
+        - Apply zoom factor.
+      * - :py:obj:`setZoomFactor <pyllo.ui.browser.WebView.setZoomFactor>`\ (zoomFactor)
+        - Set zoom factor.
+      * - :py:obj:`getZoomFactor <pyllo.ui.browser.WebView.getZoomFactor>`\ ()
+        - Return zoom factor.
+      * - :py:obj:`zoomOut <pyllo.ui.browser.WebView.zoomOut>`\ ()
+        - Zoom out.
+      * - :py:obj:`zoomIn <pyllo.ui.browser.WebView.zoomIn>`\ ()
+        - Zoom in.
+      * - :py:obj:`createWindow <pyllo.ui.browser.WebView.createWindow>`\ (webwindowtype)
+        - \-
+      * - :py:obj:`contextMenuEvent <pyllo.ui.browser.WebView.contextMenuEvent>`\ (event)
+        - \-
+      * - :py:obj:`setHtml <pyllo.ui.browser.WebView.setHtml>`\ (html, baseUrl)
+        - Reimplement Qt method to prevent WebEngine to steal focus
+      * - :py:obj:`load <pyllo.ui.browser.WebView.load>`\ (url)
+        - Load url.
+      * - :py:obj:`eventFilter <pyllo.ui.browser.WebView.eventFilter>`\ (widget, event)
+        - Handle events that affect the view.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigFocusInEvent
+
+      This signal is emitted when the widget receives focus.
+
+
+   .. py:attribute:: sigFocusOutEvent
+
+      This signal is emitted when the widget loses focus.
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setup()
+
+
+   .. py:method:: findText(text, changed=True, forward=True, case=False, word=False, regexp=False)
+
+      Find text.
+
+
+   .. py:method:: setSourceText(sourceText)
+
+      Set source text of the page. Callback for QWebEngineView.
+
+
+   .. py:method:: getNumberMatches(pattern, sourceText='', case=False, regexp=False, word=False)
+
+      Get the number of matches for the searched text.
+
+
+   .. py:method:: setFont(font, fixedFont=None)
+
+
+   .. py:method:: applyZoomFactor()
+
+      Apply zoom factor.
+
+
+   .. py:method:: setZoomFactor(zoomFactor)
+
+      Set zoom factor.
+
+
+   .. py:method:: getZoomFactor()
+
+      Return zoom factor.
+
+
+   .. py:method:: zoomOut()
+
+      Zoom out.
+
+
+   .. py:method:: zoomIn()
+
+      Zoom in.
+
+
+   .. py:method:: createWindow(webwindowtype)
+
+
+   .. py:method:: contextMenuEvent(event)
+
+
+   .. py:method:: setHtml(html, baseUrl=QUrl())
+
+      Reimplement Qt method to prevent WebEngine to steal focus
+      when setting html on the page
+
+      Solution taken from
+      https://bugreports.qt.io/browse/QTBUG-52999
+
+
+   .. py:method:: load(url)
+
+      Load url.
+
+      This is reimplemented to install our event filter after the
+      url is loaded.
+
+
+   .. py:method:: eventFilter(widget, event)
+
+      Handle events that affect the view.
+
+      All events (e.g. focus in/out) reach the focus proxy, not this
+      widget itself. That's why this event filter is necessary.
+
+
+
+
+
+.. py:class:: WebBrowser(parent=None, optionsButton=None, handleLinks=True)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QWidget`
+
+   Web browser widget.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getLabel <pyllo.ui.browser.WebBrowser.getLabel>`\ ()
+        - Return address label text
+      * - :py:obj:`setHomeUrl <pyllo.ui.browser.WebBrowser.setHomeUrl>`\ (text)
+        - Set home URL
+      * - :py:obj:`setUrl <pyllo.ui.browser.WebBrowser.setUrl>`\ (url)
+        - Set current URL
+      * - :py:obj:`goTo <pyllo.ui.browser.WebBrowser.goTo>`\ (urlOrText)
+        - Go to page *address*
+      * - :py:obj:`goHome <pyllo.ui.browser.WebBrowser.goHome>`\ ()
+        - Go to home page
+      * - :py:obj:`textToUrl <pyllo.ui.browser.WebBrowser.textToUrl>`\ (text)
+        - Convert text address into QUrl object
+      * - :py:obj:`urlComboActivated <pyllo.ui.browser.WebBrowser.urlComboActivated>`\ (valid)
+        - Load URL from combo box first item
+      * - :py:obj:`loadFinished <pyllo.ui.browser.WebBrowser.loadFinished>`\ (ok)
+        - \-
+      * - :py:obj:`urlToText <pyllo.ui.browser.WebBrowser.urlToText>`\ (url)
+        - Convert QUrl object to displayed text in combo box
+      * - :py:obj:`urlChanged <pyllo.ui.browser.WebBrowser.urlChanged>`\ (url)
+        - Displayed URL has changed -> updating URL combo box
+      * - :py:obj:`iconChanged <pyllo.ui.browser.WebBrowser.iconChanged>`\ ()
+        - \-
+      * - :py:obj:`toggleFindWidget <pyllo.ui.browser.WebBrowser.toggleFindWidget>`\ (state)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getLabel()
+
+      Return address label text
+
+
+   .. py:method:: setHomeUrl(text)
+
+      Set home URL
+
+
+   .. py:method:: setUrl(url)
+
+      Set current URL
+
+
+   .. py:method:: goTo(urlOrText)
+
+      Go to page *address*
+
+
+   .. py:method:: goHome()
+
+      Go to home page
+
+
+   .. py:method:: textToUrl(text)
+
+      Convert text address into QUrl object
+
+
+   .. py:method:: urlComboActivated(valid)
+
+      Load URL from combo box first item
+
+
+   .. py:method:: loadFinished(ok)
+
+
+   .. py:method:: urlToText(url)
+
+      Convert QUrl object to displayed text in combo box
+
+
+   .. py:method:: urlChanged(url)
+
+      Displayed URL has changed -> updating URL combo box
+
+
+   .. py:method:: iconChanged()
+
+
+   .. py:method:: toggleFindWidget(state)
+
+
+
+
+
+.. py:class:: FrameWebView(parent, handleLinks=True)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QFrame`
+
+   Framed WebView for UI consistency in Pyllo.
+
+   ..    ..    .. .. py:property:: webWidget
+
+
+   ..    ..    .. .. py:attribute:: linkClicked
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`linkClicked <pyllo.ui.browser.FrameWebView.linkClicked>`
+        - \-
+
+
+   .. list-table:: Properties
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`webWidget <pyllo.ui.browser.FrameWebView.webWidget>`
+        - \-
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: linkClicked
+
+      
+
+
+   .. rubric:: Properties
+   .. py:property:: webWidget
+
+
+
+
+
+

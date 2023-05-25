@@ -1,0 +1,69 @@
+:py:mod:`pyllo.plugins.languageserver.internal.confpage`
+========================================================
+
+.. py:module:: pyllo.plugins.languageserver.internal.confpage
+
+.. autoapi-nested-parse::
+
+   Language Server Plugin implements UX in LSP
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`LanguageServerConfigPage <pyllo.plugins.languageserver.internal.confpage.LanguageServerConfigPage>`
+     - language server configuration page.
+
+
+
+
+.. py:class:: LanguageServerConfigPage(plugin: pyllo.core.runtime.spi.PylloPlugin, parent: qtpy.QtWidgets.QWidget)
+
+   Bases: :py:obj:`pyllo.ui.preferences.PluginConfigPage`
+
+   language server configuration page.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setupPage <pyllo.plugins.languageserver.internal.confpage.LanguageServerConfigPage.setupPage>`\ ()
+        - Setup configuration page widget
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setupPage()
+
+      Setup configuration page widget
+
+      You should implement this method and set the layout of the
+      preferences page.
+
+      layout = QVBoxLayout()
+      layout.addWidget(...)
+      ...
+      self.setLayout(layout)
+
+
+
+
+

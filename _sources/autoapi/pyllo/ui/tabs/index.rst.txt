@@ -1,0 +1,486 @@
+:py:mod:`pyllo.ui.tabs`
+=======================
+
+.. py:module:: pyllo.ui.tabs
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`EditTabNamePopup <pyllo.ui.tabs.EditTabNamePopup>`
+     - Popup on top of the tab to edit its name.
+   * - :py:obj:`TabBarStyle <pyllo.ui.tabs.TabBarStyle>`
+     - \-
+   * - :py:obj:`TabBar <pyllo.ui.tabs.TabBar>`
+     - Tabs base class with drag and drop support
+   * - :py:obj:`Tabs <pyllo.ui.tabs.Tabs>`
+     - TabWidget with context menu and corner widgets
+   * - :py:obj:`PylloTabs <pyllo.ui.tabs.PylloTabs>`
+     - BaseTabs widget with movable tabs and tab navigation shortcuts.
+
+
+
+
+.. py:class:: EditTabNamePopup(tabBar: TabBar, splitChar, splitIndex)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QLineEdit`
+
+   Popup on top of the tab to edit its name.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`eventFilter <pyllo.ui.tabs.EditTabNamePopup.eventFilter>`\ (widget, event)
+        - Catch clicks outside the object and ESC key press.
+      * - :py:obj:`editTab <pyllo.ui.tabs.EditTabNamePopup.editTab>`\ (index)
+        - Activate the edit tab.
+      * - :py:obj:`editFinished <pyllo.ui.tabs.EditTabNamePopup.editFinished>`\ ()
+        - On clean exit, update tab name.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: eventFilter(widget, event)
+
+      Catch clicks outside the object and ESC key press.
+
+
+   .. py:method:: editTab(index: pyllo.core.dtype.Index)
+
+      Activate the edit tab.
+
+
+   .. py:method:: editFinished()
+
+      On clean exit, update tab name.
+
+
+
+
+
+.. py:class:: TabBarStyle
+
+   Bases: :py:obj:`qtpy.QtWidgets.QProxyStyle`
+
+   ..    ..    ..    .. .. py:attribute:: STRIKEOUT
+
+      
+
+   ..    .. .. py:attribute:: BOLD
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`STRIKEOUT <pyllo.ui.tabs.TabBarStyle.STRIKEOUT>`
+        - \-
+      * - :py:obj:`BOLD <pyllo.ui.tabs.TabBarStyle.BOLD>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`drawItemText <pyllo.ui.tabs.TabBarStyle.drawItemText>`\ (painter, rect, flags, pal, enabled, text, textRole)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: STRIKEOUT
+
+      
+
+   .. py:attribute:: BOLD
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: drawItemText(painter: qtpy.QtGui.QPainter, rect: qtpy.QtCore.QRect, flags: int, pal: qtpy.QtGui.QPalette, enabled: bool, text: str, textRole: qtpy.QtGui.QPalette.ColorRole = ...) -> None
+
+
+
+
+
+.. py:class:: TabBar(parent: qtpy.QtWidgets.QTabWidget, renameTabs=False, splitChar='', splitIndex=0, mimeProto=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QTabBar`
+
+   Tabs base class with drag and drop support
+
+   ..    ..    ..    .. .. py:attribute:: sigDragDrop
+
+      This signal is emitted when tab drag drop intra Tabs or inter Tabs.
+
+      Parameters
+      ----------
+      intraFromTo: Tuple[t.Index, t.Index]
+          Intra Tabs tab move, tuple of indices contains source index to destination index.
+
+      interFromTo: Tuple[t.Identit, t.Index, t.Index]
+          Inter Tabs tab move, tuple of [str(id(fromTabsObject)), str(id(toTabsObject)), fromTabsTabIndex, toTabsTabIndex]
+
+
+   ..    .. .. py:attribute:: sigNameChanged
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigDragDrop <pyllo.ui.tabs.TabBar.sigDragDrop>`
+        - This signal is emitted when tab drag drop intra Tabs or inter Tabs.
+      * - :py:obj:`sigNameChanged <pyllo.ui.tabs.TabBar.sigNameChanged>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`mimeProto <pyllo.ui.tabs.TabBar.mimeProto>`\ ()
+        - Return the mime protocol name which used for identify intra Tabs tab moving (Drag and Drop).
+      * - :py:obj:`setMimeProto <pyllo.ui.tabs.TabBar.setMimeProto>`\ (name)
+        - Set the mime protocol name which used for identify intra Tabs tab moving (Drag and Drop).
+      * - :py:obj:`mousePressEvent <pyllo.ui.tabs.TabBar.mousePressEvent>`\ (event)
+        - Reimplement Qt method
+      * - :py:obj:`mouseMoveEvent <pyllo.ui.tabs.TabBar.mouseMoveEvent>`\ (e)
+        - \-
+      * - :py:obj:`update <pyllo.ui.tabs.TabBar.update>`\ ()
+        - \-
+      * - :py:obj:`dragEnterEvent <pyllo.ui.tabs.TabBar.dragEnterEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`dropEvent <pyllo.ui.tabs.TabBar.dropEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`mouseDoubleClickEvent <pyllo.ui.tabs.TabBar.mouseDoubleClickEvent>`\ (event)
+        - Override Qt method to trigger the tab name editor.
+      * - :py:obj:`tabSizeHint <pyllo.ui.tabs.TabBar.tabSizeHint>`\ (index)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigDragDrop
+
+      This signal is emitted when tab drag drop intra Tabs or inter Tabs.
+
+      Parameters
+      ----------
+      intraFromTo: Tuple[t.Index, t.Index]
+          Intra Tabs tab move, tuple of indices contains source index to destination index.
+
+      interFromTo: Tuple[t.Identit, t.Index, t.Index]
+          Inter Tabs tab move, tuple of [str(id(fromTabsObject)), str(id(toTabsObject)), fromTabsTabIndex, toTabsTabIndex]
+
+
+   .. py:attribute:: sigNameChanged
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: mimeProto() -> pyllo.core.dtype.Identity
+
+      Return the mime protocol name which used for identify intra Tabs tab moving (Drag and Drop).
+      For example, same MIME protocol name should interpolate with each other, can drag and drop tabs.
+
+
+   .. py:method:: setMimeProto(name: pyllo.core.dtype.Identity)
+
+      Set the mime protocol name which used for identify intra Tabs tab moving (Drag and Drop).
+      For example, same MIME protocol name should interpolate with each other, can drag and drop tabs.
+
+
+   .. py:method:: mousePressEvent(event)
+
+      Reimplement Qt method
+
+
+   .. py:method:: mouseMoveEvent(e)
+
+
+   .. py:method:: update()
+
+
+   .. py:method:: dragEnterEvent(event)
+
+      Override Qt method
+
+
+   .. py:method:: dropEvent(event: qtpy.QtGui.QDropEvent)
+
+      Override Qt method
+
+
+   .. py:method:: mouseDoubleClickEvent(event)
+
+      Override Qt method to trigger the tab name editor.
+
+
+   .. py:method:: tabSizeHint(index: int)
+
+
+
+
+
+.. py:class:: Tabs(parent: qtpy.QtWidgets.QWidget, cornerWidgets: Dict[qtpy.QtCore.Qt.Corner, List[qtpy.QtWidgets.QWidget]] = None, menuUseTooltips=False, renameTabs=False, splitChar='', splitIndex=0, mimeProto=None, emptyTabMessage='', *args, **kwargs)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QTabWidget`
+
+   TabWidget with context menu and corner widgets
+
+   ..    ..    ..    .. .. py:attribute:: sigMoveTab
+
+      
+
+   ..    .. .. py:attribute:: sigCloseTabRequest
+
+      
+
+   ..    .. .. py:attribute:: sigCurrentChanged
+
+      
+
+   ..    .. .. py:attribute:: sigTabContextMenuRequested
+
+      
+
+   ..    .. .. py:attribute:: sigCountChanged
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigMoveTab <pyllo.ui.tabs.Tabs.sigMoveTab>`
+        - \-
+      * - :py:obj:`sigCloseTabRequest <pyllo.ui.tabs.Tabs.sigCloseTabRequest>`
+        - \-
+      * - :py:obj:`sigCurrentChanged <pyllo.ui.tabs.Tabs.sigCurrentChanged>`
+        - \-
+      * - :py:obj:`sigTabContextMenuRequested <pyllo.ui.tabs.Tabs.sigTabContextMenuRequested>`
+        - \-
+      * - :py:obj:`sigCountChanged <pyllo.ui.tabs.Tabs.sigCountChanged>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`tabRemoved <pyllo.ui.tabs.Tabs.tabRemoved>`\ (index)
+        - \-
+      * - :py:obj:`tabInserted <pyllo.ui.tabs.Tabs.tabInserted>`\ (index)
+        - \-
+      * - :py:obj:`setTabData <pyllo.ui.tabs.Tabs.setTabData>`\ (index, data)
+        - \-
+      * - :py:obj:`tabData <pyllo.ui.tabs.Tabs.tabData>`\ (index)
+        - \-
+      * - :py:obj:`setCornerWidgets <pyllo.ui.tabs.Tabs.setCornerWidgets>`\ (cornerWidgets)
+        - Set tabs corner widgets
+      * - :py:obj:`addCornerWidgets <pyllo.ui.tabs.Tabs.addCornerWidgets>`\ (widgets, corner)
+        - Append corner widgets
+      * - :py:obj:`contextMenuEvent <pyllo.ui.tabs.Tabs.contextMenuEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`mousePressEvent <pyllo.ui.tabs.Tabs.mousePressEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`keyPressEvent <pyllo.ui.tabs.Tabs.keyPressEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`tabNavigate <pyllo.ui.tabs.Tabs.tabNavigate>`\ (delta)
+        - Ctrl+Tab
+      * - :py:obj:`setTabNotCloseableByUser <pyllo.ui.tabs.Tabs.setTabNotCloseableByUser>`\ (index)
+        - \-
+      * - :py:obj:`isTabNotCloseableByUser <pyllo.ui.tabs.Tabs.isTabNotCloseableByUser>`\ (index)
+        - \-
+      * - :py:obj:`isEmpty <pyllo.ui.tabs.Tabs.isEmpty>`\ ()
+        - Return if tabs is empty.
+      * - :py:obj:`moveTab <pyllo.ui.tabs.Tabs.moveTab>`\ (indexFrom, indexTo)
+        - Move tab inside a tabWidget
+      * - :py:obj:`dropEvent <pyllo.ui.tabs.Tabs.dropEvent>`\ (event)
+        - Override Qt method
+      * - :py:obj:`dragEnterEvent <pyllo.ui.tabs.Tabs.dragEnterEvent>`\ (event)
+        - Override Qt method
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigMoveTab
+
+      
+
+   .. py:attribute:: sigCloseTabRequest
+
+      
+
+   .. py:attribute:: sigCurrentChanged
+
+      
+
+   .. py:attribute:: sigTabContextMenuRequested
+
+      
+
+   .. py:attribute:: sigCountChanged
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: tabRemoved(index)
+
+
+   .. py:method:: tabInserted(index)
+
+
+   .. py:method:: setTabData(index: pyllo.core.dtype.Index, data: Any)
+
+
+   .. py:method:: tabData(index: pyllo.core.dtype.Index) -> Any
+
+
+   .. py:method:: setCornerWidgets(cornerWidgets: Dict[qtpy.QtCore.Qt.Corner, List[qtpy.QtWidgets.QWidget]])
+
+      Set tabs corner widgets
+      cornerWidgets: dictionary of (corner, widgets)
+      corner: Qt.TopLeftCorner or Qt.TopRightCorner
+      widgets: list of widgets (may contains integers to add spacings)
+
+
+   .. py:method:: addCornerWidgets(widgets: List[qtpy.QtWidgets.QWidget], corner: Literal[qtpy.QtCore.Qt.Corner.TopRightCorner, qtpy.QtCore.Qt.Corner.TopLeftCorner] = Qt.Corner.TopRightCorner)
+
+      Append corner widgets
+
+
+   .. py:method:: contextMenuEvent(event: qtpy.QtGui.QContextMenuEvent)
+
+      Override Qt method
+
+
+   .. py:method:: mousePressEvent(event: qtpy.QtGui.QMouseEvent)
+
+      Override Qt method
+
+
+   .. py:method:: keyPressEvent(event: qtpy.QtGui.QKeyEvent)
+
+      Override Qt method
+
+
+   .. py:method:: tabNavigate(delta=1)
+
+      Ctrl+Tab
+
+
+   .. py:method:: setTabNotCloseableByUser(index: pyllo.core.dtype.Index)
+
+
+   .. py:method:: isTabNotCloseableByUser(index: pyllo.core.dtype.Index) -> bool
+
+
+   .. py:method:: isEmpty() -> bool
+
+      Return if tabs is empty.
+
+
+   .. py:method:: moveTab(indexFrom: pyllo.core.dtype.Index, indexTo: pyllo.core.dtype.Index)
+
+      Move tab inside a tabWidget
+
+
+   .. py:method:: dropEvent(event: qtpy.QtGui.QDropEvent)
+
+      Override Qt method
+
+
+   .. py:method:: dragEnterEvent(event: qtpy.QtGui.QDropEvent)
+
+      Override Qt method
+
+
+
+
+
+.. py:class:: PylloTabs(parent: qtpy.QtWidgets.QWidget, cornerWidgets: Dict[qtpy.QtCore.Qt.Corner, List[qtpy.QtWidgets.QWidget]] = None, menuUseTooltips=False, renameTabs=False, splitChar='', splitIndex=0, mimeProto=None, emptyTabMessage='')
+
+   Bases: :py:obj:`Tabs`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`
+
+   BaseTabs widget with movable tabs and tab navigation shortcuts.
+
+   ..    ..    ..    .. .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PREFAB <pyllo.ui.tabs.PylloTabs.PREFAB>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PREFAB
+      :value: True
+
+      
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+:py:mod:`pyllo.examples.uidemo.toolbar`
+=======================================
+
+.. py:module:: pyllo.examples.uidemo.toolbar
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`ToolbarDemo <pyllo.examples.uidemo.toolbar.ToolbarDemo>`
+     - \-
+
+
+
+
+.. py:class:: ToolbarDemo(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QScrollArea`
+
+   ..    ..    .. 
+
+

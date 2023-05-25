@@ -1,0 +1,11 @@
+:py:mod:`pyllo.plugins.ipythonconsole.confpage`
+===============================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.confpage
+
+.. autoapi-nested-parse::
+
+   IPython Console config page.
+
+
+

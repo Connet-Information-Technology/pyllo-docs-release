@@ -1,0 +1,126 @@
+:py:mod:`pyllo.tools.vcs`
+=========================
+
+.. py:module:: pyllo.tools.vcs
+
+.. autoapi-nested-parse::
+
+   Utilities for version control systems
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`get_vcs_info <pyllo.tools.vcs.get_vcs_info>`\ (path)
+     - Return support status dict if path is under VCS root
+   * - :py:obj:`get_vcs_root <pyllo.tools.vcs.get_vcs_root>`\ (path)
+     - Return VCS root directory path
+   * - :py:obj:`is_vcs_repository <pyllo.tools.vcs.is_vcs_repository>`\ (path)
+     - Return True if path is a supported VCS repository
+   * - :py:obj:`run_vcs_tool <pyllo.tools.vcs.run_vcs_tool>`\ (path, action)
+     - If path is a valid VCS repository, run the corresponding VCS tool
+   * - :py:obj:`is_hg_installed <pyllo.tools.vcs.is_hg_installed>`\ ()
+     - Return True if Mercurial is installed
+   * - :py:obj:`get_hg_revision <pyllo.tools.vcs.get_hg_revision>`\ (repopath)
+     - Return Mercurial revision for the repository located at repopath
+   * - :py:obj:`get_git_revision <pyllo.tools.vcs.get_git_revision>`\ (repopath)
+     - Return Git revision for the repository located at repopath
+   * - :py:obj:`get_git_refs <pyllo.tools.vcs.get_git_refs>`\ (repopath)
+     - Return Git active branch, state, branches (plus tags).
+   * - :py:obj:`get_git_remotes <pyllo.tools.vcs.get_git_remotes>`\ (fpath)
+     - Return git remotes for repo on fpath.
+   * - :py:obj:`remote_to_url <pyllo.tools.vcs.remote_to_url>`\ (remote)
+     - Convert a git remote to a url.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`SUPPORTED <pyllo.tools.vcs.SUPPORTED>`
+     - \-
+
+
+.. py:data:: SUPPORTED
+
+   
+
+.. py:exception:: ActionToolNotFound(vcsname, action, tools)
+
+   Bases: :py:obj:`RuntimeError`
+
+   Exception to transmit information about supported tools for
+   failed attempt to execute given action
+
+   ..    ..    .. 
+
+
+.. py:function:: get_vcs_info(path)
+
+   Return support status dict if path is under VCS root
+
+
+.. py:function:: get_vcs_root(path)
+
+   Return VCS root directory path
+   Return None if path is not within a supported VCS repository
+
+
+.. py:function:: is_vcs_repository(path)
+
+   Return True if path is a supported VCS repository
+
+
+.. py:function:: run_vcs_tool(path, action)
+
+   If path is a valid VCS repository, run the corresponding VCS tool
+   Supported VCS actions: 'commit', 'browse'
+   Return False if the VCS tool is not installed
+
+
+.. py:function:: is_hg_installed()
+
+   Return True if Mercurial is installed
+
+
+.. py:function:: get_hg_revision(repopath)
+
+   Return Mercurial revision for the repository located at repopath
+   Result is a tuple (global, local, branch), with None values on error
+   For example:
+       >>> get_hg_revision(".")
+       ('eba7273c69df+', '2015+', 'default')
+
+
+.. py:function:: get_git_revision(repopath)
+
+   Return Git revision for the repository located at repopath
+
+   Result is a tuple (latest commit hash, branch), with None values on
+   error
+
+
+.. py:function:: get_git_refs(repopath)
+
+   Return Git active branch, state, branches (plus tags).
+
+
+.. py:function:: get_git_remotes(fpath)
+
+   Return git remotes for repo on fpath.
+
+
+.. py:function:: remote_to_url(remote)
+
+   Convert a git remote to a url.
+
+

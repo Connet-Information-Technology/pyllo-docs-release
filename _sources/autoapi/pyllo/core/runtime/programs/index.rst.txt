@@ -1,0 +1,143 @@
+:py:mod:`pyllo.core.runtime.programs`
+=====================================
+
+.. py:module:: pyllo.core.runtime.programs
+
+.. autoapi-nested-parse::
+
+   Running programs utilities that related to shell command running, program
+   finding and running, python interpreter
+
+   .. versionadded:: 1.0.0
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`runShellCommand <pyllo.core.runtime.programs.runShellCommand>`\ (cmd, \*\*subprocessKwargs)
+     - Execute the given shell command.
+   * - :py:obj:`findProgram <pyllo.core.runtime.programs.findProgram>`\ (name)
+     - Find program in PATH and return absolute path
+   * - :py:obj:`runProgram <pyllo.core.runtime.programs.runProgram>`\ (name, args, \*\*subprocessKwargs)
+     - Run program in a separate process.
+   * - :py:obj:`isPythonInterpreter <pyllo.core.runtime.programs.isPythonInterpreter>`\ (name)
+     - Evaluate whether a file is a python interpreter or not.
+   * - :py:obj:`getPythonExecutable <pyllo.core.runtime.programs.getPythonExecutable>`\ ()
+     - Return path to Python executable
+   * - :py:obj:`getInterpreterInfo <pyllo.core.runtime.programs.getInterpreterInfo>`\ (path)
+     - Return version information of the selected Python interpreter.
+   * - :py:obj:`findGit <pyllo.core.runtime.programs.findGit>`\ ()
+     - Find git executable in the system.
+
+
+
+.. py:function:: runShellCommand(cmd: pyllo.core.dtype.Command, **subprocessKwargs: Dict[str, pyllo.core.dtype.BasicTypes]) -> pyllo.core.dtype.IO[subprocess.Popen]
+
+   Execute the given shell command.
+
+   Note that *args and **kwargs will be passed to the subprocess call.
+
+   If 'shell' is given in subprocess_kwargs it must be True,
+   otherwise ProgramError will be raised.
+   .
+   If 'executable' is not given in subprocess_kwargs, it will
+   be set to the value of the SHELL environment variable.
+
+   Note that stdin, stdout and stderr will be set by default
+   to PIPE unless specified in subprocess_kwargs.
+
+   Parameters
+   ----------
+   cmd: str
+       The string run as a shell command.
+   subprocess_kwargs: Dict[str,BasicTypes]
+       These will be passed to `subprocess.Popen`.
+
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: findProgram(name: pyllo.core.dtype.FileBaseName) -> pyllo.core.dtype.IO[Optional[pyllo.core.dtype.FilePath]]
+
+   Find program in PATH and return absolute path
+
+   Try adding .exe or .bat to basename on Windows platforms
+   (return None if not found)
+
+   >>> findProgram("notepad")
+   'C:\\Windows\\system32\\notepad.exe'
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: runProgram(name: pyllo.core.dtype.FileBaseName, args=None, **subprocessKwargs: Dict[str, pyllo.core.dtype.BasicTypes]) -> pyllo.core.dtype.IO[subprocess.Popen]
+
+   Run program in a separate process.
+
+   NOTE: returns the process object created by
+   `subprocess.Popen()`. This can be used with
+   `proc.communicate()` for example.
+
+   If 'shell' appears in the kwargs, it must be False,
+   otherwise ProgramError will be raised.
+
+   If only the program name is given and not the full path,
+   a lookup will be performed to find the program. If the
+   lookup fails, ProgramError will be raised.
+
+   Note that stdin, stdout and stderr will be set by default
+   to PIPE unless specified in subprocess_kwargs.
+
+   Parameters
+   ----------
+   name: str
+       The name of the program to run.
+   args: List[str]
+       The program arguments.
+   subprocess_kwargs: Dict[str, str]
+       These will be passed to subprocess.Popen.
+
+
+   >>> out, err = runProgram("git", ['status', '-s'], cwd=".").communicate()
+   >>> out.decode(sys.getdefaultencoding())
+   >>> runProgram("notepad")
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: isPythonInterpreter(name: Union[pyllo.core.dtype.FilePath, pyllo.core.dtype.FileBaseName]) -> pyllo.core.dtype.IO[bool]
+
+   Evaluate whether a file is a python interpreter or not.
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getPythonExecutable() -> pyllo.core.dtype.IO[pyllo.core.dtype.FilePath]
+
+   Return path to Python executable
+
+   .. versionadded:: 1.0.0
+
+
+.. py:function:: getInterpreterInfo(path: pyllo.core.dtype.FilePath) -> pyllo.core.dtype.Text
+
+   Return version information of the selected Python interpreter.
+
+
+.. py:function:: findGit()
+
+   Find git executable in the system.
+
+   >>> findGit()
+
+   .. versionadded:: 1.0.0
+
+

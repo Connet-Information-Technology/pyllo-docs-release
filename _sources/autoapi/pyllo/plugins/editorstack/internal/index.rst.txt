@@ -1,0 +1,15 @@
+:py:mod:`pyllo.plugins.editorstack.internal`
+============================================
+
+.. py:module:: pyllo.plugins.editorstack.internal
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   mainwidget/index.rst
+
+

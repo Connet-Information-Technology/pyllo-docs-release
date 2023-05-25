@@ -1,0 +1,363 @@
+:py:mod:`pyllo.plugins.editorstack.internal.mainwidget`
+=======================================================
+
+.. py:module:: pyllo.plugins.editorstack.internal.mainwidget
+
+.. autoapi-nested-parse::
+
+   Main Editor Stack widget.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`EditorStackWidget <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget>`
+     - Editor stack widget.
+   * - :py:obj:`GetStartedPageInput <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPageInput>`
+     - Get started page fake input.
+   * - :py:obj:`GetStartedPage <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPage>`
+     - Get started page.
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.editorstack.internal.mainwidget.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: EditorStackWidget(name: str, plugin: pyllo.core.runtime.spi.IDockablePlugin, parent=None)
+
+   Bases: :py:obj:`pyllo.ui.plugin.PluginMainWidget`
+
+   Editor stack widget.
+
+   ===================================
+   |filePathLabel                   0|
+   |---------------------------------|
+   |T_|TAB|__________________________|
+   |                                 |
+   | Editor                          |
+   | ...                             |
+   ===================================
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`getTitle <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.getTitle>`\ ()
+        - Return the title that will be displayed on dock widget or window title.
+      * - :py:obj:`setup <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.setup>`\ ()
+        - Create widget actions, add to menu and other setup requirements.
+      * - :py:obj:`insertTab <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.insertTab>`\ (tabs, index, editor, setCurrent)
+        - \-
+      * - :py:obj:`closeTab <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.closeTab>`\ (tabs, index)
+        - \-
+      * - :py:obj:`getTabsByEditor <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.getTabsByEditor>`\ (editor)
+        - Get tabs widget that contains editor
+      * - :py:obj:`setCurrentEditor <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.setCurrentEditor>`\ (editor)
+        - \-
+      * - :py:obj:`currentEditor <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.currentEditor>`\ ()
+        - Returns current editor
+      * - :py:obj:`getEditors <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.getEditors>`\ ()
+        - \-
+      * - :py:obj:`currentTabs <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.currentTabs>`\ ()
+        - Returns current tabs
+      * - :py:obj:`getTabsStack <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.getTabsStack>`\ ()
+        - Get tabs array (leaves) of tree map
+      * - :py:obj:`moveTabInterTabs <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.moveTabInterTabs>`\ (tabsFrom, tabsTo, indexFrom, indexTo)
+        - Move tab between tabs
+      * - :py:obj:`moveTabIntraTabs <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.moveTabIntraTabs>`\ (tabs, indexFrom, indexTo)
+        - Move tab within tabs
+      * - :py:obj:`splitRight <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.splitRight>`\ ()
+        - \-
+      * - :py:obj:`splitDown <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.splitDown>`\ ()
+        - \-
+      * - :py:obj:`unsplit <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.unsplit>`\ ()
+        - Merge tabs from second Tabs object to first Tabs object
+      * - :py:obj:`unsplitAll <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.unsplitAll>`\ ()
+        - Merge all tabs of each Tabs to first Tabs object
+      * - :py:obj:`split <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.split>`\ (orientation, widget)
+        - \-
+      * - :py:obj:`updateSplitterTree <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.updateSplitterTree>`\ ()
+        - \-
+      * - :py:obj:`createPlainTextEditor <pyllo.plugins.editorstack.internal.mainwidget.EditorStackWidget.createPlainTextEditor>`\ (input_)
+        - For editor stack simplest editor implementation
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: getTitle() -> str
+
+      Return the title that will be displayed on dock widget or window title.
+
+
+   .. py:method:: setup()
+
+      Create widget actions, add to menu and other setup requirements.
+
+
+   .. py:method:: insertTab(tabs: pyllo.ui.tabs.PylloTabs, index: int, editor: pyllo.plugins.editorstack.api.IEditor, setCurrent=False) -> int
+
+
+   .. py:method:: closeTab(tabs: pyllo.ui.tabs.PylloTabs, index: int)
+
+
+   .. py:method:: getTabsByEditor(editor) -> Optional[pyllo.ui.tabs.PylloTabs]
+
+      Get tabs widget that contains editor
+
+
+   .. py:method:: setCurrentEditor(editor)
+
+
+   .. py:method:: currentEditor() -> Optional[IEditor]
+
+      Returns current editor
+
+
+   .. py:method:: getEditors() -> List[pyllo.plugins.editorstack.api.IEditor]
+
+
+   .. py:method:: currentTabs() -> pyllo.ui.tabs.PylloTabs
+
+      Returns current tabs
+
+
+   .. py:method:: getTabsStack() -> List[pyllo.ui.tabs.PylloTabs]
+
+      Get tabs array (leaves) of tree map
+
+
+   .. py:method:: moveTabInterTabs(tabsFrom: pyllo.ui.tabs.PylloTabs, tabsTo: pyllo.ui.tabs.PylloTabs, indexFrom: int, indexTo: int)
+
+      Move tab between tabs
+
+      Notice:
+          We only keep one instance of editors with same input source.
+
+
+   .. py:method:: moveTabIntraTabs(tabs: pyllo.ui.tabs.PylloTabs, indexFrom: int, indexTo: int)
+
+      Move tab within tabs
+
+
+   .. py:method:: splitRight()
+
+
+   .. py:method:: splitDown()
+
+
+   .. py:method:: unsplit()
+
+      Merge tabs from second Tabs object to first Tabs object
+
+
+   .. py:method:: unsplitAll()
+
+      Merge all tabs of each Tabs to first Tabs object
+
+
+   .. py:method:: split(orientation: qtpy.QtCore.Qt.Orientation, widget=None)
+
+
+   .. py:method:: updateSplitterTree()
+
+
+   .. py:method:: createPlainTextEditor(input_: pyllo.plugins.editorstack.api.TextEditorInput) -> pyllo.plugins.editorstack.widgets.PlainTextEditor
+
+      For editor stack simplest editor implementation
+
+
+
+
+
+.. py:class:: GetStartedPageInput
+
+   Bases: :py:obj:`pyllo.plugins.editorstack.api.IEditorInput`
+
+   Get started page fake input.
+
+   ..    ..    ..    .. .. py:attribute:: HASH
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`HASH <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPageInput.HASH>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`exists <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPageInput.exists>`\ ()
+        - Returns whether the editor input still exists
+      * - :py:obj:`getIcon <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPageInput.getIcon>`\ ()
+        - Returns file type description icon show in the editor tab bar.
+      * - :py:obj:`getName <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPageInput.getName>`\ ()
+        - Returns the name of this editor input for display.
+      * - :py:obj:`getToolTip <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPageInput.getToolTip>`\ ()
+        - Returns the tool tip text for this editor input.
+      * - :py:obj:`getHash <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPageInput.getHash>`\ ()
+        - Return input hash id.
+      * - :py:obj:`getAdapter <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPageInput.getAdapter>`\ (type_)
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: HASH
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: exists() -> bool
+
+      Returns whether the editor input still exists
+
+      .. attention: Not restrict to local file but any memory file object as well.
+
+
+   .. py:method:: getIcon()
+
+      Returns file type description icon show in the editor tab bar.
+
+
+   .. py:method:: getName() -> str
+
+      Returns the name of this editor input for display.
+
+
+   .. py:method:: getToolTip() -> str
+
+      Returns the tool tip text for this editor input.
+
+
+   .. py:method:: getHash() -> int
+
+      Return input hash id.
+
+
+   .. py:method:: getAdapter(type_)
+
+
+
+
+
+.. py:class:: GetStartedPage(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QScrollArea`, :py:obj:`pyllo.plugins.editorstack.api.IEditor`
+
+   Get started page.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`doSave <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPage.doSave>`\ ()
+        - Save the contents of this editor.
+      * - :py:obj:`doSaveAs <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPage.doSaveAs>`\ (filepath)
+        - Save the contents of this editor to another object.
+      * - :py:obj:`getEditorInput <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPage.getEditorInput>`\ ()
+        - Returns the input for this editor.
+      * - :py:obj:`setInput <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPage.setInput>`\ (input_)
+        - \-
+      * - :py:obj:`isModified <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPage.isModified>`\ ()
+        - Returns whether the contents of this editor have changed since the
+      * - :py:obj:`isSaveAsAllowed <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPage.isSaveAsAllowed>`\ ()
+        - Returns whether the "save as" operation is supported by this
+      * - :py:obj:`isSaveOnCloseNeeded <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPage.isSaveOnCloseNeeded>`\ ()
+        - Returns whether the contents of this editor should be saved when
+      * - :py:obj:`updateActions <pyllo.plugins.editorstack.internal.mainwidget.GetStartedPage.updateActions>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: doSave()
+
+      Save the contents of this editor.
+
+
+   .. py:method:: doSaveAs(filepath: str)
+
+      Save the contents of this editor to another object.
+
+
+   .. py:method:: getEditorInput() -> pyllo.plugins.editorstack.api.IEditorInput
+
+      Returns the input for this editor.
+
+
+   .. py:method:: setInput(input_: pyllo.plugins.editorstack.api.IEditorInput) -> bool
+
+
+   .. py:method:: isModified() -> bool
+
+      Returns whether the contents of this editor have changed since the
+      last operation.
+
+
+   .. py:method:: isSaveAsAllowed() -> bool
+
+      Returns whether the "save as" operation is supported by this
+      editor.
+
+
+   .. py:method:: isSaveOnCloseNeeded() -> bool
+
+      Returns whether the contents of this editor should be saved when
+      the editor is closed.
+
+
+   .. py:method:: updateActions()
+
+
+
+
+

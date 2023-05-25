@@ -1,0 +1,289 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.langexts.pygments`
+===============================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.langexts.pygments
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`PygmentsSH <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsSH>`
+     - Generic Pygments syntax highlighter.
+   * - :py:obj:`PygmentsWorker <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsWorker>`
+     - Pygments worker
+   * - :py:obj:`PygmentsExtension <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsExtension>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`guessPygmentsExtension <pyllo.plugins.codeeditorv2.internal.langexts.pygments.guessPygmentsExtension>`\ (filename)
+     - Factory to generate syntax highlighter for the given filename.
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`CUSTOM_EXTENSION_LEXER <pyllo.plugins.codeeditorv2.internal.langexts.pygments.CUSTOM_EXTENSION_LEXER>`
+     - \-
+
+
+.. py:data:: CUSTOM_EXTENSION_LEXER
+
+   
+
+.. py:function:: guessPygmentsExtension(filename: str)
+
+   Factory to generate syntax highlighter for the given filename.
+
+   If a syntax highlighter is not available for a particular file, this
+   function will attempt to generate one based on the lexers in Pygments. If
+   Pygments is not available or does not have an appropriate lexer, TextSH
+   will be returned instead.
+
+
+.. py:class:: PygmentsSH(parent, font=None, color_scheme=None)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH`
+
+   Generic Pygments syntax highlighter.
+
+   ..    ..    ..    .. .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NORMAL <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsSH.NORMAL>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`makeCharlist <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsSH.makeCharlist>`\ ()
+        - Parses the complete text and stores format for each character.
+      * - :py:obj:`highlightBlock <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsSH.highlightBlock>`\ (text)
+        - Actually highlight the block
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: makeCharlist()
+
+      Parses the complete text and stores format for each character.
+
+
+   .. py:method:: highlightBlock(text)
+
+      Actually highlight the block
+
+
+
+
+
+.. py:class:: PygmentsWorker
+
+   Bases: :py:obj:`qtpy.QtCore.QObject`
+
+   Pygments worker
+
+   ..    ..    ..    .. .. py:attribute:: sigFinished
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sigFinished <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsWorker.sigFinished>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`makeCharlist <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsWorker.makeCharlist>`\ ()
+        - Parses the complete text and stores format for each character.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sigFinished
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: makeCharlist()
+
+      Parses the complete text and stores format for each character.
+
+      Uses the attached lexer to parse into a list of tokens and Pygments
+      token types.  Then breaks tokens into individual letters, each with a
+      Spyder token type attached.  Stores this list as self._charlist.
+
+      It's attached to the contentsChange signal of the parent QTextDocument
+      so that the charlist is updated whenever the document changes.
+
+
+
+
+
+.. py:class:: PygmentsExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.LanguageExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'pygments'
+
+      
+
+   ..    .. .. py:attribute:: NAME_FILTERS
+      :value: ['*.*']
+
+      
+
+   ..    .. .. py:attribute:: ALIASES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   ..    .. .. py:attribute:: CONFIGURATION
+
+      
+
+   ..    .. .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsExtension.NAME>`
+        - \-
+      * - :py:obj:`NAME_FILTERS <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsExtension.NAME_FILTERS>`
+        - \-
+      * - :py:obj:`ALIASES <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsExtension.ALIASES>`
+        - \-
+      * - :py:obj:`FILE_NAMES <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsExtension.FILE_NAMES>`
+        - \-
+      * - :py:obj:`FIRST_LINE <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsExtension.FIRST_LINE>`
+        - \-
+      * - :py:obj:`CONFIGURATION <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsExtension.CONFIGURATION>`
+        - \-
+      * - :py:obj:`SYNTAX_HIGHLIGHTER <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsExtension.SYNTAX_HIGHLIGHTER>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.langexts.pygments.PygmentsExtension.onInitialize>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'pygments'
+
+      
+
+   .. py:attribute:: NAME_FILTERS
+      :value: ['*.*']
+
+      
+
+   .. py:attribute:: ALIASES
+      :value: []
+
+      
+
+   .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   .. py:attribute:: CONFIGURATION
+
+      
+
+   .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+              
+
+
+
+
+

@@ -1,0 +1,403 @@
+:py:mod:`pyllo.plugins.application.internal.widgets`
+====================================================
+
+.. py:module:: pyllo.plugins.application.internal.widgets
+
+.. autoapi-nested-parse::
+
+   Application Plugin Wigets
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`RegisterPluginsTool <pyllo.plugins.application.internal.widgets.RegisterPluginsTool>`
+     - Basic functionality for all Pyllo widget and Qt items.
+   * - :py:obj:`QComboBoxDelegate <pyllo.plugins.application.internal.widgets.QComboBoxDelegate>`
+     - \-
+   * - :py:obj:`PluginsTable <pyllo.plugins.application.internal.widgets.PluginsTable>`
+     - Plugins table
+   * - :py:obj:`PluginsSortFilterProxy <pyllo.plugins.application.internal.widgets.PluginsSortFilterProxy>`
+     - \-
+   * - :py:obj:`PluginsModel <pyllo.plugins.application.internal.widgets.PluginsModel>`
+     - Shortcuts table model
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.application.internal.widgets.logger>`
+     - \-
+   * - :py:obj:`NAME_COLUMN <pyllo.plugins.application.internal.widgets.NAME_COLUMN>`
+     - \-
+   * - :py:obj:`VERSION_COLUMN <pyllo.plugins.application.internal.widgets.VERSION_COLUMN>`
+     - \-
+   * - :py:obj:`AUTHOR_COLUMN <pyllo.plugins.application.internal.widgets.AUTHOR_COLUMN>`
+     - \-
+   * - :py:obj:`PACKAGE_COLUMN <pyllo.plugins.application.internal.widgets.PACKAGE_COLUMN>`
+     - \-
+   * - :py:obj:`IS_INTERNAL_COLUMN <pyllo.plugins.application.internal.widgets.IS_INTERNAL_COLUMN>`
+     - \-
+   * - :py:obj:`COMPAT_COLUMN <pyllo.plugins.application.internal.widgets.COMPAT_COLUMN>`
+     - \-
+   * - :py:obj:`ENABLE_COLUMN <pyllo.plugins.application.internal.widgets.ENABLE_COLUMN>`
+     - \-
+   * - :py:obj:`DESCRIBE_COLUMN <pyllo.plugins.application.internal.widgets.DESCRIBE_COLUMN>`
+     - \-
+   * - :py:obj:`SEARCH_SCORE_COLUMN <pyllo.plugins.application.internal.widgets.SEARCH_SCORE_COLUMN>`
+     - \-
+   * - :py:obj:`COLUMN_COUNT <pyllo.plugins.application.internal.widgets.COLUMN_COUNT>`
+     - \-
+   * - :py:obj:`PLAIN_TEXT_ROLE <pyllo.plugins.application.internal.widgets.PLAIN_TEXT_ROLE>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: RegisterPluginsTool(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QDialog`, :py:obj:`pyllo.ui.plugin.PylloWidgetMixin`
+
+   Basic functionality for all Pyllo widget and Qt items.
+
+   This mixin does not include toolbar handling as that is limited to the
+   application with the core ui plugin or the PluginMainWidget for dockable
+   plugins.
+
+   This provides a simple management of widget options, as well as Qt helpers
+   for defining the actions a widget provides.
+
+   .. versionadded:: 1.0.0
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setRegex <pyllo.plugins.application.internal.widgets.RegisterPluginsTool.setRegex>`\ (regex, reset)
+        - Update the regex text for the shortcut finder.
+      * - :py:obj:`install <pyllo.plugins.application.internal.widgets.RegisterPluginsTool.install>`\ ()
+        - Install target pyllo package(*.zip) by `pip` and "Lib/site-packages/{package_name}".
+      * - :py:obj:`uninstall <pyllo.plugins.application.internal.widgets.RegisterPluginsTool.uninstall>`\ ()
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setRegex(regex=None, reset=False)
+
+      Update the regex text for the shortcut finder.
+
+
+   .. py:method:: install()
+
+      Install target pyllo package(*.zip) by `pip` and "Lib/site-packages/{package_name}".
+
+
+   .. py:method:: uninstall()
+
+
+
+
+
+.. py:data:: NAME_COLUMN
+   :value: 0
+
+   
+
+.. py:data:: VERSION_COLUMN
+   :value: 1
+
+   
+
+.. py:data:: AUTHOR_COLUMN
+   :value: 2
+
+   
+
+.. py:data:: PACKAGE_COLUMN
+   :value: 3
+
+   
+
+.. py:data:: IS_INTERNAL_COLUMN
+   :value: 4
+
+   
+
+.. py:data:: COMPAT_COLUMN
+   :value: 5
+
+   
+
+.. py:data:: ENABLE_COLUMN
+   :value: 6
+
+   
+
+.. py:data:: DESCRIBE_COLUMN
+   :value: 7
+
+   
+
+.. py:data:: SEARCH_SCORE_COLUMN
+   :value: 8
+
+   
+
+.. py:data:: COLUMN_COUNT
+   :value: 9
+
+   
+
+.. py:data:: PLAIN_TEXT_ROLE
+
+   
+
+.. py:class:: QComboBoxDelegate(parent, choices)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QStyledItemDelegate`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`createEditor <pyllo.plugins.application.internal.widgets.QComboBoxDelegate.createEditor>`\ (parent, option, index)
+        - \-
+      * - :py:obj:`setEditorData <pyllo.plugins.application.internal.widgets.QComboBoxDelegate.setEditorData>`\ (editor, index)
+        - \-
+      * - :py:obj:`setModelData <pyllo.plugins.application.internal.widgets.QComboBoxDelegate.setModelData>`\ (editor, model, index)
+        - \-
+      * - :py:obj:`updateEditorGeometry <pyllo.plugins.application.internal.widgets.QComboBoxDelegate.updateEditorGeometry>`\ (editor, option, index)
+        - \-
+      * - :py:obj:`paint <pyllo.plugins.application.internal.widgets.QComboBoxDelegate.paint>`\ (painter, option, index)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: createEditor(parent, option, index)
+
+
+   .. py:method:: setEditorData(editor, index)
+
+
+   .. py:method:: setModelData(editor, model, index)
+
+
+   .. py:method:: updateEditorGeometry(editor, option, index)
+
+
+   .. py:method:: paint(painter: qtpy.QtGui.QPainter, option, index)
+
+
+
+
+
+.. py:class:: PluginsTable(parent=None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QTableView`
+
+   Plugins table
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`gotoPreviousRow <pyllo.plugins.application.internal.widgets.PluginsTable.gotoPreviousRow>`\ ()
+        - \-
+      * - :py:obj:`gotoNextRow <pyllo.plugins.application.internal.widgets.PluginsTable.gotoNextRow>`\ ()
+        - \-
+      * - :py:obj:`editCurrentRow <pyllo.plugins.application.internal.widgets.PluginsTable.editCurrentRow>`\ ()
+        - \-
+      * - :py:obj:`setModel <pyllo.plugins.application.internal.widgets.PluginsTable.setModel>`\ (model)
+        - \-
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: gotoPreviousRow()
+
+
+   .. py:method:: gotoNextRow()
+
+
+   .. py:method:: editCurrentRow()
+
+
+   .. py:method:: setModel(model)
+
+
+
+
+
+.. py:class:: PluginsSortFilterProxy(view=None)
+
+   Bases: :py:obj:`qtpy.QtCore.QSortFilterProxyModel`
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`setFilterByColumn <pyllo.plugins.application.internal.widgets.PluginsSortFilterProxy.setFilterByColumn>`\ (column)
+        - Set regular expression in the given column.
+      * - :py:obj:`setFilter <pyllo.plugins.application.internal.widgets.PluginsSortFilterProxy.setFilter>`\ (text)
+        - Set regular expression for filter.
+      * - :py:obj:`clearFilter <pyllo.plugins.application.internal.widgets.PluginsSortFilterProxy.clearFilter>`\ (column)
+        - Clear the filter of the given column.
+      * - :py:obj:`clearFilters <pyllo.plugins.application.internal.widgets.PluginsSortFilterProxy.clearFilters>`\ ()
+        - Clear all the filters.
+      * - :py:obj:`filterAcceptsRow <pyllo.plugins.application.internal.widgets.PluginsSortFilterProxy.filterAcceptsRow>`\ (row, parent)
+        - Qt override.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: setFilterByColumn(column)
+
+      Set regular expression in the given column.
+
+
+   .. py:method:: setFilter(text)
+
+      Set regular expression for filter.
+
+
+   .. py:method:: clearFilter(column)
+
+      Clear the filter of the given column.
+
+
+   .. py:method:: clearFilters()
+
+      Clear all the filters.
+
+
+   .. py:method:: filterAcceptsRow(row, parent)
+
+      Qt override.
+
+      Reimplemented to allow filtering in multiple columns.
+
+
+
+
+
+.. py:class:: PluginsModel(parent=None)
+
+   Bases: :py:obj:`qtpy.QtCore.QAbstractTableModel`
+
+   Shortcuts table model
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`flags <pyllo.plugins.application.internal.widgets.PluginsModel.flags>`\ (index)
+        - Qt Override
+      * - :py:obj:`headerData <pyllo.plugins.application.internal.widgets.PluginsModel.headerData>`\ (section, orientation, role)
+        - \-
+      * - :py:obj:`data <pyllo.plugins.application.internal.widgets.PluginsModel.data>`\ (index, role)
+        - Qt Override
+      * - :py:obj:`setData <pyllo.plugins.application.internal.widgets.PluginsModel.setData>`\ (index, value, role)
+        - Qt Override
+      * - :py:obj:`rowCount <pyllo.plugins.application.internal.widgets.PluginsModel.rowCount>`\ (parent)
+        - Qt Override
+      * - :py:obj:`columnCount <pyllo.plugins.application.internal.widgets.PluginsModel.columnCount>`\ (index)
+        - \-
+      * - :py:obj:`updateSearchLettersInText <pyllo.plugins.application.internal.widgets.PluginsModel.updateSearchLettersInText>`\ (text)
+        - Update search letters with text input in search box.
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: flags(index: qtpy.QtCore.QModelIndex)
+
+      Qt Override
+
+
+   .. py:method:: headerData(section, orientation, role=Qt.DisplayRole)
+
+
+   .. py:method:: data(index: qtpy.QtCore.QModelIndex, role=Qt.DisplayRole)
+
+      Qt Override
+
+
+   .. py:method:: setData(index: qtpy.QtCore.QModelIndex, value, role: int = ...) -> bool
+
+      Qt Override
+
+
+   .. py:method:: rowCount(parent=QModelIndex())
+
+      Qt Override
+
+
+   .. py:method:: columnCount(index=QModelIndex())
+
+
+   .. py:method:: updateSearchLettersInText(text)
+
+      Update search letters with text input in search box.
+
+
+
+
+

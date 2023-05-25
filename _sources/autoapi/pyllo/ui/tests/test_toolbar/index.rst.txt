@@ -1,0 +1,88 @@
+:py:mod:`pyllo.ui.tests.test_toolbar`
+=====================================
+
+.. py:module:: pyllo.ui.tests.test_toolbar
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`MockLabel <pyllo.ui.tests.test_toolbar.MockLabel>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`toolbarbot <pyllo.ui.tests.test_toolbar.toolbarbot>`\ (qtbot, monkeypatch)
+     - \-
+   * - :py:obj:`test_toobar_addItem_uiPath_with_parent <pyllo.ui.tests.test_toolbar.test_toobar_addItem_uiPath_with_parent>`\ (toolbarbot)
+     - Check the toolbar item's uiPath correctness after creation
+   * - :py:obj:`test_toobar_addItem_uiPath_setParent <pyllo.ui.tests.test_toolbar.test_toobar_addItem_uiPath_setParent>`\ (toolbarbot)
+     - Check the toolbar item's uiPath correctness after setParent
+   * - :py:obj:`test_toobar_addItem_defaultsection <pyllo.ui.tests.test_toolbar.test_toobar_addItem_defaultsection>`\ (toolbarbot)
+     - Check whether item has been added to __default__ section of PylloToolbar
+   * - :py:obj:`test_toolbar_addItem_positional_sequence <pyllo.ui.tests.test_toolbar.test_toolbar_addItem_positional_sequence>`\ (toolbarbot)
+     - Check items added to toolbar is positioned by addition order
+   * - :py:obj:`test_toolbar_addItem_section_assumption <pyllo.ui.tests.test_toolbar.test_toolbar_addItem_section_assumption>`\ (toolbarbot)
+     - Check items added to toolbar is positioned with assumed section
+   * - :py:obj:`test_toolbar_addItem_pending <pyllo.ui.tests.test_toolbar.test_toolbar_addItem_pending>`\ (toolbarbot)
+     - Check items added to toolbar is pending forever
+   * - :py:obj:`test_toolbar_addItem_by_sections <pyllo.ui.tests.test_toolbar.test_toolbar_addItem_by_sections>`\ (toolbarbot)
+     - Check items added to toolbar by sections
+
+
+
+.. py:class:: MockLabel(parent: qtpy.QtWidgets.QWidget = None, text: pyllo.core.dtype.Text = '', name: pyllo.core.dtype.Identity = None)
+
+   Bases: :py:obj:`qtpy.QtWidgets.QLabel`
+
+   ..    ..    .. 
+
+
+.. py:function:: toolbarbot(qtbot, monkeypatch)
+
+
+.. py:function:: test_toobar_addItem_uiPath_with_parent(toolbarbot)
+
+   Check the toolbar item's uiPath correctness after creation
+
+
+.. py:function:: test_toobar_addItem_uiPath_setParent(toolbarbot)
+
+   Check the toolbar item's uiPath correctness after setParent
+
+
+.. py:function:: test_toobar_addItem_defaultsection(toolbarbot)
+
+   Check whether item has been added to __default__ section of PylloToolbar
+
+
+.. py:function:: test_toolbar_addItem_positional_sequence(toolbarbot)
+
+   Check items added to toolbar is positioned by addition order
+
+
+.. py:function:: test_toolbar_addItem_section_assumption(toolbarbot)
+
+   Check items added to toolbar is positioned with assumed section
+
+
+.. py:function:: test_toolbar_addItem_pending(toolbarbot)
+
+   Check items added to toolbar is pending forever
+
+
+.. py:function:: test_toolbar_addItem_by_sections(toolbarbot)
+
+   Check items added to toolbar by sections
+
+

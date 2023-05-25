@@ -1,0 +1,146 @@
+:py:mod:`pyllo.plugins.ipythonconsole.core.kernelcomm`
+======================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.core.kernelcomm
+
+.. autoapi-nested-parse::
+
+   In addition to the remote_call mechanism implemented in CommBase:
+    - Send a message to a kernel
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`KernelComm <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm>`
+     - Class with the necessary attributes and methods to handle
+
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`logger <pyllo.plugins.ipythonconsole.core.kernelcomm.logger>`
+     - \-
+
+
+.. py:data:: logger
+
+   
+
+.. py:class:: KernelComm
+
+   Bases: :py:obj:`spyder_kernels.comms.commbase.CommBase`, :py:obj:`qtpy.QtCore.QObject`
+
+   Class with the necessary attributes and methods to handle
+   communications with a console.
+
+   ..    ..    ..    .. .. py:attribute:: sig_exception_occurred
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`sig_exception_occurred <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.sig_exception_occurred>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`ssh_tunnel <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.ssh_tunnel>`\ (\*args, \*\*kwargs)
+        - \-
+      * - :py:obj:`shutdown_comm_channel <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.shutdown_comm_channel>`\ ()
+        - Shutdown the comm channel.
+      * - :py:obj:`comm_channel_connected <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.comm_channel_connected>`\ ()
+        - Check if the comm channel is connected.
+      * - :py:obj:`comm_channel_manager <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.comm_channel_manager>`\ (comm_id, queue_message)
+        - Use comm_channel instead of shell_channel.
+      * - :py:obj:`remove <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.remove>`\ (comm_id)
+        - Remove the comm without notifying the other side.
+      * - :py:obj:`close <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.close>`\ (comm_id)
+        - Ask kernel to close comm and send confirmation.
+      * - :py:obj:`open_comm <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.open_comm>`\ (kernel_client)
+        - Open comm through the kernel client.
+      * - :py:obj:`remote_call <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.remote_call>`\ (interrupt, blocking, callback, comm_id, timeout, display_error)
+        - Get a handler for remote calls.
+      * - :py:obj:`on_incoming_call <pyllo.plugins.ipythonconsole.core.kernelcomm.KernelComm.on_incoming_call>`\ (call_dict)
+        - A call was received
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: sig_exception_occurred
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: ssh_tunnel(*args, **kwargs)
+
+
+   .. py:method:: shutdown_comm_channel()
+
+      Shutdown the comm channel.
+
+
+   .. py:method:: comm_channel_connected()
+
+      Check if the comm channel is connected.
+
+
+   .. py:method:: comm_channel_manager(comm_id, queue_message=False)
+
+      Use comm_channel instead of shell_channel.
+
+
+   .. py:method:: remove(comm_id=None)
+
+      Remove the comm without notifying the other side.
+
+      Use when the other side is already down.
+
+
+   .. py:method:: close(comm_id=None)
+
+      Ask kernel to close comm and send confirmation.
+
+
+   .. py:method:: open_comm(kernel_client)
+
+      Open comm through the kernel client.
+
+
+   .. py:method:: remote_call(interrupt=False, blocking=False, callback=None, comm_id=None, timeout=None, display_error=False)
+
+      Get a handler for remote calls.
+
+
+   .. py:method:: on_incoming_call(call_dict)
+
+      A call was received
+
+
+
+
+

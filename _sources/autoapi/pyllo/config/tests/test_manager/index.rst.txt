@@ -1,0 +1,39 @@
+:py:mod:`pyllo.config.tests.test_manager`
+=========================================
+
+.. py:module:: pyllo.config.tests.test_manager
+
+.. autoapi-nested-parse::
+
+   Tests for config/manager.py.
+
+
+
+Module Contents
+---------------
+
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`clearSiteConfig <pyllo.config.tests.test_manager.clearSiteConfig>`\ ()
+     - Delete all test site config folders.
+   * - :py:obj:`testSiteConfigLoad <pyllo.config.tests.test_manager.testSiteConfigLoad>`\ ()
+     - Test that the site/system config preferences are loaded with correct
+
+
+
+.. py:function:: clearSiteConfig()
+
+   Delete all test site config folders.
+
+
+.. py:function:: testSiteConfigLoad()
+
+   Test that the site/system config preferences are loaded with correct
+   precedence.
+
+

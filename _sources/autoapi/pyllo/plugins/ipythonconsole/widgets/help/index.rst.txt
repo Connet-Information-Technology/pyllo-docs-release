@@ -1,0 +1,98 @@
+:py:mod:`pyllo.plugins.ipythonconsole.widgets.help`
+===================================================
+
+.. py:module:: pyllo.plugins.ipythonconsole.widgets.help
+
+.. autoapi-nested-parse::
+
+   Widget that handles communications between the IPython Console and
+   the Help plugin
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`HelpWidget <pyllo.plugins.ipythonconsole.widgets.help.HelpWidget>`
+     - Widget with the necessary attributes and methods to handle communications
+
+
+
+
+.. py:class:: HelpWidget(*args, **kw)
+
+   Bases: :py:obj:`qtconsole.rich_jupyter_widget.RichJupyterWidget`
+
+   Widget with the necessary attributes and methods to handle communications
+   between the IPython Console and the Help plugin
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`clean_invalid_var_chars <pyllo.plugins.ipythonconsole.widgets.help.HelpWidget.clean_invalid_var_chars>`\ (var)
+        - Replace invalid variable chars in a string by underscores
+      * - :py:obj:`get_documentation <pyllo.plugins.ipythonconsole.widgets.help.HelpWidget.get_documentation>`\ (content)
+        - Get documentation from inspect reply content.
+      * - :py:obj:`get_signature <pyllo.plugins.ipythonconsole.widgets.help.HelpWidget.get_signature>`\ (content)
+        - Get signature from inspect reply content
+      * - :py:obj:`is_defined <pyllo.plugins.ipythonconsole.widgets.help.HelpWidget.is_defined>`\ (objtxt, force_import)
+        - Return True if object is defined
+      * - :py:obj:`get_doc <pyllo.plugins.ipythonconsole.widgets.help.HelpWidget.get_doc>`\ (objtxt)
+        - Get object documentation dictionary
+      * - :py:obj:`get_source <pyllo.plugins.ipythonconsole.widgets.help.HelpWidget.get_source>`\ (objtxt)
+        - Get object source
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: clean_invalid_var_chars(var)
+
+      Replace invalid variable chars in a string by underscores
+
+      Taken from https://stackoverflow.com/a/3305731/438386
+
+
+   .. py:method:: get_documentation(content)
+
+      Get documentation from inspect reply content.
+
+
+   .. py:method:: get_signature(content)
+
+      Get signature from inspect reply content
+
+
+   .. py:method:: is_defined(objtxt, force_import=False)
+
+      Return True if object is defined
+
+
+   .. py:method:: get_doc(objtxt)
+
+      Get object documentation dictionary
+
+
+   .. py:method:: get_source(objtxt)
+
+      Get object source
+
+
+
+
+

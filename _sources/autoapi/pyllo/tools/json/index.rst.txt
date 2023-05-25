@@ -1,0 +1,244 @@
+:py:mod:`pyllo.tools.json`
+==========================
+
+.. py:module:: pyllo.tools.json
+
+.. autoapi-nested-parse::
+
+   Improved JSON serialization.
+
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`JsonEncoder <pyllo.tools.json.JsonEncoder>`
+     - Customizable JSON encoder.
+   * - :py:obj:`JsonObject <pyllo.tools.json.JsonObject>`
+     - A wrapped Python object that formats itself as JSON when asked for a string
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`of_type <pyllo.tools.json.of_type>`\ (\*classinfo, \*\*kwargs)
+     - Returns a validator for a JSON property that requires it to have a value of
+   * - :py:obj:`default <pyllo.tools.json.default>`\ (default)
+     - Returns a validator for a JSON property with a default value.
+   * - :py:obj:`enum <pyllo.tools.json.enum>`\ (\*values, \*\*kwargs)
+     - Returns a validator for a JSON enum.
+   * - :py:obj:`array <pyllo.tools.json.array>`\ (validate_item, vectorize, size)
+     - Returns a validator for a JSON array.
+   * - :py:obj:`object <pyllo.tools.json.object>`\ (validate_value)
+     - Returns a validator for a JSON object.
+   * - :py:obj:`repr <pyllo.tools.json.repr>`\ (value)
+     - \-
+
+
+.. list-table:: Attributes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`JsonDecoder <pyllo.tools.json.JsonDecoder>`
+     - \-
+   * - :py:obj:`dumps <pyllo.tools.json.dumps>`
+     - \-
+   * - :py:obj:`loads <pyllo.tools.json.loads>`
+     - \-
+
+
+.. py:data:: JsonDecoder
+
+   
+
+.. py:class:: JsonEncoder(*, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, sort_keys=False, indent=None, separators=None, default=None)
+
+   Bases: :py:obj:`json.JSONEncoder`
+
+   Customizable JSON encoder.
+
+   If the object implements __getstate__, then that method is invoked, and its
+   result is serialized instead of the object itself.
+
+   ..    ..    .. 
+   .. rubric:: Overview
+
+   
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`default <pyllo.tools.json.JsonEncoder.default>`\ (value)
+        - Implement this method in a subclass such that it returns
+
+
+
+
+
+   .. rubric:: Methods
+   .. py:method:: default(value)
+
+      Implement this method in a subclass such that it returns
+      a serializable object for ``o``, or calls the base implementation
+      (to raise a ``TypeError``).
+
+      For example, to support arbitrary iterators, you could
+      implement default like this::
+
+          def default(self, o):
+              try:
+                  iterable = iter(o)
+              except TypeError:
+                  pass
+              else:
+                  return list(iterable)
+              # Let the base class default method raise the TypeError
+              return JSONEncoder.default(self, o)
+
+
+
+
+
+
+.. py:class:: JsonObject(value)
+
+   Bases: :py:obj:`object`
+
+   A wrapped Python object that formats itself as JSON when asked for a string
+   representation via str() or format().
+
+   ..    ..    ..    .. .. py:attribute:: json_encoder_factory
+
+      Used by __format__ when format_spec is not empty.
+
+
+   ..    .. .. py:attribute:: json_encoder
+
+      The default encoder used by __format__ when format_spec is empty.
+
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`json_encoder_factory <pyllo.tools.json.JsonObject.json_encoder_factory>`
+        - Used by __format__ when format_spec is not empty.
+      * - :py:obj:`json_encoder <pyllo.tools.json.JsonObject.json_encoder>`
+        - The default encoder used by __format__ when format_spec is empty.
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: json_encoder_factory
+
+      Used by __format__ when format_spec is not empty.
+
+
+   .. py:attribute:: json_encoder
+
+      The default encoder used by __format__ when format_spec is empty.
+
+
+
+
+
+
+
+.. py:function:: of_type(*classinfo, **kwargs)
+
+   Returns a validator for a JSON property that requires it to have a value of
+   the specified type. If optional=True, () is also allowed.
+
+   The meaning of classinfo is the same as for isinstance().
+
+
+.. py:function:: default(default)
+
+   Returns a validator for a JSON property with a default value.
+
+   The validator will only allow property values that have the same type as the
+   specified default value.
+
+
+.. py:function:: enum(*values, **kwargs)
+
+   Returns a validator for a JSON enum.
+
+   The validator will only allow the property to have one of the specified values.
+
+   If optional=True, and the property is missing, the first value specified is used
+   as the default.
+
+
+.. py:function:: array(validate_item=False, vectorize=False, size=None)
+
+   Returns a validator for a JSON array.
+
+   If the property is missing, it is treated as if it were []. Otherwise, it must
+   be a list.
+
+   If validate_item=False, it's treated as if it were (lambda x: x) - i.e. any item
+   is considered valid, and is unchanged. If validate_item is a type or a tuple,
+   it's treated as if it were json.of_type(validate).
+
+   Every item in the list is replaced with validate_item(item) in-place, propagating
+   any exceptions raised by the latter. If validate_item is a type or a tuple, it is
+   treated as if it were json.of_type(validate_item).
+
+   If vectorize=True, and the value is neither a list nor a dict, it is treated as
+   if it were a single-element list containing that single value - e.g. "foo" is
+   then the same as ["foo"]; but {} is an error, and not [{}].
+
+   If size is not None, it can be an int, a tuple of one int, a tuple of two ints,
+   or a set. If it's an int, the array must have exactly that many elements. If it's
+   a tuple of one int, it's the minimum length. If it's a tuple of two ints, they
+   are the minimum and the maximum lengths. If it's a set, it's the set of sizes that
+   are valid - e.g. for {2, 4}, the array can be either 2 or 4 elements long.
+
+
+.. py:function:: object(validate_value=False)
+
+   Returns a validator for a JSON object.
+
+   If the property is missing, it is treated as if it were {}. Otherwise, it must
+   be a dict.
+
+   If validate_value=False, it's treated as if it were (lambda x: x) - i.e. any
+   value is considered valid, and is unchanged. If validate_value is a type or a
+   tuple, it's treated as if it were json.of_type(validate_value).
+
+   Every value in the dict is replaced with validate_value(value) in-place, propagating
+   any exceptions raised by the latter. If validate_value is a type or a tuple, it is
+   treated as if it were json.of_type(validate_value). Keys are not affected.
+
+
+.. py:function:: repr(value)
+
+
+.. py:data:: dumps
+
+   
+
+.. py:data:: loads
+
+   
+

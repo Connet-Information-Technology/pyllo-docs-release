@@ -1,0 +1,256 @@
+:py:mod:`pyllo.plugins.codeeditorv2.internal.langexts.html`
+===========================================================
+
+.. py:module:: pyllo.plugins.codeeditorv2.internal.langexts.html
+
+
+Module Contents
+---------------
+
+
+.. list-table:: Classes
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`BaseWebSH <pyllo.plugins.codeeditorv2.internal.langexts.html.BaseWebSH>`
+     - Base class for CSS and HTML syntax highlighters
+   * - :py:obj:`HtmlSH <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlSH>`
+     - HTML Syntax Highlighter
+   * - :py:obj:`HtmlExtension <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlExtension>`
+     - \-
+
+
+.. list-table:: Functions
+   :header-rows: 0
+   :widths: auto
+   :class: summarytable
+
+   * - :py:obj:`makeHtmlPatterns <pyllo.plugins.codeeditorv2.internal.langexts.html.makeHtmlPatterns>`\ ()
+     - Strongly inspired from idlelib.ColorDelegator.make_pat
+
+
+
+.. py:class:: BaseWebSH(parent, font=None, colorScheme=None)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.internal.syntaxhighlight.BaseSH`
+
+   Base class for CSS and HTML syntax highlighters
+
+   ..    ..    ..    .. .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+   ..    .. .. py:attribute:: COMMENT
+      :value: 1
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NORMAL <pyllo.plugins.codeeditorv2.internal.langexts.html.BaseWebSH.NORMAL>`
+        - \-
+      * - :py:obj:`COMMENT <pyllo.plugins.codeeditorv2.internal.langexts.html.BaseWebSH.COMMENT>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`highlightBlock <pyllo.plugins.codeeditorv2.internal.langexts.html.BaseWebSH.highlightBlock>`\ (text)
+        - Implement highlight specific for CSS and HTML.
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NORMAL
+      :value: 0
+
+      
+
+   .. py:attribute:: COMMENT
+      :value: 1
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: highlightBlock(text: str)
+
+      Implement highlight specific for CSS and HTML.
+
+
+
+
+
+.. py:function:: makeHtmlPatterns()
+
+   Strongly inspired from idlelib.ColorDelegator.make_pat 
+
+
+.. py:class:: HtmlSH(parent, font=None, colorScheme=None)
+
+   Bases: :py:obj:`BaseWebSH`
+
+   HTML Syntax Highlighter
+
+   ..    ..    ..    .. .. py:attribute:: PROG
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`PROG <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlSH.PROG>`
+        - \-
+
+
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: PROG
+
+      
+
+
+
+
+
+
+.. py:class:: HtmlExtension(editor: CodeEditor)
+
+   Bases: :py:obj:`pyllo.plugins.codeeditorv2.api.LanguageExtension`
+
+   ..    ..    ..    .. .. py:attribute:: NAME
+      :value: 'html'
+
+      
+
+   ..    .. .. py:attribute:: NAME_FILTERS
+      :value: ['*.html', '*.htm']
+
+      
+
+   ..    .. .. py:attribute:: ALIASES
+      :value: ['HTML', 'html']
+
+      
+
+   ..    .. .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   ..    .. .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   ..    .. .. py:attribute:: CONFIGURATION
+
+      
+
+   ..    .. .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+   .. 
+   .. rubric:: Overview
+
+   
+   .. list-table:: Attributes
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`NAME <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlExtension.NAME>`
+        - \-
+      * - :py:obj:`NAME_FILTERS <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlExtension.NAME_FILTERS>`
+        - \-
+      * - :py:obj:`ALIASES <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlExtension.ALIASES>`
+        - \-
+      * - :py:obj:`FILE_NAMES <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlExtension.FILE_NAMES>`
+        - \-
+      * - :py:obj:`FIRST_LINE <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlExtension.FIRST_LINE>`
+        - \-
+      * - :py:obj:`CONFIGURATION <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlExtension.CONFIGURATION>`
+        - \-
+      * - :py:obj:`SYNTAX_HIGHLIGHTER <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlExtension.SYNTAX_HIGHLIGHTER>`
+        - \-
+
+
+
+   .. list-table:: Methods
+      :header-rows: 0
+      :widths: auto
+      :class: summarytable
+
+      * - :py:obj:`onInitialize <pyllo.plugins.codeeditorv2.internal.langexts.html.HtmlExtension.onInitialize>`\ ()
+        - \-
+
+
+
+   .. rubric:: Attributes
+   .. py:attribute:: NAME
+      :value: 'html'
+
+      
+
+   .. py:attribute:: NAME_FILTERS
+      :value: ['*.html', '*.htm']
+
+      
+
+   .. py:attribute:: ALIASES
+      :value: ['HTML', 'html']
+
+      
+
+   .. py:attribute:: FILE_NAMES
+      :value: []
+
+      
+
+   .. py:attribute:: FIRST_LINE
+      :value: ''
+
+      
+
+   .. py:attribute:: CONFIGURATION
+
+      
+
+   .. py:attribute:: SYNTAX_HIGHLIGHTER
+
+      
+
+
+
+   .. rubric:: Methods
+   .. py:method:: onInitialize()
+
+              
+
+
+
+
+
